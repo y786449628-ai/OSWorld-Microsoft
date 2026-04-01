@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "c02ba521-3ae8-cd65-4f93-5816a7450bc8",
   "snapshot": "excel",
   "instruction": "Could you calculate the total and average compensation using SUM, AVERAGE, and AVERAGEIF functions in Excel?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_06\\logs\\MonitoringSnapshots\\20251230_131141\\Desktop\\sheet1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\sheet1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_06/logs/MonitoringSnapshots/20251230_131141/Desktop/sheet1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\sheet1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_06\\logs\\MonitoringSnapshots\\20251230_131210\\Desktop\\sheet1.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\sheet1_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_06/logs/MonitoringSnapshots/20251230_131210/Desktop/sheet1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\sheet1_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\sheet1.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\sheet1.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\sheet1.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\sheet1.xlsx",
       "dest": "sheet1.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\sheet1_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\sheet1_gold.xlsx",
       "dest": "sheet1_gold.xlsx"
     },
     "options": {

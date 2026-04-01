@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "620fd4a1-cb05-e94b-c03c-c6c32ade374d",
   "snapshot": "excel",
   "instruction": "Could you paste the Excel chart image into the Word document?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222351\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222351/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222351\\Desktop\\Doc1.docx",
-            "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222351/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222625\\Desktop\\Doc1.docx",
-            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222625/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+        "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
       }
     }
   ],
@@ -39,12 +39,12 @@
     "func": "compare_docx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.docx",
       "dest": "Doc1.docx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx",
       "dest": "Doc1_gold.docx"
     }
   }

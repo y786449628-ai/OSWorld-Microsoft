@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "8b883479-d082-d14c-b655-fb8f3ceccfe6",
   "snapshot": "excel",
   "instruction": "Could you add a feature to select a specific day in the chart?",
@@ -9,8 +9,8 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_10\\logs\\MonitoringSnapshots\\20260105_192747\\Desktop\\final result.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_10/logs/MonitoringSnapshots/20260105_192747/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
           }
         ]
       }
@@ -24,12 +24,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
       "dest": "final result.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
       "dest": "final result_gold.xlsx"
     },
     "options": {

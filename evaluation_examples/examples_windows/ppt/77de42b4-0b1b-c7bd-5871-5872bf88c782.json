@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "77de42b4-0b1b-c7bd-5871-5872bf88c782",
   "snapshot": "ppt",
   "instruction": "Could you adjust the text and chart elements in PowerPoint to produce a clear and professional sales presentation?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_185908\\Desktop\\Sales_Data.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Sales_Data.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_07/logs/MonitoringSnapshots/20251230_185908/Desktop/Sales_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Sales_Data.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_185908\\Desktop\\Sales_Presentation.pptx",
-            "path": "C:\\Users\\78644\\Desktop\\Sales_Presentation.pptx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_07/logs/MonitoringSnapshots/20251230_185908/Desktop/Sales_Presentation.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Sales_Presentation.pptx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_190357\\Desktop\\Sales_Presentation.pptx",
-            "path": "C:\\Users\\78644\\Documents\\Sales_Presentation_gold.pptx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_07/logs/MonitoringSnapshots/20251230_190357/Desktop/Sales_Presentation.pptx",
+            "path": "C:\\Users\\User\\Documents\\Sales_Presentation_gold.pptx"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Sales_Presentation.pptx"
+        "path": "C:\\Users\\User\\Desktop\\Sales_Presentation.pptx"
       }
     }
   ],
@@ -38,12 +38,12 @@
     "func": "compare_pptx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Sales_Presentation.pptx",
+      "path": "C:\\Users\\User\\Desktop\\Sales_Presentation.pptx",
       "dest": "Sales_Presentation.pptx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Sales_Presentation_gold.pptx",
+      "path": "C:\\Users\\User\\Documents\\Sales_Presentation_gold.pptx",
       "dest": "Sales_Presentation_gold.pptx"
     }
   }

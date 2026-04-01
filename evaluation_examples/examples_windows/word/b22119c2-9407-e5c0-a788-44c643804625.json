@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "b22119c2-9407-e5c0-a788-44c643804625",
   "snapshot": "word",
   "instruction": "Could you save the Word document as a PDF?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222601\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222601/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222601\\Desktop\\Doc1.docx",
-            "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222601/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222625\\Desktop\\Doc1.pdf",
-            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.pdf"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222625/Desktop/Doc1.pdf",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.pdf"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+        "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
       }
     }
   ],
@@ -38,12 +38,12 @@
     "func": "compare_pdfs",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Doc1.pdf",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.pdf",
       "dest": "Doc1.pdf"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.pdf",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.pdf",
       "dest": "Doc1_gold.pdf"
     }
   }

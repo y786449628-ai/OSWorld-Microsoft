@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "e9eaa3a6-9dbd-4825-b35a-51546c1c612b",
   "snapshot": "word",
   "instruction": "Could you create a new Word document for the professional report?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222307\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222307/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222351\\Desktop\\Doc1.docx",
-            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222351/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx"
           }
         ]
       }
@@ -28,12 +28,12 @@
     "func": "compare_docx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.docx",
       "dest": "Doc1.docx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx",
       "dest": "Doc1_gold.docx"
     }
   }

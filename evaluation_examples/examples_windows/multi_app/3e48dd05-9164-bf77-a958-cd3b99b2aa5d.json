@@ -1,7 +1,7 @@
-{
+﻿{
   "id": "3e48dd05-9164-bf77-a958-cd3b99b2aa5d",
   "snapshot": "excel",
-  "instruction": "Could you generate a 'Midterm–Final Score Change Line Chart' based on the data and copy it as an image?",
+  "instruction": "Could you generate a 'Midterm鈥揊inal Score Change Line Chart' based on the data and copy it as an image?",
   "source": "Microsoft_02 atomic task 3",
   "config": [
     {
@@ -9,8 +9,8 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_181207\\Desktop\\Doc1.docx",
-            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181207/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx"
           }
         ]
       }
@@ -24,12 +24,12 @@
     "func": "compare_docx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.docx",
       "dest": "Doc1.docx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx",
       "dest": "Doc1_gold.docx"
     }
   }

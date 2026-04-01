@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "e1db9dd9-2fdf-534d-ec05-928819b68025",
   "snapshot": "excel",
   "instruction": "Could you input and organize the survey data in the Excel workbook?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_151321\\Desktop\\Customer_Satisfaction_Data.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_151321/Desktop/Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_151336\\Desktop\\Customer_Satisfaction_Data.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Data_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_151336/Desktop/Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Data_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx",
       "dest": "Customer_Satisfaction_Data.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Data_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Data_gold.xlsx",
       "dest": "Customer_Satisfaction_Data_gold.xlsx"
     },
     "options": {

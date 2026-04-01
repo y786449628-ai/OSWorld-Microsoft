@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "d2ca8d78-e654-8249-dce2-0580f1c3ca2e",
   "snapshot": "excel",
   "instruction": "Could you create a bar chart based on the data in the table?",
@@ -12,7 +12,7 @@
     "func": "check_file_exists",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Record.lnk",
+      "path": "C:\\Users\\User\\Desktop\\Record.lnk",
       "dest": "Record.lnk"
     }
   }

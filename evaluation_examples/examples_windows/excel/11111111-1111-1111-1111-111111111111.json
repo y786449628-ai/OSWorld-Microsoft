@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "11111111-1111-1111-1111-111111111111",
   "snapshot": "file_explorer",
   "instruction": "Create a new folder named \"TestFolder\" on the Desktop.",
@@ -12,7 +12,7 @@
     "func": "check_folder_exists",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\TestFolder",
+      "path": "C:\\Users\\User\\Desktop\\TestFolder",
       "dest": "TestFolder"
     }
   }

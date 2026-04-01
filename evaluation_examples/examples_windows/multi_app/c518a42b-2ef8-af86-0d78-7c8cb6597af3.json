@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "c518a42b-2ef8-af86-0d78-7c8cb6597af3",
   "snapshot": "excel",
   "instruction": "Could you create a chart to visualize the sales, cost, and profit data?",
@@ -9,8 +9,8 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_10\\logs\\MonitoringSnapshots\\20260105_192747\\Desktop\\final result.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_10/logs/MonitoringSnapshots/20260105_192747/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
           }
         ]
       }
@@ -24,12 +24,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
       "dest": "final result.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
       "dest": "final result_gold.xlsx"
     },
     "options": {

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "fdc59d14-44f4-f8a7-b5fb-c05a541c2995",
   "snapshot": "excel",
   "instruction": "Could you create a new folder named 'Records' in the 'Movie Box Office Data' folder?",
@@ -12,7 +12,7 @@
     "func": "check_file_exists",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Record.lnk",
+      "path": "C:\\Users\\User\\Desktop\\Record.lnk",
       "dest": "Record.lnk"
     }
   }

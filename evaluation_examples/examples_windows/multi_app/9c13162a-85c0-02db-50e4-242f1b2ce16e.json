@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "9c13162a-85c0-02db-50e4-242f1b2ce16e",
   "snapshot": "excel",
   "instruction": "Could you calculate the Year-over-Year (YoY) growth rates for the revenue data in the consolidated table?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_150302\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150302/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_151247\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_151247/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
       "dest": "Alphabet_Revenue_Analysis.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
       "dest": "Alphabet_Revenue_Analysis_gold.xlsx"
     },
     "options": {

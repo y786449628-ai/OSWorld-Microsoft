@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "bda46f7e-2346-4a01-8000-000000000001",
   "snapshot": "excel",
   "instruction": "Complete the sales table in the current Excel workbook. Enter Product A, Product B, and Product C together with their first-quarter and second-quarter sales figures, then calculate the year-over-year growth rate for each product in the last column.",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_221844\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_221844/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222104\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222104/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\Book1.xlsx",
       "dest": "Book1_result.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx",
       "dest": "Book1_gold.xlsx"
     },
     "options": {

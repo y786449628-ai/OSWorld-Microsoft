@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "e5f84a62-157c-260d-99c1-91091c883481",
   "snapshot": "excel",
   "instruction": "Could you include the key trends and insights from the Excel analysis in the Word document?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185656\\Desktop\\Customer_Profit_Analysis.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185656/Desktop/Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Profit_Analysis.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185656\\Desktop\\Customer_Profitability_Analysis_Report.docx",
-            "path": "C:\\Users\\78644\\Desktop\\Customer_Profitability_Analysis_Report.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185656/Desktop/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Profitability_Analysis_Report.docx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185658\\Desktop\\Customer_Profitability_Analysis_Report.docx",
-            "path": "C:\\Users\\78644\\Documents\\Customer_Profitability_Analysis_Report_gold.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185658/Desktop/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\User\\Documents\\Customer_Profitability_Analysis_Report_gold.docx"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Customer_Profitability_Analysis_Report.docx"
+        "path": "C:\\Users\\User\\Desktop\\Customer_Profitability_Analysis_Report.docx"
       }
     }
   ],
@@ -39,12 +39,12 @@
     "func": "compare_docx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Customer_Profitability_Analysis_Report.docx",
+      "path": "C:\\Users\\User\\Desktop\\Customer_Profitability_Analysis_Report.docx",
       "dest": "Customer_Profitability_Analysis_Report.docx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Customer_Profitability_Analysis_Report_gold.docx",
+      "path": "C:\\Users\\User\\Documents\\Customer_Profitability_Analysis_Report_gold.docx",
       "dest": "Customer_Profitability_Analysis_Report_gold.docx"
     }
   }

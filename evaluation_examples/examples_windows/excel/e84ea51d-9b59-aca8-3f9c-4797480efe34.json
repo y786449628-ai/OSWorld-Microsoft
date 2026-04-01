@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "e84ea51d-9b59-aca8-3f9c-4797480efe34",
   "snapshot": "excel",
   "instruction": "Could you use OCR to extract Alphabet Inc.'s 2022-2024 revenue data from the screenshots into Excel?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_150302\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150302/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_150652\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150652/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
       "dest": "Alphabet_Revenue_Analysis.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
       "dest": "Alphabet_Revenue_Analysis_gold.xlsx"
     },
     "options": {

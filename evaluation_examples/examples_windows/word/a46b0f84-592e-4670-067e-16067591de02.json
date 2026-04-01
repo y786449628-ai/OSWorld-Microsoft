@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "a46b0f84-592e-4670-067e-16067591de02",
   "snapshot": "word",
   "instruction": "Could you save the individual invitations as separate Word documents or PDFs?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_092035\\Desktop\\Contact List.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_092035/Desktop/Contact List.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Contact List.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_092035\\Desktop\\Invitation Final Version.docx",
-            "path": "C:\\Users\\78644\\Desktop\\Invitation Final Version.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_092035/Desktop/Invitation Final Version.docx",
+            "path": "C:\\Users\\User\\Desktop\\Invitation Final Version.docx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_092035\\Desktop\\Invitation Mail Merge.docx",
-            "path": "C:\\Users\\78644\\Desktop\\Invitation Mail Merge.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_092035/Desktop/Invitation Mail Merge.docx",
+            "path": "C:\\Users\\User\\Desktop\\Invitation Mail Merge.docx"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Invitation Final Version.docx"
+        "path": "C:\\Users\\User\\Desktop\\Invitation Final Version.docx"
       }
     }
   ],
@@ -38,7 +38,7 @@
     "func": "check_file_exists",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Record.lnk",
+      "path": "C:\\Users\\User\\Desktop\\Record.lnk",
       "dest": "Record.lnk"
     }
   }

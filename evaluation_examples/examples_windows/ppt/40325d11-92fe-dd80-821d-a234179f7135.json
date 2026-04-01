@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "40325d11-92fe-dd80-821d-a234179f7135",
   "snapshot": "ppt",
   "instruction": "Could you open Microsoft PowerPoint 365 and create a new presentation for the customer satisfaction analysis?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_152313\\Desktop\\Customer_Satisfaction_Data.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_152313/Desktop/Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_153033\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
-            "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_153033/Desktop/Customer_Satisfaction_Presentaion.pptx",
+            "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx"
           }
         ]
       }
@@ -28,12 +28,12 @@
     "func": "compare_pptx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
+      "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
       "dest": "Customer_Satisfaction_Presentaion.pptx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx",
+      "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx",
       "dest": "Customer_Satisfaction_Presentaion_gold.pptx"
     }
   }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "8f3c2d91-6b4a-4e27-9c15-1f7a3b92d6e4",
   "snapshot": "excel_file_explorer",
   "instruction": "On the Desktop, open the folder named \"Movie Box Office Data\". Create a folder named \"Records\" inside it. Inside \"Records\", create two subfolders named \"Daily Box Office > 50 Million\" and \"Daily Box Office <= 50 Million\". Categorize the seven .jpg files in \"Movie Box Office Data\" based on whether the daily box office exceeds 50 million, and move each file into the correct subfolder. Then open \"Seven-Day Box Office Summary.xlsx\" on the Desktop, enter the box office data from the images into the worksheet using the columns \"Daily Box Office\", \"Total Tickets Sold\", \"Online Tickets Sold\", \"Operating Cinemas\", \"Total Screenings\", and \"Average Ticket Price\", and create a bar chart based on the table.",
@@ -7,27 +7,27 @@
     {
       "type": "delete",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data"
+        "path": "C:\\Users\\User\\Desktop\\Movie Box Office Data"
       }
     },
     {
       "type": "delete",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Seven-Day Box Office Summary.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Seven-Day Box Office Summary.xlsx"
       }
     },
     {
       "type": "copy_from_host",
       "parameters": {
-        "src": "C:\\Users\\78644\\Documents\\NTU\\osworld\\First batch_251\\First batch_251\\Microsoft\\Microsoft_03\\logs\\MonitoringSnapshots\\20251222_010422\\Desktop\\Movie Box Office Data",
-        "dst": "C:\\Users\\78644\\Desktop\\Movie Box Office Data"
+        "src": "C:\\Users\\User\\Documents\\NTU\\osworld\\First batch_251\\First batch_251\\Microsoft\\Microsoft_03\\logs\\MonitoringSnapshots\\20251222_010422\\Desktop\\Movie Box Office Data",
+        "dst": "C:\\Users\\User\\Desktop\\Movie Box Office Data"
       }
     },
     {
       "type": "copy_from_host",
       "parameters": {
         "src": "C:\\PATH\\TO\\Seven-Day Box Office Summary.xlsx",
-        "dst": "C:\\Users\\78644\\Desktop\\Seven-Day Box Office Summary.xlsx"
+        "dst": "C:\\Users\\User\\Desktop\\Seven-Day Box Office Summary.xlsx"
       }
     }
   ],
@@ -40,7 +40,7 @@
     "func": "check_movie_box_office_records_and_summary",
     "result": {
       "type": "vm_dir",
-      "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data",
+      "path": "C:\\Users\\User\\Desktop\\Movie Box Office Data",
       "dest": "Movie Box Office Data"
     },
     "expected": {

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "6777601c-3706-0e34-303d-ad864f9fd92b",
   "snapshot": "excel",
   "instruction": "Could you copy the clustered column chart as an image from Excel?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222149\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222149/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222307\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222307/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\Book1.xlsx",
       "dest": "Book1.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx",
       "dest": "Book1_gold.xlsx"
     },
     "options": {

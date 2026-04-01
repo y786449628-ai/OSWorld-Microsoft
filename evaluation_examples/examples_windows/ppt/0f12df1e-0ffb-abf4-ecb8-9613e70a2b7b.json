@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "0f12df1e-0ffb-abf4-ecb8-9613e70a2b7b",
   "snapshot": "ppt",
   "instruction": "Could you save the final PowerPoint presentation with the linked data and visual summaries?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_153033\\Desktop\\Customer_Satisfaction_Data.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_153033/Desktop/Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_153033\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
-            "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Presentaion.pptx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_153033/Desktop/Customer_Satisfaction_Presentaion.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Presentaion.pptx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_153033\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
-            "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_153033/Desktop/Customer_Satisfaction_Presentaion.pptx",
+            "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Presentaion.pptx"
+        "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Presentaion.pptx"
       }
     }
   ],
@@ -38,12 +38,12 @@
     "func": "compare_pptx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
+      "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
       "dest": "Customer_Satisfaction_Presentaion.pptx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx",
+      "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx",
       "dest": "Customer_Satisfaction_Presentaion_gold.pptx"
     }
   }

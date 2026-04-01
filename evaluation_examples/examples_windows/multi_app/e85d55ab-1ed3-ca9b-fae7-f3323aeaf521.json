@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "e85d55ab-1ed3-ca9b-fae7-f3323aeaf521",
   "snapshot": "excel",
   "instruction": "Could you use the Mail Merge feature in Word to import the contact information from the Excel file?",
@@ -9,16 +9,16 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_091427\\Desktop\\Contact List.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Contact List.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Contact List.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_091427\\Desktop\\Invitation Mail Merge.docx",
-            "path": "C:\\Users\\78644\\Desktop\\Invitation Mail Merge.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Invitation Mail Merge.docx",
+            "path": "C:\\Users\\User\\Desktop\\Invitation Mail Merge.docx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_092035\\Desktop\\Invitation Final Version.docx",
-            "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_092035/Desktop/Invitation Final Version.docx",
+            "path": "C:\\Users\\User\\Documents\\Invitation Final Version_gold.docx"
           }
         ]
       }
@@ -26,7 +26,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Invitation Mail Merge.docx"
+        "path": "C:\\Users\\User\\Desktop\\Invitation Mail Merge.docx"
       }
     }
   ],
@@ -40,12 +40,12 @@
     "func": "compare_docx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Invitation Final Version.docx",
+      "path": "C:\\Users\\User\\Desktop\\Invitation Final Version.docx",
       "dest": "Invitation Final Version.docx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx",
+      "path": "C:\\Users\\User\\Documents\\Invitation Final Version_gold.docx",
       "dest": "Invitation Final Version_gold.docx"
     }
   }

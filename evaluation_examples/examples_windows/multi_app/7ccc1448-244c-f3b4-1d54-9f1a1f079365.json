@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "7ccc1448-244c-f3b4-1d54-9f1a1f079365",
   "snapshot": "excel",
   "instruction": "Could you generate individual invitations for each boss using the Mail Merge feature?",
@@ -9,8 +9,8 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_092035\\Desktop\\Invitation Final Version.docx",
-            "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_092035/Desktop/Invitation Final Version.docx",
+            "path": "C:\\Users\\User\\Documents\\Invitation Final Version_gold.docx"
           }
         ]
       }
@@ -24,12 +24,12 @@
     "func": "compare_docx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Invitation Final Version.docx",
+      "path": "C:\\Users\\User\\Desktop\\Invitation Final Version.docx",
       "dest": "Invitation Final Version.docx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx",
+      "path": "C:\\Users\\User\\Documents\\Invitation Final Version_gold.docx",
       "dest": "Invitation Final Version_gold.docx"
     }
   }

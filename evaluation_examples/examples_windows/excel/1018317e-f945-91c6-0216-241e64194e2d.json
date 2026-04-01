@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "1018317e-f945-91c6-0216-241e64194e2d",
   "snapshot": "excel",
   "instruction": "Could you apply conditional formatting to add data bars to the growth-rate column in Excel?",
@@ -9,12 +9,12 @@
       "parameters": {
         "files": [
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222104\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222104/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
           },
           {
-            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222149\\Desktop\\Book1.xlsx",
-            "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx"
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222149/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx"
           }
         ]
       }
@@ -22,7 +22,7 @@
     {
       "type": "open",
       "parameters": {
-        "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
       }
     }
   ],
@@ -34,12 +34,12 @@
     "func": "compare_xlsx_files",
     "result": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx",
+      "path": "C:\\Users\\User\\Desktop\\Book1.xlsx",
       "dest": "Book1.xlsx"
     },
     "expected": {
       "type": "vm_file",
-      "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx",
+      "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx",
       "dest": "Book1_gold.xlsx"
     },
     "options": {

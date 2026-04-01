@@ -241,3 +241,16 @@ scripts/bash/run_windows.bash
 evaluation_examples/settings/googledrive/credentials.json
 evaluation_examples/settings/googledrive/client_secrets.json
 evaluation_examples/settings/google/settings.json
+
+Microsoft/
+logs/
+command.txt
+test.py
+staged_files.txt
+scripts/bash/run_windows.bash
+evaluation_examples/settings/googledrive/credentials.json
+evaluation_examples/settings/googledrive/client_secrets.json
+evaluation_examples/settings/google/settings.json
+
+# legacy local-only example
+evaluation_examples/examples_windows/excel/8f3c2d91-6b4a-4e27-9c15-1f7a3b92d6e4.json

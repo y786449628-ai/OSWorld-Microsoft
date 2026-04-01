@@ -1,11 +1,15 @@
-import argparse
+﻿import argparse
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 from typing import Any
 
 import dashscope
+
+WORKSPACE = Path(r"C:\OSWorld")
+MICROSOFT_ROOT = WORKSPACE / "Microsoft"
 
 
 SYSTEM_PROMPT = """You are helping convert a complex desktop task into OSWorld-style atomic tasks.
@@ -56,6 +60,19 @@ def load_json(path: Path) -> Any:
 def save_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def to_repo_relative(path: Path) -> str:
+    return path.relative_to(WORKSPACE).as_posix()
+
+
+def materialize_resource(source: Path, resource_root: Path) -> Path:
+    relative = source.relative_to(MICROSOFT_ROOT)
+    destination = resource_root / relative
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if not destination.exists():
+        shutil.copy2(source, destination)
+    return destination
 
 
 def ensure_atomic_preview(
@@ -378,7 +395,7 @@ def choose_gold_file(text: str, files: list[Path], domain: str) -> tuple[Path | 
 
 
 def vm_user_path(filename: str, for_gold: bool = False) -> str:
-    base = r"C:\Users\78644\Documents" if for_gold else r"C:\Users\78644\Desktop"
+    base = r"C:\Users\User\Documents" if for_gold else r"C:\Users\User\Desktop"
     return str(Path(base) / filename)
 
 
@@ -392,15 +409,19 @@ def build_config(first_files: list[Path], open_file: Path | None, gold_file: Pat
         if path.name in seen_names:
             continue
         seen_names.add(path.name)
+        local_source = materialize_resource(path, WORKSPACE / "evaluation_examples" / "resources" / "windows_microsoft") \
+            if MICROSOFT_ROOT in path.parents else path
         uploads.append({
-            "local_path": str(path),
+            "local_path": to_repo_relative(local_source) if local_source.is_absolute() and WORKSPACE in local_source.parents else str(local_source),
             "path": vm_user_path(path.name, for_gold=False),
         })
 
     if gold_file is not None:
         gold_name = f"{gold_file.stem}_gold{gold_file.suffix}"
+        local_source = materialize_resource(gold_file, WORKSPACE / "evaluation_examples" / "resources" / "windows_microsoft") \
+            if MICROSOFT_ROOT in gold_file.parents else gold_file
         uploads.append({
-            "local_path": str(gold_file),
+            "local_path": to_repo_relative(local_source) if local_source.is_absolute() and WORKSPACE in local_source.parents else str(local_source),
             "path": vm_user_path(gold_name, for_gold=True),
         })
 
@@ -429,7 +450,7 @@ def build_evaluator(task_text: str, domain: str, gold_file: Path | None, compare
             "func": "check_file_exists",
             "result": {
                 "type": "vm_file",
-                "path": r"C:\Users\78644\Desktop\Record.lnk",
+                "path": r"C:\Users\User\Desktop\Record.lnk",
                 "dest": "Record.lnk",
             },
         }
@@ -562,3 +583,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
