@@ -254,3 +254,8 @@ evaluation_examples/settings/google/settings.json
 
 # legacy local-only example
 evaluation_examples/examples_windows/excel/8f3c2d91-6b4a-4e27-9c15-1f7a3b92d6e4.json
+
+# keep repo-managed Windows task resources even though they contain nested logs/ paths
+!evaluation_examples/resources/windows_microsoft/
+!evaluation_examples/resources/windows_microsoft/**/logs/
+!evaluation_examples/resources/windows_microsoft/**/logs/**
