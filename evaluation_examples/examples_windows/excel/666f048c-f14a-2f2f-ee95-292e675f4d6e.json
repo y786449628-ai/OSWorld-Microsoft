@@ -1,0 +1,51 @@
+{
+  "id": "666f048c-f14a-2f2f-ee95-292e675f4d6e",
+  "snapshot": "excel",
+  "instruction": "Could you enter and calculate the quarterly sales data in Microsoft Excel 365?",
+  "source": "Microsoft_07 atomic task 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_185641\\Desktop\\Sales_Data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sales_Data.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_185703\\Desktop\\Sales_Data.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Sales_Data_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Sales_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/666f048c-f14a-2f2f-ee95-292e675f4d6e",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Sales_Data.xlsx",
+      "dest": "Sales_Data.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Sales_Data_gold.xlsx",
+      "dest": "Sales_Data_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

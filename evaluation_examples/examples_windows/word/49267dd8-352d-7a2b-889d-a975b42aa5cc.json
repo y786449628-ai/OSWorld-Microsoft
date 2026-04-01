@@ -1,0 +1,40 @@
+{
+  "id": "49267dd8-352d-7a2b-889d-a975b42aa5cc",
+  "snapshot": "word",
+  "instruction": "Could you create a new landscape document in Word and insert a table?",
+  "source": "Microsoft_02 atomic task 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180728\\Desktop\\Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180803\\Desktop\\Doc1.docx",
+            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/49267dd8-352d-7a2b-889d-a975b42aa5cc",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    }
+  }
+}

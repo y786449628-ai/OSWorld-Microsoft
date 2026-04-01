@@ -1,0 +1,51 @@
+{
+  "id": "2cdadc4a-ec28-4fc7-8a2e-45bbaceae482",
+  "snapshot": "excel",
+  "instruction": "Could you create a new worksheet in Excel and enter the students' names along with their midterm and final Chinese test scores?",
+  "source": "Microsoft_02 atomic task 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180322\\Desktop\\Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180324\\Desktop\\Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Sheet1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2cdadc4a-ec28-4fc7-8a2e-45bbaceae482",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx",
+      "dest": "Sheet1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Sheet1_gold.xlsx",
+      "dest": "Sheet1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

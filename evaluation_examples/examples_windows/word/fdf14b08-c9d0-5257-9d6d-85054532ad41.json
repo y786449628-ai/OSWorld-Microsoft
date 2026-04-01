@@ -1,0 +1,50 @@
+{
+  "id": "fdf14b08-c9d0-5257-9d6d-85054532ad41",
+  "snapshot": "word",
+  "instruction": "Could you paste the formatted score data table with source formatting preserved in the middle-left cell of the Word table?",
+  "source": "Microsoft_02 atomic task 6",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180803\\Desktop\\Doc1.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180803\\Desktop\\Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_181207\\Desktop\\Doc1.docx",
+            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/fdf14b08-c9d0-5257-9d6d-85054532ad41",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    }
+  }
+}

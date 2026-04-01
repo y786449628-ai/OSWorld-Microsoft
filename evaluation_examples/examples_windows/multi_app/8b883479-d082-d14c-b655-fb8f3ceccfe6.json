@@ -1,0 +1,41 @@
+{
+  "id": "8b883479-d082-d14c-b655-fb8f3ceccfe6",
+  "snapshot": "excel",
+  "instruction": "Could you add a feature to select a specific day in the chart?",
+  "source": "Microsoft_10 atomic task 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_10\\logs\\MonitoringSnapshots\\20260105_192747\\Desktop\\final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/8b883479-d082-d14c-b655-fb8f3ceccfe6",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

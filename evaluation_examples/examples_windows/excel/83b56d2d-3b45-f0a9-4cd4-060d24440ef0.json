@@ -1,0 +1,51 @@
+{
+  "id": "83b56d2d-3b45-f0a9-4cd4-060d24440ef0",
+  "snapshot": "excel",
+  "instruction": "Could you merge the extracted revenue data into a consolidated table in Excel?",
+  "source": "Microsoft_04 atomic task 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_150302\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_150652\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/83b56d2d-3b45-f0a9-4cd4-060d24440ef0",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+      "dest": "Alphabet_Revenue_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
+      "dest": "Alphabet_Revenue_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

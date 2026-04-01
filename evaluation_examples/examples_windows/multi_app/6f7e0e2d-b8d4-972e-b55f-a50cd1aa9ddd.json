@@ -1,0 +1,41 @@
+{
+  "id": "6f7e0e2d-b8d4-972e-b55f-a50cd1aa9ddd",
+  "snapshot": "excel",
+  "instruction": "Could you save the updated report with the new chart and selection feature?",
+  "source": "Microsoft_10 atomic task 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_10\\logs\\MonitoringSnapshots\\20260105_192747\\Desktop\\final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/6f7e0e2d-b8d4-972e-b55f-a50cd1aa9ddd",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

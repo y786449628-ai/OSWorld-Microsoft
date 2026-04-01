@@ -1,0 +1,19 @@
+{
+  "id": "e5d413a8-e26d-0a14-f406-0d960239aadf",
+  "snapshot": "excel",
+  "instruction": "Could you create two subfolders inside the 'Records' folder, named according to box office criteria (e.g., 'Daily Box Office 50 Million +')?",
+  "source": "Microsoft_03 atomic task 2",
+  "config": [],
+  "trajectory": "trajectories/e5d413a8-e26d-0a14-f406-0d960239aadf",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "check_file_exists",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Record.lnk",
+      "dest": "Record.lnk"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "eccccd93-af1e-4bf4-47d8-bed479e78928",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document for the workshop invitations?",
+  "source": "Microsoft_05 atomic task 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_091342\\Desktop\\Contact List.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_091427\\Desktop\\Invitation Mail Merge.docx",
+            "path": "C:\\Users\\78644\\Documents\\Invitation Mail Merge_gold.docx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/eccccd93-af1e-4bf4-47d8-bed479e78928",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Invitation Mail Merge.docx",
+      "dest": "Invitation Mail Merge.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Invitation Mail Merge_gold.docx",
+      "dest": "Invitation Mail Merge_gold.docx"
+    }
+  }
+}

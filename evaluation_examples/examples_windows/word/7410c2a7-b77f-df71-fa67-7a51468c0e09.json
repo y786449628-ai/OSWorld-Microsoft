@@ -1,0 +1,36 @@
+{
+  "id": "7410c2a7-b77f-df71-fa67-7a51468c0e09",
+  "snapshot": "word",
+  "instruction": "Could you design the invitation template in Word, including placeholders for the company name, boss name, and business title?",
+  "source": "Microsoft_05 atomic task 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_092035\\Desktop\\Invitation Final Version.docx",
+            "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/7410c2a7-b77f-df71-fa67-7a51468c0e09",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Invitation Final Version.docx",
+      "dest": "Invitation Final Version.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx",
+      "dest": "Invitation Final Version_gold.docx"
+    }
+  }
+}

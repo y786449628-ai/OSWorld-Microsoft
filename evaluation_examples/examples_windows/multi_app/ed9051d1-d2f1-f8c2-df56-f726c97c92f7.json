@@ -1,0 +1,52 @@
+{
+  "id": "ed9051d1-d2f1-f8c2-df56-f726c97c92f7",
+  "snapshot": "excel",
+  "instruction": "Could you save the Word document and archive the Excel source data file synchronously?",
+  "source": "Microsoft_02 atomic task 8",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180803\\Desktop\\Doc1.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_180803\\Desktop\\Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_02\\logs\\MonitoringSnapshots\\20251210_181207\\Desktop\\Doc1.docx",
+            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/ed9051d1-d2f1-f8c2-df56-f726c97c92f7",
+  "related_apps": [
+    "excel",
+    "word",
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    }
+  }
+}

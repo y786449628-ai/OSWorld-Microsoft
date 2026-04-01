@@ -1,0 +1,51 @@
+{
+  "id": "430d5ad7-39d9-9a9d-fb2e-bca43ee7fd39",
+  "snapshot": "excel",
+  "instruction": "Could you save the final workbook in Excel?",
+  "source": "Microsoft_06 atomic task 7",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_06\\logs\\MonitoringSnapshots\\20251230_131032\\Desktop\\sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\sheet1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_06\\logs\\MonitoringSnapshots\\20251230_131141\\Desktop\\sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\sheet1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\sheet1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/430d5ad7-39d9-9a9d-fb2e-bca43ee7fd39",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\sheet1.xlsx",
+      "dest": "sheet1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\sheet1_gold.xlsx",
+      "dest": "sheet1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

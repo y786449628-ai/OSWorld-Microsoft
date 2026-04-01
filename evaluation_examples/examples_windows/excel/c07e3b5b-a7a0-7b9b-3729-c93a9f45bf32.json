@@ -1,0 +1,51 @@
+{
+  "id": "c07e3b5b-a7a0-7b9b-3729-c93a9f45bf32",
+  "snapshot": "excel",
+  "instruction": "Could you generate a clustered column chart based on the data in Excel?",
+  "source": "Microsoft_01 atomic task 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222149\\Desktop\\Book1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222307\\Desktop\\Book1.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/c07e3b5b-a7a0-7b9b-3729-c93a9f45bf32",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx",
+      "dest": "Book1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx",
+      "dest": "Book1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

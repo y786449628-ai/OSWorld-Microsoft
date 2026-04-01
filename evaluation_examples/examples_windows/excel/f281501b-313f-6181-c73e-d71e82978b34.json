@@ -1,0 +1,51 @@
+{
+  "id": "f281501b-313f-6181-c73e-d71e82978b34",
+  "snapshot": "excel",
+  "instruction": "Could you calculate the profitability for each customer in the Excel sheet?",
+  "source": "Microsoft_09 atomic task 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185343\\Desktop\\Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185418\\Desktop\\Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Customer_Profit_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/f281501b-313f-6181-c73e-d71e82978b34",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx",
+      "dest": "Customer_Profit_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Customer_Profit_Analysis_gold.xlsx",
+      "dest": "Customer_Profit_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "4d7318dd-e433-6d42-9163-0d08ed948899",
+  "snapshot": "excel",
+  "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price'?",
+  "source": "Microsoft_03 atomic task 4",
+  "config": [],
+  "trajectory": "trajectories/4d7318dd-e433-6d42-9163-0d08ed948899",
+  "related_apps": [
+    "excel",
+    "os"
+  ],
+  "evaluator": {
+    "func": "check_file_exists",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Record.lnk",
+      "dest": "Record.lnk"
+    }
+  }
+}

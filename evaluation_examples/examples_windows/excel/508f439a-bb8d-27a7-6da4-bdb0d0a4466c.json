@@ -1,0 +1,52 @@
+{
+  "id": "508f439a-bb8d-27a7-6da4-bdb0d0a4466c",
+  "snapshot": "excel",
+  "instruction": "Could you open the Excel file containing the distributor boss contact information?",
+  "source": "Microsoft_05 atomic task 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_091205\\Desktop\\Contact List.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_05\\logs\\MonitoringSnapshots\\20251230_091207\\Desktop\\Contact List.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Contact List_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/508f439a-bb8d-27a7-6da4-bdb0d0a4466c",
+  "related_apps": [
+    "excel",
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx",
+      "dest": "Contact List.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Contact List_gold.xlsx",
+      "dest": "Contact List_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

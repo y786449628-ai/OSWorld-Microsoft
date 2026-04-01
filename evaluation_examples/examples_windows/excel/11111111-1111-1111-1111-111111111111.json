@@ -1,0 +1,19 @@
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "snapshot": "file_explorer",
+  "instruction": "Create a new folder named \"TestFolder\" on the Desktop.",
+  "source": "sanity_check",
+  "config": [],
+  "trajectory": "trajectories/11111111-1111-1111-1111-111111111111",
+  "related_apps": [
+    "file_explorer"
+  ],
+  "evaluator": {
+    "func": "check_folder_exists",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\TestFolder",
+      "dest": "TestFolder"
+    }
+  }
+}

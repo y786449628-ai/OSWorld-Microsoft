@@ -1,0 +1,50 @@
+{
+  "id": "b22119c2-9407-e5c0-a788-44c643804625",
+  "snapshot": "word",
+  "instruction": "Could you save the Word document as a PDF?",
+  "source": "Microsoft_01 atomic task 7",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222601\\Desktop\\Book1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222601\\Desktop\\Doc1.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_01\\logs\\MonitoringSnapshots\\20251209_222625\\Desktop\\Doc1.pdf",
+            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/b22119c2-9407-e5c0-a788-44c643804625",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Doc1.pdf",
+      "dest": "Doc1.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.pdf",
+      "dest": "Doc1_gold.pdf"
+    }
+  }
+}

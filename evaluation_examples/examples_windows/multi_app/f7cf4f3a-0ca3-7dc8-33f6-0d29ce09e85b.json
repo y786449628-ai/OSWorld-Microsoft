@@ -1,0 +1,19 @@
+{
+  "id": "f7cf4f3a-0ca3-7dc8-33f6-0d29ce09e85b",
+  "snapshot": "excel",
+  "instruction": "Could you categorize the seven movie box office .jpg files from the 'Movie Box Office Data' folder based on whether the daily box office exceeds 50 million and move them into their respective category folders?",
+  "source": "Microsoft_03 atomic task 3",
+  "config": [],
+  "trajectory": "trajectories/f7cf4f3a-0ca3-7dc8-33f6-0d29ce09e85b",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "check_file_exists",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Record.lnk",
+      "dest": "Record.lnk"
+    }
+  }
+}

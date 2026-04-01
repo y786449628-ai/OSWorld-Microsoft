@@ -1,0 +1,51 @@
+{
+  "id": "444d0088-3b5e-8a88-daee-c1b9e13f0ace",
+  "snapshot": "excel",
+  "instruction": "Could you apply conditional formatting to highlight key insights in the Excel data?",
+  "source": "Microsoft_08 atomic task 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_151433\\Desktop\\Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_08\\logs\\MonitoringSnapshots\\20260104_151539\\Desktop\\Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Data_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/444d0088-3b5e-8a88-daee-c1b9e13f0ace",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Customer_Satisfaction_Data.xlsx",
+      "dest": "Customer_Satisfaction_Data.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Customer_Satisfaction_Data_gold.xlsx",
+      "dest": "Customer_Satisfaction_Data_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}

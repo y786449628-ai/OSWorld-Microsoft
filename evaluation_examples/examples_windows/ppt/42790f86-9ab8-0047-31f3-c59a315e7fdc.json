@@ -1,0 +1,50 @@
+{
+  "id": "42790f86-9ab8-0047-31f3-c59a315e7fdc",
+  "snapshot": "ppt",
+  "instruction": "Could you visualize the sales data with a chart in PowerPoint?",
+  "source": "Microsoft_07 atomic task 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_185908\\Desktop\\Sales_Data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sales_Data.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_185908\\Desktop\\Sales_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Sales_Presentation.pptx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_07\\logs\\MonitoringSnapshots\\20251230_190357\\Desktop\\Sales_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Sales_Presentation_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Sales_Presentation.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/42790f86-9ab8-0047-31f3-c59a315e7fdc",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Sales_Presentation.pptx",
+      "dest": "Sales_Presentation.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Sales_Presentation_gold.pptx",
+      "dest": "Sales_Presentation_gold.pptx"
+    }
+  }
+}

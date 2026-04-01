@@ -1,0 +1,40 @@
+{
+  "id": "80a6907c-812d-2fc7-6bc9-cf1b8576bfe4",
+  "snapshot": "word",
+  "instruction": "Could you open Microsoft Word 365 and create a new document for the analysis report?",
+  "source": "Microsoft_09 atomic task 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185643\\Desktop\\Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_09\\logs\\MonitoringSnapshots\\20260105_185656\\Desktop\\Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\78644\\Documents\\Customer_Profitability_Analysis_Report_gold.docx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/80a6907c-812d-2fc7-6bc9-cf1b8576bfe4",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Customer_Profitability_Analysis_Report.docx",
+      "dest": "Customer_Profitability_Analysis_Report.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Customer_Profitability_Analysis_Report_gold.docx",
+      "dest": "Customer_Profitability_Analysis_Report_gold.docx"
+    }
+  }
+}

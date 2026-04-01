@@ -1,0 +1,51 @@
+{
+  "id": "0c6a39df-a3d9-53e0-527a-6cb725077f17",
+  "snapshot": "excel",
+  "instruction": "Could you add a dual-axis chart to the dashboard to further analyze the revenue and YoY growth trends?",
+  "source": "Microsoft_04 atomic task 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_150302\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+          },
+          {
+            "local_path": "C:\\OSWorld\\Microsoft\\Microsoft_04\\logs\\MonitoringSnapshots\\20251229_151247\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0c6a39df-a3d9-53e0-527a-6cb725077f17",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+      "dest": "Alphabet_Revenue_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
+      "dest": "Alphabet_Revenue_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": false
+    }
+  }
+}
