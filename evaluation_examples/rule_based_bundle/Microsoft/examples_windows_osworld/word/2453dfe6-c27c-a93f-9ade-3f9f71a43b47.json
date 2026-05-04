@@ -1,0 +1,67 @@
+{
+  "id": "2453dfe6-c27c-a93f-9ade-3f9f71a43b47",
+  "snapshot": "word",
+  "instruction": "Could you create a new folder and a Word document for the project proposal template, and then set up styled headings in the Word document? Could you add a bulleted list for project phases in the Word document, and then create a resource planning table in the Word document, and then add document protection elements such as a watermark, header, and footer to the Word document, and then save the template in Word format?",
+  "source": "Microsoft_35 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_35/logs/MonitoringSnapshots/20260110_120706/Desktop/Project/Proposal.docx",
+            "path": "C:\\Users\\User\\Documents\\Proposal_gold.docx"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/2453dfe6-c27c-a93f-9ade-3f9f71a43b47",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project\\Proposal.docx",
+      "dest": "Proposal.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Proposal_gold.docx",
+      "dest": "Proposal_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Proposal.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

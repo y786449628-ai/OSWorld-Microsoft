@@ -1,0 +1,83 @@
+{
+  "id": "72ef1ca6-6b71-5274-762e-f551c8df7ad3",
+  "snapshot": "excel",
+  "instruction": "use Conditional Formatting to highlight overdue tasks in the 'Due Date' column, and then calculate the total estimated hours using the SUM function, and then insert a Pie Chart to visualize the distribution of tasks by status?",
+  "source": "Microsoft_40 true stage 7",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_40/logs/MonitoringSnapshots/20260110_203611/Desktop/Project_Task_Tracker.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Project_Task_Tracker.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_40/logs/MonitoringSnapshots/20260110_203708/Desktop/Project_Task_Tracker.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Task_Tracker_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project_Task_Tracker.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/72ef1ca6-6b71-5274-762e-f551c8df7ad3",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Task_Tracker.xlsx",
+      "dest": "Project_Task_Tracker.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Task_Tracker_gold.xlsx",
+      "dest": "Project_Task_Tracker_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Task_Tracker.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

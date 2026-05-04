@@ -1,0 +1,83 @@
+{
+  "id": "97c547b2-9e14-a24c-604d-fa541294fdfb",
+  "snapshot": "excel",
+  "instruction": "Could you use the table design function to remove duplicates from the table? Could you calculate the inventory value using functions and summarize it at the bottom of the table, and then create a pivot table based on the data? Could you complete the format settings for the pivot table?",
+  "source": "Microsoft_64 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_64/logs/MonitoringSnapshots/20260114_174550/Desktop/excel.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\excel.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_64/logs/MonitoringSnapshots/20260114_174711/Desktop/excel.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\excel_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\excel.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/97c547b2-9e14-a24c-604d-fa541294fdfb",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\excel.xlsx",
+      "dest": "excel.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\excel_gold.xlsx",
+      "dest": "excel_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "excel.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

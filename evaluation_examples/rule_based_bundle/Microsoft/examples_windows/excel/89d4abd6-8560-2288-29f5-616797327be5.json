@@ -1,0 +1,87 @@
+{
+  "id": "89d4abd6-8560-2288-29f5-616797327be5",
+  "snapshot": "excel",
+  "instruction": "Could you open Microsoft Excel 365 and input the customer profit data, and then save the Excel file as Customer_Profit_Analysis.xlsx?",
+  "source": "Microsoft_09 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_184745/Desktop/material/Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Customer_Profit_Analysis.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_184745/Desktop/material/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Customer_Profitability_Analysis_Report.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185341/Desktop/Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Customer_Profit_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Customer_Profit_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/89d4abd6-8560-2288-29f5-616797327be5",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx",
+      "dest": "Customer_Profit_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Customer_Profit_Analysis_gold.xlsx",
+      "dest": "Customer_Profit_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Customer_Profit_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

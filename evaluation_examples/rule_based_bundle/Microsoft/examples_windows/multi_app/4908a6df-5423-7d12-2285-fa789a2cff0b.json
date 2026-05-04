@@ -1,0 +1,90 @@
+{
+  "id": "4908a6df-5423-7d12-2285-fa789a2cff0b",
+  "snapshot": "excel",
+  "instruction": "Could you use the Mail Merge feature in Word to import the contact information from the Excel file and generate individual invitations for each boss?",
+  "source": "Microsoft_05 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Contact List.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Contact List.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Invitation Mail Merge.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Invitation Mail Merge.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Material/Boss information.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Boss information.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Material/Invitation.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Invitation.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_092035/Desktop/Invitation Final Version.docx",
+            "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Invitation Mail Merge.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/4908a6df-5423-7d12-2285-fa789a2cff0b",
+  "related_apps": [
+    "word",
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Invitation Final Version.docx",
+      "dest": "Invitation Final Version.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Invitation Final Version_gold.docx",
+      "dest": "Invitation Final Version_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Invitation Final Version.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

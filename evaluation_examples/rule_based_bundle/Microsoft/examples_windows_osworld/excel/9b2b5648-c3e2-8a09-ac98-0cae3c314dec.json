@@ -1,0 +1,83 @@
+{
+  "id": "9b2b5648-c3e2-8a09-ac98-0cae3c314dec",
+  "snapshot": "excel",
+  "instruction": "Could you create a dynamic inventory status dashboard in Excel to visualize the stock levels and sales revenue?",
+  "source": "Microsoft_52 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_52/logs/MonitoringSnapshots/20260110_151248/Desktop/Warehouse_Inventory.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Warehouse_Inventory.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_52/logs/MonitoringSnapshots/20260110_151339/Desktop/Warehouse_Inventory.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Warehouse_Inventory_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Warehouse_Inventory.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/9b2b5648-c3e2-8a09-ac98-0cae3c314dec",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Warehouse_Inventory.xlsx",
+      "dest": "Warehouse_Inventory.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Warehouse_Inventory_gold.xlsx",
+      "dest": "Warehouse_Inventory_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Warehouse_Inventory.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

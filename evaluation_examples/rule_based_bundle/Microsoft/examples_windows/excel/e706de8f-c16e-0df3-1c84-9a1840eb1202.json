@@ -1,0 +1,87 @@
+{
+  "id": "e706de8f-c16e-0df3-1c84-9a1840eb1202",
+  "snapshot": "excel",
+  "instruction": "Could you import the data from 'data.csv' into Excel?",
+  "source": "Microsoft_74 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_74/logs/MonitoringSnapshots/20260115_101220/Desktop/Freelancer_Data_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Freelancer_Data_Analysis.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_74/logs/MonitoringSnapshots/20260115_101220/Desktop/Material/data.csv",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\data.csv"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_74/logs/MonitoringSnapshots/20260115_101228/Desktop/Freelancer_Data_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Freelancer_Data_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Freelancer_Data_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/e706de8f-c16e-0df3-1c84-9a1840eb1202",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Freelancer_Data_Analysis.xlsx",
+      "dest": "Freelancer_Data_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Freelancer_Data_Analysis_gold.xlsx",
+      "dest": "Freelancer_Data_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Freelancer_Data_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

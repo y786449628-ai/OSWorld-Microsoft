@@ -1,0 +1,87 @@
+{
+  "id": "588157b8-8303-1a6b-b157-192bb249b4f1",
+  "snapshot": "excel",
+  "instruction": "Could you create a list of staff registered for the 3-day event in Excel, and then format the Excel list to make it easy to read and presentable for the boss, and then prepare a Word document to present the staff profiles to the boss? Could you copy the formatted staff list from Excel into the Word document? Could you save the final Word document with the staff profiles for the boss to view, and then add columns for join date, department, and current salary to the staff list in Excel? Could you fill in the join date, department, and current salary for each staff member in the Excel list?",
+  "source": "Microsoft_71 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_71/logs/MonitoringSnapshots/20260114_145733/Desktop/Material/Event Name List.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Event Name List.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_71/logs/MonitoringSnapshots/20260114_145733/Desktop/Material/Profile.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Profile.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_71/logs/MonitoringSnapshots/20260114_150944/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Event Name List.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/588157b8-8303-1a6b-b157-192bb249b4f1",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

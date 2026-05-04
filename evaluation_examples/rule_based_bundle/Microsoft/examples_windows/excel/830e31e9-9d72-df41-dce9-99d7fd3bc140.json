@@ -1,0 +1,91 @@
+{
+  "id": "830e31e9-9d72-df41-dce9-99d7fd3bc140",
+  "snapshot": "excel",
+  "instruction": "Could you enter and format structured campaign data in Excel 365, including applying precise formatting, formulas, and styles?",
+  "source": "Microsoft_22 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_010856/Desktop/material/Marketing_Campaign_Data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Marketing_Campaign_Data.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_010856/Desktop/material/Marketing_Performance_Report.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Marketing_Performance_Report.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_010856/Desktop/material/Marketing_Performance_Review.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Marketing_Performance_Review.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_011252/Desktop/material/Marketing_Campaign_Data.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Marketing_Campaign_Data_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Marketing_Campaign_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/830e31e9-9d72-df41-dce9-99d7fd3bc140",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\material\\Marketing_Campaign_Data.xlsx",
+      "dest": "Marketing_Campaign_Data.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Marketing_Campaign_Data_gold.xlsx",
+      "dest": "Marketing_Campaign_Data_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Marketing_Campaign_Data.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "48a460b9-823c-2297-bbe8-e5b631f71e83",
+  "snapshot": "ppt",
+  "instruction": "Could you design a 5-slide presentation with the following structure: Title Slide, Personal Introduction & Destination, Cultural Experiences, Academic Challenges & Growth, and Key Takeaways & Future Plans? Could you apply a unified design theme to the presentation?",
+  "source": "Microsoft_39 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_155918/Desktop/Material/R-C.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\R-C.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_155918/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\My_Study_Abroad_Experience.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_155942/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\78644\\Documents\\My_Study_Abroad_Experience_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\My_Study_Abroad_Experience.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/48a460b9-823c-2297-bbe8-e5b631f71e83",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\My_Study_Abroad_Experience.pptx",
+      "dest": "My_Study_Abroad_Experience.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\My_Study_Abroad_Experience_gold.pptx",
+      "dest": "My_Study_Abroad_Experience_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "My_Study_Abroad_Experience.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

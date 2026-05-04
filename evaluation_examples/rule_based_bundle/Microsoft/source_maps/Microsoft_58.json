@@ -1,0 +1,848 @@
+{
+  "source_name": "Microsoft_58",
+  "source_file": "Microsoft_58.txt",
+  "source_id": "cf7a625c7024",
+  "source_question": "Sales team provide each sales performance in one sheet, which including Target revenue, Sales revenue. Now Boss, want to review each sales person performance by Chart view.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the sales performance sheet and review the data including Target revenue and Sales revenue?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart to visualize each sales person's performance based on the provided data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you format the chart to make it clear and easy to understand for the boss's review?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_sales_performance_sheet",
+      "instruction": "Could you open the sales performance sheet and review the data including Target revenue and Sales revenue?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Excel, create a new workbook, and open the Material/Detail file.",
+      "planned_input_snapshot": "20260112_212927",
+      "planned_gold_snapshot": "20260112_213056",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 33 to 66 non-empty cells; new visible headers or values include: Achieve%, Y, Achieve%1, 1.1940298507462686, 9.5, 1.1940298507462686.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "add_calculated_columns_and_format",
+      "instruction": "Could you add calculated columns (Achieve%, Y, Achieve%1) and format them in the sales performance sheet?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Add and format new columns (Achieve%, Y, Achieve%1) in the spreadsheet.",
+      "planned_input_snapshot": "20260112_213056",
+      "planned_gold_snapshot": "20260112_213836",
+      "snapshot_evidence": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_and_format_chart",
+      "instruction": "Could you create a chart to visualize each sales person's performance based on the provided data? Could you format the chart to make it clear and easy to understand for the boss's review?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 32,
+      "trajectory_evidence": "Create and format a chart to visualize the sales performance data.",
+      "planned_input_snapshot": "20260112_213836",
+      "planned_gold_snapshot": "20260112_214804",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes. LLM assistance may be needed for visual and semantic evaluation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_final_result",
+      "instruction": "Could you save the final result as 'final result.xlsx'?",
+      "task_kind": "excel_create_or_save_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 33,
+      "trajectory_end": 33,
+      "trajectory_evidence": "Save the final result as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260112_214804",
+      "planned_gold_snapshot": "20260112_214806",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in the final snapshot transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_sales_performance_sheet_and_create_and_format_chart_and_save_final_result_and_add_calculated_columns_and_format",
+      "instruction": "Could you open the sales performance sheet and review the data including Target revenue and Sales revenue, and then create a chart to visualize each sales person's performance based on the provided data? Could you format the chart to make it clear and easy to understand for the boss's review, and then save the final result as 'final result.xlsx', and then add calculated columns (Achieve%, Y, Achieve%1) and format them in the sales performance sheet?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Open Excel, create a new workbook, and open the Material/Detail file. | Create and format a chart to visualize the sales performance data. | Save the final result as 'final result.xlsx'. | Add and format new columns (Achieve%, Y, Achieve%1) in the spreadsheet.",
+      "planned_input_snapshot": "20260112_212927",
+      "planned_gold_snapshot": "20260112_214806",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 33 to 66 non-empty cells; new visible headers or values include: Achieve%, Y, Achieve%1, 1.1940298507462686, 9.5, 1.1940298507462686. | New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260112_212927",
+      "gold_snapshot": "20260112_214806",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260112_212927",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_212927",
+          "planned_gold_snapshot": "20260112_213056"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 2,
+          "stage_name": "add_calculated_columns_and_format",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_sales_performance_sheet",
+        "create_and_format_chart",
+        "save_final_result",
+        "add_calculated_columns_and_format"
+      ],
+      "merged_stage_indices": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "generated_examples": [
+        {
+          "example_id": "594836f4-7b88-8879-e578-527c1d335c35",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/594836f4-7b88-8879-e578-527c1d335c35.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart to visualize each sales person's performance based on the provided data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you format the chart to make it clear and easy to understand for the boss's review?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260112_212927",
+    "20260112_213056",
+    "20260112_213836",
+    "20260112_214804",
+    "20260112_214806"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260112_212927",
+      "to": "20260112_213056",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 33 to 66 non-empty cells; new visible headers or values include: Achieve%, Y, Achieve%1, 1.1940298507462686, 9.5, 1.1940298507462686.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 33,
+            "to": 66
+          },
+          "headers": {
+            "from": [
+              "Name",
+              "Target Revenue",
+              "Sales Revenue",
+              "Jason",
+              "134",
+              "160"
+            ],
+            "to": [
+              "Name",
+              "Target Revenue",
+              "Sales Revenue",
+              "Achieve%",
+              "Y",
+              "Achieve%1",
+              "Jason",
+              "134",
+              "160",
+              "1.1940298507462686",
+              "9.5",
+              "1.1940298507462686"
+            ]
+          }
+        },
+        "headers_added": [
+          "Achieve%",
+          "Y",
+          "Achieve%1",
+          "1.1940298507462686",
+          "9.5",
+          "1.1940298507462686"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10196,
+              "to": 11220
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 33,
+                "to": 66
+              },
+              "headers": {
+                "from": [
+                  "Name",
+                  "Target Revenue",
+                  "Sales Revenue",
+                  "Jason",
+                  "134",
+                  "160"
+                ],
+                "to": [
+                  "Name",
+                  "Target Revenue",
+                  "Sales Revenue",
+                  "Achieve%",
+                  "Y",
+                  "Achieve%1",
+                  "Jason",
+                  "134",
+                  "160",
+                  "1.1940298507462686",
+                  "9.5",
+                  "1.1940298507462686"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260112_213056",
+      "to": "20260112_213836",
+      "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Name",
+              "Target Revenue",
+              "Sales Revenue",
+              "Achieve%",
+              "Y",
+              "Achieve%1",
+              "Jason",
+              "134",
+              "160",
+              "1.1940298507462686",
+              "9.5",
+              "1.1940298507462686"
+            ],
+            "to": [
+              "Name",
+              "Target Revenue",
+              "Sales Revenue",
+              "Achieve%",
+              "Y",
+              "Achieve%1",
+              "Jason",
+              "134",
+              "160",
+              "1.1940298507462686",
+              "9.5",
+              "1.1940298507462686"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11220,
+              "to": 18560
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Name",
+                  "Target Revenue",
+                  "Sales Revenue",
+                  "Achieve%",
+                  "Y",
+                  "Achieve%1",
+                  "Jason",
+                  "134",
+                  "160",
+                  "1.1940298507462686",
+                  "9.5",
+                  "1.1940298507462686"
+                ],
+                "to": [
+                  "Name",
+                  "Target Revenue",
+                  "Sales Revenue",
+                  "Achieve%",
+                  "Y",
+                  "Achieve%1",
+                  "Jason",
+                  "134",
+                  "160",
+                  "1.1940298507462686",
+                  "9.5",
+                  "1.1940298507462686"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260112_213836",
+      "to": "20260112_214804",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260112_214804",
+      "to": "20260112_214806",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_58",
+    "snapshot_count": 5,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260112_212927",
+        "to": "20260112_213056",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 33 to 66 non-empty cells; new visible headers or values include: Achieve%, Y, Achieve%1, 1.1940298507462686, 9.5, 1.1940298507462686.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 33,
+              "to": 66
+            },
+            "headers": {
+              "from": [
+                "Name",
+                "Target Revenue",
+                "Sales Revenue",
+                "Jason",
+                "134",
+                "160"
+              ],
+              "to": [
+                "Name",
+                "Target Revenue",
+                "Sales Revenue",
+                "Achieve%",
+                "Y",
+                "Achieve%1",
+                "Jason",
+                "134",
+                "160",
+                "1.1940298507462686",
+                "9.5",
+                "1.1940298507462686"
+              ]
+            }
+          },
+          "headers_added": [
+            "Achieve%",
+            "Y",
+            "Achieve%1",
+            "1.1940298507462686",
+            "9.5",
+            "1.1940298507462686"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10196,
+                "to": 11220
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 33,
+                  "to": 66
+                },
+                "headers": {
+                  "from": [
+                    "Name",
+                    "Target Revenue",
+                    "Sales Revenue",
+                    "Jason",
+                    "134",
+                    "160"
+                  ],
+                  "to": [
+                    "Name",
+                    "Target Revenue",
+                    "Sales Revenue",
+                    "Achieve%",
+                    "Y",
+                    "Achieve%1",
+                    "Jason",
+                    "134",
+                    "160",
+                    "1.1940298507462686",
+                    "9.5",
+                    "1.1940298507462686"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260112_213056",
+        "to": "20260112_213836",
+        "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Name",
+                "Target Revenue",
+                "Sales Revenue",
+                "Achieve%",
+                "Y",
+                "Achieve%1",
+                "Jason",
+                "134",
+                "160",
+                "1.1940298507462686",
+                "9.5",
+                "1.1940298507462686"
+              ],
+              "to": [
+                "Name",
+                "Target Revenue",
+                "Sales Revenue",
+                "Achieve%",
+                "Y",
+                "Achieve%1",
+                "Jason",
+                "134",
+                "160",
+                "1.1940298507462686",
+                "9.5",
+                "1.1940298507462686"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11220,
+                "to": 18560
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Name",
+                    "Target Revenue",
+                    "Sales Revenue",
+                    "Achieve%",
+                    "Y",
+                    "Achieve%1",
+                    "Jason",
+                    "134",
+                    "160",
+                    "1.1940298507462686",
+                    "9.5",
+                    "1.1940298507462686"
+                  ],
+                  "to": [
+                    "Name",
+                    "Target Revenue",
+                    "Sales Revenue",
+                    "Achieve%",
+                    "Y",
+                    "Achieve%1",
+                    "Jason",
+                    "134",
+                    "160",
+                    "1.1940298507462686",
+                    "9.5",
+                    "1.1940298507462686"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260112_213836",
+        "to": "20260112_214804",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260112_214804",
+        "to": "20260112_214806",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click D1 cell, and input \"Achieve%\", click E1 cell, and input \"Y\", select F1 cell and input \"Achieve%1\""
+    },
+    {
+      "index": 5,
+      "instruction": "Select D2 cell, and input \"=C2/B2\", then click D2 cell, click Ctrl+C, then click Menu---Home, click Percent Style."
+    },
+    {
+      "index": 6,
+      "instruction": "Select E2 cell, input \"0.5\", then select E3 cell, input \"1.5\", select E2, and E3 cell, then right click the Draw icon, then draw to E11 cell."
+    },
+    {
+      "index": 7,
+      "instruction": "Select F2 cell, input \"=IF(D2>1,D2,NA())\", then click F2 cell, click Ctrl+C, then click Menu---Home, click Percent Style"
+    },
+    {
+      "index": 8,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 9,
+      "instruction": "Select A1 cell to D11 cell, then click Menu---Insert, select Clustered Bar of 2-D Bar"
+    },
+    {
+      "index": 10,
+      "instruction": "Select Bar, then right click change series chart type, change Achieve% as Scatter, then click OK"
+    },
+    {
+      "index": 11,
+      "instruction": "Select Main Axis, right click and select format Axis, then select Categories in reverse order"
+    },
+    {
+      "index": 12,
+      "instruction": "Select secondary Axis, right click and select format Axis, then select Values in reverse order"
+    },
+    {
+      "index": 13,
+      "instruction": "Select Target bar, then right click, select Format data series, set Series Overlap as 100%, Gap width as 30%"
+    },
+    {
+      "index": 14,
+      "instruction": "Click Menu---Insert, select rectangular of Shapes, draw on O4 cell, then set size as 1cm height and 3.5cm width, No fill no line"
+    },
+    {
+      "index": 15,
+      "instruction": "Click Menu---Insert, select rectangular of Shapes, draw on O7 cell, then set size as 0.8cm height and 3.5cm width, Cyan fill no line"
+    },
+    {
+      "index": 16,
+      "instruction": "Select 2 rectangular, then click Menu---Shape Format, then click Align Center, then click Align Middle, then right click Group, click Ctrl+C"
+    },
+    {
+      "index": 17,
+      "instruction": "Click Sales Revenue bar, then right click, select format data series, click Fill and line, select picture or texture fill, then click clipboard"
+    },
+    {
+      "index": 18,
+      "instruction": "Right click chart, and select Select data, \tSelect Achieve%, then click Edit, Set Series X value as D2 cell to D11 cell, then set Y values as E2 cell to E11 cell."
+    },
+    {
+      "index": 19,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 20,
+      "instruction": "Select Chart, then click plus button, select Axes, then select Secondary Horizontal"
+    },
+    {
+      "index": 21,
+      "instruction": "Select Gridline, then click delete"
+    },
+    {
+      "index": 22,
+      "instruction": "Select Secondary Horizontal, right click, select Format Axis. Set Minimum as -10, Maxmium as 2, Select Automatic, click line and set solid line, Tick Marks Major type as none."
+    },
+    {
+      "index": 23,
+      "instruction": "Select Main Horizontal,  right click, select Format Axis. Set Minimum as 0, Maxmium as 400"
+    },
+    {
+      "index": 24,
+      "instruction": "Select Achieve% point, click plus button, and select error bar"
+    },
+    {
+      "index": 25,
+      "instruction": "Select vertical error bar, then click delete"
+    },
+    {
+      "index": 26,
+      "instruction": "Select horizon error bar, set Minus, No cap 100% percentage"
+    },
+    {
+      "index": 27,
+      "instruction": "Select Achieve% point, then select Marker as circle type, 6 size, Green color, No border"
+    },
+    {
+      "index": 28,
+      "instruction": "Right click chart, select Select data, then click add, series name as F1 cell, Series X value as F2 cell to F11 cell, Series Y value as E2 cell to E11 cell"
+    },
+    {
+      "index": 29,
+      "instruction": "Select Achieve%1 point, then select Marker as circle, type as 8 size, red color, No border"
+    },
+    {
+      "index": 30,
+      "instruction": "Click Sales Revenue bar, add data label, set center"
+    },
+    {
+      "index": 31,
+      "instruction": "Click Achieve% point, add data label, change label value as D2 cell to D11 cell, unselect Y value."
+    },
+    {
+      "index": 32,
+      "instruction": "Delete Chart title, remove data legend of Achieve% and Achieve%1"
+    },
+    {
+      "index": 33,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 34,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 5
+  }
+}

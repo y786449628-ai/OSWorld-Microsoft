@@ -1,0 +1,83 @@
+{
+  "id": "78346878-8f97-0cc1-6237-e19e5717b743",
+  "snapshot": "excel",
+  "instruction": "Could you handle blank data and incorrect data, filling in blank data and manually correcting the quantities with incorrect formats?",
+  "source": "Microsoft_64 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_64/logs/MonitoringSnapshots/20260114_174326/Desktop/excel.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\excel.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_64/logs/MonitoringSnapshots/20260114_174550/Desktop/excel.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\excel_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\excel.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/78346878-8f97-0cc1-6237-e19e5717b743",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\excel.xlsx",
+      "dest": "excel.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\excel_gold.xlsx",
+      "dest": "excel_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "excel.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "a609523b-0c67-7d7c-09d6-7dc2942ed1fd",
+  "snapshot": "excel",
+  "instruction": "Could you create a table in Excel to list the cities and the weight of products for each city, and then add the courier company's quotation for each city based on the weight of the products? Could you calculate the total delivery cost for each city in the Excel table, and then save the final Excel file?",
+  "source": "Microsoft_20 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_20/logs/MonitoringSnapshots/20260107_133949/Desktop/Material/Detail.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Detail.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_20/logs/MonitoringSnapshots/20260107_135410/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Detail.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/a609523b-0c67-7d7c-09d6-7dc2942ed1fd",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

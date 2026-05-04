@@ -1,0 +1,1335 @@
+{
+  "source_name": "Microsoft_29",
+  "source_file": "Microsoft_29.txt",
+  "source_id": "6e4d829c42a4",
+  "source_question": "Operation team export the sales performance for 3 teams, contain sales revenue and sales target. Now boss want to view each team member performance, and also want to check the gap for each month.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a sales performance table in Excel containing sales revenue and sales target for the 3 teams?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you add a column to calculate the gap between sales revenue and sales target for each month in the Excel table?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you prepare a report document in Word to present the sales performance of each team member?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you copy the sales performance data from Excel and paste it into the Word report document?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you format the Word report to clearly show the gap for each month and each team member's performance?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save the final Word report as a PDF for the boss to review?",
+      "mapped_stage_indices": [
+        7
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_sales_performance_table",
+      "instruction": "Could you create a sales performance table in Excel containing sales revenue and sales target for the 3 teams?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Open Excel, open Material/Detail.xlsx, enter data for Team, Staff, Sales Revenue, and Sales Target.",
+      "planned_input_snapshot": "20260110_122804",
+      "planned_gold_snapshot": "20260110_122921",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 70 to 76 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "add_gap_calculation_column",
+      "instruction": "Could you add a column to calculate the gap between sales revenue and sales target for each month in the Excel table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Add columns for Target1, Above, Below, Max, and Remark, and enter formulas to calculate the gaps and other metrics.",
+      "planned_input_snapshot": "20260110_122921",
+      "planned_gold_snapshot": "20260110_123602",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 94 to 124 non-empty cells; new visible headers or values include: Target1, Above, Below, Max, Remark.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_sales_performance_chart",
+      "instruction": "Could you create a chart in Excel to visualize the sales performance and gaps?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 28,
+      "trajectory_end": 41,
+      "trajectory_evidence": "Create a clustered column chart, format the chart, and add data labels.",
+      "planned_input_snapshot": "20260110_123602",
+      "planned_gold_snapshot": "20260110_124145",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "prepare_word_report",
+      "instruction": "Could you prepare a report document in Word to present the sales performance of each team member?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Save the final Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260110_124145",
+      "planned_gold_snapshot": "20260110_124147",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition. The stage needs to be merged with the next clipboard transfer step.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "copy_paste_sales_data_to_word",
+      "instruction": "Could you copy the sales performance data from Excel and paste it into the Word report document?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Save the final Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260110_124145",
+      "planned_gold_snapshot": "20260110_124147",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition. The stage needs to be merged with the previous and next steps.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "format_word_report",
+      "instruction": "Could you format the Word report to clearly show the gap for each month and each team member's performance?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Save the final Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260110_124145",
+      "planned_gold_snapshot": "20260110_124147",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition. The stage needs to be merged with the previous and next steps.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_word_report_as_pdf",
+      "instruction": "Could you save the final Word report as a PDF for the boss to review?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Save the final Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260110_124145",
+      "planned_gold_snapshot": "20260110_124147",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition. The stage needs to be merged with the previous and next steps.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_sales_performance_table",
+      "instruction": "Could you create a sales performance table in Excel containing sales revenue and sales target for the 3 teams?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Open Excel, open Material/Detail.xlsx, enter data for Team, Staff, Sales Revenue, and Sales Target.",
+      "planned_input_snapshot": "20260110_122804",
+      "planned_gold_snapshot": "20260110_122921",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 70 to 76 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260110_122804",
+      "gold_snapshot": "20260110_122921",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Material/Detail.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 70 to 76.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 11,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_122804",
+          "planned_gold_snapshot": "20260110_122921"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6b2481f7-41f6-a1b7-a0d8-79c95ece60bb",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/6b2481f7-41f6-a1b7-a0d8-79c95ece60bb.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "add_gap_calculation_column",
+      "instruction": "Could you add a column to calculate the gap between sales revenue and sales target for each month in the Excel table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Add columns for Target1, Above, Below, Max, and Remark, and enter formulas to calculate the gaps and other metrics.",
+      "planned_input_snapshot": "20260110_122921",
+      "planned_gold_snapshot": "20260110_123602",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 94 to 124 non-empty cells; new visible headers or values include: Target1, Above, Below, Max, Remark.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260110_122921",
+      "gold_snapshot": "20260110_123602",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Material/Detail.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 76 to 94.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_123602",
+        "trajectory_window": {
+          "trajectory_start": 12,
+          "trajectory_end": 27,
+          "search_start_index": 2,
+          "search_end_index": 3,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_122921",
+          "planned_gold_snapshot": "20260110_123602"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6bebc103-66e3-d855-f3aa-79e4eca06159",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/6bebc103-66e3-d855-f3aa-79e4eca06159.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_sales_performance_chart_and_prepare_word_report_and_copy_paste_sales_data_to_word_and_format_word_report_and_save_word_report_as_pdf",
+      "instruction": "Could you create a chart in Excel to visualize the sales performance and gaps, and then prepare a report document in Word to present the sales performance of each team member, and then copy the sales performance data from Excel and paste it into the Word report document, and then format the Word report to clearly show the gap for each month and each team member's performance, and then save the final Word report as a PDF for the boss to review?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 28,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Create a clustered column chart, format the chart, and add data labels. | Save the final Excel file as 'final result.xlsx'. | Save the final Excel file as 'final result.xlsx'. | Save the final Excel file as 'final result.xlsx'. | Save the final Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260110_123602",
+      "planned_gold_snapshot": "20260110_124147",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260110_123602",
+      "gold_snapshot": "20260110_124147",
+      "linked_preview_tasks": [],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook chart growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 7,
+          "stage_name": "save_word_report_as_pdf",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_sales_performance_chart",
+        "prepare_word_report",
+        "copy_paste_sales_data_to_word",
+        "format_word_report",
+        "save_word_report_as_pdf"
+      ],
+      "merged_stage_indices": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "generated_examples": [
+        {
+          "example_id": "084f5a56-2d7c-53c2-7462-ccd0617a4020",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/084f5a56-2d7c-53c2-7462-ccd0617a4020.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260110_122804",
+    "20260110_122921",
+    "20260110_123214",
+    "20260110_123602",
+    "20260110_124145",
+    "20260110_124147"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_122804",
+      "to": "20260110_122921",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 70 to 76 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 70,
+            "to": 76
+          },
+          "headers": {
+            "from": [
+              "Month",
+              "Team",
+              "Staff",
+              "Sales Revenue",
+              "Sales Target",
+              "Jan",
+              "Team3",
+              "Jim",
+              "2000",
+              "5000"
+            ],
+            "to": [
+              "Month",
+              "Team",
+              "Staff",
+              "Sales Revenue",
+              "Sales Target",
+              "Team",
+              "Jan",
+              "Team3",
+              "Jim",
+              "2000",
+              "5000"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10798,
+              "to": 11023
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 70,
+                "to": 76
+              },
+              "headers": {
+                "from": [
+                  "Month",
+                  "Team",
+                  "Staff",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Jan",
+                  "Team3",
+                  "Jim",
+                  "2000",
+                  "5000"
+                ],
+                "to": [
+                  "Month",
+                  "Team",
+                  "Staff",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Team",
+                  "Jan",
+                  "Team3",
+                  "Jim",
+                  "2000",
+                  "5000"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_122921",
+      "to": "20260110_123214",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 76 to 94 non-empty cells; new visible headers or values include: Team1.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 76,
+            "to": 94
+          },
+          "headers": {
+            "from": [
+              "Month",
+              "Team",
+              "Staff",
+              "Sales Revenue",
+              "Sales Target",
+              "Team",
+              "Jan",
+              "Team3",
+              "Jim",
+              "2000",
+              "5000"
+            ],
+            "to": [
+              "Month",
+              "Team",
+              "Staff",
+              "Sales Revenue",
+              "Sales Target",
+              "Team",
+              "Team1",
+              "Sales Revenue",
+              "Sales Target",
+              "Jan",
+              "Team3",
+              "Jim",
+              "2000",
+              "5000"
+            ]
+          }
+        },
+        "headers_added": [
+          "Team1"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11023,
+              "to": 12259
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 76,
+                "to": 94
+              },
+              "headers": {
+                "from": [
+                  "Month",
+                  "Team",
+                  "Staff",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Team",
+                  "Jan",
+                  "Team3",
+                  "Jim",
+                  "2000",
+                  "5000"
+                ],
+                "to": [
+                  "Month",
+                  "Team",
+                  "Staff",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Team",
+                  "Team1",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Jan",
+                  "Team3",
+                  "Jim",
+                  "2000",
+                  "5000"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_123214",
+      "to": "20260110_123602",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 94 to 124 non-empty cells; new visible headers or values include: Target1, Above, Below, Max, Remark.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 94,
+            "to": 124
+          },
+          "headers": {
+            "from": [
+              "Month",
+              "Team",
+              "Staff",
+              "Sales Revenue",
+              "Sales Target",
+              "Team",
+              "Team1",
+              "Sales Revenue",
+              "Sales Target",
+              "Jan",
+              "Team3",
+              "Jim",
+              "2000",
+              "5000"
+            ],
+            "to": [
+              "Month",
+              "Team",
+              "Staff",
+              "Sales Revenue",
+              "Sales Target",
+              "Team",
+              "Team1",
+              "Sales Target",
+              "Target1",
+              "Above",
+              "Below",
+              "Sales Revenue",
+              "Max",
+              "Remark",
+              "Jan",
+              "Team3",
+              "Jim",
+              "2000",
+              "5000"
+            ]
+          }
+        },
+        "headers_added": [
+          "Target1",
+          "Above",
+          "Below",
+          "Max",
+          "Remark"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12259,
+              "to": 12842
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 94,
+                "to": 124
+              },
+              "headers": {
+                "from": [
+                  "Month",
+                  "Team",
+                  "Staff",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Team",
+                  "Team1",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Jan",
+                  "Team3",
+                  "Jim",
+                  "2000",
+                  "5000"
+                ],
+                "to": [
+                  "Month",
+                  "Team",
+                  "Staff",
+                  "Sales Revenue",
+                  "Sales Target",
+                  "Team",
+                  "Team1",
+                  "Sales Target",
+                  "Target1",
+                  "Above",
+                  "Below",
+                  "Sales Revenue",
+                  "Max",
+                  "Remark",
+                  "Jan",
+                  "Team3",
+                  "Jim",
+                  "2000",
+                  "5000"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_123602",
+      "to": "20260110_124145",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_124145",
+      "to": "20260110_124147",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_29",
+    "snapshot_count": 6,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_122804",
+        "to": "20260110_122921",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 70 to 76 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 70,
+              "to": 76
+            },
+            "headers": {
+              "from": [
+                "Month",
+                "Team",
+                "Staff",
+                "Sales Revenue",
+                "Sales Target",
+                "Jan",
+                "Team3",
+                "Jim",
+                "2000",
+                "5000"
+              ],
+              "to": [
+                "Month",
+                "Team",
+                "Staff",
+                "Sales Revenue",
+                "Sales Target",
+                "Team",
+                "Jan",
+                "Team3",
+                "Jim",
+                "2000",
+                "5000"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10798,
+                "to": 11023
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 70,
+                  "to": 76
+                },
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Team",
+                    "Staff",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Jan",
+                    "Team3",
+                    "Jim",
+                    "2000",
+                    "5000"
+                  ],
+                  "to": [
+                    "Month",
+                    "Team",
+                    "Staff",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Team",
+                    "Jan",
+                    "Team3",
+                    "Jim",
+                    "2000",
+                    "5000"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_122921",
+        "to": "20260110_123214",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 76 to 94 non-empty cells; new visible headers or values include: Team1.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 76,
+              "to": 94
+            },
+            "headers": {
+              "from": [
+                "Month",
+                "Team",
+                "Staff",
+                "Sales Revenue",
+                "Sales Target",
+                "Team",
+                "Jan",
+                "Team3",
+                "Jim",
+                "2000",
+                "5000"
+              ],
+              "to": [
+                "Month",
+                "Team",
+                "Staff",
+                "Sales Revenue",
+                "Sales Target",
+                "Team",
+                "Team1",
+                "Sales Revenue",
+                "Sales Target",
+                "Jan",
+                "Team3",
+                "Jim",
+                "2000",
+                "5000"
+              ]
+            }
+          },
+          "headers_added": [
+            "Team1"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11023,
+                "to": 12259
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 76,
+                  "to": 94
+                },
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Team",
+                    "Staff",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Team",
+                    "Jan",
+                    "Team3",
+                    "Jim",
+                    "2000",
+                    "5000"
+                  ],
+                  "to": [
+                    "Month",
+                    "Team",
+                    "Staff",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Team",
+                    "Team1",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Jan",
+                    "Team3",
+                    "Jim",
+                    "2000",
+                    "5000"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_123214",
+        "to": "20260110_123602",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 94 to 124 non-empty cells; new visible headers or values include: Target1, Above, Below, Max, Remark.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 94,
+              "to": 124
+            },
+            "headers": {
+              "from": [
+                "Month",
+                "Team",
+                "Staff",
+                "Sales Revenue",
+                "Sales Target",
+                "Team",
+                "Team1",
+                "Sales Revenue",
+                "Sales Target",
+                "Jan",
+                "Team3",
+                "Jim",
+                "2000",
+                "5000"
+              ],
+              "to": [
+                "Month",
+                "Team",
+                "Staff",
+                "Sales Revenue",
+                "Sales Target",
+                "Team",
+                "Team1",
+                "Sales Target",
+                "Target1",
+                "Above",
+                "Below",
+                "Sales Revenue",
+                "Max",
+                "Remark",
+                "Jan",
+                "Team3",
+                "Jim",
+                "2000",
+                "5000"
+              ]
+            }
+          },
+          "headers_added": [
+            "Target1",
+            "Above",
+            "Below",
+            "Max",
+            "Remark"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 12259,
+                "to": 12842
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 94,
+                  "to": 124
+                },
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Team",
+                    "Staff",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Team",
+                    "Team1",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Jan",
+                    "Team3",
+                    "Jim",
+                    "2000",
+                    "5000"
+                  ],
+                  "to": [
+                    "Month",
+                    "Team",
+                    "Staff",
+                    "Sales Revenue",
+                    "Sales Target",
+                    "Team",
+                    "Team1",
+                    "Sales Target",
+                    "Target1",
+                    "Above",
+                    "Below",
+                    "Sales Revenue",
+                    "Max",
+                    "Remark",
+                    "Jan",
+                    "Team3",
+                    "Jim",
+                    "2000",
+                    "5000"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_123602",
+        "to": "20260110_124145",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_124145",
+        "to": "20260110_124147",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click H1 cell, then input \"Team\"; select H2 cell, input \"Staff1\"; then draw the H2 cell to H6 cell"
+    },
+    {
+      "index": 5,
+      "instruction": "Click I1 cell, then click Menu---Data, find and click Data Validation"
+    },
+    {
+      "index": 6,
+      "instruction": "Select List from Allow, then input \"Team1, Team2, Team3\" in the Source, then click OK button"
+    },
+    {
+      "index": 7,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 8,
+      "instruction": "Click I2 cell, input \"=TOCOL(IF(B2:B14=I1,C2:C14,x),2)\""
+    },
+    {
+      "index": 9,
+      "instruction": "Click J1 cell, input \"Sales Revenue\", select K1 cell, input \"Sales Target\""
+    },
+    {
+      "index": 10,
+      "instruction": "Click J2 cell, input \"=VLOOKUP(I2,C:E,2,FALSE)\", click K2 cell, input \"=VLOOKUP(I2,C:E,3,FALSE)\""
+    },
+    {
+      "index": 11,
+      "instruction": "Select J2 cell to K2 cell, then click Ctrl+C, select J3 cell to K6 cell, click Ctrl+V"
+    },
+    {
+      "index": 12,
+      "instruction": "Select H1 cell to K6 cell, click Menu---Home, then click All Borders"
+    },
+    {
+      "index": 13,
+      "instruction": "Select H1 cell to K1 cell, click Menu---Home, click Bold"
+    },
+    {
+      "index": 14,
+      "instruction": "Select J2 cell to K2 cell, click Menu---Percent Style, then click decrease decimal twice"
+    },
+    {
+      "index": 15,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 16,
+      "instruction": "Select Column K, then click Ctrl+X, then select Column J, right click and select Insert cut cells."
+    },
+    {
+      "index": 17,
+      "instruction": "Select Column K, then right click, select insert, input K1 cell, input \"Target1\"c"
+    },
+    {
+      "index": 18,
+      "instruction": "Select K2 cell, input \"=IF(L2>J2,J2,L2)\", double click K2 draw icon."
+    },
+    {
+      "index": 19,
+      "instruction": "Select Column L, then right click, select insert, input L1 cell, input \"Above\""
+    },
+    {
+      "index": 20,
+      "instruction": "Select L2 cell, input \"=IF(M2>J2,M2-J2,NA())\", double click L2 draw icon."
+    },
+    {
+      "index": 21,
+      "instruction": "Select Column M, then right click, select insert, input M1 cell, input \"Below\""
+    },
+    {
+      "index": 22,
+      "instruction": "Select M2 cell, input \"=IF(N2<J2,J2-N2,NA())\", double click M2 draw icon."
+    },
+    {
+      "index": 23,
+      "instruction": "Select O1 cell, input \"Max\""
+    },
+    {
+      "index": 24,
+      "instruction": "Select O2 cell, input \"=MAX(J2,N2)\", double click O2 draw icon."
+    },
+    {
+      "index": 25,
+      "instruction": "Select P1 cell, input \"Remark\""
+    },
+    {
+      "index": 26,
+      "instruction": "Select P2 cell, input \"=IF(J2>N2,\"Below\",\"Above\")&TEXT(ABS(N2-J2)/J2,\"0.00%\")\", double click P2 draw icon"
+    },
+    {
+      "index": 27,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 28,
+      "instruction": "Select I1 cell to M6 cell, click Menu---Insert, then click Cluster column of 2-D Column"
+    },
+    {
+      "index": 29,
+      "instruction": "Select column, then right click, select Change Series Chart Type."
+    },
+    {
+      "index": 30,
+      "instruction": "Change Target1, Above, Below column as Secondary Axis and Stacked Column"
+    },
+    {
+      "index": 31,
+      "instruction": "Right click Verticle Axis, click format axis, then set maximum as 7000"
+    },
+    {
+      "index": 32,
+      "instruction": "Select Target1 column, then right click, select format data series."
+    },
+    {
+      "index": 33,
+      "instruction": "Set Gap width as 400%."
+    },
+    {
+      "index": 34,
+      "instruction": "Select Sales Target column, then right click, select format data series."
+    },
+    {
+      "index": 35,
+      "instruction": "Set Gap width as 100%. Then click Fill, select light blue, then click line, set color as black"
+    },
+    {
+      "index": 36,
+      "instruction": "Right click Chart, then select Select Data, click Add, series name as O1 cell, Series value from O2 cell to O6 cell"
+    },
+    {
+      "index": 37,
+      "instruction": "Right click Max column, right click, select Change Series Chart Type, then change chart type as Scatter chart."
+    },
+    {
+      "index": 38,
+      "instruction": "Click Max point, then right click, select Add Data Labels. Right click Data labels, then click Format Data labels"
+    },
+    {
+      "index": 39,
+      "instruction": "Select Value from Cells, select P2 cell to P6 cell, unselect Y value. Select Above."
+    },
+    {
+      "index": 40,
+      "instruction": "Select Max point, then right click, select Format Data series, click Fill & Line, then click Marker, select no fill, select no line."
+    },
+    {
+      "index": 41,
+      "instruction": "Select I1 cell, then select Team2 and Team3, to check if chart refresh"
+    },
+    {
+      "index": 42,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 43,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 3,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 6
+  }
+}

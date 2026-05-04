@@ -1,0 +1,81 @@
+{
+  "id": "0bce102a-c7e9-a663-3549-227ec8b8f427",
+  "snapshot": "ppt",
+  "instruction": "Could you run the slideshow and save the presentation as 'Alpha_Final_Report.pptx'?",
+  "source": "Microsoft_55 true stage 7",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100732/Desktop/Alpha_Fiancials.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Alpha_Fiancials.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100732/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100924/Desktop/Alpha_Final_Report.pptx",
+            "path": "C:\\Users\\User\\Documents\\Alpha_Final_Report_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0bce102a-c7e9-a663-3549-227ec8b8f427",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Alpha_Final_Report.pptx",
+      "dest": "Alpha_Final_Report.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Alpha_Final_Report_gold.pptx",
+      "dest": "Alpha_Final_Report_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Alpha_Final_Report.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

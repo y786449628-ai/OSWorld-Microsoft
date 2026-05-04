@@ -1,0 +1,87 @@
+{
+  "id": "1d7b70f0-9538-fea9-d213-988fcf89ad44",
+  "snapshot": "excel",
+  "instruction": "Could you open the Excel file containing the distributor boss contact information?",
+  "source": "Microsoft_05 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091056/Desktop/Material/Boss information.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Boss information.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091056/Desktop/Material/Invitation.docx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Invitation.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091205/Desktop/Contact List.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Contact List_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Boss information.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/1d7b70f0-9538-fea9-d213-988fcf89ad44",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Contact List.xlsx",
+      "dest": "Contact List.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Contact List_gold.xlsx",
+      "dest": "Contact List_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Contact List.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

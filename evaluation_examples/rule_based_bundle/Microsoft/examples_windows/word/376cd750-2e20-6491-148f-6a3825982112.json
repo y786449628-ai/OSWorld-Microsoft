@@ -1,0 +1,81 @@
+{
+  "id": "376cd750-2e20-6491-148f-6a3825982112",
+  "snapshot": "word",
+  "instruction": "Could you insert a 2-column table to itemize specific issues in the complaint letter template? Could you include a placeholder for a digital signature in the complaint letter template?",
+  "source": "Microsoft_41 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144337/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Formal_Complaint_Letter_Template.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144337/Desktop/Material/a463-icapxph6773606.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\a463-icapxph6773606.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144544/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\78644\\Documents\\Formal_Complaint_Letter_Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Formal_Complaint_Letter_Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/376cd750-2e20-6491-148f-6a3825982112",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Formal_Complaint_Letter_Template.docx",
+      "dest": "Formal_Complaint_Letter_Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Formal_Complaint_Letter_Template_gold.docx",
+      "dest": "Formal_Complaint_Letter_Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Formal_Complaint_Letter_Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

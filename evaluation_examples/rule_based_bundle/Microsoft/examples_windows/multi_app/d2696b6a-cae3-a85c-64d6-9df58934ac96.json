@@ -1,0 +1,29 @@
+{
+  "id": "d2696b6a-cae3-a85c-64d6-9df58934ac96",
+  "snapshot": "excel",
+  "instruction": "Could you create a new folder named 'Template' directly on the cloud computer desktop?",
+  "source": "Microsoft_67 true stage 1",
+  "config": [],
+  "trajectory": "trajectories/d2696b6a-cae3-a85c-64d6-9df58934ac96",
+  "related_apps": [],
+  "evaluator": {
+    "func": "compare_directory_tree",
+    "result": {
+      "type": "list_directory",
+      "path": "C:\\Users\\78644\\Desktop"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "dirs": [
+          "Template"
+        ],
+        "files": [],
+        "allow_extra": true
+      }
+    },
+    "options": {
+      "min_nontrivial_actions": 1
+    }
+  }
+}

@@ -1,0 +1,592 @@
+{
+  "source_name": "Microsoft_21",
+  "snapshot_count": 21,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260106_205053",
+      "to": "20260106_205057",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260106_205057",
+      "to": "20260106_205125",
+      "human_summary": "New directories appeared: Meeting_Materials.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Meeting_Materials"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Materials/New Microsoft Word Document.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [
+          "Meeting_Materials"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260106_205125",
+      "to": "20260106_205129",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Meeting_Materials/Meeting_Minutes_Template.docx"
+        ],
+        "files_removed": [
+          "Meeting_Materials/New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Materials/Meeting_Minutes_Template.docx"
+        ],
+        "files_removed": [
+          "Meeting_Materials/New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260106_205129",
+      "to": "20260106_205134",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260106_205134",
+      "to": "20260106_205238",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 0,
+              "to": 13477
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13477
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260106_205238",
+      "to": "20260106_205349",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 13477,
+              "to": 14724
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13477,
+              "to": 14724
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260106_205349",
+      "to": "20260106_205529",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 14724,
+              "to": 15006
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14724,
+              "to": 15006
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260106_205529",
+      "to": "20260106_205614",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 15006,
+              "to": 15051
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15006,
+              "to": 15051
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260106_205614",
+      "to": "20260106_205912",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 15051,
+              "to": 24569
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15051,
+              "to": 24569
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260106_205912",
+      "to": "20260106_210000",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 24569,
+              "to": 24647
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24569,
+              "to": 24647
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260106_210000",
+      "to": "20260106_210011",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 24647,
+              "to": 20665
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24647,
+              "to": 20665
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260106_210011",
+      "to": "20260106_210156",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 20665,
+              "to": 22057
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 20665,
+              "to": 22057
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260106_210156",
+      "to": "20260106_210241",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 22057,
+              "to": 22226
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22057,
+              "to": 22226
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260106_210241",
+      "to": "20260106_210252",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 22226,
+              "to": 22305
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22226,
+              "to": 22305
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260106_210252",
+      "to": "20260106_210404",
+      "human_summary": "New files appeared: Meeting_Minutes_Template.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Meeting_Minutes_Template.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Minutes_Template.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260106_210404",
+      "to": "20260106_210406",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260106_210406",
+      "to": "20260106_210458",
+      "human_summary": "New files appeared: Meeting_Minutes_Template.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Meeting_Minutes_Template.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Minutes_Template.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260106_210458",
+      "to": "20260106_210510",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260106_210510",
+      "to": "20260106_210530",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 22303,
+              "to": 22340
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22303,
+              "to": 22340
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20260106_210530",
+      "to": "20260106_210532",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

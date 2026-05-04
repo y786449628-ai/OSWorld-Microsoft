@@ -1,0 +1,77 @@
+{
+  "id": "ee9eb408-b1b3-d2a4-37b7-4ff760e6eee0",
+  "snapshot": "word",
+  "instruction": "Could you design a professional one-page business memo in the document to communicate a project's progress to stakeholders? Could you add a company letterhead section with a logo placeholder and the current date at the top of the memo? Could you include a clear 'MEMORANDUM' header with standard 'TO:', 'FROM:', 'DATE:', and 'SUBJECT:' fields?",
+  "source": "Microsoft_69 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_161929/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162027/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/ee9eb408-b1b3-d2a4-37b7-4ff760e6eee0",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx",
+      "dest": "Project_Status_Report_Memo.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.docx",
+      "dest": "Project_Status_Report_Memo_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Report_Memo.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

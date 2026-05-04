@@ -1,0 +1,29 @@
+{
+  "id": "c34997f8-1794-6edd-a672-e8b11837ec8c",
+  "snapshot": "excel",
+  "instruction": "Could you create a new folder named 'Templates' directly on your cloud computer desktop?",
+  "source": "Microsoft_68 true stage 1",
+  "config": [],
+  "trajectory": "trajectories/c34997f8-1794-6edd-a672-e8b11837ec8c",
+  "related_apps": [],
+  "evaluator": {
+    "func": "compare_directory_tree",
+    "result": {
+      "type": "list_directory",
+      "path": "C:\\Users\\78644\\Desktop"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "dirs": [
+          "Templates"
+        ],
+        "files": [],
+        "allow_extra": true
+      }
+    },
+    "options": {
+      "min_nontrivial_actions": 1
+    }
+  }
+}

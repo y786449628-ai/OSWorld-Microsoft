@@ -1,0 +1,77 @@
+{
+  "id": "d7e0c59f-597e-6ba0-170e-b7a82af3c07d",
+  "snapshot": "word",
+  "instruction": "Could you insert a table to list upcoming milestones with dates and owners? Could you add a formal closing with signature lines at the end of the memo?",
+  "source": "Microsoft_69 true stage 4",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162229/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162332/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/d7e0c59f-597e-6ba0-170e-b7a82af3c07d",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx",
+      "dest": "Project_Status_Report_Memo.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.docx",
+      "dest": "Project_Status_Report_Memo_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Report_Memo.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "source_name": "Microsoft_57",
+  "snapshot_count": 4,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260112_192307",
+      "to": "20260112_192703",
+      "human_summary": "Material/Detail1.xlsx changed: spreadsheet content changed from 60 to 126 non-empty cells; new visible headers or values include: Sales Team, Peter, 45482, 1750.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 60,
+            "to": 126
+          },
+          "headers": {
+            "from": [
+              "Department",
+              "Name",
+              "Gender",
+              "Join Date",
+              "Salary",
+              "Service Team",
+              "Felix",
+              "M",
+              "44245",
+              "1500"
+            ],
+            "to": [
+              "Department",
+              "Name",
+              "Gender",
+              "Join Date",
+              "Salary",
+              "Service Team",
+              "Felix",
+              "M",
+              "44245",
+              "1500",
+              "Sales Team",
+              "Peter",
+              "M",
+              "45482",
+              "1750"
+            ]
+          }
+        },
+        "headers_added": [
+          "Sales Team",
+          "Peter",
+          "45482",
+          "1750"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 18786,
+              "to": 20955
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 60,
+                "to": 126
+              },
+              "headers": {
+                "from": [
+                  "Department",
+                  "Name",
+                  "Gender",
+                  "Join Date",
+                  "Salary",
+                  "Service Team",
+                  "Felix",
+                  "M",
+                  "44245",
+                  "1500"
+                ],
+                "to": [
+                  "Department",
+                  "Name",
+                  "Gender",
+                  "Join Date",
+                  "Salary",
+                  "Service Team",
+                  "Felix",
+                  "M",
+                  "44245",
+                  "1500",
+                  "Sales Team",
+                  "Peter",
+                  "M",
+                  "45482",
+                  "1750"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260112_192703",
+      "to": "20260112_192748",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260112_192748",
+      "to": "20260112_192750",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

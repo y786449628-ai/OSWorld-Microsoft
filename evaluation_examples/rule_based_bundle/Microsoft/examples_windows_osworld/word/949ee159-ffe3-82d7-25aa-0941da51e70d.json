@@ -1,0 +1,77 @@
+{
+  "id": "949ee159-ffe3-82d7-25aa-0941da51e70d",
+  "snapshot": "word",
+  "instruction": "Could you add a section for IT setup requirements as a bulleted list in the document? Could you include a notes area for the manager in the document?",
+  "source": "Microsoft_62 true stage 3",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141349/Desktop/New_Employee_Onboarding_Checklist.docx",
+            "path": "C:\\Users\\User\\Desktop\\New_Employee_Onboarding_Checklist.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141507/Desktop/New_Employee_Onboarding_Checklist.docx",
+            "path": "C:\\Users\\User\\Documents\\New_Employee_Onboarding_Checklist_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\New_Employee_Onboarding_Checklist.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/949ee159-ffe3-82d7-25aa-0941da51e70d",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\New_Employee_Onboarding_Checklist.docx",
+      "dest": "New_Employee_Onboarding_Checklist.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\New_Employee_Onboarding_Checklist_gold.docx",
+      "dest": "New_Employee_Onboarding_Checklist_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "New_Employee_Onboarding_Checklist.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

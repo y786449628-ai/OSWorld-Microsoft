@@ -1,0 +1,2816 @@
+{
+  "source_name": "Microsoft_60",
+  "source_file": "Microsoft_60.txt",
+  "source_id": "3cfc145aee4f",
+  "source_question": "Please use Excel to process the freelancer data in \"data.csv\", complete data checking, descriptive statistics, and correlation analysis; then use PowerPoint to create a visual presentation showing a data overview and the distribution of occupational categories.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you import the freelancer data from 'data.csv' into Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you perform data checking on the imported freelancer data in Excel?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate descriptive statistics for the freelancer data in Excel?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you conduct a correlation analysis on the freelancer data in Excel?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a new PowerPoint presentation to show a data overview and the distribution of occupational categories?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you add visual elements to the PowerPoint presentation to represent the data overview and the distribution of occupational categories?",
+      "mapped_stage_indices": [
+        7
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "import_data_into_excel",
+      "instruction": "Could you import the freelancer data from 'data.csv' into Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Create a new blank workbook in Excel, import data from \"data.csv\", and save it as the Microsoft Excel workbook named “Freelancer_Data_Analysis.xlsx”.",
+      "planned_input_snapshot": "20260112_162326",
+      "planned_gold_snapshot": "20260112_162433",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 5511 to 7014 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "perform_data_checking_in_excel",
+      "instruction": "Could you perform data checking on the imported freelancer data in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Use Find & Select → Go To Special (Blanks) to locate all blank cells in the data range and check whether there are missing values.",
+      "planned_input_snapshot": "20260112_162433",
+      "planned_gold_snapshot": "20260112_162508",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; may need to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_descriptive_statistics_in_excel",
+      "instruction": "Could you calculate descriptive statistics for the freelancer data in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1,
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Go to Data → Data Analysis → Descriptive Statistics. Set the Input Range to columns M, N, and O; check Summary statistics, Confidence Level for Mean, and Labels in first row; set Output Range to New Worksheet and name it \"DSS\". Select the three metric value columns (B, D, and F), right-click Format Cells → Number.",
+      "planned_input_snapshot": "20260112_162508",
+      "planned_gold_snapshot": "20260112_162630",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7014 to 7101 non-empty cells; worksheet names changed; new visible headers or values include: Range, 13.5, Range, 264.19000000000005, Range, 258775.71999999997.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "conduct_correlation_analysis_in_excel",
+      "instruction": "Could you conduct a correlation analysis on the freelancer data in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Go to Data → Data Analysis → Correlation. Set the Input Range to columns M, N, and O; check Labels in first row; set Grouped By to Columns; set Output Range to New Worksheet and name it \"CA\".",
+      "planned_input_snapshot": "20260112_162630",
+      "planned_gold_snapshot": "20260112_162747",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7101 to 7113 non-empty cells; worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_pivot_table_and_chart_in_excel",
+      "instruction": "Could you create a pivot table and chart in Excel to show the distribution of occupational categories?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 15,
+      "trajectory_evidence": "In the Excel sheet with the original data, select the entire data range of the “category” column (including the header), click Insert → PivotTable, and click OK. In the PivotTable Fields pane on the right, set Rows to “category” and Values to “category”. In the Row Labels filter, uncheck “(blank)” to generate a category count pivot table. Insert a 2-D Pie chart. Click the Chart Elements (plus) button and check Data Labels; right-click any data label and set the font to Microsoft YaHei, 10 pt; right-click the legend and set the font to Microsoft YaHei, 10 pt. Drag the pie chart handles to resize it so category names and labels do not overlap.",
+      "planned_input_snapshot": "20260112_164158",
+      "planned_gold_snapshot": "20260112_164420",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "create_powerpoint_presentation",
+      "instruction": "Could you create a new PowerPoint presentation to show a data overview and the distribution of occupational categories?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Create a new blank presentation in PowerPoint. Save the file and name it “Freelancer_Income_Analysis_PPT.pptx”. On slide 1, add the main title “Analysis of Factors Affecting the Income of Freelancer” and the subtitle “Statistical analysis based on 500 pieces of data of freelancers”. Set the main title font to Microsoft YaHei, 28 pt, bold, light blue; set the subtitle font to Microsoft YaHei, 22 pt, regular, light blue. On slide 1, insert a text box and add the data source note “DataSource: 'data.csv'”. Set the font to Microsoft YaHei, 14 pt, 50% gray, and center-align the paragraph; resize the text box so the text fits on one line; place it centered at the bottom of the slide.",
+      "planned_input_snapshot": "20260112_162747",
+      "planned_gold_snapshot": "20260112_162853",
+      "snapshot_evidence": "New files appeared: Freelancer_Income_Analysis_PPT.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "add_visual_elements_to_powerpoint",
+      "instruction": "Could you add visual elements to the PowerPoint presentation to represent the data overview and the distribution of occupational categories?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 17,
+      "trajectory_evidence": "On slide 2, set the title to “Data Overview: Core Statistical Indicators”. Set the title font to Microsoft YaHei, 24 pt, bold, light blue. On slide 2, insert a text box and enter: “Core Indicator:” (line break) “Sample size: 500” (line break) “Avg years Exp: 5.85 years” (line break) “Avg hourly rate: 96.96 USD/hour” (line break) “Avg annual income: 91,052.92 USD”. Set the font to Microsoft YaHei; set bullets to filled round bullets; set line spacing to 2.0. Select only “Core Indicator” and set it to bold; remove the bullet before “Core Indicator:”. Then align the text box with the left edge of the content placeholder and vertically center it relative to the content placeholder. In Excel, select the pie chart, copy (Ctrl+C) and paste (Ctrl+V) it into the blank area on the right side of slide 2 in PowerPoint. Adjust the chart area width to about two-thirds of the content placeholder and ensure the height is sufficient to display all legend items. Align the chart to the right edge of the content placeholder and align its top with the top of the left text box. Change the pie chart title in PowerPoint to “Occupational Distribution Pattern”, and set the font to Microsoft YaHei, 16 pt, bold, light blue. Ensure the pie chart legend items are fully visible.",
+      "planned_input_snapshot": "20260112_162853",
+      "planned_gold_snapshot": "20260112_164731",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "import_data_into_excel",
+      "instruction": "Could you import the freelancer data from 'data.csv' into Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Create a new blank workbook in Excel, import data from \"data.csv\", and save it as the Microsoft Excel workbook named “Freelancer_Data_Analysis.xlsx”.",
+      "planned_input_snapshot": "20260112_162326",
+      "planned_gold_snapshot": "20260112_162433",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 5511 to 7014 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260112_162326",
+      "gold_snapshot": "20260112_162433",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "2b962efd-a8bc-8822-bfd1-ffad9574f65a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/2b962efd-a8bc-8822-bfd1-ffad9574f65a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "perform_data_checking_in_excel",
+      "instruction": "Could you perform data checking on the imported freelancer data in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Use Find & Select → Go To Special (Blanks) to locate all blank cells in the data range and check whether there are missing values.",
+      "planned_input_snapshot": "20260112_162433",
+      "planned_gold_snapshot": "20260112_162508",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; may need to be merged with a neighboring stage.",
+      "input_snapshot": "20260112_162433",
+      "gold_snapshot": "20260112_162630",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 7014 to 7101.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260112_162433",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_162433",
+          "planned_gold_snapshot": "20260112_162508"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "10327a74-26e0-0639-a7d3-4773fd099cf0",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/10327a74-26e0-0639-a7d3-4773fd099cf0.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_descriptive_statistics_in_excel",
+      "instruction": "Could you calculate descriptive statistics for the freelancer data in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1,
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Go to Data → Data Analysis → Descriptive Statistics. Set the Input Range to columns M, N, and O; check Summary statistics, Confidence Level for Mean, and Labels in first row; set Output Range to New Worksheet and name it \"DSS\". Select the three metric value columns (B, D, and F), right-click Format Cells → Number.",
+      "planned_input_snapshot": "20260112_162508",
+      "planned_gold_snapshot": "20260112_162630",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7014 to 7101 non-empty cells; worksheet names changed; new visible headers or values include: Range, 13.5, Range, 264.19000000000005, Range, 258775.71999999997.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260112_162630",
+      "gold_snapshot": "20260112_164158",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 7113 to 7137.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260112_162508",
+        "chain_input_snapshot": "20260112_162630",
+        "chain_input_replaced": "20260112_162508",
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 6,
+          "search_start_index": 4,
+          "search_end_index": 3,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_162508",
+          "planned_gold_snapshot": "20260112_162630"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "825b1493-3f56-8d84-25aa-2f58b7b361f4",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/825b1493-3f56-8d84-25aa-2f58b7b361f4.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "conduct_correlation_analysis_in_excel_and_create_pivot_table_and_chart_in_excel",
+      "instruction": "conduct a correlation analysis on the freelancer data in Excel, and then create a pivot table and chart in Excel to show the distribution of occupational categories?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Go to Data → Data Analysis → Correlation. Set the Input Range to columns M, N, and O; check Labels in first row; set Grouped By to Columns; set Output Range to New Worksheet and name it \"CA\". | In the Excel sheet with the original data, select the entire data range of the “category” column (including the header), click Insert → PivotTable, and click OK. In the PivotTable Fields pane on the right, set Rows to “category” and Values to “category”. In the Row Labels filter, uncheck “(blank)” to generate a category count pivot table. Insert a 2-D Pie chart. Click the Chart Elements (plus) button and check Data Labels; right-click any data label and set the font to Microsoft YaHei, 10 pt; right-click the legend and set the font to Microsoft YaHei, 10 pt. Drag the pie chart handles to resize it so category names and labels do not overlap.",
+      "planned_input_snapshot": "20260112_162630",
+      "planned_gold_snapshot": "20260112_164420",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7101 to 7113 non-empty cells; worksheet names changed. | Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260112_164158",
+      "gold_snapshot": "20260112_164420",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 14,
+          "trajectory_end": 15,
+          "search_start_index": 12,
+          "search_end_index": 12,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_164158",
+          "planned_gold_snapshot": "20260112_164420"
+        },
+        "merged_with_previous_stages": [
+          {
+            "stage_index": 4,
+            "stage_name": "conduct_correlation_analysis_in_excel",
+            "reason": "Earlier stages had no standalone evaluator and were merged forward."
+          }
+        ],
+        "chain_input_snapshot": "20260112_164158",
+        "chain_input_replaced": "20260112_162630"
+      },
+      "merged_stage_names": [
+        "conduct_correlation_analysis_in_excel",
+        "create_pivot_table_and_chart_in_excel"
+      ],
+      "merged_stage_indices": [
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "73001528-b411-8e67-9475-e31277072545",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/73001528-b411-8e67-9475-e31277072545.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "create_powerpoint_presentation",
+      "instruction": "Could you create a new PowerPoint presentation to show a data overview and the distribution of occupational categories?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Create a new blank presentation in PowerPoint. Save the file and name it “Freelancer_Income_Analysis_PPT.pptx”. On slide 1, add the main title “Analysis of Factors Affecting the Income of Freelancer” and the subtitle “Statistical analysis based on 500 pieces of data of freelancers”. Set the main title font to Microsoft YaHei, 28 pt, bold, light blue; set the subtitle font to Microsoft YaHei, 22 pt, regular, light blue. On slide 1, insert a text box and add the data source note “DataSource: 'data.csv'”. Set the font to Microsoft YaHei, 14 pt, 50% gray, and center-align the paragraph; resize the text box so the text fits on one line; place it centered at the bottom of the slide.",
+      "planned_input_snapshot": "20260112_162747",
+      "planned_gold_snapshot": "20260112_162853",
+      "snapshot_evidence": "New files appeared: Freelancer_Income_Analysis_PPT.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260112_164420",
+      "gold_snapshot": "20260112_164731",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Freelancer_Income_Analysis_PPT.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260112_162747",
+        "chain_input_snapshot": "20260112_164420",
+        "chain_input_replaced": "20260112_162747",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 10,
+          "search_start_index": 13,
+          "search_end_index": 5,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_162747",
+          "planned_gold_snapshot": "20260112_162853"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "cbc96a82-33b3-2f5d-eddc-90ecfda07c30",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/cbc96a82-33b3-2f5d-eddc-90ecfda07c30.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "add_visual_elements_to_powerpoint",
+      "instruction": "Could you add visual elements to the PowerPoint presentation to represent the data overview and the distribution of occupational categories?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 17,
+      "trajectory_evidence": "On slide 2, set the title to “Data Overview: Core Statistical Indicators”. Set the title font to Microsoft YaHei, 24 pt, bold, light blue. On slide 2, insert a text box and enter: “Core Indicator:” (line break) “Sample size: 500” (line break) “Avg years Exp: 5.85 years” (line break) “Avg hourly rate: 96.96 USD/hour” (line break) “Avg annual income: 91,052.92 USD”. Set the font to Microsoft YaHei; set bullets to filled round bullets; set line spacing to 2.0. Select only “Core Indicator” and set it to bold; remove the bullet before “Core Indicator:”. Then align the text box with the left edge of the content placeholder and vertically center it relative to the content placeholder. In Excel, select the pie chart, copy (Ctrl+C) and paste (Ctrl+V) it into the blank area on the right side of slide 2 in PowerPoint. Adjust the chart area width to about two-thirds of the content placeholder and ensure the height is sufficient to display all legend items. Align the chart to the right edge of the content placeholder and align its top with the top of the left text box. Change the pie chart title in PowerPoint to “Occupational Distribution Pattern”, and set the font to Microsoft YaHei, 16 pt, bold, light blue. Ensure the pie chart legend items are fully visible.",
+      "planned_input_snapshot": "20260112_162853",
+      "planned_gold_snapshot": "20260112_164731",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260112_164731",
+      "gold_snapshot": "20260112_164936",
+      "linked_preview_tasks": [
+        6
+      ],
+      "target_relative_path": "Freelancer_Income_Analysis_PPT.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260112_162853",
+        "chain_input_snapshot": "20260112_164731",
+        "chain_input_replaced": "20260112_162853",
+        "trajectory_window": {
+          "trajectory_start": 11,
+          "trajectory_end": 17,
+          "search_start_index": 14,
+          "search_end_index": 13,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_162853",
+          "planned_gold_snapshot": "20260112_164731"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "01a1215a-1e05-09d1-2fd6-cb2046ccd11d",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/01a1215a-1e05-09d1-2fd6-cb2046ccd11d.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260112_162326",
+    "20260112_162433",
+    "20260112_162508",
+    "20260112_162630",
+    "20260112_162747",
+    "20260112_162853",
+    "20260112_163229",
+    "20260112_163359",
+    "20260112_163412",
+    "20260112_163545",
+    "20260112_164051",
+    "20260112_164158",
+    "20260112_164420",
+    "20260112_164731",
+    "20260112_164936"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260112_162326",
+      "to": "20260112_162433",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 5511 to 7014 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 5511,
+            "to": 7014
+          },
+          "headers": {
+            "from": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior",
+              "North America",
+              "US",
+              "Bachelor",
+              "267.33999999999997"
+            ],
+            "to": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior",
+              "North America"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 55601,
+              "to": 62736
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 5511,
+                "to": 7014
+              },
+              "headers": {
+                "from": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior",
+                  "North America",
+                  "US",
+                  "Bachelor",
+                  "267.33999999999997"
+                ],
+                "to": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior",
+                  "North America"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260112_162433",
+      "to": "20260112_162508",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260112_162508",
+      "to": "20260112_162630",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7014 to 7101 non-empty cells; worksheet names changed; new visible headers or values include: Range, 13.5, Range, 264.19000000000005, Range, 258775.71999999997.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "data",
+              "Sheet1"
+            ],
+            "to": [
+              "DDS",
+              "data",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 2,
+            "to": 3
+          },
+          "nonempty_cells": {
+            "from": 7014,
+            "to": 7101
+          },
+          "headers": {
+            "from": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior",
+              "North America"
+            ],
+            "to": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform"
+            ]
+          }
+        },
+        "headers_added": [
+          "Range",
+          "13.5",
+          "Range",
+          "264.19000000000005",
+          "Range",
+          "258775.71999999997"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 62736,
+              "to": 65394
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "data",
+                  "Sheet1"
+                ],
+                "to": [
+                  "DDS",
+                  "data",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 2,
+                "to": 3
+              },
+              "nonempty_cells": {
+                "from": 7014,
+                "to": 7101
+              },
+              "headers": {
+                "from": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior",
+                  "North America"
+                ],
+                "to": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260112_162630",
+      "to": "20260112_162747",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7101 to 7113 non-empty cells; worksheet names changed.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "DDS",
+              "data",
+              "Sheet1"
+            ],
+            "to": [
+              "DDS",
+              "CA",
+              "data",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 3,
+            "to": 4
+          },
+          "nonempty_cells": {
+            "from": 7101,
+            "to": 7113
+          },
+          "headers": {
+            "from": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform"
+            ],
+            "to": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 65394,
+              "to": 66305
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "DDS",
+                  "data",
+                  "Sheet1"
+                ],
+                "to": [
+                  "DDS",
+                  "CA",
+                  "data",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 3,
+                "to": 4
+              },
+              "nonempty_cells": {
+                "from": 7101,
+                "to": 7113
+              },
+              "headers": {
+                "from": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform"
+                ],
+                "to": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260112_162747",
+      "to": "20260112_162853",
+      "human_summary": "New files appeared: Freelancer_Income_Analysis_PPT.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Freelancer_Income_Analysis_PPT.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Freelancer_Income_Analysis_PPT.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260112_162853",
+      "to": "20260112_163229",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 32142,
+              "to": 35400
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 32142,
+              "to": 35400
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260112_163229",
+      "to": "20260112_163359",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 35400,
+              "to": 35816
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 35400,
+              "to": 35816
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260112_163359",
+      "to": "20260112_163412",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 35816,
+              "to": 36957
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 35816,
+              "to": 36957
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260112_163412",
+      "to": "20260112_163545",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 36957,
+              "to": 37147
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 36957,
+              "to": 37147
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260112_163545",
+      "to": "20260112_164051",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 37147,
+              "to": 37504
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 37147,
+              "to": 37504
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260112_164051",
+      "to": "20260112_164158",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7113 to 7137 non-empty cells; worksheet names changed; new visible headers or values include: Mobile Development, 36.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "DDS",
+              "CA",
+              "data",
+              "Sheet1"
+            ],
+            "to": [
+              "DDS",
+              "CA",
+              "Sheet4",
+              "data",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 4,
+            "to": 5
+          },
+          "nonempty_cells": {
+            "from": 7113,
+            "to": 7137
+          },
+          "headers": {
+            "from": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education"
+            ],
+            "to": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Mobile Development",
+              "36",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region"
+            ]
+          }
+        },
+        "headers_added": [
+          "Mobile Development",
+          "36"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 66305,
+              "to": 71349
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "DDS",
+                  "CA",
+                  "data",
+                  "Sheet1"
+                ],
+                "to": [
+                  "DDS",
+                  "CA",
+                  "Sheet4",
+                  "data",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 4,
+                "to": 5
+              },
+              "nonempty_cells": {
+                "from": 7113,
+                "to": 7137
+              },
+              "headers": {
+                "from": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education"
+                ],
+                "to": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Mobile Development",
+                  "36",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260112_164158",
+      "to": "20260112_164420",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Mobile Development",
+              "36",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region"
+            ],
+            "to": [
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Range",
+              "13.5",
+              "Range",
+              "264.19000000000005",
+              "Range",
+              "258775.71999999997",
+              "years_experience",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "Mobile Development",
+              "36",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 71349,
+              "to": 76954
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Mobile Development",
+                  "36",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region"
+                ],
+                "to": [
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Range",
+                  "13.5",
+                  "Range",
+                  "264.19000000000005",
+                  "Range",
+                  "258775.71999999997",
+                  "years_experience",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "Mobile Development",
+                  "36",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260112_164420",
+      "to": "20260112_164731",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 37504,
+              "to": 42094
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 37504,
+              "to": 42094
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260112_164731",
+      "to": "20260112_164936",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 42094,
+              "to": 42184
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 42094,
+              "to": 42184
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_60",
+    "snapshot_count": 15,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260112_162326",
+        "to": "20260112_162433",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 5511 to 7014 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 5511,
+              "to": 7014
+            },
+            "headers": {
+              "from": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior",
+                "North America",
+                "US",
+                "Bachelor",
+                "267.33999999999997"
+              ],
+              "to": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior",
+                "North America"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 55601,
+                "to": 62736
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 5511,
+                  "to": 7014
+                },
+                "headers": {
+                  "from": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior",
+                    "North America",
+                    "US",
+                    "Bachelor",
+                    "267.33999999999997"
+                  ],
+                  "to": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior",
+                    "North America"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260112_162433",
+        "to": "20260112_162508",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260112_162508",
+        "to": "20260112_162630",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7014 to 7101 non-empty cells; worksheet names changed; new visible headers or values include: Range, 13.5, Range, 264.19000000000005, Range, 258775.71999999997.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "data",
+                "Sheet1"
+              ],
+              "to": [
+                "DDS",
+                "data",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 2,
+              "to": 3
+            },
+            "nonempty_cells": {
+              "from": 7014,
+              "to": 7101
+            },
+            "headers": {
+              "from": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior",
+                "North America"
+              ],
+              "to": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform"
+              ]
+            }
+          },
+          "headers_added": [
+            "Range",
+            "13.5",
+            "Range",
+            "264.19000000000005",
+            "Range",
+            "258775.71999999997"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 62736,
+                "to": 65394
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "data",
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "DDS",
+                    "data",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 2,
+                  "to": 3
+                },
+                "nonempty_cells": {
+                  "from": 7014,
+                  "to": 7101
+                },
+                "headers": {
+                  "from": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior",
+                    "North America"
+                  ],
+                  "to": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260112_162630",
+        "to": "20260112_162747",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7101 to 7113 non-empty cells; worksheet names changed.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "DDS",
+                "data",
+                "Sheet1"
+              ],
+              "to": [
+                "DDS",
+                "CA",
+                "data",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 3,
+              "to": 4
+            },
+            "nonempty_cells": {
+              "from": 7101,
+              "to": 7113
+            },
+            "headers": {
+              "from": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform"
+              ],
+              "to": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 65394,
+                "to": 66305
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "DDS",
+                    "data",
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "DDS",
+                    "CA",
+                    "data",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 3,
+                  "to": 4
+                },
+                "nonempty_cells": {
+                  "from": 7101,
+                  "to": 7113
+                },
+                "headers": {
+                  "from": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform"
+                  ],
+                  "to": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260112_162747",
+        "to": "20260112_162853",
+        "human_summary": "New files appeared: Freelancer_Income_Analysis_PPT.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Freelancer_Income_Analysis_PPT.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Freelancer_Income_Analysis_PPT.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260112_162853",
+        "to": "20260112_163229",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 32142,
+                "to": 35400
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 32142,
+                "to": 35400
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260112_163229",
+        "to": "20260112_163359",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 35400,
+                "to": 35816
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 35400,
+                "to": 35816
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260112_163359",
+        "to": "20260112_163412",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 35816,
+                "to": 36957
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 35816,
+                "to": 36957
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260112_163412",
+        "to": "20260112_163545",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 36957,
+                "to": 37147
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 36957,
+                "to": 37147
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260112_163545",
+        "to": "20260112_164051",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 37147,
+                "to": 37504
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 37147,
+                "to": 37504
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260112_164051",
+        "to": "20260112_164158",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7113 to 7137 non-empty cells; worksheet names changed; new visible headers or values include: Mobile Development, 36.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "DDS",
+                "CA",
+                "data",
+                "Sheet1"
+              ],
+              "to": [
+                "DDS",
+                "CA",
+                "Sheet4",
+                "data",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 4,
+              "to": 5
+            },
+            "nonempty_cells": {
+              "from": 7113,
+              "to": 7137
+            },
+            "headers": {
+              "from": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education"
+              ],
+              "to": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Mobile Development",
+                "36",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region"
+              ]
+            }
+          },
+          "headers_added": [
+            "Mobile Development",
+            "36"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 66305,
+                "to": 71349
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "DDS",
+                    "CA",
+                    "data",
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "DDS",
+                    "CA",
+                    "Sheet4",
+                    "data",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 4,
+                  "to": 5
+                },
+                "nonempty_cells": {
+                  "from": 7113,
+                  "to": 7137
+                },
+                "headers": {
+                  "from": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education"
+                  ],
+                  "to": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Mobile Development",
+                    "36",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260112_164158",
+        "to": "20260112_164420",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Mobile Development",
+                "36",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region"
+              ],
+              "to": [
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Range",
+                "13.5",
+                "Range",
+                "264.19000000000005",
+                "Range",
+                "258775.71999999997",
+                "years_experience",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "Mobile Development",
+                "36",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 71349,
+                "to": 76954
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Mobile Development",
+                    "36",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region"
+                  ],
+                  "to": [
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Range",
+                    "13.5",
+                    "Range",
+                    "264.19000000000005",
+                    "Range",
+                    "258775.71999999997",
+                    "years_experience",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "Mobile Development",
+                    "36",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260112_164420",
+        "to": "20260112_164731",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 37504,
+                "to": 42094
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 37504,
+                "to": 42094
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260112_164731",
+        "to": "20260112_164936",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 42094,
+                "to": 42184
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 42094,
+                "to": 42184
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Create a new blank workbook in Excel, import data from \"data.csv\", and save it as the Microsoft Excel workbook named “Freelancer_Data_Analysis.xlsx”."
+    },
+    {
+      "index": 3,
+      "instruction": "Use Find & Select → Go To Special (Blanks) to locate all blank cells in the data range and check whether there are missing values."
+    },
+    {
+      "index": 4,
+      "instruction": "In the current worksheet, copy the “years_experience”, “hourly_rate_usd”, and “annual_income_usd” columns in order (Ctrl+C) and paste (Ctrl+V) them into columns M, N, and O to form a continuous three-column data range."
+    },
+    {
+      "index": 5,
+      "instruction": "Click File → Options; select Add-ins on the left; in the Manage drop-down at the bottom choose Excel Add-ins → Go; check Analysis ToolPak → OK."
+    },
+    {
+      "index": 6,
+      "instruction": "Go to Data → Data Analysis → Descriptive Statistics. Set the Input Range to columns M, N, and O; check Summary statistics, Confidence Level for Mean, and Labels in first row; set Output Range to New Worksheet and name it \"DSS\". Select the three metric value columns (B, D, and F), right-click Format Cells → Number."
+    },
+    {
+      "index": 7,
+      "instruction": "Go to Data → Data Analysis → Correlation. Set the Input Range to columns M, N, and O; check Labels in first row; set Grouped By to Columns; set Output Range to New Worksheet and name it \"CA\"."
+    },
+    {
+      "index": 8,
+      "instruction": "Create a new blank presentation in PowerPoint. Save the file and name it “Freelancer_Income_Analysis_PPT.pptx”."
+    },
+    {
+      "index": 9,
+      "instruction": "On slide 1, add the main title “Analysis of Factors Affecting the Income of Freelancer” and the subtitle “Statistical analysis based on 500 pieces of data of freelancers”. Set the main title font to Microsoft YaHei, 28 pt, bold, light blue; set the subtitle font to Microsoft YaHei, 22 pt, regular, light blue."
+    },
+    {
+      "index": 10,
+      "instruction": "On slide 1, insert a text box and add the data source note “DataSource: 'data.csv'”. Set the font to Microsoft YaHei, 14 pt, 50% gray, and center-align the paragraph; resize the text box so the text fits on one line; place it centered at the bottom of the slide."
+    },
+    {
+      "index": 11,
+      "instruction": "Create slide 2 and choose the Title and Content layout."
+    },
+    {
+      "index": 12,
+      "instruction": "On slide 2, set the title to “Data Overview: Core Statistical Indicators”. Set the title font to Microsoft YaHei, 24 pt, bold, light blue."
+    },
+    {
+      "index": 13,
+      "instruction": "On slide 2, insert a text box and enter: “Core Indicator:” (line break) “Sample size: 500” (line break) “Avg years Exp: 5.85 years” (line break) “Avg hourly rate: 96.96 USD/hour” (line break) “Avg annual income: 91,052.92 USD”. Set the font to Microsoft YaHei; set bullets to filled round bullets; set line spacing to 2.0. Select only “Core Indicator” and set it to bold; remove the bullet before “Core Indicator:”. Then align the text box with the left edge of the content placeholder and vertically center it relative to the content placeholder."
+    },
+    {
+      "index": 14,
+      "instruction": "In the Excel sheet with the original data, select the entire data range of the “category” column (including the header), click Insert → PivotTable, and click OK. In the PivotTable Fields pane on the right, set Rows to “category” and Values to “category”. In the Row Labels filter, uncheck “(blank)” to generate a category count pivot table."
+    },
+    {
+      "index": 15,
+      "instruction": "Insert a 2-D Pie chart. Click the Chart Elements (plus) button and check Data Labels; right-click any data label and set the font to Microsoft YaHei, 10 pt; right-click the legend and set the font to Microsoft YaHei, 10 pt. Drag the pie chart handles to resize it so category names and labels do not overlap."
+    },
+    {
+      "index": 16,
+      "instruction": "In Excel, select the pie chart, copy (Ctrl+C) and paste (Ctrl+V) it into the blank area on the right side of slide 2 in PowerPoint.Adjust the chart area width to about two-thirds of the content placeholder and ensure the height is sufficient to display all legend items. Align the chart to the right edge of the content placeholder and align its top with the top of the left text box."
+    },
+    {
+      "index": 17,
+      "instruction": "Change the pie chart title in PowerPoint to “Occupational Distribution Pattern”, and set the font to Microsoft YaHei, 16 pt, bold, light blue. Ensure the pie chart legend items are fully visible."
+    },
+    {
+      "index": 18,
+      "instruction": "Save (Ctrl+S) and close the PowerPoint and Excel files."
+    },
+    {
+      "index": 19,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 6,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 15
+  }
+}

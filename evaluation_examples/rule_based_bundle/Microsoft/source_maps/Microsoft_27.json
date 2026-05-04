@@ -1,0 +1,1090 @@
+{
+  "source_name": "Microsoft_27",
+  "source_file": "Microsoft_27.txt",
+  "source_id": "fb4d77b0fe1e",
+  "source_question": "Sales team provide a fruit purchase list with sales volume from Jan to Feb, but all the informaiton not set as standard row and line, there also exist a price file, but the product and price combine in one column, now Boss want to view each product sales summary from Jan to Feb, and want to view from bar chart, and want data refresh automotively.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you organize the fruit purchase list into a standard table format with sales volume from January to February in Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you separate the product and price information into distinct columns in the price file in Excel?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you create a summary table that shows the total sales for each product from January to February in Excel?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a bar chart to visualize the sales summary for each product from January to February in Excel?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you set up the data to refresh automatically in Excel?",
+      "mapped_stage_indices": [
+        5
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_organize_fruit_purchase_list",
+      "instruction": "Could you organize the fruit purchase list into a standard table format with sales volume from January to February in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Open and modify Detail.xlsx, adding headers and data.",
+      "planned_input_snapshot": "20260109_155425",
+      "planned_gold_snapshot": "20260109_160216",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 47 to 148 non-empty cells; new visible headers or values include: Jim, Jan, Coconut, 300, 1800.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "separate_product_and_price_into_columns",
+      "instruction": "Could you separate the product and price information into distinct columns in the price file in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Open and modify Price.xlsx, separating product and price into distinct columns.",
+      "planned_input_snapshot": "20260109_160216",
+      "planned_gold_snapshot": "20260109_160408",
+      "snapshot_evidence": "New files appeared: final result.xlsx (implying Price.xlsx was modified).",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_sales_summary_table",
+      "instruction": "Could you create a summary table that shows the total sales for each product from January to February in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 21,
+      "trajectory_end": 25,
+      "trajectory_evidence": "Create a summary table using VLOOKUP and PIVOTBY functions.",
+      "planned_input_snapshot": "20260109_160408",
+      "planned_gold_snapshot": "20260109_160408",
+      "snapshot_evidence": "No observable change, but the summary table is created within the same file.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot change, but the summary table is created. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_bar_chart_for_sales_summary",
+      "instruction": "Could you create a bar chart to visualize the sales summary for each product from January to February in Excel?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 27,
+      "trajectory_end": 29,
+      "trajectory_evidence": "Create a bar chart and add data labels.",
+      "planned_input_snapshot": "20260109_160408",
+      "planned_gold_snapshot": "20260109_160408",
+      "snapshot_evidence": "No observable change, but the bar chart is created within the same file.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot change, but the bar chart is created. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "set_up_data_refresh",
+      "instruction": "Could you set up the data to refresh automatically in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 30,
+      "trajectory_end": 32,
+      "trajectory_evidence": "Modify cell C5 to test data refresh and save the file as 'final result'.",
+      "planned_input_snapshot": "20260109_160408",
+      "planned_gold_snapshot": "20260109_160410",
+      "snapshot_evidence": "No observable change, but the data refresh is set up and tested.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot change, but the data refresh is set up. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_organize_fruit_purchase_list",
+      "instruction": "Could you organize the fruit purchase list into a standard table format with sales volume from January to February in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Open and modify Detail.xlsx, adding headers and data.",
+      "planned_input_snapshot": "20260109_155425",
+      "planned_gold_snapshot": "20260109_160216",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 47 to 148 non-empty cells; new visible headers or values include: Jim, Jan, Coconut, 300, 1800.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_155407",
+      "gold_snapshot": "20260109_160216",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Material/Detail.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 47 to 84.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260109_160216",
+        "chain_input_snapshot": "20260109_155407",
+        "chain_input_replaced": "20260109_155425",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 10,
+          "search_start_index": 2,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_155425",
+          "planned_gold_snapshot": "20260109_160216"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "c88ddcd8-9153-ea61-31be-92cffc6df4bc",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/c88ddcd8-9153-ea61-31be-92cffc6df4bc.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "separate_product_and_price_into_columns_and_create_sales_summary_table_and_create_bar_chart_for_sales_summary_and_set_up_data_refresh",
+      "instruction": "Could you separate the product and price information into distinct columns in the price file in Excel, and then create a summary table that shows the total sales for each product from January to February in Excel, and then create a bar chart to visualize the sales summary for each product from January to February in Excel, and then set up the data to refresh automatically in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 32,
+      "trajectory_evidence": "Open and modify Price.xlsx, separating product and price into distinct columns. | Create a summary table using VLOOKUP and PIVOTBY functions. | Create a bar chart and add data labels. | Modify cell C5 to test data refresh and save the file as 'final result'.",
+      "planned_input_snapshot": "20260109_160216",
+      "planned_gold_snapshot": "20260109_160410",
+      "snapshot_evidence": "New files appeared: final result.xlsx (implying Price.xlsx was modified). | No observable change, but the summary table is created within the same file. | No observable change, but the bar chart is created within the same file. | No observable change, but the data refresh is set up and tested.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_160216",
+      "gold_snapshot": "20260109_160410",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "set_up_data_refresh",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "separate_product_and_price_into_columns",
+        "create_sales_summary_table",
+        "create_bar_chart_for_sales_summary",
+        "set_up_data_refresh"
+      ],
+      "merged_stage_indices": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "ac979bf1-c986-c7b7-52a7-6158f066bd75",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/ac979bf1-c986-c7b7-52a7-6158f066bd75.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260109_155407",
+    "20260109_155425",
+    "20260109_155648",
+    "20260109_155754",
+    "20260109_160216",
+    "20260109_160408",
+    "20260109_160410"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_155407",
+      "to": "20260109_155425",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_155425",
+      "to": "20260109_155648",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 47 to 84 non-empty cells; new visible headers or values include: Jim, Jan.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 47,
+            "to": 84
+          },
+          "headers": {
+            "from": [
+              "Felix",
+              "Banana",
+              "100",
+              "Grape",
+              "60"
+            ],
+            "to": [
+              "Felix",
+              "Banana",
+              "100",
+              "Grape",
+              "60",
+              "Jim",
+              "Jan"
+            ]
+          }
+        },
+        "headers_added": [
+          "Jim",
+          "Jan"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10215,
+              "to": 11548
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 47,
+                "to": 84
+              },
+              "headers": {
+                "from": [
+                  "Felix",
+                  "Banana",
+                  "100",
+                  "Grape",
+                  "60"
+                ],
+                "to": [
+                  "Felix",
+                  "Banana",
+                  "100",
+                  "Grape",
+                  "60",
+                  "Jim",
+                  "Jan"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_155648",
+      "to": "20260109_155754",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 84 to 116 non-empty cells; new visible headers or values include: Coconut, 300.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 84,
+            "to": 116
+          },
+          "headers": {
+            "from": [
+              "Felix",
+              "Banana",
+              "100",
+              "Grape",
+              "60",
+              "Jim",
+              "Jan"
+            ],
+            "to": [
+              "Felix",
+              "Banana",
+              "100",
+              "Grape",
+              "60",
+              "Jim",
+              "Jan",
+              "Coconut",
+              "300"
+            ]
+          }
+        },
+        "headers_added": [
+          "Coconut",
+          "300"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11548,
+              "to": 12054
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 84,
+                "to": 116
+              },
+              "headers": {
+                "from": [
+                  "Felix",
+                  "Banana",
+                  "100",
+                  "Grape",
+                  "60",
+                  "Jim",
+                  "Jan"
+                ],
+                "to": [
+                  "Felix",
+                  "Banana",
+                  "100",
+                  "Grape",
+                  "60",
+                  "Jim",
+                  "Jan",
+                  "Coconut",
+                  "300"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_155754",
+      "to": "20260109_160216",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 116 to 148 non-empty cells; new visible headers or values include: 1800.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 116,
+            "to": 148
+          },
+          "headers": {
+            "from": [
+              "Felix",
+              "Banana",
+              "100",
+              "Grape",
+              "60",
+              "Jim",
+              "Jan",
+              "Coconut",
+              "300"
+            ],
+            "to": [
+              "Felix",
+              "Banana",
+              "100",
+              "Grape",
+              "60",
+              "Jim",
+              "Jan",
+              "Coconut",
+              "300",
+              "1800"
+            ]
+          }
+        },
+        "headers_added": [
+          "1800"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12054,
+              "to": 13706
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 116,
+                "to": 148
+              },
+              "headers": {
+                "from": [
+                  "Felix",
+                  "Banana",
+                  "100",
+                  "Grape",
+                  "60",
+                  "Jim",
+                  "Jan",
+                  "Coconut",
+                  "300"
+                ],
+                "to": [
+                  "Felix",
+                  "Banana",
+                  "100",
+                  "Grape",
+                  "60",
+                  "Jim",
+                  "Jan",
+                  "Coconut",
+                  "300",
+                  "1800"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_160216",
+      "to": "20260109_160408",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_160408",
+      "to": "20260109_160410",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_27",
+    "snapshot_count": 7,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_155407",
+        "to": "20260109_155425",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_155425",
+        "to": "20260109_155648",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 47 to 84 non-empty cells; new visible headers or values include: Jim, Jan.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 47,
+              "to": 84
+            },
+            "headers": {
+              "from": [
+                "Felix",
+                "Banana",
+                "100",
+                "Grape",
+                "60"
+              ],
+              "to": [
+                "Felix",
+                "Banana",
+                "100",
+                "Grape",
+                "60",
+                "Jim",
+                "Jan"
+              ]
+            }
+          },
+          "headers_added": [
+            "Jim",
+            "Jan"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10215,
+                "to": 11548
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 47,
+                  "to": 84
+                },
+                "headers": {
+                  "from": [
+                    "Felix",
+                    "Banana",
+                    "100",
+                    "Grape",
+                    "60"
+                  ],
+                  "to": [
+                    "Felix",
+                    "Banana",
+                    "100",
+                    "Grape",
+                    "60",
+                    "Jim",
+                    "Jan"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_155648",
+        "to": "20260109_155754",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 84 to 116 non-empty cells; new visible headers or values include: Coconut, 300.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 84,
+              "to": 116
+            },
+            "headers": {
+              "from": [
+                "Felix",
+                "Banana",
+                "100",
+                "Grape",
+                "60",
+                "Jim",
+                "Jan"
+              ],
+              "to": [
+                "Felix",
+                "Banana",
+                "100",
+                "Grape",
+                "60",
+                "Jim",
+                "Jan",
+                "Coconut",
+                "300"
+              ]
+            }
+          },
+          "headers_added": [
+            "Coconut",
+            "300"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11548,
+                "to": 12054
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 84,
+                  "to": 116
+                },
+                "headers": {
+                  "from": [
+                    "Felix",
+                    "Banana",
+                    "100",
+                    "Grape",
+                    "60",
+                    "Jim",
+                    "Jan"
+                  ],
+                  "to": [
+                    "Felix",
+                    "Banana",
+                    "100",
+                    "Grape",
+                    "60",
+                    "Jim",
+                    "Jan",
+                    "Coconut",
+                    "300"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_155754",
+        "to": "20260109_160216",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 116 to 148 non-empty cells; new visible headers or values include: 1800.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 116,
+              "to": 148
+            },
+            "headers": {
+              "from": [
+                "Felix",
+                "Banana",
+                "100",
+                "Grape",
+                "60",
+                "Jim",
+                "Jan",
+                "Coconut",
+                "300"
+              ],
+              "to": [
+                "Felix",
+                "Banana",
+                "100",
+                "Grape",
+                "60",
+                "Jim",
+                "Jan",
+                "Coconut",
+                "300",
+                "1800"
+              ]
+            }
+          },
+          "headers_added": [
+            "1800"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 12054,
+                "to": 13706
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 116,
+                  "to": 148
+                },
+                "headers": {
+                  "from": [
+                    "Felix",
+                    "Banana",
+                    "100",
+                    "Grape",
+                    "60",
+                    "Jim",
+                    "Jan",
+                    "Coconut",
+                    "300"
+                  ],
+                  "to": [
+                    "Felix",
+                    "Banana",
+                    "100",
+                    "Grape",
+                    "60",
+                    "Jim",
+                    "Jan",
+                    "Coconut",
+                    "300",
+                    "1800"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_160216",
+        "to": "20260109_160408",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_160408",
+        "to": "20260109_160410",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Price file and choose it, then click open."
+    },
+    {
+      "index": 5,
+      "instruction": "Select G2 cell and input \"Customer\", select H2 cell and input \"Month\", select I2 cell and input \"Product\", and select J2 cell and input \"Sales Volume\", select K2 cell and input \"Sales Revenue\""
+    },
+    {
+      "index": 6,
+      "instruction": "Select G3 cell, then click \"=TOCOL(A4:A11&(T(SEQUENCE(,COLUMNS(B3:E3)/2))))\", then click Enter"
+    },
+    {
+      "index": 7,
+      "instruction": "Select H3 cell, then click \"=TOCOL(TOCOL(B2:E2,1)&T(SEQUENCE(,ROWS(A4:A11))),,1)\", then click Enter"
+    },
+    {
+      "index": 8,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 9,
+      "instruction": "Select I3 cell, then click \"=WRAPROWS(TOCOL(B4:E11),2)\", then click Enter"
+    },
+    {
+      "index": 10,
+      "instruction": "Select G2 cell to K18 cell, then click Menu---Home, find and click arrow next to Border, select All Borders."
+    },
+    {
+      "index": 11,
+      "instruction": "Select G2 cell to J2 cell, then click Menu---Home, find and click Bold button."
+    },
+    {
+      "index": 12,
+      "instruction": "Select J3 cell to K18 cell, click menu---Home, find and click Comma Style, button, then click decrease decimal twice."
+    },
+    {
+      "index": 14,
+      "instruction": "Click Price file, then select A1 cell to A8 cell."
+    },
+    {
+      "index": 15,
+      "instruction": "Click Menu---Data, click From Table/Range, then click OK."
+    },
+    {
+      "index": 16,
+      "instruction": "Right Click Price column, select Duplicate Column"
+    },
+    {
+      "index": 17,
+      "instruction": "Click Price cell, then click Menu---Add column, click Custom Column, change column name as \"Product\", then input \"Text.Remove([Price],{\"1\"..\"9\"})\" click OK"
+    },
+    {
+      "index": 18,
+      "instruction": "Click Price Copy cell, then click Menu---Add column, click Custom Column, change column name as \"Price1\", then input \"Text.Remove([Price],{\"A\"..\"Z\",\"a\"..\"z\"})\" click OK"
+    },
+    {
+      "index": 19,
+      "instruction": "Click Price.1 column, right click, and select Change Type, select Decimal Number"
+    },
+    {
+      "index": 20,
+      "instruction": "Click Menu---Home, click Save and load"
+    },
+    {
+      "index": 21,
+      "instruction": "Click Detail file, select K3 cell, and input \"=VLOOKUP(I3,[Price.xlsx]Table1!$C:$D,2,FALSE)*J3\", then click K3 cell, double click the draw icon."
+    },
+    {
+      "index": 22,
+      "instruction": "Select L2 cell, then input \"=PIVOTBY(I2:I18,,k2:k18,SUM,3,0,2)\", then click Enter."
+    },
+    {
+      "index": 23,
+      "instruction": "Select L2 cell to M9 cell, then click Menu---Home, find and click arrow next to Border, select All Borders."
+    },
+    {
+      "index": 24,
+      "instruction": "Select L2 cell to M2 cell, then click Menu---Home, find and click Bold button."
+    },
+    {
+      "index": 25,
+      "instruction": "Select M3 cell to M9 cell, click menu---Home, find and click Comma Style, button, then click decrease decimal twice."
+    },
+    {
+      "index": 26,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 27,
+      "instruction": "Select L2 cell to M9 cell, then click Menu---Insert, then click Insert Column or Bar Chart, then select Clustered Column of 3-D Column"
+    },
+    {
+      "index": 28,
+      "instruction": "Click Column bar, and right click, select add Data label"
+    },
+    {
+      "index": 29,
+      "instruction": "Select Data label, and click Menu---Home, then click Menu---file, find and click Save Blue color, and bolt."
+    },
+    {
+      "index": 30,
+      "instruction": "Select C5 cell, and modify from 600 to 5000, the Column Bar chart will refresh."
+    },
+    {
+      "index": 31,
+      "instruction": "Select C5 cell, and modify from 5000 to 1000, the Column Bar chart will refresh."
+    },
+    {
+      "index": 32,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 33,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 2,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 7
+  }
+}

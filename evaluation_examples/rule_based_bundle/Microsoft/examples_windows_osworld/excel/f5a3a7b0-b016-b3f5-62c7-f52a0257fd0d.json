@@ -1,0 +1,77 @@
+{
+  "id": "f5a3a7b0-b016-b3f5-62c7-f52a0257fd0d",
+  "snapshot": "excel",
+  "instruction": "Could you save the workbook and export the active worksheet as a PDF to your desktop?",
+  "source": "Microsoft_40 true stage 8",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_40/logs/MonitoringSnapshots/20260110_203708/Desktop/Project_Task_Tracker.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Task_Tracker.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_40/logs/MonitoringSnapshots/20260110_203846/Desktop/Project_Task_Tracker.pdf",
+            "path": "C:\\Users\\User\\Documents\\Project_Task_Tracker_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Task_Tracker.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/f5a3a7b0-b016-b3f5-62c7-f52a0257fd0d",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Task_Tracker.pdf",
+      "dest": "Project_Task_Tracker.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Task_Tracker_gold.pdf",
+      "dest": "Project_Task_Tracker_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Task_Tracker.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

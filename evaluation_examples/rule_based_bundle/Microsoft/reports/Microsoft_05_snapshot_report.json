@@ -1,0 +1,191 @@
+{
+  "source_name": "Microsoft_05",
+  "snapshot_count": 8,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20251230_091056",
+      "to": "20251230_091205",
+      "human_summary": "New files appeared: Contact List.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Contact List.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Contact List.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251230_091205",
+      "to": "20251230_091207",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251230_091207",
+      "to": "20251230_091238",
+      "human_summary": "Contact List.xlsx changed: spreadsheet content changed from 10 to 9 non-empty cells; new visible headers or values include: Distributor Name, Boss Name, Boss Title.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Contact List.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 10,
+            "to": 9
+          },
+          "headers": {
+            "from": [
+              "Business Information"
+            ],
+            "to": [
+              "Distributor Name",
+              "Boss Name",
+              "Boss Title"
+            ]
+          }
+        },
+        "headers_added": [
+          "Distributor Name",
+          "Boss Name",
+          "Boss Title"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Contact List.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10496,
+              "to": 10475
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 10,
+                "to": 9
+              },
+              "headers": {
+                "from": [
+                  "Business Information"
+                ],
+                "to": [
+                  "Distributor Name",
+                  "Boss Name",
+                  "Boss Title"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251230_091238",
+      "to": "20251230_091342",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251230_091342",
+      "to": "20251230_091427",
+      "human_summary": "New files appeared: Invitation Mail Merge.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Invitation Mail Merge.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Invitation Mail Merge.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251230_091427",
+      "to": "20251230_091429",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251230_091429",
+      "to": "20251230_092035",
+      "human_summary": "New files appeared: Invitation Final Version.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Invitation Final Version.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Invitation Final Version.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

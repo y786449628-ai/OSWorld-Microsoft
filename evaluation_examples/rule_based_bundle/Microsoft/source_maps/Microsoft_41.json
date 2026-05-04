@@ -1,0 +1,1902 @@
+{
+  "source_name": "Microsoft_41",
+  "source_file": "Microsoft_41.txt",
+  "source_id": "5aedaf0d44d3",
+  "source_question": "Create a new Word document named \"Formal_Complaint_Letter_Template.docx\" directly on your desktop. Design a formal complaint letter template suitable for a business or customer service scenario. The template must include the following elements: a professional letterhead section with company/sender details and the current date, a clear subject line, structured paragraphs for stating the complaint details and desired resolution, a 2-column table to itemize specific issues, a placeholder for a digital signature, and consistent page numbering. Use built-in Styles for headings, adjust paragraph spacing and alignment, and apply a professional font throughout. Finally, save the template and export it as a PDF file to your desktop.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new Word document named 'Formal_Complaint_Letter_Template.docx' on your desktop?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you design a professional letterhead section in the document with company/sender details and the current date?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a clear subject line to the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you structure paragraphs for stating the complaint details and desired resolution in the template?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a 2-column table to itemize specific issues in the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you include a placeholder for a digital signature in the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add consistent page numbering to the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you use built-in Styles for headings, adjust paragraph spacing and alignment, and apply a professional font throughout the document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 9,
+      "instruction": "Could you save the completed complaint letter template as a Word document?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 10,
+      "instruction": "Could you export the complaint letter template as a PDF file to your desktop?",
+      "mapped_stage_indices": [
+        7
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_word_document",
+      "instruction": "Could you create a new Word document named 'Formal_Complaint_Letter_Template.docx' on your desktop?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "On your desktop, right-click on an empty area, select New, then choose Microsoft Word Document. Rename the new file \"Formal_Complaint_Letter_Template.docx\" and double-click to open it.",
+      "planned_input_snapshot": "20260111_144029",
+      "planned_gold_snapshot": "20260111_144032",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable file creation and renaming.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_letterhead_and_subject_line",
+      "instruction": "Could you design a professional letterhead section in the document with company/sender details and the current date? Could you add a clear subject line to the complaint letter template?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Create a letterhead with company/organization name, address, contact details, and insert the current date. Add a subject line and apply the Heading 2 style.",
+      "planned_input_snapshot": "20260111_144032",
+      "planned_gold_snapshot": "20260111_144129",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "structure_complaint_paragraphs",
+      "instruction": "Could you structure paragraphs for stating the complaint details and desired resolution in the template?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Add introductory paragraph, details of the issue, and desired resolution. Apply Heading 3 style and add a bulleted list.",
+      "planned_input_snapshot": "20260111_144129",
+      "planned_gold_snapshot": "20260111_144337",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "insert_table_and_signature_placeholder",
+      "instruction": "Could you insert a 2-column table to itemize specific issues in the complaint letter template? Could you include a placeholder for a digital signature in the complaint letter template?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Insert a 2-column table and fill it with sample items. Add a placeholder for a digital signature.",
+      "planned_input_snapshot": "20260111_144337",
+      "planned_gold_snapshot": "20260111_144544",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with table and image insertion.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_page_numbering_and_formatting",
+      "instruction": "Could you add consistent page numbering to the complaint letter template? Could you use built-in Styles for headings, adjust paragraph spacing and alignment, and apply a professional font throughout the document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Add page numbering, set font, and adjust paragraph spacing and alignment.",
+      "planned_input_snapshot": "20260111_144544",
+      "planned_gold_snapshot": "20260111_144707",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with formatting and page numbering.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_word_document",
+      "instruction": "Could you save the completed complaint letter template as a Word document?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Click File, select Save As, ensure the save location is Desktop, and click Save.",
+      "planned_input_snapshot": "20260111_144707",
+      "planned_gold_snapshot": "20260111_144757",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with saving the document.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        9
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "export_pdf",
+      "instruction": "Could you export the complaint letter template as a PDF file to your desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Click File again, select Export, then choose Create PDF/XPS Document. Click Create PDF/XPS, confirm the save location is Desktop, and click Publish.",
+      "planned_input_snapshot": "20260111_144757",
+      "planned_gold_snapshot": "20260111_145123",
+      "snapshot_evidence": "New files appeared: Formal_Complaint_Letter_Template.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable PDF creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        10
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_word_document",
+      "instruction": "Could you create a new Word document named 'Formal_Complaint_Letter_Template.docx' on your desktop?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "On your desktop, right-click on an empty area, select New, then choose Microsoft Word Document. Rename the new file \"Formal_Complaint_Letter_Template.docx\" and double-click to open it.",
+      "planned_input_snapshot": "20260111_144029",
+      "planned_gold_snapshot": "20260111_144032",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable file creation and renaming.",
+      "input_snapshot": "20260111_144029",
+      "gold_snapshot": "20260111_144129",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Formal_Complaint_Letter_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260111_144029",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144029",
+          "planned_gold_snapshot": "20260111_144032"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "254eacea-9741-b1de-3cfd-82b34a31bf07",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/254eacea-9741-b1de-3cfd-82b34a31bf07.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_letterhead_and_subject_line",
+      "instruction": "Could you design a professional letterhead section in the document with company/sender details and the current date? Could you add a clear subject line to the complaint letter template?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Create a letterhead with company/organization name, address, contact details, and insert the current date. Add a subject line and apply the Heading 2 style.",
+      "planned_input_snapshot": "20260111_144032",
+      "planned_gold_snapshot": "20260111_144129",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with content addition and formatting.",
+      "input_snapshot": "20260111_144129",
+      "gold_snapshot": "20260111_144206",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Formal_Complaint_Letter_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260111_144032",
+        "chain_input_snapshot": "20260111_144129",
+        "chain_input_replaced": "20260111_144032",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 4,
+          "search_start_index": 3,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144032",
+          "planned_gold_snapshot": "20260111_144129"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "948f386c-424d-86da-1c2a-ab3316cbe259",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/948f386c-424d-86da-1c2a-ab3316cbe259.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "structure_complaint_paragraphs",
+      "instruction": "Could you structure paragraphs for stating the complaint details and desired resolution in the template?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Add introductory paragraph, details of the issue, and desired resolution. Apply Heading 3 style and add a bulleted list.",
+      "planned_input_snapshot": "20260111_144129",
+      "planned_gold_snapshot": "20260111_144337",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with content addition and formatting.",
+      "input_snapshot": "20260111_144206",
+      "gold_snapshot": "20260111_144337",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Formal_Complaint_Letter_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260111_144129",
+        "expanded_to_planned_gold_snapshot": "20260111_144337",
+        "chain_input_snapshot": "20260111_144206",
+        "chain_input_replaced": "20260111_144129",
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 7,
+          "search_start_index": 4,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144129",
+          "planned_gold_snapshot": "20260111_144337"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "3c767a71-2a9d-cc1f-6e4b-648595c4036b",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/3c767a71-2a9d-cc1f-6e4b-648595c4036b.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "insert_table_and_signature_placeholder",
+      "instruction": "Could you insert a 2-column table to itemize specific issues in the complaint letter template? Could you include a placeholder for a digital signature in the complaint letter template?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Insert a 2-column table and fill it with sample items. Add a placeholder for a digital signature.",
+      "planned_input_snapshot": "20260111_144337",
+      "planned_gold_snapshot": "20260111_144544",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with table and image insertion.",
+      "input_snapshot": "20260111_144337",
+      "gold_snapshot": "20260111_144544",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Formal_Complaint_Letter_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260111_144544",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 8,
+          "search_start_index": 7,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144337",
+          "planned_gold_snapshot": "20260111_144544"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "376cd750-2e20-6491-148f-6a3825982112",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/376cd750-2e20-6491-148f-6a3825982112.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_page_numbering_and_formatting",
+      "instruction": "Could you add consistent page numbering to the complaint letter template? Could you use built-in Styles for headings, adjust paragraph spacing and alignment, and apply a professional font throughout the document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Add page numbering, set font, and adjust paragraph spacing and alignment.",
+      "planned_input_snapshot": "20260111_144544",
+      "planned_gold_snapshot": "20260111_144707",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with formatting and page numbering.",
+      "input_snapshot": "20260111_144544",
+      "gold_snapshot": "20260111_144707",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Formal_Complaint_Letter_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260111_144707",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 10,
+          "search_start_index": 9,
+          "search_end_index": 10,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144544",
+          "planned_gold_snapshot": "20260111_144707"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "dcdc9d83-c105-b61e-69eb-8f8a1223d6ad",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/dcdc9d83-c105-b61e-69eb-8f8a1223d6ad.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_word_document",
+      "instruction": "Could you save the completed complaint letter template as a Word document?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Click File, select Save As, ensure the save location is Desktop, and click Save.",
+      "planned_input_snapshot": "20260111_144707",
+      "planned_gold_snapshot": "20260111_144757",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with saving the document.",
+      "input_snapshot": "20260111_144707",
+      "gold_snapshot": "20260111_144757",
+      "linked_preview_tasks": [
+        9
+      ],
+      "target_relative_path": "Formal_Complaint_Letter_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 10,
+          "trajectory_end": 10,
+          "search_start_index": 11,
+          "search_end_index": 11,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144707",
+          "planned_gold_snapshot": "20260111_144757"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "1a133ecb-a8a8-fc49-3543-2269f6791758",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/1a133ecb-a8a8-fc49-3543-2269f6791758.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "export_pdf",
+      "instruction": "Could you export the complaint letter template as a PDF file to your desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Click File again, select Export, then choose Create PDF/XPS Document. Click Create PDF/XPS, confirm the save location is Desktop, and click Publish.",
+      "planned_input_snapshot": "20260111_144757",
+      "planned_gold_snapshot": "20260111_145123",
+      "snapshot_evidence": "New files appeared: Formal_Complaint_Letter_Template.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable PDF creation.",
+      "input_snapshot": "20260111_144757",
+      "gold_snapshot": "20260111_145123",
+      "linked_preview_tasks": [
+        10
+      ],
+      "target_relative_path": "Formal_Complaint_Letter_Template.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260111_144757",
+        "trajectory_window": {
+          "trajectory_start": 11,
+          "trajectory_end": 11,
+          "search_start_index": 12,
+          "search_end_index": 15,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_144757",
+          "planned_gold_snapshot": "20260111_145123"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "794ed83d-6758-8160-fd25-be9e5bd31faf",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/794ed83d-6758-8160-fd25-be9e5bd31faf.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you design a professional letterhead section in the document with company/sender details and the current date?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a clear subject line to the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a 2-column table to itemize specific issues in the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you include a placeholder for a digital signature in the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add consistent page numbering to the complaint letter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you use built-in Styles for headings, adjust paragraph spacing and alignment, and apply a professional font throughout the document?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260111_144029",
+    "20260111_144032",
+    "20260111_144129",
+    "20260111_144206",
+    "20260111_144249",
+    "20260111_144309",
+    "20260111_144337",
+    "20260111_144412",
+    "20260111_144544",
+    "20260111_144652",
+    "20260111_144707",
+    "20260111_144757",
+    "20260111_144827",
+    "20260111_144937",
+    "20260111_145046",
+    "20260111_145123",
+    "20260111_145129",
+    "20260111_145146"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260111_144029",
+      "to": "20260111_144032",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260111_144032",
+      "to": "20260111_144129",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 0,
+              "to": 13530
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13530
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260111_144129",
+      "to": "20260111_144206",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 13530,
+              "to": 13924
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13530,
+              "to": 13924
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260111_144206",
+      "to": "20260111_144249",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 13924,
+              "to": 14045
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13924,
+              "to": 14045
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260111_144249",
+      "to": "20260111_144309",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14045,
+              "to": 14106
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14045,
+              "to": 14106
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260111_144309",
+      "to": "20260111_144337",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14106,
+              "to": 14282
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14106,
+              "to": 14282
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260111_144337",
+      "to": "20260111_144412",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14282,
+              "to": 14353
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14282,
+              "to": 14353
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260111_144412",
+      "to": "20260111_144544",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14353,
+              "to": 14917
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14353,
+              "to": 14917
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260111_144544",
+      "to": "20260111_144652",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14917,
+              "to": 16353
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14917,
+              "to": 16353
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260111_144652",
+      "to": "20260111_144707",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 16353,
+              "to": 16482
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16353,
+              "to": 16482
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260111_144707",
+      "to": "20260111_144757",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 16482,
+              "to": 16635
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16482,
+              "to": 16635
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260111_144757",
+      "to": "20260111_144827",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 16635,
+              "to": 101314
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16635,
+              "to": 101314
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260111_144827",
+      "to": "20260111_144937",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 101314,
+              "to": 104413
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 101314,
+              "to": 104413
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260111_144937",
+      "to": "20260111_145046",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 104413,
+              "to": 104630
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 104413,
+              "to": 104630
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260111_145046",
+      "to": "20260111_145123",
+      "human_summary": "New files appeared: Formal_Complaint_Letter_Template.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260111_145123",
+      "to": "20260111_145129",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260111_145129",
+      "to": "20260111_145146",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 104630,
+              "to": 104750
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 104630,
+              "to": 104750
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_41",
+    "snapshot_count": 18,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260111_144029",
+        "to": "20260111_144032",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Formal_Complaint_Letter_Template.docx"
+          ],
+          "files_removed": [
+            "New Microsoft Word Document.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Formal_Complaint_Letter_Template.docx"
+          ],
+          "files_removed": [
+            "New Microsoft Word Document.docx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260111_144032",
+        "to": "20260111_144129",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 0,
+                "to": 13530
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 0,
+                "to": 13530
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260111_144129",
+        "to": "20260111_144206",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 13530,
+                "to": 13924
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13530,
+                "to": 13924
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260111_144206",
+        "to": "20260111_144249",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 13924,
+                "to": 14045
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13924,
+                "to": 14045
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260111_144249",
+        "to": "20260111_144309",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 14045,
+                "to": 14106
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 14045,
+                "to": 14106
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260111_144309",
+        "to": "20260111_144337",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 14106,
+                "to": 14282
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 14106,
+                "to": 14282
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260111_144337",
+        "to": "20260111_144412",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 14282,
+                "to": 14353
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 14282,
+                "to": 14353
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260111_144412",
+        "to": "20260111_144544",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 14353,
+                "to": 14917
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 14353,
+                "to": 14917
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260111_144544",
+        "to": "20260111_144652",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 14917,
+                "to": 16353
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 14917,
+                "to": 16353
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260111_144652",
+        "to": "20260111_144707",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 16353,
+                "to": 16482
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16353,
+                "to": 16482
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260111_144707",
+        "to": "20260111_144757",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 16482,
+                "to": 16635
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16482,
+                "to": 16635
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260111_144757",
+        "to": "20260111_144827",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 16635,
+                "to": 101314
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16635,
+                "to": 101314
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260111_144827",
+        "to": "20260111_144937",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 101314,
+                "to": 104413
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 101314,
+                "to": 104413
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260111_144937",
+        "to": "20260111_145046",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 104413,
+                "to": 104630
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 104413,
+                "to": 104630
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260111_145046",
+        "to": "20260111_145123",
+        "human_summary": "New files appeared: Formal_Complaint_Letter_Template.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Formal_Complaint_Letter_Template.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Formal_Complaint_Letter_Template.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260111_145123",
+        "to": "20260111_145129",
+        "human_summary": "New files appeared: Microsoft Edge.lnk.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260111_145129",
+        "to": "20260111_145146",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "size": {
+                "from": 104630,
+                "to": 104750
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Formal_Complaint_Letter_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 104630,
+                "to": 104750
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "On your desktop, right-click on an empty area, select New, then choose Microsoft Word Document. Rename the new file \"Formal_Complaint_Letter_Template.docx\" and double-click to open it."
+    },
+    {
+      "index": 3,
+      "instruction": "At the top of the document, create a letterhead: Type your company/organization name (e.g., \"Global Consumer Services\"). Press Enter and add the address (e.g., \"123 Business Ave, City, State 12345\"). Press Enter and add contact details (e.g., \"Phone: (555) 123-4567 | Email: contact@example.com\")."
+    },
+    {
+      "index": 4,
+      "instruction": "Press Enter twice. Go to the Insert tab, click Date & Time, select a format, and check Update automatically. Click OK to insert the current date field. Align it to the right. Press Enter twice. Type \"SUBJECT: Formal Complaint Regarding [Product/Service Name]\". Select this line, go to the Home tab, and apply the Heading 2 style from the Styles gallery."
+    },
+    {
+      "index": 5,
+      "instruction": "Press Enter. Type \"Dear [Recipient's Name/Department],\". This begins the salutation. Press Enter twice to start the body. Write an introductory paragraph (e.g., \"I am writing to formally express my dissatisfaction with [product/service] purchased on [date]. The issues encountered are detailed below.\"). Press Enter twice. Type \"Details of the Issue:\". Select this text and apply the Heading 3 style. Press Enter."
+    },
+    {
+      "index": 6,
+      "instruction": "Go to the Insert tab, click Table, and insert a table with 2 columns and 4 rows. In the first row, type \"Issue #\" and \"Description\". Fill the next two rows with sample items (e.g., \"1\", \"Delayed delivery exceeding promised timeframe\")."
+    },
+    {
+      "index": 7,
+      "instruction": "Press Enter twice after the table. Type \"Desired Resolution:\", apply the Heading 3 style, and press Enter. Add a bulleted list (using the Bullets button in the Home tab) with 2-3 resolution points (e.g., \"Full refund for the transaction\", \"Formal apology from management\"). Press Enter twice. Type a closing paragraph (e.g., \"I trust this matter will be addressed promptly. I expect a response within 10 business days.\")."
+    },
+    {
+      "index": 8,
+      "instruction": "Press Enter four times. Type \"Sincerely,\". Press Enter twice. Type \"[Your Full Name]\". Press Enter. Type \"[Your Title/Role]\". Press Enter twice. Go to the Insert tab, click Pictures > This Device, and insert a simple placeholder image for a signature (or use a line shape from the Shapes menu as a signature line)."
+    },
+    {
+      "index": 9,
+      "instruction": "Go to the Insert tab, click Footer, and select Blank. In the footer area, click Page Number > Current Position, and select Plain Number. The page number will appear in the footer. Select all text (Ctrl+A). Go to the Home tab, set the Font to Calibri and Size to 11. Go to the Layout tab, in the Paragraph section, set Spacing After to 6 pt for consistent paragraph spacing."
+    },
+    {
+      "index": 10,
+      "instruction": "Click File, select Save As, ensure the save location is Desktop, and click Save."
+    },
+    {
+      "index": 11,
+      "instruction": "Click File again, select Export, then choose Create PDF/XPS Document. Click Create PDF/XPS, confirm the save location is Desktop, and click Publish."
+    },
+    {
+      "index": 12,
+      "instruction": "Close the software"
+    },
+    {
+      "index": 13,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 7,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 18
+  }
+}

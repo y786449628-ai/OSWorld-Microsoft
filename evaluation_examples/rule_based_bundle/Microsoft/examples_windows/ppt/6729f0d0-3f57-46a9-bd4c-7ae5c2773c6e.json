@@ -1,0 +1,85 @@
+{
+  "id": "6729f0d0-3f57-46a9-bd4c-7ae5c2773c6e",
+  "snapshot": "ppt",
+  "instruction": "Could you create a new PowerPoint presentation named 'Product_Launch_Presentation.pptx' on your desktop?",
+  "source": "Microsoft_63 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194357/Desktop/Material/drive-2.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\drive-2.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194357/Desktop/Material/Huawei-Smart-Charger.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Huawei-Smart-Charger.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194357/Desktop/New Microsoft PowerPoint Presentation.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\New Microsoft PowerPoint Presentation.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194409/Desktop/Product_Launch_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Product_Launch_Presentation_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\New Microsoft PowerPoint Presentation.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6729f0d0-3f57-46a9-bd4c-7ae5c2773c6e",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pptx",
+      "dest": "Product_Launch_Presentation.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Product_Launch_Presentation_gold.pptx",
+      "dest": "Product_Launch_Presentation_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Product_Launch_Presentation.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

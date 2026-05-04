@@ -1,0 +1,91 @@
+{
+  "id": "1c76dc2f-d131-1a2e-ae36-5f8968f2df8f",
+  "snapshot": "excel",
+  "instruction": "Could you use OCR to extract Alphabet Inc.'s 2022-2024 revenue data from the screenshots into Excel?",
+  "source": "Microsoft_04 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150302/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150302/Desktop/material/finance report 2022-2023.png",
+            "path": "C:\\Users\\78644\\Desktop\\material\\finance report 2022-2023.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150302/Desktop/material/finance report 2023-2024.png",
+            "path": "C:\\Users\\78644\\Desktop\\material\\finance report 2023-2024.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150652/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/1c76dc2f-d131-1a2e-ae36-5f8968f2df8f",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+      "dest": "Alphabet_Revenue_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
+      "dest": "Alphabet_Revenue_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Alphabet_Revenue_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

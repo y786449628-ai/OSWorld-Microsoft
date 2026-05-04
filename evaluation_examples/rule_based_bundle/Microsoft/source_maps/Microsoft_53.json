@@ -1,0 +1,1278 @@
+{
+  "source_name": "Microsoft_53",
+  "source_file": "Microsoft_53.txt",
+  "source_id": "7ef2db1a13dd",
+  "source_question": "Format the \"Service_Agreement_Draft.docx\" into a professional legal contract by applying rigorous typography, multi-level numbering, and document protection elements.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Service_Agreement_Draft.docx' document in Word?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you apply rigorous typography to the document to enhance its professional appearance?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add multi-level numbering to the document for better organization?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you enable document protection elements to secure the content of the contract?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_format_title",
+      "instruction": "Could you open the 'Service_Agreement_Draft.docx' document in Word and apply rigorous typography to the title?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open the document and format the title with Times New Roman, size 18, bold, and center alignment. Set custom margins.",
+      "planned_input_snapshot": "20260110_175137",
+      "planned_gold_snapshot": "20260110_175224",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_multilevel_numbering",
+      "instruction": "Could you add multi-level numbering to the document for better organization?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Select the 'Terms and Conditions' section and apply multi-level numbering. Format the 'Confidentiality:' paragraph with left indent and line spacing.",
+      "planned_input_snapshot": "20260110_175224",
+      "planned_gold_snapshot": "20260110_175312",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "replace_tbd_with_redacted",
+      "instruction": "Could you search for the text 'TBD' throughout the document and replace all instances with '[REDACTED]' in red color?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Search for 'TBD' and replace it with '[REDACTED]' in red color.",
+      "planned_input_snapshot": "20260110_175312",
+      "planned_gold_snapshot": "20260110_175417",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "format_signature_table",
+      "instruction": "Could you convert the raw signature data at the end of the document into a table and format it with borders?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Convert the raw signature data into a table and format it with borders.",
+      "planned_input_snapshot": "20260110_175417",
+      "planned_gold_snapshot": "20260110_175512",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_page_borders_and_watermark",
+      "instruction": "Could you add page borders and a watermark to the document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Add double line page borders and a 'LEGAL DRAFT' watermark. Add a header with 'Internal Use Only - Confidential'.",
+      "planned_input_snapshot": "20260110_175512",
+      "planned_gold_snapshot": "20260110_175758",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "enable_document_protection",
+      "instruction": "Could you enable document protection elements to secure the content of the contract?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Enable document protection to allow only comments.",
+      "planned_input_snapshot": "20260110_175758",
+      "planned_gold_snapshot": "20260110_175816",
+      "snapshot_evidence": "New files appeared: Final_Signed_Agreement.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_format_title",
+      "instruction": "Could you open the 'Service_Agreement_Draft.docx' document in Word and apply rigorous typography to the title?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open the document and format the title with Times New Roman, size 18, bold, and center alignment. Set custom margins.",
+      "planned_input_snapshot": "20260110_175137",
+      "planned_gold_snapshot": "20260110_175224",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_175137",
+      "gold_snapshot": "20260110_175224",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Service_Agreement_Draft.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 1,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_175137",
+          "planned_gold_snapshot": "20260110_175224"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "8559a2f8-d9ef-8586-b8cc-930852ce8998",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/8559a2f8-d9ef-8586-b8cc-930852ce8998.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_multilevel_numbering",
+      "instruction": "Could you add multi-level numbering to the document for better organization?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Select the 'Terms and Conditions' section and apply multi-level numbering. Format the 'Confidentiality:' paragraph with left indent and line spacing.",
+      "planned_input_snapshot": "20260110_175224",
+      "planned_gold_snapshot": "20260110_175312",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_175224",
+      "gold_snapshot": "20260110_175312",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Service_Agreement_Draft.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_175312",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 4,
+          "search_start_index": 2,
+          "search_end_index": 3,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_175224",
+          "planned_gold_snapshot": "20260110_175312"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "3697eda3-ebc8-1886-ff17-d1ef96a81596",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/3697eda3-ebc8-1886-ff17-d1ef96a81596.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "replace_tbd_with_redacted",
+      "instruction": "Could you search for the text 'TBD' throughout the document and replace all instances with '[REDACTED]' in red color?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Search for 'TBD' and replace it with '[REDACTED]' in red color.",
+      "planned_input_snapshot": "20260110_175312",
+      "planned_gold_snapshot": "20260110_175417",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_175312",
+      "gold_snapshot": "20260110_175417",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Service_Agreement_Draft.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 5,
+          "search_start_index": 4,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_175312",
+          "planned_gold_snapshot": "20260110_175417"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "46546706-5935-1377-c8bc-8d9884c9be70",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/46546706-5935-1377-c8bc-8d9884c9be70.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "format_signature_table",
+      "instruction": "Could you convert the raw signature data at the end of the document into a table and format it with borders?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Convert the raw signature data into a table and format it with borders.",
+      "planned_input_snapshot": "20260110_175417",
+      "planned_gold_snapshot": "20260110_175512",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_175417",
+      "gold_snapshot": "20260110_175512",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Service_Agreement_Draft.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_175512",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 7,
+          "search_start_index": 5,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_175417",
+          "planned_gold_snapshot": "20260110_175512"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "8101e1fd-9204-f3de-7ac3-028850a241c8",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/8101e1fd-9204-f3de-7ac3-028850a241c8.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_page_borders_and_watermark",
+      "instruction": "Could you add page borders and a watermark to the document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Add double line page borders and a 'LEGAL DRAFT' watermark. Add a header with 'Internal Use Only - Confidential'.",
+      "planned_input_snapshot": "20260110_175512",
+      "planned_gold_snapshot": "20260110_175758",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_175512",
+      "gold_snapshot": "20260110_175758",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Service_Agreement_Draft.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_175758",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 10,
+          "search_start_index": 7,
+          "search_end_index": 9,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_175512",
+          "planned_gold_snapshot": "20260110_175758"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0bd83485-b727-2556-058d-0b6f9ac52719",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/0bd83485-b727-2556-058d-0b6f9ac52719.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "enable_document_protection",
+      "instruction": "Could you enable document protection elements to secure the content of the contract?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Enable document protection to allow only comments.",
+      "planned_input_snapshot": "20260110_175758",
+      "planned_gold_snapshot": "20260110_175816",
+      "snapshot_evidence": "New files appeared: Final_Signed_Agreement.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_175758",
+      "gold_snapshot": "20260110_175816",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Final_Signed_Agreement.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_docx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "993639ab-041d-c8fc-f9ad-d16867885c87",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/993639ab-041d-c8fc-f9ad-d16867885c87.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Service_Agreement_Draft.docx' document in Word?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you apply rigorous typography to the document to enhance its professional appearance?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260110_175137",
+    "20260110_175224",
+    "20260110_175236",
+    "20260110_175312",
+    "20260110_175417",
+    "20260110_175426",
+    "20260110_175512",
+    "20260110_175534",
+    "20260110_175649",
+    "20260110_175758",
+    "20260110_175816"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_175137",
+      "to": "20260110_175224",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15527,
+              "to": 15542
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15527,
+              "to": 15542
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_175224",
+      "to": "20260110_175236",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15542,
+              "to": 15745
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15542,
+              "to": 15745
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_175236",
+      "to": "20260110_175312",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15745,
+              "to": 15792
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15745,
+              "to": 15792
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_175312",
+      "to": "20260110_175417",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15792,
+              "to": 15861
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15792,
+              "to": 15861
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_175417",
+      "to": "20260110_175426",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15861,
+              "to": 16195
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15861,
+              "to": 16195
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_175426",
+      "to": "20260110_175512",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 16195,
+              "to": 16300
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16195,
+              "to": 16300
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_175512",
+      "to": "20260110_175534",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 16300,
+              "to": 16355
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16300,
+              "to": 16355
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_175534",
+      "to": "20260110_175649",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 16355,
+              "to": 25107
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16355,
+              "to": 25107
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260110_175649",
+      "to": "20260110_175758",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 25107,
+              "to": 25154
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 25107,
+              "to": 25154
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260110_175758",
+      "to": "20260110_175816",
+      "human_summary": "New files appeared: Final_Signed_Agreement.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Final_Signed_Agreement.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Final_Signed_Agreement.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_53",
+    "snapshot_count": 11,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_175137",
+        "to": "20260110_175224",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 15527,
+                "to": 15542
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15527,
+                "to": 15542
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_175224",
+        "to": "20260110_175236",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 15542,
+                "to": 15745
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15542,
+                "to": 15745
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_175236",
+        "to": "20260110_175312",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 15745,
+                "to": 15792
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15745,
+                "to": 15792
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_175312",
+        "to": "20260110_175417",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 15792,
+                "to": 15861
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15792,
+                "to": 15861
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_175417",
+        "to": "20260110_175426",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 15861,
+                "to": 16195
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15861,
+                "to": 16195
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260110_175426",
+        "to": "20260110_175512",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 16195,
+                "to": 16300
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16195,
+                "to": 16300
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260110_175512",
+        "to": "20260110_175534",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 16300,
+                "to": 16355
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16300,
+                "to": 16355
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260110_175534",
+        "to": "20260110_175649",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 16355,
+                "to": 25107
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16355,
+                "to": 25107
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260110_175649",
+        "to": "20260110_175758",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "size": {
+                "from": 25107,
+                "to": 25154
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Service_Agreement_Draft.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 25107,
+                "to": 25154
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260110_175758",
+        "to": "20260110_175816",
+        "human_summary": "New files appeared: Final_Signed_Agreement.docx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Final_Signed_Agreement.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Final_Signed_Agreement.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Open \"Service_Agreement_Draft.docx\". Select the title \"STRATEGIC SERVICE AGREEMENT\". On the \"Home\" tab, set the Font to \"Times New Roman\", Size to \"18\", apply \"Bold\", and click \"Center\"."
+    },
+    {
+      "index": 2,
+      "instruction": "Go to the \"Layout\" tab, click \"Margins\" > \"Custom Margins\". Set Top and Bottom to \"1.2 inches\", Left to \"1.5 inches\" (for binding), and Right to \"1.5 inches\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Select the \"Terms and Conditions\" section. On the \"Home\" tab, click the \"Multilevel List\" icon and select the \"1. Heading 1, 1.1 Heading 2...\" style to format the legal clauses."
+    },
+    {
+      "index": 4,
+      "instruction": "Locate the paragraph starting with \"Confidentiality:\". Right-click and select \"Paragraph\". Set \"Left Indent\" to \"0.5 inches\" and \"Line Spacing\" to \"Exactly 20 pt\" to improve readability."
+    },
+    {
+      "index": 5,
+      "instruction": "Search for the text \"TBD\" throughout the document. Use the \"Replace\" feature (Ctrl+H) to change all instances to \"[REDACTED]\" and set the replacement text color to \"Red\"."
+    },
+    {
+      "index": 6,
+      "instruction": "Find the raw signature data at the end of the document. Select the lines and go to \"Insert\" > \"Table\" > \"Convert Text to Table\". Set it to 2 columns and 2 rows."
+    },
+    {
+      "index": 7,
+      "instruction": "Click inside the signature table. Under \"Table Design\", select \"Borders\" > \"No Border\". Then, select only the cells for signatures and apply a \"Bottom Border\" to create signing lines."
+    },
+    {
+      "index": 8,
+      "instruction": "Go to the \"Design\" tab, click \"Page Borders\". Choose a \"Double Line\" style, set the color to \"Automatic\", and apply it to the \"Whole Document\"."
+    },
+    {
+      "index": 9,
+      "instruction": "Go to the \"Insert\" tab, click \"Header\" > \"Edit Header\". Type \"Internal Use Only - Confidential\" on the left."
+    },
+    {
+      "index": 10,
+      "instruction": "Click \"Design\" > \"Watermark\" > \"Custom Watermark\". Select \"Text Watermark\", type \"LEGAL DRAFT\", set the font to \"Impact\", and color to \"Light Gray, Background 2\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Navigate to \"Review\" > \"Restrict Editing\". Under \"Editing restrictions\", check \"Allow only this type of editing\" and set it to \"Comments\" to protect the original text."
+    },
+    {
+      "index": 12,
+      "instruction": "Save the final document as \"Final_Signed_Agreement.docx\"."
+    },
+    {
+      "index": 13,
+      "instruction": "For Deletion"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 6,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 11
+  }
+}

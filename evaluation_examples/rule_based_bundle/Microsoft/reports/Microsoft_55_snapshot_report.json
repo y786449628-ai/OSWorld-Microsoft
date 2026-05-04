@@ -1,0 +1,334 @@
+{
+  "source_name": "Microsoft_55",
+  "snapshot_count": 11,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260115_095848",
+      "to": "20260115_100049",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 461921,
+              "to": 462276
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 461921,
+              "to": 462276
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260115_100049",
+      "to": "20260115_100234",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 462276,
+              "to": 465346
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 462276,
+              "to": 465346
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260115_100234",
+      "to": "20260115_100302",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260115_100302",
+      "to": "20260115_100337",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 465346,
+              "to": 468266
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 465346,
+              "to": 468266
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260115_100337",
+      "to": "20260115_100427",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 468266,
+              "to": 474861
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 468266,
+              "to": 474861
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260115_100427",
+      "to": "20260115_100541",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 474861,
+              "to": 475350
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 474861,
+              "to": 475350
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260115_100541",
+      "to": "20260115_100618",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 475350,
+              "to": 475535
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 475350,
+              "to": 475535
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260115_100618",
+      "to": "20260115_100653",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 475535,
+              "to": 475895
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 475535,
+              "to": 475895
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260115_100653",
+      "to": "20260115_100732",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 475895,
+              "to": 481601
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 475895,
+              "to": 481601
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260115_100732",
+      "to": "20260115_100924",
+      "human_summary": "New files appeared: Alpha_Final_Report.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Alpha_Final_Report.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Alpha_Final_Report.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

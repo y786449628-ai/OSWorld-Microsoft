@@ -1,0 +1,422 @@
+{
+  "source_name": "Microsoft_18",
+  "source_file": "Microsoft_18.txt",
+  "source_id": "f905e4c508f0",
+  "source_question": "The company sell fruit, vegetable and meat, there is detail list of each shop revenue, the Boss want to see the total sales revenue of selected category and product.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the revenue list and filter it to show only the selected category and product?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you calculate the total sales revenue for the filtered data?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you create a summary table that shows the total sales revenue for the selected category and product?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document to present the total sales revenue?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you copy the summary table into the report document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save the report document in a format suitable for sharing with the boss?",
+      "mapped_stage_indices": [
+        3
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_excel_workbook",
+      "instruction": "Could you open the revenue list and filter it to show only the selected category and product?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open Excel, create a new workbook, and open the Detail and Mapping files.",
+      "planned_input_snapshot": "20260104_191852",
+      "planned_gold_snapshot": "20260104_192551",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from no file to the creation of the final result.xlsx.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "calculate_total_sales_revenue",
+      "instruction": "Could you calculate the total sales revenue for the filtered data?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Copy data, create named ranges, set up data validation, and input the SUMIFS formula.",
+      "planned_input_snapshot": "20260104_192551",
+      "planned_gold_snapshot": "20260104_192553",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the stage is necessary for the workflow. Consider merging with the previous or next stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "save_final_excel_file",
+      "instruction": "Could you save the report document in a format suitable for sharing with the boss?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 17,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Save the final result as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260104_192553",
+      "planned_gold_snapshot": "20260104_192553",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the stage is necessary for the workflow. Consider merging with the previous or next stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_excel_workbook_and_save_final_excel_file_and_calculate_total_sales_revenue",
+      "instruction": "Could you open the revenue list and filter it to show only the selected category and product, and then save the report document in a format suitable for sharing with the boss, and then calculate the total sales revenue for the filtered data?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Open Excel, create a new workbook, and open the Detail and Mapping files. | Save the final result as 'final result.xlsx'. | Copy data, create named ranges, set up data validation, and input the SUMIFS formula.",
+      "planned_input_snapshot": "20260104_191852",
+      "planned_gold_snapshot": "20260104_192553",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from no file to the creation of the final result.xlsx.",
+      "input_snapshot": "20260104_191852",
+      "gold_snapshot": "20260104_192553",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260104_191852",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 5,
+          "search_start_index": 1,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260104_191852",
+          "planned_gold_snapshot": "20260104_192551"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 2,
+          "stage_name": "calculate_total_sales_revenue",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_and_prepare_excel_workbook",
+        "save_final_excel_file",
+        "calculate_total_sales_revenue"
+      ],
+      "merged_stage_indices": [
+        1,
+        3,
+        2
+      ],
+      "generated_examples": [
+        {
+          "example_id": "a834a858-5715-a0cd-88a1-d5369e9ab9d1",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/a834a858-5715-a0cd-88a1-d5369e9ab9d1.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you create a summary table that shows the total sales revenue for the selected category and product?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document to present the total sales revenue?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you copy the summary table into the report document?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260104_191852",
+    "20260104_191924",
+    "20260104_192551",
+    "20260104_192553"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260104_191852",
+      "to": "20260104_191924",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260104_191924",
+      "to": "20260104_192551",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260104_192551",
+      "to": "20260104_192553",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_18",
+    "snapshot_count": 4,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260104_191852",
+        "to": "20260104_191924",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260104_191924",
+        "to": "20260104_192551",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260104_192551",
+        "to": "20260104_192553",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select File---Open---Browse of other locations----Click Desktop---Double Click Material---find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select File---Open---Browse of other locations----Click Desktop---Double Click Material---find Mapping file and choose it, then click open."
+    },
+    {
+      "index": 5,
+      "instruction": "Click Ctrl+A, then click Ctrl+C, Click Detail file, Click sheet2, then click Ctrl+V, copy the mapping detail into detail file."
+    },
+    {
+      "index": 6,
+      "instruction": "Click Ctrl+G, will pop up a Go to frame, then click Special button, click constants, then click OK."
+    },
+    {
+      "index": 7,
+      "instruction": "Click Menu---Formulas, find and click Crate from selection, will pop up a frame of Create Names from Selection, choose Top row, then click OK."
+    },
+    {
+      "index": 8,
+      "instruction": "Click Sheet1, then click F3 cell, input \"Category\", then click G3 cell, input \"Product\""
+    },
+    {
+      "index": 10,
+      "instruction": "Click F6 cell, input \"Total Sales revenue\", click F7, then click Menu---Home, click Fill color, select Gold color."
+    },
+    {
+      "index": 11,
+      "instruction": "Click F4 cell, click Menu---Data, find and click data validation, will pop up a frame of data validation, then, select list of Allow"
+    },
+    {
+      "index": 12,
+      "instruction": "Click the arrow button of Source, then click Sheet2, select A1 to C1, then click enter, click OK button, close the frame of Data validation"
+    },
+    {
+      "index": 13,
+      "instruction": "Click G4 cell, find and click data validation, will pop up a frame of data validation, then, select list of Allow"
+    },
+    {
+      "index": 14,
+      "instruction": "Click  Source, then input \"=indirect(F4)\", then click OK Button, will pop up a frame, click Yes button"
+    },
+    {
+      "index": 15,
+      "instruction": "Click F7 cell, input\"=SUMIFS(C:C,A:A,$F$4,B:B,$G$4)\", then click enter."
+    },
+    {
+      "index": 16,
+      "instruction": "Click F4, select \"fruit\", Click G4, Select \"apple\", F7 should show 900."
+    },
+    {
+      "index": 17,
+      "instruction": "Click Menu---file, find and click Save as, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 18,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 3,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 4
+  }
+}

@@ -1,0 +1,952 @@
+{
+  "source_name": "Microsoft_49",
+  "source_file": "Microsoft_49.txt",
+  "source_id": "53154b384636",
+  "source_question": "Create a comprehensive presentation about Shanghai by formatting the layout, inserting specific data visualizations, and synchronizing the visual transitions.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new PowerPoint presentation for the topic of Shanghai?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you format the layout of the presentation to make it visually appealing?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you insert specific data visualizations related to Shanghai into the presentation?",
+      "mapped_stage_indices": [
+        3,
+        4
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you synchronize the visual transitions between slides in the presentation?",
+      "mapped_stage_indices": [
+        5
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_presentation",
+      "instruction": "Could you create a new PowerPoint presentation for the topic of Shanghai?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 1,
+      "trajectory_evidence": "Open \"Powerpoint1.pptx\" and format the background.",
+      "planned_input_snapshot": "20260109_164001",
+      "planned_gold_snapshot": "20260109_164012",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "format_layout",
+      "instruction": "Could you format the layout of the presentation to make it visually appealing?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Format the title and subtitle on Slide 1.",
+      "planned_input_snapshot": "20260109_164012",
+      "planned_gold_snapshot": "20260109_164229",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "insert_table_of_contents",
+      "instruction": "Could you insert specific data visualizations related to Shanghai into the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Insert a table of contents slide and add a chart on Slide 4.",
+      "planned_input_snapshot": "20260109_164229",
+      "planned_gold_snapshot": "20260109_164529",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_cultural_diversity_content",
+      "instruction": "Could you insert specific data visualizations related to Shanghai into the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Copy text from Notepad and paste it into Slide 5, then format the text.",
+      "planned_input_snapshot": "20260109_164529",
+      "planned_gold_snapshot": "20260109_164548",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "synchronize_visual_transitions",
+      "instruction": "Could you synchronize the visual transitions between slides in the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Set the transition effect to Push and apply it to all slides.",
+      "planned_input_snapshot": "20260109_164548",
+      "planned_gold_snapshot": "20260109_164612",
+      "snapshot_evidence": "New files appeared: Shanghai_Intro.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_presentation",
+      "instruction": "Could you create a new PowerPoint presentation for the topic of Shanghai?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 1,
+      "trajectory_evidence": "Open \"Powerpoint1.pptx\" and format the background.",
+      "planned_input_snapshot": "20260109_164001",
+      "planned_gold_snapshot": "20260109_164012",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260109_164001",
+      "gold_snapshot": "20260109_164012",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Powerpoint1.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 1,
+          "trajectory_end": 1,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_164001",
+          "planned_gold_snapshot": "20260109_164012"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "e4d9ab38-c509-a719-ebd0-485464c83271",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/e4d9ab38-c509-a719-ebd0-485464c83271.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "format_layout",
+      "instruction": "Could you format the layout of the presentation to make it visually appealing?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Format the title and subtitle on Slide 1.",
+      "planned_input_snapshot": "20260109_164012",
+      "planned_gold_snapshot": "20260109_164229",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260109_164012",
+      "gold_snapshot": "20260109_164229",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Powerpoint1.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_164012",
+          "planned_gold_snapshot": "20260109_164229"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "8e1e3175-c06e-8294-d95e-866c096adc78",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/8e1e3175-c06e-8294-d95e-866c096adc78.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "insert_table_of_contents",
+      "instruction": "Could you insert specific data visualizations related to Shanghai into the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Insert a table of contents slide and add a chart on Slide 4.",
+      "planned_input_snapshot": "20260109_164229",
+      "planned_gold_snapshot": "20260109_164529",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260109_164229",
+      "gold_snapshot": "20260109_164529",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Powerpoint1.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260109_164529",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 6,
+          "search_start_index": 3,
+          "search_end_index": 5,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_164229",
+          "planned_gold_snapshot": "20260109_164529"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6f17e8d0-1029-70a7-3a58-19c5bdbd30bf",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/6f17e8d0-1029-70a7-3a58-19c5bdbd30bf.json"
+        },
+        {
+          "example_id": "73f6549b-f19b-27d5-dd6e-7166ffdfba86",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/73f6549b-f19b-27d5-dd6e-7166ffdfba86.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_cultural_diversity_content",
+      "instruction": "Could you insert specific data visualizations related to Shanghai into the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Copy text from Notepad and paste it into Slide 5, then format the text.",
+      "planned_input_snapshot": "20260109_164529",
+      "planned_gold_snapshot": "20260109_164548",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260109_164529",
+      "gold_snapshot": "20260109_164548",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Powerpoint1.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 7,
+          "trajectory_end": 8,
+          "search_start_index": 6,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_164529",
+          "planned_gold_snapshot": "20260109_164548"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6f17e8d0-1029-70a7-3a58-19c5bdbd30bf",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/6f17e8d0-1029-70a7-3a58-19c5bdbd30bf.json"
+        },
+        {
+          "example_id": "73f6549b-f19b-27d5-dd6e-7166ffdfba86",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/73f6549b-f19b-27d5-dd6e-7166ffdfba86.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "synchronize_visual_transitions",
+      "instruction": "Could you synchronize the visual transitions between slides in the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Set the transition effect to Push and apply it to all slides.",
+      "planned_input_snapshot": "20260109_164548",
+      "planned_gold_snapshot": "20260109_164612",
+      "snapshot_evidence": "New files appeared: Shanghai_Intro.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260109_164548",
+      "gold_snapshot": "20260109_164612",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Shanghai_Intro.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_pptx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "031fce4e-74d4-c4ef-5621-75d6b8bcaef6",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/031fce4e-74d4-c4ef-5621-75d6b8bcaef6.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260109_164001",
+    "20260109_164012",
+    "20260109_164229",
+    "20260109_164424",
+    "20260109_164451",
+    "20260109_164529",
+    "20260109_164548",
+    "20260109_164612"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_164001",
+      "to": "20260109_164012",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1298712,
+              "to": 1298679
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1298712,
+              "to": 1298679
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_164012",
+      "to": "20260109_164229",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1298679,
+              "to": 1299935
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1298679,
+              "to": 1299935
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_164229",
+      "to": "20260109_164424",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1299935,
+              "to": 1314234
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1299935,
+              "to": 1314234
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_164424",
+      "to": "20260109_164451",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_164451",
+      "to": "20260109_164529",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1314234,
+              "to": 1314432
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1314234,
+              "to": 1314432
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_164529",
+      "to": "20260109_164548",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1314432,
+              "to": 1314885
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1314432,
+              "to": 1314885
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_164548",
+      "to": "20260109_164612",
+      "human_summary": "New files appeared: Shanghai_Intro.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Shanghai_Intro.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Shanghai_Intro.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_49",
+    "snapshot_count": 8,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_164001",
+        "to": "20260109_164012",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "size": {
+                "from": 1298712,
+                "to": 1298679
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1298712,
+                "to": 1298679
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_164012",
+        "to": "20260109_164229",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "size": {
+                "from": 1298679,
+                "to": 1299935
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1298679,
+                "to": 1299935
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_164229",
+        "to": "20260109_164424",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "size": {
+                "from": 1299935,
+                "to": 1314234
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1299935,
+                "to": 1314234
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_164424",
+        "to": "20260109_164451",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_164451",
+        "to": "20260109_164529",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "size": {
+                "from": 1314234,
+                "to": 1314432
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1314234,
+                "to": 1314432
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_164529",
+        "to": "20260109_164548",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "size": {
+                "from": 1314432,
+                "to": 1314885
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Powerpoint1.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1314432,
+                "to": 1314885
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260109_164548",
+        "to": "20260109_164612",
+        "human_summary": "New files appeared: Shanghai_Intro.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Shanghai_Intro.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Shanghai_Intro.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Open \"Powerpoint1.pptx\". Go to the \"Design\" tab and click the \"Format Background\" button in the \"Customize\" group. In the pane that appears, select \"Picture or texture fill\", click \"Insert\" under \"Picture source\", select \"Background.png\", and then click \"Apply to All\" at the bottom."
+    },
+    {
+      "index": 2,
+      "instruction": "Navigate to Slide 1. Click the title placeholder and type \"An Introduction of Shanghai\". Select the text, go to the \"Home\" tab, set the font to \"Arial Black\", and change the font size to \"54\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Select the text in the subtitle and set the font color to \"Turquoise, Accent 4\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Insert a new slide between Slide 1 and Slide 2, enter the title \"Table of Contents\", copy the titles from pages 3, 4, 5, and 6 into the content box, and add hyperlinks for each page."
+    },
+    {
+      "index": 5,
+      "instruction": "On Slide 4, go to the \"Insert\" tab and click \"Chart\". Select \"Column\" > \"Clustered Column\" and click \"OK\"."
+    },
+    {
+      "index": 6,
+      "instruction": "In the pop-up Excel-like data window, enter \"2023, 2024, 2025\" in cells B1 to D1, and enter \"GDP, YoY\" in cells A2 to A3. Delete any extra sample data rows or columns, then close the data window."
+    },
+    {
+      "index": 7,
+      "instruction": "Open \"Culture.txt\" using Notepad. Press \"Ctrl + A\" to select all text, then press \"Ctrl + C\" to copy."
+    },
+    {
+      "index": 8,
+      "instruction": "Return to PowerPoint Slide 5. Enter \"Cultural Diversity\" in the title placeholder. Click the large content box below and press \"Ctrl + V\" to paste the text.Select the pasted text. On the \"Home\" tab, set the font size to \"24\". Click the \"Line Spacing\" icon in the \"Paragraph\" group and select \"1.5\"."
+    },
+    {
+      "index": 9,
+      "instruction": "Go to the \"Transitions\" tab and select \"Push\" from the gallery. In the \"Effect Options\" drop-down menu, select \"From Bottom\". Click \"Apply to All\"."
+    },
+    {
+      "index": 10,
+      "instruction": "Click \"File\" > \"Save As\" and name the file \"Shanghai_Intro.pptx\"."
+    },
+    {
+      "index": 11,
+      "instruction": "For Deletion"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 5,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 8
+  }
+}

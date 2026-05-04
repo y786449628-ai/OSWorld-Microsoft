@@ -1,0 +1,85 @@
+{
+  "id": "70481d6f-2ffe-3942-9329-145509e1c4a9",
+  "snapshot": "ppt",
+  "instruction": "Could you design a presentation in PowerPoint 365 that reuses the Excel data, applies specific slide layouts, font sizes, and chart styles to produce a professional review deck?",
+  "source": "Microsoft_22 true stage 6",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012419/Desktop/Marketing_Campaign_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Marketing_Campaign_Data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012419/Desktop/Marketing_Performance_Report.docx",
+            "path": "C:\\Users\\User\\Desktop\\Marketing_Performance_Report.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012419/Desktop/material/Marketing_Performance_Review.pptx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Marketing_Performance_Review.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012631/Desktop/material/Marketing_Performance_Review.pptx",
+            "path": "C:\\Users\\User\\Documents\\Marketing_Performance_Review_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\material\\Marketing_Performance_Review.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/70481d6f-2ffe-3942-9329-145509e1c4a9",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\material\\Marketing_Performance_Review.pptx",
+      "dest": "Marketing_Performance_Review.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Marketing_Performance_Review_gold.pptx",
+      "dest": "Marketing_Performance_Review_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Marketing_Performance_Review.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

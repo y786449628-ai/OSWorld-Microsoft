@@ -1,0 +1,81 @@
+{
+  "id": "479ed484-f948-5d04-5eed-f78700a49610",
+  "snapshot": "word",
+  "instruction": "Could you create a new landscape document in Word and insert a table?",
+  "source": "Microsoft_02 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180728/Desktop/Material/data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\data.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180728/Desktop/Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180933/Desktop/Doc1.docx",
+            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/479ed484-f948-5d04-5eed-f78700a49610",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Doc1.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

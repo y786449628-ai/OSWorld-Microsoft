@@ -1,0 +1,77 @@
+{
+  "id": "31cc8fc2-88e0-a36e-5211-f5ed7cacff93",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'Project' inside the 'Project_Launch' folder, and then create a structured project charter template in the Word document with sections for Project Title, Goals, Scope, Key Stakeholders, Milestones, Resources, and Risks & Assumptions? Could you apply the appropriate built-in 'Heading' style to the label of each section in the project charter template? Could you insert a table in the 'Key Stakeholders' section with columns for 'Name', 'Role', and 'Department'? Could you create a numbered list under the 'Milestones' section in the project charter template? Could you add a watermark to the Word document, insert a header containing the company name, and a footer with page numbers?",
+  "source": "Microsoft_36 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_36/logs/MonitoringSnapshots/20260110_181628/Desktop/Project/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Project\\New Microsoft Word Document.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_36/logs/MonitoringSnapshots/20260110_182334/Desktop/Project/Charter.docx",
+            "path": "C:\\Users\\78644\\Documents\\Charter_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/31cc8fc2-88e0-a36e-5211-f5ed7cacff93",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project\\Charter.docx",
+      "dest": "Charter.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Charter_gold.docx",
+      "dest": "Charter_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Charter.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

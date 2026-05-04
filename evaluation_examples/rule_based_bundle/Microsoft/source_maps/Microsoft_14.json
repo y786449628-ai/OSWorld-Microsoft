@@ -1,0 +1,534 @@
+{
+  "source_name": "Microsoft_14",
+  "source_file": "Microsoft_14.txt",
+  "source_id": "3aed7d8f0617",
+  "source_question": "There are many sales rep in sales department, each sales rep has individual target, and the sales acutal data in another file, and at the end of year, Boss want to review sales performance, and he want to view top 3 and bottom 3 sales rep information.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the file containing the actual sales data and the file with individual sales rep targets?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a new Excel sheet to consolidate the sales rep information and their actual sales data?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the performance of each sales rep by comparing their actual sales data with their individual targets?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you sort the sales reps based on their performance to identify the top 3 and bottom 3 sales reps?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a summary table in the new Excel sheet that lists the top 3 and bottom 3 sales reps along with their performance details?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you prepare a report document in Word to present the top 3 and bottom 3 sales rep information for the boss's review?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_sales_data_and_targets",
+      "instruction": "Could you open the file containing the actual sales data and the file with individual sales rep targets?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Open Target file and Actual Sales file",
+      "planned_input_snapshot": "20260105_212912",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from opening files to creating a new Excel workbook.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "consolidate_sales_rep_information",
+      "instruction": "Could you create a new Excel sheet to consolidate the sales rep information and their actual sales data?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Input 'Actual Sales' in C1, use SUMIFS formula in C2, and fill down the formula",
+      "planned_input_snapshot": "20260105_213508",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_performance",
+      "instruction": "Could you calculate the performance of each sales rep by comparing their actual sales data with their individual targets?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Calculate 'Achieve%' in D2, fill down the formula, and format as percentage",
+      "planned_input_snapshot": "20260105_213508",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "sort_sales_reps",
+      "instruction": "Could you sort the sales reps based on their performance to identify the top 3 and bottom 3 sales reps?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Add 'Rank' in E1, use RANK formula in E2, and fill down the formula",
+      "planned_input_snapshot": "20260105_213508",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "highlight_top_bottom_sales_reps",
+      "instruction": "Could you create a summary table in the new Excel sheet that lists the top 3 and bottom 3 sales reps along with their performance details?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 23,
+      "trajectory_evidence": "Apply conditional formatting to highlight top 3 and bottom 3 sales reps",
+      "planned_input_snapshot": "20260105_213508",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_final_excel",
+      "instruction": "Could you save the final Excel file with the consolidated and formatted data?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 24,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Save the Excel file as 'final result.xlsx'",
+      "planned_input_snapshot": "20260105_213508",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from saving the final Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_sales_data_and_targets_and_consolidate_sales_rep_information_and_calculate_performance_and_sort_sales_reps_and_highlight_top_bottom_sales_reps_and_save_final_excel",
+      "instruction": "Could you open the file containing the actual sales data and the file with individual sales rep targets, and then create a new Excel sheet to consolidate the sales rep information and their actual sales data, and then calculate the performance of each sales rep by comparing their actual sales data with their individual targets, and then sort the sales reps based on their performance to identify the top 3 and bottom 3 sales reps, and then create a summary table in the new Excel sheet that lists the top 3 and bottom 3 sales reps along with their performance details, and then save the final Excel file with the consolidated and formatted data?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 3,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Open Target file and Actual Sales file | Input 'Actual Sales' in C1, use SUMIFS formula in C2, and fill down the formula | Calculate 'Achieve%' in D2, fill down the formula, and format as percentage | Add 'Rank' in E1, use RANK formula in E2, and fill down the formula | Apply conditional formatting to highlight top 3 and bottom 3 sales reps | Save the Excel file as 'final result.xlsx'",
+      "planned_input_snapshot": "20260105_212912",
+      "planned_gold_snapshot": "20260105_213508",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from opening files to creating a new Excel workbook.",
+      "input_snapshot": "20260105_212857",
+      "gold_snapshot": "20260105_213508",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "chain_input_snapshot": "20260105_212857",
+        "chain_input_replaced": "20260105_212912",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 4,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260105_212912",
+          "planned_gold_snapshot": "20260105_213508"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 6,
+          "stage_name": "save_final_excel",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "open_sales_data_and_targets",
+        "consolidate_sales_rep_information",
+        "calculate_performance",
+        "sort_sales_reps",
+        "highlight_top_bottom_sales_reps",
+        "save_final_excel"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "generated_examples": [
+        {
+          "example_id": "de217977-247d-647c-b422-52bdbedac762",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/de217977-247d-647c-b422-52bdbedac762.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 6,
+      "instruction": "Could you prepare a report document in Word to present the top 3 and bottom 3 sales rep information for the boss's review?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260105_212857",
+    "20260105_212912",
+    "20260105_213508",
+    "20260105_213510"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260105_212857",
+      "to": "20260105_212912",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260105_212912",
+      "to": "20260105_213508",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260105_213508",
+      "to": "20260105_213510",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_14",
+    "snapshot_count": 4,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260105_212857",
+        "to": "20260105_212912",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260105_212912",
+        "to": "20260105_213508",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260105_213508",
+        "to": "20260105_213510",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Target file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Actual Sales file and choose it, then click open."
+    },
+    {
+      "index": 5,
+      "instruction": "Select Target file, Click C1 cell, input \"Actual Sales\""
+    },
+    {
+      "index": 6,
+      "instruction": "Select C2 cell, input \"=SUMIFS('[Actual Sales.xlsx]Sheet1'!$B:$B,'[Actual Sales.xlsx]Sheet1'!$A:$A,A2)\", then click Enter"
+    },
+    {
+      "index": 7,
+      "instruction": "Select C2 cell, find and click C2 cell drag icon on the bottom of right, double click icon, and fill the content of whole field."
+    },
+    {
+      "index": 8,
+      "instruction": "Select D1 cell, input \"Achieve%\", then click D2 cell, input \"=C2/B2\""
+    },
+    {
+      "index": 9,
+      "instruction": "Select D2 cell, find and click D2 cell drag icon on the bottom of right, double click icon, and fill the content of whole field."
+    },
+    {
+      "index": 10,
+      "instruction": "Select D2 cell to D14 cell, then click Menu---Home, find and click Percentage Style."
+    },
+    {
+      "index": 11,
+      "instruction": "Click E1 cell, input \"Rank\""
+    },
+    {
+      "index": 12,
+      "instruction": "Click E2 cell, input \"=Rank(D2,D:D)\""
+    },
+    {
+      "index": 13,
+      "instruction": "Select E2 cell, find and click E2 cell drag icon on the bottom of right, double click icon, and fill the content of whole field."
+    },
+    {
+      "index": 14,
+      "instruction": "Select A2 cell to E14 cell, click Menu---Home, find and click Conditional Formatting, will pop up a frame."
+    },
+    {
+      "index": 15,
+      "instruction": "Click New Rule, then select Use a formula to determine which cells to format"
+    },
+    {
+      "index": 16,
+      "instruction": "Click Format values where this formula is true input box, and input \"=$E2<=3\""
+    },
+    {
+      "index": 17,
+      "instruction": "Click Format button, then click Fill, select red color, then click OK button"
+    },
+    {
+      "index": 18,
+      "instruction": "Click OK button, top 3 sales rep line will show as red"
+    },
+    {
+      "index": 19,
+      "instruction": "Select A2 cell to E14 cell, click Menu---Home, find and click Conditional Formatting, will pop up a frame."
+    },
+    {
+      "index": 20,
+      "instruction": "Click New Rule, then select Use a formula to determine which cells to format"
+    },
+    {
+      "index": 21,
+      "instruction": "Click Format values where this formula is true input box, and input \"=$E2>=11\""
+    },
+    {
+      "index": 22,
+      "instruction": "Click Format button, then click Fill, select green color, then click OK button"
+    },
+    {
+      "index": 23,
+      "instruction": "Click OK button, top 3 sales rep line will show as green"
+    },
+    {
+      "index": 24,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 25,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 4
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "3c74d5de-89a3-e56e-26d8-d0c88fa40680",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'Meeting_Minutes_Template.docx' inside the 'Meeting_Materials' folder?",
+  "source": "Microsoft_21 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_21/logs/MonitoringSnapshots/20260106_205125/Desktop/Meeting_Materials/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\User\\Desktop\\Meeting_Materials\\New Microsoft Word Document.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_21/logs/MonitoringSnapshots/20260106_205238/Desktop/Meeting_Materials/Meeting_Minutes_Template.docx",
+            "path": "C:\\Users\\User\\Documents\\Meeting_Minutes_Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Meeting_Materials\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/3c74d5de-89a3-e56e-26d8-d0c88fa40680",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Meeting_Materials\\Meeting_Minutes_Template.docx",
+      "dest": "Meeting_Minutes_Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Meeting_Minutes_Template_gold.docx",
+      "dest": "Meeting_Minutes_Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Meeting_Minutes_Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

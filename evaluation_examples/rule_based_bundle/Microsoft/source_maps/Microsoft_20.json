@@ -1,0 +1,481 @@
+{
+  "source_name": "Microsoft_20",
+  "source_file": "Microsoft_20.txt",
+  "source_id": "0af91bc60a44",
+  "source_question": "Company want to transport some good to different city, and admin provide a list, put city info, weight of product info into one page, and put to multiple line in the file. Courier company also provide a quotation, different city provide different quotation base on weight. Now boss want to view the total cost for delivery by each city.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a table in Excel to list the cities and the weight of products for each city?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you add the courier company's quotation for each city based on the weight of the products?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the total delivery cost for each city in the Excel table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document in Word to present the total delivery costs by city?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you create a table in Excel to list the cities and the weight of products for each city?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook. Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open.",
+      "planned_input_snapshot": "20260107_135406",
+      "planned_gold_snapshot": "20260107_135410",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with new Excel file creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_data_and_format_cells",
+      "instruction": "Could you add the courier company's quotation for each city based on the weight of the products? Could you calculate the total delivery cost for each city in the Excel table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 33,
+      "trajectory_evidence": "Select I2 cell, and input \"City\", select J2 cell and input \"Weight(kg)\"... Draw City to Rows, draw Fright cost to Values, the pivot table will show total cost is 455 and by each city cost.",
+      "planned_input_snapshot": "20260107_135410",
+      "planned_gold_snapshot": "20260107_135410",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but data entry and formatting are essential steps.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "save_final_excel_file",
+      "instruction": "Could you save the final Excel file?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 35,
+      "trajectory_end": 35,
+      "trajectory_evidence": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260107_135410",
+      "planned_gold_snapshot": "20260107_135410",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but saving the file is a necessary step.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook_and_enter_data_and_format_cells_and_save_final_excel_file",
+      "instruction": "Could you create a table in Excel to list the cities and the weight of products for each city, and then add the courier company's quotation for each city based on the weight of the products? Could you calculate the total delivery cost for each city in the Excel table, and then save the final Excel file?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 35,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook. Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open. | Select I2 cell, and input \"City\", select J2 cell and input \"Weight(kg)\"... Draw City to Rows, draw Fright cost to Values, the pivot table will show total cost is 455 and by each city cost. | Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260107_135406",
+      "planned_gold_snapshot": "20260107_135410",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with new Excel file creation.",
+      "input_snapshot": "20260107_133949",
+      "gold_snapshot": "20260107_135410",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "chain_input_snapshot": "20260107_133949",
+        "chain_input_replaced": "20260107_135406",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260107_135406",
+          "planned_gold_snapshot": "20260107_135410"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 3,
+          "stage_name": "save_final_excel_file",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_excel_workbook",
+        "enter_data_and_format_cells",
+        "save_final_excel_file"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3
+      ],
+      "generated_examples": [
+        {
+          "example_id": "a609523b-0c67-7d7c-09d6-7dc2942ed1fd",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/a609523b-0c67-7d7c-09d6-7dc2942ed1fd.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you add the courier company's quotation for each city based on the weight of the products?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the total delivery cost for each city in the Excel table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document in Word to present the total delivery costs by city?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260107_133949",
+    "20260107_135406",
+    "20260107_135410",
+    "20260107_135412"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260107_133949",
+      "to": "20260107_135406",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260107_135406",
+      "to": "20260107_135410",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260107_135410",
+      "to": "20260107_135412",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_20",
+    "snapshot_count": 4,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260107_133949",
+        "to": "20260107_135406",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260107_135406",
+        "to": "20260107_135410",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260107_135410",
+        "to": "20260107_135412",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Menu---File, find and click Options, will pop up an Excel Options frame. Click Customize Ribbon, click Developer in the Main Tabs, then click OK."
+    },
+    {
+      "index": 5,
+      "instruction": "Click Menu---Developer, find and click Record Macro, will pop up a frame of Record Macro, then click OK button"
+    },
+    {
+      "index": 6,
+      "instruction": "Select B2 cell to G3 cell, then click Ctrl+C, then right click I3 cell, then Transpose of Paste Options."
+    },
+    {
+      "index": 7,
+      "instruction": "Find and click Stop Recording button in the menu, then click Visual Basic button in the menu."
+    },
+    {
+      "index": 8,
+      "instruction": "Find and click Plus icon next to the Modules, Double click Module1."
+    },
+    {
+      "index": 9,
+      "instruction": "Add one line after last \"'\", then input \"For i=0 to 3\""
+    },
+    {
+      "index": 10,
+      "instruction": "Add one line before End Sub, then input \"Next\""
+    },
+    {
+      "index": 11,
+      "instruction": "Find Range(\"B2:G3\").Select line, modify to \"Range(\"B2:G3\").Offset(2*i,0).Select\""
+    },
+    {
+      "index": 12,
+      "instruction": "Find Range(\"I3\").Select line, modify to \"Range(\"I3\").Offset(6*i,0).Select\""
+    },
+    {
+      "index": 13,
+      "instruction": "Find and click Run Sub/Userform button in the menu, then close the Visual Basic edit frame."
+    },
+    {
+      "index": 14,
+      "instruction": "Select I2 cell, and input \"City\", select J2 cell and input \"Weight(kg)\""
+    },
+    {
+      "index": 15,
+      "instruction": "Select I2 cell to J26 cell, click Menu---Data, find and click Sort A to Z"
+    },
+    {
+      "index": 16,
+      "instruction": "Select K2 cell, input \"City category\", select L2 cell, input \"Freight Cost\""
+    },
+    {
+      "index": 17,
+      "instruction": "Select I2 cell to L26 cell, click Menu---Home, find and click arrow button next to Bottom Border, then select All Borders."
+    },
+    {
+      "index": 18,
+      "instruction": "Select Freight Quotation sheet, select line1, and right click, select Insert"
+    },
+    {
+      "index": 19,
+      "instruction": "Select B2 cell to E2 cell, then click Ctrl+C, select B1 cell, click Ctrl+V"
+    },
+    {
+      "index": 20,
+      "instruction": "Select B2 cell, modify to \"0\"; Select C2 cell, modify to \"1\"; Select D2 cell, modify to \"3\"; Select E2 cell, modify to \"5\""
+    },
+    {
+      "index": 21,
+      "instruction": "Select Detail sheet, click K3"
+    },
+    {
+      "index": 22,
+      "instruction": "Input \"=VLOOKUP(I3,'Freight Quotation'!A:A,1,FALSE)\", then click Enter"
+    },
+    {
+      "index": 23,
+      "instruction": "Select K3 cell, and click Ctril+C, then select K3 cell to K23 cell, click Ctrl+V"
+    },
+    {
+      "index": 24,
+      "instruction": "Select K3 cell, click Menu---Data, find and click Filter button"
+    },
+    {
+      "index": 25,
+      "instruction": "Click filter button of K2, click Select All, then click #N/A, then click OK"
+    },
+    {
+      "index": 26,
+      "instruction": "Click K17 cell, and input \"Other City\""
+    },
+    {
+      "index": 27,
+      "instruction": "Click K17 cell, then click Ctrl+C and select K17 cell to K23 cell, then click Ctrl+V"
+    },
+    {
+      "index": 28,
+      "instruction": "Click Menu---Data, find and click Filter button."
+    },
+    {
+      "index": 29,
+      "instruction": "Click L3 cell, then input \"=INDEX('Freight Quotation'!B$3:E$6,MATCH(K3,'Freight Quotation'!A$3:A$6,0),MATCH(J3,'Freight Quotation'!B$2:E$2))\", then click Enter"
+    },
+    {
+      "index": 30,
+      "instruction": "Click L3 cell, then click Ctrl+C, select L3 cell to L23 cell, then click Ctrl+V"
+    },
+    {
+      "index": 31,
+      "instruction": "Select I2 cell to L23 cell, click Menu---Insert, find and click Pivot Table, will pop up a frame of PivotTable from table or range"
+    },
+    {
+      "index": 32,
+      "instruction": "Click Existing Worksheet, then select N2 cell, then click OK button"
+    },
+    {
+      "index": 33,
+      "instruction": "Draw City to Rows, draw Fright cost to Values, the pivot table will show total cost is 455 and by each city cost."
+    },
+    {
+      "index": 34,
+      "instruction": "Select N2 cell, and modify to \"City\", Select O2 cell, and modify to \"Cost\""
+    },
+    {
+      "index": 35,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 36,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 3,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 4
+  }
+}

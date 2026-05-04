@@ -1,0 +1,83 @@
+{
+  "id": "984208c2-d49e-3769-0277-2bc645f48b64",
+  "snapshot": "excel",
+  "instruction": "Could you create a new worksheet in Excel and enter the product names, first-quarter and second-quarter sales figures, and calculate the year-over-year growth rate?",
+  "source": "Microsoft_01 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_221844/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222104/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/984208c2-d49e-3769-0277-2bc645f48b64",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Book1.xlsx",
+      "dest": "Book1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx",
+      "dest": "Book1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Book1.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

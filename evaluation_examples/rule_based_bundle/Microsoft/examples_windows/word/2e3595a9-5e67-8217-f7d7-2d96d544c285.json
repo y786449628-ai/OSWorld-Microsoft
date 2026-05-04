@@ -1,0 +1,77 @@
+{
+  "id": "2e3595a9-5e67-8217-f7d7-2d96d544c285",
+  "snapshot": "word",
+  "instruction": "Could you save the meeting minutes template and export it as a PDF file into the same 'Meeting_Materials' folder?",
+  "source": "Microsoft_21 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_21/logs/MonitoringSnapshots/20260106_210252/Desktop/Meeting_Materials/Meeting_Minutes_Template.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Meeting_Materials\\Meeting_Minutes_Template.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_21/logs/MonitoringSnapshots/20260106_210458/Desktop/Meeting_Minutes_Template.pdf",
+            "path": "C:\\Users\\78644\\Documents\\Meeting_Minutes_Template_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Meeting_Materials\\Meeting_Minutes_Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2e3595a9-5e67-8217-f7d7-2d96d544c285",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Meeting_Minutes_Template.pdf",
+      "dest": "Meeting_Minutes_Template.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Meeting_Minutes_Template_gold.pdf",
+      "dest": "Meeting_Minutes_Template_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Meeting_Minutes_Template.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

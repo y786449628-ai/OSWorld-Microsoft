@@ -1,0 +1,83 @@
+{
+  "id": "cab350cd-69a5-c04f-9d4c-93a134cfe07f",
+  "snapshot": "excel",
+  "instruction": "Could you open the file and set the table format, and then create a pivot table and complete the format setting, and then save the file as a new name, and then standardize the product codes uniformly through cell formatting? Could you set a unified storage date format for the table, and then handle blank data and error data, supplementing blank data and manually correcting the quantity data with incorrect formats, and then calculate the inventory value using functions and summarize it at the bottom of the table?",
+  "source": "Microsoft_65 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_65/logs/MonitoringSnapshots/20260114_190038/Desktop/Data1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Data1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_65/logs/MonitoringSnapshots/20260114_190656_1/Desktop/Data1-new.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Data1-new_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Data1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/cab350cd-69a5-c04f-9d4c-93a134cfe07f",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Data1-new.xlsx",
+      "dest": "Data1-new.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Data1-new_gold.xlsx",
+      "dest": "Data1-new_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Data1-new.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

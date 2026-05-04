@@ -1,0 +1,83 @@
+{
+  "id": "b3e2e828-2a9d-8a9f-4793-31a9dc21dd7c",
+  "snapshot": "excel",
+  "instruction": "Could you create a new Excel workbook named 'Project_Task_Tracker.xlsx' and save it on your desktop?",
+  "source": "Microsoft_40 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_40/logs/MonitoringSnapshots/20260110_202605/Desktop/New Microsoft Excel Worksheet.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\New Microsoft Excel Worksheet.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_40/logs/MonitoringSnapshots/20260110_202608/Desktop/Project_Task_Tracker.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Task_Tracker_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\New Microsoft Excel Worksheet.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/b3e2e828-2a9d-8a9f-4793-31a9dc21dd7c",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Task_Tracker.xlsx",
+      "dest": "Project_Task_Tracker.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Task_Tracker_gold.xlsx",
+      "dest": "Project_Task_Tracker_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Task_Tracker.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

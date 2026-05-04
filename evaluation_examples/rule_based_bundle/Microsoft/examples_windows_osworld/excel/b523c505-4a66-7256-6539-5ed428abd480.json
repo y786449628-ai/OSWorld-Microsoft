@@ -1,0 +1,52 @@
+{
+  "id": "b523c505-4a66-7256-6539-5ed428abd480",
+  "snapshot": "excel",
+  "instruction": "Could you open the Excel sheet named 'Book1' on your cloud computer desktop?",
+  "source": "Microsoft_37 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_142751_2/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164329/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/b523c505-4a66-7256-6539-5ed428abd480",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Book1.xlsx",
+      "dest": "Book1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx",
+      "dest": "Book1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    }
+  }
+}

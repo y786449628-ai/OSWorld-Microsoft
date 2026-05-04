@@ -1,0 +1,83 @@
+{
+  "id": "6855cff6-a484-3b11-ba62-56cfcbd957b8",
+  "snapshot": "excel",
+  "instruction": "Could you open the task list in Excel, and then create a Gantt chart based on the task list, including task name, start date, and end date? Could you format the Gantt chart to clearly show the project status, and then save the Excel file with the Gantt chart for the project manager?",
+  "source": "Microsoft_15 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_15/logs/MonitoringSnapshots/20260106_122235/Desktop/Material/Project.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Project.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_15/logs/MonitoringSnapshots/20260106_123208/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Project.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6855cff6-a484-3b11-ba62-56cfcbd957b8",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "source_name": "Microsoft_32",
+  "snapshot_count": 11,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260111_195041",
+      "to": "20260111_195103",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260111_195103",
+      "to": "20260111_195336",
+      "human_summary": "New files appeared: Material/01693000.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Material/01693000"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Material/01693000"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260111_195336",
+      "to": "20260111_195338",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260111_195338",
+      "to": "20260111_195343",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260111_195343",
+      "to": "20260111_195359",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Material/Detail1.xlsx"
+        ],
+        "files_removed": [
+          "Material/01693000"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Material/Detail1.xlsx"
+        ],
+        "files_removed": [
+          "Material/01693000"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260111_195359",
+      "to": "20260111_195401",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260111_195401",
+      "to": "20260111_195704",
+      "human_summary": "Material/Detail1.xlsx changed: spreadsheet content changed from 313 to 435 non-empty cells; new visible headers or values include: Fruit, Price, Sales Revenue, 5.5, 24750, 4.5.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 313,
+            "to": 435
+          },
+          "headers": {
+            "from": [
+              "Apple",
+              "Month",
+              "Sales Volume",
+              "Apple",
+              "Oct",
+              "4500",
+              "Banana",
+              "Aug",
+              "5130",
+              "Grape",
+              "Jun",
+              "4600",
+              "Coconut",
+              "Apr",
+              "3500",
+              "Pear",
+              "Feb",
+              "2100",
+              "Pear",
+              "Dec"
+            ],
+            "to": [
+              "Fruit",
+              "Month",
+              "Sales Volume",
+              "Price",
+              "Sales Revenue",
+              "Apple",
+              "Oct",
+              "4500",
+              "5.5",
+              "24750",
+              "Banana",
+              "Aug",
+              "5130",
+              "4.5",
+              "23085",
+              "Grape",
+              "Jun",
+              "4600",
+              "5",
+              "23000"
+            ]
+          }
+        },
+        "headers_added": [
+          "Fruit",
+          "Price",
+          "Sales Revenue",
+          "5.5",
+          "24750",
+          "4.5",
+          "23085",
+          "5",
+          "23000"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 27089,
+              "to": 30233
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 313,
+                "to": 435
+              },
+              "headers": {
+                "from": [
+                  "Apple",
+                  "Month",
+                  "Sales Volume",
+                  "Apple",
+                  "Oct",
+                  "4500",
+                  "Banana",
+                  "Aug",
+                  "5130",
+                  "Grape",
+                  "Jun",
+                  "4600",
+                  "Coconut",
+                  "Apr",
+                  "3500",
+                  "Pear",
+                  "Feb",
+                  "2100",
+                  "Pear",
+                  "Dec"
+                ],
+                "to": [
+                  "Fruit",
+                  "Month",
+                  "Sales Volume",
+                  "Price",
+                  "Sales Revenue",
+                  "Apple",
+                  "Oct",
+                  "4500",
+                  "5.5",
+                  "24750",
+                  "Banana",
+                  "Aug",
+                  "5130",
+                  "4.5",
+                  "23085",
+                  "Grape",
+                  "Jun",
+                  "4600",
+                  "5",
+                  "23000"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260111_195704",
+      "to": "20260111_200002",
+      "human_summary": "Material/Detail1.xlsx changed: spreadsheet content changed from 435 to 467 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 435,
+            "to": 467
+          },
+          "headers": {
+            "from": [
+              "Fruit",
+              "Month",
+              "Sales Volume",
+              "Price",
+              "Sales Revenue",
+              "Apple",
+              "Oct",
+              "4500",
+              "5.5",
+              "24750",
+              "Banana",
+              "Aug",
+              "5130",
+              "4.5",
+              "23085",
+              "Grape",
+              "Jun",
+              "4600",
+              "5",
+              "23000"
+            ],
+            "to": [
+              "Fruit",
+              "Month",
+              "Sales Volume",
+              "Price",
+              "Sales Revenue",
+              "Apple",
+              "Oct",
+              "4500",
+              "5.5",
+              "24750",
+              "Banana",
+              "Aug",
+              "5130",
+              "4.5",
+              "23085",
+              "Grape",
+              "Jun",
+              "4600",
+              "5",
+              "23000"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 30233,
+              "to": 35047
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 435,
+                "to": 467
+              },
+              "headers": {
+                "from": [
+                  "Fruit",
+                  "Month",
+                  "Sales Volume",
+                  "Price",
+                  "Sales Revenue",
+                  "Apple",
+                  "Oct",
+                  "4500",
+                  "5.5",
+                  "24750",
+                  "Banana",
+                  "Aug",
+                  "5130",
+                  "4.5",
+                  "23085",
+                  "Grape",
+                  "Jun",
+                  "4600",
+                  "5",
+                  "23000"
+                ],
+                "to": [
+                  "Fruit",
+                  "Month",
+                  "Sales Volume",
+                  "Price",
+                  "Sales Revenue",
+                  "Apple",
+                  "Oct",
+                  "4500",
+                  "5.5",
+                  "24750",
+                  "Banana",
+                  "Aug",
+                  "5130",
+                  "4.5",
+                  "23085",
+                  "Grape",
+                  "Jun",
+                  "4600",
+                  "5",
+                  "23000"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260111_200002",
+      "to": "20260111_200341",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260111_200341",
+      "to": "20260111_200343",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

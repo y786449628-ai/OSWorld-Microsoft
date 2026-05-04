@@ -1,0 +1,29 @@
+{
+  "id": "630ec662-9c38-fd1c-2fdb-0c9c4c079e73",
+  "snapshot": "excel",
+  "instruction": "Could you create a new folder named 'Meeting_Materials' directly on your computer desktop?",
+  "source": "Microsoft_21 true stage 1",
+  "config": [],
+  "trajectory": "trajectories/630ec662-9c38-fd1c-2fdb-0c9c4c079e73",
+  "related_apps": [],
+  "evaluator": {
+    "func": "compare_directory_tree",
+    "result": {
+      "type": "list_directory",
+      "path": "C:\\Users\\78644\\Desktop"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "dirs": [
+          "Meeting_Materials"
+        ],
+        "files": [],
+        "allow_extra": true
+      }
+    },
+    "options": {
+      "min_nontrivial_actions": 1
+    }
+  }
+}

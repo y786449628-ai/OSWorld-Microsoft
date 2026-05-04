@@ -1,0 +1,2055 @@
+{
+  "source_name": "Microsoft_43",
+  "source_file": "Microsoft_43.txt",
+  "source_id": "3735e4904653",
+  "source_question": "It is necessary to handle an Excel table named \"Beverage Retail Situation\", including setting the title format, adding the table header and content, using formulas to calculate sales volume, and sorting the data from high to low sales volume.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a table named 'Beverage Retail Situation' in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you set the title format for the 'Beverage Retail Situation' table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add the table header and content to the 'Beverage Retail Situation' table?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you use formulas to calculate the sales volume in the 'Beverage Retail Situation' table?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you sort the data in the 'Beverage Retail Situation' table from high to low sales volume?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_and_format_title",
+      "instruction": "Could you create a table named 'Beverage Retail Situation' in Excel and set the title format?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Open the Excel file, enter the title, merge and center, set font size, and set font color.",
+      "planned_input_snapshot": "20260109_093446",
+      "planned_gold_snapshot": "20260109_093541",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Today's Beverage Retail Statistics Table.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "add_table_header_and_content",
+      "instruction": "Could you add the table header and content to the 'Beverage Retail Situation' table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Add table header and fill in the names, packaging units, retail unit prices, and sales volumes of 10 kinds of beverages.",
+      "planned_input_snapshot": "20260109_093541",
+      "planned_gold_snapshot": "20260109_094206",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 1 to 46 non-empty cells; new visible headers or values include: Yogurt, Bottle, 1.2, 97.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_sales_volume",
+      "instruction": "Could you use formulas to calculate the sales volume in the 'Beverage Retail Situation' table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Enter the formula to calculate sales amount, and apply it to all rows.",
+      "planned_input_snapshot": "20260109_094206",
+      "planned_gold_snapshot": "20260109_094326",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 46 to 56 non-empty cells; new visible headers or values include: 116.39999999999999.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "sort_data_by_sales_volume",
+      "instruction": "Could you sort the data in the 'Beverage Retail Situation' table from high to low sales volume?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 15,
+      "trajectory_end": 19,
+      "trajectory_evidence": "Select the entire data range, go to the Data tab, and sort by sales volume in descending order.",
+      "planned_input_snapshot": "20260109_094326",
+      "planned_gold_snapshot": "20260109_094554",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: new visible headers or values include: Mineral Water, 2.2999999999999998, 88, 202.39999999999998.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_and_format_title",
+      "instruction": "Could you create a table named 'Beverage Retail Situation' in Excel and set the title format?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Open the Excel file, enter the title, merge and center, set font size, and set font color.",
+      "planned_input_snapshot": "20260109_093446",
+      "planned_gold_snapshot": "20260109_093541",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Today's Beverage Retail Statistics Table.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_093446",
+      "gold_snapshot": "20260109_093541",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Material/Retail Statistics table.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 0 to 1.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 7,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_093446",
+          "planned_gold_snapshot": "20260109_093541"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "2d2800bf-1f96-252c-feee-4aadecc86cd0",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/2d2800bf-1f96-252c-feee-4aadecc86cd0.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "add_table_header_and_content",
+      "instruction": "Could you add the table header and content to the 'Beverage Retail Situation' table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Add table header and fill in the names, packaging units, retail unit prices, and sales volumes of 10 kinds of beverages.",
+      "planned_input_snapshot": "20260109_093541",
+      "planned_gold_snapshot": "20260109_094206",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 1 to 46 non-empty cells; new visible headers or values include: Yogurt, Bottle, 1.2, 97.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_093541",
+      "gold_snapshot": "20260109_094206",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Material/Retail Statistics table.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 1 to 2.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_093541",
+        "expanded_to_planned_gold_snapshot": "20260109_094206",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 11,
+          "search_start_index": 2,
+          "search_end_index": 10,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_093541",
+          "planned_gold_snapshot": "20260109_094206"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "b65cc461-da1c-e008-a865-7f37073f6005",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/b65cc461-da1c-e008-a865-7f37073f6005.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_sales_volume",
+      "instruction": "Could you use formulas to calculate the sales volume in the 'Beverage Retail Situation' table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Enter the formula to calculate sales amount, and apply it to all rows.",
+      "planned_input_snapshot": "20260109_094206",
+      "planned_gold_snapshot": "20260109_094326",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 46 to 56 non-empty cells; new visible headers or values include: 116.39999999999999.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_094206",
+      "gold_snapshot": "20260109_094326",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Material/Retail Statistics table.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 46 to 56.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_094206",
+        "trajectory_window": {
+          "trajectory_start": 12,
+          "trajectory_end": 14,
+          "search_start_index": 11,
+          "search_end_index": 12,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_094206",
+          "planned_gold_snapshot": "20260109_094326"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "db91472b-13c0-6202-728b-2495ea30988a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/db91472b-13c0-6202-728b-2495ea30988a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "sort_data_by_sales_volume",
+      "instruction": "Could you sort the data in the 'Beverage Retail Situation' table from high to low sales volume?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 15,
+      "trajectory_end": 19,
+      "trajectory_evidence": "Select the entire data range, go to the Data tab, and sort by sales volume in descending order.",
+      "planned_input_snapshot": "20260109_094326",
+      "planned_gold_snapshot": "20260109_094554",
+      "snapshot_evidence": "Material/Retail Statistics table.xlsx changed: new visible headers or values include: Mineral Water, 2.2999999999999998, 88, 202.39999999999998.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_094326",
+      "gold_snapshot": "20260109_094554",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Material/Retail Statistics table.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "e9f07a77-0871-7a33-91e8-adff61915072",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/e9f07a77-0871-7a33-91e8-adff61915072.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a table named 'Beverage Retail Situation' in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you set the title format for the 'Beverage Retail Situation' table?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260109_093446",
+    "20260109_093541",
+    "20260109_093647",
+    "20260109_093657",
+    "20260109_093739",
+    "20260109_093758",
+    "20260109_093833",
+    "20260109_093927",
+    "20260109_094008",
+    "20260109_094124",
+    "20260109_094206",
+    "20260109_094210",
+    "20260109_094326",
+    "20260109_094554",
+    "20260109_094629"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_093446",
+      "to": "20260109_093541",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Today's Beverage Retail Statistics Table.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        },
+        "headers_added": [
+          "Today's Beverage Retail Statistics Table"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8236,
+              "to": 8483
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_093541",
+      "to": "20260109_093647",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8483,
+              "to": 9500
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_093647",
+      "to": "20260109_093657",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9500,
+              "to": 9512
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_093657",
+      "to": "20260109_093739",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 1 to 2 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 1,
+            "to": 2
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9512,
+              "to": 9605
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 1,
+                "to": 2
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_093739",
+      "to": "20260109_093758",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 2 to 4 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 2,
+            "to": 4
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9605,
+              "to": 9638
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 2,
+                "to": 4
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_093758",
+      "to": "20260109_093833",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 4 to 6 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 4,
+            "to": 6
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9638,
+              "to": 9660
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 4,
+                "to": 6
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_093833",
+      "to": "20260109_093927",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 6 to 10 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 6,
+            "to": 10
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9660,
+              "to": 9700
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 6,
+                "to": 10
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_093927",
+      "to": "20260109_094008",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 10 to 18 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 10,
+            "to": 18
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9700,
+              "to": 9760
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 10,
+                "to": 18
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260109_094008",
+      "to": "20260109_094124",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 18 to 34 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 18,
+            "to": 34
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9760,
+              "to": 9894
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 18,
+                "to": 34
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260109_094124",
+      "to": "20260109_094206",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 34 to 46 non-empty cells; new visible headers or values include: Yogurt, Bottle, 1.2, 97.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 34,
+            "to": 46
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table",
+              "Yogurt",
+              "Bottle",
+              "1.2",
+              "97"
+            ]
+          }
+        },
+        "headers_added": [
+          "Yogurt",
+          "Bottle",
+          "1.2",
+          "97"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9894,
+              "to": 9999
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 34,
+                "to": 46
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Yogurt",
+                  "Bottle",
+                  "1.2",
+                  "97"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260109_094206",
+      "to": "20260109_094210",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table",
+              "Yogurt",
+              "Bottle",
+              "1.2",
+              "97"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table",
+              "Yogurt",
+              "Bottle",
+              "1.2",
+              "97"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9999,
+              "to": 9998
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Yogurt",
+                  "Bottle",
+                  "1.2",
+                  "97"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Yogurt",
+                  "Bottle",
+                  "1.2",
+                  "97"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260109_094210",
+      "to": "20260109_094326",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 46 to 56 non-empty cells; new visible headers or values include: 116.39999999999999.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 46,
+            "to": 56
+          },
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table",
+              "Yogurt",
+              "Bottle",
+              "1.2",
+              "97"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table",
+              "Yogurt",
+              "Bottle",
+              "1.2",
+              "97",
+              "116.39999999999999"
+            ]
+          }
+        },
+        "headers_added": [
+          "116.39999999999999"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9998,
+              "to": 10579
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 46,
+                "to": 56
+              },
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Yogurt",
+                  "Bottle",
+                  "1.2",
+                  "97"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Yogurt",
+                  "Bottle",
+                  "1.2",
+                  "97",
+                  "116.39999999999999"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260109_094326",
+      "to": "20260109_094554",
+      "human_summary": "Material/Retail Statistics table.xlsx changed: new visible headers or values include: Mineral Water, 2.2999999999999998, 88, 202.39999999999998.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Retail Statistics table.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Today's Beverage Retail Statistics Table",
+              "Yogurt",
+              "Bottle",
+              "1.2",
+              "97",
+              "116.39999999999999"
+            ],
+            "to": [
+              "Today's Beverage Retail Statistics Table",
+              "Mineral Water",
+              "Bottle",
+              "2.2999999999999998",
+              "88",
+              "202.39999999999998"
+            ]
+          }
+        },
+        "headers_added": [
+          "Mineral Water",
+          "2.2999999999999998",
+          "88",
+          "202.39999999999998"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Retail Statistics table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10579,
+              "to": 10685
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Yogurt",
+                  "Bottle",
+                  "1.2",
+                  "97",
+                  "116.39999999999999"
+                ],
+                "to": [
+                  "Today's Beverage Retail Statistics Table",
+                  "Mineral Water",
+                  "Bottle",
+                  "2.2999999999999998",
+                  "88",
+                  "202.39999999999998"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260109_094554",
+      "to": "20260109_094629",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_43",
+    "snapshot_count": 15,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_093446",
+        "to": "20260109_093541",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Today's Beverage Retail Statistics Table.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          },
+          "headers_added": [
+            "Today's Beverage Retail Statistics Table"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8236,
+                "to": 8483
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_093541",
+        "to": "20260109_093647",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8483,
+                "to": 9500
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_093647",
+        "to": "20260109_093657",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9500,
+                "to": 9512
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_093657",
+        "to": "20260109_093739",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 1 to 2 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 1,
+              "to": 2
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9512,
+                "to": 9605
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 1,
+                  "to": 2
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_093739",
+        "to": "20260109_093758",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 2 to 4 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 2,
+              "to": 4
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9605,
+                "to": 9638
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 2,
+                  "to": 4
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_093758",
+        "to": "20260109_093833",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 4 to 6 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 4,
+              "to": 6
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9638,
+                "to": 9660
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 4,
+                  "to": 6
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260109_093833",
+        "to": "20260109_093927",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 6 to 10 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 6,
+              "to": 10
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9660,
+                "to": 9700
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 6,
+                  "to": 10
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260109_093927",
+        "to": "20260109_094008",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 10 to 18 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 10,
+              "to": 18
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9700,
+                "to": 9760
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 10,
+                  "to": 18
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260109_094008",
+        "to": "20260109_094124",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 18 to 34 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 18,
+              "to": 34
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9760,
+                "to": 9894
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 18,
+                  "to": 34
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260109_094124",
+        "to": "20260109_094206",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 34 to 46 non-empty cells; new visible headers or values include: Yogurt, Bottle, 1.2, 97.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 34,
+              "to": 46
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table",
+                "Yogurt",
+                "Bottle",
+                "1.2",
+                "97"
+              ]
+            }
+          },
+          "headers_added": [
+            "Yogurt",
+            "Bottle",
+            "1.2",
+            "97"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9894,
+                "to": 9999
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 34,
+                  "to": 46
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Yogurt",
+                    "Bottle",
+                    "1.2",
+                    "97"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260109_094206",
+        "to": "20260109_094210",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table",
+                "Yogurt",
+                "Bottle",
+                "1.2",
+                "97"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table",
+                "Yogurt",
+                "Bottle",
+                "1.2",
+                "97"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9999,
+                "to": 9998
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Yogurt",
+                    "Bottle",
+                    "1.2",
+                    "97"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Yogurt",
+                    "Bottle",
+                    "1.2",
+                    "97"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260109_094210",
+        "to": "20260109_094326",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: spreadsheet content changed from 46 to 56 non-empty cells; new visible headers or values include: 116.39999999999999.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 46,
+              "to": 56
+            },
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table",
+                "Yogurt",
+                "Bottle",
+                "1.2",
+                "97"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table",
+                "Yogurt",
+                "Bottle",
+                "1.2",
+                "97",
+                "116.39999999999999"
+              ]
+            }
+          },
+          "headers_added": [
+            "116.39999999999999"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9998,
+                "to": 10579
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 46,
+                  "to": 56
+                },
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Yogurt",
+                    "Bottle",
+                    "1.2",
+                    "97"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Yogurt",
+                    "Bottle",
+                    "1.2",
+                    "97",
+                    "116.39999999999999"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260109_094326",
+        "to": "20260109_094554",
+        "human_summary": "Material/Retail Statistics table.xlsx changed: new visible headers or values include: Mineral Water, 2.2999999999999998, 88, 202.39999999999998.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Retail Statistics table.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Today's Beverage Retail Statistics Table",
+                "Yogurt",
+                "Bottle",
+                "1.2",
+                "97",
+                "116.39999999999999"
+              ],
+              "to": [
+                "Today's Beverage Retail Statistics Table",
+                "Mineral Water",
+                "Bottle",
+                "2.2999999999999998",
+                "88",
+                "202.39999999999998"
+              ]
+            }
+          },
+          "headers_added": [
+            "Mineral Water",
+            "2.2999999999999998",
+            "88",
+            "202.39999999999998"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Retail Statistics table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10579,
+                "to": 10685
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Yogurt",
+                    "Bottle",
+                    "1.2",
+                    "97",
+                    "116.39999999999999"
+                  ],
+                  "to": [
+                    "Today's Beverage Retail Statistics Table",
+                    "Mineral Water",
+                    "Bottle",
+                    "2.2999999999999998",
+                    "88",
+                    "202.39999999999998"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260109_094554",
+        "to": "20260109_094629",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open the Excel file Beverage Retail Situd.xlsx in the Material folder on the desktop."
+    },
+    {
+      "index": 3,
+      "instruction": "Click on cell A1 and enter the title \"Today's Beverage Retail Statistics Table\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Click cell A1, hold down the left mouse button, drag the cursor to cell E1, and select cells A1 to E1."
+    },
+    {
+      "index": 5,
+      "instruction": "Go to the \"Home\" TAB of the ribbon and click the \"Merge & Center\" button in the \"Alignment\" group (the ICONS of the two merged cells and the center alignment symbol)."
+    },
+    {
+      "index": 6,
+      "instruction": "In the \"Font\" group of the \"Home\" TAB, find the \"Font Size\" drop-down menu and select \"16\"."
+    },
+    {
+      "index": 7,
+      "instruction": "Click the \"Font Color\" drop-down button next to the font size (the icon with the underlined \"A\" and the palette), and select \"Blue\" from the color options."
+    },
+    {
+      "index": 8,
+      "instruction": "A2:E2: Name, packaging unit, retail unit price, sales volume, sales revenue"
+    },
+    {
+      "index": 11,
+      "instruction": "A3:D12: Fill in the names, packaging units, retail unit prices and sales volumes of 10 kinds of beverages. Calculate the sales amount using the formula"
+    },
+    {
+      "index": 12,
+      "instruction": "Click cell E3"
+    },
+    {
+      "index": 13,
+      "instruction": "Enter the formula \"=C3*D3\" (retail unit price multiplied by sales volume), and press the \"Enter\" key to calculate the sales amount of the first beverage."
+    },
+    {
+      "index": 14,
+      "instruction": "Click cell E3 again, move the mouse to the lower right corner of the cell and double-click the left mouse button to automatically calculate the sales of all beverages."
+    },
+    {
+      "index": 15,
+      "instruction": "Select the entire data range including the title: Click cell A2, hold down the left mouse button, and drag the cursor to the last cell of the data"
+    },
+    {
+      "index": 16,
+      "instruction": "Go to the \"Data\" TAB in the ribbon and click the \"Sort\" button (the icon with up and down arrows) in the \"Sort and Filter\" group."
+    },
+    {
+      "index": 17,
+      "instruction": "Under \"Sorting Basis\", select \"Sales Volume\" (the title of column E) from the drop-down menu."
+    },
+    {
+      "index": 18,
+      "instruction": "Under \"Order\", select \"Descending Order\" from the drop-down menu."
+    },
+    {
+      "index": 19,
+      "instruction": "Click the \"OK\" button to confirm the sorting"
+    },
+    {
+      "index": 20,
+      "instruction": "Press \"Ctrl+S\" to save"
+    },
+    {
+      "index": 21,
+      "instruction": "Close the Excel software"
+    },
+    {
+      "index": 22,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 15
+  }
+}

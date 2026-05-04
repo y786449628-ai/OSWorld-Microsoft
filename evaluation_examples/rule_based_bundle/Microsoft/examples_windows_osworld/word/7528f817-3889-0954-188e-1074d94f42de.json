@@ -1,0 +1,81 @@
+{
+  "id": "7528f817-3889-0954-188e-1074d94f42de",
+  "snapshot": "word",
+  "instruction": "calculate the profitability for each customer in the Excel sheet, and then analyze the customer profit data in Excel to identify key trends and insights, and then format the profit data in Excel, and then open Microsoft Word 365 and create a new document for the analysis report?",
+  "source": "Microsoft_09 true stage 6",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185341/Desktop/Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Profit_Analysis.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185341/Desktop/material/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Customer_Profitability_Analysis_Report.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185444/Desktop/material/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\User\\Documents\\Customer_Profitability_Analysis_Report_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\material\\Customer_Profitability_Analysis_Report.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/7528f817-3889-0954-188e-1074d94f42de",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\material\\Customer_Profitability_Analysis_Report.docx",
+      "dest": "Customer_Profitability_Analysis_Report.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Customer_Profitability_Analysis_Report_gold.docx",
+      "dest": "Customer_Profitability_Analysis_Report_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Customer_Profitability_Analysis_Report.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,792 @@
+{
+  "source_name": "Microsoft_36",
+  "source_file": "Microsoft_36.txt",
+  "source_id": "2e1496607a29",
+  "source_question": "On the desktop of your cloud computer, directly create a new folder named \"Project_Launch\". Inside this folder, create a new Word document named \"Project\". In the document, create a structured project charter template that includes the following sections: Project Title, Goals, Scope, Key Stakeholders, Milestones, Resources, and Risks & Assumptions. Apply the appropriate built-in \"Heading\" style to the label of each section. Insert a table to list key stakeholders, with the table columns including \"Name\", \"Role\", and \"Department\". Under the \"Milestones\" section, create a numbered list. Add a watermark to the document, insert a header containing the company name, and a footer with page numbers. Finally, save the template and export a PDF copy to the same folder.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new folder named 'Project_Launch' on the desktop of your cloud computer?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a new Word document named 'Project' inside the 'Project_Launch' folder?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you create a structured project charter template in the Word document with sections for Project Title, Goals, Scope, Key Stakeholders, Milestones, Resources, and Risks & Assumptions?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply the appropriate built-in 'Heading' style to the label of each section in the project charter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a table in the 'Key Stakeholders' section with columns for 'Name', 'Role', and 'Department'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a numbered list under the 'Milestones' section in the project charter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a watermark to the Word document, insert a header containing the company name, and a footer with page numbers?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the project charter template and export a PDF copy to the same 'Project_Launch' folder?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_project_launch_folder",
+      "instruction": "Could you create a new folder named 'Project_Launch' on the desktop of your cloud computer?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click on the blank area of the cloud computer desktop, select \"New\", then choose \"Folder\". Name the new folder \"Project\".",
+      "planned_input_snapshot": "20260110_181616",
+      "planned_gold_snapshot": "20260110_181628",
+      "snapshot_evidence": "New directories appeared: Project.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear directory creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_word_document_in_folder",
+      "instruction": "Could you create a new Word document named 'Project' inside the 'Project_Launch' folder?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word",
+        "os"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click to open the \"Project\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name this new document \"Charter.docx\".",
+      "planned_input_snapshot": "20260110_181628",
+      "planned_gold_snapshot": "20260110_181637",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file creation and renaming.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_project_charter_template",
+      "instruction": "Could you create a structured project charter template in the Word document with sections for Project Title, Goals, Scope, Key Stakeholders, Milestones, Resources, and Risks & Assumptions? Could you apply the appropriate built-in 'Heading' style to the label of each section in the project charter template? Could you insert a table in the 'Key Stakeholders' section with columns for 'Name', 'Role', and 'Department'? Could you create a numbered list under the 'Milestones' section in the project charter template? Could you add a watermark to the Word document, insert a header containing the company name, and a footer with page numbers?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Multiple steps involving text entry, styling, table insertion, and formatting.",
+      "planned_input_snapshot": "20260110_181637",
+      "planned_gold_snapshot": "20260110_182334",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear document content and formatting changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the project charter template and export a PDF copy to the same 'Project_Launch' folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Save and export the document as PDF.",
+      "planned_input_snapshot": "20260110_182334",
+      "planned_gold_snapshot": "20260110_182355",
+      "snapshot_evidence": "New files appeared: Project/Charter.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear PDF export.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        8
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_project_launch_folder",
+      "instruction": "Could you create a new folder named 'Project' on the desktop of your cloud computer?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click on the blank area of the cloud computer desktop, select \"New\", then choose \"Folder\". Name the new folder \"Project\".",
+      "planned_input_snapshot": "20260110_181616",
+      "planned_gold_snapshot": "20260110_181628",
+      "snapshot_evidence": "New directories appeared: Project.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear directory creation.",
+      "input_snapshot": "20260110_181603",
+      "gold_snapshot": "20260110_181628",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Project",
+      "evaluator_candidate": "compare_directory_tree",
+      "localization": {
+        "status": "localized_fixed",
+        "confidence": 0.95,
+        "reason": "Corrected to a directory-state evaluator using the observed snapshot transition for 'Project'.",
+        "changed_file_count": 1,
+        "chain_input_snapshot": "20260110_181603",
+        "chain_input_replaced": "20260110_181616"
+      },
+      "generated_examples": [
+        {
+          "example_id": "24cf07d8-9ab5-61e2-4390-ea884470d3d7",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/24cf07d8-9ab5-61e2-4390-ea884470d3d7.json"
+        }
+      ],
+      "directory_expectation": {
+        "root_relative_path": "",
+        "dirs": [
+          "Project"
+        ],
+        "files": [],
+        "allow_extra": true
+      },
+      "result_relative_path": ""
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_word_document_in_folder_and_create_project_charter_template",
+      "instruction": "Could you create a new Word document named 'Project' inside the 'Project_Launch' folder, and then create a structured project charter template in the Word document with sections for Project Title, Goals, Scope, Key Stakeholders, Milestones, Resources, and Risks & Assumptions? Could you apply the appropriate built-in 'Heading' style to the label of each section in the project charter template? Could you insert a table in the 'Key Stakeholders' section with columns for 'Name', 'Role', and 'Department'? Could you create a numbered list under the 'Milestones' section in the project charter template? Could you add a watermark to the Word document, insert a header containing the company name, and a footer with page numbers?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word",
+        "os"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Double-click to open the \"Project\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name this new document \"Charter.docx\". | Multiple steps involving text entry, styling, table insertion, and formatting.",
+      "planned_input_snapshot": "20260110_181628",
+      "planned_gold_snapshot": "20260110_181637",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation. | One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file creation and renaming.",
+      "input_snapshot": "20260110_181628",
+      "gold_snapshot": "20260110_182334",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Project/Charter.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_181628",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 3,
+          "search_end_index": 3,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_181628",
+          "planned_gold_snapshot": "20260110_181637"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 3,
+          "stage_name": "create_project_charter_template",
+          "reason": "Could not find target file content change."
+        }
+      },
+      "merged_stage_names": [
+        "create_word_document_in_folder",
+        "create_project_charter_template"
+      ],
+      "merged_stage_indices": [
+        2,
+        3
+      ],
+      "generated_examples": [
+        {
+          "example_id": "31cc8fc2-88e0-a36e-5211-f5ed7cacff93",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/31cc8fc2-88e0-a36e-5211-f5ed7cacff93.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the project charter template and export a PDF copy to the same 'Project_Launch' folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Save and export the document as PDF.",
+      "planned_input_snapshot": "20260110_182334",
+      "planned_gold_snapshot": "20260110_182355",
+      "snapshot_evidence": "New files appeared: Project/Charter.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear PDF export.",
+      "input_snapshot": "20260110_182334",
+      "gold_snapshot": "20260110_182355",
+      "linked_preview_tasks": [
+        8
+      ],
+      "target_relative_path": "Project/Charter.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 16,
+          "trajectory_end": 17,
+          "search_start_index": 6,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_182334",
+          "planned_gold_snapshot": "20260110_182355"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "31509d81-a8a5-922d-ce21-a6813c36cdaa",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/31509d81-a8a5-922d-ce21-a6813c36cdaa.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you create a structured project charter template in the Word document with sections for Project Title, Goals, Scope, Key Stakeholders, Milestones, Resources, and Risks & Assumptions?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply the appropriate built-in 'Heading' style to the label of each section in the project charter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a table in the 'Key Stakeholders' section with columns for 'Name', 'Role', and 'Department'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a numbered list under the 'Milestones' section in the project charter template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a watermark to the Word document, insert a header containing the company name, and a footer with page numbers?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260110_181603",
+    "20260110_181616",
+    "20260110_181628",
+    "20260110_181637",
+    "20260110_181641",
+    "20260110_182334",
+    "20260110_182355",
+    "20260110_182401"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_181603",
+      "to": "20260110_181616",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_181616",
+      "to": "20260110_181628",
+      "human_summary": "New directories appeared: Project.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Project"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project/New Microsoft Word Document.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [
+          "Project"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_181628",
+      "to": "20260110_181637",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Project/Charter.docx"
+        ],
+        "files_removed": [
+          "Project/New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project/Charter.docx"
+        ],
+        "files_removed": [
+          "Project/New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_181637",
+      "to": "20260110_181641",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_181641",
+      "to": "20260110_182334",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project/Charter.docx",
+            "size": {
+              "from": 0,
+              "to": 33279
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project/Charter.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 33279
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_182334",
+      "to": "20260110_182355",
+      "human_summary": "New files appeared: Project/Charter.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project/Charter.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project/Charter.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_182355",
+      "to": "20260110_182401",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_36",
+    "snapshot_count": 8,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_181603",
+        "to": "20260110_181616",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_181616",
+        "to": "20260110_181628",
+        "human_summary": "New directories appeared: Project.",
+        "likely_stage": "create or organize folders",
+        "confidence": 0.82,
+        "evidence": {
+          "dirs_added": [
+            "Project"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project/New Microsoft Word Document.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [
+            "Project"
+          ],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_181628",
+        "to": "20260110_181637",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Project/Charter.docx"
+          ],
+          "files_removed": [
+            "Project/New Microsoft Word Document.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project/Charter.docx"
+          ],
+          "files_removed": [
+            "Project/New Microsoft Word Document.docx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_181637",
+        "to": "20260110_181641",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_181641",
+        "to": "20260110_182334",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project/Charter.docx",
+              "size": {
+                "from": 0,
+                "to": 33279
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project/Charter.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 0,
+                "to": 33279
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260110_182334",
+        "to": "20260110_182355",
+        "human_summary": "New files appeared: Project/Charter.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Project/Charter.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project/Charter.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260110_182355",
+        "to": "20260110_182401",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Right-click on the blank area of the cloud computer desktop, select \"New\", then choose \"Folder\". Name the new folder \"Project\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Double-click to open the \"Project\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name this new document \"Charter.docx\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Double-click to open a new Word document. On the first line, enter \"PROJECT CHARTER TEMPLATE\". Select the text, switch to the \"Home\" tab, and click the \"Title\" style in the style gallery."
+    },
+    {
+      "index": 5,
+      "instruction": "Press the Enter key twice to move the cursor down. Enter \"1. project title：\", and apply the \"Heading 2\" style from the \"Home\" tab."
+    },
+    {
+      "index": 6,
+      "instruction": "Press the Enter key, input \"2. goal:\", and apply the \"Heading 2\" style."
+    },
+    {
+      "index": 7,
+      "instruction": "Press the Enter key. Enter \"3. scope:\", and apply the \"Heading 2\" style."
+    },
+    {
+      "index": 8,
+      "instruction": "Press the Enter key. Type \"4. key stakeholders:\", and apply the \"Heading 2\" style. Press the Enter key. Switch to the \"Insert\" tab, click \"Table\", and insert a table with 3 columns and 5 rows. In the first row, enter \"Name\", \"Role\", and \"Department\" as column headings."
+    },
+    {
+      "index": 9,
+      "instruction": "Press the Enter key twice after the table. Enter \"5. milestone:\", and apply the \"Heading 2\" style. Press the Enter key. Switch to the \"Home\" tab, click the \"Numbering\" button to start creating a numbered list. Enter at least three example milestones."
+    },
+    {
+      "index": 10,
+      "instruction": "Press the Enter key. Switch to the \"Home\" tab, click the \"Numbering\" button to start creating a numbered list. Enter at least three example milestones."
+    },
+    {
+      "index": 11,
+      "instruction": "Press the Enter key twice to end the list. Enter \"6. resource:\", and apply the \"Heading 2\" style."
+    },
+    {
+      "index": 12,
+      "instruction": "Switch to the \"Design\" tab. Click \"Watermark\" and select the \"asap 1\" watermark from the style library."
+    },
+    {
+      "index": 13,
+      "instruction": "Switch to the \"Insert\" tab. Click \"Header\" and select the \"Austin\" style. Enter your organization name, InnovateCorp Solutions, in the header area.Switch to the \"Insert\" tab. Click \"Header\" and select the \"Austin\" style. Enter your organization name, InnovateCorp Solutions, in the header area."
+    },
+    {
+      "index": 14,
+      "instruction": "Switch to the \"Insert\" tab. Click \"Footer\" and select the Austin style."
+    },
+    {
+      "index": 15,
+      "instruction": "Check the document layout. Select all text (Ctrl+A), switch to the \"Home\" tab, set the font to \"Calibri\" and the font size to 12 to maintain consistent formatting."
+    },
+    {
+      "index": 16,
+      "instruction": "Click \"File\", then select \"Save As\". Make sure you are in the \"Project\" folder, and click \"Save\" to save the Word document."
+    },
+    {
+      "index": 17,
+      "instruction": "Click \"File\" again, select \"Export\", and then choose \"Create PDF/XPS Document\". Click \"Create PDF/XPS\", save the PDF file in the \"Project\" folder, and keep the default name."
+    },
+    {
+      "index": 18,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 3,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 8
+  }
+}

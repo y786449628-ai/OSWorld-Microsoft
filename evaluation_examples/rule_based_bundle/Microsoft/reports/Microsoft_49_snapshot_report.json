@@ -1,0 +1,226 @@
+{
+  "source_name": "Microsoft_49",
+  "snapshot_count": 8,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260109_164001",
+      "to": "20260109_164012",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1298712,
+              "to": 1298679
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1298712,
+              "to": 1298679
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_164012",
+      "to": "20260109_164229",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1298679,
+              "to": 1299935
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1298679,
+              "to": 1299935
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_164229",
+      "to": "20260109_164424",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1299935,
+              "to": 1314234
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1299935,
+              "to": 1314234
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_164424",
+      "to": "20260109_164451",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_164451",
+      "to": "20260109_164529",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1314234,
+              "to": 1314432
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1314234,
+              "to": 1314432
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_164529",
+      "to": "20260109_164548",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "size": {
+              "from": 1314432,
+              "to": 1314885
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Powerpoint1.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1314432,
+              "to": 1314885
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_164548",
+      "to": "20260109_164612",
+      "human_summary": "New files appeared: Shanghai_Intro.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Shanghai_Intro.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Shanghai_Intro.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

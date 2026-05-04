@@ -1,0 +1,83 @@
+{
+  "id": "a41fe5b2-fe17-4bc3-f590-ae5240a0549f",
+  "snapshot": "excel",
+  "instruction": "Could you create a table in Excel to summarize the performance of 3 shops from 2023 to 2025, and then calculate the growth percentage for each year for the total of the 3 shops in Excel, and then create a column chart in Excel to visualize the performance of the 3 shops from 2023 to 2025, and then prepare a report document in Word to present the performance data and the growth percentages, and then copy the column chart from Excel and paste it into the Word report document, and then save the final report as a PDF?",
+  "source": "Microsoft_31 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_31/logs/MonitoringSnapshots/20260110_222451/Desktop/Material/Detail.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Detail.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_31/logs/MonitoringSnapshots/20260110_223956/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Detail.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/a41fe5b2-fe17-4bc3-f590-ae5240a0549f",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

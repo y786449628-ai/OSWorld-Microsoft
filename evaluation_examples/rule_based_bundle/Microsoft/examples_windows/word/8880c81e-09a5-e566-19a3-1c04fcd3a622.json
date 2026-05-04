@@ -1,0 +1,77 @@
+{
+  "id": "8880c81e-09a5-e566-19a3-1c04fcd3a622",
+  "snapshot": "word",
+  "instruction": "Could you write three main content paragraphs with headings (Project Update, Key Accomplishments, Next Steps)?",
+  "source": "Microsoft_69 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162027/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Project_Status_Report_Memo.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162229/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Status_Report_Memo_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project_Status_Report_Memo.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/8880c81e-09a5-e566-19a3-1c04fcd3a622",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Status_Report_Memo.docx",
+      "dest": "Project_Status_Report_Memo.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Status_Report_Memo_gold.docx",
+      "dest": "Project_Status_Report_Memo_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Report_Memo.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

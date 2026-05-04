@@ -1,0 +1,29 @@
+{
+  "id": "24cf07d8-9ab5-61e2-4390-ea884470d3d7",
+  "snapshot": "excel",
+  "instruction": "Could you create a new folder named 'Project' on the desktop of your cloud computer?",
+  "source": "Microsoft_36 true stage 1",
+  "config": [],
+  "trajectory": "trajectories/24cf07d8-9ab5-61e2-4390-ea884470d3d7",
+  "related_apps": [],
+  "evaluator": {
+    "func": "compare_directory_tree",
+    "result": {
+      "type": "list_directory",
+      "path": "C:\\Users\\78644\\Desktop"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "dirs": [
+          "Project"
+        ],
+        "files": [],
+        "allow_extra": true
+      }
+    },
+    "options": {
+      "min_nontrivial_actions": 1
+    }
+  }
+}

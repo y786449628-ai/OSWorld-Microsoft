@@ -1,0 +1,1551 @@
+{
+  "source_name": "Microsoft_50",
+  "source_file": "Microsoft_50.txt",
+  "source_id": "be431c42f7a2",
+  "source_question": "As an HR Specialist, process the \"Employee_Payroll.xlsx\" to calculate performance-based bonuses, estimate personal income tax, and visualize department-wise salary distribution.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Employee_Payroll.xlsx' and prepare the data for calculating performance-based bonuses?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you calculate the performance-based bonuses for each employee in the 'Employee_Payroll.xlsx'?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you estimate the personal income tax for each employee in the 'Employee_Payroll.xlsx'?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a chart to visualize the department-wise salary distribution in the 'Employee_Payroll.xlsx'?",
+      "mapped_stage_indices": [
+        5
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_excel",
+      "instruction": "Could you open the 'Employee_Payroll.xlsx' and prepare the data for calculating performance-based bonuses?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open 'Employee_Payroll.xlsx', format headers, and apply styles.",
+      "planned_input_snapshot": "20260109_174950",
+      "planned_gold_snapshot": "20260109_175007",
+      "snapshot_evidence": "Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "calculate_performance_bonuses",
+      "instruction": "Could you calculate the performance-based bonuses for each employee in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Calculate Performance Bonus using a formula and apply it to the range.",
+      "planned_input_snapshot": "20260109_175007",
+      "planned_gold_snapshot": "20260109_175100",
+      "snapshot_evidence": "Spreadsheet content changed from 55 to 63 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "estimate_personal_income_tax",
+      "instruction": "Could you estimate the personal income tax for each employee in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Calculate Taxable Income and Net Salary using formulas and apply them to the range.",
+      "planned_input_snapshot": "20260109_175100",
+      "planned_gold_snapshot": "20260109_175200",
+      "snapshot_evidence": "Spreadsheet content changed from 63 to 79 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "format_salary_data",
+      "instruction": "Could you format the salary data in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Format columns, add conditional formatting, and create departmental statistics.",
+      "planned_input_snapshot": "20260109_175200",
+      "planned_gold_snapshot": "20260109_175426",
+      "snapshot_evidence": "Spreadsheet content changed from 79 to 85 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_department_wise_chart",
+      "instruction": "Could you create a chart to visualize the department-wise salary distribution in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Insert and refine a chart to visualize department-wise salary distribution.",
+      "planned_input_snapshot": "20260109_175426",
+      "planned_gold_snapshot": "20260109_175621",
+      "snapshot_evidence": "Chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_final_excel",
+      "instruction": "Could you save the final 'Employee_Payroll.xlsx' as 'Corporate_Payroll_2026.xlsx'?",
+      "task_kind": "excel_create_or_save_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Save the file as 'Corporate_Payroll_2026.xlsx'.",
+      "planned_input_snapshot": "20260109_175621",
+      "planned_gold_snapshot": "20260109_175642",
+      "snapshot_evidence": "New files appeared: Corporate_Payroll_2026.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_excel",
+      "instruction": "Could you open the 'Employee_Payroll.xlsx' and prepare the data for calculating performance-based bonuses?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open 'Employee_Payroll.xlsx', format headers, and apply styles.",
+      "planned_input_snapshot": "20260109_174950",
+      "planned_gold_snapshot": "20260109_175007",
+      "snapshot_evidence": "Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_174950",
+      "gold_snapshot": "20260109_175007",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Employee_Payroll.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "7ea9daef-9cc5-f847-d403-883210e47a96",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/7ea9daef-9cc5-f847-d403-883210e47a96.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "calculate_performance_bonuses",
+      "instruction": "Could you calculate the performance-based bonuses for each employee in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Calculate Performance Bonus using a formula and apply it to the range.",
+      "planned_input_snapshot": "20260109_175007",
+      "planned_gold_snapshot": "20260109_175100",
+      "snapshot_evidence": "Spreadsheet content changed from 55 to 63 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_175007",
+      "gold_snapshot": "20260109_175100",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Employee_Payroll.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 55 to 63.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_175007",
+          "planned_gold_snapshot": "20260109_175100"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0cbd7ad5-3244-f7dd-a162-32c3cd04d71a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0cbd7ad5-3244-f7dd-a162-32c3cd04d71a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "estimate_personal_income_tax",
+      "instruction": "Could you estimate the personal income tax for each employee in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Calculate Taxable Income and Net Salary using formulas and apply them to the range.",
+      "planned_input_snapshot": "20260109_175100",
+      "planned_gold_snapshot": "20260109_175200",
+      "snapshot_evidence": "Spreadsheet content changed from 63 to 79 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_175100",
+      "gold_snapshot": "20260109_175200",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Employee_Payroll.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 63 to 71.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260109_175200",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 3,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_175100",
+          "planned_gold_snapshot": "20260109_175200"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "71a0caf9-4f17-471f-7eaf-345cf302c735",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/71a0caf9-4f17-471f-7eaf-345cf302c735.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "format_salary_data",
+      "instruction": "Could you format the salary data in the 'Employee_Payroll.xlsx'?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Format columns, add conditional formatting, and create departmental statistics.",
+      "planned_input_snapshot": "20260109_175200",
+      "planned_gold_snapshot": "20260109_175426",
+      "snapshot_evidence": "Spreadsheet content changed from 79 to 85 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_175200",
+      "gold_snapshot": "20260109_175426",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Employee_Payroll.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 79 to 82.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_175200",
+        "expanded_to_planned_gold_snapshot": "20260109_175426",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 8,
+          "search_start_index": 5,
+          "search_end_index": 7,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_175200",
+          "planned_gold_snapshot": "20260109_175426"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "602e889b-7340-b6d3-9361-daf7aee6d4b9",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/602e889b-7340-b6d3-9361-daf7aee6d4b9.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_department_wise_chart_and_save_final_excel",
+      "instruction": "Could you create a chart to visualize the department-wise salary distribution in the 'Employee_Payroll.xlsx', and then save the final 'Employee_Payroll.xlsx' as 'Corporate_Payroll_2026.xlsx'?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Insert and refine a chart to visualize department-wise salary distribution. | Save the file as 'Corporate_Payroll_2026.xlsx'.",
+      "planned_input_snapshot": "20260109_175426",
+      "planned_gold_snapshot": "20260109_175642",
+      "snapshot_evidence": "Chart/drawing count changed from 0 to 1. | New files appeared: Corporate_Payroll_2026.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes.",
+      "input_snapshot": "20260109_175426",
+      "gold_snapshot": "20260109_175642",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Employee_Payroll.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_175426",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 10,
+          "search_start_index": 8,
+          "search_end_index": 9,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_175426",
+          "planned_gold_snapshot": "20260109_175621"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 6,
+          "stage_name": "save_final_excel",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_department_wise_chart",
+        "save_final_excel"
+      ],
+      "merged_stage_indices": [
+        5,
+        6
+      ],
+      "generated_examples": [
+        {
+          "example_id": "605c8f67-d9d4-c36d-d1be-eab478f4faec",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/605c8f67-d9d4-c36d-d1be-eab478f4faec.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260109_174950",
+    "20260109_175007",
+    "20260109_175100",
+    "20260109_175127",
+    "20260109_175200",
+    "20260109_175206",
+    "20260109_175257",
+    "20260109_175426",
+    "20260109_175517",
+    "20260109_175621",
+    "20260109_175642"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_174950",
+      "to": "20260109_175007",
+      "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10660,
+              "to": 10735
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_175007",
+      "to": "20260109_175100",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 55 to 63 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 55,
+            "to": 63
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10735,
+              "to": 11174
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 55,
+                "to": 63
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_175100",
+      "to": "20260109_175127",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 63 to 71 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 63,
+            "to": 71
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11174,
+              "to": 11260
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 63,
+                "to": 71
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_175127",
+      "to": "20260109_175200",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 71 to 79 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 71,
+            "to": 79
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11260,
+              "to": 11365
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 71,
+                "to": 79
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_175200",
+      "to": "20260109_175206",
+      "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11365,
+              "to": 11364
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_175206",
+      "to": "20260109_175257",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 79 to 82 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 79,
+            "to": 82
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11364,
+              "to": 11416
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 79,
+                "to": 82
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_175257",
+      "to": "20260109_175426",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 82 to 85 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 82,
+            "to": 85
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11416,
+              "to": 11479
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 82,
+                "to": 85
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_175426",
+      "to": "20260109_175517",
+      "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11479,
+              "to": 11603
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260109_175517",
+      "to": "20260109_175621",
+      "human_summary": "Employee_Payroll.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11603,
+              "to": 16914
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260109_175621",
+      "to": "20260109_175642",
+      "human_summary": "New files appeared: Corporate_Payroll_2026.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Corporate_Payroll_2026.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Corporate_Payroll_2026.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_50",
+    "snapshot_count": 11,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_174950",
+        "to": "20260109_175007",
+        "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10660,
+                "to": 10735
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_175007",
+        "to": "20260109_175100",
+        "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 55 to 63 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 55,
+              "to": 63
+            },
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10735,
+                "to": 11174
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 55,
+                  "to": 63
+                },
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_175100",
+        "to": "20260109_175127",
+        "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 63 to 71 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 63,
+              "to": 71
+            },
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11174,
+                "to": 11260
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 63,
+                  "to": 71
+                },
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_175127",
+        "to": "20260109_175200",
+        "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 71 to 79 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 71,
+              "to": 79
+            },
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11260,
+                "to": 11365
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 71,
+                  "to": 79
+                },
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_175200",
+        "to": "20260109_175206",
+        "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11365,
+                "to": 11364
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_175206",
+        "to": "20260109_175257",
+        "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 79 to 82 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 79,
+              "to": 82
+            },
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11364,
+                "to": 11416
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 79,
+                  "to": 82
+                },
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260109_175257",
+        "to": "20260109_175426",
+        "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 82 to 85 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 82,
+              "to": 85
+            },
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11416,
+                "to": 11479
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 82,
+                  "to": 85
+                },
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260109_175426",
+        "to": "20260109_175517",
+        "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11479,
+                "to": 11603
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260109_175517",
+        "to": "20260109_175621",
+        "human_summary": "Employee_Payroll.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Employee_Payroll.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Employee Compensation Summary 2026"
+              ],
+              "to": [
+                "Employee Compensation Summary 2026"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Employee_Payroll.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11603,
+                "to": 16914
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Employee Compensation Summary 2026"
+                  ],
+                  "to": [
+                    "Employee Compensation Summary 2026"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260109_175621",
+        "to": "20260109_175642",
+        "human_summary": "New files appeared: Corporate_Payroll_2026.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Corporate_Payroll_2026.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Corporate_Payroll_2026.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Open \"Employee_Payroll.xlsx\". Click and drag to select cells A1:H1. On the \"Home\" tab, click \"Merge & Center\". Set Font to \"Arial\", Size to \"18\", and Font Color to \"Dark Blue\"."
+    },
+    {
+      "index": 2,
+      "instruction": "Select the header row (A2:H2). On the \"Home\" tab, click \"Bold\", then click both \"Middle Align\" and \"Center\" icons. Change the \"Fill Color\" to \"Blue, Accent 1, Lighter 40%\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Calculate Performance Bonus: In cell F3, enter: =IF(AND(D3>50000, E3=\"Exceeds\"), 2000, 500). Double-click the Fill Handle (small green square at cell's bottom-right) to apply to F10."
+    },
+    {
+      "index": 4,
+      "instruction": "Calculate Taxable Income: In cell G3, enter: =MAX(0, (C3+F3-5000)). This calculates (Base Salary + Bonus - 5000) and ensures the value isn't negative. Drag the Fill Handle down to G10."
+    },
+    {
+      "index": 5,
+      "instruction": "Calculate Net Salary: In cell H3, enter: =C3+F3-(G3*0.03). This assumes a flat 3% tax on taxable income. Apply this to the entire column."
+    },
+    {
+      "index": 6,
+      "instruction": "Format Columns: Select the range B3:H10. On the \"Home\" tab, click the \"$\" (Accounting Number Format) icon to add currency symbols."
+    },
+    {
+      "index": 7,
+      "instruction": "Departmental Headcount: In cell K4, use =COUNTIF(C$3:C$10, \"J4\"). Drag the Fill Handle down to K6."
+    },
+    {
+      "index": 8,
+      "instruction": "Total Departmental Cost: In cell L4, use =SUMIF(C$3:C$21, \"*\"&J4&\"*\", H$3:H$10). Drag the Fill Handle down to L6."
+    },
+    {
+      "index": 9,
+      "instruction": "Visual Alerts: Select H3:H10. Go to \"Conditional Formatting\" > \"Color Scales\" and choose the \"Green - Yellow - Red\" scale to highlight high and low salaries."
+    },
+    {
+      "index": 10,
+      "instruction": "Insert Chart: Select the department statistics range J3:L6. Go to the \"Insert\" tab and click \"Recommended Charts\". Choose \"Clustered Column\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Refine Chart: Change the Chart Title to \"Payroll Analysis by Department\". Click the \"+\" (Chart Elements) button, check \"Data Labels\", and move the \"Legend\" to the \"Bottom\" and save the file as \"Corporate_Payroll_2026.xlsx\"."
+    },
+    {
+      "index": 12,
+      "instruction": "For Deletion"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 5,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 11
+  }
+}

@@ -1,0 +1,3310 @@
+{
+  "source_name": "Microsoft_22",
+  "source_file": "Microsoft_22.txt",
+  "source_id": "8d04799c5eeb",
+  "source_question": "Create a marketing campaign performance analysis workflow using Microsoft Excel 365, Microsoft Word 365, and Microsoft PowerPoint 365. Begin by entering structured campaign data with precise formatting, formulas, and styles in Excel. Then create a written performance analysis report in Word with explicit text content and defined paragraph styles. Finally, design a presentation in PowerPoint that reuses the Excel data, applies specific slide layouts, font sizes, and chart styles to produce a professional review deck.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you enter and format structured campaign data in Excel 365, including applying precise formatting, formulas, and styles?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a written performance analysis report in Word 365 with explicit text content and defined paragraph styles?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you design a presentation in PowerPoint 365 that reuses the Excel data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply specific slide layouts, font sizes, and chart styles in the PowerPoint presentation to produce a professional review deck?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "format_excel_data",
+      "instruction": "Could you enter and format structured campaign data in Excel 365, including applying precise formatting, formulas, and styles?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Open Excel, apply formatting, create formulas, and format the table.",
+      "planned_input_snapshot": "20260109_010856",
+      "planned_gold_snapshot": "20260109_011252",
+      "snapshot_evidence": "Excel file content changed, including formatting, formulas, and table style.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of formatting and formula application.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_excel_chart",
+      "instruction": "Could you create a chart in the Excel workbook using the formatted data?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Create a column chart and set the chart title.",
+      "planned_input_snapshot": "20260109_011252",
+      "planned_gold_snapshot": "20260109_011617",
+      "snapshot_evidence": "Chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of chart creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "save_excel_file",
+      "instruction": "Could you save the Excel workbook as Marketing_Campaign_Data.xlsx?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the Excel file.",
+      "planned_input_snapshot": "20260109_011617",
+      "planned_gold_snapshot": "20260109_011730",
+      "snapshot_evidence": "New files appeared: Marketing_Campaign_Data.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "format_word_report",
+      "instruction": "Could you create a written performance analysis report in Word 365 with explicit text content and defined paragraph styles?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 15,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Open Word, apply styles, and paste the Excel table into the document.",
+      "planned_input_snapshot": "20260109_011730",
+      "planned_gold_snapshot": "20260109_012200",
+      "snapshot_evidence": "Word file content changed, including text and table insertion.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of text and table formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "save_word_file",
+      "instruction": "Could you save the Word document as Marketing_Performance_Report.docx?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 28,
+      "trajectory_end": 28,
+      "trajectory_evidence": "Save the Word file.",
+      "planned_input_snapshot": "20260109_012200",
+      "planned_gold_snapshot": "20260109_012419",
+      "snapshot_evidence": "New files appeared: Marketing_Performance_Report.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "format_powerpoint_slides",
+      "instruction": "Could you design a presentation in PowerPoint 365 that reuses the Excel data, applies specific slide layouts, font sizes, and chart styles to produce a professional review deck?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 29,
+      "trajectory_end": 35,
+      "trajectory_evidence": "Open PowerPoint, set font sizes, and apply chart styles.",
+      "planned_input_snapshot": "20260109_012419",
+      "planned_gold_snapshot": "20260109_012631",
+      "snapshot_evidence": "PowerPoint file content changed, including font sizes and chart styles.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_powerpoint_file",
+      "instruction": "Could you save the PowerPoint presentation as Marketing_Performance_Review.pptx?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 36,
+      "trajectory_end": 36,
+      "trajectory_evidence": "Save the PowerPoint file.",
+      "planned_input_snapshot": "20260109_012631",
+      "planned_gold_snapshot": "20260109_012731",
+      "snapshot_evidence": "New files appeared: Marketing_Performance_Review.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "format_excel_data",
+      "instruction": "Could you enter and format structured campaign data in Excel 365, including applying precise formatting, formulas, and styles?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Open Excel, apply formatting, create formulas, and format the table.",
+      "planned_input_snapshot": "20260109_010856",
+      "planned_gold_snapshot": "20260109_011252",
+      "snapshot_evidence": "Excel file content changed, including formatting, formulas, and table style.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of formatting and formula application.",
+      "input_snapshot": "20260109_010856",
+      "gold_snapshot": "20260109_011252",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "material/Marketing_Campaign_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 22 to 25.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_010856",
+        "expanded_to_planned_gold_snapshot": "20260109_011252",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 10,
+          "search_start_index": 1,
+          "search_end_index": 7,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_010856",
+          "planned_gold_snapshot": "20260109_011252"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "830e31e9-9d72-df41-dce9-99d7fd3bc140",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/830e31e9-9d72-df41-dce9-99d7fd3bc140.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_excel_chart",
+      "instruction": "Could you create a chart in the Excel workbook using the formatted data?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Create a column chart and set the chart title.",
+      "planned_input_snapshot": "20260109_011252",
+      "planned_gold_snapshot": "20260109_011617",
+      "snapshot_evidence": "Chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of chart creation.",
+      "input_snapshot": "20260109_011252",
+      "gold_snapshot": "20260109_011617",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Marketing_Campaign_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 11,
+          "trajectory_end": 12,
+          "search_start_index": 8,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_011252",
+          "planned_gold_snapshot": "20260109_011617"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "217db466-380d-cf90-7559-b95454519065",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/217db466-380d-cf90-7559-b95454519065.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "save_excel_file",
+      "instruction": "Could you save the Excel workbook as Marketing_Campaign_Data.xlsx?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the Excel file.",
+      "planned_input_snapshot": "20260109_011617",
+      "planned_gold_snapshot": "20260109_011730",
+      "snapshot_evidence": "New files appeared: Marketing_Campaign_Data.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": "20260109_011617",
+      "gold_snapshot": "20260109_011730",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Marketing_Campaign_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 2
+      },
+      "generated_examples": [
+        {
+          "example_id": "046c41e9-de1a-3a10-ea75-1a6d1052aa4e",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/046c41e9-de1a-3a10-ea75-1a6d1052aa4e.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "format_word_report",
+      "instruction": "Could you create a written performance analysis report in Word 365 with explicit text content and defined paragraph styles?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 15,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Open Word, apply styles, and paste the Excel table into the document.",
+      "planned_input_snapshot": "20260109_011730",
+      "planned_gold_snapshot": "20260109_012200",
+      "snapshot_evidence": "Word file content changed, including text and table insertion.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of text and table formatting.",
+      "input_snapshot": "20260109_011730",
+      "gold_snapshot": "20260109_012200",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "material/Marketing_Performance_Report.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_011730",
+        "expanded_to_planned_gold_snapshot": "20260109_012200",
+        "trajectory_window": {
+          "trajectory_start": 15,
+          "trajectory_end": 27,
+          "search_start_index": 11,
+          "search_end_index": 17,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_011730",
+          "planned_gold_snapshot": "20260109_012200"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6e22ae43-7839-f870-8cb6-2d2e0017f538",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/6e22ae43-7839-f870-8cb6-2d2e0017f538.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "save_word_file",
+      "instruction": "Could you save the Word document as Marketing_Performance_Report.docx?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 28,
+      "trajectory_end": 28,
+      "trajectory_evidence": "Save the Word file.",
+      "planned_input_snapshot": "20260109_012200",
+      "planned_gold_snapshot": "20260109_012419",
+      "snapshot_evidence": "New files appeared: Marketing_Performance_Report.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": "20260109_012200",
+      "gold_snapshot": "20260109_012419",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Marketing_Performance_Report.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_docx_files evaluator.",
+        "changed_file_count": 2
+      },
+      "generated_examples": [
+        {
+          "example_id": "564e26e4-d36e-00c9-b861-b92ca91e5cec",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/564e26e4-d36e-00c9-b861-b92ca91e5cec.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "format_powerpoint_slides",
+      "instruction": "Could you design a presentation in PowerPoint 365 that reuses the Excel data, applies specific slide layouts, font sizes, and chart styles to produce a professional review deck?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 29,
+      "trajectory_end": 35,
+      "trajectory_evidence": "Open PowerPoint, set font sizes, and apply chart styles.",
+      "planned_input_snapshot": "20260109_012419",
+      "planned_gold_snapshot": "20260109_012631",
+      "snapshot_evidence": "PowerPoint file content changed, including font sizes and chart styles.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide formatting.",
+      "input_snapshot": "20260109_012419",
+      "gold_snapshot": "20260109_012631",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Marketing_Performance_Review.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_012419",
+        "expanded_to_planned_gold_snapshot": "20260109_012631",
+        "trajectory_window": {
+          "trajectory_start": 29,
+          "trajectory_end": 35,
+          "search_start_index": 22,
+          "search_end_index": 27,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_012419",
+          "planned_gold_snapshot": "20260109_012631"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "70481d6f-2ffe-3942-9329-145509e1c4a9",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/70481d6f-2ffe-3942-9329-145509e1c4a9.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_powerpoint_file",
+      "instruction": "Could you save the PowerPoint presentation as Marketing_Performance_Review.pptx?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 36,
+      "trajectory_end": 36,
+      "trajectory_evidence": "Save the PowerPoint file.",
+      "planned_input_snapshot": "20260109_012631",
+      "planned_gold_snapshot": "20260109_012731",
+      "snapshot_evidence": "New files appeared: Marketing_Performance_Review.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": "20260109_012631",
+      "gold_snapshot": "20260109_012731",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Marketing_Performance_Review.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_pptx_files evaluator.",
+        "changed_file_count": 2
+      },
+      "generated_examples": [
+        {
+          "example_id": "e42e2e88-28fc-e075-6f13-0cd593c1ed53",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/e42e2e88-28fc-e075-6f13-0cd593c1ed53.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you design a presentation in PowerPoint 365 that reuses the Excel data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply specific slide layouts, font sizes, and chart styles in the PowerPoint presentation to produce a professional review deck?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260109_010856",
+    "20260109_010956",
+    "20260109_011017",
+    "20260109_011030",
+    "20260109_011127",
+    "20260109_011137",
+    "20260109_011159",
+    "20260109_011252",
+    "20260109_011617",
+    "20260109_011637",
+    "20260109_011730",
+    "20260109_011732",
+    "20260109_011809",
+    "20260109_011846",
+    "20260109_011921",
+    "20260109_012005",
+    "20260109_012043",
+    "20260109_012200",
+    "20260109_012241",
+    "20260109_012325",
+    "20260109_012407",
+    "20260109_012419",
+    "20260109_012421",
+    "20260109_012444",
+    "20260109_012514",
+    "20260109_012536",
+    "20260109_012548",
+    "20260109_012631",
+    "20260109_012647",
+    "20260109_012701",
+    "20260109_012719",
+    "20260109_012731",
+    "20260109_012733"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_010856",
+      "to": "20260109_010956",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9911,
+              "to": 9945
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_010956",
+      "to": "20260109_011017",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9945,
+              "to": 10004
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_011017",
+      "to": "20260109_011030",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10004,
+              "to": 10030
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_011030",
+      "to": "20260109_011127",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: spreadsheet content changed from 21 to 22 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 21,
+            "to": 22
+          },
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10030,
+              "to": 10363
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 21,
+                "to": 22
+              },
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_011127",
+      "to": "20260109_011137",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: spreadsheet content changed from 22 to 25 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 22,
+            "to": 25
+          },
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10363,
+              "to": 10451
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 22,
+                "to": 25
+              },
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_011137",
+      "to": "20260109_011159",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10451,
+              "to": 10477
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_011159",
+      "to": "20260109_011252",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10477,
+              "to": 11491
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_011252",
+      "to": "20260109_011617",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11491,
+              "to": 16671
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260109_011617",
+      "to": "20260109_011637",
+      "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Marketing_Campaign_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ],
+            "to": [
+              "Campaign Name",
+              "Impressions",
+              "Clicks",
+              "Conversion Rate (%)",
+              "Cost (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Campaign_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16671,
+              "to": 16677
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ],
+                "to": [
+                  "Campaign Name",
+                  "Impressions",
+                  "Clicks",
+                  "Conversion Rate (%)",
+                  "Cost (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260109_011637",
+      "to": "20260109_011730",
+      "human_summary": "New files appeared: Marketing_Campaign_Data.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Marketing_Campaign_Data.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Marketing_Campaign_Data.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260109_011730",
+      "to": "20260109_011732",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260109_011732",
+      "to": "20260109_011809",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260109_011809",
+      "to": "20260109_011846",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 16273,
+              "to": 16297
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16273,
+              "to": 16297
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260109_011846",
+      "to": "20260109_011921",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 16297,
+              "to": 16351
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16297,
+              "to": 16351
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260109_011921",
+      "to": "20260109_012005",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 16351,
+              "to": 16406
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16351,
+              "to": 16406
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260109_012005",
+      "to": "20260109_012043",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 16406,
+              "to": 16415
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16406,
+              "to": 16415
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260109_012043",
+      "to": "20260109_012200",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 16415,
+              "to": 17800
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16415,
+              "to": 17800
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260109_012200",
+      "to": "20260109_012241",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 17800,
+              "to": 17783
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 17800,
+              "to": 17783
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260109_012241",
+      "to": "20260109_012325",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 17783,
+              "to": 17803
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 17783,
+              "to": 17803
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20260109_012325",
+      "to": "20260109_012407",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "size": {
+              "from": 17803,
+              "to": 17828
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 17803,
+              "to": 17828
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 21,
+      "from": "20260109_012407",
+      "to": "20260109_012419",
+      "human_summary": "New files appeared: Marketing_Performance_Report.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Marketing_Performance_Report.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Marketing_Performance_Report.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 22,
+      "from": "20260109_012419",
+      "to": "20260109_012421",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 23,
+      "from": "20260109_012421",
+      "to": "20260109_012444",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 24,
+      "from": "20260109_012444",
+      "to": "20260109_012514",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "size": {
+              "from": 52886,
+              "to": 50149
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 52886,
+              "to": 50149
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 25,
+      "from": "20260109_012514",
+      "to": "20260109_012536",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "size": {
+              "from": 50149,
+              "to": 50165
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 50149,
+              "to": 50165
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 26,
+      "from": "20260109_012536",
+      "to": "20260109_012548",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "size": {
+              "from": 50165,
+              "to": 50170
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 50165,
+              "to": 50170
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 27,
+      "from": "20260109_012548",
+      "to": "20260109_012631",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "size": {
+              "from": 50170,
+              "to": 50171
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 50170,
+              "to": 50171
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 28,
+      "from": "20260109_012631",
+      "to": "20260109_012647",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 29,
+      "from": "20260109_012647",
+      "to": "20260109_012701",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "size": {
+              "from": 50171,
+              "to": 50239
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 50171,
+              "to": 50239
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 30,
+      "from": "20260109_012701",
+      "to": "20260109_012719",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "size": {
+              "from": 50239,
+              "to": 50265
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Marketing_Performance_Review.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 50239,
+              "to": 50265
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 31,
+      "from": "20260109_012719",
+      "to": "20260109_012731",
+      "human_summary": "New files appeared: Marketing_Performance_Review.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Marketing_Performance_Review.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Marketing_Performance_Review.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 32,
+      "from": "20260109_012731",
+      "to": "20260109_012733",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_22",
+    "snapshot_count": 33,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_010856",
+        "to": "20260109_010956",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9911,
+                "to": 9945
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_010956",
+        "to": "20260109_011017",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9945,
+                "to": 10004
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_011017",
+        "to": "20260109_011030",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10004,
+                "to": 10030
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_011030",
+        "to": "20260109_011127",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: spreadsheet content changed from 21 to 22 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 21,
+              "to": 22
+            },
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10030,
+                "to": 10363
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 21,
+                  "to": 22
+                },
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_011127",
+        "to": "20260109_011137",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: spreadsheet content changed from 22 to 25 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 22,
+              "to": 25
+            },
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10363,
+                "to": 10451
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 22,
+                  "to": 25
+                },
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_011137",
+        "to": "20260109_011159",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10451,
+                "to": 10477
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260109_011159",
+        "to": "20260109_011252",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10477,
+                "to": 11491
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260109_011252",
+        "to": "20260109_011617",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11491,
+                "to": 16671
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260109_011617",
+        "to": "20260109_011637",
+        "human_summary": "material/Marketing_Campaign_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Marketing_Campaign_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ],
+              "to": [
+                "Campaign Name",
+                "Impressions",
+                "Clicks",
+                "Conversion Rate (%)",
+                "Cost (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Campaign_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 16671,
+                "to": 16677
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ],
+                  "to": [
+                    "Campaign Name",
+                    "Impressions",
+                    "Clicks",
+                    "Conversion Rate (%)",
+                    "Cost (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260109_011637",
+        "to": "20260109_011730",
+        "human_summary": "New files appeared: Marketing_Campaign_Data.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Marketing_Campaign_Data.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Marketing_Campaign_Data.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260109_011730",
+        "to": "20260109_011732",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260109_011732",
+        "to": "20260109_011809",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260109_011809",
+        "to": "20260109_011846",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 16273,
+                "to": 16297
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16273,
+                "to": 16297
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260109_011846",
+        "to": "20260109_011921",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 16297,
+                "to": 16351
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16297,
+                "to": 16351
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260109_011921",
+        "to": "20260109_012005",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 16351,
+                "to": 16406
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16351,
+                "to": 16406
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260109_012005",
+        "to": "20260109_012043",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 16406,
+                "to": 16415
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16406,
+                "to": 16415
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260109_012043",
+        "to": "20260109_012200",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 16415,
+                "to": 17800
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16415,
+                "to": 17800
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20260109_012200",
+        "to": "20260109_012241",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 17800,
+                "to": 17783
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 17800,
+                "to": 17783
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 19,
+        "from": "20260109_012241",
+        "to": "20260109_012325",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 17783,
+                "to": 17803
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 17783,
+                "to": 17803
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 20,
+        "from": "20260109_012325",
+        "to": "20260109_012407",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "size": {
+                "from": 17803,
+                "to": 17828
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 17803,
+                "to": 17828
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 21,
+        "from": "20260109_012407",
+        "to": "20260109_012419",
+        "human_summary": "New files appeared: Marketing_Performance_Report.docx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Marketing_Performance_Report.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Marketing_Performance_Report.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 22,
+        "from": "20260109_012419",
+        "to": "20260109_012421",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 23,
+        "from": "20260109_012421",
+        "to": "20260109_012444",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 24,
+        "from": "20260109_012444",
+        "to": "20260109_012514",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "size": {
+                "from": 52886,
+                "to": 50149
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 52886,
+                "to": 50149
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 25,
+        "from": "20260109_012514",
+        "to": "20260109_012536",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "size": {
+                "from": 50149,
+                "to": 50165
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 50149,
+                "to": 50165
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 26,
+        "from": "20260109_012536",
+        "to": "20260109_012548",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "size": {
+                "from": 50165,
+                "to": 50170
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 50165,
+                "to": 50170
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 27,
+        "from": "20260109_012548",
+        "to": "20260109_012631",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "size": {
+                "from": 50170,
+                "to": 50171
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 50170,
+                "to": 50171
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 28,
+        "from": "20260109_012631",
+        "to": "20260109_012647",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 29,
+        "from": "20260109_012647",
+        "to": "20260109_012701",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "size": {
+                "from": 50171,
+                "to": 50239
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 50171,
+                "to": 50239
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 30,
+        "from": "20260109_012701",
+        "to": "20260109_012719",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "size": {
+                "from": 50239,
+                "to": 50265
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Marketing_Performance_Review.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 50239,
+                "to": 50265
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 31,
+        "from": "20260109_012719",
+        "to": "20260109_012731",
+        "human_summary": "New files appeared: Marketing_Performance_Review.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Marketing_Performance_Review.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Marketing_Performance_Review.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 32,
+        "from": "20260109_012731",
+        "to": "20260109_012733",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open Microsoft Excel 365."
+    },
+    {
+      "index": 3,
+      "instruction": "Select Open > This PC > Document > Desktop > material, click Open, then select the xlsx file to open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select range A1:E1, set Font to Calibri, Font Size to 11 pt, Bold = On."
+    },
+    {
+      "index": 5,
+      "instruction": "Set Fill Color to Blue, Accent 1, Lighter 60%."
+    },
+    {
+      "index": 6,
+      "instruction": "Set Horizontal Alignment to Center."
+    },
+    {
+      "index": 7,
+      "instruction": "Click cell D2, type =(C2/B2)*100, and press Enter."
+    },
+    {
+      "index": 8,
+      "instruction": "Drag the fill handle from D2 to D5."
+    },
+    {
+      "index": 9,
+      "instruction": "Select range D2:D5, set Number Format to Percentage with 2 decimal places."
+    },
+    {
+      "index": 10,
+      "instruction": "Select range A1:E5, click Home > Format as Table, choose Table Style Medium 9."
+    },
+    {
+      "index": 11,
+      "instruction": "Select range A1:C5, click Insert > Column > Clustered Column."
+    },
+    {
+      "index": 12,
+      "instruction": "Click the chart title and type Campaign Impressions and Clicks."
+    },
+    {
+      "index": 13,
+      "instruction": "Set Chart Title Font Size to 14 pt and Bold = On."
+    },
+    {
+      "index": 14,
+      "instruction": "Click File > Save As, name the file Marketing_Campaign_Data.xlsx and save it."
+    },
+    {
+      "index": 15,
+      "instruction": "Open Microsoft Word 365."
+    },
+    {
+      "index": 16,
+      "instruction": "Select Open > This PC > Document > Desktop > material, click Open, Select the docx file to open."
+    },
+    {
+      "index": 17,
+      "instruction": "Set Title Font to Calibri Light, Font Size to 26 pt."
+    },
+    {
+      "index": 18,
+      "instruction": "Select the first heading text, apply Style: Heading 1, set Font Size to 16 pt."
+    },
+    {
+      "index": 19,
+      "instruction": "Select the first paragraph exactly, apply Style: Normal, set Paragraph Line Spacing to 1.15 and Spacing After to 6 pt."
+    },
+    {
+      "index": 20,
+      "instruction": "Select the second heading text, apply Style: Heading 1, set Font Size to 16 pt."
+    },
+    {
+      "index": 21,
+      "instruction": "Select the second paragraph, apply Style: Normal."
+    },
+    {
+      "index": 22,
+      "instruction": "Switch to Excel, select range A1:E5 from Marketing_Campaign_Data.xlsx."
+    },
+    {
+      "index": 23,
+      "instruction": "Press Ctrl + C."
+    },
+    {
+      "index": 24,
+      "instruction": "Return to Word and press Ctrl + V to paste the table below the content of the second paragraph and above the title of the third paragraph."
+    },
+    {
+      "index": 25,
+      "instruction": "Select the pasted table, set Table Style to Grid Table 4 – Accent 1."
+    },
+    {
+      "index": 26,
+      "instruction": "Select the third heading text, apply Style: Heading 1, set Font Size to 16 pt."
+    },
+    {
+      "index": 27,
+      "instruction": "Set Bullet Indentation to 0.63 cm."
+    },
+    {
+      "index": 28,
+      "instruction": "Click File > Save As, name the file Marketing_Performance_Report.docx and save it."
+    },
+    {
+      "index": 29,
+      "instruction": "Open Microsoft PowerPoint 365."
+    },
+    {
+      "index": 30,
+      "instruction": "Select Open > This PC > Document > Desktop > material, click Open, Select the pptx file to open."
+    },
+    {
+      "index": 31,
+      "instruction": "Select first slide, set Title Font Size to 32 pt, set Subtitle Font Size to 18 pt."
+    },
+    {
+      "index": 32,
+      "instruction": "Select second slide, set Title Font Size to 24 pt."
+    },
+    {
+      "index": 33,
+      "instruction": "In the second slide, select the chart title, set Chart Title Font Size to 16 pt and set Chart Style to Style 8."
+    },
+    {
+      "index": 34,
+      "instruction": "Set Chart Style to Style 8."
+    },
+    {
+      "index": 35,
+      "instruction": "Select third slide, set Body Text Font Size to 14 pt."
+    },
+    {
+      "index": 36,
+      "instruction": "Click File > Save As, name the file Marketing_Performance_Review.pptx and save it."
+    },
+    {
+      "index": 37,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 7,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 33
+  }
+}

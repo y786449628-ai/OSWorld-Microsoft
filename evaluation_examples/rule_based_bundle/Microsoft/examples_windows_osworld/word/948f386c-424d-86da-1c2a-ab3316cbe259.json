@@ -1,0 +1,81 @@
+{
+  "id": "948f386c-424d-86da-1c2a-ab3316cbe259",
+  "snapshot": "word",
+  "instruction": "Could you design a professional letterhead section in the document with company/sender details and the current date? Could you add a clear subject line to the complaint letter template?",
+  "source": "Microsoft_41 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144129/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144129/Desktop/Material/a463-icapxph6773606.jpg",
+            "path": "C:\\Users\\User\\Desktop\\Material\\a463-icapxph6773606.jpg"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144206/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\User\\Documents\\Formal_Complaint_Letter_Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/948f386c-424d-86da-1c2a-ab3316cbe259",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx",
+      "dest": "Formal_Complaint_Letter_Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Formal_Complaint_Letter_Template_gold.docx",
+      "dest": "Formal_Complaint_Letter_Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Formal_Complaint_Letter_Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

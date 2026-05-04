@@ -1,0 +1,83 @@
+{
+  "id": "0cbd7ad5-3244-f7dd-a162-32c3cd04d71a",
+  "snapshot": "excel",
+  "instruction": "Could you calculate the performance-based bonuses for each employee in the 'Employee_Payroll.xlsx'?",
+  "source": "Microsoft_50 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_50/logs/MonitoringSnapshots/20260109_175007/Desktop/Employee_Payroll.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Employee_Payroll.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_50/logs/MonitoringSnapshots/20260109_175100/Desktop/Employee_Payroll.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Employee_Payroll_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Employee_Payroll.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0cbd7ad5-3244-f7dd-a162-32c3cd04d71a",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Employee_Payroll.xlsx",
+      "dest": "Employee_Payroll.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Employee_Payroll_gold.xlsx",
+      "dest": "Employee_Payroll_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Employee_Payroll.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

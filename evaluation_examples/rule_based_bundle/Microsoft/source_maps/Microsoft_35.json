@@ -1,0 +1,1031 @@
+{
+  "source_name": "Microsoft_35",
+  "source_file": "Microsoft_35.txt",
+  "source_id": "476dfeb8342e",
+  "source_question": "On your cloud desktop, use Microsoft Word to create a structured project proposal template. First, create a new folder and a Word document. Set up styled headings, a bulleted list for project phases, a resource planning table for the template, and add document protection elements such as a watermark, header, and footer. Save the template in Word format, and export a PDF copy to the same folder.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new folder and a Word document for the project proposal template?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you set up styled headings in the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a bulleted list for project phases in the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a resource planning table in the Word document?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you add document protection elements such as a watermark, header, and footer to the Word document?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save the template in Word format?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you export a PDF copy of the template to the same folder?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_project_folder_and_word_document",
+      "instruction": "Could you create a new folder and a Word document for the project proposal template?",
+      "task_kind": "filesystem_create_folder|word_create_document",
+      "apps": [
+        "os",
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Create a new folder named 'Project' and a new Word document named 'Proposal.docx'.",
+      "planned_input_snapshot": "20260110_115847",
+      "planned_gold_snapshot": "20260110_115905",
+      "snapshot_evidence": "New directories appeared: Project. Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file and directory changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "set_up_headings_and_bulleted_list",
+      "instruction": "Could you set up styled headings in the Word document? Could you add a bulleted list for project phases in the Word document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Set up styled headings and a bulleted list for project phases.",
+      "planned_input_snapshot": "20260110_115905",
+      "planned_gold_snapshot": "20260110_120706",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file changes, but requires LLM assistance for content verification.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_resource_planning_table",
+      "instruction": "Could you create a resource planning table in the Word document?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Insert a table with 3 columns and 4 rows for resource planning.",
+      "planned_input_snapshot": "20260110_120706",
+      "planned_gold_snapshot": "20260110_120706",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file changes, but requires LLM assistance for content verification.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_document_protection_elements",
+      "instruction": "Could you add document protection elements such as a watermark, header, and footer to the Word document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Add a watermark, header, and footer to the document.",
+      "planned_input_snapshot": "20260110_120706",
+      "planned_gold_snapshot": "20260110_120706",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file changes, but requires LLM assistance for content verification.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "save_template_in_word_format",
+      "instruction": "Could you save the template in Word format?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 17,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Save the Word document in the 'Project' folder.",
+      "planned_input_snapshot": "20260110_120706",
+      "planned_gold_snapshot": "20260110_120706",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "export_pdf_copy_to_same_folder",
+      "instruction": "Could you export a PDF copy of the template to the same folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 18,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Export the Word document as a PDF and save it in the 'Project' folder.",
+      "planned_input_snapshot": "20260110_120706",
+      "planned_gold_snapshot": "20260110_120720",
+      "snapshot_evidence": "New files appeared: Project/Proposal.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_project_folder_and_word_document_and_set_up_headings_and_bulleted_list_and_create_resource_planning_table_and_add_document_protection_elements_and_save_template_in_word_format",
+      "instruction": "Could you create a new folder and a Word document for the project proposal template, and then set up styled headings in the Word document? Could you add a bulleted list for project phases in the Word document, and then create a resource planning table in the Word document, and then add document protection elements such as a watermark, header, and footer to the Word document, and then save the template in Word format?",
+      "task_kind": "filesystem_create_folder|word_create_document",
+      "apps": [
+        "os",
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Create a new folder named 'Project' and a new Word document named 'Proposal.docx'. | Set up styled headings and a bulleted list for project phases. | Insert a table with 3 columns and 4 rows for resource planning. | Add a watermark, header, and footer to the document. | Save the Word document in the 'Project' folder.",
+      "planned_input_snapshot": "20260110_115847",
+      "planned_gold_snapshot": "20260110_115905",
+      "snapshot_evidence": "New directories appeared: Project. Files appeared and disappeared, suggesting a save-as, rename, or move operation. | One or more files changed size, but no detailed Office feature delta was detected. | One or more files changed size, but no detailed Office feature delta was detected. | One or more files changed size, but no detailed Office feature delta was detected. | One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file and directory changes.",
+      "input_snapshot": "20260110_115839",
+      "gold_snapshot": "20260110_120706",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Project/Proposal.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_115847",
+        "chain_input_snapshot": "20260110_115839",
+        "chain_input_replaced": "20260110_115847",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 3,
+          "search_end_index": 5,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_115847",
+          "planned_gold_snapshot": "20260110_115905"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "save_template_in_word_format",
+          "reason": "Could not find target file content change."
+        }
+      },
+      "merged_stage_names": [
+        "create_project_folder_and_word_document",
+        "set_up_headings_and_bulleted_list",
+        "create_resource_planning_table",
+        "add_document_protection_elements",
+        "save_template_in_word_format"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "2453dfe6-c27c-a93f-9ade-3f9f71a43b47",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/2453dfe6-c27c-a93f-9ade-3f9f71a43b47.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "export_pdf_copy_to_same_folder",
+      "instruction": "Could you export a PDF copy of the template to the same folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 18,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Export the Word document as a PDF and save it in the 'Project' folder.",
+      "planned_input_snapshot": "20260110_120706",
+      "planned_gold_snapshot": "20260110_120720",
+      "snapshot_evidence": "New files appeared: Project/Proposal.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file changes.",
+      "input_snapshot": "20260110_120706",
+      "gold_snapshot": "20260110_120720",
+      "linked_preview_tasks": [
+        7
+      ],
+      "target_relative_path": "Project/Proposal.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_120706",
+        "trajectory_window": {
+          "trajectory_start": 18,
+          "trajectory_end": 18,
+          "search_start_index": 10,
+          "search_end_index": 11,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_120706",
+          "planned_gold_snapshot": "20260110_120720"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "2982bada-33c3-9b4b-d936-36e475d9a3fd",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/2982bada-33c3-9b4b-d936-36e475d9a3fd.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you set up styled headings in the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a bulleted list for project phases in the Word document?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260110_115839",
+    "20260110_115839_1",
+    "20260110_115847",
+    "20260110_115856",
+    "20260110_115856_1",
+    "20260110_115905",
+    "20260110_115905_1",
+    "20260110_115909",
+    "20260110_115909_1",
+    "20260110_120706",
+    "20260110_120706_1",
+    "20260110_120720",
+    "20260110_120720_1",
+    "20260110_120729",
+    "20260110_120729_1"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_115839",
+      "to": "20260110_115839_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_115839_1",
+      "to": "20260110_115847",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_115847",
+      "to": "20260110_115856",
+      "human_summary": "New directories appeared: Project.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Project"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project/New Microsoft Word Document.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [
+          "Project"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_115856",
+      "to": "20260110_115856_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_115856_1",
+      "to": "20260110_115905",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Project/Proposal.docx"
+        ],
+        "files_removed": [
+          "Project/New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project/Proposal.docx"
+        ],
+        "files_removed": [
+          "Project/New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_115905",
+      "to": "20260110_115905_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_115905_1",
+      "to": "20260110_115909",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_115909",
+      "to": "20260110_115909_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260110_115909_1",
+      "to": "20260110_120706",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project/Proposal.docx",
+            "size": {
+              "from": 0,
+              "to": 23167
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project/Proposal.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 23167
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260110_120706",
+      "to": "20260110_120706_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260110_120706_1",
+      "to": "20260110_120720",
+      "human_summary": "New files appeared: Project/Proposal.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project/Proposal.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project/Proposal.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260110_120720",
+      "to": "20260110_120720_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260110_120720_1",
+      "to": "20260110_120729",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260110_120729",
+      "to": "20260110_120729_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_35",
+    "snapshot_count": 15,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_115839",
+        "to": "20260110_115839_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_115839_1",
+        "to": "20260110_115847",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_115847",
+        "to": "20260110_115856",
+        "human_summary": "New directories appeared: Project.",
+        "likely_stage": "create or organize folders",
+        "confidence": 0.82,
+        "evidence": {
+          "dirs_added": [
+            "Project"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project/New Microsoft Word Document.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [
+            "Project"
+          ],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_115856",
+        "to": "20260110_115856_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_115856_1",
+        "to": "20260110_115905",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Project/Proposal.docx"
+          ],
+          "files_removed": [
+            "Project/New Microsoft Word Document.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project/Proposal.docx"
+          ],
+          "files_removed": [
+            "Project/New Microsoft Word Document.docx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260110_115905",
+        "to": "20260110_115905_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260110_115905_1",
+        "to": "20260110_115909",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260110_115909",
+        "to": "20260110_115909_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260110_115909_1",
+        "to": "20260110_120706",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project/Proposal.docx",
+              "size": {
+                "from": 0,
+                "to": 23167
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project/Proposal.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 0,
+                "to": 23167
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260110_120706",
+        "to": "20260110_120706_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260110_120706_1",
+        "to": "20260110_120720",
+        "human_summary": "New files appeared: Project/Proposal.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Project/Proposal.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project/Proposal.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260110_120720",
+        "to": "20260110_120720_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260110_120720_1",
+        "to": "20260110_120729",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260110_120729",
+        "to": "20260110_120729_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "On your cloud desktop, right-click on a blank area, select \"New\", and then choose \"Folder\". Name the new folder \"Project\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Open the \"Project\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name the document \"Proposal.docx\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Open \"Proposal.docx\". On the first line, enter \"PROJECT PROPOSAL TEMPLATE\". Select this text, go to the \"Home\" tab, and click the \"Title\" style in the \"Styles\" gallery."
+    },
+    {
+      "index": 5,
+      "instruction": "Press the \"Enter\" key twice to move the cursor down. Enter \"Project Overview:\" and apply the \"Heading\" style from the \"Home\" tab."
+    },
+    {
+      "index": 6,
+      "instruction": "Press the \"Enter\" key and type \"1. Goal:\". Apply the \"Heading 1\" style. Press the \"Enter\" key again, type \"2. Scope:\", and then apply the \"Heading 1\" style."
+    },
+    {
+      "index": 7,
+      "instruction": "Press the \"Enter\" key again, type \"2. Scope:\", and then apply the \"Heading 1\" style."
+    },
+    {
+      "index": 8,
+      "instruction": "Press the \"Enter\" key, input \"3. Project phase：\", and apply the \"Heading 1\" style. Press the \"Enter\" key, go to the \"Home\" tab, and click the \"Bullets\" button to start a bulleted list. Enter at least three example phases."
+    },
+    {
+      "index": 9,
+      "instruction": "Press the \"Enter\" key twice to end the list. Enter \"4. Resource requirements:\" and apply the \"Heading 1\" style."
+    },
+    {
+      "index": 10,
+      "instruction": "Go to the \"Insert\" tab, click \"Table\", and insert a table with 3 columns and 4 rows. In the first row, enter \"Project\", \"Estimated cost\", and \"Deadline\" as column headings."
+    },
+    {
+      "index": 11,
+      "instruction": "Press the \"Enter\" key twice after the table. Enter \"6. Approval:\" and apply the \"Heading 1\" style."
+    },
+    {
+      "index": 12,
+      "instruction": "Go to the \"Design\" tab. Click \"Watermark\" and select the \"ASAP1\" watermark from the library."
+    },
+    {
+      "index": 13,
+      "instruction": "Go to the \"Insert\" tab. Click \"Header\" and select a blank design. Enter your organization's name \"Innovative Technology Company\" in the header area."
+    },
+    {
+      "index": 14,
+      "instruction": "Go to the \"Insert\" tab. Click \"Footer\" and select the \"Austin\" design. Make sure the page numbers are displayed."
+    },
+    {
+      "index": 16,
+      "instruction": "Check the document layout. Select all text (Ctrl+A), go to the \"Home\" tab, set the \"Font\" to \"Toma\" and the \"Font Size\" to \"12\" to maintain consistency."
+    },
+    {
+      "index": 17,
+      "instruction": "Click \"File\", then select \"Save As\". Make sure you are in the \"Project\" folder, and click \"Save\" to save the Word document."
+    },
+    {
+      "index": 18,
+      "instruction": "Click \"File\" again, select \"Export\", and then choose \"Create PDF/XPS Document\". Click \"Create PDF/XPS\", save the PDF file in the \"Project\" folder, and keep the default name."
+    },
+    {
+      "index": 19,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 2,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 15
+  }
+}

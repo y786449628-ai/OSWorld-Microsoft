@@ -1,0 +1,77 @@
+{
+  "id": "e1df1b8d-9294-20fe-4372-8687103d3511",
+  "snapshot": "word",
+  "instruction": "Could you save the document to your desktop? Could you export the document as a PDF file to your desktop?",
+  "source": "Microsoft_62 true stage 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141952/Desktop/New_Employee_Onboarding_Checklist.docx",
+            "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_142202/Desktop/New_Employee_Onboarding_Checklist.pdf",
+            "path": "C:\\Users\\78644\\Documents\\New_Employee_Onboarding_Checklist_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/e1df1b8d-9294-20fe-4372-8687103d3511",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.pdf",
+      "dest": "New_Employee_Onboarding_Checklist.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\New_Employee_Onboarding_Checklist_gold.pdf",
+      "dest": "New_Employee_Onboarding_Checklist_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "New_Employee_Onboarding_Checklist.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

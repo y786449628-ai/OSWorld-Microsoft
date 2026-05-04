@@ -1,0 +1,85 @@
+{
+  "id": "e38dad40-6a6e-262c-de2c-e8c77c2be97f",
+  "snapshot": "ppt",
+  "instruction": "Could you ensure all elements in the slides are properly aligned, save the presentation, and export it as a PDF file to your desktop?",
+  "source": "Microsoft_63 true stage 8",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_195228/Desktop/Material/drive-2.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\drive-2.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_195228/Desktop/Material/Huawei-Smart-Charger.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Huawei-Smart-Charger.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_195228/Desktop/Product_Launch_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_195554/Desktop/Product_Launch_Presentation.pdf",
+            "path": "C:\\Users\\78644\\Documents\\Product_Launch_Presentation_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/e38dad40-6a6e-262c-de2c-e8c77c2be97f",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pdf",
+      "dest": "Product_Launch_Presentation.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Product_Launch_Presentation_gold.pdf",
+      "dest": "Product_Launch_Presentation_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Product_Launch_Presentation.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

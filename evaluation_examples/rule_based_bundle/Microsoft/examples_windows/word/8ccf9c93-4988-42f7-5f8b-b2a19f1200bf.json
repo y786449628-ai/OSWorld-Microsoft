@@ -1,0 +1,81 @@
+{
+  "id": "8ccf9c93-4988-42f7-5f8b-b2a19f1200bf",
+  "snapshot": "word",
+  "instruction": "Could you paste the Excel chart image into the Word document?",
+  "source": "Microsoft_01 true stage 6",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222526/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222526/Desktop/Doc1.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222531/Desktop/Doc1.docx",
+            "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/8ccf9c93-4988-42f7-5f8b-b2a19f1200bf",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Doc1.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

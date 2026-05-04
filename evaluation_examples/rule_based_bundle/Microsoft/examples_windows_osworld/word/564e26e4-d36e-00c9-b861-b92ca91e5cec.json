@@ -1,0 +1,85 @@
+{
+  "id": "564e26e4-d36e-00c9-b861-b92ca91e5cec",
+  "snapshot": "word",
+  "instruction": "Could you save the Word document as Marketing_Performance_Report.docx?",
+  "source": "Microsoft_22 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012200/Desktop/Marketing_Campaign_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Marketing_Campaign_Data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012200/Desktop/material/Marketing_Performance_Report.docx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Marketing_Performance_Report.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012200/Desktop/material/Marketing_Performance_Review.pptx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Marketing_Performance_Review.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_22/logs/MonitoringSnapshots/20260109_012419/Desktop/Marketing_Performance_Report.docx",
+            "path": "C:\\Users\\User\\Documents\\Marketing_Performance_Report_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\material\\Marketing_Performance_Report.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/564e26e4-d36e-00c9-b861-b92ca91e5cec",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Marketing_Performance_Report.docx",
+      "dest": "Marketing_Performance_Report.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Marketing_Performance_Report_gold.docx",
+      "dest": "Marketing_Performance_Report_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Marketing_Performance_Report.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "60b8408a-a3be-2d53-ae4a-c6e54dfb2aac",
+  "snapshot": "excel",
+  "instruction": "Could you embed the 'Budget vs Actual' Combo Chart from Excel into the 'Financial Overview' slide as a linked object?",
+  "source": "Microsoft_55 true stage 3",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100234/Desktop/Alpha_Fiancials.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Alpha_Fiancials.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100234/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100337/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\User\\Documents\\Project_Alpha_Status_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/60b8408a-a3be-2d53-ae4a-c6e54dfb2aac",
+  "related_apps": [
+    "excel",
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx",
+      "dest": "Project_Alpha_Status.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Alpha_Status_gold.pptx",
+      "dest": "Project_Alpha_Status_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Alpha_Status.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

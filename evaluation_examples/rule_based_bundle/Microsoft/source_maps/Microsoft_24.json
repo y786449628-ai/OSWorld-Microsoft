@@ -1,0 +1,481 @@
+{
+  "source_name": "Microsoft_24",
+  "source_file": "Microsoft_24.txt",
+  "source_id": "5faac6560bc6",
+  "source_question": "Supermarket sell fruit and system export a detail list by each month (From Jan to Jun), which including Product name and sales revenue. Now Manager want to review the sales trend by each fruit, and want to view the total sales revenue by each month, and also if needed, he want to click a link and jump to the detail sheet.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a summary table in Excel that shows the total sales revenue for each month from January to June?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart in Excel to show the sales trend by each fruit over the months from January to June?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add hyperlinks in the summary table that link to the detailed list for each month?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document in Word to present the summary table and the sales trend chart?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_excel_and_import_data",
+      "instruction": "Could you open Excel, create a new workbook, and import the detail file into it?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Open Excel, create a new workbook, and import the detail file.",
+      "planned_input_snapshot": "20260108_122420",
+      "planned_gold_snapshot": "20260108_123417",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_summary_table",
+      "instruction": "Could you create a summary table in Excel that shows the total sales revenue for each month from January to June?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Create a summary table with hyperlinks and total revenue calculations.",
+      "planned_input_snapshot": "20260108_123417",
+      "planned_gold_snapshot": "20260108_123417",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in snapshots, but the stage is necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_sales_trend_chart",
+      "instruction": "Could you create a chart in Excel to show the sales trend by each fruit over the months from January to June?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 21,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Create a pivot table and a clustered column chart with trendlines and data labels.",
+      "planned_input_snapshot": "20260108_123417",
+      "planned_gold_snapshot": "20260108_123417",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in snapshots, but the stage is necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_hyperlinks_to_summary_table",
+      "instruction": "Could you add hyperlinks in the summary table that link to the detailed list for each month?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Add hyperlinks to the summary table.",
+      "planned_input_snapshot": "20260108_123417",
+      "planned_gold_snapshot": "20260108_123417",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in snapshots, but the stage is necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "save_final_excel_file",
+      "instruction": "Could you save the final Excel file as 'final result.xlsx'?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "trajectory_start": 31,
+      "trajectory_end": 31,
+      "trajectory_evidence": "Save the final Excel file.",
+      "planned_input_snapshot": "20260108_123417",
+      "planned_gold_snapshot": "20260108_123419",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in snapshots, but the stage is necessary for the workflow. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_excel_and_import_data_and_create_summary_table_and_create_sales_trend_chart_and_add_hyperlinks_to_summary_table_and_save_final_excel_file",
+      "instruction": "Could you open Excel, create a new workbook, and import the detail file into it, and then create a summary table in Excel that shows the total sales revenue for each month from January to June, and then create a chart in Excel to show the sales trend by each fruit over the months from January to June, and then add hyperlinks in the summary table that link to the detailed list for each month, and then save the final Excel file as 'final result.xlsx'?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 31,
+      "trajectory_evidence": "Open Excel, create a new workbook, and import the detail file. | Create a summary table with hyperlinks and total revenue calculations. | Create a pivot table and a clustered column chart with trendlines and data labels. | Add hyperlinks to the summary table. | Save the final Excel file.",
+      "planned_input_snapshot": "20260108_122420",
+      "planned_gold_snapshot": "20260108_123419",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation.",
+      "input_snapshot": "20260108_122420",
+      "gold_snapshot": "20260108_123419",
+      "linked_preview_tasks": [],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 10,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260108_122420",
+          "planned_gold_snapshot": "20260108_123417"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "save_final_excel_file",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "open_excel_and_import_data",
+        "create_summary_table",
+        "create_sales_trend_chart",
+        "add_hyperlinks_to_summary_table",
+        "save_final_excel_file"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "3f444eb7-6415-5fdc-57fa-d7690a478ecb",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/3f444eb7-6415-5fdc-57fa-d7690a478ecb.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document in Word to present the summary table and the sales trend chart?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260108_122420",
+    "20260108_123417",
+    "20260108_123419"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260108_122420",
+      "to": "20260108_123417",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260108_123417",
+      "to": "20260108_123419",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_24",
+    "snapshot_count": 3,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260108_122420",
+        "to": "20260108_123417",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260108_123417",
+        "to": "20260108_123419",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Puls icon of sheet, then modify the sheet name as \"Summary\", then draw the summary sheet to the left side of sheet list."
+    },
+    {
+      "index": 5,
+      "instruction": "Select A1 Cell, then click Menu---Data, find and click  Get data, will pop up a frame"
+    },
+    {
+      "index": 6,
+      "instruction": "Select From File, then click From Excel Workbook, will open an Import data frame"
+    },
+    {
+      "index": 7,
+      "instruction": "Click Desktop, double click Material, find and click Detail file, then click import button, will pop up a Navigator frame."
+    },
+    {
+      "index": 8,
+      "instruction": "Click Detail.xlsx, then click Transform Data button, will open Power Query Editor frame."
+    },
+    {
+      "index": 9,
+      "instruction": "Select Column Name, then right click, select Remove Other Columns"
+    },
+    {
+      "index": 10,
+      "instruction": "Find and click Close & Load button, will import sheet name into the sheet."
+    },
+    {
+      "index": 11,
+      "instruction": "Click B1 cell, and input \"Link\""
+    },
+    {
+      "index": 12,
+      "instruction": "Click B2 cell, and input \"=HYPERLINK(\"#\"&[@Name]&\"!A1\",\"Open\")\", then click Enter."
+    },
+    {
+      "index": 13,
+      "instruction": "Click Cell B4, and to check if will jump to Mar sheet. Then Click Detail xlsx sheet."
+    },
+    {
+      "index": 14,
+      "instruction": "Click C1 cell, and input \"Total Revenue\""
+    },
+    {
+      "index": 15,
+      "instruction": "Click C2 cell, and input \"=SUM(INDIRECT(A2&\"!C:C\"))\" then click Enter"
+    },
+    {
+      "index": 16,
+      "instruction": "Select C2 cell to C7 cell, and click Menu---Home, find and click Percent Style, then click Decrease Decimal twice"
+    },
+    {
+      "index": 17,
+      "instruction": "Click Summary sheet, then select A1 cell."
+    },
+    {
+      "index": 18,
+      "instruction": "Input \"Month\"; select B1 cell and input \"Product Name\", select C1 cell then input \"Sales Revenue\""
+    },
+    {
+      "index": 19,
+      "instruction": "Select A2 cell, then input =TOCOL(Jan:Jun!A2:A1000,3), then click Enter"
+    },
+    {
+      "index": 20,
+      "instruction": "Select A2 cell, click draw button on the right bottom side, then draw from A2 to C2, all record import to summary sheet."
+    },
+    {
+      "index": 21,
+      "instruction": "Select A1 cell to C43 cell, then click Menu---Insert, find and click Pivot table button, will pop up a Pivot table from table or range frame"
+    },
+    {
+      "index": 22,
+      "instruction": "Click Existing worksheet, then select F1 cell, then click OK."
+    },
+    {
+      "index": 23,
+      "instruction": "Draw Month to Rows, and draw Sales Revenue to Values"
+    },
+    {
+      "index": 24,
+      "instruction": "Click Menu---Click Pivotchart button ,and select Column, select Clustered Column, then click OK button."
+    },
+    {
+      "index": 25,
+      "instruction": "Change Title of Pivot chart as \"Sales Trend\""
+    },
+    {
+      "index": 26,
+      "instruction": "Right Click Column, then select add Trendline"
+    },
+    {
+      "index": 27,
+      "instruction": "Right Click Column, then select add Data Label"
+    },
+    {
+      "index": 28,
+      "instruction": "Click Menu---Pivot Anlaysis, find and click Slicer button, will pop up a frame of Insert Slicers"
+    },
+    {
+      "index": 29,
+      "instruction": "Select Product Name, then click OK"
+    },
+    {
+      "index": 30,
+      "instruction": "Adjust Slicer frame, and click Apple, then select Grape to check the Slicer function."
+    },
+    {
+      "index": 31,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 32,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 3
+  }
+}

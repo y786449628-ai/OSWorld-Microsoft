@@ -1,0 +1,529 @@
+{
+  "source_name": "Microsoft_19",
+  "source_file": "Microsoft_19.txt",
+  "source_id": "f306a3a63018",
+  "source_question": "People borrow books from Library, the form record the lend date and return date, now we need review each month how many days the book not in library, total days lend, user need select one book, show all month record with how many days the book not in library，and there is 2 sheets show the book lend record from 2023 to 2024, also need display the lend history in one page.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you prepare a data table in Excel to record the lend and return dates for books from 2023 to 2024?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you calculate the number of days each book was not in the library for each month based on the lend and return dates?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you create a summary table that shows the total days each book was lent out for each month?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you set up a filter or dropdown in Excel to allow the user to select a specific book and view its monthly lend records?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a chart or visual representation to display the lend history of the selected book on one page?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you compile the lend and return data from the two sheets into a single, consolidated sheet for easier review?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_excel_and_import_data",
+      "instruction": "Could you prepare a data table in Excel to record the lend and return dates for books from 2023 to 2024?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Excel, create a new workbook, and import the data from the 'Material' file.",
+      "planned_input_snapshot": "20260107_103257",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "calculate_days_not_in_library",
+      "instruction": "Could you calculate the number of days each book was not in the library for each month based on the lend and return dates?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Enter and drag the formula to calculate the days each book was not in the library for each month.",
+      "planned_input_snapshot": "20260107_104309",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; needs to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_summary_table",
+      "instruction": "Could you create a summary table that shows the total days each book was lent out for each month?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Create a summary table and enter the formula to calculate the total days each book was lent out for each month.",
+      "planned_input_snapshot": "20260107_104309",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; needs to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "set_up_book_filter",
+      "instruction": "Could you set up a filter or dropdown in Excel to allow the user to select a specific book and view its monthly lend records?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Set up a filter or dropdown to allow the user to select a specific book and view its monthly lend records.",
+      "planned_input_snapshot": "20260107_104309",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; needs to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "format_cells_and_apply_filters",
+      "instruction": "Could you format the cells and apply filters to display the lend history of the selected book on one page?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Format the cells, apply filters, and copy the data to display the lend history of the selected book on one page.",
+      "planned_input_snapshot": "20260107_104309",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; needs to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "compile_lend_return_data",
+      "instruction": "Could you compile the lend and return data from the two sheets into a single, consolidated sheet for easier review?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 19,
+      "trajectory_end": 21,
+      "trajectory_evidence": "Compile the lend and return data from the two sheets into a single, consolidated sheet.",
+      "planned_input_snapshot": "20260107_104309",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; needs to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_final_result",
+      "instruction": "Could you save the final result as an Excel file?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "trajectory_start": 24,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Save the final result as an Excel file.",
+      "planned_input_snapshot": "20260107_104309",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition; needs to be merged with a neighboring stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_excel_and_import_data_and_calculate_days_not_in_library_and_create_summary_table_and_set_up_book_filter_and_format_cells_and_apply_filters_and_compile_lend_return_data_and_save_final_result",
+      "instruction": "Could you prepare a data table in Excel to record the lend and return dates for books from 2023 to 2024, and then calculate the number of days each book was not in the library for each month based on the lend and return dates, and then create a summary table that shows the total days each book was lent out for each month, and then set up a filter or dropdown in Excel to allow the user to select a specific book and view its monthly lend records, and then format the cells and apply filters to display the lend history of the selected book on one page, and then compile the lend and return data from the two sheets into a single, consolidated sheet for easier review, and then save the final result as an Excel file?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Open Excel, create a new workbook, and import the data from the 'Material' file. | Enter and drag the formula to calculate the days each book was not in the library for each month. | Create a summary table and enter the formula to calculate the total days each book was lent out for each month. | Set up a filter or dropdown to allow the user to select a specific book and view its monthly lend records. | Format the cells, apply filters, and copy the data to display the lend history of the selected book on one page. | Compile the lend and return data from the two sheets into a single, consolidated sheet. | Save the final result as an Excel file.",
+      "planned_input_snapshot": "20260107_103257",
+      "planned_gold_snapshot": "20260107_104309",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260107_103257",
+      "gold_snapshot": "20260107_104309",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260107_103257",
+          "planned_gold_snapshot": "20260107_104309"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 7,
+          "stage_name": "save_final_result",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "open_excel_and_import_data",
+        "calculate_days_not_in_library",
+        "create_summary_table",
+        "set_up_book_filter",
+        "format_cells_and_apply_filters",
+        "compile_lend_return_data",
+        "save_final_result"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "generated_examples": [
+        {
+          "example_id": "15104afc-9839-ba26-742d-ff86e63cfe1a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/15104afc-9839-ba26-742d-ff86e63cfe1a.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 5,
+      "instruction": "Could you create a chart or visual representation to display the lend history of the selected book on one page?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260107_103257",
+    "20260107_104309",
+    "20260107_104311"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260107_103257",
+      "to": "20260107_104309",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260107_104309",
+      "to": "20260107_104311",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_19",
+    "snapshot_count": 3,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260107_103257",
+        "to": "20260107_104309",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260107_104309",
+        "to": "20260107_104311",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select D2 cell, and input \"=MAX(0, MIN($C2, EOMONTH(DATE(2025,COLUMN()-3,1),0)) - MAX($B2, DATE(2025,COLUMN()-3,1)) + 1)\", then click Enter"
+    },
+    {
+      "index": 5,
+      "instruction": "Select D2 cell, and click draw icon on the right bottom side of the cell, draw the icon from D2 cell to D6 cell"
+    },
+    {
+      "index": 6,
+      "instruction": "Select D2 cell to D6 cell, click draw icon on the right bottom side of the cell, draw the icon from D2:D6 cell to O2:O6 cell."
+    },
+    {
+      "index": 7,
+      "instruction": "Select P1 cell, input \"Total Days Lend\""
+    },
+    {
+      "index": 8,
+      "instruction": "Select P2 cell, input \"=C2-B2+1\", then click Enter"
+    },
+    {
+      "index": 9,
+      "instruction": "Select P2 cell, click draw icon on the right bottom side of the cell, draw the icon from P2 cell to P6 cell."
+    },
+    {
+      "index": 10,
+      "instruction": "Right Click P1 cell and P6 cell, then click format cells, click border, then click Outline, click inside, then click OK Button."
+    },
+    {
+      "index": 11,
+      "instruction": "Select A9 cell, and input \"Select Book\""
+    },
+    {
+      "index": 12,
+      "instruction": "Select A10 cell, Click Menu---Data, find and select Data validation, will pop up a frame"
+    },
+    {
+      "index": 13,
+      "instruction": "Select List from Allow, then select A2 cell to A6 cell for Source, then click OK button."
+    },
+    {
+      "index": 14,
+      "instruction": "Select A9 cell and A10 cell, then click Menu---Home, find and click Bold button"
+    },
+    {
+      "index": 15,
+      "instruction": "Right Click A9 cell and A10 cell, then click format cells, then click Outline, click inside, then click OK Button."
+    },
+    {
+      "index": 16,
+      "instruction": "Select A1 cell to P1 cell, then click Ctrl+C, then click A12 cell, click Ctrl+V"
+    },
+    {
+      "index": 17,
+      "instruction": "Click A13 cell, then input \"=FILTER(A2:P6,A2:A6=A10)\""
+    },
+    {
+      "index": 18,
+      "instruction": "Click B13 cell to C13 cell, click Menu---Home, find and click number format, then click short date"
+    },
+    {
+      "index": 19,
+      "instruction": "Select A17 cell, and input \"History record in 2024\""
+    },
+    {
+      "index": 20,
+      "instruction": "Select A1 cell to C1 cell, and click Ctrl+C, then click A18 Cell, click Ctrl+V, select B19 cell to C23 cell, and click Menu---Home, find and click number format, then click short date"
+    },
+    {
+      "index": 21,
+      "instruction": "Select E11 cell, and input \"=FILTER('2024'!$A$1:$C$8,'2024'!$A$1:$A$8=$A$10)\", then click Enter"
+    },
+    {
+      "index": 22,
+      "instruction": "Select A10 Cell, select Book1 to check the data."
+    },
+    {
+      "index": 23,
+      "instruction": "Copy the A18 cell to C20 cell, click Ctrl+C, then click 2024 Sheet, click A10 Cell, click Ctrl+V, then see if the records match the result"
+    },
+    {
+      "index": 24,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 25,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 3
+  }
+}

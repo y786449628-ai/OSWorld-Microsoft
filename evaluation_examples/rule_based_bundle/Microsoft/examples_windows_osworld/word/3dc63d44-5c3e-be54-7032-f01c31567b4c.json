@@ -1,0 +1,85 @@
+{
+  "id": "3dc63d44-5c3e-be54-7032-f01c31567b4c",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document for the workshop invitations and design the invitation template?",
+  "source": "Microsoft_05 true stage 3",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091238/Desktop/Contact List.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Contact List.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091238/Desktop/Material/Boss information.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Boss information.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091238/Desktop/Material/Invitation.docx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Invitation.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_05/logs/MonitoringSnapshots/20251230_091427/Desktop/Invitation Mail Merge.docx",
+            "path": "C:\\Users\\User\\Documents\\Invitation Mail Merge_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Invitation.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/3dc63d44-5c3e-be54-7032-f01c31567b4c",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Invitation Mail Merge.docx",
+      "dest": "Invitation Mail Merge.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Invitation Mail Merge_gold.docx",
+      "dest": "Invitation Mail Merge_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Invitation Mail Merge.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "dcdc9d83-c105-b61e-69eb-8f8a1223d6ad",
+  "snapshot": "word",
+  "instruction": "Could you add consistent page numbering to the complaint letter template? Could you use built-in Styles for headings, adjust paragraph spacing and alignment, and apply a professional font throughout the document?",
+  "source": "Microsoft_41 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144544/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144544/Desktop/Material/a463-icapxph6773606.jpg",
+            "path": "C:\\Users\\User\\Desktop\\Material\\a463-icapxph6773606.jpg"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144707/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\User\\Documents\\Formal_Complaint_Letter_Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/dcdc9d83-c105-b61e-69eb-8f8a1223d6ad",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx",
+      "dest": "Formal_Complaint_Letter_Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Formal_Complaint_Letter_Template_gold.docx",
+      "dest": "Formal_Complaint_Letter_Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Formal_Complaint_Letter_Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

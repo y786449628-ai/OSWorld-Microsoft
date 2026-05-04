@@ -1,0 +1,91 @@
+{
+  "id": "63fd525e-75a7-df47-beb2-3a2999231b3c",
+  "snapshot": "excel",
+  "instruction": "Could you save the Excel workbook as Project_Tracking.xlsx on the Desktop, and then open the Word document named material/Project_Report.docx?",
+  "source": "Microsoft_34 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005307/Desktop/material/Financial.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Financial.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005307/Desktop/material/Project_Report.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Project_Report.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005307/Desktop/material/Project_Tracking.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Project_Tracking.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005402/Desktop/material/Project_Tracking.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Tracking_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Project_Tracking.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/63fd525e-75a7-df47-beb2-3a2999231b3c",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Tracking.xlsx",
+      "dest": "Project_Tracking.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Tracking_gold.xlsx",
+      "dest": "Project_Tracking_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Tracking.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

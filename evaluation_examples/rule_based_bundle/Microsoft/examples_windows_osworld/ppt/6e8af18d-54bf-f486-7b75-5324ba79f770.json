@@ -1,0 +1,81 @@
+{
+  "id": "6e8af18d-54bf-f486-7b75-5324ba79f770",
+  "snapshot": "ppt",
+  "instruction": "Could you save the presentation and export it as a PDF to the desktop?",
+  "source": "Microsoft_39 true stage 7",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_161005/Desktop/Material/R-C.jpg",
+            "path": "C:\\Users\\User\\Desktop\\Material\\R-C.jpg"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_161005/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_161124/Desktop/My_Study_Abroad_Experience.pdf",
+            "path": "C:\\Users\\User\\Documents\\My_Study_Abroad_Experience_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6e8af18d-54bf-f486-7b75-5324ba79f770",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pdf",
+      "dest": "My_Study_Abroad_Experience.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\My_Study_Abroad_Experience_gold.pdf",
+      "dest": "My_Study_Abroad_Experience_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "My_Study_Abroad_Experience.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

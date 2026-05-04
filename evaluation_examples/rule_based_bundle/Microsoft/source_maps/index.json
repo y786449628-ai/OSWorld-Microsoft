@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "source_name": "Microsoft_01",
+      "mapping_file": "evaluation_examples/microsoft_rule_based_bundle/source_maps/Microsoft_01.json",
+      "stage_plan_source": "snapshot_aware_llm_planning",
+      "stage_plan_status": "localized_partial",
+      "candidate_count": 7,
+      "kept_count": 6,
+      "llm_assisted_count": 0,
+      "unsupported_count": 0,
+      "unmapped_preview_count": 0,
+      "llm_error": null
+    },
+    {
+      "source_name": "Microsoft_02",
+      "mapping_file": "evaluation_examples/microsoft_rule_based_bundle/source_maps/Microsoft_02.json",
+      "stage_plan_source": "snapshot_aware_llm_planning",
+      "stage_plan_status": "localized_partial",
+      "candidate_count": 8,
+      "kept_count": 7,
+      "llm_assisted_count": 0,
+      "unsupported_count": 0,
+      "unmapped_preview_count": 0,
+      "llm_error": null
+    },
+    {
+      "source_name": "Microsoft_03",
+      "mapping_file": "evaluation_examples/microsoft_rule_based_bundle/source_maps/Microsoft_03.json",
+      "stage_plan_source": "snapshot_aware_llm_planning",
+      "stage_plan_status": "localized_ready",
+      "candidate_count": 6,
+      "kept_count": 6,
+      "llm_assisted_count": 0,
+      "unsupported_count": 0,
+      "unmapped_preview_count": 1,
+      "llm_error": null
+    }
+  ]
+}

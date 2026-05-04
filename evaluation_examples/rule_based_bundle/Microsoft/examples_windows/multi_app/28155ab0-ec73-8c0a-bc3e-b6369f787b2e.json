@@ -1,0 +1,82 @@
+{
+  "id": "28155ab0-ec73-8c0a-bc3e-b6369f787b2e",
+  "snapshot": "excel",
+  "instruction": "Could you design a visual presentation in PowerPoint 365 to summarize the project status, link Excel charts, and add custom slide layouts and animations?",
+  "source": "Microsoft_33 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_33/logs/MonitoringSnapshots/20260109_225958/Desktop/material/Project_Status_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Project_Status_Presentation.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_33/logs/MonitoringSnapshots/20260109_225958/Desktop/material/Project_Tracker.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Project_Tracker.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_33/logs/MonitoringSnapshots/20260109_230747/Desktop/material/Project_Status_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Status_Presentation_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Project_Status_Presentation.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/28155ab0-ec73-8c0a-bc3e-b6369f787b2e",
+  "related_apps": [
+    "ppt",
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\material\\Project_Status_Presentation.pptx",
+      "dest": "Project_Status_Presentation.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Status_Presentation_gold.pptx",
+      "dest": "Project_Status_Presentation_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Presentation.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

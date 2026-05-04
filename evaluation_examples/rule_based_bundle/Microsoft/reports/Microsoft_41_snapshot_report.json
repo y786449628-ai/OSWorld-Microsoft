@@ -1,0 +1,584 @@
+{
+  "source_name": "Microsoft_41",
+  "snapshot_count": 18,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260111_144029",
+      "to": "20260111_144032",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260111_144032",
+      "to": "20260111_144129",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 0,
+              "to": 13530
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13530
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260111_144129",
+      "to": "20260111_144206",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 13530,
+              "to": 13924
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13530,
+              "to": 13924
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260111_144206",
+      "to": "20260111_144249",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 13924,
+              "to": 14045
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13924,
+              "to": 14045
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260111_144249",
+      "to": "20260111_144309",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14045,
+              "to": 14106
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14045,
+              "to": 14106
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260111_144309",
+      "to": "20260111_144337",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14106,
+              "to": 14282
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14106,
+              "to": 14282
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260111_144337",
+      "to": "20260111_144412",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14282,
+              "to": 14353
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14282,
+              "to": 14353
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260111_144412",
+      "to": "20260111_144544",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14353,
+              "to": 14917
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14353,
+              "to": 14917
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260111_144544",
+      "to": "20260111_144652",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 14917,
+              "to": 16353
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14917,
+              "to": 16353
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260111_144652",
+      "to": "20260111_144707",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 16353,
+              "to": 16482
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16353,
+              "to": 16482
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260111_144707",
+      "to": "20260111_144757",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 16482,
+              "to": 16635
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16482,
+              "to": 16635
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260111_144757",
+      "to": "20260111_144827",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 16635,
+              "to": 101314
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16635,
+              "to": 101314
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260111_144827",
+      "to": "20260111_144937",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 101314,
+              "to": 104413
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 101314,
+              "to": 104413
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260111_144937",
+      "to": "20260111_145046",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 104413,
+              "to": 104630
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 104413,
+              "to": 104630
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260111_145046",
+      "to": "20260111_145123",
+      "human_summary": "New files appeared: Formal_Complaint_Letter_Template.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Formal_Complaint_Letter_Template.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260111_145123",
+      "to": "20260111_145129",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260111_145129",
+      "to": "20260111_145146",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "size": {
+              "from": 104630,
+              "to": 104750
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Formal_Complaint_Letter_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 104630,
+              "to": 104750
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

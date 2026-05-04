@@ -1,0 +1,91 @@
+{
+  "id": "aeda6eec-6f55-21bd-28d1-384ba8688c97",
+  "snapshot": "excel",
+  "instruction": "Could you create a table in Excel to analyze how different experience levels affect freelancers’ annual income?",
+  "source": "Microsoft_73 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_204217/Desktop/Freelancer_Dta_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Freelancer_Dta_Analysis.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_204217/Desktop/Freelancer_Income_Analysis_PPT.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Freelancer_Income_Analysis_PPT.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_204217/Desktop/Material/data.csv",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\data.csv"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_204345/Desktop/Freelancer_Dta_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Freelancer_Dta_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Freelancer_Dta_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/aeda6eec-6f55-21bd-28d1-384ba8688c97",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Freelancer_Dta_Analysis.xlsx",
+      "dest": "Freelancer_Dta_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Freelancer_Dta_Analysis_gold.xlsx",
+      "dest": "Freelancer_Dta_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Freelancer_Dta_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

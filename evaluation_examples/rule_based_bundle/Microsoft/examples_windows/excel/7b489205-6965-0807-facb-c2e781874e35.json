@@ -1,0 +1,83 @@
+{
+  "id": "7b489205-6965-0807-facb-c2e781874e35",
+  "snapshot": "excel",
+  "instruction": "Could you finalize and save the report as 'E-commerce_Final_Report.xlsx'?",
+  "source": "Microsoft_54 true stage 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_54/logs/MonitoringSnapshots/20260112_101314/Desktop/E-commerce_Sales_Data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\E-commerce_Sales_Data.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_54/logs/MonitoringSnapshots/20260112_101341/Desktop/E-commerce_Final_Report.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\E-commerce_Final_Report_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\E-commerce_Sales_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/7b489205-6965-0807-facb-c2e781874e35",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\E-commerce_Final_Report.xlsx",
+      "dest": "E-commerce_Final_Report.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\E-commerce_Final_Report_gold.xlsx",
+      "dest": "E-commerce_Final_Report_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "E-commerce_Final_Report.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

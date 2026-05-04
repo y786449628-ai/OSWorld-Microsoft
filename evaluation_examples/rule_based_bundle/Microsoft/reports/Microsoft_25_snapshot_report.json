@@ -1,0 +1,503 @@
+{
+  "source_name": "Microsoft_25",
+  "snapshot_count": 7,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260108_220031",
+      "to": "20260108_220114",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 68 to 75 non-empty cells; worksheet names changed; new visible headers or values include: Quarter, 2024 Year, 2025 Year.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "2025",
+              "2024"
+            ],
+            "to": [
+              "Summary",
+              "2025",
+              "2024"
+            ]
+          },
+          "worksheet_count": {
+            "from": 2,
+            "to": 3
+          },
+          "nonempty_cells": {
+            "from": 68,
+            "to": 75
+          },
+          "headers": {
+            "from": [
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ],
+            "to": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ]
+          }
+        },
+        "headers_added": [
+          "Quarter",
+          "2024 Year",
+          "2025 Year"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11912,
+              "to": 12739
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "2025",
+                  "2024"
+                ],
+                "to": [
+                  "Summary",
+                  "2025",
+                  "2024"
+                ]
+              },
+              "worksheet_count": {
+                "from": 2,
+                "to": 3
+              },
+              "nonempty_cells": {
+                "from": 68,
+                "to": 75
+              },
+              "headers": {
+                "from": [
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ],
+                "to": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260108_220114",
+      "to": "20260108_220226",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 75 to 86 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 75,
+            "to": 86
+          },
+          "headers": {
+            "from": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ],
+            "to": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12739,
+              "to": 14612
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 75,
+                "to": 86
+              },
+              "headers": {
+                "from": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ],
+                "to": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260108_220226",
+      "to": "20260108_220441",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 86 to 122 non-empty cells; new visible headers or values include: Growth%, Max, Positive gr%, Negative gr%, Positive line, Negative line.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 86,
+            "to": 122
+          },
+          "headers": {
+            "from": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ],
+            "to": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Growth%",
+              "Max",
+              "Positive gr%",
+              "Negative gr%",
+              "Positive line",
+              "Negative line",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ]
+          }
+        },
+        "headers_added": [
+          "Growth%",
+          "Max",
+          "Positive gr%",
+          "Negative gr%",
+          "Positive line",
+          "Negative line"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 14612,
+              "to": 15400
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 86,
+                "to": 122
+              },
+              "headers": {
+                "from": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ],
+                "to": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Growth%",
+                  "Max",
+                  "Positive gr%",
+                  "Negative gr%",
+                  "Positive line",
+                  "Negative line",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260108_220441",
+      "to": "20260108_220913",
+      "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Growth%",
+              "Max",
+              "Positive gr%",
+              "Negative gr%",
+              "Positive line",
+              "Negative line",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ],
+            "to": [
+              "Quarter",
+              "2024 Year",
+              "2025 Year",
+              "Growth%",
+              "Max",
+              "Positive gr%",
+              "Negative gr%",
+              "Positive line",
+              "Negative line",
+              "Date",
+              "Sales Revenue",
+              "45839",
+              "690",
+              "Date",
+              "Sales Revenue",
+              "45474",
+              "860"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15400,
+              "to": 20921
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Growth%",
+                  "Max",
+                  "Positive gr%",
+                  "Negative gr%",
+                  "Positive line",
+                  "Negative line",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ],
+                "to": [
+                  "Quarter",
+                  "2024 Year",
+                  "2025 Year",
+                  "Growth%",
+                  "Max",
+                  "Positive gr%",
+                  "Negative gr%",
+                  "Positive line",
+                  "Negative line",
+                  "Date",
+                  "Sales Revenue",
+                  "45839",
+                  "690",
+                  "Date",
+                  "Sales Revenue",
+                  "45474",
+                  "860"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260108_220913",
+      "to": "20260108_221320",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260108_221320",
+      "to": "20260108_221322",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "084f5a56-2d7c-53c2-7462-ccd0617a4020",
+  "snapshot": "excel",
+  "instruction": "Could you create a chart in Excel to visualize the sales performance and gaps, and then prepare a report document in Word to present the sales performance of each team member, and then copy the sales performance data from Excel and paste it into the Word report document, and then format the Word report to clearly show the gap for each month and each team member's performance, and then save the final Word report as a PDF for the boss to review?",
+  "source": "Microsoft_29 true stage 3",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_29/logs/MonitoringSnapshots/20260110_123602/Desktop/Material/Detail.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Detail.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_29/logs/MonitoringSnapshots/20260110_124147/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Detail.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/084f5a56-2d7c-53c2-7462-ccd0617a4020",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

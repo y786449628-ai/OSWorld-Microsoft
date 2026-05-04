@@ -1,0 +1,413 @@
+{
+  "source_name": "Microsoft_11",
+  "source_file": "Microsoft_11.txt",
+  "source_id": "eae4853c4390",
+  "source_question": "Some VIP customer purchase goods from shop requently, and to monitor the purchase status of VIP customer, Boss want to input VIP customer and product, can get the product latest purchase date of the VIP customer information.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a list of VIP customers and their purchased products in Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you input the latest purchase date for each product for each VIP customer in the Excel list?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you format the Excel list to clearly show the VIP customer, product, and latest purchase date?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a report document in Word to present the VIP customer purchase status?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you copy the VIP customer purchase data from Excel and paste it into the Word report document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save the final Word report document?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you create a list of VIP customers and their purchased products in Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook. Select File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open.",
+      "planned_input_snapshot": "20260105_194806",
+      "planned_gold_snapshot": "20260105_195410",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with new Excel file creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "format_excel_list",
+      "instruction": "Could you format the Excel list to clearly show the VIP customer, product, and latest purchase date?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Input text, fill colors, and format cells for the Excel list.",
+      "planned_input_snapshot": "20260105_195410",
+      "planned_gold_snapshot": "20260105_195410",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but formatting is done within the same file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "input_latest_purchase_date",
+      "instruction": "Could you input the latest purchase date for each product for each VIP customer in the Excel list?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Enter formula and data for the latest purchase date.",
+      "planned_input_snapshot": "20260105_195410",
+      "planned_gold_snapshot": "20260105_195410",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but data entry is done within the same file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_final_excel",
+      "instruction": "Could you save the final Excel list?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 16,
+      "trajectory_evidence": "Save the Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260105_195410",
+      "planned_gold_snapshot": "20260105_195410",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the file is saved.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook_and_format_excel_list_and_input_latest_purchase_date_and_save_final_excel",
+      "instruction": "Could you create a list of VIP customers and their purchased products in Excel, and then format the Excel list to clearly show the VIP customer, product, and latest purchase date, and then input the latest purchase date for each product for each VIP customer in the Excel list, and then save the final Excel list?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 16,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook. Select File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open. | Input text, fill colors, and format cells for the Excel list. | Enter formula and data for the latest purchase date. | Save the Excel file as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260105_194806",
+      "planned_gold_snapshot": "20260105_195410",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with new Excel file creation.",
+      "input_snapshot": "20260105_194806",
+      "gold_snapshot": "20260105_195410",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260105_194806",
+          "planned_gold_snapshot": "20260105_195410"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 4,
+          "stage_name": "save_final_excel",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_excel_workbook",
+        "format_excel_list",
+        "input_latest_purchase_date",
+        "save_final_excel"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "generated_examples": [
+        {
+          "example_id": "4218eb13-3920-e0ec-bb76-afb948c7ca92",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/4218eb13-3920-e0ec-bb76-afb948c7ca92.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 4,
+      "instruction": "Could you create a report document in Word to present the VIP customer purchase status?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you copy the VIP customer purchase data from Excel and paste it into the Word report document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save the final Word report document?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260105_194806",
+    "20260105_195410",
+    "20260105_195412"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260105_194806",
+      "to": "20260105_195410",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260105_195410",
+      "to": "20260105_195412",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_11",
+    "snapshot_count": 3,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260105_194806",
+        "to": "20260105_195410",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260105_195410",
+        "to": "20260105_195412",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click H1 cell and input \"Please input VIP customer name and product name\""
+    },
+    {
+      "index": 5,
+      "instruction": "Click H2 cell, input \"Customer:\", then click H3 cell, input \"Product:\""
+    },
+    {
+      "index": 6,
+      "instruction": "Selected I2 cell and I3 cell, click Menu---Home, find and click fill color, then choose Turquoise color"
+    },
+    {
+      "index": 7,
+      "instruction": "Select H5 cell and input \"Output Information\""
+    },
+    {
+      "index": 8,
+      "instruction": "Select A1 cell to E1 Cell, then click Ctrl+C, Click H6 Cell, then click Ctrl+V, copy the field name to output area."
+    },
+    {
+      "index": 9,
+      "instruction": "Select H7 cell to L7 cell, click Menu---Home, find and click fill color, then choose green color."
+    },
+    {
+      "index": 10,
+      "instruction": "Select H6 cell to L7 Cell, then find and click arrow icon next to bottom board, then select All borders."
+    },
+    {
+      "index": 11,
+      "instruction": "Select L7 cell, then find and click arrow next to number format, then select Short Date."
+    },
+    {
+      "index": 12,
+      "instruction": "Click H7 cell, and input \"=TAKE(FILTER(A:E,(A:A=I2)*(B:B=I3),\"\"),-1)\", then click enter."
+    },
+    {
+      "index": 13,
+      "instruction": "Click I3 Cell, then input \"Mike\""
+    },
+    {
+      "index": 14,
+      "instruction": "Click I4 Cell, then input \"Orange\""
+    },
+    {
+      "index": 15,
+      "instruction": "Check the result should show the latest orange purchase record of Mike, the price is 13; the volume is 4 and latest date is 5/14/2025"
+    },
+    {
+      "index": 16,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 17,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 3
+  }
+}

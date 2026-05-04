@@ -1,0 +1,544 @@
+{
+  "source_name": "Microsoft_63",
+  "snapshot_count": 19,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260113_194357",
+      "to": "20260113_194400",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Product_Launch_Presentation.pptx"
+        ],
+        "files_removed": [
+          "New Microsoft PowerPoint Presentation.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Product_Launch_Presentation.pptx"
+        ],
+        "files_removed": [
+          "New Microsoft PowerPoint Presentation.pptx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260113_194400",
+      "to": "20260113_194409",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 0,
+              "to": 33870
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 0,
+              "to": 33870
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260113_194409",
+      "to": "20260113_194433",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 33870,
+              "to": 34454
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 33870,
+              "to": 34454
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260113_194433",
+      "to": "20260113_194450",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 34454,
+              "to": 703878
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 34454,
+              "to": 703878
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260113_194450",
+      "to": "20260113_194507",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 703878,
+              "to": 708408
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 703878,
+              "to": 708408
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260113_194507",
+      "to": "20260113_194633",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 708408,
+              "to": 715272
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 708408,
+              "to": 715272
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260113_194633",
+      "to": "20260113_194836",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 715272,
+              "to": 716485
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 715272,
+              "to": 716485
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260113_194836",
+      "to": "20260113_195228",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 716485,
+              "to": 1728080
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 716485,
+              "to": 1728080
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260113_195228",
+      "to": "20260113_195332",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1728080,
+              "to": 1728304
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1728080,
+              "to": 1728304
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260113_195332",
+      "to": "20260113_195405",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1728304,
+              "to": 1731704
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1728304,
+              "to": 1731704
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260113_195405",
+      "to": "20260113_195425",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1731704,
+              "to": 1732165
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1731704,
+              "to": 1732165
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260113_195425",
+      "to": "20260113_195504",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260113_195504",
+      "to": "20260113_195530",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1732165,
+              "to": 1732185
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1732165,
+              "to": 1732185
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260113_195530",
+      "to": "20260113_195540",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260113_195540",
+      "to": "20260113_195542",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260113_195542",
+      "to": "20260113_195554",
+      "human_summary": "New files appeared: Product_Launch_Presentation.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Product_Launch_Presentation.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Product_Launch_Presentation.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260113_195554",
+      "to": "20260113_195602",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260113_195602",
+      "to": "20260113_195607",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

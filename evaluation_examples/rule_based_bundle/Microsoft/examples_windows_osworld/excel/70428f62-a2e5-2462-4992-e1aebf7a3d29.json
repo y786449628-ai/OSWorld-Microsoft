@@ -1,0 +1,83 @@
+{
+  "id": "70428f62-a2e5-2462-4992-e1aebf7a3d29",
+  "snapshot": "excel",
+  "instruction": "Could you open the expense detail file and identify the sheets for each department, and then add a feature to select and display the top or bottom N spenders in the summary sheet, and then prepare a report document to present the summary and the selected top or bottom N spenders, and then export the final report to a PDF format, and then create a summary sheet to consolidate the total expenses for each team?",
+  "source": "Microsoft_30 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_30/logs/MonitoringSnapshots/20260110_144901/Desktop/Material/Detail.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Detail.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_30/logs/MonitoringSnapshots/20260110_150004/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Detail.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/70428f62-a2e5-2462-4992-e1aebf7a3d29",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

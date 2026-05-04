@@ -1,0 +1,83 @@
+{
+  "id": "94e1f84d-7f8c-5cc7-a6a3-328150516f59",
+  "snapshot": "excel",
+  "instruction": "Could you open the file and set the table format, and then create a data bar chart and complete the format settings, and then standardize the product codes uniformly through cell formatting? Could you set a uniform storage date format for the data, and then handle blank data and fill in the missing values? Could you use table design to delete duplicate columns and add a column to calculate the percentage of sales, and then use functions to calculate the inventory value and summarize it at the bottom of the table?",
+  "source": "Microsoft_66 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_66/logs/MonitoringSnapshots/20260114_201706/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_66/logs/MonitoringSnapshots/20260114_202228/Desktop/new.xlsx",
+            "path": "C:\\Users\\User\\Documents\\new_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/94e1f84d-7f8c-5cc7-a6a3-328150516f59",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\new.xlsx",
+      "dest": "new.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\new_gold.xlsx",
+      "dest": "new_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "new.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "b8e17a6c-d387-8b97-c872-f0336172bb3d",
+  "snapshot": "word",
+  "instruction": "Could you set up a structured quarterly report template in the document, including sections for Report Title, Reporting Period, Key Indicators, Recommendations, and Approval? Apply appropriate built-in 'Heading' styles to each section label. Insert a table to list key indicators, with columns including 'Indicator Name', 'Target Value', and 'Actual Value'. Create a bulleted list under the 'Recommendations' section. Add a 'Confidential' watermark to the document, insert a header containing your organization's name, and a footer with a report date placeholder and page number.?",
+  "source": "Microsoft_68 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_68/logs/MonitoringSnapshots/20260114_160013/Desktop/Templates/Template.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Templates\\Template.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_68/logs/MonitoringSnapshots/20260114_160450/Desktop/Templates/Template.docx",
+            "path": "C:\\Users\\78644\\Documents\\Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Templates\\Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/b8e17a6c-d387-8b97-c872-f0336172bb3d",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Templates\\Template.docx",
+      "dest": "Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Template_gold.docx",
+      "dest": "Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

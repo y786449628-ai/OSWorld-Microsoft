@@ -1,0 +1,86 @@
+{
+  "id": "df08c459-2487-48a5-2995-0f3e3cec5340",
+  "snapshot": "excel",
+  "instruction": "Could you insert a 4×4 table below the image in the Word document and paste the Excel chart into the upper-right cell of that table, and then save the Word document and archive the Excel source data file synchronously?",
+  "source": "Microsoft_02 true stage 7",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181107/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181107/Desktop/Material/data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181107/Desktop/Sheet1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181207/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/df08c459-2487-48a5-2995-0f3e3cec5340",
+  "related_apps": [
+    "word",
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Doc1.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

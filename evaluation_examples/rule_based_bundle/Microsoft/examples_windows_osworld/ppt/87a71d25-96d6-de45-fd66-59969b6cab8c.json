@@ -1,0 +1,81 @@
+{
+  "id": "87a71d25-96d6-de45-fd66-59969b6cab8c",
+  "snapshot": "ppt",
+  "instruction": "Could you open the 'Project_Alpha_Status.pptx' presentation and apply the 'Retrospect' theme with 'OrangeRed' background style?",
+  "source": "Microsoft_55 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_095848/Desktop/Alpha_Fiancials.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Alpha_Fiancials.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_095848/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100049/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\User\\Documents\\Project_Alpha_Status_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/87a71d25-96d6-de45-fd66-59969b6cab8c",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Alpha_Status.pptx",
+      "dest": "Project_Alpha_Status.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Alpha_Status_gold.pptx",
+      "dest": "Project_Alpha_Status_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Alpha_Status.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

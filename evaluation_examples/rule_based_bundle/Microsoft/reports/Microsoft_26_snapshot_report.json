@@ -1,0 +1,388 @@
+{
+  "source_name": "Microsoft_26",
+  "snapshot_count": 6,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260109_113403",
+      "to": "20260109_113658",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 14 to 99 non-empty cells; worksheet names changed; new visible headers or values include: Attribute, Value.1, Value.2, Grape, William: 400; Tom: 250, Detail - Copy.2.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Table1 (2)",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "nonempty_cells": {
+            "from": 14,
+            "to": 99
+          },
+          "headers": {
+            "from": [
+              "Product",
+              "Detail"
+            ],
+            "to": [
+              "Product",
+              "Detail",
+              "Attribute",
+              "Value.1",
+              "Value.2",
+              "Grape",
+              "William: 400; Tom: 250",
+              "Detail - Copy.2",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ]
+          }
+        },
+        "headers_added": [
+          "Attribute",
+          "Value.1",
+          "Value.2",
+          "Grape",
+          "William: 400; Tom: 250",
+          "Detail - Copy.2",
+          " Tom",
+          "250"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17310,
+              "to": 21666
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Table1 (2)",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "nonempty_cells": {
+                "from": 14,
+                "to": 99
+              },
+              "headers": {
+                "from": [
+                  "Product",
+                  "Detail"
+                ],
+                "to": [
+                  "Product",
+                  "Detail",
+                  "Attribute",
+                  "Value.1",
+                  "Value.2",
+                  "Grape",
+                  "William: 400; Tom: 250",
+                  "Detail - Copy.2",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_113658",
+      "to": "20260109_113855",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 99 to 81 non-empty cells; new visible headers or values include: Customer, Sales Revenue, Row Labels, Sum of Sales Revenue.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 99,
+            "to": 81
+          },
+          "headers": {
+            "from": [
+              "Product",
+              "Detail",
+              "Attribute",
+              "Value.1",
+              "Value.2",
+              "Grape",
+              "William: 400; Tom: 250",
+              "Detail - Copy.2",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ],
+            "to": [
+              "Product",
+              "Customer",
+              "Sales Revenue",
+              "Row Labels",
+              "Sum of Sales Revenue",
+              "Grape",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ]
+          }
+        },
+        "headers_added": [
+          "Customer",
+          "Sales Revenue",
+          "Row Labels",
+          "Sum of Sales Revenue"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 21666,
+              "to": 25099
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 99,
+                "to": 81
+              },
+              "headers": {
+                "from": [
+                  "Product",
+                  "Detail",
+                  "Attribute",
+                  "Value.1",
+                  "Value.2",
+                  "Grape",
+                  "William: 400; Tom: 250",
+                  "Detail - Copy.2",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ],
+                "to": [
+                  "Product",
+                  "Customer",
+                  "Sales Revenue",
+                  "Row Labels",
+                  "Sum of Sales Revenue",
+                  "Grape",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_113855",
+      "to": "20260109_114320",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 81 to 2650 non-empty cells; new visible headers or values include: Banana, Apple, Orange, Coconut, Pear, 3.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 81,
+            "to": 2650
+          },
+          "headers": {
+            "from": [
+              "Product",
+              "Customer",
+              "Sales Revenue",
+              "Row Labels",
+              "Sum of Sales Revenue",
+              "Grape",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ],
+            "to": [
+              "Product",
+              "Customer",
+              "Sales Revenue",
+              "Row Labels",
+              "Sum of Sales Revenue",
+              "Product",
+              "Banana",
+              "Apple",
+              "Orange",
+              "Grape",
+              "Coconut",
+              "Pear",
+              "Grape",
+              " Tom",
+              "250",
+              "3",
+              "100",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        "headers_added": [
+          "Banana",
+          "Apple",
+          "Orange",
+          "Coconut",
+          "Pear",
+          "3",
+          "100",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 25099,
+              "to": 42003
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 81,
+                "to": 2650
+              },
+              "headers": {
+                "from": [
+                  "Product",
+                  "Customer",
+                  "Sales Revenue",
+                  "Row Labels",
+                  "Sum of Sales Revenue",
+                  "Grape",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ],
+                "to": [
+                  "Product",
+                  "Customer",
+                  "Sales Revenue",
+                  "Row Labels",
+                  "Sum of Sales Revenue",
+                  "Product",
+                  "Banana",
+                  "Apple",
+                  "Orange",
+                  "Grape",
+                  "Coconut",
+                  "Pear",
+                  "Grape",
+                  " Tom",
+                  "250",
+                  "3",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_114320",
+      "to": "20260109_114653",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_114653",
+      "to": "20260109_114655",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

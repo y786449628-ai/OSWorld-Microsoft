@@ -1,0 +1,549 @@
+{
+  "source_name": "Microsoft_72",
+  "source_file": "Microsoft_72.txt",
+  "source_id": "ed3af5b7ced0",
+  "source_question": "There is an expense detail list and consolidate name expense revenue of 2025 information, after Boss review, he select several records and highlight with yellow color. Now Manager want to extract the records and view total expense.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the expense detail list and locate the highlighted records for 2025?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you extract the highlighted records into a new sheet?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the total expense for the extracted records?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a summary table showing the total expense?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_expense_detail_list",
+      "instruction": "Could you open the expense detail list and locate the highlighted records for 2025?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Material/Detail.xlsx",
+      "planned_input_snapshot": "20260115_105006",
+      "planned_gold_snapshot": "20260115_105901",
+      "snapshot_evidence": "Material/Detail.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "extract_highlighted_records",
+      "instruction": "Could you extract the highlighted records into a new sheet?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Create VBA function to sum by color, then use it to calculate total expense",
+      "planned_input_snapshot": "20260115_105901",
+      "planned_gold_snapshot": "20260115_110043",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "needs_review",
+      "reason": "VBA script creation and execution may require LLM assistance for evaluation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_total_expense",
+      "instruction": "Could you calculate the total expense for the extracted records?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 23,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Input formula to calculate total expense using VBA function",
+      "planned_input_snapshot": "20260115_105901",
+      "planned_gold_snapshot": "20260115_110043",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_summary_table",
+      "instruction": "Could you create a summary table showing the total expense?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 23,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Input formula to calculate total expense using VBA function",
+      "planned_input_snapshot": "20260115_105901",
+      "planned_gold_snapshot": "20260115_110043",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_expense_detail_list_and_extract_highlighted_records_and_calculate_total_expense_and_create_summary_table",
+      "instruction": "Could you open the expense detail list and locate the highlighted records for 2025, and then extract the highlighted records into a new sheet, and then calculate the total expense for the extracted records, and then create a summary table showing the total expense?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 3,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Open Material/Detail.xlsx | Create VBA function to sum by color, then use it to calculate total expense | Input formula to calculate total expense using VBA function | Input formula to calculate total expense using VBA function",
+      "planned_input_snapshot": "20260115_105006",
+      "planned_gold_snapshot": "20260115_105901",
+      "snapshot_evidence": "Material/Detail.xlsx changed: Office document content changed. | New files appeared: final result.xlsx. | New files appeared: final result.xlsx. | New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260115_105006",
+      "gold_snapshot": "20260115_110043",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260115_105006",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_105006",
+          "planned_gold_snapshot": "20260115_105901"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 4,
+          "stage_name": "create_summary_table",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_expense_detail_list",
+        "extract_highlighted_records",
+        "calculate_total_expense",
+        "create_summary_table"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "generated_examples": [
+        {
+          "example_id": "70ce87a3-4820-c2c8-faa3-d965a992660b",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/70ce87a3-4820-c2c8-faa3-d965a992660b.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260115_105006",
+    "20260115_105901",
+    "20260115_110043",
+    "20260115_110045"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260115_105006",
+      "to": "20260115_105901",
+      "human_summary": "Material/Detail.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Name",
+              "Expense",
+              "May",
+              "550"
+            ],
+            "to": [
+              "Name",
+              "Expense",
+              "May",
+              "550"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9927,
+              "to": 9926
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Name",
+                  "Expense",
+                  "May",
+                  "550"
+                ],
+                "to": [
+                  "Name",
+                  "Expense",
+                  "May",
+                  "550"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260115_105901",
+      "to": "20260115_110043",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260115_110043",
+      "to": "20260115_110045",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_72",
+    "snapshot_count": 4,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260115_105006",
+        "to": "20260115_105901",
+        "human_summary": "Material/Detail.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Name",
+                "Expense",
+                "May",
+                "550"
+              ],
+              "to": [
+                "Name",
+                "Expense",
+                "May",
+                "550"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9927,
+                "to": 9926
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Name",
+                    "Expense",
+                    "May",
+                    "550"
+                  ],
+                  "to": [
+                    "Name",
+                    "Expense",
+                    "May",
+                    "550"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260115_105901",
+        "to": "20260115_110043",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260115_110043",
+        "to": "20260115_110045",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Menu---File, then click Options, then click Customize Ribbon, select Developer, then click OK Button"
+    },
+    {
+      "index": 5,
+      "instruction": "Select Menu---Developer, select Visual Basic, then click Menu---Insert, select module"
+    },
+    {
+      "index": 6,
+      "instruction": "Input \"Function SumByColor(targetCell As Range, sumRange As Range)\", then click Enter"
+    },
+    {
+      "index": 7,
+      "instruction": "Click Tab, Input \"Dim cell As Range\", then click Enter"
+    },
+    {
+      "index": 8,
+      "instruction": "Input \"Dim sumVal As Double\" then click Enter"
+    },
+    {
+      "index": 9,
+      "instruction": "Input \"sumVal = 0\", then click Enter"
+    },
+    {
+      "index": 10,
+      "instruction": "Input \"For Each cell In sumRange\", then click Enter"
+    },
+    {
+      "index": 11,
+      "instruction": "Click Tab, input \"If IsNumeric(cell.Value) Then\", then click Enter"
+    },
+    {
+      "index": 12,
+      "instruction": "Click Tab, input \"If cell.Interior.Color = targetCell.Interior.Color Then\", then click Enter"
+    },
+    {
+      "index": 13,
+      "instruction": "Click Tab, input \"sumVal = sumVal + cell.Value\", then click Enter"
+    },
+    {
+      "index": 14,
+      "instruction": "Click backspace then input \"End If\", then click Enter"
+    },
+    {
+      "index": 15,
+      "instruction": "Click backspace then input \"Else\", then click Enter"
+    },
+    {
+      "index": 16,
+      "instruction": "Click Tab, input \"SumByColor = \"#VALUE\"\", then click Enter"
+    },
+    {
+      "index": 17,
+      "instruction": "Input \"Exit Function\", then click Enter"
+    },
+    {
+      "index": 18,
+      "instruction": "Click backspace, input \"End If\", then click Enter"
+    },
+    {
+      "index": 19,
+      "instruction": "Click backspace, input \"Next cell\", then click Enter"
+    },
+    {
+      "index": 20,
+      "instruction": "Input \"SumByColor = sumVal\", then click Enter"
+    },
+    {
+      "index": 21,
+      "instruction": "Click close button."
+    },
+    {
+      "index": 22,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 23,
+      "instruction": "Select D1 cell, input \"Total:\", select E1 cell, Filled as yellow"
+    },
+    {
+      "index": 24,
+      "instruction": "Select F1 cell, input \"=SumByColor(E1,B2:B11)\" then click Enter."
+    },
+    {
+      "index": 25,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 26,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 4
+  }
+}

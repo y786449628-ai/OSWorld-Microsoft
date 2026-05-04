@@ -1,0 +1,87 @@
+{
+  "id": "4aa7a728-34c8-5ccb-896b-75864626b63d",
+  "snapshot": "excel",
+  "instruction": "Could you create a clustered column chart for columns F and G, and add data labels outside the end of the bars?",
+  "source": "Microsoft_70 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_70/logs/MonitoringSnapshots/20260114_190607/Desktop/material/Sales_Performance_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Sales_Performance_Presentation.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_70/logs/MonitoringSnapshots/20260114_190607/Desktop/material/Sales_Raw_Data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Sales_Raw_Data.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_70/logs/MonitoringSnapshots/20260114_190737/Desktop/material/Sales_Raw_Data.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Sales_Raw_Data_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Sales_Raw_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/4aa7a728-34c8-5ccb-896b-75864626b63d",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\material\\Sales_Raw_Data.xlsx",
+      "dest": "Sales_Raw_Data.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Sales_Raw_Data_gold.xlsx",
+      "dest": "Sales_Raw_Data_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Sales_Raw_Data.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

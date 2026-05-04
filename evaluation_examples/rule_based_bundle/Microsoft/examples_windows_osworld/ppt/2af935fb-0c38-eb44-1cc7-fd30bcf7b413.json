@@ -1,0 +1,81 @@
+{
+  "id": "2af935fb-0c38-eb44-1cc7-fd30bcf7b413",
+  "snapshot": "ppt",
+  "instruction": "Could you create a PowerPoint presentation named 'My_Study_Abroad_Experience.pptx' directly on your desktop?",
+  "source": "Microsoft_39 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_155840/Desktop/Material/R-C.jpg",
+            "path": "C:\\Users\\User\\Desktop\\Material\\R-C.jpg"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_155840/Desktop/New Microsoft PowerPoint Presentation.pptx",
+            "path": "C:\\Users\\User\\Desktop\\New Microsoft PowerPoint Presentation.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_155918/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\User\\Documents\\My_Study_Abroad_Experience_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\New Microsoft PowerPoint Presentation.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2af935fb-0c38-eb44-1cc7-fd30bcf7b413",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pptx",
+      "dest": "My_Study_Abroad_Experience.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\My_Study_Abroad_Experience_gold.pptx",
+      "dest": "My_Study_Abroad_Experience_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "My_Study_Abroad_Experience.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

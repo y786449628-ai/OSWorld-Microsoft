@@ -1,0 +1,81 @@
+{
+  "id": "61ce5c56-08e3-770e-287f-0f9ff3d6929b",
+  "snapshot": "word",
+  "instruction": "Could you add standardized page elements such as headers, footers, and page numbers to the document?",
+  "source": "Microsoft_51 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_51/logs/MonitoringSnapshots/20260110_105100/Desktop/Material.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_51/logs/MonitoringSnapshots/20260110_105100/Desktop/Shanghai_Culture.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Shanghai_Culture.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_51/logs/MonitoringSnapshots/20260110_105335/Desktop/Shanghai_Culture.docx",
+            "path": "C:\\Users\\78644\\Documents\\Shanghai_Culture_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Shanghai_Culture.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/61ce5c56-08e3-770e-287f-0f9ff3d6929b",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Shanghai_Culture.docx",
+      "dest": "Shanghai_Culture.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Shanghai_Culture_gold.docx",
+      "dest": "Shanghai_Culture_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Shanghai_Culture.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

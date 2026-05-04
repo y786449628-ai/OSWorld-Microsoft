@@ -1,0 +1,87 @@
+{
+  "id": "7a84d01c-ded8-4fd1-e8b7-9e64515c105d",
+  "snapshot": "excel",
+  "instruction": "Could you standardize the sales amount format in column C by replacing hyphens with blanks and setting it to a numerical format with thousand separators, and then adjust the column widths to automatically fit the content by double-clicking the column header boundaries, and then add performance ratings using the nested IF formula and fill it in bulk, and then create a department table in columns G-H and use the COUNTIF function to count the number of people in each department, and then generate a chart based on the data, and then save the file as 'Sales Data Collation', and then standardize the completion rate format in column D by setting it to percentage format, filtering for anomalies, and adding a summary row with 'Total' in A7, bolded and filled with light yellow?",
+  "source": "Microsoft_38 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_38/logs/MonitoringSnapshots/20260111_223810/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_38/logs/MonitoringSnapshots/20260111_223810/Desktop/Sales.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Sales.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_38/logs/MonitoringSnapshots/20260111_223813_3/Desktop/Sales.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Sales_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Sales.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/7a84d01c-ded8-4fd1-e8b7-9e64515c105d",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Sales.xlsx",
+      "dest": "Sales.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Sales_gold.xlsx",
+      "dest": "Sales_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Sales.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

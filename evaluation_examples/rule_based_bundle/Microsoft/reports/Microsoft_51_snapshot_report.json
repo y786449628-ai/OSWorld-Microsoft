@@ -1,0 +1,281 @@
+{
+  "source_name": "Microsoft_51",
+  "snapshot_count": 9,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260110_104817",
+      "to": "20260110_104835",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 16339,
+              "to": 16399
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16339,
+              "to": 16399
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_104835",
+      "to": "20260110_105002",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 16399,
+              "to": 24240
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16399,
+              "to": 24240
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_105002",
+      "to": "20260110_105021",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 24240,
+              "to": 24770
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24240,
+              "to": 24770
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_105021",
+      "to": "20260110_105100",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 24770,
+              "to": 940683
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24770,
+              "to": 940683
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_105100",
+      "to": "20260110_105306",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 940683,
+              "to": 361392
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 940683,
+              "to": 361392
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_105306",
+      "to": "20260110_105335",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 361392,
+              "to": 358592
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 361392,
+              "to": 358592
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_105335",
+      "to": "20260110_105441",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 358592,
+              "to": 358678
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 358592,
+              "to": 358678
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_105441",
+      "to": "20260110_105458",
+      "human_summary": "New files appeared: Shanghai_Culture_Final.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Shanghai_Culture_Final.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Shanghai_Culture_Final.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,2035 @@
+{
+  "source_name": "Microsoft_39",
+  "source_file": "Microsoft_39.txt",
+  "source_id": "0ce4ec13198a",
+  "source_question": "Create a PowerPoint presentation named \"My_Study_Abroad_Experience.pptx\" directly on your desktop. Design a 5-slide presentation about a personal study abroad experience with the following structure: Title Slide, Personal Introduction & Destination, Cultural Experiences, Academic Challenges & Growth, and Key Takeaways & Future Plans. Apply a unified design theme. Insert a map image on the 'Personal Introduction & Destination' slide; insert a relevant photo on the 'Cultural Experiences' slide; add a column chart to visualize time allocation on the 'Academic Challenges & Growth' slide. Simultaneously, set a uniform transition effect and sound effect for all slides, add an animation to the title text, and include speaker notes on one slide. Finally, save the presentation and export it as a PDF to the desktop.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a PowerPoint presentation named 'My_Study_Abroad_Experience.pptx' directly on your desktop?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you design a 5-slide presentation with the following structure: Title Slide, Personal Introduction & Destination, Cultural Experiences, Academic Challenges & Growth, and Key Takeaways & Future Plans?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you apply a unified design theme to the presentation?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you insert a map image on the 'Personal Introduction & Destination' slide and a relevant photo on the 'Cultural Experiences' slide?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you add a column chart to visualize time allocation on the 'Academic Challenges & Growth' slide?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you set a uniform transition effect and sound effect for all slides and add an animation to the title text?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you include speaker notes on one slide?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the presentation and export it as a PDF to the desktop?",
+      "mapped_stage_indices": [
+        7
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_presentation_file",
+      "instruction": "Could you create a PowerPoint presentation named 'My_Study_Abroad_Experience.pptx' directly on your desktop?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Create a new file: Right-click on an empty area of the desktop, select New -> Microsoft PowerPoint Presentation. Rename the new file to \"My_Study_Abroad_Experience.pptx\", then double-click to open it.",
+      "planned_input_snapshot": "20260110_155840",
+      "planned_gold_snapshot": "20260110_155844",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation and renaming.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_title_slide_and_apply_theme",
+      "instruction": "Could you design a 5-slide presentation with the following structure: Title Slide, Personal Introduction & Destination, Cultural Experiences, Academic Challenges & Growth, and Key Takeaways & Future Plans? Could you apply a unified design theme to the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Design the title slide and apply a theme: In the title placeholder on the first slide, enter \"My Semester in Spain\". In the subtitle placeholder, enter your name or \"A Journey of Learning\". Next, go to the Design tab, and in the Themes gallery, select and apply a theme (such as \"Facet\" or \"Ion\").",
+      "planned_input_snapshot": "20260110_155844",
+      "planned_gold_snapshot": "20260110_155918",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide design and theme application.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "edit_personal_introduction_and_destination_slide",
+      "instruction": "Could you insert a map image on the 'Personal Introduction & Destination' slide and a relevant photo on the 'Cultural Experiences' slide?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Create new slides and edit the second slide (Personal Introduction & Destination): In the Home tab, click New Slide four times consecutively to add slides 2 through 5. Select the second slide, change the title to \"About Me & My Destination\", and add 2-3 introductory bullet points in the content area. Then, via the Insert tab -> Online Pictures, search for \"Spain map\" and insert a map image. Resize it and place it next to the text. Edit the third slide (Cultural Experiences): Change the title of the third slide to \"Immersive Cultural Experiences\". Through the Insert tab -> Pictures -> This Device, select and insert a relevant photo from your computer. If none is available, use Online Pictures and search for \"Spanish culture\" to insert a substitute image. Adjust it to the appropriate size.",
+      "planned_input_snapshot": "20260110_155918",
+      "planned_gold_snapshot": "20260110_160144",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide editing and image insertion.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_column_chart_to_academic_challenges_slide",
+      "instruction": "Could you add a column chart to visualize time allocation on the 'Academic Challenges & Growth' slide?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Edit the fourth slide (Academic Challenges & Growth): Change the title of the fourth slide to \"Academic Life: Challenges & Growth\". Click the chart icon in the content area and select Clustered Column Chart. In the opened worksheet, enter sample data (e.g., Lectures: 15, Study Group: 10, Library Research: 8, Language Practice: 12), then close the worksheet. Edit the fifth slide (Summary): Change the title of the fifth slide to \"Key Takeaways & Next Steps\" and add 3-4 summary bullet points.",
+      "planned_input_snapshot": "20260110_160144",
+      "planned_gold_snapshot": "20260110_160335",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide editing and chart addition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_animation_and_transition_effects",
+      "instruction": "Could you set a uniform transition effect and sound effect for all slides and add an animation to the title text?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Add animation: Return to the title slide (first slide), select the title text box, and in the Animations tab, add an entrance animation effect such as \"Fade\". Set transition effects and sound effects: Go to the Transitions tab. First, select a transition effect (such as \"Morph\" or \"Push\") from the effect gallery. Then, in the Timing group, find the Sound option and select a sound effect (such as \"Chime\" or \"Whoosh\") from the drop-down menu. Apply to all and preview: In the Transitions tab, click the Apply To All button to apply the set transition effect and sound effect to all slides. Press the F5 key on your keyboard to start the slideshow from the beginning and preview the overall effect.",
+      "planned_input_snapshot": "20260110_160335",
+      "planned_gold_snapshot": "20260110_160915",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of adding animations and transition effects.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "add_speaker_notes",
+      "instruction": "Could you include speaker notes on one slide?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Add speaker notes: Select the third slide, in the View tab, click Notes Page, and enter the following in the notes pane below: \"Share a specific personal anecdote about the food or a festival here.\"",
+      "planned_input_snapshot": "20260110_160915",
+      "planned_gold_snapshot": "20260110_161005",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of adding speaker notes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_and_export_presentation",
+      "instruction": "Could you save the presentation and export it as a PDF to the desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Save the file: Click File -> Save As, ensure the save location is the desktop, then click Save. Export as PDF: Click File again, select Export -> Create PDF/XPS Document, click Create PDF/XPS on the right, confirm the save location is the desktop in the dialog box, and finally click Publish.",
+      "planned_input_snapshot": "20260110_161005",
+      "planned_gold_snapshot": "20260110_161124",
+      "snapshot_evidence": "New files appeared: My_Study_Abroad_Experience.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of saving and exporting the presentation as a PDF.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        8
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_presentation_file",
+      "instruction": "Could you create a PowerPoint presentation named 'My_Study_Abroad_Experience.pptx' directly on your desktop?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Create a new file: Right-click on an empty area of the desktop, select New -> Microsoft PowerPoint Presentation. Rename the new file to \"My_Study_Abroad_Experience.pptx\", then double-click to open it.",
+      "planned_input_snapshot": "20260110_155840",
+      "planned_gold_snapshot": "20260110_155844",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation and renaming.",
+      "input_snapshot": "20260110_155840",
+      "gold_snapshot": "20260110_155918",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "My_Study_Abroad_Experience.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_155840",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_155840",
+          "planned_gold_snapshot": "20260110_155844"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "2af935fb-0c38-eb44-1cc7-fd30bcf7b413",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/2af935fb-0c38-eb44-1cc7-fd30bcf7b413.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_title_slide_and_apply_theme",
+      "instruction": "Could you design a 5-slide presentation with the following structure: Title Slide, Personal Introduction & Destination, Cultural Experiences, Academic Challenges & Growth, and Key Takeaways & Future Plans? Could you apply a unified design theme to the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Design the title slide and apply a theme: In the title placeholder on the first slide, enter \"My Semester in Spain\". In the subtitle placeholder, enter your name or \"A Journey of Learning\". Next, go to the Design tab, and in the Themes gallery, select and apply a theme (such as \"Facet\" or \"Ion\").",
+      "planned_input_snapshot": "20260110_155844",
+      "planned_gold_snapshot": "20260110_155918",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide design and theme application.",
+      "input_snapshot": "20260110_155918",
+      "gold_snapshot": "20260110_155942",
+      "linked_preview_tasks": [],
+      "target_relative_path": "My_Study_Abroad_Experience.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_155844",
+        "chain_input_snapshot": "20260110_155918",
+        "chain_input_replaced": "20260110_155844",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 3,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_155844",
+          "planned_gold_snapshot": "20260110_155918"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "48a460b9-823c-2297-bbe8-e5b631f71e83",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/48a460b9-823c-2297-bbe8-e5b631f71e83.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "edit_personal_introduction_and_destination_slide",
+      "instruction": "Could you insert a map image on the 'Personal Introduction & Destination' slide and a relevant photo on the 'Cultural Experiences' slide?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Create new slides and edit the second slide (Personal Introduction & Destination): In the Home tab, click New Slide four times consecutively to add slides 2 through 5. Select the second slide, change the title to \"About Me & My Destination\", and add 2-3 introductory bullet points in the content area. Then, via the Insert tab -> Online Pictures, search for \"Spain map\" and insert a map image. Resize it and place it next to the text. Edit the third slide (Cultural Experiences): Change the title of the third slide to \"Immersive Cultural Experiences\". Through the Insert tab -> Pictures -> This Device, select and insert a relevant photo from your computer. If none is available, use Online Pictures and search for \"Spanish culture\" to insert a substitute image. Adjust it to the appropriate size.",
+      "planned_input_snapshot": "20260110_155918",
+      "planned_gold_snapshot": "20260110_160144",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide editing and image insertion.",
+      "input_snapshot": "20260110_155942",
+      "gold_snapshot": "20260110_160144",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "My_Study_Abroad_Experience.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_155918",
+        "chain_input_snapshot": "20260110_155942",
+        "chain_input_replaced": "20260110_155918",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 4,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_155918",
+          "planned_gold_snapshot": "20260110_160144"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "29b5453b-664a-92eb-d62e-5574324d5713",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/29b5453b-664a-92eb-d62e-5574324d5713.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_column_chart_to_academic_challenges_slide",
+      "instruction": "Could you add a column chart to visualize time allocation on the 'Academic Challenges & Growth' slide?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Edit the fourth slide (Academic Challenges & Growth): Change the title of the fourth slide to \"Academic Life: Challenges & Growth\". Click the chart icon in the content area and select Clustered Column Chart. In the opened worksheet, enter sample data (e.g., Lectures: 15, Study Group: 10, Library Research: 8, Language Practice: 12), then close the worksheet. Edit the fifth slide (Summary): Change the title of the fifth slide to \"Key Takeaways & Next Steps\" and add 3-4 summary bullet points.",
+      "planned_input_snapshot": "20260110_160144",
+      "planned_gold_snapshot": "20260110_160335",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of slide editing and chart addition.",
+      "input_snapshot": "20260110_160144",
+      "gold_snapshot": "20260110_160335",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "My_Study_Abroad_Experience.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_160335",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 7,
+          "search_start_index": 5,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_160144",
+          "planned_gold_snapshot": "20260110_160335"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "a3170288-5b59-909b-216d-23683cc9c88d",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/a3170288-5b59-909b-216d-23683cc9c88d.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_animation_and_transition_effects",
+      "instruction": "Could you set a uniform transition effect and sound effect for all slides and add an animation to the title text?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Add animation: Return to the title slide (first slide), select the title text box, and in the Animations tab, add an entrance animation effect such as \"Fade\". Set transition effects and sound effects: Go to the Transitions tab. First, select a transition effect (such as \"Morph\" or \"Push\") from the effect gallery. Then, in the Timing group, find the Sound option and select a sound effect (such as \"Chime\" or \"Whoosh\") from the drop-down menu. Apply to all and preview: In the Transitions tab, click the Apply To All button to apply the set transition effect and sound effect to all slides. Press the F5 key on your keyboard to start the slideshow from the beginning and preview the overall effect.",
+      "planned_input_snapshot": "20260110_160335",
+      "planned_gold_snapshot": "20260110_160915",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of adding animations and transition effects.",
+      "input_snapshot": "20260110_160335",
+      "gold_snapshot": "20260110_160915",
+      "linked_preview_tasks": [
+        6
+      ],
+      "target_relative_path": "My_Study_Abroad_Experience.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_160915",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 11,
+          "search_start_index": 7,
+          "search_end_index": 12,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_160335",
+          "planned_gold_snapshot": "20260110_160915"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "c74789e5-0f1e-fd10-1c3f-8e3629a9904e",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/c74789e5-0f1e-fd10-1c3f-8e3629a9904e.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "add_speaker_notes",
+      "instruction": "Could you include speaker notes on one slide?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Add speaker notes: Select the third slide, in the View tab, click Notes Page, and enter the following in the notes pane below: \"Share a specific personal anecdote about the food or a festival here.\"",
+      "planned_input_snapshot": "20260110_160915",
+      "planned_gold_snapshot": "20260110_161005",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of adding speaker notes.",
+      "input_snapshot": "20260110_160915",
+      "gold_snapshot": "20260110_161005",
+      "linked_preview_tasks": [
+        7
+      ],
+      "target_relative_path": "My_Study_Abroad_Experience.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_161005",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 9,
+          "search_start_index": 13,
+          "search_end_index": 14,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_160915",
+          "planned_gold_snapshot": "20260110_161005"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "c6cf960f-dfb7-63ae-fd0c-d9086731cc68",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/c6cf960f-dfb7-63ae-fd0c-d9086731cc68.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_and_export_presentation",
+      "instruction": "Could you save the presentation and export it as a PDF to the desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Save the file: Click File -> Save As, ensure the save location is the desktop, then click Save. Export as PDF: Click File again, select Export -> Create PDF/XPS Document, click Create PDF/XPS on the right, confirm the save location is the desktop in the dialog box, and finally click Publish.",
+      "planned_input_snapshot": "20260110_161005",
+      "planned_gold_snapshot": "20260110_161124",
+      "snapshot_evidence": "New files appeared: My_Study_Abroad_Experience.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of saving and exporting the presentation as a PDF.",
+      "input_snapshot": "20260110_161005",
+      "gold_snapshot": "20260110_161124",
+      "linked_preview_tasks": [
+        8
+      ],
+      "target_relative_path": "My_Study_Abroad_Experience.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_161005",
+        "trajectory_window": {
+          "trajectory_start": 12,
+          "trajectory_end": 13,
+          "search_start_index": 15,
+          "search_end_index": 18,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_161005",
+          "planned_gold_snapshot": "20260110_161124"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6e8af18d-54bf-f486-7b75-5324ba79f770",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/6e8af18d-54bf-f486-7b75-5324ba79f770.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you design a 5-slide presentation with the following structure: Title Slide, Personal Introduction & Destination, Cultural Experiences, Academic Challenges & Growth, and Key Takeaways & Future Plans?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you apply a unified design theme to the presentation?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260110_155840",
+    "20260110_155844",
+    "20260110_155918",
+    "20260110_155942",
+    "20260110_160144",
+    "20260110_160147",
+    "20260110_160335",
+    "20260110_160357",
+    "20260110_160704",
+    "20260110_160751",
+    "20260110_160753",
+    "20260110_160829",
+    "20260110_160915",
+    "20260110_160922",
+    "20260110_161005",
+    "20260110_161044",
+    "20260110_161102",
+    "20260110_161107",
+    "20260110_161124",
+    "20260110_161130",
+    "20260110_161141"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_155840",
+      "to": "20260110_155844",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "My_Study_Abroad_Experience.pptx"
+        ],
+        "files_removed": [
+          "New Microsoft PowerPoint Presentation.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "My_Study_Abroad_Experience.pptx"
+        ],
+        "files_removed": [
+          "New Microsoft PowerPoint Presentation.pptx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_155844",
+      "to": "20260110_155918",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 0,
+              "to": 34488
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 0,
+              "to": 34488
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_155918",
+      "to": "20260110_155942",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 34488,
+              "to": 44955
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 34488,
+              "to": 44955
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_155942",
+      "to": "20260110_160144",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 44955,
+              "to": 984068
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 44955,
+              "to": 984068
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_160144",
+      "to": "20260110_160147",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 984068,
+              "to": 984067
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 984068,
+              "to": 984067
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_160147",
+      "to": "20260110_160335",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 984067,
+              "to": 1055535
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 984067,
+              "to": 1055535
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_160335",
+      "to": "20260110_160357",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1055535,
+              "to": 1057931
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1055535,
+              "to": 1057931
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_160357",
+      "to": "20260110_160704",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1057931,
+              "to": 1071881
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1057931,
+              "to": 1071881
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260110_160704",
+      "to": "20260110_160751",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1071881,
+              "to": 1071941
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1071881,
+              "to": 1071941
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260110_160751",
+      "to": "20260110_160753",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1071941,
+              "to": 1071942
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1071941,
+              "to": 1071942
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260110_160753",
+      "to": "20260110_160829",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1071942,
+              "to": 1072342
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1071942,
+              "to": 1072342
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260110_160829",
+      "to": "20260110_160915",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1072342,
+              "to": 1077642
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1072342,
+              "to": 1077642
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260110_160915",
+      "to": "20260110_160922",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1077642,
+              "to": 1077659
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1077642,
+              "to": 1077659
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260110_160922",
+      "to": "20260110_161005",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1077659,
+              "to": 1105233
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1077659,
+              "to": 1105233
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260110_161005",
+      "to": "20260110_161044",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1105233,
+              "to": 1109749
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1105233,
+              "to": 1109749
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260110_161044",
+      "to": "20260110_161102",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "size": {
+              "from": 1109749,
+              "to": 1109748
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "My_Study_Abroad_Experience.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1109749,
+              "to": 1109748
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260110_161102",
+      "to": "20260110_161107",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260110_161107",
+      "to": "20260110_161124",
+      "human_summary": "New files appeared: My_Study_Abroad_Experience.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "My_Study_Abroad_Experience.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "My_Study_Abroad_Experience.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260110_161124",
+      "to": "20260110_161130",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20260110_161130",
+      "to": "20260110_161141",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_39",
+    "snapshot_count": 21,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_155840",
+        "to": "20260110_155844",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "My_Study_Abroad_Experience.pptx"
+          ],
+          "files_removed": [
+            "New Microsoft PowerPoint Presentation.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "My_Study_Abroad_Experience.pptx"
+          ],
+          "files_removed": [
+            "New Microsoft PowerPoint Presentation.pptx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_155844",
+        "to": "20260110_155918",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 0,
+                "to": 34488
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 0,
+                "to": 34488
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_155918",
+        "to": "20260110_155942",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 34488,
+                "to": 44955
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 34488,
+                "to": 44955
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_155942",
+        "to": "20260110_160144",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 44955,
+                "to": 984068
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 44955,
+                "to": 984068
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_160144",
+        "to": "20260110_160147",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 984068,
+                "to": 984067
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 984068,
+                "to": 984067
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260110_160147",
+        "to": "20260110_160335",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 984067,
+                "to": 1055535
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 984067,
+                "to": 1055535
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260110_160335",
+        "to": "20260110_160357",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1055535,
+                "to": 1057931
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1055535,
+                "to": 1057931
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260110_160357",
+        "to": "20260110_160704",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1057931,
+                "to": 1071881
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1057931,
+                "to": 1071881
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260110_160704",
+        "to": "20260110_160751",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1071881,
+                "to": 1071941
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1071881,
+                "to": 1071941
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260110_160751",
+        "to": "20260110_160753",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1071941,
+                "to": 1071942
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1071941,
+                "to": 1071942
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260110_160753",
+        "to": "20260110_160829",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1071942,
+                "to": 1072342
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1071942,
+                "to": 1072342
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260110_160829",
+        "to": "20260110_160915",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1072342,
+                "to": 1077642
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1072342,
+                "to": 1077642
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260110_160915",
+        "to": "20260110_160922",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1077642,
+                "to": 1077659
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1077642,
+                "to": 1077659
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260110_160922",
+        "to": "20260110_161005",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1077659,
+                "to": 1105233
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1077659,
+                "to": 1105233
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260110_161005",
+        "to": "20260110_161044",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1105233,
+                "to": 1109749
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1105233,
+                "to": 1109749
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260110_161044",
+        "to": "20260110_161102",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "size": {
+                "from": 1109749,
+                "to": 1109748
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "My_Study_Abroad_Experience.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1109749,
+                "to": 1109748
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260110_161102",
+        "to": "20260110_161107",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20260110_161107",
+        "to": "20260110_161124",
+        "human_summary": "New files appeared: My_Study_Abroad_Experience.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "My_Study_Abroad_Experience.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "My_Study_Abroad_Experience.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 19,
+        "from": "20260110_161124",
+        "to": "20260110_161130",
+        "human_summary": "New files appeared: Microsoft Edge.lnk.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 20,
+        "from": "20260110_161130",
+        "to": "20260110_161141",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Create a new file: Right-click on an empty area of the desktop, select New -> Microsoft PowerPoint Presentation. Rename the new file to \"My_Study_Abroad_Experience.pptx\", then double-click to open it."
+    },
+    {
+      "index": 3,
+      "instruction": "Design the title slide and apply a theme: In the title placeholder on the first slide, enter \"My Semester in Spain\". In the subtitle placeholder, enter your name or \"A Journey of Learning\". Next, go to the Design tab, and in the Themes gallery, select and apply a theme (such as \"Facet\" or \"Ion\")."
+    },
+    {
+      "index": 4,
+      "instruction": "Create new slides and edit the second slide (Personal Introduction & Destination): In the Home tab, click New Slide four times consecutively to add slides 2 through 5. Select the second slide, change the title to \"About Me & My Destination\", and add 2-3 introductory bullet points in the content area. Then, via the Insert tab -> Online Pictures, search for \"Spain map\" and insert a map image. Resize it and place it next to the text."
+    },
+    {
+      "index": 5,
+      "instruction": "Edit the third slide (Cultural Experiences): Change the title of the third slide to \"Immersive Cultural Experiences\". Through the Insert tab -> Pictures -> This Device, select and insert a relevant photo from your computer. If none is available, use Online Pictures and search for \"Spanish culture\" to insert a substitute image. Adjust it to the appropriate size."
+    },
+    {
+      "index": 6,
+      "instruction": "Edit the fourth slide (Academic Challenges & Growth): Change the title of the fourth slide to \"Academic Life: Challenges & Growth\". Click the chart icon in the content area and select Clustered Column Chart. In the opened worksheet, enter sample data (e.g., Lectures: 15, Study Group: 10, Library Research: 8, Language Practice: 12), then close the worksheet."
+    },
+    {
+      "index": 7,
+      "instruction": "Edit the fifth slide (Summary): Change the title of the fifth slide to \"Key Takeaways & Next Steps\" and add 3-4 summary bullet points."
+    },
+    {
+      "index": 8,
+      "instruction": "Add animation: Return to the title slide (first slide), select the title text box, and in the Animations tab, add an entrance animation effect such as \"Fade\"."
+    },
+    {
+      "index": 9,
+      "instruction": "Add speaker notes: Select the third slide, in the View tab, click Notes Page, and enter the following in the notes pane below: \"Share a specific personal anecdote about the food or a festival here.\""
+    },
+    {
+      "index": 10,
+      "instruction": "Set transition effects and sound effects: Go to the Transitions tab. First, select a transition effect (such as \"Morph\" or \"Push\") from the effect gallery. Then, in the Timing group, find the Sound option and select a sound effect (such as \"Chime\" or \"Whoosh\") from the drop-down menu."
+    },
+    {
+      "index": 11,
+      "instruction": "Apply to all and preview: In the Transitions tab, click the Apply To All button to apply the set transition effect and sound effect to all slides. Press the F5 key on your keyboard to start the slideshow from the beginning and preview the overall effect."
+    },
+    {
+      "index": 12,
+      "instruction": "Save the file: Click File -> Save As, ensure the save location is the desktop, then click Save."
+    },
+    {
+      "index": 13,
+      "instruction": "Export as PDF: Click File again, select Export -> Create PDF/XPS Document, click Create PDF/XPS on the right, confirm the save location is the desktop in the dialog box, and finally click Publish."
+    },
+    {
+      "index": 14,
+      "instruction": "Close the software"
+    },
+    {
+      "index": 15,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 7,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 21
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "ed223665-2731-1c8b-f7e3-5f80e9297825",
+  "snapshot": "word",
+  "instruction": "Could you open the 'Shanghai_Culture.docx' document in Word and format the main title?",
+  "source": "Microsoft_51 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_51/logs/MonitoringSnapshots/20260110_104817/Desktop/Material.png",
+            "path": "C:\\Users\\User\\Desktop\\Material.png"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_51/logs/MonitoringSnapshots/20260110_104817/Desktop/Shanghai_Culture.docx",
+            "path": "C:\\Users\\User\\Desktop\\Shanghai_Culture.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_51/logs/MonitoringSnapshots/20260110_104835/Desktop/Shanghai_Culture.docx",
+            "path": "C:\\Users\\User\\Documents\\Shanghai_Culture_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Shanghai_Culture.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/ed223665-2731-1c8b-f7e3-5f80e9297825",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Shanghai_Culture.docx",
+      "dest": "Shanghai_Culture.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Shanghai_Culture_gold.docx",
+      "dest": "Shanghai_Culture_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Shanghai_Culture.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

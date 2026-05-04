@@ -1,0 +1,85 @@
+{
+  "id": "8e1e3175-c06e-8294-d95e-866c096adc78",
+  "snapshot": "ppt",
+  "instruction": "Could you format the layout of the presentation to make it visually appealing?",
+  "source": "Microsoft_49 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164012/Desktop/Material/Background.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Background.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164012/Desktop/Material/Culture.txt",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Culture.txt"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164012/Desktop/Powerpoint1.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Powerpoint1.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164229/Desktop/Powerpoint1.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Powerpoint1_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Powerpoint1.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/8e1e3175-c06e-8294-d95e-866c096adc78",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Powerpoint1.pptx",
+      "dest": "Powerpoint1.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Powerpoint1_gold.pptx",
+      "dest": "Powerpoint1_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Powerpoint1.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

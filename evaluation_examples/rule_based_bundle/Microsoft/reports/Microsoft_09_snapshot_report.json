@@ -1,0 +1,699 @@
+{
+  "source_name": "Microsoft_09",
+  "snapshot_count": 17,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260105_184745",
+      "to": "20260105_184844",
+      "human_summary": "material/Customer_Profit_Analysis.xlsx changed: spreadsheet content changed from 26 to 27 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Customer_Profit_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 26,
+            "to": 27
+          },
+          "headers": {
+            "from": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ],
+            "to": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profit_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9888,
+              "to": 10204
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 26,
+                "to": 27
+              },
+              "headers": {
+                "from": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ],
+                "to": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260105_184844",
+      "to": "20260105_184919",
+      "human_summary": "material/Customer_Profit_Analysis.xlsx changed: spreadsheet content changed from 27 to 32 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Customer_Profit_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 27,
+            "to": 32
+          },
+          "headers": {
+            "from": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ],
+            "to": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profit_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10204,
+              "to": 10296
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 27,
+                "to": 32
+              },
+              "headers": {
+                "from": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ],
+                "to": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260105_184919",
+      "to": "20260105_184948",
+      "human_summary": "material/Customer_Profit_Analysis.xlsx changed: spreadsheet content changed from 32 to 33 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Customer_Profit_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 32,
+            "to": 33
+          },
+          "headers": {
+            "from": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ],
+            "to": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profit_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10296,
+              "to": 10308
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 32,
+                "to": 33
+              },
+              "headers": {
+                "from": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ],
+                "to": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260105_184948",
+      "to": "20260105_185058",
+      "human_summary": "material/Customer_Profit_Analysis.xlsx changed: spreadsheet content changed from 33 to 34 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Customer_Profit_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 33,
+            "to": 34
+          },
+          "headers": {
+            "from": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ],
+            "to": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profit_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10308,
+              "to": 10325
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 33,
+                "to": 34
+              },
+              "headers": {
+                "from": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ],
+                "to": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260105_185058",
+      "to": "20260105_185127",
+      "human_summary": "material/Customer_Profit_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Customer_Profit_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ],
+            "to": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profit_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10325,
+              "to": 10405
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ],
+                "to": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260105_185127",
+      "to": "20260105_185325",
+      "human_summary": "material/Customer_Profit_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Customer_Profit_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ],
+            "to": [
+              "Customer Name",
+              "Orders",
+              "Revenue",
+              "Cost",
+              "Profit"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profit_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10405,
+              "to": 10365
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ],
+                "to": [
+                  "Customer Name",
+                  "Orders",
+                  "Revenue",
+                  "Cost",
+                  "Profit"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260105_185325",
+      "to": "20260105_185341",
+      "human_summary": "New files appeared: Customer_Profit_Analysis.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Customer_Profit_Analysis.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Customer_Profit_Analysis.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260105_185341",
+      "to": "20260105_185343",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260105_185343",
+      "to": "20260105_185418",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260105_185418",
+      "to": "20260105_185444",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "size": {
+              "from": 14061,
+              "to": 14105
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14061,
+              "to": 14105
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260105_185444",
+      "to": "20260105_185505",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "size": {
+              "from": 14105,
+              "to": 14162
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14105,
+              "to": 14162
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260105_185505",
+      "to": "20260105_185538",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "size": {
+              "from": 14162,
+              "to": 15586
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14162,
+              "to": 15586
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260105_185538",
+      "to": "20260105_185620",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "size": {
+              "from": 15586,
+              "to": 16062
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15586,
+              "to": 16062
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260105_185620",
+      "to": "20260105_185643",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "size": {
+              "from": 16062,
+              "to": 16074
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Customer_Profitability_Analysis_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16062,
+              "to": 16074
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260105_185643",
+      "to": "20260105_185656",
+      "human_summary": "New files appeared: Customer_Profitability_Analysis_Report.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Customer_Profitability_Analysis_Report.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Customer_Profitability_Analysis_Report.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260105_185656",
+      "to": "20260105_185658",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

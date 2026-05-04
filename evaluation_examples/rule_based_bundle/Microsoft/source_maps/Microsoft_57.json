@@ -1,0 +1,625 @@
+{
+  "source_name": "Microsoft_57",
+  "source_file": "Microsoft_57.txt",
+  "source_id": "17921f63a5de",
+  "source_question": "There are 3 file record Sales/Marketing/Service team staff information, and each file exist blank line. Now Manager want to consolidate the table into one file, and want to realize fuzzy search in Excel, for example, input the key work, will show all the related records which including the key word.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the three files containing Sales, Marketing, and Service team staff information?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you remove any blank lines from each of the files?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you consolidate the data from the three files into a single Excel file?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a fuzzy search function in the consolidated Excel file to find records based on a keyword?",
+      "mapped_stage_indices": [
+        3
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_import_files",
+      "instruction": "Could you open the three files containing Sales, Marketing, and Service team staff information?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Opening Excel, importing data from multiple files, and consolidating into a single workbook.",
+      "planned_input_snapshot": "20260112_192307",
+      "planned_gold_snapshot": "20260112_192703",
+      "snapshot_evidence": "Material/Detail1.xlsx changed: spreadsheet content changed from 60 to 126 non-empty cells; new visible headers or values include: Sales Team, Peter, 45482, 1750.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "format_and_clean_data",
+      "instruction": "Could you remove any blank lines from each of the files? Could you consolidate the data from the three files into a single Excel file?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Removing other columns, using the first row as headers, replacing text, and formatting date and number styles.",
+      "planned_input_snapshot": "20260112_192703",
+      "planned_gold_snapshot": "20260112_192748",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_fuzzy_search_function",
+      "instruction": "Could you create a fuzzy search function in the consolidated Excel file to find records based on a keyword?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 19,
+      "trajectory_end": 25,
+      "trajectory_evidence": "Creating a search header, adding a formula for fuzzy search, and testing the search functionality.",
+      "planned_input_snapshot": "20260112_192748",
+      "planned_gold_snapshot": "20260112_192750",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the stage is necessary for the workflow. LLM assistance may be needed to verify the formula.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_import_files_and_format_and_clean_data_and_create_fuzzy_search_function",
+      "instruction": "Could you open the three files containing Sales, Marketing, and Service team staff information, and then remove any blank lines from each of the files? Could you consolidate the data from the three files into a single Excel file, and then create a fuzzy search function in the consolidated Excel file to find records based on a keyword?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 25,
+      "trajectory_evidence": "Opening Excel, importing data from multiple files, and consolidating into a single workbook. | Removing other columns, using the first row as headers, replacing text, and formatting date and number styles. | Creating a search header, adding a formula for fuzzy search, and testing the search functionality.",
+      "planned_input_snapshot": "20260112_192307",
+      "planned_gold_snapshot": "20260112_192750",
+      "snapshot_evidence": "Material/Detail1.xlsx changed: spreadsheet content changed from 60 to 126 non-empty cells; new visible headers or values include: Sales Team, Peter, 45482, 1750. | New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes in the Excel file.",
+      "input_snapshot": "20260112_192307",
+      "gold_snapshot": "20260112_192750",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260112_192307",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 11,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260112_192307",
+          "planned_gold_snapshot": "20260112_192703"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 3,
+          "stage_name": "create_fuzzy_search_function",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_and_import_files",
+        "format_and_clean_data",
+        "create_fuzzy_search_function"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3
+      ],
+      "generated_examples": [
+        {
+          "example_id": "235ec39c-5773-fbd0-118d-57b0d466a8e3",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/235ec39c-5773-fbd0-118d-57b0d466a8e3.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you remove any blank lines from each of the files?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you consolidate the data from the three files into a single Excel file?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260112_192307",
+    "20260112_192703",
+    "20260112_192748",
+    "20260112_192750"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260112_192307",
+      "to": "20260112_192703",
+      "human_summary": "Material/Detail1.xlsx changed: spreadsheet content changed from 60 to 126 non-empty cells; new visible headers or values include: Sales Team, Peter, 45482, 1750.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 60,
+            "to": 126
+          },
+          "headers": {
+            "from": [
+              "Department",
+              "Name",
+              "Gender",
+              "Join Date",
+              "Salary",
+              "Service Team",
+              "Felix",
+              "M",
+              "44245",
+              "1500"
+            ],
+            "to": [
+              "Department",
+              "Name",
+              "Gender",
+              "Join Date",
+              "Salary",
+              "Service Team",
+              "Felix",
+              "M",
+              "44245",
+              "1500",
+              "Sales Team",
+              "Peter",
+              "M",
+              "45482",
+              "1750"
+            ]
+          }
+        },
+        "headers_added": [
+          "Sales Team",
+          "Peter",
+          "45482",
+          "1750"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 18786,
+              "to": 20955
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 60,
+                "to": 126
+              },
+              "headers": {
+                "from": [
+                  "Department",
+                  "Name",
+                  "Gender",
+                  "Join Date",
+                  "Salary",
+                  "Service Team",
+                  "Felix",
+                  "M",
+                  "44245",
+                  "1500"
+                ],
+                "to": [
+                  "Department",
+                  "Name",
+                  "Gender",
+                  "Join Date",
+                  "Salary",
+                  "Service Team",
+                  "Felix",
+                  "M",
+                  "44245",
+                  "1500",
+                  "Sales Team",
+                  "Peter",
+                  "M",
+                  "45482",
+                  "1750"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260112_192703",
+      "to": "20260112_192748",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260112_192748",
+      "to": "20260112_192750",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_57",
+    "snapshot_count": 4,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260112_192307",
+        "to": "20260112_192703",
+        "human_summary": "Material/Detail1.xlsx changed: spreadsheet content changed from 60 to 126 non-empty cells; new visible headers or values include: Sales Team, Peter, 45482, 1750.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 60,
+              "to": 126
+            },
+            "headers": {
+              "from": [
+                "Department",
+                "Name",
+                "Gender",
+                "Join Date",
+                "Salary",
+                "Service Team",
+                "Felix",
+                "M",
+                "44245",
+                "1500"
+              ],
+              "to": [
+                "Department",
+                "Name",
+                "Gender",
+                "Join Date",
+                "Salary",
+                "Service Team",
+                "Felix",
+                "M",
+                "44245",
+                "1500",
+                "Sales Team",
+                "Peter",
+                "M",
+                "45482",
+                "1750"
+              ]
+            }
+          },
+          "headers_added": [
+            "Sales Team",
+            "Peter",
+            "45482",
+            "1750"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 18786,
+                "to": 20955
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 60,
+                  "to": 126
+                },
+                "headers": {
+                  "from": [
+                    "Department",
+                    "Name",
+                    "Gender",
+                    "Join Date",
+                    "Salary",
+                    "Service Team",
+                    "Felix",
+                    "M",
+                    "44245",
+                    "1500"
+                  ],
+                  "to": [
+                    "Department",
+                    "Name",
+                    "Gender",
+                    "Join Date",
+                    "Salary",
+                    "Service Team",
+                    "Felix",
+                    "M",
+                    "44245",
+                    "1500",
+                    "Sales Team",
+                    "Peter",
+                    "M",
+                    "45482",
+                    "1750"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260112_192703",
+        "to": "20260112_192748",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260112_192748",
+        "to": "20260112_192750",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select From File, then select from Folder, will pop up a Browse frame. Select Desktop, then double click material, click Open button, will show a frame of Material Select Transform Data button. will open Power Query Editor frame."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Menu---Add Column, then find and click Customer Column frame"
+    },
+    {
+      "index": 5,
+      "instruction": "Modify Name Column Name as \"File Name\""
+    },
+    {
+      "index": 6,
+      "instruction": "Input \"[Name]\" in Customer Column formula, then click Ok button"
+    },
+    {
+      "index": 7,
+      "instruction": "Select Content and File Name column, then right click, select Remove Other Columns"
+    },
+    {
+      "index": 8,
+      "instruction": "Click Custom Column, input \"Excel.Workbook([Content])\" in Customer Column formula, then click Ok button"
+    },
+    {
+      "index": 9,
+      "instruction": "Click the expand icon next to custom, then click OK button"
+    },
+    {
+      "index": 10,
+      "instruction": "Select File Name and Customer.Data column, right click, then select Remove Other Columns"
+    },
+    {
+      "index": 11,
+      "instruction": "Click expand icon next to Customer.Data, then click OK button, will import all the data from 3 files."
+    },
+    {
+      "index": 12,
+      "instruction": "Click Menu---Home, find and click Use First Row as Headers"
+    },
+    {
+      "index": 13,
+      "instruction": "Click arrow button next to Name column, click (null) and Name, then click OK"
+    },
+    {
+      "index": 14,
+      "instruction": "Click Close & Load button, the data with file name Import to Excel sheet."
+    },
+    {
+      "index": 15,
+      "instruction": "Click A Column, then click Ctrl+F, click Replace, input \".xlsx\" into Find what input box. Click Replace All button, then click OK, then click Close button."
+    },
+    {
+      "index": 16,
+      "instruction": "Select Column D, click Menu---Home, find and click Number Format, then click Short Date. Select Column E, click Menu---Home, find and click Comma Style, then click Decrease Decimal twice."
+    },
+    {
+      "index": 17,
+      "instruction": "Click A1 cell, modify as \"Department\""
+    },
+    {
+      "index": 18,
+      "instruction": "Click Menu---file, find and click Save, save as Detail1"
+    },
+    {
+      "index": 19,
+      "instruction": "Click H2 cell, then input \"Search By:\""
+    },
+    {
+      "index": 20,
+      "instruction": "Click I2 cell, click Menu---Home, find and click arrow next to Fill color, and select Orange color"
+    },
+    {
+      "index": 21,
+      "instruction": "Select A1 cell to E1 Cell, then click Ctrl+C, click H4 cell, click Ctrl+V"
+    },
+    {
+      "index": 22,
+      "instruction": "Click H5 cell, then input\"=FILTER(A:E,IFERROR(SEARCH(I2,A:A),0)+IFERROR(SEARCH(I2,B:B),0)+IFERROR(SEARCH(I2,C:C),0)+IFERROR(SEARCH(I2,D:D),0)+IFERROR(SEARCH(I2,E:E),0))\""
+    },
+    {
+      "index": 23,
+      "instruction": "Select K Column, click Menu---Home, find and click Number Format, then click Short Date"
+    },
+    {
+      "index": 24,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 25,
+      "instruction": "Click I2 cell, input \"F\", will show all record line with F, then Click \"Ma\", will show all record line with Ma"
+    },
+    {
+      "index": 26,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 27,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 3,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 4
+  }
+}

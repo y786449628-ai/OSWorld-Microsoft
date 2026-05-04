@@ -1,0 +1,83 @@
+{
+  "id": "0d5ce6a4-ae75-d131-0c55-f21aa1d9625f",
+  "snapshot": "excel",
+  "instruction": "Could you open the provided table in Excel and unmerge the cells containing Year and Department information, and then calculate the expense growth for each department from 2024 to 2025 in Excel, and then calculate the growth percentage for each department in Excel, and then create a chart in Excel to visualize the growth percentage of each department, and then prepare a report document in Word to present the expense growth and the chart?",
+  "source": "Microsoft_23 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_23/logs/MonitoringSnapshots/20260107_211705/Desktop/Material/Expense.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Expense.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_23/logs/MonitoringSnapshots/20260107_212956/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Expense.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0d5ce6a4-ae75-d131-0c55-f21aa1d9625f",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,2237 @@
+{
+  "source_name": "Microsoft_08",
+  "source_file": "Microsoft_08.txt",
+  "source_id": "4a0673294db3",
+  "source_question": "Prepare a customer satisfaction analysis using Microsoft Excel 365 and Microsoft PowerPoint 365. Collect and process survey data in Excel with calculations and conditional formatting, then create a presentation in PowerPoint that includes linked data and visual summaries.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open Microsoft Excel 365 and create a new workbook for the customer satisfaction survey data?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you input and organize the survey data in the Excel workbook?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you perform necessary calculations on the survey data in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply conditional formatting to highlight key insights in the Excel data?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you open Microsoft PowerPoint 365 and create a new presentation for the customer satisfaction analysis?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you link the relevant Excel data to the PowerPoint slides?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you create visual summaries, such as charts and graphs, in the PowerPoint presentation using the linked data?",
+      "mapped_stage_indices": [
+        7
+      ]
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the final PowerPoint presentation with the linked data and visual summaries?",
+      "mapped_stage_indices": [
+        8
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you open Microsoft Excel 365 and create a new workbook for the customer satisfaction survey data?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open Microsoft Excel 365, select New > Blank Workbook.",
+      "planned_input_snapshot": "20260104_151321",
+      "planned_gold_snapshot": "20260104_151336",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Customer.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_survey_data",
+      "instruction": "Could you input and organize the survey data in the Excel workbook?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 16,
+      "trajectory_evidence": "In cell A1, type Customer. In cells B1, C1, D1, and E1, type Service, Quality, Value, and Average Score. Enter numeric ratings from 1 to 5 for Service, Quality, and Value for each customer. Click cell E2, type '=AVERAGE(B2:D2)', and press Enter. Drag the fill handle down to cell E9.",
+      "planned_input_snapshot": "20260104_151336",
+      "planned_gold_snapshot": "20260104_151720",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 1 to 37 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to highlight key insights in the Excel data?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 19,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Select range A1:E9, click Home > Conditional Formatting > Color Scales, and apply a three-color scale to the table. Click anywhere in the table, then select Data > Sort, sort by Average Score, order Largest to Smallest.",
+      "planned_input_snapshot": "20260104_151720",
+      "planned_gold_snapshot": "20260104_151810",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_radar_chart",
+      "instruction": "Could you create a radar chart in the Excel workbook?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 21,
+      "trajectory_end": 23,
+      "trajectory_evidence": "Select range A1:D9, click Insert > Radar Chart > Radar with Markers. Rename the chart title to 'Customer Satisfaction Comparison'. Resize and place the chart on the right side of the worksheet.",
+      "planned_input_snapshot": "20260104_151810",
+      "planned_gold_snapshot": "20260104_152203",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_powerpoint_presentation",
+      "instruction": "Could you open Microsoft PowerPoint 365 and create a new presentation for the customer satisfaction analysis?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 28,
+      "trajectory_evidence": "Open Microsoft PowerPoint 365. Select New > Blank Presentation. On the title slide, type 'Customer Satisfaction Report'. Enter 'Survey Results Overview' as the subtitle.",
+      "planned_input_snapshot": "20260104_152203",
+      "planned_gold_snapshot": "20260104_153033",
+      "snapshot_evidence": "New files appeared: Customer_Satisfaction_Presentaion.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "link_excel_data_to_powerpoint",
+      "instruction": "Could you link the relevant Excel data to the PowerPoint slides?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 29,
+      "trajectory_end": 34,
+      "trajectory_evidence": "Click Home > New Slide > Title and Content. Type 'Survey Data Overview' as the slide title. Switch to Excel 365, select the formatted table. Return to PowerPoint 365, click the content placeholder. Select Home > Paste > Paste Special, choose Paste Link and select 'Microsoft Excel Worksheet Object', then click OK. Resize the linked table to fit the slide layout.",
+      "planned_input_snapshot": "20260104_153033",
+      "planned_gold_snapshot": "20260104_153033",
+      "snapshot_evidence": "No observable change in snapshots, but the trajectory indicates linking data.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable change in snapshots, but the trajectory indicates linking data.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "create_visual_summaries_in_powerpoint",
+      "instruction": "Could you create visual summaries, such as charts and graphs, in the PowerPoint presentation using the linked data?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 35,
+      "trajectory_end": 38,
+      "trajectory_evidence": "Click Home > New Slide > Title and Content. Type 'Satisfaction Comparison Chart' as the slide title. Switch to Excel 365, select the radar chart, Copy and paste it into the slide. Click Chart Design > Change Colors and select a different color set.",
+      "planned_input_snapshot": "20260104_153033",
+      "planned_gold_snapshot": "20260104_153033",
+      "snapshot_evidence": "No observable change in snapshots, but the trajectory indicates creating visual summaries.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable change in snapshots, but the trajectory indicates creating visual summaries.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    },
+    {
+      "stage_index": 8,
+      "stage_name": "save_final_powerpoint_presentation",
+      "instruction": "Could you save the final PowerPoint presentation with the linked data and visual summaries?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        7
+      ],
+      "trajectory_start": 39,
+      "trajectory_end": 39,
+      "trajectory_evidence": "Click File > Save As, name the file 'Customer_Satisfaction_Presentation.pptx', and save it.",
+      "planned_input_snapshot": "20260104_153033",
+      "planned_gold_snapshot": "20260104_153033",
+      "snapshot_evidence": "No observable change in snapshots, but the trajectory indicates saving the final presentation.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable change in snapshots, but the trajectory indicates saving the final presentation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        8
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you open Microsoft Excel 365 and create a new workbook for the customer satisfaction survey data?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open Microsoft Excel 365, select New > Blank Workbook.",
+      "planned_input_snapshot": "20260104_151321",
+      "planned_gold_snapshot": "20260104_151336",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Customer.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260104_151321",
+      "gold_snapshot": "20260104_151336",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Customer_Satisfaction_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "1b2a208f-19ce-66a8-04b9-d84d93b6be7a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/1b2a208f-19ce-66a8-04b9-d84d93b6be7a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_survey_data",
+      "instruction": "Could you input and organize the survey data in the Excel workbook?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 16,
+      "trajectory_evidence": "In cell A1, type Customer. In cells B1, C1, D1, and E1, type Service, Quality, Value, and Average Score. Enter numeric ratings from 1 to 5 for Service, Quality, and Value for each customer. Click cell E2, type '=AVERAGE(B2:D2)', and press Enter. Drag the fill handle down to cell E9.",
+      "planned_input_snapshot": "20260104_151336",
+      "planned_gold_snapshot": "20260104_151720",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 1 to 37 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260104_151336",
+      "gold_snapshot": "20260104_151720",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Customer_Satisfaction_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 13 to 37.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260104_151336",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 16,
+          "search_start_index": 2,
+          "search_end_index": 5,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260104_151336",
+          "planned_gold_snapshot": "20260104_151720"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "da802c1f-9f22-31bc-eae5-f30445371a4c",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/da802c1f-9f22-31bc-eae5-f30445371a4c.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to highlight key insights in the Excel data?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 19,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Select range A1:E9, click Home > Conditional Formatting > Color Scales, and apply a three-color scale to the table. Click anywhere in the table, then select Data > Sort, sort by Average Score, order Largest to Smallest.",
+      "planned_input_snapshot": "20260104_151720",
+      "planned_gold_snapshot": "20260104_151810",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260104_151720",
+      "gold_snapshot": "20260104_151810",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Customer_Satisfaction_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 38 to 45.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260104_151720",
+        "trajectory_window": {
+          "trajectory_start": 19,
+          "trajectory_end": 20,
+          "search_start_index": 6,
+          "search_end_index": 7,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260104_151720",
+          "planned_gold_snapshot": "20260104_151810"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6532f4f2-9e63-03d3-53e5-ec755b775b24",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/6532f4f2-9e63-03d3-53e5-ec755b775b24.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_radar_chart",
+      "instruction": "Could you create a radar chart in the Excel workbook?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 21,
+      "trajectory_end": 23,
+      "trajectory_evidence": "Select range A1:D9, click Insert > Radar Chart > Radar with Markers. Rename the chart title to 'Customer Satisfaction Comparison'. Resize and place the chart on the right side of the worksheet.",
+      "planned_input_snapshot": "20260104_151810",
+      "planned_gold_snapshot": "20260104_152203",
+      "snapshot_evidence": "Customer_Satisfaction_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260104_151810",
+      "gold_snapshot": "20260104_152203",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Customer_Satisfaction_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260104_151810",
+        "trajectory_window": {
+          "trajectory_start": 21,
+          "trajectory_end": 23,
+          "search_start_index": 8,
+          "search_end_index": 9,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260104_151810",
+          "planned_gold_snapshot": "20260104_152203"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "3f88b1fa-e67b-0a75-40c4-7ca4da45d695",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/3f88b1fa-e67b-0a75-40c4-7ca4da45d695.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_powerpoint_presentation_and_link_excel_data_to_powerpoint_and_create_visual_summaries_in_powerpoint_and_save_final_powerpoint_presentation",
+      "instruction": "Could you open Microsoft PowerPoint 365 and create a new presentation for the customer satisfaction analysis, and then link the relevant Excel data to the PowerPoint slides, and then create visual summaries, such as charts and graphs, in the PowerPoint presentation using the linked data, and then save the final PowerPoint presentation with the linked data and visual summaries?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 39,
+      "trajectory_evidence": "Open Microsoft PowerPoint 365. Select New > Blank Presentation. On the title slide, type 'Customer Satisfaction Report'. Enter 'Survey Results Overview' as the subtitle. | Click Home > New Slide > Title and Content. Type 'Survey Data Overview' as the slide title. Switch to Excel 365, select the formatted table. Return to PowerPoint 365, click the content placeholder. Select Home > Paste > Paste Special, choose Paste Link and select 'Microsoft Excel Worksheet Object', then click OK. Resize the linked table to fit the slide layout. | Click Home > New Slide > Title and Content. Type 'Satisfaction Comparison Chart' as the slide title. Switch to Excel 365, select the radar chart, Copy and paste it into the slide. Click Chart Design > Change Colors and select a different color set. | Click File > Save As, name the file 'Customer_Satisfaction_Presentation.pptx', and save it.",
+      "planned_input_snapshot": "20260104_152203",
+      "planned_gold_snapshot": "20260104_153033",
+      "snapshot_evidence": "New files appeared: Customer_Satisfaction_Presentaion.pptx. | No observable change in snapshots, but the trajectory indicates linking data. | No observable change in snapshots, but the trajectory indicates creating visual summaries. | No observable change in snapshots, but the trajectory indicates saving the final presentation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260104_152203",
+      "gold_snapshot": "20260104_153033",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Customer_Satisfaction_Presentaion.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_pptx_files evaluator.",
+        "changed_file_count": 2,
+        "merged_with_following_stage": {
+          "stage_index": 8,
+          "stage_name": "save_final_powerpoint_presentation",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_powerpoint_presentation",
+        "link_excel_data_to_powerpoint",
+        "create_visual_summaries_in_powerpoint",
+        "save_final_powerpoint_presentation"
+      ],
+      "merged_stage_indices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "generated_examples": [
+        {
+          "example_id": "6addadf7-69fa-dccb-34ce-49e5317f7145",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/6addadf7-69fa-dccb-34ce-49e5317f7145.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you perform necessary calculations on the survey data in Excel?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260104_151321",
+    "20260104_151336",
+    "20260104_151433",
+    "20260104_151539",
+    "20260104_151611",
+    "20260104_151720",
+    "20260104_151748",
+    "20260104_151810",
+    "20260104_151903",
+    "20260104_152203",
+    "20260104_152240",
+    "20260104_152313",
+    "20260104_153033"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260104_151321",
+      "to": "20260104_151336",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Customer.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Customer"
+            ]
+          }
+        },
+        "headers_added": [
+          "Customer"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8415,
+              "to": 8799
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Customer"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260104_151336",
+      "to": "20260104_151433",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 1 to 5 non-empty cells; new visible headers or values include: Service, Quality, Value, Average Score.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 1,
+            "to": 5
+          },
+          "headers": {
+            "from": [
+              "Customer"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        },
+        "headers_added": [
+          "Service",
+          "Quality",
+          "Value",
+          "Average Score"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8799,
+              "to": 8893
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 1,
+                "to": 5
+              },
+              "headers": {
+                "from": [
+                  "Customer"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260104_151433",
+      "to": "20260104_151539",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8893,
+              "to": 8978
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260104_151539",
+      "to": "20260104_151611",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 5 to 13 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 5,
+            "to": 13
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8978,
+              "to": 9056
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 5,
+                "to": 13
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260104_151611",
+      "to": "20260104_151720",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 13 to 37 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 13,
+            "to": 37
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9056,
+              "to": 9142
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 13,
+                "to": 37
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260104_151720",
+      "to": "20260104_151748",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 37 to 38 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 37,
+            "to": 38
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9142,
+              "to": 9458
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 37,
+                "to": 38
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260104_151748",
+      "to": "20260104_151810",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 38 to 45 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 38,
+            "to": 45
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9458,
+              "to": 9561
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 38,
+                "to": 45
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260104_151810",
+      "to": "20260104_151903",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9561,
+              "to": 9686
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260104_151903",
+      "to": "20260104_152203",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9686,
+              "to": 15477
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260104_152203",
+      "to": "20260104_152240",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15477,
+              "to": 15466
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260104_152240",
+      "to": "20260104_152313",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15466,
+              "to": 15461
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260104_152313",
+      "to": "20260104_153033",
+      "human_summary": "New files appeared: Customer_Satisfaction_Presentaion.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Customer_Satisfaction_Presentaion.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Customer_Satisfaction_Presentaion.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_08",
+    "snapshot_count": 13,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260104_151321",
+        "to": "20260104_151336",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Customer.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [],
+              "to": [
+                "Customer"
+              ]
+            }
+          },
+          "headers_added": [
+            "Customer"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8415,
+                "to": 8799
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [],
+                  "to": [
+                    "Customer"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260104_151336",
+        "to": "20260104_151433",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 1 to 5 non-empty cells; new visible headers or values include: Service, Quality, Value, Average Score.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 1,
+              "to": 5
+            },
+            "headers": {
+              "from": [
+                "Customer"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          },
+          "headers_added": [
+            "Service",
+            "Quality",
+            "Value",
+            "Average Score"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8799,
+                "to": 8893
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 1,
+                  "to": 5
+                },
+                "headers": {
+                  "from": [
+                    "Customer"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260104_151433",
+        "to": "20260104_151539",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8893,
+                "to": 8978
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260104_151539",
+        "to": "20260104_151611",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 5 to 13 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 5,
+              "to": 13
+            },
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8978,
+                "to": 9056
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 5,
+                  "to": 13
+                },
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260104_151611",
+        "to": "20260104_151720",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 13 to 37 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 13,
+              "to": 37
+            },
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9056,
+                "to": 9142
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 13,
+                  "to": 37
+                },
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260104_151720",
+        "to": "20260104_151748",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 37 to 38 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 37,
+              "to": 38
+            },
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9142,
+                "to": 9458
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 37,
+                  "to": 38
+                },
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260104_151748",
+        "to": "20260104_151810",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 38 to 45 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 38,
+              "to": 45
+            },
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9458,
+                "to": 9561
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 38,
+                  "to": 45
+                },
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260104_151810",
+        "to": "20260104_151903",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9561,
+                "to": 9686
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260104_151903",
+        "to": "20260104_152203",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9686,
+                "to": 15477
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260104_152203",
+        "to": "20260104_152240",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 15477,
+                "to": 15466
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260104_152240",
+        "to": "20260104_152313",
+        "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Customer_Satisfaction_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ],
+              "to": [
+                "Customer",
+                "Service",
+                "Quality",
+                "Value",
+                "Average Score"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Customer_Satisfaction_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 15466,
+                "to": 15461
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ],
+                  "to": [
+                    "Customer",
+                    "Service",
+                    "Quality",
+                    "Value",
+                    "Average Score"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260104_152313",
+        "to": "20260104_153033",
+        "human_summary": "New files appeared: Customer_Satisfaction_Presentaion.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Customer_Satisfaction_Presentaion.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Customer_Satisfaction_Presentaion.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open Microsoft Excel 365, select New > Blank Workbook."
+    },
+    {
+      "index": 3,
+      "instruction": "In cell A1, type Customer."
+    },
+    {
+      "index": 4,
+      "instruction": "In cells B1, C1, D1, and E1, type Service, Quality, Value, and Average Score."
+    },
+    {
+      "index": 11,
+      "instruction": "Adjust the font size of the table to 14."
+    },
+    {
+      "index": 14,
+      "instruction": "Click the 'Average Score' column and adjust the column width to 16.86."
+    },
+    {
+      "index": 15,
+      "instruction": "In cells A2:A9, enter Customer 1 through Customer 8."
+    },
+    {
+      "index": 16,
+      "instruction": "Enter numeric ratings from 1 to 5 for Service, Quality, and Value for each customer."
+    },
+    {
+      "index": 17,
+      "instruction": "Click cell E2, type '=AVERAGE(B2:D2)', and press Enter."
+    },
+    {
+      "index": 18,
+      "instruction": "Drag the fill handle down to cell E9."
+    },
+    {
+      "index": 19,
+      "instruction": "Select range A1:E9, click Home > Conditional Formatting > Color Scales, and apply a three-color scale to the table."
+    },
+    {
+      "index": 20,
+      "instruction": "Click anywhere in the table, then select Data > Sort, sort by Average Score, order Largest to Smallest."
+    },
+    {
+      "index": 21,
+      "instruction": "Select range A1:D9, click Insert > Radar Chart > Radar with Markers."
+    },
+    {
+      "index": 22,
+      "instruction": "Rename the chart title to 'Customer Satisfaction Comparison'."
+    },
+    {
+      "index": 23,
+      "instruction": "Resize and place the chart on the right side of the worksheet."
+    },
+    {
+      "index": 24,
+      "instruction": "Click File > Save As, name the file 'Customer_Satisfaction_Data.xlsx', and save it."
+    },
+    {
+      "index": 25,
+      "instruction": "Open Microsoft PowerPoint 365."
+    },
+    {
+      "index": 26,
+      "instruction": "Select New > Blank Presentation."
+    },
+    {
+      "index": 27,
+      "instruction": "On the title slide, type 'Customer Satisfaction Report'."
+    },
+    {
+      "index": 28,
+      "instruction": "Enter 'Survey Results Overview' as the subtitle."
+    },
+    {
+      "index": 29,
+      "instruction": "Click Home > New Slide > Title and Content."
+    },
+    {
+      "index": 30,
+      "instruction": "Type 'Survey Data Overview' as the slide title."
+    },
+    {
+      "index": 31,
+      "instruction": "Switch to Excel 365, select the formatted table."
+    },
+    {
+      "index": 32,
+      "instruction": "Return to PowerPoint 365, click the content placeholder."
+    },
+    {
+      "index": 33,
+      "instruction": "Select Home > Paste > Paste Special, choose Paste Link and select 'Microsoft Excel Worksheet Object', then click OK."
+    },
+    {
+      "index": 34,
+      "instruction": "Resize the linked table to fit the slide layout."
+    },
+    {
+      "index": 35,
+      "instruction": "Click Home > New Slide > Title and Content."
+    },
+    {
+      "index": 36,
+      "instruction": "Type 'Satisfaction Comparison Chart' as the slide title."
+    },
+    {
+      "index": 37,
+      "instruction": "Switch to Excel 365, select the radar chart, Copy and paste it into the slide."
+    },
+    {
+      "index": 38,
+      "instruction": "Click Chart Design > Change Colors and select a different color set."
+    },
+    {
+      "index": 39,
+      "instruction": "Click File > Save As, name the file 'Customer_Satisfaction_Presentation.pptx', and save it."
+    },
+    {
+      "index": 40,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 8,
+    "kept_count": 5,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 13
+  }
+}

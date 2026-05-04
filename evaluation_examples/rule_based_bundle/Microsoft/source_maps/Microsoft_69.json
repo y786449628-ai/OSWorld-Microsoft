@@ -1,0 +1,1748 @@
+{
+  "source_name": "Microsoft_69",
+  "source_file": "Microsoft_69.txt",
+  "source_id": "530c493bedaf",
+  "source_question": "Create a new Word document named \"Project_Status_Report_Memo.docx\" directly on your desktop. Design a professional one-page business memo to communicate a project's progress to stakeholders. The memo must include the following elements: a company letterhead section with the logo placeholder and current date, a clear \"MEMORANDUM\" header with standard \"TO:\", \"FROM:\", \"DATE:\", and \"SUBJECT:\" fields, three main content paragraphs with headings (Project Update, Key Accomplishments, Next Steps), a table to list upcoming milestones with dates and owners, and a formal closing with signature lines. Apply and modify built-in heading styles, adjust paragraph spacing, insert a horizontal line separator, and use a professional font throughout. Finally, save the document and export it as a PDF file to your desktop.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new Word document named 'Project_Status_Report_Memo.docx' on your desktop?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you design a professional one-page business memo in the document to communicate a project's progress to stakeholders?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a company letterhead section with a logo placeholder and the current date at the top of the memo?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you include a clear 'MEMORANDUM' header with standard 'TO:', 'FROM:', 'DATE:', and 'SUBJECT:' fields?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you write three main content paragraphs with headings (Project Update, Key Accomplishments, Next Steps)?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you insert a table to list upcoming milestones with dates and owners?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a formal closing with signature lines at the end of the memo?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you apply and modify built-in heading styles, adjust paragraph spacing, insert a horizontal line separator, and use a professional font throughout the document?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 9,
+      "instruction": "Could you save the document and export it as a PDF file to your desktop?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_new_word_document",
+      "instruction": "Could you create a new Word document named 'Project_Status_Report_Memo.docx' on your desktop?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click, select New, choose Microsoft Word Document, rename, and open the file.",
+      "planned_input_snapshot": "20260114_161816",
+      "planned_gold_snapshot": "20260114_161819",
+      "snapshot_evidence": "New file 'Project_Status_Report_Memo.docx' created, replacing 'New Microsoft Word Document.docx'.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_letterhead_and_memo_header",
+      "instruction": "Could you design a professional one-page business memo in the document to communicate a project's progress to stakeholders? Could you add a company letterhead section with a logo placeholder and the current date at the top of the memo? Could you include a clear 'MEMORANDUM' header with standard 'TO:', 'FROM:', 'DATE:', and 'SUBJECT:' fields?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Add letterhead, insert logo, add date, type 'MEMORANDUM', and create memo header fields.",
+      "planned_input_snapshot": "20260114_161819",
+      "planned_gold_snapshot": "20260114_162027",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_main_content_paragraphs",
+      "instruction": "Could you write three main content paragraphs with headings (Project Update, Key Accomplishments, Next Steps)?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Type headings and content for Project Update, Key Accomplishments, and Next Steps.",
+      "planned_input_snapshot": "20260114_162027",
+      "planned_gold_snapshot": "20260114_162229",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "insert_table_and_closing",
+      "instruction": "Could you insert a table to list upcoming milestones with dates and owners? Could you add a formal closing with signature lines at the end of the memo?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Insert a table for milestones and add a closing paragraph with signature lines.",
+      "planned_input_snapshot": "20260114_162229",
+      "planned_gold_snapshot": "20260114_162332",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "apply_styles_and_formatting",
+      "instruction": "Could you apply and modify built-in heading styles, adjust paragraph spacing, insert a horizontal line separator, and use a professional font throughout the document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Apply and modify heading styles, adjust paragraph spacing, insert a horizontal line, and set the font.",
+      "planned_input_snapshot": "20260114_162332",
+      "planned_gold_snapshot": "20260114_162719",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        8
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the document and export it as a PDF file to your desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the document and export it as a PDF.",
+      "planned_input_snapshot": "20260114_162719",
+      "planned_gold_snapshot": "20260114_162747",
+      "snapshot_evidence": "New file 'Project_Status_Report_Memo.pdf' created.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        9
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_new_word_document",
+      "instruction": "Could you create a new Word document named 'Project_Status_Report_Memo.docx' on your desktop?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click, select New, choose Microsoft Word Document, rename, and open the file.",
+      "planned_input_snapshot": "20260114_161816",
+      "planned_gold_snapshot": "20260114_161819",
+      "snapshot_evidence": "New file 'Project_Status_Report_Memo.docx' created, replacing 'New Microsoft Word Document.docx'.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": "20260114_161816",
+      "gold_snapshot": "20260114_161929",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Project_Status_Report_Memo.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_161816",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_161816",
+          "planned_gold_snapshot": "20260114_161819"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "49be1281-9089-f95b-0bd2-1d8d9c8ba095",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/49be1281-9089-f95b-0bd2-1d8d9c8ba095.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_letterhead_and_memo_header",
+      "instruction": "Could you design a professional one-page business memo in the document to communicate a project's progress to stakeholders? Could you add a company letterhead section with a logo placeholder and the current date at the top of the memo? Could you include a clear 'MEMORANDUM' header with standard 'TO:', 'FROM:', 'DATE:', and 'SUBJECT:' fields?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Add letterhead, insert logo, add date, type 'MEMORANDUM', and create memo header fields.",
+      "planned_input_snapshot": "20260114_161819",
+      "planned_gold_snapshot": "20260114_162027",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": "20260114_161929",
+      "gold_snapshot": "20260114_162027",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Status_Report_Memo.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_161819",
+        "chain_input_snapshot": "20260114_161929",
+        "chain_input_replaced": "20260114_161819",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 5,
+          "search_start_index": 3,
+          "search_end_index": 3,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_161819",
+          "planned_gold_snapshot": "20260114_162027"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "ee9eb408-b1b3-d2a4-37b7-4ff760e6eee0",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/ee9eb408-b1b3-d2a4-37b7-4ff760e6eee0.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_main_content_paragraphs",
+      "instruction": "Could you write three main content paragraphs with headings (Project Update, Key Accomplishments, Next Steps)?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Type headings and content for Project Update, Key Accomplishments, and Next Steps.",
+      "planned_input_snapshot": "20260114_162027",
+      "planned_gold_snapshot": "20260114_162229",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": "20260114_162027",
+      "gold_snapshot": "20260114_162229",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Project_Status_Report_Memo.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260114_162229",
+        "trajectory_window": {
+          "trajectory_start": 7,
+          "trajectory_end": 9,
+          "search_start_index": 4,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_162027",
+          "planned_gold_snapshot": "20260114_162229"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "8880c81e-09a5-e566-19a3-1c04fcd3a622",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/8880c81e-09a5-e566-19a3-1c04fcd3a622.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "insert_table_and_closing",
+      "instruction": "Could you insert a table to list upcoming milestones with dates and owners? Could you add a formal closing with signature lines at the end of the memo?",
+      "task_kind": "word_insert_table_or_image",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Insert a table for milestones and add a closing paragraph with signature lines.",
+      "planned_input_snapshot": "20260114_162229",
+      "planned_gold_snapshot": "20260114_162332",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": "20260114_162229",
+      "gold_snapshot": "20260114_162332",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Status_Report_Memo.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260114_162332",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 10,
+          "search_start_index": 7,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_162229",
+          "planned_gold_snapshot": "20260114_162332"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "d7e0c59f-597e-6ba0-170e-b7a82af3c07d",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/d7e0c59f-597e-6ba0-170e-b7a82af3c07d.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "apply_styles_and_formatting",
+      "instruction": "Could you apply and modify built-in heading styles, adjust paragraph spacing, insert a horizontal line separator, and use a professional font throughout the document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Apply and modify heading styles, adjust paragraph spacing, insert a horizontal line, and set the font.",
+      "planned_input_snapshot": "20260114_162332",
+      "planned_gold_snapshot": "20260114_162719",
+      "snapshot_evidence": "Document size increased, indicating content addition and formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable state change from input to gold snapshot.",
+      "input_snapshot": "20260114_162332",
+      "gold_snapshot": "20260114_162719",
+      "linked_preview_tasks": [
+        8
+      ],
+      "target_relative_path": "Project_Status_Report_Memo.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260114_162719",
+        "trajectory_window": {
+          "trajectory_start": 11,
+          "trajectory_end": 13,
+          "search_start_index": 9,
+          "search_end_index": 13,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_162332",
+          "planned_gold_snapshot": "20260114_162719"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "aa7813f7-1c6c-8a54-da53-24a100aac467",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/aa7813f7-1c6c-8a54-da53-24a100aac467.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the document and export it as a PDF file to your desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the document and export it as a PDF.",
+      "planned_input_snapshot": "20260114_162719",
+      "planned_gold_snapshot": "20260114_162747",
+      "snapshot_evidence": "New file 'Project_Status_Report_Memo.pdf' created.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": "20260114_162719",
+      "gold_snapshot": "20260114_162747",
+      "linked_preview_tasks": [
+        9
+      ],
+      "target_relative_path": "Project_Status_Report_Memo.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 12,
+          "trajectory_end": 14,
+          "search_start_index": 14,
+          "search_end_index": 14,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_162719",
+          "planned_gold_snapshot": "20260114_162747"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0063e80b-2b3d-7f59-6790-ef60f524bb13",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/0063e80b-2b3d-7f59-6790-ef60f524bb13.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you design a professional one-page business memo in the document to communicate a project's progress to stakeholders?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a company letterhead section with a logo placeholder and the current date at the top of the memo?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you include a clear 'MEMORANDUM' header with standard 'TO:', 'FROM:', 'DATE:', and 'SUBJECT:' fields?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you insert a table to list upcoming milestones with dates and owners?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a formal closing with signature lines at the end of the memo?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260114_161816",
+    "20260114_161819",
+    "20260114_161929",
+    "20260114_162027",
+    "20260114_162104",
+    "20260114_162138",
+    "20260114_162229",
+    "20260114_162252",
+    "20260114_162332",
+    "20260114_162409",
+    "20260114_162436",
+    "20260114_162547",
+    "20260114_162610",
+    "20260114_162719",
+    "20260114_162747",
+    "20260114_162754",
+    "20260114_162758"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260114_161816",
+      "to": "20260114_161819",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Project_Status_Report_Memo.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Status_Report_Memo.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_161819",
+      "to": "20260114_161929",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 0,
+              "to": 13554
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13554
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_161929",
+      "to": "20260114_162027",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 13554,
+              "to": 46904
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13554,
+              "to": 46904
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_162027",
+      "to": "20260114_162104",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 46904,
+              "to": 47088
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 46904,
+              "to": 47088
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_162104",
+      "to": "20260114_162138",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 47088,
+              "to": 47197
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 47088,
+              "to": 47197
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_162138",
+      "to": "20260114_162229",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 47197,
+              "to": 47436
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 47197,
+              "to": 47436
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260114_162229",
+      "to": "20260114_162252",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 47436,
+              "to": 49602
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 47436,
+              "to": 49602
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260114_162252",
+      "to": "20260114_162332",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 49602,
+              "to": 50950
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 49602,
+              "to": 50950
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260114_162332",
+      "to": "20260114_162409",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 50950,
+              "to": 51430
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 50950,
+              "to": 51430
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260114_162409",
+      "to": "20260114_162436",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 51430,
+              "to": 51540
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 51430,
+              "to": 51540
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260114_162436",
+      "to": "20260114_162547",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 51540,
+              "to": 52168
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 51540,
+              "to": 52168
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260114_162547",
+      "to": "20260114_162610",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 52168,
+              "to": 52306
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 52168,
+              "to": 52306
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260114_162610",
+      "to": "20260114_162719",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 52306,
+              "to": 52459
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 52306,
+              "to": 52459
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260114_162719",
+      "to": "20260114_162747",
+      "human_summary": "New files appeared: Project_Status_Report_Memo.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project_Status_Report_Memo.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Status_Report_Memo.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260114_162747",
+      "to": "20260114_162754",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260114_162754",
+      "to": "20260114_162758",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 52459,
+              "to": 52480
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 52459,
+              "to": 52480
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_69",
+    "snapshot_count": 17,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260114_161816",
+        "to": "20260114_161819",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Project_Status_Report_Memo.docx"
+          ],
+          "files_removed": [
+            "New Microsoft Word Document.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project_Status_Report_Memo.docx"
+          ],
+          "files_removed": [
+            "New Microsoft Word Document.docx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260114_161819",
+        "to": "20260114_161929",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 0,
+                "to": 13554
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 0,
+                "to": 13554
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260114_161929",
+        "to": "20260114_162027",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 13554,
+                "to": 46904
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13554,
+                "to": 46904
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260114_162027",
+        "to": "20260114_162104",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 46904,
+                "to": 47088
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 46904,
+                "to": 47088
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260114_162104",
+        "to": "20260114_162138",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 47088,
+                "to": 47197
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 47088,
+                "to": 47197
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260114_162138",
+        "to": "20260114_162229",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 47197,
+                "to": 47436
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 47197,
+                "to": 47436
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260114_162229",
+        "to": "20260114_162252",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 47436,
+                "to": 49602
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 47436,
+                "to": 49602
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260114_162252",
+        "to": "20260114_162332",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 49602,
+                "to": 50950
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 49602,
+                "to": 50950
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260114_162332",
+        "to": "20260114_162409",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 50950,
+                "to": 51430
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 50950,
+                "to": 51430
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260114_162409",
+        "to": "20260114_162436",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 51430,
+                "to": 51540
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 51430,
+                "to": 51540
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260114_162436",
+        "to": "20260114_162547",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 51540,
+                "to": 52168
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 51540,
+                "to": 52168
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260114_162547",
+        "to": "20260114_162610",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 52168,
+                "to": 52306
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 52168,
+                "to": 52306
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260114_162610",
+        "to": "20260114_162719",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 52306,
+                "to": 52459
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 52306,
+                "to": 52459
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260114_162719",
+        "to": "20260114_162747",
+        "human_summary": "New files appeared: Project_Status_Report_Memo.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Project_Status_Report_Memo.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project_Status_Report_Memo.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260114_162747",
+        "to": "20260114_162754",
+        "human_summary": "New files appeared: Microsoft Edge.lnk.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260114_162754",
+        "to": "20260114_162758",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "size": {
+                "from": 52459,
+                "to": 52480
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Status_Report_Memo.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 52459,
+                "to": 52480
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "On your desktop, right-click on an empty area, select New, then choose Microsoft Word Document. Rename the new file \"Project_Status_Report_Memo.docx\" and double-click to open it."
+    },
+    {
+      "index": 3,
+      "instruction": "At the very top of the document, create a letterhead: Type your company name (e.g., \"Summit Solutions Inc.\"). Press Enter and add the address (e.g., \"456 Corporate Avenue, City, State 67890\"). Select this text, go to the Home tab, and change the Font to Cambria, Size to 14, and apply Bold. Center-align the text."
+    },
+    {
+      "index": 4,
+      "instruction": "Press Enter to move to a new line. Go to the Insert tab, click Pictures, and select Online Pictures. Search for \"business logo icon\", insert a simple icon, resize it, and position it to the left of the company name. Press Enter twice. Go to the Insert tab, click Date & Time, select a format (e.g., \"May 16, 2024\"), check Update automatically, and click OK. Align this date to the right."
+    },
+    {
+      "index": 5,
+      "instruction": "Press Enter three times. Type \"MEMORANDUM\" in capital letters. Select it, go to the Home tab, and apply the Heading 1 style. Center-align it. Press Enter twice. Create the memo header fields by typing the following lines: TO: [Recipient Name/Department] FROM: [Your Name/Department] DATE: [Current Date will auto-populate if you used the field in Step 4, otherwise type it] SUBJECT: Project Apollo - Q3 Status Update (Replace the bracketed [ ] text with your information)."
+    },
+    {
+      "index": 6,
+      "instruction": "Go to the Insert tab, click Shapes, and select the first Line shape. Draw a horizontal line across the page below the \"SUBJECT\" line to create a visual separator."
+    },
+    {
+      "index": 7,
+      "instruction": "Press Enter twice. Type \"1. Project Update\". Select this text, go to the Home tab, and apply the Heading 2 style. Press Enter and type a brief status paragraph (e.g., \"This memo provides an update on Project Apollo's third-quarter progress against our key objectives. Overall, the project remains on schedule and within budget.\")."
+    },
+    {
+      "index": 8,
+      "instruction": "Press Enter twice. Type \"2. Key Accomplishments\" and apply the Heading 2 style. Press Enter. Go to the Home tab and click the Bullets button. List 2-3 bullet points of sample accomplishments."
+    },
+    {
+      "index": 9,
+      "instruction": "Press Enter twice. Type \"3. Next Steps & Upcoming Milestones\" and apply the Heading 2 style. Press Enter twice. Go to the Insert tab, click Table, and insert a table with 3 columns and 4 rows. In the first row, type \"Milestone\", \"Target Date\", \"Owner\". Fill the next two rows with sample data (e.g., \"Final Design Review\", \"2024-08-15\", \"Jane Smith\")."
+    },
+    {
+      "index": 10,
+      "instruction": "Press Enter twice after the table. Type a closing paragraph: \"We will continue to provide monthly updates. Please contact the undersigned with any questions.\""
+    },
+    {
+      "index": 11,
+      "instruction": "Select all body text. Go to the Home tab, set the Font to Calibri and Size to 11. Go to the Layout tab, in the Paragraph section, set Spacing After to 8 pt."
+    },
+    {
+      "index": 12,
+      "instruction": "Click File, select Save As, ensure the save location is Desktop, and click Save."
+    },
+    {
+      "index": 13,
+      "instruction": "Click File again, select Export, then choose Create PDF/XPS Document. Click Create PDF/XPS, confirm the save location is Desktop, and click Publish."
+    },
+    {
+      "index": 14,
+      "instruction": "Close the software"
+    },
+    {
+      "index": 15,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 6,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 17
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "49be1281-9089-f95b-0bd2-1d8d9c8ba095",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'Project_Status_Report_Memo.docx' on your desktop?",
+  "source": "Microsoft_69 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_161816/Desktop/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\User\\Desktop\\New Microsoft Word Document.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_161929/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/49be1281-9089-f95b-0bd2-1d8d9c8ba095",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx",
+      "dest": "Project_Status_Report_Memo.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.docx",
+      "dest": "Project_Status_Report_Memo_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Report_Memo.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

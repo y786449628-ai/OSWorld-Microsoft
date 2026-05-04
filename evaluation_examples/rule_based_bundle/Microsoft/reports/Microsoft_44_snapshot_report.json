@@ -1,0 +1,1469 @@
+{
+  "source_name": "Microsoft_44",
+  "snapshot_count": 17,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260108_215923",
+      "to": "20260108_215959",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 0 to 8 non-empty cells; new visible headers or values include: Student ID, Name, Politics, Chinese, Mathematics, English.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 8
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        },
+        "headers_added": [
+          "Student ID",
+          "Name",
+          "Politics",
+          "Chinese",
+          "Mathematics",
+          "English",
+          "Physics",
+          "Chemistry"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 7961,
+              "to": 8589
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 8
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260108_215959",
+      "to": "20260108_220032",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 8 to 16 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 8,
+            "to": 16
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8589,
+              "to": 8697
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 8,
+                "to": 16
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260108_220032",
+      "to": "20260108_220103",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 16 to 24 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 16,
+            "to": 24
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8697,
+              "to": 8751
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 16,
+                "to": 24
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260108_220103",
+      "to": "20260108_220222",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 24 to 40 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 24,
+            "to": 40
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8751,
+              "to": 8834
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 24,
+                "to": 40
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260108_220222",
+      "to": "20260108_220241",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 40 to 56 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 40,
+            "to": 56
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8834,
+              "to": 8946
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 40,
+                "to": 56
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260108_220241",
+      "to": "20260108_220307",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 56 to 64 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 56,
+            "to": 64
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8946,
+              "to": 8996
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 56,
+                "to": 64
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260108_220307",
+      "to": "20260108_220325",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 64 to 72 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 64,
+            "to": 72
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8996,
+              "to": 9048
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 64,
+                "to": 72
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260108_220325",
+      "to": "20260108_220353",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 72 to 80 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 72,
+            "to": 80
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9048,
+              "to": 9099
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 72,
+                "to": 80
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260108_220353",
+      "to": "20260108_220420",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 80 to 88 non-empty cells; new visible headers or values include: 0010, Ye Jianqin, 72, 53, 81, 75.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 80,
+            "to": 88
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        },
+        "headers_added": [
+          "0010",
+          "Ye Jianqin",
+          "72",
+          "53",
+          "81",
+          "75",
+          "87",
+          "88"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9099,
+              "to": 9160
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 80,
+                "to": 88
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260108_220420",
+      "to": "20260108_220435",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 88 to 96 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 88,
+            "to": 96
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9160,
+              "to": 9212
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 88,
+                "to": 96
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260108_220435",
+      "to": "20260108_220457",
+      "human_summary": "Material/Student Transcript.xlsx changed: spreadsheet content changed from 96 to 104 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 96,
+            "to": 104
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9212,
+              "to": 9266
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 96,
+                "to": 104
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260108_220457",
+      "to": "20260108_220534",
+      "human_summary": "Material/Student Transcript.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9266,
+              "to": 9297
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260108_220534",
+      "to": "20260108_220715",
+      "human_summary": "Material/Student Transcript.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9297,
+              "to": 10423
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260108_220715",
+      "to": "20260108_220758",
+      "human_summary": "Material/Student Transcript.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10423,
+              "to": 10455
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260108_220758",
+      "to": "20260108_221018",
+      "human_summary": "Material/Student Transcript.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Student Transcript.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ],
+            "to": [
+              "Student ID",
+              "Name",
+              "Politics",
+              "Chinese",
+              "Mathematics",
+              "English",
+              "Physics",
+              "Chemistry",
+              "0010",
+              "Ye Jianqin",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Student Transcript.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10455,
+              "to": 16006
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ],
+                "to": [
+                  "Student ID",
+                  "Name",
+                  "Politics",
+                  "Chinese",
+                  "Mathematics",
+                  "English",
+                  "Physics",
+                  "Chemistry",
+                  "0010",
+                  "Ye Jianqin",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260108_221018",
+      "to": "20260108_221029",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

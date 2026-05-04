@@ -1,0 +1,333 @@
+{
+  "source_name": "Microsoft_65",
+  "snapshot_count": 12,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260114_190038",
+      "to": "20260114_190038_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_190038_1",
+      "to": "20260114_190038_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_190038_2",
+      "to": "20260114_190150",
+      "human_summary": "Data1.xlsx changed: spreadsheet content changed from 60 to 54 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Data1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 60,
+            "to": 54
+          },
+          "headers": {
+            "from": [
+              "Product Number",
+              "Product Name",
+              "Warehousing Date",
+              "Unit price",
+              "Quantity",
+              "Amount",
+              "Product category"
+            ],
+            "to": [
+              "Product Number",
+              "Product Name",
+              "Warehousing Date",
+              "Unit price",
+              "Quantity",
+              "Amount",
+              "Product category"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Data1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11853,
+              "to": 11812
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 60,
+                "to": 54
+              },
+              "headers": {
+                "from": [
+                  "Product Number",
+                  "Product Name",
+                  "Warehousing Date",
+                  "Unit price",
+                  "Quantity",
+                  "Amount",
+                  "Product category"
+                ],
+                "to": [
+                  "Product Number",
+                  "Product Name",
+                  "Warehousing Date",
+                  "Unit price",
+                  "Quantity",
+                  "Amount",
+                  "Product category"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_190150",
+      "to": "20260114_190150_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_190150_1",
+      "to": "20260114_190150_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_190150_2",
+      "to": "20260114_190150_3",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260114_190150_3",
+      "to": "20260114_190624",
+      "human_summary": "Data1.xlsx changed: spreadsheet content changed from 54 to 62 non-empty cells; new visible headers or values include: Office supplies, 37350.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Data1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 54,
+            "to": 62
+          },
+          "headers": {
+            "from": [
+              "Product Number",
+              "Product Name",
+              "Warehousing Date",
+              "Unit price",
+              "Quantity",
+              "Amount",
+              "Product category"
+            ],
+            "to": [
+              "Product Number",
+              "Product Name",
+              "Warehousing Date",
+              "Unit price",
+              "Quantity",
+              "Amount",
+              "Product category",
+              "Office supplies",
+              "37350"
+            ]
+          }
+        },
+        "headers_added": [
+          "Office supplies",
+          "37350"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Data1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11812,
+              "to": 15632
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 54,
+                "to": 62
+              },
+              "headers": {
+                "from": [
+                  "Product Number",
+                  "Product Name",
+                  "Warehousing Date",
+                  "Unit price",
+                  "Quantity",
+                  "Amount",
+                  "Product category"
+                ],
+                "to": [
+                  "Product Number",
+                  "Product Name",
+                  "Warehousing Date",
+                  "Unit price",
+                  "Quantity",
+                  "Amount",
+                  "Product category",
+                  "Office supplies",
+                  "37350"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260114_190624",
+      "to": "20260114_190624_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260114_190624_1",
+      "to": "20260114_190656",
+      "human_summary": "New files appeared: Data1-new.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Data1-new.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Data1-new.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260114_190656",
+      "to": "20260114_190656_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260114_190656_1",
+      "to": "20260114_190656_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

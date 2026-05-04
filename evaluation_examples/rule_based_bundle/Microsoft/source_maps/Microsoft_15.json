@@ -1,0 +1,431 @@
+{
+  "source_name": "Microsoft_15",
+  "source_file": "Microsoft_15.txt",
+  "source_id": "5eab6527a2cf",
+  "source_question": "There are some tasks for an important project, current exist a task list, which including task name, start date, days and end date information, and project manager want to check the project status by Gantt chart in Excel application.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the task list in Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a Gantt chart based on the task list, including task name, start date, and end date?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you format the Gantt chart to clearly show the project status?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you save the Excel file with the Gantt chart for the project manager?",
+      "mapped_stage_indices": [
+        3
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_task_list_in_excel",
+      "instruction": "Could you open the task list in Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Excel and load the project file from Desktop.",
+      "planned_input_snapshot": "20260106_122235",
+      "planned_gold_snapshot": "20260106_123208",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_gantt_chart_and_format",
+      "instruction": "Could you create a Gantt chart based on the task list, including task name, start date, and end date? Could you format the Gantt chart to clearly show the project status?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 31,
+      "trajectory_evidence": "Create and format a Gantt chart using the task list data.",
+      "planned_input_snapshot": "20260106_123208",
+      "planned_gold_snapshot": "20260106_123208",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition for this stage. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "save_excel_file_with_gantt_chart",
+      "instruction": "Could you save the Excel file with the Gantt chart for the project manager?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 32,
+      "trajectory_end": 32,
+      "trajectory_evidence": "Save the Excel file as 'final result.xlsx' on the desktop.",
+      "planned_input_snapshot": "20260106_123208",
+      "planned_gold_snapshot": "20260106_123208",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition for this stage. Needs review to ensure it can be benchmarked.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_task_list_in_excel_and_create_gantt_chart_and_format_and_save_excel_file_with_gantt_chart",
+      "instruction": "Could you open the task list in Excel, and then create a Gantt chart based on the task list, including task name, start date, and end date? Could you format the Gantt chart to clearly show the project status, and then save the Excel file with the Gantt chart for the project manager?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 32,
+      "trajectory_evidence": "Open Excel and load the project file from Desktop. | Create and format a Gantt chart using the task list data. | Save the Excel file as 'final result.xlsx' on the desktop.",
+      "planned_input_snapshot": "20260106_122235",
+      "planned_gold_snapshot": "20260106_123208",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": "20260106_122235",
+      "gold_snapshot": "20260106_123208",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260106_122235",
+          "planned_gold_snapshot": "20260106_123208"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 3,
+          "stage_name": "save_excel_file_with_gantt_chart",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "open_task_list_in_excel",
+        "create_gantt_chart_and_format",
+        "save_excel_file_with_gantt_chart"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3
+      ],
+      "generated_examples": [
+        {
+          "example_id": "6855cff6-a484-3b11-ba62-56cfcbd957b8",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/6855cff6-a484-3b11-ba62-56cfcbd957b8.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you create a Gantt chart based on the task list, including task name, start date, and end date?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you format the Gantt chart to clearly show the project status?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260106_122235",
+    "20260106_123208",
+    "20260106_123210"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260106_122235",
+      "to": "20260106_123208",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260106_123208",
+      "to": "20260106_123210",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_15",
+    "snapshot_count": 3,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260106_122235",
+        "to": "20260106_123208",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260106_123208",
+        "to": "20260106_123210",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Project file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select E2 cell, input \"Support\""
+    },
+    {
+      "index": 5,
+      "instruction": "Select E3 cell, input \"300\", select E4 cell, input \"200\", select E5 cell, input \"100\""
+    },
+    {
+      "index": 6,
+      "instruction": "Select E6 cell, input \"-100\", select E7 cell, input \"-200\", select E8 cell, input \"-300\""
+    },
+    {
+      "index": 7,
+      "instruction": "Select B2 cell to B8 cell; press Ctrl and select E2 cell to E8 cell."
+    },
+    {
+      "index": 8,
+      "instruction": "Click Menu---Insert, find and click Scatter button, will pop up a frame,  select Scatter, will pop up a chart"
+    },
+    {
+      "index": 9,
+      "instruction": "Right Click the Chart, then click select data, will pop up a frame of select data source."
+    },
+    {
+      "index": 10,
+      "instruction": "Find and click add button, then Series name select D2, Series X values select D3 cell to D8 cell, Series Y value select E3 cell to E8 cell"
+    },
+    {
+      "index": 11,
+      "instruction": "Click Ok button, then Click Ok button, close the frame."
+    },
+    {
+      "index": 12,
+      "instruction": "Find and click Plus button next to the chart, then click Error Bars"
+    },
+    {
+      "index": 13,
+      "instruction": "Find and click the Vertical line of Start date in the chart, then right click the line, select Format Error Bars"
+    },
+    {
+      "index": 14,
+      "instruction": "Find and select No Cap of End style, then select custom of Error Amount, click Specify Value"
+    },
+    {
+      "index": 15,
+      "instruction": "Set Positive Error Value as 0, and Negative Error Value select E3 cell to E8 cell, click OK button."
+    },
+    {
+      "index": 16,
+      "instruction": "Find and click the Horizaontal line of Start date in the chart, find and select No Cap of End style, then select custom of Error Amount, click Specify Value"
+    },
+    {
+      "index": 17,
+      "instruction": "Set Positive Error Value as C3 cell to C8 cell, and Negative Error Value as 0, click OK button."
+    },
+    {
+      "index": 18,
+      "instruction": "Find and right click the Horizaontal line of End date in the chart, then select delete"
+    },
+    {
+      "index": 19,
+      "instruction": "Find and click the Vertical line of End date in the chart, find and select No Cap of End style, then select custom of Error Amount, click Specify Value"
+    },
+    {
+      "index": 20,
+      "instruction": "Set Positive Error Value as 0, and Negative Error Value select E3 cell to E8 cell, click OK button."
+    },
+    {
+      "index": 21,
+      "instruction": "Find and click the Horizaontal line of Start date in the chart, select Fill and line, click arrow next to Color, then select Blue, Set width as 18."
+    },
+    {
+      "index": 22,
+      "instruction": "Find and click the Vertical line of Start date in the chart, select Fill and line, then select Dash type, select Dash"
+    },
+    {
+      "index": 23,
+      "instruction": "Find and click the Vertical line of End date in the chart, select Fill and line, click arrow next to Color, then select Orange."
+    },
+    {
+      "index": 24,
+      "instruction": "Select Dash type, select Dash."
+    },
+    {
+      "index": 25,
+      "instruction": "Right click data point of Start date in the chart, and click Add Data Labels"
+    },
+    {
+      "index": 26,
+      "instruction": "Right click data label, click format data label, then click Left of Label Position"
+    },
+    {
+      "index": 27,
+      "instruction": "Find and click Value From Cells of Label Contains, select A3 cell to A8 cell"
+    },
+    {
+      "index": 28,
+      "instruction": "Select X Value of Label Contains, and Un select Y Value of Label Contains"
+    },
+    {
+      "index": 29,
+      "instruction": "Right click data point of End date in the chart, and click Add Data Labels"
+    },
+    {
+      "index": 30,
+      "instruction": "Right click data label, click format data label, then select X Value of Label Contains, and Un select Y Value of Label Contains"
+    },
+    {
+      "index": 31,
+      "instruction": "Select Horizaontal line of chart, click delete, select vertical line of the chart, click delete"
+    },
+    {
+      "index": 32,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 33,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 3,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 3
+  }
+}

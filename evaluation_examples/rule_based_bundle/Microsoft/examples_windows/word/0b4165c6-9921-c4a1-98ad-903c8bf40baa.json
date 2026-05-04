@@ -1,0 +1,77 @@
+{
+  "id": "0b4165c6-9921-c4a1-98ad-903c8bf40baa",
+  "snapshot": "word",
+  "instruction": "Could you apply advanced typography to the economic briefing document?",
+  "source": "Microsoft_47 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_47/logs/MonitoringSnapshots/20260109_135009/Desktop/Global Competitiveness Report 2018.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Global Competitiveness Report 2018.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_47/logs/MonitoringSnapshots/20260109_135050/Desktop/Global Competitiveness Report 2018.docx",
+            "path": "C:\\Users\\78644\\Documents\\Global Competitiveness Report 2018_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Global Competitiveness Report 2018.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0b4165c6-9921-c4a1-98ad-903c8bf40baa",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Global Competitiveness Report 2018.docx",
+      "dest": "Global Competitiveness Report 2018.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Global Competitiveness Report 2018_gold.docx",
+      "dest": "Global Competitiveness Report 2018_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Global Competitiveness Report 2018.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "e4d9ab38-c509-a719-ebd0-485464c83271",
+  "snapshot": "ppt",
+  "instruction": "Could you create a new PowerPoint presentation for the topic of Shanghai?",
+  "source": "Microsoft_49 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164001/Desktop/Material/Background.png",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Background.png"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164001/Desktop/Material/Culture.txt",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Culture.txt"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164001/Desktop/Powerpoint1.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Powerpoint1.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164012/Desktop/Powerpoint1.pptx",
+            "path": "C:\\Users\\User\\Documents\\Powerpoint1_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Powerpoint1.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/e4d9ab38-c509-a719-ebd0-485464c83271",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Powerpoint1.pptx",
+      "dest": "Powerpoint1.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Powerpoint1_gold.pptx",
+      "dest": "Powerpoint1_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Powerpoint1.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

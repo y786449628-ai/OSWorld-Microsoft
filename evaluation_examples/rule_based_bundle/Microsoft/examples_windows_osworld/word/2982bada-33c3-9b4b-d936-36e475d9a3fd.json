@@ -1,0 +1,77 @@
+{
+  "id": "2982bada-33c3-9b4b-d936-36e475d9a3fd",
+  "snapshot": "word",
+  "instruction": "Could you export a PDF copy of the template to the same folder?",
+  "source": "Microsoft_35 true stage 6",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_35/logs/MonitoringSnapshots/20260110_120706/Desktop/Project/Proposal.docx",
+            "path": "C:\\Users\\User\\Desktop\\Project\\Proposal.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_35/logs/MonitoringSnapshots/20260110_120720/Desktop/Project/Proposal.pdf",
+            "path": "C:\\Users\\User\\Documents\\Proposal_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project\\Proposal.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2982bada-33c3-9b4b-d936-36e475d9a3fd",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project\\Proposal.pdf",
+      "dest": "Proposal.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Proposal_gold.pdf",
+      "dest": "Proposal_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Proposal.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

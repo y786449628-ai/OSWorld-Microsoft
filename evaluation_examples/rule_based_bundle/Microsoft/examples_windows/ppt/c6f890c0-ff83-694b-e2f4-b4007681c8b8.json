@@ -1,0 +1,81 @@
+{
+  "id": "c6f890c0-ff83-694b-e2f4-b4007681c8b8",
+  "snapshot": "ppt",
+  "instruction": "Could you format the title slide by changing the font to 'Tw Cen MT', font size to '88', and adding text shadow?",
+  "source": "Microsoft_55 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100049/Desktop/Alpha_Fiancials.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Alpha_Fiancials.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100049/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100234/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Alpha_Status_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/c6f890c0-ff83-694b-e2f4-b4007681c8b8",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx",
+      "dest": "Project_Alpha_Status.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Alpha_Status_gold.pptx",
+      "dest": "Project_Alpha_Status_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Alpha_Status.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

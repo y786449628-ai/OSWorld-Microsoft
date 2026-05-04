@@ -1,0 +1,2356 @@
+{
+  "source_name": "Microsoft_74",
+  "source_file": "Microsoft_74.txt",
+  "source_id": "34f7e6312d8d",
+  "source_question": "Based on the \"data.csv\" data, identify the Top 5 high-income job categories, analyze the differences in hourly rates among different job categories, and visualize the findings through charts and a one-page presentation.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you import the data from 'data.csv' into Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you identify the Top 5 high-income job categories based on the imported data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you analyze the differences in hourly rates among different job categories in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create charts in Excel to visualize the findings of the analysis?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you prepare a one-page presentation in PowerPoint to summarize the findings and include the charts?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "import_data_into_excel",
+      "instruction": "Could you import the data from 'data.csv' into Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open Excel and create a new blank workbook. Import the \"data.csv\" file and save the workbook as \"Freelancer_Data_Analysis.xlsx\".",
+      "planned_input_snapshot": "20260115_101220",
+      "planned_gold_snapshot": "20260115_101228",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of importing data.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "prepare_pivot_table_and_top_5_categories",
+      "instruction": "Could you identify the Top 5 high-income job categories based on the imported data? Could you analyze the differences in hourly rates among different job categories in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Copy columns, set formats, insert PivotTable, sort, and filter to get top 5 categories.",
+      "planned_input_snapshot": "20260115_101354",
+      "planned_gold_snapshot": "20260115_101739",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed, worksheet names changed, and new visible headers or values include: Mobile Development, 88.255277777777764.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of preparing the pivot table and identifying top 5 categories.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_bar_chart_in_excel",
+      "instruction": "Could you create charts in Excel to visualize the findings of the analysis?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Select the filtered 5 rows of data, copy them, paste into an empty area, and insert a 2-D Clustered Bar chart.",
+      "planned_input_snapshot": "20260115_101739",
+      "planned_gold_snapshot": "20260115_102832",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of creating a bar chart.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_powerpoint_presentation",
+      "instruction": "Could you prepare a one-page presentation in PowerPoint to summarize the findings and include the charts?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Set the layout of Slide 1, type the title, copy the bar chart, and paste it into the content placeholder on Slide 1.",
+      "planned_input_snapshot": "20260115_102832",
+      "planned_gold_snapshot": "20260115_103153",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of creating and editing a PowerPoint slide.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "import_data_into_excel",
+      "instruction": "Could you import the data from 'data.csv' into Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open Excel and create a new blank workbook. Import the \"data.csv\" file and save the workbook as \"Freelancer_Data_Analysis.xlsx\".",
+      "planned_input_snapshot": "20260115_101220",
+      "planned_gold_snapshot": "20260115_101228",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of importing data.",
+      "input_snapshot": "20260115_101220",
+      "gold_snapshot": "20260115_101228",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "e706de8f-c16e-0df3-1c84-9a1840eb1202",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/e706de8f-c16e-0df3-1c84-9a1840eb1202.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "prepare_pivot_table_and_top_5_categories",
+      "instruction": "Could you identify the Top 5 high-income job categories based on the imported data? Could you analyze the differences in hourly rates among different job categories in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Copy columns, set formats, insert PivotTable, sort, and filter to get top 5 categories.",
+      "planned_input_snapshot": "20260115_101354",
+      "planned_gold_snapshot": "20260115_101739",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed, worksheet names changed, and new visible headers or values include: Mobile Development, 88.255277777777764.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of preparing the pivot table and identifying top 5 categories.",
+      "input_snapshot": "20260115_101228",
+      "gold_snapshot": "20260115_101739",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 5511 to 7515.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260115_101739",
+        "chain_input_snapshot": "20260115_101228",
+        "chain_input_replaced": "20260115_101354",
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 7,
+          "search_start_index": 5,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_101354",
+          "planned_gold_snapshot": "20260115_101739"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "2b07ac7c-c471-0c4d-f42c-8d7f0d73b95a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/2b07ac7c-c471-0c4d-f42c-8d7f0d73b95a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_bar_chart_in_excel",
+      "instruction": "Could you create charts in Excel to visualize the findings of the analysis?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Select the filtered 5 rows of data, copy them, paste into an empty area, and insert a 2-D Clustered Bar chart.",
+      "planned_input_snapshot": "20260115_101739",
+      "planned_gold_snapshot": "20260115_102832",
+      "snapshot_evidence": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of creating a bar chart.",
+      "input_snapshot": "20260115_101739",
+      "gold_snapshot": "20260115_102832",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Freelancer_Data_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260115_101739",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 9,
+          "search_start_index": 7,
+          "search_end_index": 9,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_101739",
+          "planned_gold_snapshot": "20260115_102832"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "4e6160e2-7280-575f-139b-363877e38c10",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/4e6160e2-7280-575f-139b-363877e38c10.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_powerpoint_presentation",
+      "instruction": "Could you prepare a one-page presentation in PowerPoint to summarize the findings and include the charts?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Set the layout of Slide 1, type the title, copy the bar chart, and paste it into the content placeholder on Slide 1.",
+      "planned_input_snapshot": "20260115_102832",
+      "planned_gold_snapshot": "20260115_103153",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of creating and editing a PowerPoint slide.",
+      "input_snapshot": "20260115_102832",
+      "gold_snapshot": "20260115_103153",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Freelancer_Income_Analysis_PPT.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260115_103153",
+        "trajectory_window": {
+          "trajectory_start": 10,
+          "trajectory_end": 11,
+          "search_start_index": 10,
+          "search_end_index": 11,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_102832",
+          "planned_gold_snapshot": "20260115_103153"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "48e65a05-4993-c652-56bb-539361a2768c",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/48e65a05-4993-c652-56bb-539361a2768c.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you identify the Top 5 high-income job categories based on the imported data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you analyze the differences in hourly rates among different job categories in Excel?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260115_101220",
+    "20260115_101228",
+    "20260115_101253",
+    "20260115_101352",
+    "20260115_101354",
+    "20260115_101534",
+    "20260115_101739",
+    "20260115_101856",
+    "20260115_101944",
+    "20260115_102832",
+    "20260115_103034",
+    "20260115_103153"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260115_101220",
+      "to": "20260115_101228",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior",
+              "North America",
+              "US",
+              "Bachelor",
+              "267.33999999999997"
+            ],
+            "to": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior",
+              "North America",
+              "US",
+              "Bachelor",
+              "267.33999999999997"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 55603,
+              "to": 55608
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior",
+                  "North America",
+                  "US",
+                  "Bachelor",
+                  "267.33999999999997"
+                ],
+                "to": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior",
+                  "North America",
+                  "US",
+                  "Bachelor",
+                  "267.33999999999997"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260115_101228",
+      "to": "20260115_101253",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260115_101253",
+      "to": "20260115_101352",
+      "human_summary": "New files appeared: Freelancer_Income_Analysis_PPT.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Freelancer_Income_Analysis_PPT.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Freelancer_Income_Analysis_PPT.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260115_101352",
+      "to": "20260115_101354",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260115_101354",
+      "to": "20260115_101534",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 5511 to 7515 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 5511,
+            "to": 7515
+          },
+          "headers": {
+            "from": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior",
+              "North America",
+              "US",
+              "Bachelor",
+              "267.33999999999997"
+            ],
+            "to": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 55608,
+              "to": 68215
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 5511,
+                "to": 7515
+              },
+              "headers": {
+                "from": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior",
+                  "North America",
+                  "US",
+                  "Bachelor",
+                  "267.33999999999997"
+                ],
+                "to": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260115_101534",
+      "to": "20260115_101739",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7515 to 7539 non-empty cells; worksheet names changed; new visible headers or values include: Mobile Development, 88.255277777777764.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "data",
+              "Sheet1"
+            ],
+            "to": [
+              "Sheet2",
+              "data",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 2,
+            "to": 3
+          },
+          "nonempty_cells": {
+            "from": 7515,
+            "to": 7539
+          },
+          "headers": {
+            "from": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior"
+            ],
+            "to": [
+              "Mobile Development",
+              "88.255277777777764",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision"
+            ]
+          }
+        },
+        "headers_added": [
+          "Mobile Development",
+          "88.255277777777764"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 68215,
+              "to": 79935
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "data",
+                  "Sheet1"
+                ],
+                "to": [
+                  "Sheet2",
+                  "data",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 2,
+                "to": 3
+              },
+              "nonempty_cells": {
+                "from": 7515,
+                "to": 7539
+              },
+              "headers": {
+                "from": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior"
+                ],
+                "to": [
+                  "Mobile Development",
+                  "88.255277777777764",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260115_101739",
+      "to": "20260115_101856",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7539 to 7529 non-empty cells; new visible headers or values include: 6.2, senior.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 7539,
+            "to": 7529
+          },
+          "headers": {
+            "from": [
+              "Mobile Development",
+              "88.255277777777764",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision"
+            ],
+            "to": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior"
+            ]
+          }
+        },
+        "headers_added": [
+          "6.2",
+          "senior"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 79935,
+              "to": 80014
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 7539,
+                "to": 7529
+              },
+              "headers": {
+                "from": [
+                  "Mobile Development",
+                  "88.255277777777764",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision"
+                ],
+                "to": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260115_101856",
+      "to": "20260115_101944",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7529 to 7541 non-empty cells; new visible headers or values include: 123.96311111111112.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 7529,
+            "to": 7541
+          },
+          "headers": {
+            "from": [
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision",
+              "6.2",
+              "senior"
+            ],
+            "to": [
+              "AI/ML Engineering",
+              "123.96311111111112",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision"
+            ]
+          }
+        },
+        "headers_added": [
+          "123.96311111111112"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 80014,
+              "to": 80685
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 7529,
+                "to": 7541
+              },
+              "headers": {
+                "from": [
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision",
+                  "6.2",
+                  "senior"
+                ],
+                "to": [
+                  "AI/ML Engineering",
+                  "123.96311111111112",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260115_101944",
+      "to": "20260115_102832",
+      "human_summary": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Freelancer_Data_Analysis.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "AI/ML Engineering",
+              "123.96311111111112",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision"
+            ],
+            "to": [
+              "AI/ML Engineering",
+              "123.96311111111112",
+              "freelancer_id",
+              "category",
+              "primary_skills",
+              "years_experience",
+              "experience_level",
+              "region",
+              "country",
+              "education",
+              "hourly_rate_usd",
+              "annual_income_usd",
+              "primary_platform",
+              "experience_level",
+              "category",
+              "annual_income_usd",
+              "hourly_rate_usd",
+              "FL0010",
+              "AI/ML Engineering",
+              "PyTorch, NLP, Computer Vision"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 80685,
+              "to": 86218
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "AI/ML Engineering",
+                  "123.96311111111112",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision"
+                ],
+                "to": [
+                  "AI/ML Engineering",
+                  "123.96311111111112",
+                  "freelancer_id",
+                  "category",
+                  "primary_skills",
+                  "years_experience",
+                  "experience_level",
+                  "region",
+                  "country",
+                  "education",
+                  "hourly_rate_usd",
+                  "annual_income_usd",
+                  "primary_platform",
+                  "experience_level",
+                  "category",
+                  "annual_income_usd",
+                  "hourly_rate_usd",
+                  "FL0010",
+                  "AI/ML Engineering",
+                  "PyTorch, NLP, Computer Vision"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260115_102832",
+      "to": "20260115_103034",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 32122,
+              "to": 33192
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 32122,
+              "to": 33192
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260115_103034",
+      "to": "20260115_103153",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "size": {
+              "from": 33192,
+              "to": 42941
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Freelancer_Income_Analysis_PPT.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 33192,
+              "to": 42941
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_74",
+    "snapshot_count": 12,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260115_101220",
+        "to": "20260115_101228",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior",
+                "North America",
+                "US",
+                "Bachelor",
+                "267.33999999999997"
+              ],
+              "to": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior",
+                "North America",
+                "US",
+                "Bachelor",
+                "267.33999999999997"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 55603,
+                "to": 55608
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior",
+                    "North America",
+                    "US",
+                    "Bachelor",
+                    "267.33999999999997"
+                  ],
+                  "to": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior",
+                    "North America",
+                    "US",
+                    "Bachelor",
+                    "267.33999999999997"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260115_101228",
+        "to": "20260115_101253",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260115_101253",
+        "to": "20260115_101352",
+        "human_summary": "New files appeared: Freelancer_Income_Analysis_PPT.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Freelancer_Income_Analysis_PPT.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Freelancer_Income_Analysis_PPT.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260115_101352",
+        "to": "20260115_101354",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260115_101354",
+        "to": "20260115_101534",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 5511 to 7515 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 5511,
+              "to": 7515
+            },
+            "headers": {
+              "from": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior",
+                "North America",
+                "US",
+                "Bachelor",
+                "267.33999999999997"
+              ],
+              "to": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 55608,
+                "to": 68215
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 5511,
+                  "to": 7515
+                },
+                "headers": {
+                  "from": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior",
+                    "North America",
+                    "US",
+                    "Bachelor",
+                    "267.33999999999997"
+                  ],
+                  "to": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260115_101534",
+        "to": "20260115_101739",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7515 to 7539 non-empty cells; worksheet names changed; new visible headers or values include: Mobile Development, 88.255277777777764.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "data",
+                "Sheet1"
+              ],
+              "to": [
+                "Sheet2",
+                "data",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 2,
+              "to": 3
+            },
+            "nonempty_cells": {
+              "from": 7515,
+              "to": 7539
+            },
+            "headers": {
+              "from": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior"
+              ],
+              "to": [
+                "Mobile Development",
+                "88.255277777777764",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision"
+              ]
+            }
+          },
+          "headers_added": [
+            "Mobile Development",
+            "88.255277777777764"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 68215,
+                "to": 79935
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "data",
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Sheet2",
+                    "data",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 2,
+                  "to": 3
+                },
+                "nonempty_cells": {
+                  "from": 7515,
+                  "to": 7539
+                },
+                "headers": {
+                  "from": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior"
+                  ],
+                  "to": [
+                    "Mobile Development",
+                    "88.255277777777764",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260115_101739",
+        "to": "20260115_101856",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7539 to 7529 non-empty cells; new visible headers or values include: 6.2, senior.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 7539,
+              "to": 7529
+            },
+            "headers": {
+              "from": [
+                "Mobile Development",
+                "88.255277777777764",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision"
+              ],
+              "to": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior"
+              ]
+            }
+          },
+          "headers_added": [
+            "6.2",
+            "senior"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 79935,
+                "to": 80014
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 7539,
+                  "to": 7529
+                },
+                "headers": {
+                  "from": [
+                    "Mobile Development",
+                    "88.255277777777764",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision"
+                  ],
+                  "to": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260115_101856",
+        "to": "20260115_101944",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: spreadsheet content changed from 7529 to 7541 non-empty cells; new visible headers or values include: 123.96311111111112.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 7529,
+              "to": 7541
+            },
+            "headers": {
+              "from": [
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision",
+                "6.2",
+                "senior"
+              ],
+              "to": [
+                "AI/ML Engineering",
+                "123.96311111111112",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision"
+              ]
+            }
+          },
+          "headers_added": [
+            "123.96311111111112"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 80014,
+                "to": 80685
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 7529,
+                  "to": 7541
+                },
+                "headers": {
+                  "from": [
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision",
+                    "6.2",
+                    "senior"
+                  ],
+                  "to": [
+                    "AI/ML Engineering",
+                    "123.96311111111112",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260115_101944",
+        "to": "20260115_102832",
+        "human_summary": "Freelancer_Data_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Freelancer_Data_Analysis.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "AI/ML Engineering",
+                "123.96311111111112",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision"
+              ],
+              "to": [
+                "AI/ML Engineering",
+                "123.96311111111112",
+                "freelancer_id",
+                "category",
+                "primary_skills",
+                "years_experience",
+                "experience_level",
+                "region",
+                "country",
+                "education",
+                "hourly_rate_usd",
+                "annual_income_usd",
+                "primary_platform",
+                "experience_level",
+                "category",
+                "annual_income_usd",
+                "hourly_rate_usd",
+                "FL0010",
+                "AI/ML Engineering",
+                "PyTorch, NLP, Computer Vision"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Data_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 80685,
+                "to": 86218
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "AI/ML Engineering",
+                    "123.96311111111112",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision"
+                  ],
+                  "to": [
+                    "AI/ML Engineering",
+                    "123.96311111111112",
+                    "freelancer_id",
+                    "category",
+                    "primary_skills",
+                    "years_experience",
+                    "experience_level",
+                    "region",
+                    "country",
+                    "education",
+                    "hourly_rate_usd",
+                    "annual_income_usd",
+                    "primary_platform",
+                    "experience_level",
+                    "category",
+                    "annual_income_usd",
+                    "hourly_rate_usd",
+                    "FL0010",
+                    "AI/ML Engineering",
+                    "PyTorch, NLP, Computer Vision"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260115_102832",
+        "to": "20260115_103034",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 32122,
+                "to": 33192
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 32122,
+                "to": 33192
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260115_103034",
+        "to": "20260115_103153",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "size": {
+                "from": 33192,
+                "to": 42941
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Freelancer_Income_Analysis_PPT.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 33192,
+                "to": 42941
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open Excel and create a new blank workbook. Import the \"data.csv\" file and save the workbook as \"Freelancer_Data_Analysis.xlsx\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Use “Find & Select” → “Go To Special (Blanks)” to check whether there are any missing values."
+    },
+    {
+      "index": 4,
+      "instruction": "Create a new blank PowerPoint presentation named \"Freelancer_Income_Analysis_PPT.pptx\" and save it."
+    },
+    {
+      "index": 5,
+      "instruction": "Copy the complete columns \"experience_level\", \"category\", \"annual_income_usd\", and \"hourly_rate_usd\" into columns O, P, Q, and R, set columns O and P to Text format, and columns Q and R to Number format."
+    },
+    {
+      "index": 6,
+      "instruction": "Insert a PivotTable using columns O, P, Q, and R as the source data on a new worksheet. In the PivotTable Fields pane, set Rows to \"category\" and Values to \"hourly_rate_usd\" (Summarize Values By: Average). Clear the \"(blank)\" item from the Row Labels filter."
+    },
+    {
+      "index": 7,
+      "instruction": "In the \"hourly_rate_usd\" average column, right-click any value and choose \"Sort\" → \"Sort Largest to Smallest\". Then click the filter button next to \"Row Labels\", choose \"Value Filters\" → \"Top 10\", set the \"Top\" value to 5 in the dialog box, and click \"OK\"."
+    },
+    {
+      "index": 8,
+      "instruction": "Select the filtered 5 rows of data including the header row, copy them (Ctrl+C), paste (Ctrl+V) into an empty area such as D20:E25, and set the pasted range to Number format."
+    },
+    {
+      "index": 9,
+      "instruction": "Select the \"Top 5 job categories - average hourly rate\" data range (D20:E25) and insert a 2-D Clustered Bar chart. Set the chart title to \"Top 5 comparison of average hourly rates for high-income occupations\" with font \"Microsoft YaHei\", 12pt, Bold. In Chart Elements, check \"Axis Titles\" and \"Data Labels\". Set the horizontal axis title to \"Average hourly rate (USD/Hour)\" and the vertical axis title to \"category\", set both axis and tick label fonts to \"Microsoft YaHei\", and set the data label font to \"Microsoft YaHei\", 10pt, Bold. Save the workbook (Ctrl+S)."
+    },
+    {
+      "index": 10,
+      "instruction": "Set the layout of Slide 1 to \"Title and Content\". In the title placeholder, type \"The impact of job categories on income\", set the font to \"Microsoft YaHei\", 24pt, Bold, Light Blue, and center-align the paragraph."
+    },
+    {
+      "index": 11,
+      "instruction": "Copy the bar chart (Ctrl+C) and paste it into the content placeholder on Slide 1. Set the chart title font to \"Microsoft YaHei\", 16pt, Bold, Light Blue, and uncheck \"Gridlines\" in Chart Elements."
+    },
+    {
+      "index": 12,
+      "instruction": "Save the file (Ctrl+S) and close the application."
+    },
+    {
+      "index": 13,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 12
+  }
+}

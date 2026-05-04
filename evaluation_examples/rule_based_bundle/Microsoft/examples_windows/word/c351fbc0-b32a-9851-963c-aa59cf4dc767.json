@@ -1,0 +1,77 @@
+{
+  "id": "c351fbc0-b32a-9851-963c-aa59cf4dc767",
+  "snapshot": "word",
+  "instruction": "Could you save the template and export a PDF copy to the same 'Template' folder?",
+  "source": "Microsoft_67 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_67/logs/MonitoringSnapshots/20260113_235159/Desktop/Template/Template.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Template\\Template.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_67/logs/MonitoringSnapshots/20260113_235214/Desktop/Template/Template.pdf",
+            "path": "C:\\Users\\78644\\Documents\\Template_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Template\\Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/c351fbc0-b32a-9851-963c-aa59cf4dc767",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Template\\Template.pdf",
+      "dest": "Template.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Template_gold.pdf",
+      "dest": "Template_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Template.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

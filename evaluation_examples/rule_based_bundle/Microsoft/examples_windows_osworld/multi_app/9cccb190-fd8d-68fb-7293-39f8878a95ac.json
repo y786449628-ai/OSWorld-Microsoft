@@ -1,0 +1,86 @@
+{
+  "id": "9cccb190-fd8d-68fb-7293-39f8878a95ac",
+  "snapshot": "excel",
+  "instruction": "Could you paste the formatted score data table with source formatting preserved in the middle-left cell of the Word table?",
+  "source": "Microsoft_02 true stage 6",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181003/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181003/Desktop/Material/data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181003/Desktop/Sheet1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_181107/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/9cccb190-fd8d-68fb-7293-39f8878a95ac",
+  "related_apps": [
+    "word",
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.docx",
+      "dest": "Doc1.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.docx",
+      "dest": "Doc1_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Doc1.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

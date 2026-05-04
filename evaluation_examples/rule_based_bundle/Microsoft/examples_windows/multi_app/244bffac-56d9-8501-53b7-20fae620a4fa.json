@@ -1,0 +1,82 @@
+{
+  "id": "244bffac-56d9-8501-53b7-20fae620a4fa",
+  "snapshot": "excel",
+  "instruction": "Could you embed the 'Task Completion' Doughnut Chart from Excel into the 'Project Progress' slide as a linked object?",
+  "source": "Microsoft_55 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100337/Desktop/Alpha_Fiancials.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Alpha_Fiancials.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100337/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100427/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Alpha_Status_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/244bffac-56d9-8501-53b7-20fae620a4fa",
+  "related_apps": [
+    "excel",
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx",
+      "dest": "Project_Alpha_Status.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Alpha_Status_gold.pptx",
+      "dest": "Project_Alpha_Status_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Alpha_Status.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

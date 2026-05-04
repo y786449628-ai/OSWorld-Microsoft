@@ -1,0 +1,730 @@
+{
+  "source_name": "Microsoft_02",
+  "snapshot_count": 14,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20251210_180213",
+      "to": "20251210_180303",
+      "human_summary": "Material/data.xlsx changed: spreadsheet content changed from 33 to 34 non-empty cells; new visible headers or values include: Score Growth Rate.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 33,
+            "to": 34
+          },
+          "headers": {
+            "from": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Wang Shiya",
+              "92",
+              "95"
+            ],
+            "to": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95"
+            ]
+          }
+        },
+        "headers_added": [
+          "Score Growth Rate"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10695,
+              "to": 11022
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 33,
+                "to": 34
+              },
+              "headers": {
+                "from": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Wang Shiya",
+                  "92",
+                  "95"
+                ],
+                "to": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251210_180303",
+      "to": "20251210_180322",
+      "human_summary": "New files appeared: Sheet1.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Sheet1.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sheet1.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251210_180322",
+      "to": "20251210_180324",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251210_180324",
+      "to": "20251210_180407",
+      "human_summary": "Sheet1.xlsx changed: spreadsheet content changed from 34 to 44 non-empty cells; new visible headers or values include: 3.2608695652173912E-2.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sheet1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 34,
+            "to": 44
+          },
+          "headers": {
+            "from": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95"
+            ],
+            "to": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95",
+              "3.2608695652173912E-2"
+            ]
+          }
+        },
+        "headers_added": [
+          "3.2608695652173912E-2"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11011,
+              "to": 11542
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 34,
+                "to": 44
+              },
+              "headers": {
+                "from": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95"
+                ],
+                "to": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95",
+                  "3.2608695652173912E-2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251210_180407",
+      "to": "20251210_180508",
+      "human_summary": "Sheet1.xlsx changed: spreadsheet content changed from 44 to 47 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sheet1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 44,
+            "to": 47
+          },
+          "headers": {
+            "from": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95",
+              "3.2608695652173912E-2"
+            ],
+            "to": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95",
+              "3.2608695652173912E-2"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11542,
+              "to": 11607
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 44,
+                "to": 47
+              },
+              "headers": {
+                "from": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95",
+                  "3.2608695652173912E-2"
+                ],
+                "to": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95",
+                  "3.2608695652173912E-2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251210_180508",
+      "to": "20251210_180534",
+      "human_summary": "Sheet1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sheet1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95",
+              "3.2608695652173912E-2"
+            ],
+            "to": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95",
+              "3.2608695652173912E-2"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11607,
+              "to": 11648
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95",
+                  "3.2608695652173912E-2"
+                ],
+                "to": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95",
+                  "3.2608695652173912E-2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251210_180534",
+      "to": "20251210_180612",
+      "human_summary": "Sheet1.xlsx changed: new visible headers or values include: Sun Jiayue, 97, 2.1052631578947368E-2.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sheet1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Wang Shiya",
+              "92",
+              "95",
+              "3.2608695652173912E-2"
+            ],
+            "to": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Sun Jiayue",
+              "95",
+              "97",
+              "2.1052631578947368E-2"
+            ]
+          }
+        },
+        "headers_added": [
+          "Sun Jiayue",
+          "97",
+          "2.1052631578947368E-2"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11648,
+              "to": 11738
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Wang Shiya",
+                  "92",
+                  "95",
+                  "3.2608695652173912E-2"
+                ],
+                "to": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Sun Jiayue",
+                  "95",
+                  "97",
+                  "2.1052631578947368E-2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20251210_180612",
+      "to": "20251210_180728",
+      "human_summary": "Sheet1.xlsx changed: worksheet names changed.",
+      "likely_stage": "rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sheet1.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1",
+              "Sheet2",
+              "Sheet3"
+            ],
+            "to": [
+              "Chart1",
+              "Sheet1",
+              "Sheet2",
+              "Sheet3"
+            ]
+          },
+          "worksheet_count": {
+            "from": 3,
+            "to": 4
+          },
+          "headers": {
+            "from": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Sun Jiayue",
+              "95",
+              "97",
+              "2.1052631578947368E-2"
+            ],
+            "to": [
+              "Student Name",
+              "Midterm Chinese Score",
+              "Final Chinese Score",
+              "Score Growth Rate",
+              "Sun Jiayue",
+              "95",
+              "97",
+              "2.1052631578947368E-2"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11738,
+              "to": 17909
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1",
+                  "Sheet2",
+                  "Sheet3"
+                ],
+                "to": [
+                  "Chart1",
+                  "Sheet1",
+                  "Sheet2",
+                  "Sheet3"
+                ]
+              },
+              "worksheet_count": {
+                "from": 3,
+                "to": 4
+              },
+              "headers": {
+                "from": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Sun Jiayue",
+                  "95",
+                  "97",
+                  "2.1052631578947368E-2"
+                ],
+                "to": [
+                  "Student Name",
+                  "Midterm Chinese Score",
+                  "Final Chinese Score",
+                  "Score Growth Rate",
+                  "Sun Jiayue",
+                  "95",
+                  "97",
+                  "2.1052631578947368E-2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20251210_180728",
+      "to": "20251210_180803",
+      "human_summary": "New files appeared: Doc1.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Doc1.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Doc1.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20251210_180803",
+      "to": "20251210_180933",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13318,
+              "to": 13471
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13318,
+              "to": 13471
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20251210_180933",
+      "to": "20251210_181003",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13471,
+              "to": 17954
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13471,
+              "to": 17954
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20251210_181003",
+      "to": "20251210_181107",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 17954,
+              "to": 18030
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 17954,
+              "to": 18030
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20251210_181107",
+      "to": "20251210_181207",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 18030,
+              "to": 19221
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 18030,
+              "to": 19221
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

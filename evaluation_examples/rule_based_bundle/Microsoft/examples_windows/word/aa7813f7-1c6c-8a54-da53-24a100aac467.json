@@ -1,0 +1,77 @@
+{
+  "id": "aa7813f7-1c6c-8a54-da53-24a100aac467",
+  "snapshot": "word",
+  "instruction": "Could you apply and modify built-in heading styles, adjust paragraph spacing, insert a horizontal line separator, and use a professional font throughout the document?",
+  "source": "Microsoft_69 true stage 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162332/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Project_Status_Report_Memo.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162719/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Status_Report_Memo_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project_Status_Report_Memo.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/aa7813f7-1c6c-8a54-da53-24a100aac467",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Status_Report_Memo.docx",
+      "dest": "Project_Status_Report_Memo.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Status_Report_Memo_gold.docx",
+      "dest": "Project_Status_Report_Memo_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Report_Memo.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

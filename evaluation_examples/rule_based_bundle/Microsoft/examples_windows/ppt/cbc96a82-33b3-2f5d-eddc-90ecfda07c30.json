@@ -1,0 +1,85 @@
+{
+  "id": "cbc96a82-33b3-2f5d-eddc-90ecfda07c30",
+  "snapshot": "ppt",
+  "instruction": "Could you create a new PowerPoint presentation to show a data overview and the distribution of occupational categories?",
+  "source": "Microsoft_60 true stage 6",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_60/logs/MonitoringSnapshots/20260112_164420/Desktop/Freelancer_Data_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Freelancer_Data_Analysis.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_60/logs/MonitoringSnapshots/20260112_164420/Desktop/Freelancer_Income_Analysis_PPT.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Freelancer_Income_Analysis_PPT.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_60/logs/MonitoringSnapshots/20260112_164420/Desktop/Material/data.csv",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\data.csv"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_60/logs/MonitoringSnapshots/20260112_164731/Desktop/Freelancer_Income_Analysis_PPT.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Freelancer_Income_Analysis_PPT_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Freelancer_Income_Analysis_PPT.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/cbc96a82-33b3-2f5d-eddc-90ecfda07c30",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Freelancer_Income_Analysis_PPT.pptx",
+      "dest": "Freelancer_Income_Analysis_PPT.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Freelancer_Income_Analysis_PPT_gold.pptx",
+      "dest": "Freelancer_Income_Analysis_PPT_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Freelancer_Income_Analysis_PPT.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

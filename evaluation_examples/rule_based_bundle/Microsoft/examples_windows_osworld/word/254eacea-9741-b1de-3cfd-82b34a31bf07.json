@@ -1,0 +1,81 @@
+{
+  "id": "254eacea-9741-b1de-3cfd-82b34a31bf07",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'Formal_Complaint_Letter_Template.docx' on your desktop?",
+  "source": "Microsoft_41 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144029/Desktop/Material/a463-icapxph6773606.jpg",
+            "path": "C:\\Users\\User\\Desktop\\Material\\a463-icapxph6773606.jpg"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144029/Desktop/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\User\\Desktop\\New Microsoft Word Document.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144129/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\User\\Documents\\Formal_Complaint_Letter_Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/254eacea-9741-b1de-3cfd-82b34a31bf07",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Formal_Complaint_Letter_Template.docx",
+      "dest": "Formal_Complaint_Letter_Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Formal_Complaint_Letter_Template_gold.docx",
+      "dest": "Formal_Complaint_Letter_Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Formal_Complaint_Letter_Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "0063e80b-2b3d-7f59-6790-ef60f524bb13",
+  "snapshot": "word",
+  "instruction": "Could you save the document and export it as a PDF file to your desktop?",
+  "source": "Microsoft_69 true stage 6",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162719/Desktop/Project_Status_Report_Memo.docx",
+            "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_69/logs/MonitoringSnapshots/20260114_162747/Desktop/Project_Status_Report_Memo.pdf",
+            "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0063e80b-2b3d-7f59-6790-ef60f524bb13",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Project_Status_Report_Memo.pdf",
+      "dest": "Project_Status_Report_Memo.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Status_Report_Memo_gold.pdf",
+      "dest": "Project_Status_Report_Memo_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Status_Report_Memo.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

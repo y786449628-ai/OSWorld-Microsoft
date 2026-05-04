@@ -1,0 +1,83 @@
+{
+  "id": "ae166790-2b99-bfbf-4d2c-2964e4ef7f98",
+  "snapshot": "excel",
+  "instruction": "Could you create a blank Excel workbook, and then import the test results from all three classes into the Excel workbook, and then calculate the total points for each student and classify them into Good, Better, and Bad categories based on their scores, and then count the number of students in each classification (Good, Better, Bad) in the summary table, and then calculate the percentage of students in each classification (Good, Better, Bad) in the summary table, and then save the final result as an Excel file named 'final result.xlsx'?",
+  "source": "Microsoft_16 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_16/logs/MonitoringSnapshots/20260106_141728/Desktop/Material/Test Result.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Test Result.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_16/logs/MonitoringSnapshots/20260106_142347/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Test Result.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/ae166790-2b99-bfbf-4d2c-2964e4ef7f98",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

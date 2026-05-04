@@ -1,0 +1,85 @@
+{
+  "id": "5830d8b4-9cf5-3c83-5d96-e4eaef2462af",
+  "snapshot": "ppt",
+  "instruction": "Could you create a slide explaining the product's key features using a SmartArt graphic?",
+  "source": "Microsoft_63 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194433/Desktop/Material/drive-2.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\drive-2.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194433/Desktop/Material/Huawei-Smart-Charger.png",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Huawei-Smart-Charger.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194433/Desktop/Product_Launch_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_63/logs/MonitoringSnapshots/20260113_194450/Desktop/Product_Launch_Presentation.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Product_Launch_Presentation_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/5830d8b4-9cf5-3c83-5d96-e4eaef2462af",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Product_Launch_Presentation.pptx",
+      "dest": "Product_Launch_Presentation.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Product_Launch_Presentation_gold.pptx",
+      "dest": "Product_Launch_Presentation_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Product_Launch_Presentation.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

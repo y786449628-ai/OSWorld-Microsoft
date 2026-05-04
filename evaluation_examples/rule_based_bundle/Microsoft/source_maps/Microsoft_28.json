@@ -1,0 +1,2248 @@
+{
+  "source_name": "Microsoft_28",
+  "source_file": "Microsoft_28.txt",
+  "source_id": "845101497ef3",
+  "source_question": "Finance team export Quarter 1 expense of staffs, and each month one file, but not all the file format is same. Boss want to check the whose expense above or below average line, whose expense is Highest or lowest.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you consolidate the Quarter 1 expense data from different files into a single Excel workbook?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you standardize the format of the consolidated expense data in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the average, highest, and lowest expenses for each staff member in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a summary table in the Excel workbook that shows which staff members' expenses are above or below the average?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you identify and highlight the staff members with the highest and lowest expenses in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you prepare a report document in Word to present the findings on staff expenses?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "consolidate_expense_data",
+      "instruction": "Could you consolidate the Quarter 1 expense data from different files into a single Excel workbook?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Open Excel, import data, and save the workbook.",
+      "planned_input_snapshot": "20260109_203956_2",
+      "planned_gold_snapshot": "20260109_204214",
+      "snapshot_evidence": "Material/Book1.xlsx changed: spreadsheet content changed from 111 to 253 non-empty cells; new visible headers or values include: Sum of Expense1, Column Labels, Andy, Gloria, Jane, Jasmine.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "standardize_format_and_calculate_metrics",
+      "instruction": "Could you standardize the format of the consolidated expense data in the Excel workbook? Could you calculate the average, highest, and lowest expenses for each staff member in the Excel workbook?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 40,
+      "trajectory_evidence": "Standardize the format, create a summary table, and calculate metrics. Add conditional formatting and checkboxes.",
+      "planned_input_snapshot": "20260109_204214",
+      "planned_gold_snapshot": "20260109_205155",
+      "snapshot_evidence": "Material/Book1.xlsx changed: Office document content changed, including adding charts and conditional formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file, including formatting and calculations.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_summary_table",
+      "instruction": "Could you create a summary table in the Excel workbook that shows which staff members' expenses are above or below the average? Could you identify and highlight the staff members with the highest and lowest expenses in the Excel workbook?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 41,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Finalize the summary table and save the workbook.",
+      "planned_input_snapshot": "20260109_205155",
+      "planned_gold_snapshot": "20260109_205157",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file, including the creation of the final result file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "prepare_report_document",
+      "instruction": "Could you prepare a report document in Word to present the findings on staff expenses?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 43,
+      "trajectory_end": 43,
+      "trajectory_evidence": "Prepare a report document in Word.",
+      "planned_input_snapshot": "20260109_205157",
+      "planned_gold_snapshot": "20260109_211731",
+      "snapshot_evidence": "New files appeared: output-1767964649622.zip.",
+      "benchmarkability": "needs_review",
+      "reason": "The final transition does not clearly show the creation of a Word document. Further review is needed to ensure the correct artifact is produced.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "consolidate_expense_data_and_create_summary_table_and_prepare_report_document_and_standardize_format_and_calculate_metrics",
+      "instruction": "Could you consolidate the Quarter 1 expense data from different files into a single Excel workbook, and then create a summary table in the Excel workbook that shows which staff members' expenses are above or below the average? Could you identify and highlight the staff members with the highest and lowest expenses in the Excel workbook, and then prepare a report document in Word to present the findings on staff expenses, and then standardize the format of the consolidated expense data in the Excel workbook? Could you calculate the average, highest, and lowest expenses for each staff member in the Excel workbook?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 40,
+      "trajectory_evidence": "Open Excel, import data, and save the workbook. | Finalize the summary table and save the workbook. | Prepare a report document in Word. | Standardize the format, create a summary table, and calculate metrics. Add conditional formatting and checkboxes.",
+      "planned_input_snapshot": "20260109_203956_2",
+      "planned_gold_snapshot": "20260109_211731",
+      "snapshot_evidence": "Material/Book1.xlsx changed: spreadsheet content changed from 111 to 253 non-empty cells; new visible headers or values include: Sum of Expense1, Column Labels, Andy, Gloria, Jane, Jasmine. | New files appeared: final result.xlsx. | New files appeared: output-1767964649622.zip. | Material/Book1.xlsx changed: Office document content changed, including adding charts and conditional formatting.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": "20260109_203956",
+      "gold_snapshot": "20260109_211731",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_203956_2",
+        "chain_input_snapshot": "20260109_203956",
+        "chain_input_replaced": "20260109_203956_2",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 11,
+          "search_start_index": 3,
+          "search_end_index": 3,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_203956_2",
+          "planned_gold_snapshot": "20260109_204214"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 2,
+          "stage_name": "standardize_format_and_calculate_metrics",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "consolidate_expense_data",
+        "create_summary_table",
+        "prepare_report_document",
+        "standardize_format_and_calculate_metrics"
+      ],
+      "merged_stage_indices": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "generated_examples": [
+        {
+          "example_id": "7ef063c9-0008-c6d1-c31b-2b4476516412",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/7ef063c9-0008-c6d1-c31b-2b4476516412.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you standardize the format of the consolidated expense data in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the average, highest, and lowest expenses for each staff member in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a summary table in the Excel workbook that shows which staff members' expenses are above or below the average?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you identify and highlight the staff members with the highest and lowest expenses in the Excel workbook?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260109_203956",
+    "20260109_203956_1",
+    "20260109_203956_2",
+    "20260109_204214",
+    "20260109_204214_1",
+    "20260109_204645",
+    "20260109_204645_1",
+    "20260109_204645_2",
+    "20260109_205101",
+    "20260109_205101_1",
+    "20260109_205101_2",
+    "20260109_205155",
+    "20260109_205155_1",
+    "20260109_205157",
+    "20260109_211731",
+    "20260109_211731_1",
+    "20260109_211733",
+    "20260109_211735",
+    "20260109_211735_1",
+    "20260109_211738",
+    "20260109_211740",
+    "20260109_211742",
+    "20260109_211744",
+    "20260109_211746"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_203956",
+      "to": "20260109_203956_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_203956_1",
+      "to": "20260109_203956_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_203956_2",
+      "to": "20260109_204214",
+      "human_summary": "Material/Book1.xlsx changed: spreadsheet content changed from 111 to 253 non-empty cells; new visible headers or values include: Sum of Expense1, Column Labels, Andy, Gloria, Jane, Jasmine.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 111,
+            "to": 253
+          },
+          "headers": {
+            "from": [
+              "Month",
+              "Name.1",
+              "Expense1",
+              "Jan",
+              "Jerry",
+              "200",
+              "Feb",
+              "Tommy",
+              "982",
+              "Mar",
+              "Spring",
+              "600"
+            ],
+            "to": [
+              "Month",
+              "Name.1",
+              "Expense1",
+              "Sum of Expense1",
+              "Column Labels",
+              "Jan",
+              "Jerry",
+              "200",
+              "Feb",
+              "Tommy",
+              "982",
+              "Mar",
+              "Spring",
+              "600",
+              "Month",
+              "Andy",
+              "Gloria",
+              "Jane",
+              "Jasmine",
+              "Jason"
+            ]
+          }
+        },
+        "headers_added": [
+          "Sum of Expense1",
+          "Column Labels",
+          "Andy",
+          "Gloria",
+          "Jane",
+          "Jasmine",
+          "Jason"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 18002,
+              "to": 23414
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 111,
+                "to": 253
+              },
+              "headers": {
+                "from": [
+                  "Month",
+                  "Name.1",
+                  "Expense1",
+                  "Jan",
+                  "Jerry",
+                  "200",
+                  "Feb",
+                  "Tommy",
+                  "982",
+                  "Mar",
+                  "Spring",
+                  "600"
+                ],
+                "to": [
+                  "Month",
+                  "Name.1",
+                  "Expense1",
+                  "Sum of Expense1",
+                  "Column Labels",
+                  "Jan",
+                  "Jerry",
+                  "200",
+                  "Feb",
+                  "Tommy",
+                  "982",
+                  "Mar",
+                  "Spring",
+                  "600",
+                  "Month",
+                  "Andy",
+                  "Gloria",
+                  "Jane",
+                  "Jasmine",
+                  "Jason"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_204214",
+      "to": "20260109_204214_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_204214_1",
+      "to": "20260109_204645",
+      "human_summary": "Material/Book1.xlsx changed: spreadsheet content changed from 253 to 257 non-empty cells; chart/drawing count changed from 0 to 1.",
+      "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 253,
+            "to": 257
+          },
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Month",
+              "Name.1",
+              "Expense1",
+              "Sum of Expense1",
+              "Column Labels",
+              "Jan",
+              "Jerry",
+              "200",
+              "Feb",
+              "Tommy",
+              "982",
+              "Mar",
+              "Spring",
+              "600",
+              "Month",
+              "Andy",
+              "Gloria",
+              "Jane",
+              "Jasmine",
+              "Jason"
+            ],
+            "to": [
+              "Month",
+              "Name.1",
+              "Expense1",
+              "Sum of Expense1",
+              "Column Labels",
+              "Jan",
+              "Jerry",
+              "200",
+              "Feb",
+              "Tommy",
+              "982",
+              "Mar",
+              "Spring",
+              "600",
+              "Month",
+              "Andy",
+              "Gloria",
+              "Jane",
+              "Jasmine",
+              "Jason"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 23414,
+              "to": 28253
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 253,
+                "to": 257
+              },
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Month",
+                  "Name.1",
+                  "Expense1",
+                  "Sum of Expense1",
+                  "Column Labels",
+                  "Jan",
+                  "Jerry",
+                  "200",
+                  "Feb",
+                  "Tommy",
+                  "982",
+                  "Mar",
+                  "Spring",
+                  "600",
+                  "Month",
+                  "Andy",
+                  "Gloria",
+                  "Jane",
+                  "Jasmine",
+                  "Jason"
+                ],
+                "to": [
+                  "Month",
+                  "Name.1",
+                  "Expense1",
+                  "Sum of Expense1",
+                  "Column Labels",
+                  "Jan",
+                  "Jerry",
+                  "200",
+                  "Feb",
+                  "Tommy",
+                  "982",
+                  "Mar",
+                  "Spring",
+                  "600",
+                  "Month",
+                  "Andy",
+                  "Gloria",
+                  "Jane",
+                  "Jasmine",
+                  "Jason"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_204645",
+      "to": "20260109_204645_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_204645_1",
+      "to": "20260109_204645_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_204645_2",
+      "to": "20260109_205101",
+      "human_summary": "Material/Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Month",
+              "Name.1",
+              "Expense1",
+              "Sum of Expense1",
+              "Column Labels",
+              "Jan",
+              "Jerry",
+              "200",
+              "Feb",
+              "Tommy",
+              "982",
+              "Mar",
+              "Spring",
+              "600",
+              "Month",
+              "Andy",
+              "Gloria",
+              "Jane",
+              "Jasmine",
+              "Jason"
+            ],
+            "to": [
+              "Month",
+              "Name.1",
+              "Expense1",
+              "Sum of Expense1",
+              "Column Labels",
+              "Jan",
+              "Jerry",
+              "200",
+              "Feb",
+              "Tommy",
+              "982",
+              "Mar",
+              "Spring",
+              "600",
+              "Month",
+              "Andy",
+              "Gloria",
+              "Jane",
+              "Jasmine",
+              "Jason"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 28253,
+              "to": 28524
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Month",
+                  "Name.1",
+                  "Expense1",
+                  "Sum of Expense1",
+                  "Column Labels",
+                  "Jan",
+                  "Jerry",
+                  "200",
+                  "Feb",
+                  "Tommy",
+                  "982",
+                  "Mar",
+                  "Spring",
+                  "600",
+                  "Month",
+                  "Andy",
+                  "Gloria",
+                  "Jane",
+                  "Jasmine",
+                  "Jason"
+                ],
+                "to": [
+                  "Month",
+                  "Name.1",
+                  "Expense1",
+                  "Sum of Expense1",
+                  "Column Labels",
+                  "Jan",
+                  "Jerry",
+                  "200",
+                  "Feb",
+                  "Tommy",
+                  "982",
+                  "Mar",
+                  "Spring",
+                  "600",
+                  "Month",
+                  "Andy",
+                  "Gloria",
+                  "Jane",
+                  "Jasmine",
+                  "Jason"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260109_205101",
+      "to": "20260109_205101_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260109_205101_1",
+      "to": "20260109_205101_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260109_205101_2",
+      "to": "20260109_205155",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260109_205155",
+      "to": "20260109_205155_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260109_205155_1",
+      "to": "20260109_205157",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260109_205157",
+      "to": "20260109_211731",
+      "human_summary": "New files appeared: output-1767964649622.zip.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "output-1767964649622.zip"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "output-1767964649622.zip"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260109_211731",
+      "to": "20260109_211731_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260109_211731_1",
+      "to": "20260109_211733",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 347624,
+              "to": 953832
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 347624,
+              "to": 953832
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260109_211733",
+      "to": "20260109_211735",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 953832,
+              "to": 1048576
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 953832,
+              "to": 1048576
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260109_211735",
+      "to": "20260109_211735_1",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 1048576,
+              "to": 1052136
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 1048576,
+              "to": 1052136
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260109_211735_1",
+      "to": "20260109_211738",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 1052136,
+              "to": 1232360
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 1052136,
+              "to": 1232360
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20260109_211738",
+      "to": "20260109_211740",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 1232360,
+              "to": 1363432
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 1232360,
+              "to": 1363432
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 21,
+      "from": "20260109_211740",
+      "to": "20260109_211742",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 1363432,
+              "to": 1478120
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 1363432,
+              "to": 1478120
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 22,
+      "from": "20260109_211742",
+      "to": "20260109_211744",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 1478120,
+              "to": 1773032
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 1478120,
+              "to": 1773032
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 23,
+      "from": "20260109_211744",
+      "to": "20260109_211746",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "size": {
+              "from": 1773032,
+              "to": 2084328
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1767964649622.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 1773032,
+              "to": 2084328
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_28",
+    "snapshot_count": 24,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_203956",
+        "to": "20260109_203956_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_203956_1",
+        "to": "20260109_203956_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_203956_2",
+        "to": "20260109_204214",
+        "human_summary": "Material/Book1.xlsx changed: spreadsheet content changed from 111 to 253 non-empty cells; new visible headers or values include: Sum of Expense1, Column Labels, Andy, Gloria, Jane, Jasmine.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Book1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 111,
+              "to": 253
+            },
+            "headers": {
+              "from": [
+                "Month",
+                "Name.1",
+                "Expense1",
+                "Jan",
+                "Jerry",
+                "200",
+                "Feb",
+                "Tommy",
+                "982",
+                "Mar",
+                "Spring",
+                "600"
+              ],
+              "to": [
+                "Month",
+                "Name.1",
+                "Expense1",
+                "Sum of Expense1",
+                "Column Labels",
+                "Jan",
+                "Jerry",
+                "200",
+                "Feb",
+                "Tommy",
+                "982",
+                "Mar",
+                "Spring",
+                "600",
+                "Month",
+                "Andy",
+                "Gloria",
+                "Jane",
+                "Jasmine",
+                "Jason"
+              ]
+            }
+          },
+          "headers_added": [
+            "Sum of Expense1",
+            "Column Labels",
+            "Andy",
+            "Gloria",
+            "Jane",
+            "Jasmine",
+            "Jason"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 18002,
+                "to": 23414
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 111,
+                  "to": 253
+                },
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Name.1",
+                    "Expense1",
+                    "Jan",
+                    "Jerry",
+                    "200",
+                    "Feb",
+                    "Tommy",
+                    "982",
+                    "Mar",
+                    "Spring",
+                    "600"
+                  ],
+                  "to": [
+                    "Month",
+                    "Name.1",
+                    "Expense1",
+                    "Sum of Expense1",
+                    "Column Labels",
+                    "Jan",
+                    "Jerry",
+                    "200",
+                    "Feb",
+                    "Tommy",
+                    "982",
+                    "Mar",
+                    "Spring",
+                    "600",
+                    "Month",
+                    "Andy",
+                    "Gloria",
+                    "Jane",
+                    "Jasmine",
+                    "Jason"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_204214",
+        "to": "20260109_204214_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_204214_1",
+        "to": "20260109_204645",
+        "human_summary": "Material/Book1.xlsx changed: spreadsheet content changed from 253 to 257 non-empty cells; chart/drawing count changed from 0 to 1.",
+        "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Material/Book1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 253,
+              "to": 257
+            },
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Month",
+                "Name.1",
+                "Expense1",
+                "Sum of Expense1",
+                "Column Labels",
+                "Jan",
+                "Jerry",
+                "200",
+                "Feb",
+                "Tommy",
+                "982",
+                "Mar",
+                "Spring",
+                "600",
+                "Month",
+                "Andy",
+                "Gloria",
+                "Jane",
+                "Jasmine",
+                "Jason"
+              ],
+              "to": [
+                "Month",
+                "Name.1",
+                "Expense1",
+                "Sum of Expense1",
+                "Column Labels",
+                "Jan",
+                "Jerry",
+                "200",
+                "Feb",
+                "Tommy",
+                "982",
+                "Mar",
+                "Spring",
+                "600",
+                "Month",
+                "Andy",
+                "Gloria",
+                "Jane",
+                "Jasmine",
+                "Jason"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 23414,
+                "to": 28253
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 253,
+                  "to": 257
+                },
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Name.1",
+                    "Expense1",
+                    "Sum of Expense1",
+                    "Column Labels",
+                    "Jan",
+                    "Jerry",
+                    "200",
+                    "Feb",
+                    "Tommy",
+                    "982",
+                    "Mar",
+                    "Spring",
+                    "600",
+                    "Month",
+                    "Andy",
+                    "Gloria",
+                    "Jane",
+                    "Jasmine",
+                    "Jason"
+                  ],
+                  "to": [
+                    "Month",
+                    "Name.1",
+                    "Expense1",
+                    "Sum of Expense1",
+                    "Column Labels",
+                    "Jan",
+                    "Jerry",
+                    "200",
+                    "Feb",
+                    "Tommy",
+                    "982",
+                    "Mar",
+                    "Spring",
+                    "600",
+                    "Month",
+                    "Andy",
+                    "Gloria",
+                    "Jane",
+                    "Jasmine",
+                    "Jason"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_204645",
+        "to": "20260109_204645_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260109_204645_1",
+        "to": "20260109_204645_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260109_204645_2",
+        "to": "20260109_205101",
+        "human_summary": "Material/Book1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Book1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Month",
+                "Name.1",
+                "Expense1",
+                "Sum of Expense1",
+                "Column Labels",
+                "Jan",
+                "Jerry",
+                "200",
+                "Feb",
+                "Tommy",
+                "982",
+                "Mar",
+                "Spring",
+                "600",
+                "Month",
+                "Andy",
+                "Gloria",
+                "Jane",
+                "Jasmine",
+                "Jason"
+              ],
+              "to": [
+                "Month",
+                "Name.1",
+                "Expense1",
+                "Sum of Expense1",
+                "Column Labels",
+                "Jan",
+                "Jerry",
+                "200",
+                "Feb",
+                "Tommy",
+                "982",
+                "Mar",
+                "Spring",
+                "600",
+                "Month",
+                "Andy",
+                "Gloria",
+                "Jane",
+                "Jasmine",
+                "Jason"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 28253,
+                "to": 28524
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Name.1",
+                    "Expense1",
+                    "Sum of Expense1",
+                    "Column Labels",
+                    "Jan",
+                    "Jerry",
+                    "200",
+                    "Feb",
+                    "Tommy",
+                    "982",
+                    "Mar",
+                    "Spring",
+                    "600",
+                    "Month",
+                    "Andy",
+                    "Gloria",
+                    "Jane",
+                    "Jasmine",
+                    "Jason"
+                  ],
+                  "to": [
+                    "Month",
+                    "Name.1",
+                    "Expense1",
+                    "Sum of Expense1",
+                    "Column Labels",
+                    "Jan",
+                    "Jerry",
+                    "200",
+                    "Feb",
+                    "Tommy",
+                    "982",
+                    "Mar",
+                    "Spring",
+                    "600",
+                    "Month",
+                    "Andy",
+                    "Gloria",
+                    "Jane",
+                    "Jasmine",
+                    "Jason"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260109_205101",
+        "to": "20260109_205101_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260109_205101_1",
+        "to": "20260109_205101_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260109_205101_2",
+        "to": "20260109_205155",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260109_205155",
+        "to": "20260109_205155_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260109_205155_1",
+        "to": "20260109_205157",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260109_205157",
+        "to": "20260109_211731",
+        "human_summary": "New files appeared: output-1767964649622.zip.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "output-1767964649622.zip"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "output-1767964649622.zip"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260109_211731",
+        "to": "20260109_211731_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260109_211731_1",
+        "to": "20260109_211733",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 347624,
+                "to": 953832
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 347624,
+                "to": 953832
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260109_211733",
+        "to": "20260109_211735",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 953832,
+                "to": 1048576
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 953832,
+                "to": 1048576
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20260109_211735",
+        "to": "20260109_211735_1",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 1048576,
+                "to": 1052136
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 1048576,
+                "to": 1052136
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 19,
+        "from": "20260109_211735_1",
+        "to": "20260109_211738",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 1052136,
+                "to": 1232360
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 1052136,
+                "to": 1232360
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 20,
+        "from": "20260109_211738",
+        "to": "20260109_211740",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 1232360,
+                "to": 1363432
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 1232360,
+                "to": 1363432
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 21,
+        "from": "20260109_211740",
+        "to": "20260109_211742",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 1363432,
+                "to": 1478120
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 1363432,
+                "to": 1478120
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 22,
+        "from": "20260109_211742",
+        "to": "20260109_211744",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 1478120,
+                "to": 1773032
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 1478120,
+                "to": 1773032
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 23,
+        "from": "20260109_211744",
+        "to": "20260109_211746",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "size": {
+                "from": 1773032,
+                "to": 2084328
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1767964649622.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 1773032,
+                "to": 2084328
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Click Menu---Data, find and click Get Data, then select From file, Select From Excel Workbook"
+    },
+    {
+      "index": 4,
+      "instruction": "Click Desktop, double click Material, then select detail file, then click Import button."
+    },
+    {
+      "index": 5,
+      "instruction": "Select Detail.xlsx[3], then click Transform Data button."
+    },
+    {
+      "index": 6,
+      "instruction": "Edit inputbox, and modify null to \"true\""
+    },
+    {
+      "index": 7,
+      "instruction": "Click Expand button next to Data, unselect Use original column name as prefix, then click Ok"
+    },
+    {
+      "index": 8,
+      "instruction": "Select Month column, Name.1 column and Expense Column, right click, and select Remove other columns"
+    },
+    {
+      "index": 9,
+      "instruction": "Select Month column and Name.1 column, then click Menu---Home, click Group By button."
+    },
+    {
+      "index": 10,
+      "instruction": "New column name as Expense1, Operation select sum, column select expense. Then click OK button."
+    },
+    {
+      "index": 11,
+      "instruction": "Click Menu---Home, click Close & Load button."
+    },
+    {
+      "index": 12,
+      "instruction": "Click Menu---file, find and click Save, select material folder, then click save"
+    },
+    {
+      "index": 13,
+      "instruction": "Select A1 cell to C37 cell, then click Menu---Insert, find and click Pivot Table"
+    },
+    {
+      "index": 14,
+      "instruction": "Select Existing Worksheet, then select G1 cell, then click OK button, draw Month to the Rows, draw Name.1 to the Columns, draw Expense.1 to the Values."
+    },
+    {
+      "index": 15,
+      "instruction": "Select G3 cell to T7 cell, then click Ctrl+C, then click Sheet, select A1 cell, then click Ctrl+V"
+    },
+    {
+      "index": 16,
+      "instruction": "Select A1 cell, then modify as \"Month\""
+    },
+    {
+      "index": 17,
+      "instruction": "Select B2 cell to N5 cell, then click Menu---Home, find and click Comma Style, then click decrease decimal twice"
+    },
+    {
+      "index": 18,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 19,
+      "instruction": "Click Menu---file, click Options, then click Customize Ribbon, Click Developer, then click OK button."
+    },
+    {
+      "index": 20,
+      "instruction": "Click Menu---Developer, click Insert, select Check box"
+    },
+    {
+      "index": 21,
+      "instruction": "Draw check box below the line 5, then select the Check box, and click Ctrl+C, click Ctrl+V three times."
+    },
+    {
+      "index": 22,
+      "instruction": "Right click 4 check box, then update name as \"Above the average\", \"Below the average\", \"Max\", \"Min\""
+    },
+    {
+      "index": 23,
+      "instruction": "Right click above the average check box, then select Format Control, Select checked, then Cell link select B6."
+    },
+    {
+      "index": 24,
+      "instruction": "Right click below the average check box, then select Format Control, Select checked, then Cell link select C6."
+    },
+    {
+      "index": 25,
+      "instruction": "Right click Max check box, then select Format Control, Select checked, then Cell link select D6."
+    },
+    {
+      "index": 26,
+      "instruction": "Right click Min check box, then select Format Control, Select checked, then Cell link select E6."
+    },
+    {
+      "index": 27,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 28,
+      "instruction": "Select B2 cell to M4 cell, click Menu---Home, then click conditional formatting, Select New Rule"
+    },
+    {
+      "index": 29,
+      "instruction": "Select Use a formula to determine which cells to format, then input \"=AND($B$6,B2<AVERAGE($B$2:$M$4))\""
+    },
+    {
+      "index": 30,
+      "instruction": "Click Format button, and select Fill, select green color"
+    },
+    {
+      "index": 31,
+      "instruction": "Click conditional formatting, Select New Rule"
+    },
+    {
+      "index": 32,
+      "instruction": "Select Use a formula to determine which cells to format, then input \"=AND($C$6,B2>=AVERAGE($B$2:$M$4))\""
+    },
+    {
+      "index": 33,
+      "instruction": "Click Format button, and select Fill, select Red color"
+    },
+    {
+      "index": 34,
+      "instruction": "Click conditional formatting, Select New Rule"
+    },
+    {
+      "index": 35,
+      "instruction": "Select Use a formula to determine which cells to format, then input \"=AND($D$6,B2=MAX($B$2:$M$4))\""
+    },
+    {
+      "index": 36,
+      "instruction": "Click Format button, and select Fill, select Red color"
+    },
+    {
+      "index": 37,
+      "instruction": "Click conditional formatting, Select New Rule"
+    },
+    {
+      "index": 38,
+      "instruction": "Select Use a formula to determine which cells to format, then input \"=AND($E$6,B2=MIN($B$2:$M$4))\""
+    },
+    {
+      "index": 39,
+      "instruction": "Click Format button, and select Fill, select Dark Blue color"
+    },
+    {
+      "index": 40,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 41,
+      "instruction": "Unclick all the check box, then click check box one by one."
+    },
+    {
+      "index": 42,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 43,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 24
+  }
+}

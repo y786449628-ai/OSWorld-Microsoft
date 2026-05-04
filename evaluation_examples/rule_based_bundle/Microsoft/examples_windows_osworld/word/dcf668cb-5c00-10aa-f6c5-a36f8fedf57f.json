@@ -1,0 +1,77 @@
+{
+  "id": "dcf668cb-5c00-10aa-f6c5-a36f8fedf57f",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'Template.docx' within the 'Template' folder, and then structure the Word document to include sections for Report Title, Report Period, Key Metrics, Recommendations, and Approval? Could you apply appropriate built-in 'Heading' styles to the labels of each section in the document? Could you insert a table in the 'Key Metrics' section with columns for 'Metric Name', 'Target Value', and 'Actual Value'? Could you create a bulleted list under the 'Recommendations' section in the document? Could you add a 'Confidential' watermark to the document? Could you insert a header containing the organization name and a footer containing a report date placeholder and page number?",
+  "source": "Microsoft_67 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_67/logs/MonitoringSnapshots/20260113_234423/Desktop/Template/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\User\\Desktop\\Template\\New Microsoft Word Document.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_67/logs/MonitoringSnapshots/20260113_235159/Desktop/Template/Template.docx",
+            "path": "C:\\Users\\User\\Documents\\Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Template\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/dcf668cb-5c00-10aa-f6c5-a36f8fedf57f",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Template\\Template.docx",
+      "dest": "Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Template_gold.docx",
+      "dest": "Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

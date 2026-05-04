@@ -1,0 +1,87 @@
+{
+  "id": "7ef063c9-0008-c6d1-c31b-2b4476516412",
+  "snapshot": "excel",
+  "instruction": "Could you consolidate the Quarter 1 expense data from different files into a single Excel workbook, and then create a summary table in the Excel workbook that shows which staff members' expenses are above or below the average? Could you identify and highlight the staff members with the highest and lowest expenses in the Excel workbook, and then prepare a report document in Word to present the findings on staff expenses, and then standardize the format of the consolidated expense data in the Excel workbook? Could you calculate the average, highest, and lowest expenses for each staff member in the Excel workbook?",
+  "source": "Microsoft_28 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_28/logs/MonitoringSnapshots/20260109_203956/Desktop/Material/Book1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Book1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_28/logs/MonitoringSnapshots/20260109_203956/Desktop/Material/Detail.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Detail.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_28/logs/MonitoringSnapshots/20260109_211731/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/7ef063c9-0008-c6d1-c31b-2b4476516412",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

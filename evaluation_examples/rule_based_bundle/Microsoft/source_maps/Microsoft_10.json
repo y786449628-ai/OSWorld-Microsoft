@@ -1,0 +1,385 @@
+{
+  "source_name": "Microsoft_10",
+  "source_file": "Microsoft_10.txt",
+  "source_id": "1f666d57d644",
+  "source_question": "Finance team provide a daily profit monthly report which including sales, cost and profit of each day, now Boss want to view the data from chart view, and also want to select one day and view the data of next 10 days.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the daily profit monthly report in Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart to visualize the sales, cost, and profit data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a feature to select a specific day in the chart?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you set up the chart to display the data for the next 10 days after the selected day?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you save the updated report with the new chart and selection feature?",
+      "mapped_stage_indices": [
+        3
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_daily_profit_report",
+      "instruction": "Could you open the daily profit monthly report in Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open a new workbook and then open the specific file from the desktop.",
+      "planned_input_snapshot": "20260105_192216",
+      "planned_gold_snapshot": "20260105_192745",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_chart_and_selection_feature",
+      "instruction": "Could you create a chart to visualize the sales, cost, and profit data? Could you add a feature to select a specific day in the chart? Could you set up the chart to display the data for the next 10 days after the selected day?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Add developer tab, insert scroll bar, set up scroll bar properties, copy and paste table titles, use OFFSET formula, create and adjust the chart, and test the scroll bar functionality.",
+      "planned_input_snapshot": "20260105_192745",
+      "planned_gold_snapshot": "20260105_192745",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "The snapshot evidence does not show a clear transition, but the trajectory actions indicate significant changes. This stage may need further review or merging with other stages.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "save_updated_report",
+      "instruction": "Could you save the updated report with the new chart and selection feature?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 18,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Save the file as 'final result.xlsx' on the desktop.",
+      "planned_input_snapshot": "20260105_192745",
+      "planned_gold_snapshot": "20260105_192745",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "The snapshot evidence does not show a clear transition, but the trajectory actions indicate a save operation. This stage may need further review or merging with other stages.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_daily_profit_report_and_create_chart_and_selection_feature_and_save_updated_report",
+      "instruction": "Could you open the daily profit monthly report in Excel, and then create a chart to visualize the sales, cost, and profit data? Could you add a feature to select a specific day in the chart? Could you set up the chart to display the data for the next 10 days after the selected day, and then save the updated report with the new chart and selection feature?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Open a new workbook and then open the specific file from the desktop. | Add developer tab, insert scroll bar, set up scroll bar properties, copy and paste table titles, use OFFSET formula, create and adjust the chart, and test the scroll bar functionality. | Save the file as 'final result.xlsx' on the desktop.",
+      "planned_input_snapshot": "20260105_192216",
+      "planned_gold_snapshot": "20260105_192745",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable state change.",
+      "input_snapshot": "20260105_192216",
+      "gold_snapshot": "20260105_192745",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260105_192216",
+          "planned_gold_snapshot": "20260105_192745"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 3,
+          "stage_name": "save_updated_report",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "open_daily_profit_report",
+        "create_chart_and_selection_feature",
+        "save_updated_report"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3
+      ],
+      "generated_examples": [
+        {
+          "example_id": "0e673beb-b267-85f8-5e0f-6c259d6c4b63",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0e673beb-b267-85f8-5e0f-6c259d6c4b63.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart to visualize the sales, cost, and profit data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a feature to select a specific day in the chart?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you set up the chart to display the data for the next 10 days after the selected day?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260105_192216",
+    "20260105_192745",
+    "20260105_192747"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260105_192216",
+      "to": "20260105_192745",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260105_192745",
+      "to": "20260105_192747",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_10",
+    "snapshot_count": 3,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260105_192216",
+        "to": "20260105_192745",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260105_192745",
+        "to": "20260105_192747",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select File---Open---Browse, then click Desktop---Double Click Material---find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Menu---File, then find and click Options, will pop up Excel Options frame"
+    },
+    {
+      "index": 5,
+      "instruction": "Find and click Customize Ribbon, select Main Tabs of Choose commands from, then find and select Developer, click add, and Developer will be added into Customize the Ribbon."
+    },
+    {
+      "index": 6,
+      "instruction": "Click Ok button, the Customize the Ribbon will be closed."
+    },
+    {
+      "index": 7,
+      "instruction": "Click Menu---Developer, find and click Insert button, will pop up a frame of Form Controls"
+    },
+    {
+      "index": 8,
+      "instruction": "Find and click Scroll Bar, then draw a Scroll Bar from F3 cell to H3 cell, will show the Scroll Bar in sheet."
+    },
+    {
+      "index": 9,
+      "instruction": "Click J3 cell, then input \"1\""
+    },
+    {
+      "index": 10,
+      "instruction": "Right Click Scroll Bar, find and click Format Control button, will pop up a frame of Format Control"
+    },
+    {
+      "index": 11,
+      "instruction": "Set Minimum value as 1; Maximum value as 31; page change as 11; Cell Link input \"J3\", then click OK button."
+    },
+    {
+      "index": 12,
+      "instruction": "Select A2 cell to D2 cell, then click Ctrl+C, click F5 Cell, click Ctrl+V. Copy and paste the title of table."
+    },
+    {
+      "index": 13,
+      "instruction": "Click F6 cell, and input \"=OFFSET(A$1,ROW(A1)+$J$3,0)\", then click enter."
+    },
+    {
+      "index": 14,
+      "instruction": "Click F6 cell, then click Ctrl+C, select F6 cell to I16 cell, click Ctrl+V"
+    },
+    {
+      "index": 15,
+      "instruction": "Click J5, then click Menu---Insert, find and click Insert Column or Bar Chart, will pop up a frame of Column or Bar Chart, find and click 3-D Clustered Column, will show a chart in the table"
+    },
+    {
+      "index": 16,
+      "instruction": "Adjust the Chart to cover the F5 cell to I16 cell, then modify chart title as \"Daily Detail\""
+    },
+    {
+      "index": 17,
+      "instruction": "Click Scroll Bar and make check chart will update after clicking"
+    },
+    {
+      "index": 18,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 19,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 3,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 3
+  }
+}

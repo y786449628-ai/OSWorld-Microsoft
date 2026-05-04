@@ -1,0 +1,83 @@
+{
+  "id": "ea430429-099f-054d-2683-4f0633ba5185",
+  "snapshot": "excel",
+  "instruction": "Could you evaluate regional sales efficiency based on the data in the workbook?",
+  "source": "Microsoft_54 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_54/logs/MonitoringSnapshots/20260112_100544/Desktop/E-commerce_Sales_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\E-commerce_Sales_Data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_54/logs/MonitoringSnapshots/20260112_100938/Desktop/E-commerce_Sales_Data.xlsx",
+            "path": "C:\\Users\\User\\Documents\\E-commerce_Sales_Data_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\E-commerce_Sales_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/ea430429-099f-054d-2683-4f0633ba5185",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\E-commerce_Sales_Data.xlsx",
+      "dest": "E-commerce_Sales_Data.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\E-commerce_Sales_Data_gold.xlsx",
+      "dest": "E-commerce_Sales_Data_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "E-commerce_Sales_Data.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

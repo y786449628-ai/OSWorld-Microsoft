@@ -1,0 +1,146 @@
+{
+  "source_name": "Microsoft_38",
+  "snapshot_count": 6,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260111_223810",
+      "to": "20260111_223810_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260111_223810_1",
+      "to": "20260111_223813",
+      "human_summary": "Sales.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Name",
+              "Department",
+              "Salesprice",
+              "Completionrate",
+              "Performance rating",
+              "Department",
+              "Departmengt headcount"
+            ],
+            "to": [
+              "Name",
+              "Department",
+              "Salesprice",
+              "Completionrate",
+              "Performance rating",
+              "Department",
+              "Departmengt headcount"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16376,
+              "to": 16382
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Name",
+                  "Department",
+                  "Salesprice",
+                  "Completionrate",
+                  "Performance rating",
+                  "Department",
+                  "Departmengt headcount"
+                ],
+                "to": [
+                  "Name",
+                  "Department",
+                  "Salesprice",
+                  "Completionrate",
+                  "Performance rating",
+                  "Department",
+                  "Departmengt headcount"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260111_223813",
+      "to": "20260111_223813_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260111_223813_1",
+      "to": "20260111_223813_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260111_223813_2",
+      "to": "20260111_223813_3",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

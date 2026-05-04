@@ -1,0 +1,87 @@
+{
+  "id": "fa2a257e-035b-156a-fc44-782df2fbc99a",
+  "snapshot": "excel",
+  "instruction": "Could you create a sales volume table in Excel using the data provided by the operation team?",
+  "source": "Microsoft_32 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_32/logs/MonitoringSnapshots/20260111_195041/Desktop/Material/Detail.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Detail.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_32/logs/MonitoringSnapshots/20260111_195041/Desktop/Material/Price.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Price.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_32/logs/MonitoringSnapshots/20260111_195359/Desktop/Material/Detail1.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Detail1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Detail.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/fa2a257e-035b-156a-fc44-782df2fbc99a",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Material\\Detail1.xlsx",
+      "dest": "Detail1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Detail1_gold.xlsx",
+      "dest": "Detail1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Detail1.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,856 @@
+{
+  "source_name": "Microsoft_52",
+  "snapshot_count": 12,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260110_150702",
+      "to": "20260110_150746",
+      "human_summary": "Warehouse_Inventory.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "20"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "20"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9648,
+              "to": 9737
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "20"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "20"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_150746",
+      "to": "20260110_150808",
+      "human_summary": "Warehouse_Inventory.xlsx changed: spreadsheet content changed from 60 to 69 non-empty cells; new visible headers or values include: 82500.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 60,
+            "to": 69
+          },
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "20"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20"
+            ]
+          }
+        },
+        "headers_added": [
+          "82500"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9737,
+              "to": 10294
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 60,
+                "to": 69
+              },
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "20"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_150808",
+      "to": "20260110_150838",
+      "human_summary": "Warehouse_Inventory.xlsx changed: spreadsheet content changed from 69 to 78 non-empty cells; new visible headers or values include: 36000.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 69,
+            "to": 78
+          },
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000"
+            ]
+          }
+        },
+        "headers_added": [
+          "36000"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10294,
+              "to": 10401
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 69,
+                "to": 78
+              },
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_150838",
+      "to": "20260110_151015",
+      "human_summary": "Warehouse_Inventory.xlsx changed: spreadsheet content changed from 78 to 87 non-empty cells; new visible headers or values include: Sufficient.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 78,
+            "to": 87
+          },
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        },
+        "headers_added": [
+          "Sufficient"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10401,
+              "to": 10557
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 78,
+                "to": 87
+              },
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_151015",
+      "to": "20260110_151050",
+      "human_summary": "Warehouse_Inventory.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10557,
+              "to": 10707
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_151050",
+      "to": "20260110_151128",
+      "human_summary": "Warehouse_Inventory.xlsx changed: spreadsheet content changed from 87 to 90 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 87,
+            "to": 90
+          },
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10707,
+              "to": 10772
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 87,
+                "to": 90
+              },
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_151128",
+      "to": "20260110_151213",
+      "human_summary": "Warehouse_Inventory.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10772,
+              "to": 10869
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_151213",
+      "to": "20260110_151248",
+      "human_summary": "Warehouse_Inventory.xlsx changed: spreadsheet content changed from 90 to 93 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 90,
+            "to": 93
+          },
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10869,
+              "to": 10932
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 90,
+                "to": 93
+              },
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260110_151248",
+      "to": "20260110_151339",
+      "human_summary": "Warehouse_Inventory.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10932,
+              "to": 16402
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260110_151339",
+      "to": "20260110_151413",
+      "human_summary": "Warehouse_Inventory.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Warehouse_Inventory.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ],
+            "to": [
+              "Warehouse Inventory & Sales Master Tracker 2026",
+              "E012",
+              "Electronics",
+              "1500",
+              "55",
+              "82500",
+              "20",
+              "36000",
+              "Sufficient"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Warehouse_Inventory.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16402,
+              "to": 16531
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ],
+                "to": [
+                  "Warehouse Inventory & Sales Master Tracker 2026",
+                  "E012",
+                  "Electronics",
+                  "1500",
+                  "55",
+                  "82500",
+                  "20",
+                  "36000",
+                  "Sufficient"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260110_151413",
+      "to": "20260110_151511",
+      "human_summary": "New files appeared: Warehouse_Final_Analysis.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Warehouse_Final_Analysis.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Warehouse_Final_Analysis.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

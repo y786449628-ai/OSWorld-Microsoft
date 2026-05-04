@@ -1,0 +1,1072 @@
+{
+  "source_name": "Microsoft_61",
+  "snapshot_count": 12,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260112_140250",
+      "to": "20260112_140255",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Sales_Data_Analysis.xlsx"
+        ],
+        "files_removed": [
+          "New Microsoft Excel Worksheet.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sales_Data_Analysis.xlsx"
+        ],
+        "files_removed": [
+          "New Microsoft Excel Worksheet.xlsx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260112_140255",
+      "to": "20260112_140303",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [],
+            "to": []
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 6186,
+              "to": 7953
+            },
+            "office_delta": {
+              "headers": {
+                "from": [],
+                "to": []
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260112_140303",
+      "to": "20260112_140446",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: spreadsheet content changed from 0 to 8 non-empty cells; worksheet names changed; new visible headers or values include: Order ID, Product Name, Category, Salesperson, Sale Date, Units Sold.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Sales Records"
+            ]
+          },
+          "nonempty_cells": {
+            "from": 0,
+            "to": 8
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale"
+            ]
+          }
+        },
+        "headers_added": [
+          "Order ID",
+          "Product Name",
+          "Category",
+          "Salesperson",
+          "Sale Date",
+          "Units Sold",
+          "Unit Price",
+          "Total Sale"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 7953,
+              "to": 8571
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Sales Records"
+                ]
+              },
+              "nonempty_cells": {
+                "from": 0,
+                "to": 8
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260112_140446",
+      "to": "20260112_140638",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: spreadsheet content changed from 8 to 78 non-empty cells; new visible headers or values include: 1001, Wireless Mouse, Electronics, John, 45422, 5.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 8,
+            "to": 78
+          },
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25"
+            ]
+          }
+        },
+        "headers_added": [
+          "1001",
+          "Wireless Mouse",
+          "Electronics",
+          "John",
+          "45422",
+          "5",
+          "25"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8571,
+              "to": 8971
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 8,
+                "to": 78
+              },
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260112_140638",
+      "to": "20260112_140702",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: spreadsheet content changed from 78 to 88 non-empty cells; new visible headers or values include: 125.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 78,
+            "to": 88
+          },
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        },
+        "headers_added": [
+          "125"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8971,
+              "to": 9511
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 78,
+                "to": 88
+              },
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260112_140702",
+      "to": "20260112_140711",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9511,
+              "to": 9510
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260112_140711",
+      "to": "20260112_140749",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9510,
+              "to": 9621
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260112_140749",
+      "to": "20260112_140827",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9621,
+              "to": 9737
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260112_140827",
+      "to": "20260112_140833",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9737,
+              "to": 9696
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260112_140833",
+      "to": "20260112_141056",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: spreadsheet content changed from 88 to 99 non-empty cells; worksheet names changed.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sales Records"
+            ],
+            "to": [
+              "Sheet1",
+              "Sales Records"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "nonempty_cells": {
+            "from": 88,
+            "to": 99
+          },
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9696,
+              "to": 15667
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sales Records"
+                ],
+                "to": [
+                  "Sheet1",
+                  "Sales Records"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "nonempty_cells": {
+                "from": 88,
+                "to": 99
+              },
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260112_141056",
+      "to": "20260112_141110",
+      "human_summary": "Sales_Data_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Sales_Data_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ],
+            "to": [
+              "Order ID",
+              "Product Name",
+              "Category",
+              "Salesperson",
+              "Sale Date",
+              "Units Sold",
+              "Unit Price",
+              "Total Sale",
+              "1001",
+              "Wireless Mouse",
+              "Electronics",
+              "John",
+              "45422",
+              "5",
+              "25",
+              "125"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Sales_Data_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15667,
+              "to": 15668
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ],
+                "to": [
+                  "Order ID",
+                  "Product Name",
+                  "Category",
+                  "Salesperson",
+                  "Sale Date",
+                  "Units Sold",
+                  "Unit Price",
+                  "Total Sale",
+                  "1001",
+                  "Wireless Mouse",
+                  "Electronics",
+                  "John",
+                  "45422",
+                  "5",
+                  "25",
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

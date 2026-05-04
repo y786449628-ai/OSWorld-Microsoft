@@ -1,0 +1,1153 @@
+{
+  "source_name": "Microsoft_30",
+  "source_file": "Microsoft_30.txt",
+  "source_id": "09c66567f483",
+  "source_question": "Finance Team provide an expense detail file, and each department's data store in seperate sheet. Boss want to view the summary for each team and check who spend most expense and lest, and want to select top or below N to show the name.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the expense detail file and identify the sheets for each department?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a summary sheet to consolidate the total expenses for each team?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you determine the highest and lowest spending individuals in each department?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you add a feature to select and display the top or bottom N spenders in the summary sheet?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you prepare a report document to present the summary and the selected top or bottom N spenders?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you export the final report to a PDF format?",
+      "mapped_stage_indices": [
+        5
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_expense_file",
+      "instruction": "Could you open the expense detail file and identify the sheets for each department?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open Excel, create a new workbook, and then open the Detail.xlsx file from the Material folder.",
+      "planned_input_snapshot": "20260110_144901",
+      "planned_gold_snapshot": "20260110_145206",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 30 to 69 non-empty cells; worksheet names changed; new visible headers or values include: Team, Total Expense, Service, Jerry, 5020.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_summary_sheet",
+      "instruction": "Could you create a summary sheet to consolidate the total expenses for each team?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Transform data, remove other columns, use first row as headers, rename Sales Team to Team, group by Team and Name, sum the expenses, and load the data.",
+      "planned_input_snapshot": "20260110_145206",
+      "planned_gold_snapshot": "20260110_145512",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 69 to 72 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Spend Top, 1, Staff.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_top_bottom_n_feature",
+      "instruction": "Could you add a feature to select and display the top or bottom N spenders in the summary sheet?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 17,
+      "trajectory_end": 28,
+      "trajectory_evidence": "Add a spin button, format it, and set up conditional formatting to highlight the top N spenders.",
+      "planned_input_snapshot": "20260110_145512",
+      "planned_gold_snapshot": "20260110_150002",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file, including the addition of a spin button and conditional formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "prepare_report_document",
+      "instruction": "Could you prepare a report document to present the summary and the selected top or bottom N spenders?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 30,
+      "trajectory_end": 34,
+      "trajectory_evidence": "Create a pivot table and a bar chart, and add data labels to the chart.",
+      "planned_input_snapshot": "20260110_150002",
+      "planned_gold_snapshot": "20260110_150002",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "The pivot table and chart creation do not produce an observable state change in the snapshots. This stage may need to be merged with the previous or next stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "export_final_report_to_pdf",
+      "instruction": "Could you export the final report to a PDF format?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 35,
+      "trajectory_end": 35,
+      "trajectory_evidence": "Save the final result as a PDF file on the desktop.",
+      "planned_input_snapshot": "20260110_150002",
+      "planned_gold_snapshot": "20260110_150004",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "The export to PDF does not produce an observable state change in the snapshots. This stage may need to be merged with the previous stage.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_expense_file_and_add_top_bottom_n_feature_and_prepare_report_document_and_export_final_report_to_pdf_and_create_summary_sheet",
+      "instruction": "Could you open the expense detail file and identify the sheets for each department, and then add a feature to select and display the top or bottom N spenders in the summary sheet, and then prepare a report document to present the summary and the selected top or bottom N spenders, and then export the final report to a PDF format, and then create a summary sheet to consolidate the total expenses for each team?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Open Excel, create a new workbook, and then open the Detail.xlsx file from the Material folder. | Add a spin button, format it, and set up conditional formatting to highlight the top N spenders. | Create a pivot table and a bar chart, and add data labels to the chart. | Save the final result as a PDF file on the desktop. | Transform data, remove other columns, use first row as headers, rename Sales Team to Team, group by Team and Name, sum the expenses, and load the data.",
+      "planned_input_snapshot": "20260110_144901",
+      "planned_gold_snapshot": "20260110_150004",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 30 to 69 non-empty cells; worksheet names changed; new visible headers or values include: Team, Total Expense, Service, Jerry, 5020. | New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | Material/Detail.xlsx changed: spreadsheet content changed from 69 to 72 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Spend Top, 1, Staff.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": "20260110_144901",
+      "gold_snapshot": "20260110_150004",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_144901",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 5,
+          "search_start_index": 1,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_144901",
+          "planned_gold_snapshot": "20260110_145206"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 2,
+          "stage_name": "create_summary_sheet",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_and_prepare_expense_file",
+        "add_top_bottom_n_feature",
+        "prepare_report_document",
+        "export_final_report_to_pdf",
+        "create_summary_sheet"
+      ],
+      "merged_stage_indices": [
+        1,
+        3,
+        4,
+        5,
+        2
+      ],
+      "generated_examples": [
+        {
+          "example_id": "70428f62-a2e5-2462-4992-e1aebf7a3d29",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/70428f62-a2e5-2462-4992-e1aebf7a3d29.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you determine the highest and lowest spending individuals in each department?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260110_144901",
+    "20260110_144901_1",
+    "20260110_145206",
+    "20260110_145206_1",
+    "20260110_145512",
+    "20260110_145512_1",
+    "20260110_150002",
+    "20260110_150002_1",
+    "20260110_150004"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_144901",
+      "to": "20260110_144901_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_144901_1",
+      "to": "20260110_145206",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 30 to 69 non-empty cells; worksheet names changed; new visible headers or values include: Team, Total Expense, Service, Jerry, 5020.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sales Team",
+              "Marketing",
+              "Service"
+            ],
+            "to": [
+              "Detail xlsx",
+              "Sales Team",
+              "Marketing",
+              "Service"
+            ]
+          },
+          "worksheet_count": {
+            "from": 3,
+            "to": 4
+          },
+          "nonempty_cells": {
+            "from": 30,
+            "to": 69
+          },
+          "headers": {
+            "from": [
+              "Name",
+              "Expense",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense"
+            ],
+            "to": [
+              "Team",
+              "Name",
+              "Total Expense",
+              "Service",
+              "Jerry",
+              "5020",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense"
+            ]
+          }
+        },
+        "headers_added": [
+          "Team",
+          "Total Expense",
+          "Service",
+          "Jerry",
+          "5020"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11369,
+              "to": 20622
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sales Team",
+                  "Marketing",
+                  "Service"
+                ],
+                "to": [
+                  "Detail xlsx",
+                  "Sales Team",
+                  "Marketing",
+                  "Service"
+                ]
+              },
+              "worksheet_count": {
+                "from": 3,
+                "to": 4
+              },
+              "nonempty_cells": {
+                "from": 30,
+                "to": 69
+              },
+              "headers": {
+                "from": [
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense"
+                ],
+                "to": [
+                  "Team",
+                  "Name",
+                  "Total Expense",
+                  "Service",
+                  "Jerry",
+                  "5020",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_145206",
+      "to": "20260110_145206_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_145206_1",
+      "to": "20260110_145512",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 69 to 72 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Spend Top, 1, Staff.",
+      "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 69,
+            "to": 72
+          },
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Team",
+              "Name",
+              "Total Expense",
+              "Service",
+              "Jerry",
+              "5020",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense"
+            ],
+            "to": [
+              "Team",
+              "Name",
+              "Total Expense",
+              "Spend Top",
+              "1",
+              "Staff",
+              "Service",
+              "Jerry",
+              "5020",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense",
+              "Name",
+              "Expense"
+            ]
+          }
+        },
+        "headers_added": [
+          "Spend Top",
+          "1",
+          "Staff"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 20622,
+              "to": 23301
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 69,
+                "to": 72
+              },
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Team",
+                  "Name",
+                  "Total Expense",
+                  "Service",
+                  "Jerry",
+                  "5020",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense"
+                ],
+                "to": [
+                  "Team",
+                  "Name",
+                  "Total Expense",
+                  "Spend Top",
+                  "1",
+                  "Staff",
+                  "Service",
+                  "Jerry",
+                  "5020",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense",
+                  "Name",
+                  "Expense"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_145512",
+      "to": "20260110_145512_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_145512_1",
+      "to": "20260110_150002",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_150002",
+      "to": "20260110_150002_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_150002_1",
+      "to": "20260110_150004",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_30",
+    "snapshot_count": 9,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_144901",
+        "to": "20260110_144901_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_144901_1",
+        "to": "20260110_145206",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 30 to 69 non-empty cells; worksheet names changed; new visible headers or values include: Team, Total Expense, Service, Jerry, 5020.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sales Team",
+                "Marketing",
+                "Service"
+              ],
+              "to": [
+                "Detail xlsx",
+                "Sales Team",
+                "Marketing",
+                "Service"
+              ]
+            },
+            "worksheet_count": {
+              "from": 3,
+              "to": 4
+            },
+            "nonempty_cells": {
+              "from": 30,
+              "to": 69
+            },
+            "headers": {
+              "from": [
+                "Name",
+                "Expense",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense"
+              ],
+              "to": [
+                "Team",
+                "Name",
+                "Total Expense",
+                "Service",
+                "Jerry",
+                "5020",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense"
+              ]
+            }
+          },
+          "headers_added": [
+            "Team",
+            "Total Expense",
+            "Service",
+            "Jerry",
+            "5020"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11369,
+                "to": 20622
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sales Team",
+                    "Marketing",
+                    "Service"
+                  ],
+                  "to": [
+                    "Detail xlsx",
+                    "Sales Team",
+                    "Marketing",
+                    "Service"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 3,
+                  "to": 4
+                },
+                "nonempty_cells": {
+                  "from": 30,
+                  "to": 69
+                },
+                "headers": {
+                  "from": [
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense"
+                  ],
+                  "to": [
+                    "Team",
+                    "Name",
+                    "Total Expense",
+                    "Service",
+                    "Jerry",
+                    "5020",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_145206",
+        "to": "20260110_145206_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_145206_1",
+        "to": "20260110_145512",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 69 to 72 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Spend Top, 1, Staff.",
+        "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 69,
+              "to": 72
+            },
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Team",
+                "Name",
+                "Total Expense",
+                "Service",
+                "Jerry",
+                "5020",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense"
+              ],
+              "to": [
+                "Team",
+                "Name",
+                "Total Expense",
+                "Spend Top",
+                "1",
+                "Staff",
+                "Service",
+                "Jerry",
+                "5020",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense",
+                "Name",
+                "Expense"
+              ]
+            }
+          },
+          "headers_added": [
+            "Spend Top",
+            "1",
+            "Staff"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 20622,
+                "to": 23301
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 69,
+                  "to": 72
+                },
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Team",
+                    "Name",
+                    "Total Expense",
+                    "Service",
+                    "Jerry",
+                    "5020",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense"
+                  ],
+                  "to": [
+                    "Team",
+                    "Name",
+                    "Total Expense",
+                    "Spend Top",
+                    "1",
+                    "Staff",
+                    "Service",
+                    "Jerry",
+                    "5020",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense",
+                    "Name",
+                    "Expense"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_145512",
+        "to": "20260110_145512_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260110_145512_1",
+        "to": "20260110_150002",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260110_150002",
+        "to": "20260110_150002_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260110_150002_1",
+        "to": "20260110_150004",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Menu---Data, find and click get data button"
+    },
+    {
+      "index": 5,
+      "instruction": "Select from File, then click From Excel Workbook, then click Desktop, double click Material Folder, select detail file, then click import."
+    },
+    {
+      "index": 6,
+      "instruction": "Select Detail.xlsx[3], then click Transform Data"
+    },
+    {
+      "index": 7,
+      "instruction": "Select Name column and Data column, right click, then select Remove other column"
+    },
+    {
+      "index": 8,
+      "instruction": "Click expand icon next to Data filed, click OK."
+    },
+    {
+      "index": 9,
+      "instruction": "Click Menu---Home, then click Use First Row as Headers."
+    },
+    {
+      "index": 10,
+      "instruction": "Select  the filter button of Name, then Unselect Name, then click Ok"
+    },
+    {
+      "index": 11,
+      "instruction": "Click Sales Team column, right click, then select Rename, input \"Team\", then click Enter."
+    },
+    {
+      "index": 12,
+      "instruction": "Select Column Team and Name, then click Menu---Home, find and click Group By button"
+    },
+    {
+      "index": 13,
+      "instruction": "Set Name column name as \"Total Expense\", Operation as Sum, Column as expense. Then click OK button."
+    },
+    {
+      "index": 14,
+      "instruction": "Click Menu---Home, find and click Close & Load button."
+    },
+    {
+      "index": 15,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 16,
+      "instruction": "Select Column C, then click Menu---Home, click Percent Style, then click decrease decimal twice"
+    },
+    {
+      "index": 17,
+      "instruction": "Click Menu---file, click Options, then click Customize Ribbon, Click Developer, then click OK button."
+    },
+    {
+      "index": 18,
+      "instruction": "Click Menu---Developer, then click Insert, select Spin Button."
+    },
+    {
+      "index": 19,
+      "instruction": "Draw Spin button from F3 cell to F4 cell."
+    },
+    {
+      "index": 20,
+      "instruction": "Click F1 cell, then input \"Spend Top\", Select H1 cell, then input \"Staff\", select F1 and H1 cell, then click Menu---Home, click fill arrow, select Dark Red, and Font color select white."
+    },
+    {
+      "index": 21,
+      "instruction": "Select G1 cell, then input \"1\", then click Menu---Home, click All Border, and Center."
+    },
+    {
+      "index": 22,
+      "instruction": "Right click Spin Button, then select Format Control."
+    },
+    {
+      "index": 23,
+      "instruction": "Set Minimum value as 1, current value as 1, maximum value as 8, cell link as G1 cell. Then click OK button"
+    },
+    {
+      "index": 24,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 25,
+      "instruction": "Select C2 cell to C13 cell, then click Menu---Conditional Formatting button. Select New Rule"
+    },
+    {
+      "index": 26,
+      "instruction": "Select Format all cells based on their values, then select Icon sets of Format Style, select 3 symbols (circled)"
+    },
+    {
+      "index": 27,
+      "instruction": "Select first icon as red icon, then type as formula, input formula as \"=Large($C$2:$C$13,$G$1)\""
+    },
+    {
+      "index": 28,
+      "instruction": "Select Yellow icon and red icon as no cell icon, then click OK button."
+    },
+    {
+      "index": 29,
+      "instruction": "Click increase button of F3 cell, to see if will add highlight record"
+    },
+    {
+      "index": 30,
+      "instruction": "Select A1 cell to C13 cell, then click Menu---Insert, click Pivot table"
+    },
+    {
+      "index": 31,
+      "instruction": "Click Existing worksheet, select A15 cell, then Click OK"
+    },
+    {
+      "index": 32,
+      "instruction": "Draw Team into row, Total expense into values"
+    },
+    {
+      "index": 33,
+      "instruction": "Click Pivot chart button, select Bar chart"
+    },
+    {
+      "index": 34,
+      "instruction": "Change title as Total Expense.\t Right click Bar, then select Add Data Label."
+    },
+    {
+      "index": 35,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 36,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 9
+  }
+}

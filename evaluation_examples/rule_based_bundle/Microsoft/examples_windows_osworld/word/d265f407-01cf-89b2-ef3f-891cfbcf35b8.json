@@ -1,0 +1,77 @@
+{
+  "id": "d265f407-01cf-89b2-ef3f-891cfbcf35b8",
+  "snapshot": "word",
+  "instruction": "Could you save the document as 'Final_Agenda.docx'?",
+  "source": "Microsoft_48 true stage 7",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154809/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154833/Desktop/Final_Agenda.docx",
+            "path": "C:\\Users\\User\\Documents\\Final_Agenda_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/d265f407-01cf-89b2-ef3f-891cfbcf35b8",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Final_Agenda.docx",
+      "dest": "Final_Agenda.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Final_Agenda_gold.docx",
+      "dest": "Final_Agenda_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Final_Agenda.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

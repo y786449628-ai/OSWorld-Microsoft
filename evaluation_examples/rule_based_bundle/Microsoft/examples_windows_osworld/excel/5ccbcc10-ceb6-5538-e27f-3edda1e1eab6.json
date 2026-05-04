@@ -1,0 +1,87 @@
+{
+  "id": "5ccbcc10-ceb6-5538-e27f-3edda1e1eab6",
+  "snapshot": "excel",
+  "instruction": "Could you import the 'data.csv' dataset into Excel?",
+  "source": "Microsoft_73 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_203921/Desktop/Freelancer_Dta_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Freelancer_Dta_Analysis.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_203921/Desktop/Material/data.csv",
+            "path": "C:\\Users\\User\\Desktop\\Material\\data.csv"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_73/logs/MonitoringSnapshots/20260114_204217/Desktop/Freelancer_Dta_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Freelancer_Dta_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Freelancer_Dta_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/5ccbcc10-ceb6-5538-e27f-3edda1e1eab6",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Freelancer_Dta_Analysis.xlsx",
+      "dest": "Freelancer_Dta_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Freelancer_Dta_Analysis_gold.xlsx",
+      "dest": "Freelancer_Dta_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Freelancer_Dta_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

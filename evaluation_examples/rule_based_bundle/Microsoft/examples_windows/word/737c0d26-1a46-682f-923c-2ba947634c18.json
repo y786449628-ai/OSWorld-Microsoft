@@ -1,0 +1,77 @@
+{
+  "id": "737c0d26-1a46-682f-923c-2ba947634c18",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'Template.docx' within the 'Templates' folder?",
+  "source": "Microsoft_68 true stage 2",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_68/logs/MonitoringSnapshots/20260114_155800/Desktop/Templates/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Templates\\New Microsoft Word Document.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_68/logs/MonitoringSnapshots/20260114_160013/Desktop/Templates/Template.docx",
+            "path": "C:\\Users\\78644\\Documents\\Template_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Templates\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/737c0d26-1a46-682f-923c-2ba947634c18",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Templates\\Template.docx",
+      "dest": "Template.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Template_gold.docx",
+      "dest": "Template_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Template.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

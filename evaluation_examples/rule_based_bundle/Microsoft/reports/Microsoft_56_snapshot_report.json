@@ -1,0 +1,1230 @@
+{
+  "source_name": "Microsoft_56",
+  "snapshot_count": 28,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260112_195700",
+      "to": "20260112_195705",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260112_195705",
+      "to": "20260112_195715",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11147,
+              "to": 11150
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260112_195715",
+      "to": "20260112_195739",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: spreadsheet content changed from 32 to 36 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 32,
+            "to": 36
+          },
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11150,
+              "to": 11555
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 32,
+                "to": 36
+              },
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260112_195739",
+      "to": "20260112_195749",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11555,
+              "to": 11560
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260112_195749",
+      "to": "20260112_195813",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: spreadsheet content changed from 36 to 40 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 36,
+            "to": 40
+          },
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11560,
+              "to": 11646
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 36,
+                "to": 40
+              },
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260112_195813",
+      "to": "20260112_195819",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11646,
+              "to": 11648
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260112_195819",
+      "to": "20260112_195853",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11648,
+              "to": 11635
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260112_195853",
+      "to": "20260112_195920",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11635,
+              "to": 12056
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260112_195920",
+      "to": "20260112_200005",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12056,
+              "to": 17416
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260112_200005",
+      "to": "20260112_200053",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17416,
+              "to": 17515
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260112_200053",
+      "to": "20260112_200119",
+      "human_summary": "material/Sales_Performance_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Performance_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Total Sales",
+              "Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17515,
+              "to": 17824
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Q1 Sales",
+                  "Q2 Sales",
+                  "Q3 Sales",
+                  "Q4 Sales",
+                  "Total Sales",
+                  "Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260112_200119",
+      "to": "20260112_200134",
+      "human_summary": "New files appeared: Sales_Performance_Analysis.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Sales_Performance_Analysis.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sales_Performance_Analysis.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260112_200134",
+      "to": "20260112_200136",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260112_200136",
+      "to": "20260112_200208",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260112_200208",
+      "to": "20260112_200215",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260112_200215",
+      "to": "20260112_200218",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "size": {
+              "from": 48178,
+              "to": 48177
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 48178,
+              "to": 48177
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260112_200218",
+      "to": "20260112_200315",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "size": {
+              "from": 48177,
+              "to": 55769
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 48177,
+              "to": 55769
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260112_200315",
+      "to": "20260112_200339",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "size": {
+              "from": 55769,
+              "to": 55817
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 55769,
+              "to": 55817
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260112_200339",
+      "to": "20260112_200357",
+      "human_summary": "New files appeared: Sales_Performance_Presentation.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Sales_Performance_Presentation.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sales_Performance_Presentation.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20260112_200357",
+      "to": "20260112_200435",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 21,
+      "from": "20260112_200435",
+      "to": "20260112_200501",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "size": {
+              "from": 15252,
+              "to": 15297
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15252,
+              "to": 15297
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 22,
+      "from": "20260112_200501",
+      "to": "20260112_200526",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "size": {
+              "from": 15297,
+              "to": 15314
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15297,
+              "to": 15314
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 23,
+      "from": "20260112_200526",
+      "to": "20260112_200639",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "size": {
+              "from": 15314,
+              "to": 23192
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15314,
+              "to": 23192
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 24,
+      "from": "20260112_200639",
+      "to": "20260112_200712",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 25,
+      "from": "20260112_200712",
+      "to": "20260112_200716",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "size": {
+              "from": 23192,
+              "to": 25570
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Executive_Summary.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 23192,
+              "to": 25570
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 26,
+      "from": "20260112_200716",
+      "to": "20260112_200718",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 27,
+      "from": "20260112_200718",
+      "to": "20260112_200751",
+      "human_summary": "New files appeared: Sales_Executive_Summary.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Sales_Executive_Summary.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sales_Executive_Summary.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

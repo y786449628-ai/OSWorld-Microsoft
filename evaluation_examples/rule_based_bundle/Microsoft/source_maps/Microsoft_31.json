@@ -1,0 +1,1002 @@
+{
+  "source_name": "Microsoft_31",
+  "source_file": "Microsoft_31.txt",
+  "source_id": "66fa46af1ade",
+  "source_question": "Operation team need report 3 shops performance from 2023 to 2025 year, and boss want to view the column chart and also want to know the growth% of each year for total 3 shops.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a table in Excel to summarize the performance of 3 shops from 2023 to 2025?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you calculate the growth percentage for each year for the total of the 3 shops in Excel?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you create a column chart in Excel to visualize the performance of the 3 shops from 2023 to 2025?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you prepare a report document in Word to present the performance data and the growth percentages?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you copy the column chart from Excel and paste it into the Word report document?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save the final report as a PDF?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_and_open_excel_workbook",
+      "instruction": "Could you create a table in Excel to summarize the performance of 3 shops from 2023 to 2025?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook; Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open.",
+      "planned_input_snapshot": "20260110_222451",
+      "planned_gold_snapshot": "20260110_222913",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_data_into_excel",
+      "instruction": "Could you calculate the growth percentage for each year for the total of the 3 shops in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Select E1 cell, then input \"Support\", select F1 cell, then input \"Total\", select G1 cell, input \"Growth%\"; Select E2 cell, then input \"50\", then click Ctrl+C, then select E3 cell to E4 cell, click Ctrl+V; Select F1 cell, then input \"=Sum(B2:D2)\", then click Ctrl+C, then select F3 cell to F4 cell, click Ctrl+V; Select G3 cell, then input \"=F2/F1-1\", then click Ctrl+C, then select G4 cell, click Ctrl+V",
+      "planned_input_snapshot": "20260110_222913",
+      "planned_gold_snapshot": "20260110_222913",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap.",
+      "benchmarkability": "needs_review",
+      "reason": "Input and gold snapshots are the same, indicating no observable change. This stage should be merged with the previous one.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_column_chart_in_excel",
+      "instruction": "Could you create a column chart in Excel to visualize the performance of the 3 shops from 2023 to 2025?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 17,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Select A1 cell to E4 cell, then click Menu---Insert, click Stacked column of 2-D Column; Right click chart, then select select data, then click switch Row/Column, then click OK button; Select Chart title, then click delete, select gridlines, then click delete; Select Support column, then click right, select Format data series, then click Fill & Line, Select No fill.; Add data label for shop1 shop2 shop3, change font as white; Select Support column, and click add data label, then click format data label.; Click Value from cells, then select F2 cell to F4 cell, then unclick value; Click Menu---file, find and click Save",
+      "planned_input_snapshot": "20260110_222913",
+      "planned_gold_snapshot": "20260110_223245",
+      "snapshot_evidence": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "prepare_report_document_in_word",
+      "instruction": "Could you prepare a report document in Word to present the performance data and the growth percentages?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Right click chart, then click select data; Click Add button, set series name as J1 cell, set Series Values as J2 cell to J3 cell; Click Y column, then click change Series chart type, change Y column as Scatter; Select Y point, then right click, select select data, Edit Y column, and set Series X value as I2 cell to I3 cell, then click OK; Right click chart, then click select data; Click Add button, set series name as N1 cell, set Series Y Values as N2 cell to N3 cell, set Series X value as M2 cell to M3 cell; Click Add button, set series name as R1 cell, set Series Y Values as R2 cell to R3 cell, set Series X value as O2 cell to O3 cell; Select Y point, then click Plus button, select Error Bars; Select Y1 point, then click Plus button, select Error Bars; Select Horizon line of Y and Y1 point, then click delete; Select Vertical line of Y point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as K2 cell to K3 cell; Select Vertical line of Y1 point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as O2 cell to O3 cell, click fill and line, set arrow for end arrow type; Select Y2 point, then click Plus button, select Error Bars; Select Vertical line of Y2 point, then click delete, select Horizon line of Y2 point, then set No Cap, Fixed value as 0.45; Select Y2 point, then click fill and line, select Marker, then click built-in, set size as 25, set fill color as black; Right Click Y2 Point, select add Data Label; Right click data label, right click and select format data label, select Value from cells, select G2 cell to G3 cell, unselect Y value, select center, and set font color as white and bold; Adjust data legend and show as Shop1 shop2 shop3; Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260110_223245",
+      "planned_gold_snapshot": "20260110_223954",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "copy_paste_chart_into_word_report",
+      "instruction": "Could you copy the column chart from Excel and paste it into the Word report document?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3,
+        4
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Right click chart, then click select data; Click Add button, set series name as J1 cell, set Series Values as J2 cell to J3 cell; Click Y column, then click change Series chart type, change Y column as Scatter; Select Y point, then right click, select select data, Edit Y column, and set Series X value as I2 cell to I3 cell, then click OK; Right click chart, then click select data; Click Add button, set series name as N1 cell, set Series Y Values as N2 cell to N3 cell, set Series X value as M2 cell to M3 cell; Click Add button, set series name as R1 cell, set Series Y Values as R2 cell to R3 cell, set Series X value as O2 cell to O3 cell; Select Y point, then click Plus button, select Error Bars; Select Y1 point, then click Plus button, select Error Bars; Select Horizon line of Y and Y1 point, then click delete; Select Vertical line of Y point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as K2 cell to K3 cell; Select Vertical line of Y1 point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as O2 cell to O3 cell, click fill and line, set arrow for end arrow type; Select Y2 point, then click Plus button, select Error Bars; Select Vertical line of Y2 point, then click delete, select Horizon line of Y2 point, then set No Cap, Fixed value as 0.45; Select Y2 point, then click fill and line, select Marker, then click built-in, set size as 25, set fill color as black; Right Click Y2 Point, select add Data Label; Right click data label, right click and select format data label, select Value from cells, select G2 cell to G3 cell, unselect Y value, select center, and set font color as white and bold; Adjust data legend and show as Shop1 shop2 shop3; Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260110_223954",
+      "planned_gold_snapshot": "20260110_223954",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "needs_review",
+      "reason": "Input and gold snapshots are the same, indicating no observable change. This stage should be merged with the previous one.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_final_report_as_pdf",
+      "instruction": "Could you save the final report as a PDF?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260110_223954",
+      "planned_gold_snapshot": "20260110_223956",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable change in the snapshot. This stage should be merged with the previous one.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_and_open_excel_workbook_and_enter_data_into_excel_and_create_column_chart_in_excel_and_prepare_report_document_in_word_and_copy_paste_chart_into_word_report_and_save_final_report_as_pdf",
+      "instruction": "Could you create a table in Excel to summarize the performance of 3 shops from 2023 to 2025, and then calculate the growth percentage for each year for the total of the 3 shops in Excel, and then create a column chart in Excel to visualize the performance of the 3 shops from 2023 to 2025, and then prepare a report document in Word to present the performance data and the growth percentages, and then copy the column chart from Excel and paste it into the Word report document, and then save the final report as a PDF?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook; Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open. | Select E1 cell, then input \"Support\", select F1 cell, then input \"Total\", select G1 cell, input \"Growth%\"; Select E2 cell, then input \"50\", then click Ctrl+C, then select E3 cell to E4 cell, click Ctrl+V; Select F1 cell, then input \"=Sum(B2:D2)\", then click Ctrl+C, then select F3 cell to F4 cell, click Ctrl+V; Select G3 cell, then input \"=F2/F1-1\", then click Ctrl+C, then select G4 cell, click Ctrl+V | Select A1 cell to E4 cell, then click Menu---Insert, click Stacked column of 2-D Column; Right click chart, then select select data, then click switch Row/Column, then click OK button; Select Chart title, then click delete, select gridlines, then click delete; Select Support column, then click right, select Format data series, then click Fill & Line, Select No fill.; Add data label for shop1 shop2 shop3, change font as white; Select Support column, and click add data label, then click format data label.; Click Value from cells, then select F2 cell to F4 cell, then unclick value; Click Menu---file, find and click Save | Right click chart, then click select data; Click Add button, set series name as J1 cell, set Series Values as J2 cell to J3 cell; Click Y column, then click change Series chart type, change Y column as Scatter; Select Y point, then right click, select select data, Edit Y column, and set Series X value as I2 cell to I3 cell, then click OK; Right click chart, then click select data; Click Add button, set series name as N1 cell, set Series Y Values as N2 cell to N3 cell, set Series X value as M2 cell to M3 cell; Click Add button, set series name as R1 cell, set Series Y Values as R2 cell to R3 cell, set Series X value as O2 cell to O3 cell; Select Y point, then click Plus button, select Error Bars; Select Y1 point, then click Plus button, select Error Bars; Select Horizon line of Y and Y1 point, then click delete; Select Vertical line of Y point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as K2 cell to K3 cell; Select Vertical line of Y1 point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as O2 cell to O3 cell, click fill and line, set arrow for end arrow type; Select Y2 point, then click Plus button, select Error Bars; Select Vertical line of Y2 point, then click delete, select Horizon line of Y2 point, then set No Cap, Fixed value as 0.45; Select Y2 point, then click fill and line, select Marker, then click built-in, set size as 25, set fill color as black; Right Click Y2 Point, select add Data Label; Right click data label, right click and select format data label, select Value from cells, select G2 cell to G3 cell, unselect Y value, select center, and set font color as white and bold; Adjust data legend and show as Shop1 shop2 shop3; Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button. | Right click chart, then click select data; Click Add button, set series name as J1 cell, set Series Values as J2 cell to J3 cell; Click Y column, then click change Series chart type, change Y column as Scatter; Select Y point, then right click, select select data, Edit Y column, and set Series X value as I2 cell to I3 cell, then click OK; Right click chart, then click select data; Click Add button, set series name as N1 cell, set Series Y Values as N2 cell to N3 cell, set Series X value as M2 cell to M3 cell; Click Add button, set series name as R1 cell, set Series Y Values as R2 cell to R3 cell, set Series X value as O2 cell to O3 cell; Select Y point, then click Plus button, select Error Bars; Select Y1 point, then click Plus button, select Error Bars; Select Horizon line of Y and Y1 point, then click delete; Select Vertical line of Y point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as K2 cell to K3 cell; Select Vertical line of Y1 point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as O2 cell to O3 cell, click fill and line, set arrow for end arrow type; Select Y2 point, then click Plus button, select Error Bars; Select Vertical line of Y2 point, then click delete, select Horizon line of Y2 point, then set No Cap, Fixed value as 0.45; Select Y2 point, then click fill and line, select Marker, then click built-in, set size as 25, set fill color as black; Right Click Y2 Point, select add Data Label; Right click data label, right click and select format data label, select Value from cells, select G2 cell to G3 cell, unselect Y value, select center, and set font color as white and bold; Adjust data legend and show as Shop1 shop2 shop3; Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button. | Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260110_222451",
+      "planned_gold_snapshot": "20260110_223956",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap. | Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap. | Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1. | New files appeared: final result.xlsx. | New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots.",
+      "input_snapshot": "20260110_222451",
+      "gold_snapshot": "20260110_223956",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260110_222451",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_222451",
+          "planned_gold_snapshot": "20260110_222913"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 6,
+          "stage_name": "save_final_report_as_pdf",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_and_open_excel_workbook",
+        "enter_data_into_excel",
+        "create_column_chart_in_excel",
+        "prepare_report_document_in_word",
+        "copy_paste_chart_into_word_report",
+        "save_final_report_as_pdf"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "generated_examples": [
+        {
+          "example_id": "a41fe5b2-fe17-4bc3-f590-ae5240a0549f",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/a41fe5b2-fe17-4bc3-f590-ae5240a0549f.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260110_222451",
+    "20260110_222913",
+    "20260110_223245",
+    "20260110_223954",
+    "20260110_223956"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_222451",
+      "to": "20260110_222913",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 16,
+            "to": 51
+          },
+          "headers": {
+            "from": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3"
+            ],
+            "to": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3",
+              "Support",
+              "Total",
+              "Growth%",
+              "X",
+              "Y",
+              "Gap",
+              "X1",
+              "Y1",
+              "Gap1",
+              "X2",
+              "Y2"
+            ]
+          }
+        },
+        "headers_added": [
+          "Support",
+          "Total",
+          "Growth%",
+          "X",
+          "Y",
+          "Gap",
+          "X1",
+          "Y1",
+          "Gap1",
+          "X2",
+          "Y2"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9895,
+              "to": 10724
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 16,
+                "to": 51
+              },
+              "headers": {
+                "from": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3"
+                ],
+                "to": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3",
+                  "Support",
+                  "Total",
+                  "Growth%",
+                  "X",
+                  "Y",
+                  "Gap",
+                  "X1",
+                  "Y1",
+                  "Gap1",
+                  "X2",
+                  "Y2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_222913",
+      "to": "20260110_223245",
+      "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3",
+              "Support",
+              "Total",
+              "Growth%",
+              "X",
+              "Y",
+              "Gap",
+              "X1",
+              "Y1",
+              "Gap1",
+              "X2",
+              "Y2"
+            ],
+            "to": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3",
+              "Support",
+              "Total",
+              "Growth%",
+              "X",
+              "Y",
+              "Gap",
+              "X1",
+              "Y1",
+              "Gap1",
+              "X2",
+              "Y2"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10724,
+              "to": 16542
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3",
+                  "Support",
+                  "Total",
+                  "Growth%",
+                  "X",
+                  "Y",
+                  "Gap",
+                  "X1",
+                  "Y1",
+                  "Gap1",
+                  "X2",
+                  "Y2"
+                ],
+                "to": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3",
+                  "Support",
+                  "Total",
+                  "Growth%",
+                  "X",
+                  "Y",
+                  "Gap",
+                  "X1",
+                  "Y1",
+                  "Gap1",
+                  "X2",
+                  "Y2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_223245",
+      "to": "20260110_223954",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_223954",
+      "to": "20260110_223956",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_31",
+    "snapshot_count": 5,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_222451",
+        "to": "20260110_222913",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 16,
+              "to": 51
+            },
+            "headers": {
+              "from": [
+                "Year",
+                "Shop1",
+                "Shop2",
+                "Shop3"
+              ],
+              "to": [
+                "Year",
+                "Shop1",
+                "Shop2",
+                "Shop3",
+                "Support",
+                "Total",
+                "Growth%",
+                "X",
+                "Y",
+                "Gap",
+                "X1",
+                "Y1",
+                "Gap1",
+                "X2",
+                "Y2"
+              ]
+            }
+          },
+          "headers_added": [
+            "Support",
+            "Total",
+            "Growth%",
+            "X",
+            "Y",
+            "Gap",
+            "X1",
+            "Y1",
+            "Gap1",
+            "X2",
+            "Y2"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9895,
+                "to": 10724
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 16,
+                  "to": 51
+                },
+                "headers": {
+                  "from": [
+                    "Year",
+                    "Shop1",
+                    "Shop2",
+                    "Shop3"
+                  ],
+                  "to": [
+                    "Year",
+                    "Shop1",
+                    "Shop2",
+                    "Shop3",
+                    "Support",
+                    "Total",
+                    "Growth%",
+                    "X",
+                    "Y",
+                    "Gap",
+                    "X1",
+                    "Y1",
+                    "Gap1",
+                    "X2",
+                    "Y2"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_222913",
+        "to": "20260110_223245",
+        "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Year",
+                "Shop1",
+                "Shop2",
+                "Shop3",
+                "Support",
+                "Total",
+                "Growth%",
+                "X",
+                "Y",
+                "Gap",
+                "X1",
+                "Y1",
+                "Gap1",
+                "X2",
+                "Y2"
+              ],
+              "to": [
+                "Year",
+                "Shop1",
+                "Shop2",
+                "Shop3",
+                "Support",
+                "Total",
+                "Growth%",
+                "X",
+                "Y",
+                "Gap",
+                "X1",
+                "Y1",
+                "Gap1",
+                "X2",
+                "Y2"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10724,
+                "to": 16542
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Year",
+                    "Shop1",
+                    "Shop2",
+                    "Shop3",
+                    "Support",
+                    "Total",
+                    "Growth%",
+                    "X",
+                    "Y",
+                    "Gap",
+                    "X1",
+                    "Y1",
+                    "Gap1",
+                    "X2",
+                    "Y2"
+                  ],
+                  "to": [
+                    "Year",
+                    "Shop1",
+                    "Shop2",
+                    "Shop3",
+                    "Support",
+                    "Total",
+                    "Growth%",
+                    "X",
+                    "Y",
+                    "Gap",
+                    "X1",
+                    "Y1",
+                    "Gap1",
+                    "X2",
+                    "Y2"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_223245",
+        "to": "20260110_223954",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_223954",
+        "to": "20260110_223956",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select E1 cell, then input \"Support\", select F1 cell, then input \"Total\", select G1 cell, input \"Growth%\""
+    },
+    {
+      "index": 5,
+      "instruction": "Select E2 cell, then input \"50\", then click Ctrl+C, then select E3 cell to E4 cell, click Ctrl+V"
+    },
+    {
+      "index": 6,
+      "instruction": "Select F1 cell, then input \"=Sum(B2:D2)\", then click Ctrl+C, then select F3 cell to F4 cell, click Ctrl+V"
+    },
+    {
+      "index": 7,
+      "instruction": "Select G3 cell, then input \"=F2/F1-1\", then click Ctrl+C, then select G4 cell, click Ctrl+V"
+    },
+    {
+      "index": 8,
+      "instruction": "Slelect I1 cell, then input \"X\", select I2 cell, then input \"1\", select I3 cell, then input \"2.1\""
+    },
+    {
+      "index": 9,
+      "instruction": "Select J1 cell, then input \"Y\", select J2 cell, then input \"=max(F2:F4)\", then select J3 cell, then input \"=J2*1.3\""
+    },
+    {
+      "index": 10,
+      "instruction": "Select K1 cell, then input \"Gap\", select K2 cell, input \"274\", select K3 cell, then input \"299.4\""
+    },
+    {
+      "index": 11,
+      "instruction": "Select M1 cell, then input \"X1\", select M2 cell, then input \"1.9\", select M3 cell, then input \"3\""
+    },
+    {
+      "index": 12,
+      "instruction": "Select N1 cell, then input \"Y1\", select N2 cell, then input \"=max(F2:F4)\", then select N3 cell, then input \"=N2*1.3\""
+    },
+    {
+      "index": 13,
+      "instruction": "Select O1 cell, then input \"Gap1\" select O2 cell input \"141\", select O3 cell input \"108.4\""
+    },
+    {
+      "index": 14,
+      "instruction": "Select Q1 cell, then input \"X2\", select Q2 cell, input \"1.45\", select Q3 cell, input \"2.55\""
+    },
+    {
+      "index": 15,
+      "instruction": "Select R1 cell, then input \"Y2\", select R2 cell, then input \"=max(F2:F4)\", then select R3 cell, then input \"=R2*1.3\""
+    },
+    {
+      "index": 16,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 17,
+      "instruction": "Select A1 cell to E4 cell, then click Menu---Insert, click Stacked column of 2-D Column"
+    },
+    {
+      "index": 18,
+      "instruction": "Right click chart, then select select data, then click switch Row/Column, then click OK button"
+    },
+    {
+      "index": 19,
+      "instruction": "Select Chart title, then click delete, select gridlines, then click delete"
+    },
+    {
+      "index": 20,
+      "instruction": "Select Support column, then click right, select Format data series, then click Fill & Line, Select No fill."
+    },
+    {
+      "index": 21,
+      "instruction": "Add data label for shop1 shop2 shop3, change font as white"
+    },
+    {
+      "index": 22,
+      "instruction": "Select Support column, and click add data label, then click format data label."
+    },
+    {
+      "index": 23,
+      "instruction": "Click Value from cells, then select F2 cell to F4 cell, then unclick value"
+    },
+    {
+      "index": 24,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 25,
+      "instruction": "Right click chart, then click select data."
+    },
+    {
+      "index": 26,
+      "instruction": "Click Add button, set series name as J1 cell, set Series Values as J2 cell to J3 cell."
+    },
+    {
+      "index": 27,
+      "instruction": "Click Y column, then click change Series chart type, change Y column as Scatter"
+    },
+    {
+      "index": 28,
+      "instruction": "Select Y point, then right click, select select data, Edit Y column, and set Series X value as I2 cell to I3 cell, then click OK"
+    },
+    {
+      "index": 29,
+      "instruction": "Right click chart, then click select data."
+    },
+    {
+      "index": 30,
+      "instruction": "Click Add button, set series name as N1 cell, set Series Y Values as N2 cell to N3 cell, set Series X value as M2 cell to M3 cell"
+    },
+    {
+      "index": 31,
+      "instruction": "Click Add button, set series name as R1 cell, set Series Y Values as R2 cell to R3 cell, set Series X value as O2 cell to O3 cell"
+    },
+    {
+      "index": 32,
+      "instruction": "Select Y point, then click Plus button, select Error Bars. Select Y1 point, then click Plus button, select Error Bars."
+    },
+    {
+      "index": 33,
+      "instruction": "Select Horizon line of Y and Y1 point, then click delete."
+    },
+    {
+      "index": 34,
+      "instruction": "Select Vertical line of Y point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as K2 cell to K3 cell"
+    },
+    {
+      "index": 35,
+      "instruction": "Select Vertical line of Y1 point, select Minus, No cap, custom---Sepcify Value, positive Error value as 0, Negative error value as O2 cell to O3 cell, click fill and line, set arrow for end arrow type"
+    },
+    {
+      "index": 36,
+      "instruction": "Select Y2 point, then click Plus button, select Error Bars."
+    },
+    {
+      "index": 37,
+      "instruction": "Select Vertical line of Y2 point, then click delete, select Horizon line of Y2 point, then set No Cap, Fixed value as 0.45"
+    },
+    {
+      "index": 38,
+      "instruction": "Select Y2 point, then click fill and line, select Marker, then click built-in, set size as 25, set fill color as black"
+    },
+    {
+      "index": 39,
+      "instruction": "Right Click Y2 Point, select add Data Label"
+    },
+    {
+      "index": 40,
+      "instruction": "Right click data label, right click and select format data label, select Value from cells, select G2 cell to G3 cell, unselect Y value, select center, and set font color as white and bold"
+    },
+    {
+      "index": 41,
+      "instruction": "Adjust data legend and show as Shop1 shop2 shop3"
+    },
+    {
+      "index": 42,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 43,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 5
+  }
+}

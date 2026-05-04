@@ -1,0 +1,261 @@
+{
+  "source_name": "Microsoft_31",
+  "snapshot_count": 5,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260110_222451",
+      "to": "20260110_222913",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 16 to 51 non-empty cells; new visible headers or values include: Support, Total, Growth%, X, Y, Gap.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 16,
+            "to": 51
+          },
+          "headers": {
+            "from": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3"
+            ],
+            "to": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3",
+              "Support",
+              "Total",
+              "Growth%",
+              "X",
+              "Y",
+              "Gap",
+              "X1",
+              "Y1",
+              "Gap1",
+              "X2",
+              "Y2"
+            ]
+          }
+        },
+        "headers_added": [
+          "Support",
+          "Total",
+          "Growth%",
+          "X",
+          "Y",
+          "Gap",
+          "X1",
+          "Y1",
+          "Gap1",
+          "X2",
+          "Y2"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9895,
+              "to": 10724
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 16,
+                "to": 51
+              },
+              "headers": {
+                "from": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3"
+                ],
+                "to": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3",
+                  "Support",
+                  "Total",
+                  "Growth%",
+                  "X",
+                  "Y",
+                  "Gap",
+                  "X1",
+                  "Y1",
+                  "Gap1",
+                  "X2",
+                  "Y2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_222913",
+      "to": "20260110_223245",
+      "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3",
+              "Support",
+              "Total",
+              "Growth%",
+              "X",
+              "Y",
+              "Gap",
+              "X1",
+              "Y1",
+              "Gap1",
+              "X2",
+              "Y2"
+            ],
+            "to": [
+              "Year",
+              "Shop1",
+              "Shop2",
+              "Shop3",
+              "Support",
+              "Total",
+              "Growth%",
+              "X",
+              "Y",
+              "Gap",
+              "X1",
+              "Y1",
+              "Gap1",
+              "X2",
+              "Y2"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10724,
+              "to": 16542
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3",
+                  "Support",
+                  "Total",
+                  "Growth%",
+                  "X",
+                  "Y",
+                  "Gap",
+                  "X1",
+                  "Y1",
+                  "Gap1",
+                  "X2",
+                  "Y2"
+                ],
+                "to": [
+                  "Year",
+                  "Shop1",
+                  "Shop2",
+                  "Shop3",
+                  "Support",
+                  "Total",
+                  "Growth%",
+                  "X",
+                  "Y",
+                  "Gap",
+                  "X1",
+                  "Y1",
+                  "Gap1",
+                  "X2",
+                  "Y2"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_223245",
+      "to": "20260110_223954",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_223954",
+      "to": "20260110_223956",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

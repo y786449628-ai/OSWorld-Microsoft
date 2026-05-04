@@ -1,0 +1,83 @@
+{
+  "id": "2ad1f8e1-9f95-5d49-b42f-5163ab5b7ef1",
+  "snapshot": "excel",
+  "instruction": "Could you design a sales record sheet in the workbook with columns for Order ID, Product Name, Category, Salesperson, Sale Date, Units Sold, Unit Price, and Total Sale?",
+  "source": "Microsoft_61 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_61/logs/MonitoringSnapshots/20260112_140255/Desktop/Sales_Data_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Sales_Data_Analysis.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_61/logs/MonitoringSnapshots/20260112_140446/Desktop/Sales_Data_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Sales_Data_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Sales_Data_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2ad1f8e1-9f95-5d49-b42f-5163ab5b7ef1",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Sales_Data_Analysis.xlsx",
+      "dest": "Sales_Data_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Sales_Data_Analysis_gold.xlsx",
+      "dest": "Sales_Data_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Sales_Data_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,548 @@
+{
+  "source_name": "Microsoft_69",
+  "snapshot_count": 17,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260114_161816",
+      "to": "20260114_161819",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Project_Status_Report_Memo.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Status_Report_Memo.docx"
+        ],
+        "files_removed": [
+          "New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_161819",
+      "to": "20260114_161929",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 0,
+              "to": 13554
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13554
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_161929",
+      "to": "20260114_162027",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 13554,
+              "to": 46904
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13554,
+              "to": 46904
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_162027",
+      "to": "20260114_162104",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 46904,
+              "to": 47088
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 46904,
+              "to": 47088
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_162104",
+      "to": "20260114_162138",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 47088,
+              "to": 47197
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 47088,
+              "to": 47197
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_162138",
+      "to": "20260114_162229",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 47197,
+              "to": 47436
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 47197,
+              "to": 47436
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260114_162229",
+      "to": "20260114_162252",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 47436,
+              "to": 49602
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 47436,
+              "to": 49602
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260114_162252",
+      "to": "20260114_162332",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 49602,
+              "to": 50950
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 49602,
+              "to": 50950
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260114_162332",
+      "to": "20260114_162409",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 50950,
+              "to": 51430
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 50950,
+              "to": 51430
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260114_162409",
+      "to": "20260114_162436",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 51430,
+              "to": 51540
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 51430,
+              "to": 51540
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260114_162436",
+      "to": "20260114_162547",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 51540,
+              "to": 52168
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 51540,
+              "to": 52168
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260114_162547",
+      "to": "20260114_162610",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 52168,
+              "to": 52306
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 52168,
+              "to": 52306
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260114_162610",
+      "to": "20260114_162719",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 52306,
+              "to": 52459
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 52306,
+              "to": 52459
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260114_162719",
+      "to": "20260114_162747",
+      "human_summary": "New files appeared: Project_Status_Report_Memo.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project_Status_Report_Memo.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Status_Report_Memo.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260114_162747",
+      "to": "20260114_162754",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260114_162754",
+      "to": "20260114_162758",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "size": {
+              "from": 52459,
+              "to": 52480
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Status_Report_Memo.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 52459,
+              "to": 52480
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,1902 @@
+{
+  "source_name": "Microsoft_63",
+  "source_file": "Microsoft_63.txt",
+  "source_id": "d3862363cba8",
+  "source_question": "Create a new PowerPoint presentation named \"Product_Launch_Presentation.pptx\" directly on your desktop. Design a 5-slide presentation to introduce a new product (real or fictional) to a potential client or team. The presentation must include the following: a title slide with a compelling product name and subtitle, a slide explaining the product's key features using a SmartArt graphic, a slide with a comparison table highlighting advantages over competitors, a slide showcasing product images with captions, and a final slide with contact information and a call to action. Apply a professional design theme, add slide transitions, include at least one animation effect, and ensure all elements are properly aligned. Finally, save the presentation and export it as a PDF file to your desktop.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new PowerPoint presentation named 'Product_Launch_Presentation.pptx' on your desktop?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you design a title slide with a compelling product name and subtitle in the presentation?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you create a slide explaining the product's key features using a SmartArt graphic?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you add a slide with a comparison table highlighting advantages over competitors?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a slide showcasing product images with captions?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you design a final slide with contact information and a call to action?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you apply a professional design theme, add slide transitions, and include at least one animation effect in the presentation?",
+      "mapped_stage_indices": [
+        7
+      ]
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you ensure all elements in the slides are properly aligned?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 9,
+      "instruction": "Could you save the presentation and export it as a PDF file to your desktop?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_presentation_file",
+      "instruction": "Could you create a new PowerPoint presentation named 'Product_Launch_Presentation.pptx' on your desktop?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click, select New, choose Microsoft PowerPoint Presentation, rename, and open the file.",
+      "planned_input_snapshot": "20260113_194357",
+      "planned_gold_snapshot": "20260113_194400",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation and renaming.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_title_slide",
+      "instruction": "Could you design a title slide with a compelling product name and subtitle in the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Type product name and subtitle, apply a professional theme.",
+      "planned_input_snapshot": "20260113_194400",
+      "planned_gold_snapshot": "20260113_194409",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_key_features_slide",
+      "instruction": "Could you create a slide explaining the product's key features using a SmartArt graphic?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Add a new slide, insert SmartArt, and add text items.",
+      "planned_input_snapshot": "20260113_194409",
+      "planned_gold_snapshot": "20260113_194433",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_comparison_table_slide",
+      "instruction": "Could you add a slide with a comparison table highlighting advantages over competitors?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Add a new slide, change the title, and insert a comparison table.",
+      "planned_input_snapshot": "20260113_194433",
+      "planned_gold_snapshot": "20260113_194450",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_product_images_slide",
+      "instruction": "Could you create a slide showcasing product images with captions?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Add a new slide, change the title, insert images, and add captions.",
+      "planned_input_snapshot": "20260113_194450",
+      "planned_gold_snapshot": "20260113_194507",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "add_contact_info_slide",
+      "instruction": "Could you design a final slide with contact information and a call to action?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Add a new slide, change the title, and add contact info and call-to-action.",
+      "planned_input_snapshot": "20260113_194507",
+      "planned_gold_snapshot": "20260113_194633",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "apply_design_theme_and_effects",
+      "instruction": "Could you apply a professional design theme, add slide transitions, and include at least one animation effect in the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Apply a professional design theme, add slide transitions, and include an animation effect.",
+      "planned_input_snapshot": "20260113_194633",
+      "planned_gold_snapshot": "20260113_194836",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    },
+    {
+      "stage_index": 8,
+      "stage_name": "align_elements_and_save_presentation",
+      "instruction": "Could you ensure all elements in the slides are properly aligned, save the presentation, and export it as a PDF file to your desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        7
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Align elements, save the presentation, and export it as a PDF.",
+      "planned_input_snapshot": "20260113_194836",
+      "planned_gold_snapshot": "20260113_195554",
+      "snapshot_evidence": "New files appeared: Product_Launch_Presentation.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of alignment, saving, and exporting.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_presentation_file",
+      "instruction": "Could you create a new PowerPoint presentation named 'Product_Launch_Presentation.pptx' on your desktop?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click, select New, choose Microsoft PowerPoint Presentation, rename, and open the file.",
+      "planned_input_snapshot": "20260113_194357",
+      "planned_gold_snapshot": "20260113_194400",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of file creation and renaming.",
+      "input_snapshot": "20260113_194357",
+      "gold_snapshot": "20260113_194409",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194357",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194357",
+          "planned_gold_snapshot": "20260113_194400"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6729f0d0-3f57-46a9-bd4c-7ae5c2773c6e",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/6729f0d0-3f57-46a9-bd4c-7ae5c2773c6e.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "design_title_slide",
+      "instruction": "Could you design a title slide with a compelling product name and subtitle in the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Type product name and subtitle, apply a professional theme.",
+      "planned_input_snapshot": "20260113_194400",
+      "planned_gold_snapshot": "20260113_194409",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": "20260113_194409",
+      "gold_snapshot": "20260113_194433",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194400",
+        "chain_input_snapshot": "20260113_194409",
+        "chain_input_replaced": "20260113_194400",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 3,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194400",
+          "planned_gold_snapshot": "20260113_194409"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "9830bdcb-ada1-5f9b-5490-553a027f2774",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/9830bdcb-ada1-5f9b-5490-553a027f2774.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_key_features_slide",
+      "instruction": "Could you create a slide explaining the product's key features using a SmartArt graphic?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Add a new slide, insert SmartArt, and add text items.",
+      "planned_input_snapshot": "20260113_194409",
+      "planned_gold_snapshot": "20260113_194433",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": "20260113_194433",
+      "gold_snapshot": "20260113_194450",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194409",
+        "chain_input_snapshot": "20260113_194433",
+        "chain_input_replaced": "20260113_194409",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 4,
+          "search_start_index": 4,
+          "search_end_index": 3,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194409",
+          "planned_gold_snapshot": "20260113_194433"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "5830d8b4-9cf5-3c83-5d96-e4eaef2462af",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/5830d8b4-9cf5-3c83-5d96-e4eaef2462af.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "add_comparison_table_slide",
+      "instruction": "Could you add a slide with a comparison table highlighting advantages over competitors?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Add a new slide, change the title, and insert a comparison table.",
+      "planned_input_snapshot": "20260113_194433",
+      "planned_gold_snapshot": "20260113_194450",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": "20260113_194450",
+      "gold_snapshot": "20260113_194507",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194433",
+        "chain_input_snapshot": "20260113_194450",
+        "chain_input_replaced": "20260113_194433",
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 5,
+          "search_start_index": 5,
+          "search_end_index": 4,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194433",
+          "planned_gold_snapshot": "20260113_194450"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "e9465f58-fdea-99cf-3742-b618d1667aeb",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/e9465f58-fdea-99cf-3742-b618d1667aeb.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_product_images_slide",
+      "instruction": "Could you create a slide showcasing product images with captions?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Add a new slide, change the title, insert images, and add captions.",
+      "planned_input_snapshot": "20260113_194450",
+      "planned_gold_snapshot": "20260113_194507",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": "20260113_194507",
+      "gold_snapshot": "20260113_194633",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194450",
+        "chain_input_snapshot": "20260113_194507",
+        "chain_input_replaced": "20260113_194450",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 6,
+          "search_start_index": 6,
+          "search_end_index": 5,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194450",
+          "planned_gold_snapshot": "20260113_194507"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "b743507f-72ec-ced3-9dda-7a14bea701b0",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/b743507f-72ec-ced3-9dda-7a14bea701b0.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "add_contact_info_slide",
+      "instruction": "Could you design a final slide with contact information and a call to action?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Add a new slide, change the title, and add contact info and call-to-action.",
+      "planned_input_snapshot": "20260113_194507",
+      "planned_gold_snapshot": "20260113_194633",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": "20260113_194633",
+      "gold_snapshot": "20260113_194836",
+      "linked_preview_tasks": [
+        6
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194507",
+        "chain_input_snapshot": "20260113_194633",
+        "chain_input_replaced": "20260113_194507",
+        "trajectory_window": {
+          "trajectory_start": 7,
+          "trajectory_end": 7,
+          "search_start_index": 7,
+          "search_end_index": 6,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194507",
+          "planned_gold_snapshot": "20260113_194633"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "9d3b7328-30e1-0d3c-bb28-e2c2988441a4",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/9d3b7328-30e1-0d3c-bb28-e2c2988441a4.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "apply_design_theme_and_effects",
+      "instruction": "Could you apply a professional design theme, add slide transitions, and include at least one animation effect in the presentation?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Apply a professional design theme, add slide transitions, and include an animation effect.",
+      "planned_input_snapshot": "20260113_194633",
+      "planned_gold_snapshot": "20260113_194836",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of content addition and formatting.",
+      "input_snapshot": "20260113_194836",
+      "gold_snapshot": "20260113_195228",
+      "linked_preview_tasks": [
+        7
+      ],
+      "target_relative_path": "Product_Launch_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194633",
+        "chain_input_snapshot": "20260113_194836",
+        "chain_input_replaced": "20260113_194633",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 8,
+          "search_start_index": 8,
+          "search_end_index": 7,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194633",
+          "planned_gold_snapshot": "20260113_194836"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "e6772c6c-1e44-9393-b433-b30d98c5308f",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/e6772c6c-1e44-9393-b433-b30d98c5308f.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 8,
+      "stage_name": "align_elements_and_save_presentation",
+      "instruction": "Could you ensure all elements in the slides are properly aligned, save the presentation, and export it as a PDF file to your desktop?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        7
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Align elements, save the presentation, and export it as a PDF.",
+      "planned_input_snapshot": "20260113_194836",
+      "planned_gold_snapshot": "20260113_195554",
+      "snapshot_evidence": "New files appeared: Product_Launch_Presentation.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of alignment, saving, and exporting.",
+      "input_snapshot": "20260113_195228",
+      "gold_snapshot": "20260113_195554",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Product_Launch_Presentation.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_194836",
+        "chain_input_snapshot": "20260113_195228",
+        "chain_input_replaced": "20260113_194836",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 11,
+          "search_start_index": 9,
+          "search_end_index": 16,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_194836",
+          "planned_gold_snapshot": "20260113_195554"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "e38dad40-6a6e-262c-de2c-e8c77c2be97f",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/e38dad40-6a6e-262c-de2c-e8c77c2be97f.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 8,
+      "instruction": "Could you ensure all elements in the slides are properly aligned?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 9,
+      "instruction": "Could you save the presentation and export it as a PDF file to your desktop?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260113_194357",
+    "20260113_194400",
+    "20260113_194409",
+    "20260113_194433",
+    "20260113_194450",
+    "20260113_194507",
+    "20260113_194633",
+    "20260113_194836",
+    "20260113_195228",
+    "20260113_195332",
+    "20260113_195405",
+    "20260113_195425",
+    "20260113_195504",
+    "20260113_195530",
+    "20260113_195540",
+    "20260113_195542",
+    "20260113_195554",
+    "20260113_195602",
+    "20260113_195607"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260113_194357",
+      "to": "20260113_194400",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Product_Launch_Presentation.pptx"
+        ],
+        "files_removed": [
+          "New Microsoft PowerPoint Presentation.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Product_Launch_Presentation.pptx"
+        ],
+        "files_removed": [
+          "New Microsoft PowerPoint Presentation.pptx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260113_194400",
+      "to": "20260113_194409",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 0,
+              "to": 33870
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 0,
+              "to": 33870
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260113_194409",
+      "to": "20260113_194433",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 33870,
+              "to": 34454
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 33870,
+              "to": 34454
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260113_194433",
+      "to": "20260113_194450",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 34454,
+              "to": 703878
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 34454,
+              "to": 703878
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260113_194450",
+      "to": "20260113_194507",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 703878,
+              "to": 708408
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 703878,
+              "to": 708408
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260113_194507",
+      "to": "20260113_194633",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 708408,
+              "to": 715272
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 708408,
+              "to": 715272
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260113_194633",
+      "to": "20260113_194836",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 715272,
+              "to": 716485
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 715272,
+              "to": 716485
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260113_194836",
+      "to": "20260113_195228",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 716485,
+              "to": 1728080
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 716485,
+              "to": 1728080
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260113_195228",
+      "to": "20260113_195332",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1728080,
+              "to": 1728304
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1728080,
+              "to": 1728304
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260113_195332",
+      "to": "20260113_195405",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1728304,
+              "to": 1731704
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1728304,
+              "to": 1731704
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260113_195405",
+      "to": "20260113_195425",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1731704,
+              "to": 1732165
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1731704,
+              "to": 1732165
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260113_195425",
+      "to": "20260113_195504",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260113_195504",
+      "to": "20260113_195530",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "size": {
+              "from": 1732165,
+              "to": 1732185
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Product_Launch_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 1732165,
+              "to": 1732185
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260113_195530",
+      "to": "20260113_195540",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260113_195540",
+      "to": "20260113_195542",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260113_195542",
+      "to": "20260113_195554",
+      "human_summary": "New files appeared: Product_Launch_Presentation.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Product_Launch_Presentation.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Product_Launch_Presentation.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260113_195554",
+      "to": "20260113_195602",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260113_195602",
+      "to": "20260113_195607",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_63",
+    "snapshot_count": 19,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260113_194357",
+        "to": "20260113_194400",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Product_Launch_Presentation.pptx"
+          ],
+          "files_removed": [
+            "New Microsoft PowerPoint Presentation.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Product_Launch_Presentation.pptx"
+          ],
+          "files_removed": [
+            "New Microsoft PowerPoint Presentation.pptx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260113_194400",
+        "to": "20260113_194409",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 0,
+                "to": 33870
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 0,
+                "to": 33870
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260113_194409",
+        "to": "20260113_194433",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 33870,
+                "to": 34454
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 33870,
+                "to": 34454
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260113_194433",
+        "to": "20260113_194450",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 34454,
+                "to": 703878
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 34454,
+                "to": 703878
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260113_194450",
+        "to": "20260113_194507",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 703878,
+                "to": 708408
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 703878,
+                "to": 708408
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260113_194507",
+        "to": "20260113_194633",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 708408,
+                "to": 715272
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 708408,
+                "to": 715272
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260113_194633",
+        "to": "20260113_194836",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 715272,
+                "to": 716485
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 715272,
+                "to": 716485
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260113_194836",
+        "to": "20260113_195228",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 716485,
+                "to": 1728080
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 716485,
+                "to": 1728080
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260113_195228",
+        "to": "20260113_195332",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 1728080,
+                "to": 1728304
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1728080,
+                "to": 1728304
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260113_195332",
+        "to": "20260113_195405",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 1728304,
+                "to": 1731704
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1728304,
+                "to": 1731704
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260113_195405",
+        "to": "20260113_195425",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 1731704,
+                "to": 1732165
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1731704,
+                "to": 1732165
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260113_195425",
+        "to": "20260113_195504",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260113_195504",
+        "to": "20260113_195530",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "size": {
+                "from": 1732165,
+                "to": 1732185
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Product_Launch_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 1732165,
+                "to": 1732185
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260113_195530",
+        "to": "20260113_195540",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260113_195540",
+        "to": "20260113_195542",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260113_195542",
+        "to": "20260113_195554",
+        "human_summary": "New files appeared: Product_Launch_Presentation.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Product_Launch_Presentation.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Product_Launch_Presentation.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260113_195554",
+        "to": "20260113_195602",
+        "human_summary": "New files appeared: Microsoft Edge.lnk.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20260113_195602",
+        "to": "20260113_195607",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "On your desktop, right-click on an empty area, select New, then choose Microsoft PowerPoint Presentation. Rename the new file \"Product_Launch_Presentation.pptx\" and double-click to open it."
+    },
+    {
+      "index": 3,
+      "instruction": "On the Title Slide, click the title placeholder and type \"Nexus Spark\". Click the subtitle placeholder and type \"The Next Generation Smart Charger\". Go to the Design tab. In the Themes gallery, browse and select a professional theme such as \"Integral\" or \"Ion\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Go to the Home tab and click New Slide four times to add slides 2 through 5. On Slide 2, click the title placeholder and type \"Key Features & Benefits\". Click the content placeholder, go to the Insert tab, and click SmartArt. In the Process category, select \"Basic Chevron Process\". Add three text items: \"Ultra-Fast Charging\", \"Universal Compatibility\", \"Compact & Portable Design\"."
+    },
+    {
+      "index": 5,
+      "instruction": "On Slide 3, change the title to \"Why Choose Nexus Spark?\". Click the content placeholder icon for Insert Table. Create a table with 3 columns and 4 rows. In the first row, type \"Feature\", \"Our Product\", \"Competitor A\". Fill rows 2-4 with sample comparisons (e.g., \"Charge Speed\", \"60 min\", \"90 min\")."
+    },
+    {
+      "index": 6,
+      "instruction": "On Slide 4, change the title to \"Product Gallery\". Go to the Insert tab and click Pictures > This Device. Insert two product-related images. Resize and position them side-by-side. Click Insert > Text Box below each image to add simple captions (e.g., \"Sleek Front View\", \"Compact Size Comparison\")."
+    },
+    {
+      "index": 7,
+      "instruction": "On Slide 5, change the title to \"Get Started Today\". Add bullet points for contact info: \"Visit: www.example.com\", \"Email: sales@example.com\", \"Call: (555) 123-4567\". Add a final call-to-action sentence: \"Order now and receive a 15% launch discount!\"."
+    },
+    {
+      "index": 8,
+      "instruction": "Go to the Transitions tab. Select Slide 1, then choose the \"Morph\" transition from the gallery. Click Apply To All to set this transition for every slide. Select the title text box on Slide 1. Go to the Animations tab and apply an \"Appear\" or \"Fade\" entrance animation. Select the images on Slide 4. Go to the Picture Format tab, click Align, and select Align Middle to ensure they are evenly positioned."
+    },
+    {
+      "index": 9,
+      "instruction": "Press F5 to run the slideshow from the beginning and review your presentation."
+    },
+    {
+      "index": 10,
+      "instruction": "Click File, select Save As, ensure the save location is Desktop, and click Save."
+    },
+    {
+      "index": 11,
+      "instruction": "Click File again, select Export, then choose Create PDF/XPS Document. Click Create PDF/XPS, confirm the save location is Desktop, and click Publish."
+    },
+    {
+      "index": 12,
+      "instruction": "Close the software"
+    },
+    {
+      "index": 13,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 8,
+    "kept_count": 8,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 19
+  }
+}

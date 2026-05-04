@@ -1,0 +1,503 @@
+{
+  "source_name": "Microsoft_59",
+  "snapshot_count": 11,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260113_113205",
+      "to": "20260113_113205_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260113_113205_1",
+      "to": "20260113_113337",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 44 to 48 non-empty cells; worksheet names changed.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Team1",
+              "Team2",
+              "Team3"
+            ],
+            "to": [
+              "Project Summary",
+              "Team1",
+              "Team2",
+              "Team3"
+            ]
+          },
+          "worksheet_count": {
+            "from": 3,
+            "to": 4
+          },
+          "nonempty_cells": {
+            "from": 44,
+            "to": 48
+          },
+          "headers": {
+            "from": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ],
+            "to": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15939,
+              "to": 16635
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Team1",
+                  "Team2",
+                  "Team3"
+                ],
+                "to": [
+                  "Project Summary",
+                  "Team1",
+                  "Team2",
+                  "Team3"
+                ]
+              },
+              "worksheet_count": {
+                "from": 3,
+                "to": 4
+              },
+              "nonempty_cells": {
+                "from": 44,
+                "to": 48
+              },
+              "headers": {
+                "from": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ],
+                "to": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260113_113337",
+      "to": "20260113_113337_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260113_113337_1",
+      "to": "20260113_114026",
+      "human_summary": "Material/Detail.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ],
+            "to": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16635,
+              "to": 16717
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ],
+                "to": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260113_114026",
+      "to": "20260113_114026_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260113_114026_1",
+      "to": "20260113_114113",
+      "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ],
+            "to": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16717,
+              "to": 20350
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ],
+                "to": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260113_114113",
+      "to": "20260113_114113_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260113_114113_1",
+      "to": "20260113_114310",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260113_114310",
+      "to": "20260113_114312",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260113_114312",
+      "to": "20260113_120847",
+      "human_summary": "New files appeared: output-1768277325635.zip.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "output-1768277325635.zip"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "output-1768277325635.zip"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "993639ab-041d-c8fc-f9ad-d16867885c87",
+  "snapshot": "word",
+  "instruction": "Could you enable document protection elements to secure the content of the contract?",
+  "source": "Microsoft_53 true stage 6",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_53/logs/MonitoringSnapshots/20260110_175758/Desktop/Service_Agreement_Draft.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Service_Agreement_Draft.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_53/logs/MonitoringSnapshots/20260110_175816/Desktop/Final_Signed_Agreement.docx",
+            "path": "C:\\Users\\78644\\Documents\\Final_Signed_Agreement_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Service_Agreement_Draft.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/993639ab-041d-c8fc-f9ad-d16867885c87",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Final_Signed_Agreement.docx",
+      "dest": "Final_Signed_Agreement.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Final_Signed_Agreement_gold.docx",
+      "dest": "Final_Signed_Agreement_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Final_Signed_Agreement.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

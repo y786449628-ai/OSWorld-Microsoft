@@ -1,0 +1,77 @@
+{
+  "id": "39d624ed-5c23-b58c-fe69-5634e7b6d9d0",
+  "snapshot": "word",
+  "instruction": "Could you apply and modify built-in heading styles, adjust page layout margins, insert automatic page numbering, and use a professional font scheme in the document?",
+  "source": "Microsoft_62 true stage 4",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141507/Desktop/New_Employee_Onboarding_Checklist.docx",
+            "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141952/Desktop/New_Employee_Onboarding_Checklist.docx",
+            "path": "C:\\Users\\78644\\Documents\\New_Employee_Onboarding_Checklist_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/39d624ed-5c23-b58c-fe69-5634e7b6d9d0",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.docx",
+      "dest": "New_Employee_Onboarding_Checklist.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\New_Employee_Onboarding_Checklist_gold.docx",
+      "dest": "New_Employee_Onboarding_Checklist_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "New_Employee_Onboarding_Checklist.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

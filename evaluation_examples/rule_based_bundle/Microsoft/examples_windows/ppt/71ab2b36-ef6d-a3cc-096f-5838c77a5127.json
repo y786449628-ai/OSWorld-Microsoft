@@ -1,0 +1,81 @@
+{
+  "id": "71ab2b36-ef6d-a3cc-096f-5838c77a5127",
+  "snapshot": "ppt",
+  "instruction": "Could you create a SmartArt process on the 'Launch Roadmap' slide and apply the 'Colorful Range - Accent Colors 5 to 6' color scheme?",
+  "source": "Microsoft_55 true stage 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100427/Desktop/Alpha_Fiancials.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Alpha_Fiancials.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100427/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_55/logs/MonitoringSnapshots/20260115_100653/Desktop/Project_Alpha_Status.pptx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Alpha_Status_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/71ab2b36-ef6d-a3cc-096f-5838c77a5127",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Project_Alpha_Status.pptx",
+      "dest": "Project_Alpha_Status.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Alpha_Status_gold.pptx",
+      "dest": "Project_Alpha_Status_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Alpha_Status.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

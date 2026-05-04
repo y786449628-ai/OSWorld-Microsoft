@@ -1,0 +1,87 @@
+{
+  "id": "d2d3d5a7-b6da-7b0d-8446-4d5d43fe0a64",
+  "snapshot": "excel",
+  "instruction": "Could you create a dynamic project task tracker in Excel 365 with formulas and conditional formatting?",
+  "source": "Microsoft_33 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_33/logs/MonitoringSnapshots/20260109_225241/Desktop/material/Project_Status_Presentation.pptx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Project_Status_Presentation.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_33/logs/MonitoringSnapshots/20260109_225241/Desktop/material/Project_Tracker.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Project_Tracker.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_33/logs/MonitoringSnapshots/20260109_225958/Desktop/material/Project_Tracker.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Project_Tracker_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\material\\Project_Tracker.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/d2d3d5a7-b6da-7b0d-8446-4d5d43fe0a64",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\material\\Project_Tracker.xlsx",
+      "dest": "Project_Tracker.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Tracker_gold.xlsx",
+      "dest": "Project_Tracker_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Tracker.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

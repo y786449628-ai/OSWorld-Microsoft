@@ -1,0 +1,2108 @@
+{
+  "source_name": "Microsoft_04",
+  "source_file": "Microsoft_04.txt",
+  "source_id": "436dbe544183",
+  "source_question": "As a Financial Analyst, digitize Alphabet Inc.'s 2022-2024 revenue data from screenshots into Excel. You need to use OCR to extract the numbers, merge them into a consolidated table, and calculate Year-over-Year (YoY) growth rates. Create a dashboard featuring Sparklines and a dual-axis chart to analyze trends, then save and export the final report as an Excel.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you use OCR to extract Alphabet Inc.'s 2022-2024 revenue data from the screenshots into Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you merge the extracted revenue data into a consolidated table in Excel?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you calculate the Year-over-Year (YoY) growth rates for the revenue data in the consolidated table?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a dashboard in Excel featuring Sparklines to analyze the revenue trends?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you add a dual-axis chart to the dashboard to further analyze the revenue and YoY growth trends?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you save and export the final report as an Excel file?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "extract_revenue_data_via_ocr",
+      "instruction": "Could you use OCR to extract Alphabet Inc.'s 2022-2024 revenue data from the screenshots into Excel?",
+      "task_kind": "visual_ocr_or_semantic_extraction",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Imported and reviewed data from screenshots, inserted into cells A1 and A20.",
+      "planned_input_snapshot": "20251229_150302",
+      "planned_gold_snapshot": "20251229_150652",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 0 to 45 non-empty cells; new visible headers or values include: 2022, 2023, 2024, Total revenues, $, 282836.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "merge_extracted_data_into_consolidated_table",
+      "instruction": "Could you merge the extracted revenue data into a consolidated table in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Started a master table at cell A1 with headers: Segment, 2022, 2023, 2024. Copied the \"2022\" values from the first import and the \"2023\" values from the second import into the master table. Verified that the \"2024\" values match in both sources and filled the 2024 column.",
+      "planned_input_snapshot": "20251229_150652",
+      "planned_gold_snapshot": "20251229_150721",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 45 to 46 non-empty cells; new visible headers or values include: Segments.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_yoy_growth_rates",
+      "instruction": "Could you calculate the Year-over-Year (YoY) growth rates for the revenue data in the consolidated table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Added headers YoY Growth 22-23 and YoY Growth 23-24 in cells F1 and G1. Entered formulas to calculate growth rates and set the format of these columns to Percentage.",
+      "planned_input_snapshot": "20251229_150721",
+      "planned_gold_snapshot": "20251229_150847",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 46 to 68 non-empty cells; new visible headers or values include: YoY Growth 22-23, YoY Growth 23-24, 8.6827702272695137E-2, 0.13866243322901553.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_dashboard_with_sparklines",
+      "instruction": "Could you create a dashboard in Excel featuring Sparklines to analyze the revenue trends?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Added the header 3-Year Trend in cell H1. Selected cell H2, went to Insert → Sparklines → Line, selected the 3-year data range C2:E2, and clicked OK. Dragged the fill handle down for all rows. In the Sparkline tab, checked High Point and Low Point.",
+      "planned_input_snapshot": "20251229_150847",
+      "planned_gold_snapshot": "20251229_151036",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 68 to 69 non-empty cells; new visible headers or values include: 3-Year Trend.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "add_dual_axis_chart_to_dashboard",
+      "instruction": "Could you add a dual-axis chart to the dashboard to further analyze the revenue and YoY growth trends?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Held Ctrl and selected Segment (A2:A11), 2024 Revenue (E2:E11), and YoY Growth 23-24 (G2:G11). Went to Insert → Recommended Charts → All Charts → Combo. Set 2024 Revenue to Clustered Column and YoY Growth to Line with Markers on the Secondary Axis. Moved the chart to the right of the data. Changed the chart title to '2024 Revenue vs Growth Momentum'. Used Chart Design → Add Chart Element → Legend to move the legend to the Bottom.",
+      "planned_input_snapshot": "20251229_151036",
+      "planned_gold_snapshot": "20251229_151141",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_and_export_final_report",
+      "instruction": "Could you save and export the final report as an Excel file?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Clicked File → Save to save changes. Then, went to File → Export → Create xlsx Document.",
+      "planned_input_snapshot": "20251229_151141",
+      "planned_gold_snapshot": "20251229_151247",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "extract_revenue_data_via_ocr",
+      "instruction": "Could you use OCR to extract Alphabet Inc.'s 2022-2024 revenue data from the screenshots into Excel?",
+      "task_kind": "visual_ocr_or_semantic_extraction",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Imported and reviewed data from screenshots, inserted into cells A1 and A20.",
+      "planned_input_snapshot": "20251229_150302",
+      "planned_gold_snapshot": "20251229_150652",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 0 to 45 non-empty cells; new visible headers or values include: 2022, 2023, 2024, Total revenues, $, 282836.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20251229_150302",
+      "gold_snapshot": "20251229_150652",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Alphabet_Revenue_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 1,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251229_150302",
+          "planned_gold_snapshot": "20251229_150652"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "1c76dc2f-d131-1a2e-ae36-5f8968f2df8f",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/1c76dc2f-d131-1a2e-ae36-5f8968f2df8f.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "merge_extracted_data_into_consolidated_table",
+      "instruction": "Could you merge the extracted revenue data into a consolidated table in Excel?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Started a master table at cell A1 with headers: Segment, 2022, 2023, 2024. Copied the \"2022\" values from the first import and the \"2023\" values from the second import into the master table. Verified that the \"2024\" values match in both sources and filled the 2024 column.",
+      "planned_input_snapshot": "20251229_150652",
+      "planned_gold_snapshot": "20251229_150721",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 45 to 46 non-empty cells; new visible headers or values include: Segments.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20251229_150652",
+      "gold_snapshot": "20251229_150721",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Alphabet_Revenue_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 45 to 46.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251229_150652",
+          "planned_gold_snapshot": "20251229_150721"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "4f8a05f5-afe3-2be4-e385-5ce939fc495d",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/4f8a05f5-afe3-2be4-e385-5ce939fc495d.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "calculate_yoy_growth_rates",
+      "instruction": "Could you calculate the Year-over-Year (YoY) growth rates for the revenue data in the consolidated table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Added headers YoY Growth 22-23 and YoY Growth 23-24 in cells F1 and G1. Entered formulas to calculate growth rates and set the format of these columns to Percentage.",
+      "planned_input_snapshot": "20251229_150721",
+      "planned_gold_snapshot": "20251229_150847",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 46 to 68 non-empty cells; new visible headers or values include: YoY Growth 22-23, YoY Growth 23-24, 8.6827702272695137E-2, 0.13866243322901553.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20251229_150721",
+      "gold_snapshot": "20251229_150847",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Alphabet_Revenue_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 46 to 68.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 4,
+          "search_start_index": 3,
+          "search_end_index": 3,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251229_150721",
+          "planned_gold_snapshot": "20251229_150847"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "8e6a3241-6386-2da3-d7d4-2c7a1ddeede6",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/8e6a3241-6386-2da3-d7d4-2c7a1ddeede6.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_dashboard_with_sparklines_and_add_dual_axis_chart_to_dashboard",
+      "instruction": "Could you create a dashboard in Excel featuring Sparklines to analyze the revenue trends, and then add a dual-axis chart to the dashboard to further analyze the revenue and YoY growth trends?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Added the header 3-Year Trend in cell H1. Selected cell H2, went to Insert → Sparklines → Line, selected the 3-year data range C2:E2, and clicked OK. Dragged the fill handle down for all rows. In the Sparkline tab, checked High Point and Low Point. | Held Ctrl and selected Segment (A2:A11), 2024 Revenue (E2:E11), and YoY Growth 23-24 (G2:G11). Went to Insert → Recommended Charts → All Charts → Combo. Set 2024 Revenue to Clustered Column and YoY Growth to Line with Markers on the Secondary Axis. Moved the chart to the right of the data. Changed the chart title to '2024 Revenue vs Growth Momentum'. Used Chart Design → Add Chart Element → Legend to move the legend to the Bottom.",
+      "planned_input_snapshot": "20251229_150847",
+      "planned_gold_snapshot": "20251229_151036",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 68 to 69 non-empty cells; new visible headers or values include: 3-Year Trend. | Alphabet_Revenue_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20251229_150847",
+      "gold_snapshot": "20251229_151141",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Alphabet_Revenue_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251229_150847",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 4,
+          "search_end_index": 5,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251229_150847",
+          "planned_gold_snapshot": "20251229_151036"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "add_dual_axis_chart_to_dashboard",
+          "reason": "Could not find workbook chart growth."
+        }
+      },
+      "merged_stage_names": [
+        "create_dashboard_with_sparklines",
+        "add_dual_axis_chart_to_dashboard"
+      ],
+      "merged_stage_indices": [
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "e0187e3d-81d2-9d3d-d5bb-494b611d514c",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/e0187e3d-81d2-9d3d-d5bb-494b611d514c.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "save_and_export_final_report",
+      "instruction": "Could you save and export the final report as an Excel file?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Clicked File → Save to save changes. Then, went to File → Export → Create xlsx Document.",
+      "planned_input_snapshot": "20251229_151141",
+      "planned_gold_snapshot": "20251229_151247",
+      "snapshot_evidence": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20251229_151141",
+      "gold_snapshot": "20251229_151247",
+      "linked_preview_tasks": [
+        6
+      ],
+      "target_relative_path": "Alphabet_Revenue_Analysis.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "afa9858f-2308-1dac-2531-352461f49bba",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/afa9858f-2308-1dac-2531-352461f49bba.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20251229_150302",
+    "20251229_150652",
+    "20251229_150721",
+    "20251229_150847",
+    "20251229_150935",
+    "20251229_151036",
+    "20251229_151141",
+    "20251229_151235",
+    "20251229_151247"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20251229_150302",
+      "to": "20251229_150652",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 0 to 45 non-empty cells; new visible headers or values include: 2022, 2023, 2024, Total revenues, $, 282836.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 45
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "2022",
+              "2023",
+              "2024",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018"
+            ]
+          }
+        },
+        "headers_added": [
+          "2022",
+          "2023",
+          "2024",
+          "Total revenues",
+          "$",
+          "282836",
+          "307394",
+          "350018"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8415,
+              "to": 10250
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 45
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "2022",
+                  "2023",
+                  "2024",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251229_150652",
+      "to": "20251229_150721",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 45 to 46 non-empty cells; new visible headers or values include: Segments.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 45,
+            "to": 46
+          },
+          "headers": {
+            "from": [
+              "2022",
+              "2023",
+              "2024",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018"
+            ]
+          }
+        },
+        "headers_added": [
+          "Segments"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10250,
+              "to": 10261
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 45,
+                "to": 46
+              },
+              "headers": {
+                "from": [
+                  "2022",
+                  "2023",
+                  "2024",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251229_150721",
+      "to": "20251229_150847",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 46 to 68 non-empty cells; new visible headers or values include: YoY Growth 22-23, YoY Growth 23-24, 8.6827702272695137E-2, 0.13866243322901553.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 46,
+            "to": 68
+          },
+          "headers": {
+            "from": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ]
+          }
+        },
+        "headers_added": [
+          "YoY Growth 22-23",
+          "YoY Growth 23-24",
+          "8.6827702272695137E-2",
+          "0.13866243322901553"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10261,
+              "to": 11179
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 46,
+                "to": 68
+              },
+              "headers": {
+                "from": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251229_150847",
+      "to": "20251229_150935",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11179,
+              "to": 11307
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251229_150935",
+      "to": "20251229_151036",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 68 to 69 non-empty cells; new visible headers or values include: 3-Year Trend.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 68,
+            "to": 69
+          },
+          "headers": {
+            "from": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ]
+          }
+        },
+        "headers_added": [
+          "3-Year Trend"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11307,
+              "to": 11736
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 68,
+                "to": 69
+              },
+              "headers": {
+                "from": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251229_151036",
+      "to": "20251229_151141",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11736,
+              "to": 17261
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251229_151141",
+      "to": "20251229_151235",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17261,
+              "to": 17316
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20251229_151235",
+      "to": "20251229_151247",
+      "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Alphabet_Revenue_Analysis.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ],
+            "to": [
+              "Segments",
+              "2022",
+              "2023",
+              "2024",
+              "YoY Growth 22-23",
+              "YoY Growth 23-24",
+              "3-Year Trend",
+              "Total revenues",
+              "$",
+              "282836",
+              "307394",
+              "350018",
+              "8.6827702272695137E-2",
+              "0.13866243322901553"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Alphabet_Revenue_Analysis.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17316,
+              "to": 17317
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ],
+                "to": [
+                  "Segments",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "YoY Growth 22-23",
+                  "YoY Growth 23-24",
+                  "3-Year Trend",
+                  "Total revenues",
+                  "$",
+                  "282836",
+                  "307394",
+                  "350018",
+                  "8.6827702272695137E-2",
+                  "0.13866243322901553"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_04",
+    "snapshot_count": 9,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20251229_150302",
+        "to": "20251229_150652",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 0 to 45 non-empty cells; new visible headers or values include: 2022, 2023, 2024, Total revenues, $, 282836.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 0,
+              "to": 45
+            },
+            "headers": {
+              "from": [],
+              "to": [
+                "2022",
+                "2023",
+                "2024",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018"
+              ]
+            }
+          },
+          "headers_added": [
+            "2022",
+            "2023",
+            "2024",
+            "Total revenues",
+            "$",
+            "282836",
+            "307394",
+            "350018"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8415,
+                "to": 10250
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 0,
+                  "to": 45
+                },
+                "headers": {
+                  "from": [],
+                  "to": [
+                    "2022",
+                    "2023",
+                    "2024",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20251229_150652",
+        "to": "20251229_150721",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 45 to 46 non-empty cells; new visible headers or values include: Segments.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 45,
+              "to": 46
+            },
+            "headers": {
+              "from": [
+                "2022",
+                "2023",
+                "2024",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018"
+              ]
+            }
+          },
+          "headers_added": [
+            "Segments"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10250,
+                "to": 10261
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 45,
+                  "to": 46
+                },
+                "headers": {
+                  "from": [
+                    "2022",
+                    "2023",
+                    "2024",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20251229_150721",
+        "to": "20251229_150847",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 46 to 68 non-empty cells; new visible headers or values include: YoY Growth 22-23, YoY Growth 23-24, 8.6827702272695137E-2, 0.13866243322901553.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 46,
+              "to": 68
+            },
+            "headers": {
+              "from": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ]
+            }
+          },
+          "headers_added": [
+            "YoY Growth 22-23",
+            "YoY Growth 23-24",
+            "8.6827702272695137E-2",
+            "0.13866243322901553"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10261,
+                "to": 11179
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 46,
+                  "to": 68
+                },
+                "headers": {
+                  "from": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20251229_150847",
+        "to": "20251229_150935",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11179,
+                "to": 11307
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20251229_150935",
+        "to": "20251229_151036",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: spreadsheet content changed from 68 to 69 non-empty cells; new visible headers or values include: 3-Year Trend.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 68,
+              "to": 69
+            },
+            "headers": {
+              "from": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ]
+            }
+          },
+          "headers_added": [
+            "3-Year Trend"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11307,
+                "to": 11736
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 68,
+                  "to": 69
+                },
+                "headers": {
+                  "from": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20251229_151036",
+        "to": "20251229_151141",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11736,
+                "to": 17261
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20251229_151141",
+        "to": "20251229_151235",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17261,
+                "to": 17316
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20251229_151235",
+        "to": "20251229_151247",
+        "human_summary": "Alphabet_Revenue_Analysis.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Alphabet_Revenue_Analysis.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ],
+              "to": [
+                "Segments",
+                "2022",
+                "2023",
+                "2024",
+                "YoY Growth 22-23",
+                "YoY Growth 23-24",
+                "3-Year Trend",
+                "Total revenues",
+                "$",
+                "282836",
+                "307394",
+                "350018",
+                "8.6827702272695137E-2",
+                "0.13866243322901553"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Alphabet_Revenue_Analysis.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17316,
+                "to": 17317
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ],
+                  "to": [
+                    "Segments",
+                    "2022",
+                    "2023",
+                    "2024",
+                    "YoY Growth 22-23",
+                    "YoY Growth 23-24",
+                    "3-Year Trend",
+                    "Total revenues",
+                    "$",
+                    "282836",
+                    "307394",
+                    "350018",
+                    "8.6827702272695137E-2",
+                    "0.13866243322901553"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Create a new Excel workbook named Alphabet_Revenue_Analysis.xlsx"
+    },
+    {
+      "index": 2,
+      "instruction": "Go to Data → From Picture → Picture From File, import the 2022-2023 revenue screenshot. After reviewing the data in the side pane, insert it into cell A1. Repeat this process for the 2023-2024 screenshot and insert it into cell A20."
+    },
+    {
+      "index": 3,
+      "instruction": "Start a master table at cell A1 with headers: Segment, 2022, 2023, 2024. Copy the \"2022\" values from the first import and the \"2023\" values from the second import into the master table. Verify that the \"2024\" values match in both sources and fill the 2024 column."
+    },
+    {
+      "index": 4,
+      "instruction": "Add headers YoY Growth 22-23 and YoY Growth 23-24 in cells F1 and G1. In cell F2, enter the formula =(D2-C2)/C2 and drag it down. In cell F2, enter =(E2-D2)/D2 and drag it down. Set the format of these columns to Percentage."
+    },
+    {
+      "index": 5,
+      "instruction": "Select the growth rate range (F2:G11). Go to Home → Conditional Formatting → Color Scales and select the \"Green-White-Red\" scale to visualize growth performance."
+    },
+    {
+      "index": 6,
+      "instruction": "Add the header 3-Year Trend in cell H1. Select cell H2, go to Insert → Sparklines → Line, select the 3-year data range C2:E2, and click OK. Drag the fill handle down for all rows. In the Sparkline tab, check High Point and Low Point."
+    },
+    {
+      "index": 7,
+      "instruction": "Hold Ctrl and select Segment (A2:A11), 2024 Revenue (E2:E11), and YoY Growth 23-24 (G2:G11). Go to Insert → Recommended Charts → All Charts → Combo. Set 2024 Revenue to Clustered Column and YoY Growth to Line with Markers on the Secondary Axis."
+    },
+    {
+      "index": 8,
+      "instruction": "Move the chart to the right of the data. Change the chart title to \"2024 Revenue vs Growth Momentum\". Use Chart Design → Add Chart Element → Legend to move the legend to the Bottom."
+    },
+    {
+      "index": 9,
+      "instruction": "Click File → Save to save changes. Then, go to File → Export → Create xlsx Document."
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 5,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 9
+  }
+}

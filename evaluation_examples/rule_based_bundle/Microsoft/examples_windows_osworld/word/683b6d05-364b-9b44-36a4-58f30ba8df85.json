@@ -1,0 +1,85 @@
+{
+  "id": "683b6d05-364b-9b44-36a4-58f30ba8df85",
+  "snapshot": "word",
+  "instruction": "Could you edit the text and apply styles in the Word document?",
+  "source": "Microsoft_34 true stage 6",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005402/Desktop/material/Financial.docx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Financial.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005402/Desktop/material/Project_Report.docx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Project_Report.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005402/Desktop/material/Project_Tracking.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Project_Tracking.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005553/Desktop/material/Project_Report.docx",
+            "path": "C:\\Users\\User\\Documents\\Project_Report_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\material\\Project_Report.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/683b6d05-364b-9b44-36a4-58f30ba8df85",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\material\\Project_Report.docx",
+      "dest": "Project_Report.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Project_Report_gold.docx",
+      "dest": "Project_Report_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Report.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

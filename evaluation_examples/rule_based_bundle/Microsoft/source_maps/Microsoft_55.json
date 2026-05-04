@@ -1,0 +1,1330 @@
+{
+  "source_name": "Microsoft_55",
+  "source_file": "Microsoft_55.txt",
+  "source_id": "fb0621ee02b5",
+  "source_question": "Update the \"Project_Alpha_Status.pptx\" presentation by embedding pre-existing financial charts from Excel as linked objects and applying professional visual styles.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Project_Alpha_Status.pptx' presentation?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you open the Excel file containing the pre-existing financial charts?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you embed the financial charts from Excel into the 'Project_Alpha_Status.pptx' as linked objects?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply professional visual styles to the embedded financial charts in the 'Project_Alpha_Status.pptx'?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_apply_theme",
+      "instruction": "Could you open the 'Project_Alpha_Status.pptx' presentation and apply the 'Retrospect' theme with 'OrangeRed' background style?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open \"Project_Alpha_Status.pptx\". On the \"Design\" tab, apply the \"Retrospect\" theme. In the \"Variants\" group, select the \"OrangeRed\" background style.",
+      "planned_input_snapshot": "20260115_095848",
+      "planned_gold_snapshot": "20260115_100049",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "format_title_slide",
+      "instruction": "Could you format the title slide by changing the font to 'Tw Cen MT', font size to '88', and adding text shadow?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "On Slide 1 (Title Slide), select the title \"Project Alpha\". Change the Font to \"Tw Cen MT\", Font Size to \"88\", and click the \"Text Shadow\" button (S icon).",
+      "planned_input_snapshot": "20260115_100049",
+      "planned_gold_snapshot": "20260115_100234",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "embed_budget_vs_actual_chart",
+      "instruction": "Could you embed the 'Budget vs Actual' Combo Chart from Excel into the 'Financial Overview' slide as a linked object?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Copy the 'Budget vs Actual' Combo Chart from Excel and paste it as a linked object in PowerPoint.",
+      "planned_input_snapshot": "20260115_100234",
+      "planned_gold_snapshot": "20260115_100337",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "embed_task_completion_chart",
+      "instruction": "Could you embed the 'Task Completion' Doughnut Chart from Excel into the 'Project Progress' slide as a linked object?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Copy the 'Task Completion' Doughnut Chart from Excel and paste it as a linked object in PowerPoint.",
+      "planned_input_snapshot": "20260115_100337",
+      "planned_gold_snapshot": "20260115_100427",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_smartart_process",
+      "instruction": "Could you create a SmartArt process on the 'Launch Roadmap' slide and apply the 'Colorful Range - Accent Colors 5 to 6' color scheme?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Create a SmartArt process, enter steps, and apply the color scheme.",
+      "planned_input_snapshot": "20260115_100427",
+      "planned_gold_snapshot": "20260115_100653",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "apply_animation_and_footer",
+      "instruction": "Could you apply the 'Wipe' animation to the linked chart on Slide 3 and add a footer with 'Project Alpha Confidential'?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Apply the 'Wipe' animation and add a footer with 'Project Alpha Confidential'.",
+      "planned_input_snapshot": "20260115_100653",
+      "planned_gold_snapshot": "20260115_100732",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_final_presentation",
+      "instruction": "Could you run the slideshow and save the presentation as 'Alpha_Final_Report.pptx'?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Run the slideshow and save the presentation as 'Alpha_Final_Report.pptx'.",
+      "planned_input_snapshot": "20260115_100732",
+      "planned_gold_snapshot": "20260115_100924",
+      "snapshot_evidence": "New files appeared: Alpha_Final_Report.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_apply_theme",
+      "instruction": "Could you open the 'Project_Alpha_Status.pptx' presentation and apply the 'Retrospect' theme with 'OrangeRed' background style?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open \"Project_Alpha_Status.pptx\". On the \"Design\" tab, apply the \"Retrospect\" theme. In the \"Variants\" group, select the \"OrangeRed\" background style.",
+      "planned_input_snapshot": "20260115_095848",
+      "planned_gold_snapshot": "20260115_100049",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_095848",
+      "gold_snapshot": "20260115_100049",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Alpha_Status.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 2,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_095848",
+          "planned_gold_snapshot": "20260115_100049"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "87a71d25-96d6-de45-fd66-59969b6cab8c",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/87a71d25-96d6-de45-fd66-59969b6cab8c.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "format_title_slide",
+      "instruction": "Could you format the title slide by changing the font to 'Tw Cen MT', font size to '88', and adding text shadow?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "On Slide 1 (Title Slide), select the title \"Project Alpha\". Change the Font to \"Tw Cen MT\", Font Size to \"88\", and click the \"Text Shadow\" button (S icon).",
+      "planned_input_snapshot": "20260115_100049",
+      "planned_gold_snapshot": "20260115_100234",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_100049",
+      "gold_snapshot": "20260115_100234",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Alpha_Status.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_100049",
+          "planned_gold_snapshot": "20260115_100234"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "c6f890c0-ff83-694b-e2f4-b4007681c8b8",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/c6f890c0-ff83-694b-e2f4-b4007681c8b8.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "embed_budget_vs_actual_chart",
+      "instruction": "Could you embed the 'Budget vs Actual' Combo Chart from Excel into the 'Financial Overview' slide as a linked object?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Copy the 'Budget vs Actual' Combo Chart from Excel and paste it as a linked object in PowerPoint.",
+      "planned_input_snapshot": "20260115_100234",
+      "planned_gold_snapshot": "20260115_100337",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_100234",
+      "gold_snapshot": "20260115_100337",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Alpha_Status.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260115_100234",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 3,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_100234",
+          "planned_gold_snapshot": "20260115_100337"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "60b8408a-a3be-2d53-ae4a-c6e54dfb2aac",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/60b8408a-a3be-2d53-ae4a-c6e54dfb2aac.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "embed_task_completion_chart",
+      "instruction": "Could you embed the 'Task Completion' Doughnut Chart from Excel into the 'Project Progress' slide as a linked object?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel",
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Copy the 'Task Completion' Doughnut Chart from Excel and paste it as a linked object in PowerPoint.",
+      "planned_input_snapshot": "20260115_100337",
+      "planned_gold_snapshot": "20260115_100427",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_100337",
+      "gold_snapshot": "20260115_100427",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Alpha_Status.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 7,
+          "search_start_index": 5,
+          "search_end_index": 5,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_100337",
+          "planned_gold_snapshot": "20260115_100427"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "244bffac-56d9-8501-53b7-20fae620a4fa",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/244bffac-56d9-8501-53b7-20fae620a4fa.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_smartart_process",
+      "instruction": "Could you create a SmartArt process on the 'Launch Roadmap' slide and apply the 'Colorful Range - Accent Colors 5 to 6' color scheme?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Create a SmartArt process, enter steps, and apply the color scheme.",
+      "planned_input_snapshot": "20260115_100427",
+      "planned_gold_snapshot": "20260115_100653",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_100427",
+      "gold_snapshot": "20260115_100653",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Alpha_Status.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260115_100653",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 10,
+          "search_start_index": 6,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_100427",
+          "planned_gold_snapshot": "20260115_100653"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "71ab2b36-ef6d-a3cc-096f-5838c77a5127",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/71ab2b36-ef6d-a3cc-096f-5838c77a5127.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "apply_animation_and_footer",
+      "instruction": "Could you apply the 'Wipe' animation to the linked chart on Slide 3 and add a footer with 'Project Alpha Confidential'?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Apply the 'Wipe' animation and add a footer with 'Project Alpha Confidential'.",
+      "planned_input_snapshot": "20260115_100653",
+      "planned_gold_snapshot": "20260115_100732",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_100653",
+      "gold_snapshot": "20260115_100732",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Alpha_Status.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 11,
+          "trajectory_end": 12,
+          "search_start_index": 9,
+          "search_end_index": 9,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_100653",
+          "planned_gold_snapshot": "20260115_100732"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "25bfcbe1-f281-bccb-173f-04a7212f98d6",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/25bfcbe1-f281-bccb-173f-04a7212f98d6.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_final_presentation",
+      "instruction": "Could you run the slideshow and save the presentation as 'Alpha_Final_Report.pptx'?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Run the slideshow and save the presentation as 'Alpha_Final_Report.pptx'.",
+      "planned_input_snapshot": "20260115_100732",
+      "planned_gold_snapshot": "20260115_100924",
+      "snapshot_evidence": "New files appeared: Alpha_Final_Report.pptx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260115_100732",
+      "gold_snapshot": "20260115_100924",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Alpha_Final_Report.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 13,
+          "trajectory_end": 13,
+          "search_start_index": 10,
+          "search_end_index": 10,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260115_100732",
+          "planned_gold_snapshot": "20260115_100924"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0bce102a-c7e9-a663-3549-227ec8b8f427",
+          "domain": "ppt",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/ppt/0bce102a-c7e9-a663-3549-227ec8b8f427.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Project_Alpha_Status.pptx' presentation?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you open the Excel file containing the pre-existing financial charts?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you embed the financial charts from Excel into the 'Project_Alpha_Status.pptx' as linked objects?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply professional visual styles to the embedded financial charts in the 'Project_Alpha_Status.pptx'?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260115_095848",
+    "20260115_100049",
+    "20260115_100234",
+    "20260115_100302",
+    "20260115_100337",
+    "20260115_100427",
+    "20260115_100541",
+    "20260115_100618",
+    "20260115_100653",
+    "20260115_100732",
+    "20260115_100924"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260115_095848",
+      "to": "20260115_100049",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 461921,
+              "to": 462276
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 461921,
+              "to": 462276
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260115_100049",
+      "to": "20260115_100234",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 462276,
+              "to": 465346
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 462276,
+              "to": 465346
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260115_100234",
+      "to": "20260115_100302",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260115_100302",
+      "to": "20260115_100337",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 465346,
+              "to": 468266
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 465346,
+              "to": 468266
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260115_100337",
+      "to": "20260115_100427",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 468266,
+              "to": 474861
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 468266,
+              "to": 474861
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260115_100427",
+      "to": "20260115_100541",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 474861,
+              "to": 475350
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 474861,
+              "to": 475350
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260115_100541",
+      "to": "20260115_100618",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 475350,
+              "to": 475535
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 475350,
+              "to": 475535
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260115_100618",
+      "to": "20260115_100653",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 475535,
+              "to": 475895
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 475535,
+              "to": 475895
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260115_100653",
+      "to": "20260115_100732",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "size": {
+              "from": 475895,
+              "to": 481601
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Project_Alpha_Status.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 475895,
+              "to": 481601
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260115_100732",
+      "to": "20260115_100924",
+      "human_summary": "New files appeared: Alpha_Final_Report.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Alpha_Final_Report.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Alpha_Final_Report.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_55",
+    "snapshot_count": 11,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260115_095848",
+        "to": "20260115_100049",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 461921,
+                "to": 462276
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 461921,
+                "to": 462276
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260115_100049",
+        "to": "20260115_100234",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 462276,
+                "to": 465346
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 462276,
+                "to": 465346
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260115_100234",
+        "to": "20260115_100302",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260115_100302",
+        "to": "20260115_100337",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 465346,
+                "to": 468266
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 465346,
+                "to": 468266
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260115_100337",
+        "to": "20260115_100427",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 468266,
+                "to": 474861
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 468266,
+                "to": 474861
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260115_100427",
+        "to": "20260115_100541",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 474861,
+                "to": 475350
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 474861,
+                "to": 475350
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260115_100541",
+        "to": "20260115_100618",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 475350,
+                "to": 475535
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 475350,
+                "to": 475535
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260115_100618",
+        "to": "20260115_100653",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 475535,
+                "to": 475895
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 475535,
+                "to": 475895
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260115_100653",
+        "to": "20260115_100732",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "size": {
+                "from": 475895,
+                "to": 481601
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Project_Alpha_Status.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 475895,
+                "to": 481601
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260115_100732",
+        "to": "20260115_100924",
+        "human_summary": "New files appeared: Alpha_Final_Report.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Alpha_Final_Report.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Alpha_Final_Report.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "For Deletion"
+    },
+    {
+      "index": 2,
+      "instruction": "Open \"Project_Alpha_Status.pptx\". On the \"Design\" tab, apply the \"Retrospect\" theme. In the \"Variants\" group, select the \"OrangeRed\" background style."
+    },
+    {
+      "index": 3,
+      "instruction": "On Slide 1 (Title Slide), select the title \"Project Alpha\". Change the Font to \"Tw Cen MT\", Font Size to \"88\", and click the \"Text Shadow\" button (S icon)."
+    },
+    {
+      "index": 4,
+      "instruction": "Open the provided file \"Alpha_Financials.xlsx\". Click to select the \"Budget vs Actual\" Combo Chart. Press \"Ctrl+C\" to copy it."
+    },
+    {
+      "index": 5,
+      "instruction": "Switch to PowerPoint Slide 3 (\"Financial Overview\"). On the \"Home\" tab, click the arrow under \"Paste\", select \"Paste Special\", choose \"Paste link\", select \"Microsoft Excel Worksheet Object\", and click \"OK\"."
+    },
+    {
+      "index": 6,
+      "instruction": "Return to Excel. Select the \"Task Completion\" Doughnut Chart. Press \"Ctrl+C\" to copy it."
+    },
+    {
+      "index": 7,
+      "instruction": "Switch to PowerPoint Slide 4 (\"Project Progress\"). Repeat the \"Paste Special\" > \"Paste link\" process to insert this chart as a linked object."
+    },
+    {
+      "index": 8,
+      "instruction": "On Slide 2 (\"Launch Roadmap\"), go to \"Insert\" > \"SmartArt\". Choose \"Process\" > \"Basic Chevron Process\". Click \"OK\"."
+    },
+    {
+      "index": 9,
+      "instruction": "In the SmartArt text pane, enter the following steps in order: \"Planning\", \"Development\", \"Testing\", \"Launch\"."
+    },
+    {
+      "index": 10,
+      "instruction": "With the SmartArt selected, go to the \"SmartArt Design\" tab, click \"Change Colors\", and select \"Colorful Range - Accent Colors 5 to 6\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Select the linked chart on Slide 3. On the \"Animations\" tab, apply the \"Wipe\" effect. Click \"Effect Options\" and choose \"From Left\"."
+    },
+    {
+      "index": 12,
+      "instruction": "Go to \"Insert\" > \"Header & Footer\". Check the boxes for \"Slide number\" and \"Footer\". In the footer text box, type \"Project Alpha Confidential\". Click \"Apply to All\"."
+    },
+    {
+      "index": 13,
+      "instruction": "Run the slideshow and save the presentation as \"Alpha_Final_Report.pptx\"."
+    },
+    {
+      "index": 14,
+      "instruction": "For Deletion"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 7,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 11
+  }
+}

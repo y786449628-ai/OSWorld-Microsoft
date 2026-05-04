@@ -1,0 +1,353 @@
+{
+  "source_name": "Microsoft_53",
+  "snapshot_count": 11,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260110_175137",
+      "to": "20260110_175224",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15527,
+              "to": 15542
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15527,
+              "to": 15542
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_175224",
+      "to": "20260110_175236",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15542,
+              "to": 15745
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15542,
+              "to": 15745
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_175236",
+      "to": "20260110_175312",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15745,
+              "to": 15792
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15745,
+              "to": 15792
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_175312",
+      "to": "20260110_175417",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15792,
+              "to": 15861
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15792,
+              "to": 15861
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_175417",
+      "to": "20260110_175426",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 15861,
+              "to": 16195
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15861,
+              "to": 16195
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_175426",
+      "to": "20260110_175512",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 16195,
+              "to": 16300
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16195,
+              "to": 16300
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_175512",
+      "to": "20260110_175534",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 16300,
+              "to": 16355
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16300,
+              "to": 16355
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_175534",
+      "to": "20260110_175649",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 16355,
+              "to": 25107
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16355,
+              "to": 25107
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260110_175649",
+      "to": "20260110_175758",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "size": {
+              "from": 25107,
+              "to": 25154
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Service_Agreement_Draft.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 25107,
+              "to": 25154
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260110_175758",
+      "to": "20260110_175816",
+      "human_summary": "New files appeared: Final_Signed_Agreement.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Final_Signed_Agreement.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Final_Signed_Agreement.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

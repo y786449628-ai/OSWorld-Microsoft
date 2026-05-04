@@ -1,0 +1,87 @@
+{
+  "id": "2e72728c-88d9-7f34-66ce-6a3516539e94",
+  "snapshot": "excel",
+  "instruction": "Could you generate a 'Midterm–Final Score Change Line Chart' based on the data and copy it as an image?",
+  "source": "Microsoft_02 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180612/Desktop/Material/data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\data.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180612/Desktop/Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180728/Desktop/Sheet1.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Sheet1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2e72728c-88d9-7f34-66ce-6a3516539e94",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Sheet1.xlsx",
+      "dest": "Sheet1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Sheet1_gold.xlsx",
+      "dest": "Sheet1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Sheet1.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

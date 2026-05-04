@@ -1,0 +1,77 @@
+{
+  "id": "a05ac34a-3fb7-00a0-09b9-ae805d5cd451",
+  "snapshot": "word",
+  "instruction": "Could you create a new Word document named 'New_Employee_Onboarding_Checklist.docx' on your desktop?",
+  "source": "Microsoft_62 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141104/Desktop/New Microsoft Word Document.docx",
+            "path": "C:\\Users\\78644\\Desktop\\New Microsoft Word Document.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_62/logs/MonitoringSnapshots/20260113_141224/Desktop/New_Employee_Onboarding_Checklist.docx",
+            "path": "C:\\Users\\78644\\Documents\\New_Employee_Onboarding_Checklist_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\New Microsoft Word Document.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/a05ac34a-3fb7-00a0-09b9-ae805d5cd451",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\New_Employee_Onboarding_Checklist.docx",
+      "dest": "New_Employee_Onboarding_Checklist.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\New_Employee_Onboarding_Checklist_gold.docx",
+      "dest": "New_Employee_Onboarding_Checklist_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "New_Employee_Onboarding_Checklist.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

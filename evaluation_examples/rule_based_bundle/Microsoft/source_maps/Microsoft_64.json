@@ -1,0 +1,1657 @@
+{
+  "source_name": "Microsoft_64",
+  "source_file": "Microsoft_64.txt",
+  "source_id": "d530dc910e61",
+  "source_question": "Open the file and set the table format, standardize product codes uniformly through cell formatting; simultaneously set a unified storage date format, then handle blank data and incorrect data, fill in blank data, manually correct the quantities with incorrect formats; use the table design function to remove duplicates, calculate inventory value using functions and summarize at the bottom of the table, then create a pivot table, complete the format settings, and save to finish the task.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the file and set the table format, standardizing product codes uniformly through cell formatting?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you set a unified storage date format for the table?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you handle blank data and incorrect data, filling in blank data and manually correcting the quantities with incorrect formats?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you use the table design function to remove duplicates from the table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you calculate the inventory value using functions and summarize it at the bottom of the table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a pivot table based on the data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you complete the format settings for the pivot table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the file to finish the task?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_file_and_set_table_format",
+      "instruction": "Could you open the file and set the table format, standardizing product codes uniformly through cell formatting?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click the \"excel.xlsx\" file on the cloud computer desktop to launch Excel and open the worksheet; select the entire data range, switch to the [Home] tab, and click the [Format as Table] button; in the pop-up style list, select \"Light Blue, Table Style Light 5\", check the \"Table has headers\" option, and click [OK] to complete the standard table format setting. Select column A, right-click on the selected area, and choose [Format Cells]; in the pop-up dialog box, switch to the [Number] tab, select the [Custom] category, enter \"CP-0000\" in the type box (indicating that the product code starts with \"cp-\" followed by 4 digits), click [OK] to unify the product code format. Press the shortcut key Ctrl+S to save the current table.",
+      "planned_input_snapshot": "20260114_174008",
+      "planned_gold_snapshot": "20260114_174126",
+      "snapshot_evidence": "excel.xlsx changed: spreadsheet content changed from 48 to 50 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "set_unified_storage_date_format",
+      "instruction": "Could you set a unified storage date format for the table?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Select column D, switch to the [Data] tab, and click the [Text to Columns] button; in the first step of the Text to Columns Wizard, keep the default \"Delimited\" option and click [Next]; in the second step, uncheck all delimiters and click [Next]; in the third step, select the \"Date\" column data format, choose \"YMD (Year-Month-Day)\" as the format, and click [Finish] to unify all warehouse entry date formats. Select column H, press the Ctrl+G key combination to open the [Go To] dialog box; click the [Go To Special] button, select [Blanks] in the pop-up dialog box, and click [OK]; at this point, all blank cells will be selected.",
+      "planned_input_snapshot": "20260114_174126",
+      "planned_gold_snapshot": "20260114_174326",
+      "snapshot_evidence": "excel.xlsx changed: spreadsheet content changed from 50 to 51 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "handle_blank_and_incorrect_data",
+      "instruction": "Could you handle blank data and incorrect data, filling in blank data and manually correcting the quantities with incorrect formats?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Check column E, find the cell with the value \"十二\" (twelve), double-click on that cell, manually change it to the number \"12\", and press the Enter key to confirm.",
+      "planned_input_snapshot": "20260114_174326",
+      "planned_gold_snapshot": "20260114_174550",
+      "snapshot_evidence": "excel.xlsx changed: spreadsheet content changed from 51 to 78 non-empty cells; new visible headers or values include: Mechanical Keyboard, 30, 8970.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes. Manual correction requires LLM assistance.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "remove_duplicates_and_calculate_inventory_value",
+      "instruction": "Could you use the table design function to remove duplicates from the table? Could you calculate the inventory value using functions and summarize it at the bottom of the table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Click on any cell within the table, switch to the [Table Design] tab, and click the [Remove Duplicates] button; in the pop-up dialog box, ensure that the \"Product Code\" column is checked, then click [OK] to complete the removal of duplicate data. Click on cell G2, enter the formula \"=E2*F2\" (inventory value = inventory quantity × unit price), and press the Enter key to get the inventory value of the first row; select cell G2, move the mouse pointer to the bottom-right corner of the cell, and when the pointer turns into a black cross (fill handle), double-click the fill handle to automatically fill the formula to the entire column, completing the batch calculation of the inventory value for all products. Click any cell in the table, switch to the [Table Design] tab, and check the [Total Row] option; a total row will appear at the bottom of the table. Click the cell in column G (Inventory Value column) of the total row, click the drop-down arrow on the right, select [Sum], and it will automatically calculate the total inventory value of all products. Press the shortcut key Ctrl+S to save the current table.",
+      "planned_input_snapshot": "20260114_174550",
+      "planned_gold_snapshot": "20260114_174657",
+      "snapshot_evidence": "excel.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_pivot_table_and_complete_format_settings",
+      "instruction": "Could you create a pivot table based on the data? Could you complete the format settings for the pivot table?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Click on any cell in the table, switch to the [Insert] tab, and click the [PivotTable] button; in the pop-up dialog box, keep the \"Select a table or range\" as the default selected table data, and select [Existing Worksheet] for \"Where to put the PivotTable\"; click a cell in the blank area of the worksheet (such as a8) as the starting position of the PivotTable, and click [OK]. In the 【PivotTable Fields】 pane on the right side, make the following settings: Drag the \"Storage Warehouse\" field to the 【Rows】 area; Drag the \"Product Name\" field to the 【Rows】 area (place it below \"Storage Warehouse\" to achieve product segmentation under warehouse classification); Drag the \"Inventory Quantity\" and \"Inventory Value\" fields to the 【Values】 area respectively (both are calculated by summation by default); After completing the settings, a pivot table that is classified by warehouse and includes the summary of product inventory quantity and value will be generated, making it easy to view the inventory distribution of each warehouse. Press the shortcut key Ctrl+S to save the current table.",
+      "planned_input_snapshot": "20260114_174657",
+      "planned_gold_snapshot": "20260114_174711",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the task involves creating a pivot table and formatting, which should have an observable change. Review the trajectory and snapshots for possible missed transitions.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_file_and_set_table_format",
+      "instruction": "Could you open the file and set the table format, standardizing product codes uniformly through cell formatting?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click the \"excel.xlsx\" file on the cloud computer desktop to launch Excel and open the worksheet; select the entire data range, switch to the [Home] tab, and click the [Format as Table] button; in the pop-up style list, select \"Light Blue, Table Style Light 5\", check the \"Table has headers\" option, and click [OK] to complete the standard table format setting. Select column A, right-click on the selected area, and choose [Format Cells]; in the pop-up dialog box, switch to the [Number] tab, select the [Custom] category, enter \"CP-0000\" in the type box (indicating that the product code starts with \"cp-\" followed by 4 digits), click [OK] to unify the product code format. Press the shortcut key Ctrl+S to save the current table.",
+      "planned_input_snapshot": "20260114_174008",
+      "planned_gold_snapshot": "20260114_174126",
+      "snapshot_evidence": "excel.xlsx changed: spreadsheet content changed from 48 to 50 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes.",
+      "input_snapshot": "20260114_174008",
+      "gold_snapshot": "20260114_174126",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "excel.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "8cf0e7ed-027b-69ed-e740-bac8eb57dbea",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/8cf0e7ed-027b-69ed-e740-bac8eb57dbea.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "set_unified_storage_date_format",
+      "instruction": "Could you set a unified storage date format for the table?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Select column D, switch to the [Data] tab, and click the [Text to Columns] button; in the first step of the Text to Columns Wizard, keep the default \"Delimited\" option and click [Next]; in the second step, uncheck all delimiters and click [Next]; in the third step, select the \"Date\" column data format, choose \"YMD (Year-Month-Day)\" as the format, and click [Finish] to unify all warehouse entry date formats. Select column H, press the Ctrl+G key combination to open the [Go To] dialog box; click the [Go To Special] button, select [Blanks] in the pop-up dialog box, and click [OK]; at this point, all blank cells will be selected.",
+      "planned_input_snapshot": "20260114_174126",
+      "planned_gold_snapshot": "20260114_174326",
+      "snapshot_evidence": "excel.xlsx changed: spreadsheet content changed from 50 to 51 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes.",
+      "input_snapshot": "20260114_174126",
+      "gold_snapshot": "20260114_174326",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "excel.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 50 to 51.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_174126",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 3,
+          "search_end_index": 5,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_174126",
+          "planned_gold_snapshot": "20260114_174326"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "9f602a74-4631-926c-9374-c117ef6816a3",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/9f602a74-4631-926c-9374-c117ef6816a3.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "handle_blank_and_incorrect_data",
+      "instruction": "Could you handle blank data and incorrect data, filling in blank data and manually correcting the quantities with incorrect formats?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Check column E, find the cell with the value \"十二\" (twelve), double-click on that cell, manually change it to the number \"12\", and press the Enter key to confirm.",
+      "planned_input_snapshot": "20260114_174326",
+      "planned_gold_snapshot": "20260114_174550",
+      "snapshot_evidence": "excel.xlsx changed: spreadsheet content changed from 51 to 78 non-empty cells; new visible headers or values include: Mechanical Keyboard, 30, 8970.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes. Manual correction requires LLM assistance.",
+      "input_snapshot": "20260114_174326",
+      "gold_snapshot": "20260114_174550",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "excel.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 51 to 78.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_174326",
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 6,
+          "search_start_index": 6,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_174326",
+          "planned_gold_snapshot": "20260114_174550"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "78346878-8f97-0cc1-6237-e19e5717b743",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/78346878-8f97-0cc1-6237-e19e5717b743.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "remove_duplicates_and_calculate_inventory_value_and_create_pivot_table_and_complete_format_settings",
+      "instruction": "Could you use the table design function to remove duplicates from the table? Could you calculate the inventory value using functions and summarize it at the bottom of the table, and then create a pivot table based on the data? Could you complete the format settings for the pivot table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Click on any cell within the table, switch to the [Table Design] tab, and click the [Remove Duplicates] button; in the pop-up dialog box, ensure that the \"Product Code\" column is checked, then click [OK] to complete the removal of duplicate data. Click on cell G2, enter the formula \"=E2*F2\" (inventory value = inventory quantity × unit price), and press the Enter key to get the inventory value of the first row; select cell G2, move the mouse pointer to the bottom-right corner of the cell, and when the pointer turns into a black cross (fill handle), double-click the fill handle to automatically fill the formula to the entire column, completing the batch calculation of the inventory value for all products. Click any cell in the table, switch to the [Table Design] tab, and check the [Total Row] option; a total row will appear at the bottom of the table. Click the cell in column G (Inventory Value column) of the total row, click the drop-down arrow on the right, select [Sum], and it will automatically calculate the total inventory value of all products. Press the shortcut key Ctrl+S to save the current table. | Click on any cell in the table, switch to the [Insert] tab, and click the [PivotTable] button; in the pop-up dialog box, keep the \"Select a table or range\" as the default selected table data, and select [Existing Worksheet] for \"Where to put the PivotTable\"; click a cell in the blank area of the worksheet (such as a8) as the starting position of the PivotTable, and click [OK]. In the 【PivotTable Fields】 pane on the right side, make the following settings: Drag the \"Storage Warehouse\" field to the 【Rows】 area; Drag the \"Product Name\" field to the 【Rows】 area (place it below \"Storage Warehouse\" to achieve product segmentation under warehouse classification); Drag the \"Inventory Quantity\" and \"Inventory Value\" fields to the 【Values】 area respectively (both are calculated by summation by default); After completing the settings, a pivot table that is classified by warehouse and includes the summary of product inventory quantity and value will be generated, making it easy to view the inventory distribution of each warehouse. Press the shortcut key Ctrl+S to save the current table.",
+      "planned_input_snapshot": "20260114_174550",
+      "planned_gold_snapshot": "20260114_174711",
+      "snapshot_evidence": "excel.xlsx changed: Office document content changed. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of changes.",
+      "input_snapshot": "20260114_174550",
+      "gold_snapshot": "20260114_174711",
+      "linked_preview_tasks": [],
+      "target_relative_path": "excel.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "create_pivot_table_and_complete_format_settings",
+          "reason": "Could not find workbook chart growth."
+        }
+      },
+      "merged_stage_names": [
+        "remove_duplicates_and_calculate_inventory_value",
+        "create_pivot_table_and_complete_format_settings"
+      ],
+      "merged_stage_indices": [
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "97c547b2-9e14-a24c-604d-fa541294fdfb",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/97c547b2-9e14-a24c-604d-fa541294fdfb.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 4,
+      "instruction": "Could you use the table design function to remove duplicates from the table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you calculate the inventory value using functions and summarize it at the bottom of the table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a pivot table based on the data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you complete the format settings for the pivot table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the file to finish the task?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260114_174008",
+    "20260114_174008_1",
+    "20260114_174126",
+    "20260114_174126_1",
+    "20260114_174126_2",
+    "20260114_174326",
+    "20260114_174326_1",
+    "20260114_174326_2",
+    "20260114_174550",
+    "20260114_174550_1",
+    "20260114_174550_2",
+    "20260114_174657",
+    "20260114_174657_1",
+    "20260114_174657_2",
+    "20260114_174657_3",
+    "20260114_174711",
+    "20260114_174711_1",
+    "20260114_174711_2"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260114_174008",
+      "to": "20260114_174008_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_174008_1",
+      "to": "20260114_174126",
+      "human_summary": "excel.xlsx changed: spreadsheet content changed from 48 to 50 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "excel.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 48,
+            "to": 50
+          },
+          "headers": {
+            "from": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse"
+            ],
+            "to": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "excel.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11748,
+              "to": 11749
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 48,
+                "to": 50
+              },
+              "headers": {
+                "from": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse"
+                ],
+                "to": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_174126",
+      "to": "20260114_174126_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_174126_1",
+      "to": "20260114_174126_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_174126_2",
+      "to": "20260114_174326",
+      "human_summary": "excel.xlsx changed: spreadsheet content changed from 50 to 51 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "excel.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 50,
+            "to": 51
+          },
+          "headers": {
+            "from": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse"
+            ],
+            "to": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "excel.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11749,
+              "to": 12418
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 50,
+                "to": 51
+              },
+              "headers": {
+                "from": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse"
+                ],
+                "to": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_174326",
+      "to": "20260114_174326_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260114_174326_1",
+      "to": "20260114_174326_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260114_174326_2",
+      "to": "20260114_174550",
+      "human_summary": "excel.xlsx changed: spreadsheet content changed from 51 to 78 non-empty cells; new visible headers or values include: Mechanical Keyboard, 30, 8970.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "excel.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 51,
+            "to": 78
+          },
+          "headers": {
+            "from": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse"
+            ],
+            "to": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse",
+              "Mechanical Keyboard",
+              "30",
+              "8970"
+            ]
+          }
+        },
+        "headers_added": [
+          "Mechanical Keyboard",
+          "30",
+          "8970"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "excel.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12418,
+              "to": 16386
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 51,
+                "to": 78
+              },
+              "headers": {
+                "from": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse"
+                ],
+                "to": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse",
+                  "Mechanical Keyboard",
+                  "30",
+                  "8970"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260114_174550",
+      "to": "20260114_174550_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260114_174550_1",
+      "to": "20260114_174550_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260114_174550_2",
+      "to": "20260114_174657",
+      "human_summary": "excel.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "excel.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse",
+              "Mechanical Keyboard",
+              "30",
+              "8970"
+            ],
+            "to": [
+              "Product code",
+              "Product Name",
+              "Specification Model",
+              "Entry date",
+              "Inventory quantity",
+              "Unit price",
+              "Inventory value",
+              "Storage Warehouse",
+              "Mechanical Keyboard",
+              "30",
+              "8970"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "excel.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16386,
+              "to": 16406
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse",
+                  "Mechanical Keyboard",
+                  "30",
+                  "8970"
+                ],
+                "to": [
+                  "Product code",
+                  "Product Name",
+                  "Specification Model",
+                  "Entry date",
+                  "Inventory quantity",
+                  "Unit price",
+                  "Inventory value",
+                  "Storage Warehouse",
+                  "Mechanical Keyboard",
+                  "30",
+                  "8970"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260114_174657",
+      "to": "20260114_174657_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260114_174657_1",
+      "to": "20260114_174657_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260114_174657_2",
+      "to": "20260114_174657_3",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260114_174657_3",
+      "to": "20260114_174711",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260114_174711",
+      "to": "20260114_174711_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260114_174711_1",
+      "to": "20260114_174711_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_64",
+    "snapshot_count": 18,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260114_174008",
+        "to": "20260114_174008_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260114_174008_1",
+        "to": "20260114_174126",
+        "human_summary": "excel.xlsx changed: spreadsheet content changed from 48 to 50 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "excel.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 48,
+              "to": 50
+            },
+            "headers": {
+              "from": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse"
+              ],
+              "to": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "excel.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11748,
+                "to": 11749
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 48,
+                  "to": 50
+                },
+                "headers": {
+                  "from": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse"
+                  ],
+                  "to": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260114_174126",
+        "to": "20260114_174126_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260114_174126_1",
+        "to": "20260114_174126_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260114_174126_2",
+        "to": "20260114_174326",
+        "human_summary": "excel.xlsx changed: spreadsheet content changed from 50 to 51 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "excel.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 50,
+              "to": 51
+            },
+            "headers": {
+              "from": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse"
+              ],
+              "to": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "excel.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11749,
+                "to": 12418
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 50,
+                  "to": 51
+                },
+                "headers": {
+                  "from": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse"
+                  ],
+                  "to": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260114_174326",
+        "to": "20260114_174326_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260114_174326_1",
+        "to": "20260114_174326_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260114_174326_2",
+        "to": "20260114_174550",
+        "human_summary": "excel.xlsx changed: spreadsheet content changed from 51 to 78 non-empty cells; new visible headers or values include: Mechanical Keyboard, 30, 8970.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "excel.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 51,
+              "to": 78
+            },
+            "headers": {
+              "from": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse"
+              ],
+              "to": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse",
+                "Mechanical Keyboard",
+                "30",
+                "8970"
+              ]
+            }
+          },
+          "headers_added": [
+            "Mechanical Keyboard",
+            "30",
+            "8970"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "excel.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 12418,
+                "to": 16386
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 51,
+                  "to": 78
+                },
+                "headers": {
+                  "from": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse"
+                  ],
+                  "to": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse",
+                    "Mechanical Keyboard",
+                    "30",
+                    "8970"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260114_174550",
+        "to": "20260114_174550_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260114_174550_1",
+        "to": "20260114_174550_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260114_174550_2",
+        "to": "20260114_174657",
+        "human_summary": "excel.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "excel.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse",
+                "Mechanical Keyboard",
+                "30",
+                "8970"
+              ],
+              "to": [
+                "Product code",
+                "Product Name",
+                "Specification Model",
+                "Entry date",
+                "Inventory quantity",
+                "Unit price",
+                "Inventory value",
+                "Storage Warehouse",
+                "Mechanical Keyboard",
+                "30",
+                "8970"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "excel.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 16386,
+                "to": 16406
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse",
+                    "Mechanical Keyboard",
+                    "30",
+                    "8970"
+                  ],
+                  "to": [
+                    "Product code",
+                    "Product Name",
+                    "Specification Model",
+                    "Entry date",
+                    "Inventory quantity",
+                    "Unit price",
+                    "Inventory value",
+                    "Storage Warehouse",
+                    "Mechanical Keyboard",
+                    "30",
+                    "8970"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260114_174657",
+        "to": "20260114_174657_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260114_174657_1",
+        "to": "20260114_174657_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260114_174657_2",
+        "to": "20260114_174657_3",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260114_174657_3",
+        "to": "20260114_174711",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260114_174711",
+        "to": "20260114_174711_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260114_174711_1",
+        "to": "20260114_174711_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Double-click the \"excel.xlsx\" file on the cloud computer desktop to launch Excel and open the worksheet; select the entire data range, switch to the [Home] tab, and click the [Format as Table] button; in the pop-up style list, select \"Light Blue, Table Style Light 5\", check the \"Table has headers\" option, and click [OK] to complete the standard table format setting."
+    },
+    {
+      "index": 3,
+      "instruction": "Select column A, right-click on the selected area, and choose [Format Cells]; in the pop-up dialog box, switch to the [Number] tab, select the [Custom] category, enter \"CP-0000\" in the type box (indicating that the product code starts with \"cp-\" followed by 4 digits), click [OK] to unify the product code format. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 4,
+      "instruction": "Select column D, switch to the [Data] tab, and click the [Text to Columns] button; in the first step of the Text to Columns Wizard, keep the default \"Delimited\" option and click [Next]; in the second step, uncheck all delimiters and click [Next]; in the third step, select the \"Date\" column data format, choose \"YMD (Year-Month-Day)\" as the format, and click [Finish] to unify all warehouse entry date formats."
+    },
+    {
+      "index": 5,
+      "instruction": "Select column H, press the Ctrl+G key combination to open the [Go To] dialog box; click the [Go To Special] button, select [Blanks] in the pop-up dialog box, and click [OK]; at this point, all blank cells will be selected."
+    },
+    {
+      "index": 6,
+      "instruction": "Check column E, find the cell with the value \"十二\" (twelve), double-click on that cell, manually change it to the number \"12\", and press the Enter key to confirm."
+    },
+    {
+      "index": 7,
+      "instruction": "Click on any cell within the table, switch to the [Table Design] tab, and click the [Remove Duplicates] button; in the pop-up dialog box, ensure that the \"Product Code\" column is checked, then click [OK] to complete the removal of duplicate data."
+    },
+    {
+      "index": 8,
+      "instruction": "Click on cell G2, enter the formula \"=E2*F2\" (inventory value = inventory quantity × unit price), and press the Enter key to get the inventory value of the first row; select cell G2, move the mouse pointer to the bottom-right corner of the cell, and when the pointer turns into a black cross (fill handle), double-click the fill handle to automatically fill the formula to the entire column, completing the batch calculation of the inventory value for all products."
+    },
+    {
+      "index": 9,
+      "instruction": "Click any cell in the table, switch to the [Table Design] tab, and check the [Total Row] option; a total row will appear at the bottom of the table. Click the cell in column G (Inventory Value column) of the total row, click the drop-down arrow on the right, select [Sum], and it will automatically calculate the total inventory value of all products. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 10,
+      "instruction": "Click on any cell in the table, switch to the [Insert] tab, and click the [PivotTable] button; in the pop-up dialog box, keep the \"Select a table or range\" as the default selected table data, and select [Existing Worksheet] for \"Where to put the PivotTable\"; click a cell in the blank area of the worksheet (such as a8) as the starting position of the PivotTable, and click [OK]."
+    },
+    {
+      "index": 11,
+      "instruction": "In the 【PivotTable Fields】 pane on the right side, make the following settings: Drag the \"Storage Warehouse\" field to the 【Rows】 area; Drag the \"Product Name\" field to the 【Rows】 area (place it below \"Storage Warehouse\" to achieve product segmentation under warehouse classification); Drag the \"Inventory Quantity\" and \"Inventory Value\" fields to the 【Values】 area respectively (both are calculated by summation by default); After completing the settings, a pivot table that is classified by warehouse and includes the summary of product inventory quantity and value will be generated, making it easy to view the inventory distribution of each warehouse. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 12,
+      "instruction": "Select the entire area of the original data table; switch to the [Home] tab, and make the following settings in the [Font] group: Select \"Calibri\" for the font; Set the font size to \"12\"; Click the [Center Align] button to center all data in the table; select the header row of the table and click the [Bold] button to highlight the header."
+    },
+    {
+      "index": 13,
+      "instruction": "After completing all formatting and data processing, press the key combination Ctrl+S to save the current modifications to the \"excel.xlsx\" file."
+    },
+    {
+      "index": 14,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 18
+  }
+}

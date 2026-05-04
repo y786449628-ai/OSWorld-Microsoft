@@ -1,0 +1,442 @@
+{
+  "source_name": "Microsoft_01",
+  "snapshot_count": 10,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20251209_221844",
+      "to": "20251209_222014",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 4 to 13 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 4,
+            "to": 13
+          },
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8887,
+              "to": 9052
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 4,
+                "to": 13
+              },
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251209_222014",
+      "to": "20251209_222104",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 13 to 16 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 13,
+            "to": 16
+          },
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9052,
+              "to": 9484
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 13,
+                "to": 16
+              },
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251209_222104",
+      "to": "20251209_222149",
+      "human_summary": "Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9484,
+              "to": 9947
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251209_222149",
+      "to": "20251209_222307",
+      "human_summary": "Book1.xlsx changed: worksheet names changed.",
+      "likely_stage": "rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Chart1",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9947,
+              "to": 15757
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Chart1",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251209_222307",
+      "to": "20251209_222351",
+      "human_summary": "New files appeared: Doc1.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Doc1.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Doc1.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251209_222351",
+      "to": "20251209_222526",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13343,
+              "to": 13455
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13343,
+              "to": 13455
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251209_222526",
+      "to": "20251209_222531",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13455,
+              "to": 13485
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13455,
+              "to": 13485
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20251209_222531",
+      "to": "20251209_222601",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13485,
+              "to": 33791
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13485,
+              "to": 33791
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20251209_222601",
+      "to": "20251209_222625",
+      "human_summary": "New files appeared: Doc1.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Doc1.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Doc1.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

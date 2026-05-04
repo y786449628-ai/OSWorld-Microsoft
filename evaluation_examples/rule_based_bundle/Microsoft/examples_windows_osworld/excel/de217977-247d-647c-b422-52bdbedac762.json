@@ -1,0 +1,87 @@
+{
+  "id": "de217977-247d-647c-b422-52bdbedac762",
+  "snapshot": "excel",
+  "instruction": "Could you open the file containing the actual sales data and the file with individual sales rep targets, and then create a new Excel sheet to consolidate the sales rep information and their actual sales data, and then calculate the performance of each sales rep by comparing their actual sales data with their individual targets, and then sort the sales reps based on their performance to identify the top 3 and bottom 3 sales reps, and then create a summary table in the new Excel sheet that lists the top 3 and bottom 3 sales reps along with their performance details, and then save the final Excel file with the consolidated and formatted data?",
+  "source": "Microsoft_14 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_14/logs/MonitoringSnapshots/20260105_212857/Desktop/Material/Actual Sales.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Actual Sales.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_14/logs/MonitoringSnapshots/20260105_212857/Desktop/Material/Target.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Target.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_14/logs/MonitoringSnapshots/20260105_213508/Desktop/final result.xlsx",
+            "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Actual Sales.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/de217977-247d-647c-b422-52bdbedac762",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

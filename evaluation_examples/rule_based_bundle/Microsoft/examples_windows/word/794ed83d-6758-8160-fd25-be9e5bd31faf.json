@@ -1,0 +1,81 @@
+{
+  "id": "794ed83d-6758-8160-fd25-be9e5bd31faf",
+  "snapshot": "word",
+  "instruction": "Could you export the complaint letter template as a PDF file to your desktop?",
+  "source": "Microsoft_41 true stage 7",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144757/Desktop/Formal_Complaint_Letter_Template.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Formal_Complaint_Letter_Template.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_144757/Desktop/Material/a463-icapxph6773606.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\a463-icapxph6773606.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_41/logs/MonitoringSnapshots/20260111_145123/Desktop/Formal_Complaint_Letter_Template.pdf",
+            "path": "C:\\Users\\78644\\Documents\\Formal_Complaint_Letter_Template_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Formal_Complaint_Letter_Template.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/794ed83d-6758-8160-fd25-be9e5bd31faf",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Formal_Complaint_Letter_Template.pdf",
+      "dest": "Formal_Complaint_Letter_Template.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Formal_Complaint_Letter_Template_gold.pdf",
+      "dest": "Formal_Complaint_Letter_Template_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Formal_Complaint_Letter_Template.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

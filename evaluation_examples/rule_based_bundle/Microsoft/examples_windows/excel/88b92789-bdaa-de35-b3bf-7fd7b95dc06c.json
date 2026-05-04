@@ -1,0 +1,56 @@
+{
+  "id": "88b92789-bdaa-de35-b3bf-7fd7b95dc06c",
+  "snapshot": "excel",
+  "instruction": "Could you save the Excel sheet and export it?",
+  "source": "Microsoft_37 true stage 3",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164331/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164331/Desktop/output-1768121007423.zip",
+            "path": "C:\\Users\\78644\\Desktop\\output-1768121007423.zip"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164331_1/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/88b92789-bdaa-de35-b3bf-7fd7b95dc06c",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Book1.xlsx",
+      "dest": "Book1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Book1_gold.xlsx",
+      "dest": "Book1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    }
+  }
+}

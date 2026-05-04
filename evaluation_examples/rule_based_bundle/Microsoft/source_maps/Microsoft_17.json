@@ -1,0 +1,397 @@
+{
+  "source_name": "Microsoft_17",
+  "source_file": "Microsoft_17.txt",
+  "source_id": "9e49a688ef04",
+  "source_question": "Company hold an 5 days' event, and need each department support, each department provide a name list of staff will support by day, but one day one department all staff name in one filed. Now Boss want to see staff support event days analysis report.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new Excel workbook to organize the staff support data for the 5-day event?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you enter the staff names and their corresponding support days into the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you split the names in the single field into separate rows for each staff member in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a summary table in the Excel workbook to show the number of days each staff member is supporting the event?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a chart in the Excel workbook to visualize the staff support by day?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you prepare a Word document to create the staff support event days analysis report?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you copy the summary table and chart from the Excel workbook into the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the Word document as a final report?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you create a new Excel workbook to organize the staff support data for the 5-day event?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook",
+      "planned_input_snapshot": "20260106_155253",
+      "planned_gold_snapshot": "20260106_155927",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with a new Excel file created.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_staff_names_and_support_days",
+      "instruction": "Could you enter the staff names and their corresponding support days into the Excel workbook? Could you split the names in the single field into separate rows for each staff member in the Excel workbook? Could you create a summary table in the Excel workbook to show the number of days each staff member is supporting the event? Could you create a chart in the Excel workbook to visualize the staff support by day?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Import, transform, and summarize data in Excel, including splitting names and creating a summary table and chart.",
+      "planned_input_snapshot": "20260106_155927",
+      "planned_gold_snapshot": "20260106_155927",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the stage includes multiple semantic steps that are necessary for the workflow.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_excel_workbook_and_enter_staff_names_and_support_days",
+      "instruction": "Could you create a new Excel workbook to organize the staff support data for the 5-day event, and then enter the staff names and their corresponding support days into the Excel workbook? Could you split the names in the single field into separate rows for each staff member in the Excel workbook? Could you create a summary table in the Excel workbook to show the number of days each staff member is supporting the event? Could you create a chart in the Excel workbook to visualize the staff support by day?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook | Import, transform, and summarize data in Excel, including splitting names and creating a summary table and chart.",
+      "planned_input_snapshot": "20260106_155253",
+      "planned_gold_snapshot": "20260106_155927",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with a new Excel file created.",
+      "input_snapshot": "20260106_155253",
+      "gold_snapshot": "20260106_155927",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260106_155253",
+          "planned_gold_snapshot": "20260106_155927"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 2,
+          "stage_name": "enter_staff_names_and_support_days",
+          "reason": "Could not find workbook content growth."
+        }
+      },
+      "merged_stage_names": [
+        "create_excel_workbook",
+        "enter_staff_names_and_support_days"
+      ],
+      "merged_stage_indices": [
+        1,
+        2
+      ],
+      "generated_examples": [
+        {
+          "example_id": "73742968-e679-db3f-c815-3b46978829a8",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/73742968-e679-db3f-c815-3b46978829a8.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you enter the staff names and their corresponding support days into the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you split the names in the single field into separate rows for each staff member in the Excel workbook?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you create a summary table in the Excel workbook to show the number of days each staff member is supporting the event?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a chart in the Excel workbook to visualize the staff support by day?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you prepare a Word document to create the staff support event days analysis report?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you copy the summary table and chart from the Excel workbook into the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the Word document as a final report?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260106_155253",
+    "20260106_155927",
+    "20260106_155929"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260106_155253",
+      "to": "20260106_155927",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260106_155927",
+      "to": "20260106_155929",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_17",
+    "snapshot_count": 3,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260106_155253",
+        "to": "20260106_155927",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260106_155927",
+        "to": "20260106_155929",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Name List file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select B2 cell to F5 cell, then click Ctrl+F, will open a frame of Find and Replace."
+    },
+    {
+      "index": 5,
+      "instruction": "Click Replace, input \" \" in Fina what filed, then click Replace All button, then click OK, then click Close button, close the frame."
+    },
+    {
+      "index": 6,
+      "instruction": "Select A1 cell to F5 cell, then click Menu---Data, find and click From Table/Range button, will pop up a frame"
+    },
+    {
+      "index": 7,
+      "instruction": "Click Ok Button, and will open Power Query tools with selected data."
+    },
+    {
+      "index": 8,
+      "instruction": "Select Department column, then click Menu---Transform"
+    },
+    {
+      "index": 9,
+      "instruction": "Find and click arrow next to Unpivot Columns, will pop up a dropdown list, click Unpivot Other Columns"
+    },
+    {
+      "index": 10,
+      "instruction": "Select Value column, then click Split Column button on the menu, will pop up a dropdown list"
+    },
+    {
+      "index": 11,
+      "instruction": "Select By Delimiter, will pop up a Split Column by Delimiter"
+    },
+    {
+      "index": 12,
+      "instruction": "Click Select or enter delimiter dropdown list, then click Customer, input \",\" in the input box"
+    },
+    {
+      "index": 13,
+      "instruction": "Click Advanced options, then select Split into Rows, then click OK button. The name list be split."
+    },
+    {
+      "index": 14,
+      "instruction": "Select Department column, and press Ctrl, click Value column, then click Group By button on the menu, will pop up a frame of Group By"
+    },
+    {
+      "index": 15,
+      "instruction": "Click the New Column name input box, and modify column name as \"Support days\", then click OK."
+    },
+    {
+      "index": 16,
+      "instruction": "Double Click Value cell, and modify name as \"Staff Name\""
+    },
+    {
+      "index": 17,
+      "instruction": "Click Menu---Home, then click Close & Load."
+    },
+    {
+      "index": 18,
+      "instruction": "Click the C2 cell, then click Menu---Data"
+    },
+    {
+      "index": 19,
+      "instruction": "Find and click Sort largest to smallest, and show Kate from HR team support 4 days on the top."
+    },
+    {
+      "index": 20,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 21,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 2,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 3
+  }
+}

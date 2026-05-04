@@ -1,0 +1,736 @@
+{
+  "source_name": "Microsoft_71",
+  "source_file": "Microsoft_71.txt",
+  "source_id": "af5b81caf649",
+  "source_question": "Company plan to hold a 3 days' Event outside, and need staff to support, now there are some staff register in the Event Name List, and the Boss want to view their profile including join date, department and current salary.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a list of staff registered for the 3-day event in Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you add columns for join date, department, and current salary to the staff list in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you fill in the join date, department, and current salary for each staff member in the Excel list?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you format the Excel list to make it easy to read and presentable for the boss?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you prepare a Word document to present the staff profiles to the boss?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you copy the formatted staff list from Excel into the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you save the final Word document with the staff profiles for the boss to view?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_or_open_excel_workbook",
+      "instruction": "Could you create a list of staff registered for the 3-day event in Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook",
+      "planned_input_snapshot": "20260114_145737",
+      "planned_gold_snapshot": "20260114_145752",
+      "snapshot_evidence": "Material/Event Name List.xlsx changed: spreadsheet content changed from 13 to 21 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Name.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "add_and_fill_staff_profile_columns",
+      "instruction": "Could you add columns for join date, department, and current salary to the staff list in Excel? Could you fill in the join date, department, and current salary for each staff member in the Excel list?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 18,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Draw Name from Sheet1 to Name of Table3, Draw Name from Table2 to Name of Sheet1, Draw Name from Table3 to Name of Table1, Click Menu---Home, select PivotTable, select New worksheet, then click OK, Draw Name of Sheet1 to Rows, then draw Join Date to Rows, draw Department to Row, draw salary to value, Remove date of Year Quarter month, remove blank record, Click Menu---Design, click show in Tablular Form, Select Column E, then click Menu---Home, then click Comma, then click decrease decimal twice.",
+      "planned_input_snapshot": "20260114_150047",
+      "planned_gold_snapshot": "20260114_150942",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots. LLM assistance needed for data entry verification.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "format_excel_list",
+      "instruction": "Could you format the Excel list to make it easy to read and presentable for the boss?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 26,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Select Column E, then click Menu---Home, then click Comma, then click decrease decimal twice.",
+      "planned_input_snapshot": "20260114_150942",
+      "planned_gold_snapshot": "20260114_150942",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the formatting is part of the workflow. Needs review to ensure it's benchmarkable.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "prepare_word_document",
+      "instruction": "Could you prepare a Word document to present the staff profiles to the boss? Could you copy the formatted staff list from Excel into the Word document? Could you save the final Word document with the staff profiles for the boss to view?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "word",
+        "excel"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 28,
+      "trajectory_end": 28,
+      "trajectory_evidence": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button.",
+      "planned_input_snapshot": "20260114_150942",
+      "planned_gold_snapshot": "20260114_150944",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot transition, but the creation and saving of the Word document is part of the workflow. Needs review to ensure it's benchmarkable.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_or_open_excel_workbook_and_format_excel_list_and_prepare_word_document_and_add_and_fill_staff_profile_columns",
+      "instruction": "Could you create a list of staff registered for the 3-day event in Excel, and then format the Excel list to make it easy to read and presentable for the boss, and then prepare a Word document to present the staff profiles to the boss? Could you copy the formatted staff list from Excel into the Word document? Could you save the final Word document with the staff profiles for the boss to view, and then add columns for join date, department, and current salary to the staff list in Excel? Could you fill in the join date, department, and current salary for each staff member in the Excel list?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 27,
+      "trajectory_evidence": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook | Select Column E, then click Menu---Home, then click Comma, then click decrease decimal twice. | Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button. | Draw Name from Sheet1 to Name of Table3, Draw Name from Table2 to Name of Sheet1, Draw Name from Table3 to Name of Table1, Click Menu---Home, select PivotTable, select New worksheet, then click OK, Draw Name of Sheet1 to Rows, then draw Join Date to Rows, draw Department to Row, draw salary to value, Remove date of Year Quarter month, remove blank record, Click Menu---Design, click show in Tablular Form, Select Column E, then click Menu---Home, then click Comma, then click decrease decimal twice.",
+      "planned_input_snapshot": "20260114_145737",
+      "planned_gold_snapshot": "20260114_150944",
+      "snapshot_evidence": "Material/Event Name List.xlsx changed: spreadsheet content changed from 13 to 21 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Name. | No observable file or directory change was detected between these snapshots. | No observable file or directory change was detected between these snapshots. | New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with clear input and gold snapshots.",
+      "input_snapshot": "20260114_145733",
+      "gold_snapshot": "20260114_150944",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_145737",
+        "chain_input_snapshot": "20260114_145733",
+        "chain_input_replaced": "20260114_145737",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_145737",
+          "planned_gold_snapshot": "20260114_145752"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 2,
+          "stage_name": "add_and_fill_staff_profile_columns",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "create_or_open_excel_workbook",
+        "format_excel_list",
+        "prepare_word_document",
+        "add_and_fill_staff_profile_columns"
+      ],
+      "merged_stage_indices": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "generated_examples": [
+        {
+          "example_id": "588157b8-8303-1a6b-b157-192bb249b4f1",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/588157b8-8303-1a6b-b157-192bb249b4f1.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you add columns for join date, department, and current salary to the staff list in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you fill in the join date, department, and current salary for each staff member in the Excel list?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you prepare a Word document to present the staff profiles to the boss?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you copy the formatted staff list from Excel into the Word document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you save the final Word document with the staff profiles for the boss to view?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260114_145733",
+    "20260114_145737",
+    "20260114_145752",
+    "20260114_150047",
+    "20260114_150513",
+    "20260114_150942",
+    "20260114_150944"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260114_145733",
+      "to": "20260114_145737",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_145737",
+      "to": "20260114_145752",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_145752",
+      "to": "20260114_150047",
+      "human_summary": "Material/Event Name List.xlsx changed: spreadsheet content changed from 13 to 21 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Name.",
+      "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Event Name List.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 13,
+            "to": 21
+          },
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Day1",
+              "Day2",
+              "Day3"
+            ],
+            "to": [
+              "Day1",
+              "Day2",
+              "Day3",
+              "Name"
+            ]
+          }
+        },
+        "headers_added": [
+          "Name"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Event Name List.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9757,
+              "to": 13453
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 13,
+                "to": 21
+              },
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Day1",
+                  "Day2",
+                  "Day3"
+                ],
+                "to": [
+                  "Day1",
+                  "Day2",
+                  "Day3",
+                  "Name"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_150047",
+      "to": "20260114_150513",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_150513",
+      "to": "20260114_150942",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_150942",
+      "to": "20260114_150944",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_71",
+    "snapshot_count": 7,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260114_145733",
+        "to": "20260114_145737",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260114_145737",
+        "to": "20260114_145752",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260114_145752",
+        "to": "20260114_150047",
+        "human_summary": "Material/Event Name List.xlsx changed: spreadsheet content changed from 13 to 21 non-empty cells; chart/drawing count changed from 0 to 1; new visible headers or values include: Name.",
+        "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Material/Event Name List.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 13,
+              "to": 21
+            },
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Day1",
+                "Day2",
+                "Day3"
+              ],
+              "to": [
+                "Day1",
+                "Day2",
+                "Day3",
+                "Name"
+              ]
+            }
+          },
+          "headers_added": [
+            "Name"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Event Name List.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9757,
+                "to": 13453
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 13,
+                  "to": 21
+                },
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Day1",
+                    "Day2",
+                    "Day3"
+                  ],
+                  "to": [
+                    "Day1",
+                    "Day2",
+                    "Day3",
+                    "Name"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260114_150047",
+        "to": "20260114_150513",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260114_150513",
+        "to": "20260114_150942",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260114_150942",
+        "to": "20260114_150944",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Event Name List file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Profile file and choose it, then click open."
+    },
+    {
+      "index": 5,
+      "instruction": "Select Event Name List file, click Menu---File, then click Options, then click Customize Ribbon, select Developer, then click OK Button"
+    },
+    {
+      "index": 6,
+      "instruction": "Click Menu---Developer, then click insert"
+    },
+    {
+      "index": 7,
+      "instruction": "Select Button, then Draw from J1 cell to K2 cell"
+    },
+    {
+      "index": 8,
+      "instruction": "Click Record button, then click OK"
+    },
+    {
+      "index": 9,
+      "instruction": "Select I Column, then click delete, Click I1 cell, input \"Name\"."
+    },
+    {
+      "index": 10,
+      "instruction": "Click I2 cell, input \"=UNIQUE(VSTACK(A2:.A99,D2:.D99,G2:.G99))\", then click Enter"
+    },
+    {
+      "index": 11,
+      "instruction": "Click Stop Recording. Right Click Button, then select Edit Text, modify name as \"Update\""
+    },
+    {
+      "index": 12,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 13,
+      "instruction": "Select Profile file, click Menu---File, Select Options"
+    },
+    {
+      "index": 14,
+      "instruction": "Click Add-ins, then Select COM Add-ins of Manage, then click Go, Select Microsoft Power Pivot for Excel, then click Ok"
+    },
+    {
+      "index": 15,
+      "instruction": "Select Staff Profile sheet, then select A1 cell to C9 cell, then click Menu---Power Pivot, click Add to Data Model, then click OK"
+    },
+    {
+      "index": 16,
+      "instruction": "Click Switch to Workbook, select Staff Salary sheet, then select A1 cell to B9 cell, then click Menu---Power Pivot, click Add to Data Model, then click OK"
+    },
+    {
+      "index": 17,
+      "instruction": "Click Switch to Workbook, select Department Name List sheet, then select A1 cell to B9 cell, then click Menu---Power Pivot, click Add to Data Model, then click OK"
+    },
+    {
+      "index": 18,
+      "instruction": "Click Menu---Home, then clickFrom Other Sources, select Excel File, select Use first row as column headers, then click Next, Click Browse, select Event Name List, Click Open ,Click Next, Click Finish, click Close"
+    },
+    {
+      "index": 19,
+      "instruction": "Draw Name from Sheet1 to Name of Table3"
+    },
+    {
+      "index": 20,
+      "instruction": "Draw Name from Sheet1 to Name of Table3"
+    },
+    {
+      "index": 21,
+      "instruction": "Draw Name from Table2 to Name of Sheet1"
+    },
+    {
+      "index": 22,
+      "instruction": "Draw Name from Table3 to Name of Table1"
+    },
+    {
+      "index": 23,
+      "instruction": "Click Menu---Home, select PivotTable, select New worksheet, then click OK"
+    },
+    {
+      "index": 24,
+      "instruction": "Draw Name of Sheet1 to Rows, then draw Join Date to Rows, draw Department to Row, draw salary to value"
+    },
+    {
+      "index": 25,
+      "instruction": "Remove date of Year Quarter month, remove blank record."
+    },
+    {
+      "index": 26,
+      "instruction": "Click Menu---Design, click show in Tablular Form"
+    },
+    {
+      "index": 27,
+      "instruction": "Select Column E, then click Menu---Home, then click Comma, then click decrease decimal twice."
+    },
+    {
+      "index": 28,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 29,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 7
+  }
+}

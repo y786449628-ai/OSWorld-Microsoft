@@ -1,0 +1,1003 @@
+{
+  "source_name": "Microsoft_51",
+  "source_file": "Microsoft_51.txt",
+  "source_id": "58b454198ba7",
+  "source_question": "Refine the \"Shanghai_Culture.docx\" document to create a high-quality cultural report, incorporating advanced layout techniques, visual hierarchy, and standardized page elements.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Shanghai_Culture.docx' document in Word?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you apply advanced layout techniques to enhance the visual appeal of the document?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you establish a clear visual hierarchy in the document to improve readability?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you add standardized page elements such as headers, footers, and page numbers to the document?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you finalize the document to create a high-quality cultural report?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_format_title",
+      "instruction": "Could you open the 'Shanghai_Culture.docx' document in Word and format the main title?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 1,
+      "trajectory_evidence": "Open \"Shanghai_Culture.docx\". Select the main title \"Discovering Shanghai\". On the \"Home\" tab, set the Font to \"Times New Roman\", Font Size to \"28\", and click \"Bold\". Click the \"Center\" alignment button.",
+      "planned_input_snapshot": "20260110_104817",
+      "planned_gold_snapshot": "20260110_104835",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_advanced_layout_techniques",
+      "instruction": "Could you apply advanced layout techniques to enhance the visual appeal of the document?",
+      "task_kind": "ambiguous_state_or_layout",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Select the \"Overview\" section. Apply a solid line border to the bottom. Set paragraph indents and spacing. Insert SmartArt, add categories, change colors, insert and format an image.",
+      "planned_input_snapshot": "20260110_104835",
+      "planned_gold_snapshot": "20260110_105100",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition, but requires LLM assistance for evaluation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_standardized_page_elements",
+      "instruction": "Could you add standardized page elements such as headers, footers, and page numbers to the document?",
+      "task_kind": "ambiguous_state_or_layout",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Add a header, page number, and page borders.",
+      "planned_input_snapshot": "20260110_105100",
+      "planned_gold_snapshot": "20260110_105335",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition, but requires LLM assistance for evaluation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "finalize_document",
+      "instruction": "Could you finalize the document to create a high-quality cultural report?",
+      "task_kind": "ambiguous_state_or_layout",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Save the document as 'Shanghai_Culture_Final.docx'.",
+      "planned_input_snapshot": "20260110_105335",
+      "planned_gold_snapshot": "20260110_105458",
+      "snapshot_evidence": "New files appeared: Shanghai_Culture_Final.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_format_title",
+      "instruction": "Could you open the 'Shanghai_Culture.docx' document in Word and format the main title?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 1,
+      "trajectory_evidence": "Open \"Shanghai_Culture.docx\". Select the main title \"Discovering Shanghai\". On the \"Home\" tab, set the Font to \"Times New Roman\", Font Size to \"28\", and click \"Bold\". Click the \"Center\" alignment button.",
+      "planned_input_snapshot": "20260110_104817",
+      "planned_gold_snapshot": "20260110_104835",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_104817",
+      "gold_snapshot": "20260110_104835",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Shanghai_Culture.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 1,
+          "trajectory_end": 1,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_104817",
+          "planned_gold_snapshot": "20260110_104835"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "ed223665-2731-1c8b-f7e3-5f80e9297825",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/ed223665-2731-1c8b-f7e3-5f80e9297825.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_advanced_layout_techniques",
+      "instruction": "Could you apply advanced layout techniques to enhance the visual appeal of the document?",
+      "task_kind": "ambiguous_state_or_layout",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Select the \"Overview\" section. Apply a solid line border to the bottom. Set paragraph indents and spacing. Insert SmartArt, add categories, change colors, insert and format an image.",
+      "planned_input_snapshot": "20260110_104835",
+      "planned_gold_snapshot": "20260110_105100",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition, but requires LLM assistance for evaluation.",
+      "input_snapshot": "20260110_104835",
+      "gold_snapshot": "20260110_105100",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Shanghai_Culture.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_105100",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 8,
+          "search_start_index": 2,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_104835",
+          "planned_gold_snapshot": "20260110_105100"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "048fa710-23ac-0215-e00b-2281e0ac370c",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/048fa710-23ac-0215-e00b-2281e0ac370c.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "add_standardized_page_elements",
+      "instruction": "Could you add standardized page elements such as headers, footers, and page numbers to the document?",
+      "task_kind": "ambiguous_state_or_layout",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Add a header, page number, and page borders.",
+      "planned_input_snapshot": "20260110_105100",
+      "planned_gold_snapshot": "20260110_105335",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition, but requires LLM assistance for evaluation.",
+      "input_snapshot": "20260110_105100",
+      "gold_snapshot": "20260110_105335",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "Shanghai_Culture.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_105335",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 11,
+          "search_start_index": 5,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_105100",
+          "planned_gold_snapshot": "20260110_105335"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "61ce5c56-08e3-770e-287f-0f9ff3d6929b",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/61ce5c56-08e3-770e-287f-0f9ff3d6929b.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "finalize_document",
+      "instruction": "Could you finalize the document to create a high-quality cultural report?",
+      "task_kind": "ambiguous_state_or_layout",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Save the document as 'Shanghai_Culture_Final.docx'.",
+      "planned_input_snapshot": "20260110_105335",
+      "planned_gold_snapshot": "20260110_105458",
+      "snapshot_evidence": "New files appeared: Shanghai_Culture_Final.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with a clear transition.",
+      "input_snapshot": "20260110_105335",
+      "gold_snapshot": "20260110_105458",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Shanghai_Culture.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260110_105458",
+        "trajectory_window": {
+          "trajectory_start": 12,
+          "trajectory_end": 12,
+          "search_start_index": 7,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260110_105335",
+          "planned_gold_snapshot": "20260110_105458"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "94e117e6-e99b-968b-0e25-ce80aa6b6f9e",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/94e117e6-e99b-968b-0e25-ce80aa6b6f9e.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the 'Shanghai_Culture.docx' document in Word?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you establish a clear visual hierarchy in the document to improve readability?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260110_104817",
+    "20260110_104835",
+    "20260110_105002",
+    "20260110_105021",
+    "20260110_105100",
+    "20260110_105306",
+    "20260110_105335",
+    "20260110_105441",
+    "20260110_105458"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260110_104817",
+      "to": "20260110_104835",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 16339,
+              "to": 16399
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16339,
+              "to": 16399
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260110_104835",
+      "to": "20260110_105002",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 16399,
+              "to": 24240
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16399,
+              "to": 24240
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260110_105002",
+      "to": "20260110_105021",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 24240,
+              "to": 24770
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24240,
+              "to": 24770
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260110_105021",
+      "to": "20260110_105100",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 24770,
+              "to": 940683
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24770,
+              "to": 940683
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260110_105100",
+      "to": "20260110_105306",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 940683,
+              "to": 361392
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 940683,
+              "to": 361392
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260110_105306",
+      "to": "20260110_105335",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 361392,
+              "to": 358592
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 361392,
+              "to": 358592
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260110_105335",
+      "to": "20260110_105441",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "size": {
+              "from": 358592,
+              "to": 358678
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Shanghai_Culture.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 358592,
+              "to": 358678
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260110_105441",
+      "to": "20260110_105458",
+      "human_summary": "New files appeared: Shanghai_Culture_Final.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Shanghai_Culture_Final.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Shanghai_Culture_Final.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_51",
+    "snapshot_count": 9,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260110_104817",
+        "to": "20260110_104835",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 16339,
+                "to": 16399
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16339,
+                "to": 16399
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260110_104835",
+        "to": "20260110_105002",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 16399,
+                "to": 24240
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16399,
+                "to": 24240
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260110_105002",
+        "to": "20260110_105021",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 24240,
+                "to": 24770
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 24240,
+                "to": 24770
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260110_105021",
+        "to": "20260110_105100",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 24770,
+                "to": 940683
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 24770,
+                "to": 940683
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260110_105100",
+        "to": "20260110_105306",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 940683,
+                "to": 361392
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 940683,
+                "to": 361392
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260110_105306",
+        "to": "20260110_105335",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 361392,
+                "to": 358592
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 361392,
+                "to": 358592
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260110_105335",
+        "to": "20260110_105441",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "size": {
+                "from": 358592,
+                "to": 358678
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Shanghai_Culture.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 358592,
+                "to": 358678
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260110_105441",
+        "to": "20260110_105458",
+        "human_summary": "New files appeared: Shanghai_Culture_Final.docx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Shanghai_Culture_Final.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Shanghai_Culture_Final.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Open \"Shanghai_Culture.docx\". Select the main title \"Discovering Shanghai\". On the \"Home\" tab, set the Font to \"Times New Roman\", Font Size to \"28\", and click \"Bold\". Click the \"Center\" alignment button."
+    },
+    {
+      "index": 2,
+      "instruction": "Select the \"Overview\" section. On the \"Home\" tab, click the \"Borders\" icon dropdown in the \"Paragraph\" group and select \"Borders and Shading...\". Apply a \"Solid\" line border to the \"Bottom\" of the text only."
+    },
+    {
+      "index": 3,
+      "instruction": "Select the paragraph under \"Overview\". Right-click and select \"Paragraph\". Under the \"Indents and Spacing\" tab, set \"Before text\" to \"0.2 inches\", \"Special\" to \"First line\" by \"0.5 inches\", and \"Line spacing\" to \"Double\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Position your cursor after the \"Historical Evolution\" section. Go to the \"Insert\" tab and click \"SmartArt\". Choose the \"List\" category and select \"Vertical Box List\"."
+    },
+    {
+      "index": 5,
+      "instruction": "In the SmartArt text pane, enter three main categories: \"Tradition\", \"Colonial\", and \"Modernity\"."
+    },
+    {
+      "index": 6,
+      "instruction": "Click the SmartArt, go to the \"SmartArt Design\" tab, click \"Change Colors\", and select \"Colorful - Accent Colors\". Set the \"SmartArt Style\" to \"Intense Effect\"."
+    },
+    {
+      "index": 7,
+      "instruction": "Go to the \"Insert\" tab, click \"Pictures\" > \"This Device\", and insert \"Material.png\". Click the \"Layout Options\" icon next to the image and select \"Square\" wrapping."
+    },
+    {
+      "index": 8,
+      "instruction": "With the image selected, go to \"Picture Format\" > \"Picture Styles\" and select \"Reflected Bevel, Black\". Resize the image so it spans exactly 3 inches in width."
+    },
+    {
+      "index": 9,
+      "instruction": "Go to the \"Insert\" tab, click \"Header\" > \"Blank\". Type \"MUNICIPAL CULTURAL REPORT 2026\" and set it to right-aligned. In the \"Header & Footer\" tab, click \"Different First Page\"."
+    },
+    {
+      "index": 10,
+      "instruction": "Click \"Insert\" > \"Page Number\" > \"Bottom of Page\" > \"Bold Numbers 3\" to show \"Page X of Y\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Go to the \"Design\" tab, click \"Page Borders\". Under the \"Art\" dropdown, choose a professional thin line style and set the width to \"1 pt\". Apply to \"Whole document\"."
+    },
+    {
+      "index": 12,
+      "instruction": "Click \"File\" > \"Save As\" and name the document \"Shanghai_Culture_Final.docx\"."
+    },
+    {
+      "index": 13,
+      "instruction": "For Deletion"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 9
+  }
+}

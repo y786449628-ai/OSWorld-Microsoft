@@ -1,0 +1,56 @@
+{
+  "id": "77784c3d-f322-a609-dc90-1d08f764a8e3",
+  "snapshot": "excel",
+  "instruction": "Could you set the table format to unify the data in the Excel sheet? Could you set the date format to ensure consistency in the Excel sheet? Could you modify blank spaces in the Excel sheet to clean up the data? Could you use functions to calculate the total amount in the Excel sheet? Could you create a pivot table to summarize the sales data in the Excel sheet? Could you modify the font and font size to make the Excel sheet visually appealing and easy to read for salespersons?",
+  "source": "Microsoft_37 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164329/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164329/Desktop/output-1768121007423.zip",
+            "path": "C:\\Users\\User\\Desktop\\output-1768121007423.zip"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_37/logs/MonitoringSnapshots/20260111_164331/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/77784c3d-f322-a609-dc90-1d08f764a8e3",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Book1.xlsx",
+      "dest": "Book1.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Book1_gold.xlsx",
+      "dest": "Book1_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    }
+  }
+}

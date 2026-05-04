@@ -1,0 +1,81 @@
+{
+  "id": "ed393051-2b80-fe40-6391-e62c2c5ed9e7",
+  "snapshot": "word",
+  "instruction": "Could you save the Word document as Customer_Profitability_Report.docx?",
+  "source": "Microsoft_09 true stage 10",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185620/Desktop/Customer_Profit_Analysis.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Customer_Profit_Analysis.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185620/Desktop/material/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Customer_Profitability_Analysis_Report.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_09/logs/MonitoringSnapshots/20260105_185656/Desktop/Customer_Profitability_Analysis_Report.docx",
+            "path": "C:\\Users\\78644\\Documents\\Customer_Profitability_Analysis_Report_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Customer_Profitability_Analysis_Report.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/ed393051-2b80-fe40-6391-e62c2c5ed9e7",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Customer_Profitability_Analysis_Report.docx",
+      "dest": "Customer_Profitability_Analysis_Report.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Customer_Profitability_Analysis_Report_gold.docx",
+      "dest": "Customer_Profitability_Analysis_Report_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Customer_Profitability_Analysis_Report.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

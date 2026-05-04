@@ -1,0 +1,770 @@
+{
+  "source_name": "Microsoft_08",
+  "snapshot_count": 13,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260104_151321",
+      "to": "20260104_151336",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 0 to 1 non-empty cells; new visible headers or values include: Customer.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Customer"
+            ]
+          }
+        },
+        "headers_added": [
+          "Customer"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8415,
+              "to": 8799
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Customer"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260104_151336",
+      "to": "20260104_151433",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 1 to 5 non-empty cells; new visible headers or values include: Service, Quality, Value, Average Score.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 1,
+            "to": 5
+          },
+          "headers": {
+            "from": [
+              "Customer"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        },
+        "headers_added": [
+          "Service",
+          "Quality",
+          "Value",
+          "Average Score"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8799,
+              "to": 8893
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 1,
+                "to": 5
+              },
+              "headers": {
+                "from": [
+                  "Customer"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260104_151433",
+      "to": "20260104_151539",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8893,
+              "to": 8978
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260104_151539",
+      "to": "20260104_151611",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 5 to 13 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 5,
+            "to": 13
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8978,
+              "to": 9056
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 5,
+                "to": 13
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260104_151611",
+      "to": "20260104_151720",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 13 to 37 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 13,
+            "to": 37
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9056,
+              "to": 9142
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 13,
+                "to": 37
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260104_151720",
+      "to": "20260104_151748",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 37 to 38 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 37,
+            "to": 38
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9142,
+              "to": 9458
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 37,
+                "to": 38
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260104_151748",
+      "to": "20260104_151810",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: spreadsheet content changed from 38 to 45 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 38,
+            "to": 45
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9458,
+              "to": 9561
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 38,
+                "to": 45
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260104_151810",
+      "to": "20260104_151903",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9561,
+              "to": 9686
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260104_151903",
+      "to": "20260104_152203",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9686,
+              "to": 15477
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260104_152203",
+      "to": "20260104_152240",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15477,
+              "to": 15466
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260104_152240",
+      "to": "20260104_152313",
+      "human_summary": "Customer_Satisfaction_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Customer_Satisfaction_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ],
+            "to": [
+              "Customer",
+              "Service",
+              "Quality",
+              "Value",
+              "Average Score"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Customer_Satisfaction_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15466,
+              "to": 15461
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ],
+                "to": [
+                  "Customer",
+                  "Service",
+                  "Quality",
+                  "Value",
+                  "Average Score"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260104_152313",
+      "to": "20260104_153033",
+      "human_summary": "New files appeared: Customer_Satisfaction_Presentaion.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Customer_Satisfaction_Presentaion.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Customer_Satisfaction_Presentaion.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

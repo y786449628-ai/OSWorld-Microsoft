@@ -1,0 +1,354 @@
+{
+  "source_name": "Microsoft_66",
+  "snapshot_count": 6,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260114_201706",
+      "to": "20260114_201736",
+      "human_summary": "Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11812,
+              "to": 12184
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_201736",
+      "to": "20260114_201831",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 56 to 64 non-empty cells; new visible headers or values include: Proportion.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 56,
+            "to": 64
+          },
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ]
+          }
+        },
+        "headers_added": [
+          "Proportion"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12184,
+              "to": 12415
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 56,
+                "to": 64
+              },
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_201831",
+      "to": "20260114_201957",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 64 to 66 non-empty cells; chart/drawing count changed from 0 to 1.",
+      "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 64,
+            "to": 66
+          },
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12415,
+              "to": 17644
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 64,
+                "to": 66
+              },
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_201957",
+      "to": "20260114_202204",
+      "human_summary": "Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17644,
+              "to": 17639
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_202204",
+      "to": "20260114_202228",
+      "human_summary": "New files appeared: new.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "new.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "new.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

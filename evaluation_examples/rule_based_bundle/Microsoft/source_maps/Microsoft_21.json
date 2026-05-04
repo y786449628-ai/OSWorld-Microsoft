@@ -1,0 +1,1691 @@
+{
+  "source_name": "Microsoft_21",
+  "source_file": "Microsoft_21.txt",
+  "source_id": "5a5945ef2e0e",
+  "source_question": "Create a new folder named \"Meeting_Materials\" directly on your computer desktop. Inside this folder, create a new Word document named \"Meeting_Minutes_Template.docx\". Set up a structured meeting minutes template in this document with the following sections: Meeting Title, Date & Time, Attendees, Agenda, Discussion Notes, Action Items, and Next Meeting Date. Apply the appropriate built-in 'Heading' styles to each section label. Insert a table to list action items with columns for 'Task', 'Responsible Person', and 'Deadline'. Create a bulleted list under 'Agenda'. Add a 'Confidential' watermark to the document, insert a page header with your company/school name, and a footer with a page number. Finally, save this template and export it as a PDF file into the same folder.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new folder named 'Meeting_Materials' directly on your computer desktop?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a new Word document named 'Meeting_Minutes_Template.docx' inside the 'Meeting_Materials' folder?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you set up a structured meeting minutes template in the Word document with sections for Meeting Title, Date & Time, Attendees, Agenda, Discussion Notes, Action Items, and Next Meeting Date?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply the appropriate built-in 'Heading' styles to each section label in the meeting minutes template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a table in the 'Action Items' section with columns for 'Task', 'Responsible Person', and 'Deadline'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a bulleted list under the 'Agenda' section in the meeting minutes template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a 'Confidential' watermark to the document, insert a page header with your company/school name, and a footer with a page number?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the meeting minutes template and export it as a PDF file into the same 'Meeting_Materials' folder?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_meeting_materials_folder",
+      "instruction": "Could you create a new folder named 'Meeting_Materials' directly on your computer desktop?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "On the computer desktop, right-click on an empty area, select \"New\", then \"Folder\". Name the new folder \"Meeting_Materials\".",
+      "planned_input_snapshot": "20260106_205057",
+      "planned_gold_snapshot": "20260106_205125",
+      "snapshot_evidence": "New directories appeared: Meeting_Materials.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear directory state change.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_meeting_minutes_template_docx",
+      "instruction": "Could you create a new Word document named 'Meeting_Minutes_Template.docx' inside the 'Meeting_Materials' folder?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click to open the \"Meeting_Materials\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name this new document \"Meeting_Minutes_Template.docx\".",
+      "planned_input_snapshot": "20260106_205125",
+      "planned_gold_snapshot": "20260106_205129",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file creation and renaming.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "setup_meeting_minutes_template",
+      "instruction": "Could you set up a structured meeting minutes template in the Word document with sections for Meeting Title, Date & Time, Attendees, Agenda, Discussion Notes, Action Items, and Next Meeting Date? Could you apply the appropriate built-in 'Heading' styles to each section label? Could you insert a table in the 'Action Items' section with columns for 'Task', 'Responsible Person', and 'Deadline'? Could you create a bulleted list under the 'Agenda' section in the meeting minutes template? Could you add a 'Confidential' watermark to the document, insert a page header with your company/school name, and a footer with a page number?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Multiple steps to set up the document structure, apply styles, insert a table, create a bulleted list, and add a watermark, header, and footer.",
+      "planned_input_snapshot": "20260106_205129",
+      "planned_gold_snapshot": "20260106_210252",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file content changes, though detailed changes are not visible without LLM assistance.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the meeting minutes template and export it as a PDF file into the same 'Meeting_Materials' folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 15,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Click \"File\", then select \"Save As\". Ensure you are in the \"desktop\" folder, and click \"Save\" to save the Word document. Click \"File\" again, select \"Export\", then choose \"Create PDF/XPS Document\". Click \"Create PDF/XPS\" and save the PDF file in the \"desktop\" folder, keeping the default name.",
+      "planned_input_snapshot": "20260106_210252",
+      "planned_gold_snapshot": "20260106_210458",
+      "snapshot_evidence": "New files appeared: Meeting_Minutes_Template.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file creation and export.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        8
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_meeting_materials_folder",
+      "instruction": "Could you create a new folder named 'Meeting_Materials' directly on your computer desktop?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "On the computer desktop, right-click on an empty area, select \"New\", then \"Folder\". Name the new folder \"Meeting_Materials\".",
+      "planned_input_snapshot": "20260106_205057",
+      "planned_gold_snapshot": "20260106_205125",
+      "snapshot_evidence": "New directories appeared: Meeting_Materials.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear directory state change.",
+      "input_snapshot": "20260106_205053",
+      "gold_snapshot": "20260106_205125",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Meeting_Materials",
+      "evaluator_candidate": "compare_directory_tree",
+      "localization": {
+        "status": "localized_fixed",
+        "confidence": 0.95,
+        "reason": "Corrected to a directory-state evaluator using the observed snapshot transition for 'Meeting_Materials'.",
+        "changed_file_count": 1,
+        "chain_input_snapshot": "20260106_205053",
+        "chain_input_replaced": "20260106_205057"
+      },
+      "generated_examples": [
+        {
+          "example_id": "630ec662-9c38-fd1c-2fdb-0c9c4c079e73",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/630ec662-9c38-fd1c-2fdb-0c9c4c079e73.json"
+        }
+      ],
+      "directory_expectation": {
+        "root_relative_path": "",
+        "dirs": [
+          "Meeting_Materials"
+        ],
+        "files": [],
+        "allow_extra": true
+      },
+      "result_relative_path": ""
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_meeting_minutes_template_docx",
+      "instruction": "Could you create a new Word document named 'Meeting_Minutes_Template.docx' inside the 'Meeting_Materials' folder?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click to open the \"Meeting_Materials\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name this new document \"Meeting_Minutes_Template.docx\".",
+      "planned_input_snapshot": "20260106_205125",
+      "planned_gold_snapshot": "20260106_205129",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file creation and renaming.",
+      "input_snapshot": "20260106_205125",
+      "gold_snapshot": "20260106_205238",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260106_205125",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 3,
+          "search_end_index": 3,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260106_205125",
+          "planned_gold_snapshot": "20260106_205129"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "3c74d5de-89a3-e56e-26d8-d0c88fa40680",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/3c74d5de-89a3-e56e-26d8-d0c88fa40680.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "setup_meeting_minutes_template",
+      "instruction": "Could you set up a structured meeting minutes template in the Word document with sections for Meeting Title, Date & Time, Attendees, Agenda, Discussion Notes, Action Items, and Next Meeting Date? Could you apply the appropriate built-in 'Heading' styles to each section label? Could you insert a table in the 'Action Items' section with columns for 'Task', 'Responsible Person', and 'Deadline'? Could you create a bulleted list under the 'Agenda' section in the meeting minutes template? Could you add a 'Confidential' watermark to the document, insert a page header with your company/school name, and a footer with a page number?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Multiple steps to set up the document structure, apply styles, insert a table, create a bulleted list, and add a watermark, header, and footer.",
+      "planned_input_snapshot": "20260106_205129",
+      "planned_gold_snapshot": "20260106_210252",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file content changes, though detailed changes are not visible without LLM assistance.",
+      "input_snapshot": "20260106_205238",
+      "gold_snapshot": "20260106_210252",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260106_205129",
+        "expanded_to_planned_gold_snapshot": "20260106_210252",
+        "chain_input_snapshot": "20260106_205238",
+        "chain_input_replaced": "20260106_205129",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 13,
+          "search_start_index": 6,
+          "search_end_index": 14,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260106_205129",
+          "planned_gold_snapshot": "20260106_210252"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "b6be0ac3-9084-c144-cef6-7485f4280291",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/b6be0ac3-9084-c144-cef6-7485f4280291.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the meeting minutes template and export it as a PDF file into the same 'Meeting_Materials' folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 15,
+      "trajectory_end": 17,
+      "trajectory_evidence": "Click \"File\", then select \"Save As\". Ensure you are in the \"desktop\" folder, and click \"Save\" to save the Word document. Click \"File\" again, select \"Export\", then choose \"Create PDF/XPS Document\". Click \"Create PDF/XPS\" and save the PDF file in the \"desktop\" folder, keeping the default name.",
+      "planned_input_snapshot": "20260106_210252",
+      "planned_gold_snapshot": "20260106_210458",
+      "snapshot_evidence": "New files appeared: Meeting_Minutes_Template.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear file creation and export.",
+      "input_snapshot": "20260106_210252",
+      "gold_snapshot": "20260106_210458",
+      "linked_preview_tasks": [
+        8
+      ],
+      "target_relative_path": "Meeting_Minutes_Template.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260106_210252",
+        "trajectory_window": {
+          "trajectory_start": 15,
+          "trajectory_end": 17,
+          "search_start_index": 15,
+          "search_end_index": 17,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260106_210252",
+          "planned_gold_snapshot": "20260106_210458"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "2e3595a9-5e67-8217-f7d7-2d96d544c285",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/2e3595a9-5e67-8217-f7d7-2d96d544c285.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you set up a structured meeting minutes template in the Word document with sections for Meeting Title, Date & Time, Attendees, Agenda, Discussion Notes, Action Items, and Next Meeting Date?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply the appropriate built-in 'Heading' styles to each section label in the meeting minutes template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a table in the 'Action Items' section with columns for 'Task', 'Responsible Person', and 'Deadline'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a bulleted list under the 'Agenda' section in the meeting minutes template?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a 'Confidential' watermark to the document, insert a page header with your company/school name, and a footer with a page number?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260106_205053",
+    "20260106_205057",
+    "20260106_205125",
+    "20260106_205129",
+    "20260106_205134",
+    "20260106_205238",
+    "20260106_205349",
+    "20260106_205529",
+    "20260106_205614",
+    "20260106_205912",
+    "20260106_210000",
+    "20260106_210011",
+    "20260106_210156",
+    "20260106_210241",
+    "20260106_210252",
+    "20260106_210404",
+    "20260106_210406",
+    "20260106_210458",
+    "20260106_210510",
+    "20260106_210530",
+    "20260106_210532"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260106_205053",
+      "to": "20260106_205057",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260106_205057",
+      "to": "20260106_205125",
+      "human_summary": "New directories appeared: Meeting_Materials.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Meeting_Materials"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Materials/New Microsoft Word Document.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [
+          "Meeting_Materials"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260106_205125",
+      "to": "20260106_205129",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Meeting_Materials/Meeting_Minutes_Template.docx"
+        ],
+        "files_removed": [
+          "Meeting_Materials/New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Materials/Meeting_Minutes_Template.docx"
+        ],
+        "files_removed": [
+          "Meeting_Materials/New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260106_205129",
+      "to": "20260106_205134",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260106_205134",
+      "to": "20260106_205238",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 0,
+              "to": 13477
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13477
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260106_205238",
+      "to": "20260106_205349",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 13477,
+              "to": 14724
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13477,
+              "to": 14724
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260106_205349",
+      "to": "20260106_205529",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 14724,
+              "to": 15006
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 14724,
+              "to": 15006
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260106_205529",
+      "to": "20260106_205614",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 15006,
+              "to": 15051
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15006,
+              "to": 15051
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260106_205614",
+      "to": "20260106_205912",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 15051,
+              "to": 24569
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15051,
+              "to": 24569
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260106_205912",
+      "to": "20260106_210000",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 24569,
+              "to": 24647
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24569,
+              "to": 24647
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260106_210000",
+      "to": "20260106_210011",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 24647,
+              "to": 20665
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24647,
+              "to": 20665
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260106_210011",
+      "to": "20260106_210156",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 20665,
+              "to": 22057
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 20665,
+              "to": 22057
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260106_210156",
+      "to": "20260106_210241",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 22057,
+              "to": 22226
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22057,
+              "to": 22226
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260106_210241",
+      "to": "20260106_210252",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 22226,
+              "to": 22305
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22226,
+              "to": 22305
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260106_210252",
+      "to": "20260106_210404",
+      "human_summary": "New files appeared: Meeting_Minutes_Template.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Meeting_Minutes_Template.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Minutes_Template.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260106_210404",
+      "to": "20260106_210406",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260106_210406",
+      "to": "20260106_210458",
+      "human_summary": "New files appeared: Meeting_Minutes_Template.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Meeting_Minutes_Template.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Meeting_Minutes_Template.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260106_210458",
+      "to": "20260106_210510",
+      "human_summary": "New files appeared: Microsoft Edge.lnk.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Microsoft Edge.lnk"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260106_210510",
+      "to": "20260106_210530",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Meeting_Minutes_Template.docx",
+            "size": {
+              "from": 22303,
+              "to": 22340
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Meeting_Minutes_Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22303,
+              "to": 22340
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20260106_210530",
+      "to": "20260106_210532",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_21",
+    "snapshot_count": 21,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260106_205053",
+        "to": "20260106_205057",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260106_205057",
+        "to": "20260106_205125",
+        "human_summary": "New directories appeared: Meeting_Materials.",
+        "likely_stage": "create or organize folders",
+        "confidence": 0.82,
+        "evidence": {
+          "dirs_added": [
+            "Meeting_Materials"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Meeting_Materials/New Microsoft Word Document.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [
+            "Meeting_Materials"
+          ],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260106_205125",
+        "to": "20260106_205129",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Meeting_Materials/Meeting_Minutes_Template.docx"
+          ],
+          "files_removed": [
+            "Meeting_Materials/New Microsoft Word Document.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Meeting_Materials/Meeting_Minutes_Template.docx"
+          ],
+          "files_removed": [
+            "Meeting_Materials/New Microsoft Word Document.docx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260106_205129",
+        "to": "20260106_205134",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260106_205134",
+        "to": "20260106_205238",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 0,
+                "to": 13477
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 0,
+                "to": 13477
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260106_205238",
+        "to": "20260106_205349",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 13477,
+                "to": 14724
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13477,
+                "to": 14724
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260106_205349",
+        "to": "20260106_205529",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 14724,
+                "to": 15006
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 14724,
+                "to": 15006
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260106_205529",
+        "to": "20260106_205614",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 15006,
+                "to": 15051
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15006,
+                "to": 15051
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260106_205614",
+        "to": "20260106_205912",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 15051,
+                "to": 24569
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15051,
+                "to": 24569
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260106_205912",
+        "to": "20260106_210000",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 24569,
+                "to": 24647
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 24569,
+                "to": 24647
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260106_210000",
+        "to": "20260106_210011",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 24647,
+                "to": 20665
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 24647,
+                "to": 20665
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260106_210011",
+        "to": "20260106_210156",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 20665,
+                "to": 22057
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 20665,
+                "to": 22057
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260106_210156",
+        "to": "20260106_210241",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 22057,
+                "to": 22226
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 22057,
+                "to": 22226
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260106_210241",
+        "to": "20260106_210252",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 22226,
+                "to": 22305
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Materials/Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 22226,
+                "to": 22305
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260106_210252",
+        "to": "20260106_210404",
+        "human_summary": "New files appeared: Meeting_Minutes_Template.docx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Meeting_Minutes_Template.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Meeting_Minutes_Template.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260106_210404",
+        "to": "20260106_210406",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260106_210406",
+        "to": "20260106_210458",
+        "human_summary": "New files appeared: Meeting_Minutes_Template.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Meeting_Minutes_Template.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Meeting_Minutes_Template.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20260106_210458",
+        "to": "20260106_210510",
+        "human_summary": "New files appeared: Microsoft Edge.lnk.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Microsoft Edge.lnk"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 19,
+        "from": "20260106_210510",
+        "to": "20260106_210530",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Meeting_Minutes_Template.docx",
+              "size": {
+                "from": 22303,
+                "to": 22340
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Meeting_Minutes_Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 22303,
+                "to": 22340
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 20,
+        "from": "20260106_210530",
+        "to": "20260106_210532",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "On the computer desktop, right-click on an empty area, select \"New\", then \"Folder\". Name the new folder \"Meeting_Materials\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Double-click to open the \"Meeting_Materials\" folder. Right-click inside the folder, select \"New\", then choose \"Microsoft Word Document\". Name this new document \"Meeting_Minutes_Template.docx\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Double-click to open the new Word document. On the first line, type \"MEETING MINUTES TEMPLATE\". Select this text, go to the Home tab, and in the Styles gallery, click the \"Title\" style."
+    },
+    {
+      "index": 5,
+      "instruction": "Press the Enter key twice to move the cursor down. Type \"Meeting Title:\" and apply the \"Heading 1\" style from the Home tab."
+    },
+    {
+      "index": 6,
+      "instruction": "Press Enter and type \"1. Date & Time:\". Apply the \"Heading 2\" style. Press Enter again and type \"2. Attendees:\" and apply the \"Heading 2\" style."
+    },
+    {
+      "index": 7,
+      "instruction": "Press Enter, type \"3. Agenda:\", and apply \"Heading 2\". Press Enter, then go to the Home tab and click the \"Bullets\" button to start a bulleted list. Type at least three sample agenda items."
+    },
+    {
+      "index": 8,
+      "instruction": "Press Enter twice to end the list. Type \"4. Discussion Notes:\" and apply \"Heading 2\". Press Enter and type a placeholder sentence like \"Key points discussed:\"."
+    },
+    {
+      "index": 9,
+      "instruction": "Press Enter twice. Type \"5. Action Items:\" and apply \"Heading 2\". Press Enter. Go to the Insert tab, click \"Table\", and insert a table with 3 columns and 4 rows. In the first row, type \"Task\", \"Responsible Person\", and \"Deadline\" as the column headers."
+    },
+    {
+      "index": 10,
+      "instruction": "Press Enter twice after the table. Type \"6. Next Meeting Date:\" and apply \"Heading 2\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Go to the Design tab. Click \"Watermark\", then select the \"Confidential\" watermark from the gallery."
+    },
+    {
+      "index": 12,
+      "instruction": "Go to the Insert tab. Click \"Header\" and choose a simple design (e.g., \"Blank\"). Type your organization's name (e.g., \"XYZ Corporation\") in the header area."
+    },
+    {
+      "index": 13,
+      "instruction": "Go to the Insert tab. Click \"Footer\" and choose a design that includes \"Page Number\". Ensure a page number appears."
+    },
+    {
+      "index": 14,
+      "instruction": "Review the document layout. Select all text (Ctrl+A), go to the Home tab, and set the Font to Calibri and Size to 11 for consistency."
+    },
+    {
+      "index": 15,
+      "instruction": "Click \"File\", then select \"Save As\". Ensure you are in the \"desktop\" folder, and click \"Save\" to save the Word document."
+    },
+    {
+      "index": 16,
+      "instruction": "Click \"File\" again, select \"Export\", then choose \"Create PDF/XPS Document\". Click \"Create PDF/XPS\" and save the PDF file in the \"desktop\" folder, keeping the default name."
+    },
+    {
+      "index": 17,
+      "instruction": "Close the software"
+    },
+    {
+      "index": 18,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 21
+  }
+}

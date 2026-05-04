@@ -1,0 +1,294 @@
+{
+  "source_name": "Microsoft_47",
+  "snapshot_count": 9,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260109_135009",
+      "to": "20260109_135050",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 15403,
+              "to": 15412
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15403,
+              "to": 15412
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_135050",
+      "to": "20260109_135227",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 15412,
+              "to": 23110
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15412,
+              "to": 23110
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_135227",
+      "to": "20260109_135358",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 23110,
+              "to": 23348
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 23110,
+              "to": 23348
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_135358",
+      "to": "20260109_135438",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 23348,
+              "to": 23185
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 23348,
+              "to": 23185
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_135438",
+      "to": "20260109_135534",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 23185,
+              "to": 24126
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 23185,
+              "to": 24126
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_135534",
+      "to": "20260109_135621",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 24126,
+              "to": 24151
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24126,
+              "to": 24151
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_135621",
+      "to": "20260109_135730",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 24151,
+              "to": 24178
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24151,
+              "to": 24178
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_135730",
+      "to": "20260109_135903",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "size": {
+              "from": 24178,
+              "to": 24300
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Global Competitiveness Report 2018.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 24178,
+              "to": 24300
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

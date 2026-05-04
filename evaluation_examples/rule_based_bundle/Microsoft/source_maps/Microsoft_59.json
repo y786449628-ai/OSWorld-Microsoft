@@ -1,0 +1,1400 @@
+{
+  "source_name": "Microsoft_59",
+  "source_file": "Microsoft_59.txt",
+  "source_id": "d84685c64d1a",
+  "source_question": "There is an important project for company, and assign different task to 3 teams, each team update a sheet, now project manager want to review all status in one sheet, need consolidate into one page for meeting.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the three sheets updated by each team?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a new sheet to consolidate the project status?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you copy the relevant data from each team's sheet into the new consolidated sheet?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you organize the data in the consolidated sheet for easy review?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you format the consolidated sheet to make it clear and presentable for the meeting?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_team_sheets",
+      "instruction": "Could you open the three sheets updated by each team?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Excel and open the Material/Detail.xlsx file.",
+      "planned_input_snapshot": "20260113_113205_1",
+      "planned_gold_snapshot": "20260113_113337",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 44 to 48 non-empty cells; worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of opening and modifying the workbook.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_project_summary_sheet",
+      "instruction": "Could you create a new sheet to consolidate the project status?",
+      "task_kind": "excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Create a new sheet, rename it to 'Project Summary', and add headers.",
+      "planned_input_snapshot": "20260113_113337",
+      "planned_gold_snapshot": "20260113_114026",
+      "snapshot_evidence": "Material/Detail.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of creating and renaming the sheet.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "consolidate_data_into_summary_sheet",
+      "instruction": "Could you copy the relevant data from each team's sheet into the new consolidated sheet?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 24,
+      "trajectory_evidence": "Use VBA to consolidate data from other sheets into the 'Project Summary' sheet.",
+      "planned_input_snapshot": "20260113_114026",
+      "planned_gold_snapshot": "20260113_114113",
+      "snapshot_evidence": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of consolidating data. LLM assistance needed for VBA script evaluation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "organize_and_format_summary_sheet",
+      "instruction": "Could you organize the data in the consolidated sheet for easy review? Could you format the consolidated sheet to make it clear and presentable for the meeting?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 34,
+      "trajectory_evidence": "Save the workbook, add a button, and update the summary sheet with new data.",
+      "planned_input_snapshot": "20260113_114113",
+      "planned_gold_snapshot": "20260113_114310",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of organizing and formatting the sheet.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_team_sheets_and_create_project_summary_sheet_and_consolidate_data_into_summary_sheet_and_organize_and_format_summary_sheet",
+      "instruction": "Could you open the three sheets updated by each team, and then create a new sheet to consolidate the project status, and then copy the relevant data from each team's sheet into the new consolidated sheet, and then organize the data in the consolidated sheet for easy review? Could you format the consolidated sheet to make it clear and presentable for the meeting?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 34,
+      "trajectory_evidence": "Open Excel and open the Material/Detail.xlsx file. | Create a new sheet, rename it to 'Project Summary', and add headers. | Use VBA to consolidate data from other sheets into the 'Project Summary' sheet. | Save the workbook, add a button, and update the summary sheet with new data.",
+      "planned_input_snapshot": "20260113_113205_1",
+      "planned_gold_snapshot": "20260113_113337",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 44 to 48 non-empty cells; worksheet names changed. | Material/Detail.xlsx changed: Office document content changed. | Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1. | New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear evidence of opening and modifying the workbook.",
+      "input_snapshot": "20260113_113205",
+      "gold_snapshot": "20260113_114310",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260113_113205_1",
+        "chain_input_snapshot": "20260113_113205",
+        "chain_input_replaced": "20260113_113205_1",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260113_113205_1",
+          "planned_gold_snapshot": "20260113_113337"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 4,
+          "stage_name": "organize_and_format_summary_sheet",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_team_sheets",
+        "create_project_summary_sheet",
+        "consolidate_data_into_summary_sheet",
+        "organize_and_format_summary_sheet"
+      ],
+      "merged_stage_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "generated_examples": [
+        {
+          "example_id": "0abf75db-bab3-50ba-a7e2-242de84f9630",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0abf75db-bab3-50ba-a7e2-242de84f9630.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 4,
+      "instruction": "Could you organize the data in the consolidated sheet for easy review?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you format the consolidated sheet to make it clear and presentable for the meeting?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260113_113205",
+    "20260113_113205_1",
+    "20260113_113337",
+    "20260113_113337_1",
+    "20260113_114026",
+    "20260113_114026_1",
+    "20260113_114113",
+    "20260113_114113_1",
+    "20260113_114310",
+    "20260113_114312",
+    "20260113_120847"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260113_113205",
+      "to": "20260113_113205_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260113_113205_1",
+      "to": "20260113_113337",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 44 to 48 non-empty cells; worksheet names changed.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Team1",
+              "Team2",
+              "Team3"
+            ],
+            "to": [
+              "Project Summary",
+              "Team1",
+              "Team2",
+              "Team3"
+            ]
+          },
+          "worksheet_count": {
+            "from": 3,
+            "to": 4
+          },
+          "nonempty_cells": {
+            "from": 44,
+            "to": 48
+          },
+          "headers": {
+            "from": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ],
+            "to": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15939,
+              "to": 16635
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Team1",
+                  "Team2",
+                  "Team3"
+                ],
+                "to": [
+                  "Project Summary",
+                  "Team1",
+                  "Team2",
+                  "Team3"
+                ]
+              },
+              "worksheet_count": {
+                "from": 3,
+                "to": 4
+              },
+              "nonempty_cells": {
+                "from": 44,
+                "to": 48
+              },
+              "headers": {
+                "from": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ],
+                "to": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260113_113337",
+      "to": "20260113_113337_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260113_113337_1",
+      "to": "20260113_114026",
+      "human_summary": "Material/Detail.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ],
+            "to": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16635,
+              "to": 16717
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ],
+                "to": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260113_114026",
+      "to": "20260113_114026_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260113_114026_1",
+      "to": "20260113_114113",
+      "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ],
+            "to": [
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days",
+              "Task Name",
+              "Start Date",
+              "Estimate Working Days",
+              "Complete Working Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16717,
+              "to": 20350
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ],
+                "to": [
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days",
+                  "Task Name",
+                  "Start Date",
+                  "Estimate Working Days",
+                  "Complete Working Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260113_114113",
+      "to": "20260113_114113_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260113_114113_1",
+      "to": "20260113_114310",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260113_114310",
+      "to": "20260113_114312",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260113_114312",
+      "to": "20260113_120847",
+      "human_summary": "New files appeared: output-1768277325635.zip.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "output-1768277325635.zip"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "output-1768277325635.zip"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_59",
+    "snapshot_count": 11,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260113_113205",
+        "to": "20260113_113205_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260113_113205_1",
+        "to": "20260113_113337",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 44 to 48 non-empty cells; worksheet names changed.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Team1",
+                "Team2",
+                "Team3"
+              ],
+              "to": [
+                "Project Summary",
+                "Team1",
+                "Team2",
+                "Team3"
+              ]
+            },
+            "worksheet_count": {
+              "from": 3,
+              "to": 4
+            },
+            "nonempty_cells": {
+              "from": 44,
+              "to": 48
+            },
+            "headers": {
+              "from": [
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days"
+              ],
+              "to": [
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 15939,
+                "to": 16635
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Team1",
+                    "Team2",
+                    "Team3"
+                  ],
+                  "to": [
+                    "Project Summary",
+                    "Team1",
+                    "Team2",
+                    "Team3"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 3,
+                  "to": 4
+                },
+                "nonempty_cells": {
+                  "from": 44,
+                  "to": 48
+                },
+                "headers": {
+                  "from": [
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days"
+                  ],
+                  "to": [
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260113_113337",
+        "to": "20260113_113337_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260113_113337_1",
+        "to": "20260113_114026",
+        "human_summary": "Material/Detail.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days"
+              ],
+              "to": [
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 16635,
+                "to": 16717
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days"
+                  ],
+                  "to": [
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260113_114026",
+        "to": "20260113_114026_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260113_114026_1",
+        "to": "20260113_114113",
+        "human_summary": "Material/Detail.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days"
+              ],
+              "to": [
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days",
+                "Task Name",
+                "Start Date",
+                "Estimate Working Days",
+                "Complete Working Days"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 16717,
+                "to": 20350
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days"
+                  ],
+                  "to": [
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days",
+                    "Task Name",
+                    "Start Date",
+                    "Estimate Working Days",
+                    "Complete Working Days"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260113_114113",
+        "to": "20260113_114113_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260113_114113_1",
+        "to": "20260113_114310",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260113_114310",
+        "to": "20260113_114312",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260113_114312",
+        "to": "20260113_120847",
+        "human_summary": "New files appeared: output-1768277325635.zip.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "output-1768277325635.zip"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "output-1768277325635.zip"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Plus button of sheet, then modify the sheet name as \"Project Summary\", then draw the sheet to the first sheet of file."
+    },
+    {
+      "index": 5,
+      "instruction": "Select A1 cell, then input \"Task Name\""
+    },
+    {
+      "index": 6,
+      "instruction": "Select B1 cell, input \"Start Date\""
+    },
+    {
+      "index": 7,
+      "instruction": "Select C1 cell, input \"Estimate Working Days\""
+    },
+    {
+      "index": 8,
+      "instruction": "Select D1 cell, input \"Complete Working Days\""
+    },
+    {
+      "index": 9,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 10,
+      "instruction": "Click Menu---File, click Options, then click Customize Ribbon, then click Developer of Main Tabs, click OK button."
+    },
+    {
+      "index": 11,
+      "instruction": "Click Menu---Developer, then click Visual Basic, will open a Visual Basic Edit frame."
+    },
+    {
+      "index": 12,
+      "instruction": "Click Menu---Insert, then click Module"
+    },
+    {
+      "index": 13,
+      "instruction": "Input \"Sub Summary()\", then click Enter"
+    },
+    {
+      "index": 14,
+      "instruction": "Input \"Dim sht As Worksheet, arr\", then click Enter"
+    },
+    {
+      "index": 15,
+      "instruction": "Input \"Sheets(\"Project Summary\").Range(\"a2:z65536\").Clear\", then click Enter"
+    },
+    {
+      "index": 16,
+      "instruction": "Input \"For Each sht In Worksheets\", then click Enter"
+    },
+    {
+      "index": 17,
+      "instruction": "Click Tab, then input \"If sht.Name <> \"Project Summary\" Then\", then click Enter"
+    },
+    {
+      "index": 18,
+      "instruction": "Click Tab, then input \"i=sht.Range(\"b65536\").End(xlUp).Row\", then click Enter"
+    },
+    {
+      "index": 19,
+      "instruction": "Input \"j=Sheets(\"Project Summary\").Range(\"a65536\").End(3).Row+1\", then click Enter"
+    },
+    {
+      "index": 20,
+      "instruction": "Click Tab, then input \"arr=sht.Range(\"a2:z\" & i)\", then click Enter"
+    },
+    {
+      "index": 21,
+      "instruction": "Input \"Sheets(\"Project Summary\").Range(\"a\" & j).Resize(UBound(arr), 26)=arr\", then click Enter"
+    },
+    {
+      "index": 22,
+      "instruction": "Click Backspace, then input \"End If\", then click Enter"
+    },
+    {
+      "index": 23,
+      "instruction": "Click Backspace, then input \"Next\""
+    },
+    {
+      "index": 24,
+      "instruction": "Click Close button, close the frame."
+    },
+    {
+      "index": 25,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 26,
+      "instruction": "Click Menu---Developer, then click Insert"
+    },
+    {
+      "index": 27,
+      "instruction": "Select Button, then Draw from F1 cell to G2 cell"
+    },
+    {
+      "index": 28,
+      "instruction": "Select Summary, then click OK"
+    },
+    {
+      "index": 29,
+      "instruction": "Right Click the Button, then select Edit Text, Modify the button name as \"Update\""
+    },
+    {
+      "index": 30,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 31,
+      "instruction": "Click the Button, will consolidate the project detail from 3 Sheet"
+    },
+    {
+      "index": 32,
+      "instruction": "Click Team3 sheet, and add a record of \"PE09\";\"5/5/2025\",\"25\",\"24\""
+    },
+    {
+      "index": 33,
+      "instruction": "Click Project Summary Sheet, and click Button, will update the file, and add a line of record of PE09"
+    },
+    {
+      "index": 34,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 35,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 11
+  }
+}

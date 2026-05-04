@@ -1,0 +1,91 @@
+{
+  "id": "e0187e3d-81d2-9d3d-d5bb-494b611d514c",
+  "snapshot": "excel",
+  "instruction": "Could you create a dashboard in Excel featuring Sparklines to analyze the revenue trends, and then add a dual-axis chart to the dashboard to further analyze the revenue and YoY growth trends?",
+  "source": "Microsoft_04 true stage 4",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150847/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150847/Desktop/material/finance report 2022-2023.png",
+            "path": "C:\\Users\\User\\Desktop\\material\\finance report 2022-2023.png"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_150847/Desktop/material/finance report 2023-2024.png",
+            "path": "C:\\Users\\User\\Desktop\\material\\finance report 2023-2024.png"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_04/logs/MonitoringSnapshots/20251229_151141/Desktop/Alphabet_Revenue_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/e0187e3d-81d2-9d3d-d5bb-494b611d514c",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Alphabet_Revenue_Analysis.xlsx",
+      "dest": "Alphabet_Revenue_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Alphabet_Revenue_Analysis_gold.xlsx",
+      "dest": "Alphabet_Revenue_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Alphabet_Revenue_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

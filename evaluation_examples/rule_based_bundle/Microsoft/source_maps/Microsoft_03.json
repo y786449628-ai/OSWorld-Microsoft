@@ -1,0 +1,2209 @@
+{
+  "source_name": "Microsoft_03",
+  "source_file": "Microsoft_03.txt",
+  "source_id": "545b589c56ac",
+  "source_question": "Please create a new folder named \"Records\" in the \"Movie Box Office Data\" folder. Then, inside the \"Records\" folder, create two subfolders named according to box office criteria (e.g., \"Daily Box Office  50 Million +\"). Next, categorize the seven movie box office .jpg files from the \"Movie Box Office Data\" folder based on whether the daily box office exceeds 50 million, and move the corresponding files into their respective category folders. Finally, compile the box office data from these images into the corresponding worksheet of the \"Seven-Day Box Office Summary.xlsx\" file. The worksheet should include columns for \"Daily Box Office,\" \"Total Tickets Sold,\" \"Online Tickets Sold,\" \"Operating Cinemas,\" \"Total Screenings,\" and \"Average Ticket Price.\" Additionally, create a bar chart based on the data in the table.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new folder named 'Records' in the 'Movie Box Office Data' folder?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create two subfolders inside the 'Records' folder, named according to box office criteria (e.g., 'Daily Box Office 50 Million +')?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you categorize the seven movie box office .jpg files from the 'Movie Box Office Data' folder based on whether the daily box office exceeds 50 million and move them into their respective category folders?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a bar chart based on the data in the table?",
+      "mapped_stage_indices": [
+        6
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_records_folder",
+      "instruction": "Could you create a new folder named 'Records' in the 'Movie Box Office Data' folder?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open the \"Movie Box Office Data\" folder and create a new folder named \"Records\".",
+      "planned_input_snapshot": "20251222_010641",
+      "planned_gold_snapshot": "20251222_010915",
+      "snapshot_evidence": "New directories appeared: Movie Box Office Data/Records, Movie Box Office Data/Records/Daily Box Office 50 Million -.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable directory state change",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_subfolders",
+      "instruction": "Could you create two subfolders inside the 'Records' folder, named according to box office criteria (e.g., 'Daily Box Office 50 Million +')?",
+      "task_kind": "filesystem_create_subfolders",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Create two new folders named: \"Daily Box Office 50 Million +\" and \"Daily Box Office 50 Million -\".",
+      "planned_input_snapshot": "20251222_010915",
+      "planned_gold_snapshot": "20251222_010947",
+      "snapshot_evidence": "New directories appeared: Movie Box Office Data/Records/Daily Box Office 50 Million +.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable directory state change",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "categorize_and_move_files",
+      "instruction": "Could you categorize the seven movie box office .jpg files from the 'Movie Box Office Data' folder based on whether the daily box office exceeds 50 million and move them into their respective category folders?",
+      "task_kind": "filesystem_move_or_classify_files",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Return to the \"Movie Box Office Data\" folder and open each of the seven movie box office .jpg files to view the \"Daily Box Office\" data in each image. For images with daily box office ≥ 50 million, right-click the image and select \"Cut\", then navigate to the \"Records\\Daily Box Office ≥ 50 Million\" folder, right-click and select \"Paste\". For images with daily box office < 50 million, right-click the image and select \"Cut\", then navigate to the \"Records\\Daily Box Office < 50 Million\" folder, right-click and select \"Paste\".",
+      "planned_input_snapshot": "20251222_010947",
+      "planned_gold_snapshot": "20251222_011132",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file movement",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price.'?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Right-click in the \"Movie Box Office Data\" folder, select \"New\", then choose \"Microsoft Excel Worksheet\", and name the file \"Seven-Day Box Office Summary.xlsx\". Double-click to open \"Seven-Day Box Office Summary.xlsx\", and rename Sheet1 to \"Box Office Data Summary\".",
+      "planned_input_snapshot": "20251222_011132",
+      "planned_gold_snapshot": "20251222_011256",
+      "snapshot_evidence": "New files appeared: Movie Box Office Data/New Microsoft Excel Worksheet.xlsx. Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable creation and renaming of Excel workbook",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "enter_data_into_excel",
+      "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price.'?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Select cells A1 to G1 and enter the following headers in order: \"Date\", \"Daily Box Office\", \"Total Tickets\", \"Online Tickets\", \"Operating Cinemas\", \"Total Sessions\", \"Average Ticket Price\". Enter the data for the seven days.",
+      "planned_input_snapshot": "20251222_011256",
+      "planned_gold_snapshot": "20251222_011630",
+      "snapshot_evidence": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: spreadsheet content changed from 0 to 7 non-empty cells; new visible headers or values include: Date, Daily Box Office, Total Tickets, Online Tickets, Operating Cinemas, Total Sessions.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable data entry in Excel",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "create_bar_chart",
+      "instruction": "Could you create a bar chart based on the data in the table?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Select the range A1:G8 (including headers and data for seven days), click the \"Insert\" tab in the Excel top menu bar, choose \"Column Chart\" in the \"Charts\" section, and select \"Clustered Column Chart\". Double-click the chart title and change it to \"Seven-Day Box Office Data Comparison\".",
+      "planned_input_snapshot": "20251222_011630",
+      "planned_gold_snapshot": "20251222_012941",
+      "snapshot_evidence": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: chart/drawing count changed from 0 to 1. Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable chart creation and editing",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_records_folder",
+      "instruction": "Could you create a new folder named 'Records' in the 'Movie Box Office Data' folder?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Open the \"Movie Box Office Data\" folder and create a new folder named \"Records\".",
+      "planned_input_snapshot": "20251222_010641",
+      "planned_gold_snapshot": "20251222_010915",
+      "snapshot_evidence": "New directories appeared: Movie Box Office Data/Records, Movie Box Office Data/Records/Daily Box Office 50 Million -.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable directory state change",
+      "input_snapshot": "20251222_010422",
+      "gold_snapshot": "20251222_010915",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Movie Box Office Data",
+      "evaluator_candidate": "compare_directory_tree",
+      "directory_expectation": {
+        "root_relative_path": "Movie Box Office Data",
+        "dirs": [
+          "Records"
+        ],
+        "files": [],
+        "allow_extra": true
+      },
+      "localization": {
+        "status": "localized",
+        "confidence": 0.74,
+        "reason": "Directory 'Movie Box Office Data/Records' appeared between snapshots.",
+        "changed_file_count": 2,
+        "chain_input_snapshot": "20251222_010422",
+        "chain_input_replaced": "20251222_010641",
+        "trajectory_window": {
+          "trajectory_start": 1,
+          "trajectory_end": 2,
+          "search_start_index": 6,
+          "search_end_index": 6,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251222_010641",
+          "planned_gold_snapshot": "20251222_010915"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "36068610-99d6-bc6f-da80-0c27b4228855",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/36068610-99d6-bc6f-da80-0c27b4228855.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_subfolders",
+      "instruction": "Could you create two subfolders inside the 'Records' folder, named according to box office criteria (e.g., 'Daily Box Office 50 Million +')?",
+      "task_kind": "filesystem_create_subfolders",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Create two new folders named: \"Daily Box Office 50 Million +\" and \"Daily Box Office 50 Million -\".",
+      "planned_input_snapshot": "20251222_010915",
+      "planned_gold_snapshot": "20251222_010947",
+      "snapshot_evidence": "New directories appeared: Movie Box Office Data/Records/Daily Box Office 50 Million +.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable directory state change",
+      "input_snapshot": "20251222_010915",
+      "gold_snapshot": "20251222_010947",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Movie Box Office Data/Records",
+      "evaluator_candidate": "compare_directory_tree",
+      "directory_expectation": {
+        "root_relative_path": "Movie Box Office Data/Records",
+        "dirs": [
+          "Daily Box Office 50 Million +",
+          "Daily Box Office 50 Million -"
+        ],
+        "files": [],
+        "allow_extra": true
+      },
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Required subdirectories appeared under the Records folder.",
+        "changed_file_count": 2,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 7,
+          "search_end_index": 7,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251222_010915",
+          "planned_gold_snapshot": "20251222_010947"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "45856805-cb8c-add9-0b60-ad34067b3b2c",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/45856805-cb8c-add9-0b60-ad34067b3b2c.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "categorize_and_move_files",
+      "instruction": "Could you categorize the seven movie box office .jpg files from the 'Movie Box Office Data' folder based on whether the daily box office exceeds 50 million and move them into their respective category folders?",
+      "task_kind": "filesystem_move_or_classify_files",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Return to the \"Movie Box Office Data\" folder and open each of the seven movie box office .jpg files to view the \"Daily Box Office\" data in each image. For images with daily box office ≥ 50 million, right-click the image and select \"Cut\", then navigate to the \"Records\\Daily Box Office ≥ 50 Million\" folder, right-click and select \"Paste\". For images with daily box office < 50 million, right-click the image and select \"Cut\", then navigate to the \"Records\\Daily Box Office < 50 Million\" folder, right-click and select \"Paste\".",
+      "planned_input_snapshot": "20251222_010947",
+      "planned_gold_snapshot": "20251222_011132",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable file movement",
+      "input_snapshot": "20251222_010947",
+      "gold_snapshot": "20251222_011132",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Movie Box Office Data/Records",
+      "evaluator_candidate": "compare_directory_tree",
+      "directory_expectation": {
+        "root_relative_path": "Movie Box Office Data/Records",
+        "dirs": [],
+        "files": [
+          "Daily Box Office 50 Million +/2025-12-12.png",
+          "Daily Box Office 50 Million +/2025-12-13.jpg",
+          "Daily Box Office 50 Million +/2025-12-14.jpg",
+          "Daily Box Office 50 Million -/2025-12-11.png",
+          "Daily Box Office 50 Million -/2025-12-15.jpg",
+          "Daily Box Office 50 Million -/2025-12-16.jpg",
+          "Daily Box Office 50 Million -/2025-12-17.jpg"
+        ],
+        "allow_extra": true
+      },
+      "localization": {
+        "status": "localized",
+        "confidence": 0.68,
+        "reason": "Found 7 classified image files under the Records folder.",
+        "changed_file_count": 10,
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 12,
+          "search_start_index": 8,
+          "search_end_index": 12,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251222_010947",
+          "planned_gold_snapshot": "20251222_011132"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "db47973d-116e-cba2-f1da-c0e685ccf66b",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/db47973d-116e-cba2-f1da-c0e685ccf66b.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_excel_workbook",
+      "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price.'?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Right-click in the \"Movie Box Office Data\" folder, select \"New\", then choose \"Microsoft Excel Worksheet\", and name the file \"Seven-Day Box Office Summary.xlsx\". Double-click to open \"Seven-Day Box Office Summary.xlsx\", and rename Sheet1 to \"Box Office Data Summary\".",
+      "planned_input_snapshot": "20251222_011132",
+      "planned_gold_snapshot": "20251222_011256",
+      "snapshot_evidence": "New files appeared: Movie Box Office Data/New Microsoft Excel Worksheet.xlsx. Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable creation and renaming of Excel workbook",
+      "input_snapshot": "20251222_011132",
+      "gold_snapshot": "20251222_011256",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 2,
+        "expanded_to_planned_input_snapshot": "20251222_011132",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 13,
+          "search_end_index": 14,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251222_011132",
+          "planned_gold_snapshot": "20251222_011256"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0e998520-dce2-76ae-7b11-c71a29352dca",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0e998520-dce2-76ae-7b11-c71a29352dca.json"
+        },
+        {
+          "example_id": "700fd59f-e3e6-22a9-bbe4-18e48690c507",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/700fd59f-e3e6-22a9-bbe4-18e48690c507.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "enter_data_into_excel",
+      "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price.'?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Select cells A1 to G1 and enter the following headers in order: \"Date\", \"Daily Box Office\", \"Total Tickets\", \"Online Tickets\", \"Operating Cinemas\", \"Total Sessions\", \"Average Ticket Price\". Enter the data for the seven days.",
+      "planned_input_snapshot": "20251222_011256",
+      "planned_gold_snapshot": "20251222_011630",
+      "snapshot_evidence": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: spreadsheet content changed from 0 to 7 non-empty cells; new visible headers or values include: Date, Daily Box Office, Total Tickets, Online Tickets, Operating Cinemas, Total Sessions.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable data entry in Excel",
+      "input_snapshot": "20251222_011256",
+      "gold_snapshot": "20251222_011630",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 0 to 7.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251222_011256",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 8,
+          "search_start_index": 15,
+          "search_end_index": 17,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251222_011256",
+          "planned_gold_snapshot": "20251222_011630"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0e998520-dce2-76ae-7b11-c71a29352dca",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0e998520-dce2-76ae-7b11-c71a29352dca.json"
+        },
+        {
+          "example_id": "700fd59f-e3e6-22a9-bbe4-18e48690c507",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/700fd59f-e3e6-22a9-bbe4-18e48690c507.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "create_bar_chart",
+      "instruction": "Could you create a bar chart based on the data in the table?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Select the range A1:G8 (including headers and data for seven days), click the \"Insert\" tab in the Excel top menu bar, choose \"Column Chart\" in the \"Charts\" section, and select \"Clustered Column Chart\". Double-click the chart title and change it to \"Seven-Day Box Office Data Comparison\".",
+      "planned_input_snapshot": "20251222_011630",
+      "planned_gold_snapshot": "20251222_012941",
+      "snapshot_evidence": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: chart/drawing count changed from 0 to 1. Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable chart creation and editing",
+      "input_snapshot": "20251222_011630",
+      "gold_snapshot": "20251222_012941",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251222_011630",
+        "expanded_to_planned_gold_snapshot": "20251222_012941",
+        "trajectory_window": {
+          "trajectory_start": 9,
+          "trajectory_end": 10,
+          "search_start_index": 18,
+          "search_end_index": 21,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251222_011630",
+          "planned_gold_snapshot": "20251222_012941"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "c325f2d9-3688-e32c-6321-76f1d8868eaf",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/c325f2d9-3688-e32c-6321-76f1d8868eaf.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 4,
+      "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price'?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20251222_010422",
+    "20251222_010434",
+    "20251222_010454",
+    "20251222_010607",
+    "20251222_010611",
+    "20251222_010641",
+    "20251222_010915",
+    "20251222_010947",
+    "20251222_011027",
+    "20251222_011044",
+    "20251222_011102",
+    "20251222_011120",
+    "20251222_011132",
+    "20251222_011206",
+    "20251222_011256",
+    "20251222_011318",
+    "20251222_011408",
+    "20251222_011630",
+    "20251222_012804",
+    "20251222_012847",
+    "20251222_012936",
+    "20251222_012941"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20251222_010422",
+      "to": "20251222_010434",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251222_010434",
+      "to": "20251222_010454",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251222_010454",
+      "to": "20251222_010607",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251222_010607",
+      "to": "20251222_010611",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251222_010611",
+      "to": "20251222_010641",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251222_010641",
+      "to": "20251222_010915",
+      "human_summary": "New directories appeared: Movie Box Office Data/Records, Movie Box Office Data/Records/Daily Box Office 50 Million -.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Movie Box Office Data/Records",
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-11.png"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-11.png"
+        ],
+        "files_changed": [],
+        "dirs_added": [
+          "Movie Box Office Data/Records",
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251222_010915",
+      "to": "20251222_010947",
+      "human_summary": "New directories appeared: Movie Box Office Data/Records/Daily Box Office 50 Million +.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-12.png"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-12.png"
+        ],
+        "files_changed": [],
+        "dirs_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20251222_010947",
+      "to": "20251222_011027",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-13.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-13.jpg"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-13.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-13.jpg"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20251222_011027",
+      "to": "20251222_011044",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-14.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-14.jpg"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-14.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-14.jpg"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20251222_011044",
+      "to": "20251222_011102",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-15.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-15.jpg"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-15.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-15.jpg"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20251222_011102",
+      "to": "20251222_011120",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-16.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-16.jpg"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-16.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-16.jpg"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20251222_011120",
+      "to": "20251222_011132",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-17.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-17.jpg"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-17.jpg"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/2025-12-17.jpg"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20251222_011132",
+      "to": "20251222_011206",
+      "human_summary": "New files appeared: Movie Box Office Data/New Microsoft Excel Worksheet.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20251222_011206",
+      "to": "20251222_011256",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Movie Box Office Data/Seven-Day Box Office Summary.xlsx"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Movie Box Office Data/Seven-Day Box Office Summary.xlsx"
+        ],
+        "files_removed": [
+          "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20251222_011256",
+      "to": "20251222_011318",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20251222_011318",
+      "to": "20251222_011408",
+      "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: worksheet names changed.",
+      "likely_stage": "rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Box Office Date Summary"
+            ]
+          },
+          "headers": {
+            "from": [],
+            "to": []
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 6186,
+              "to": 7989
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Box Office Date Summary"
+                ]
+              },
+              "headers": {
+                "from": [],
+                "to": []
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20251222_011408",
+      "to": "20251222_011630",
+      "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: spreadsheet content changed from 0 to 7 non-empty cells; new visible headers or values include: Date, Daily Box Office, Total Tickets, Online Tickets, Operating Cinemas, Total Sessions.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 7
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ]
+          }
+        },
+        "headers_added": [
+          "Date",
+          "Daily Box Office",
+          "Total Tickets",
+          "Online Tickets",
+          "Operating Cinemas",
+          "Total Sessions",
+          "Average Ticket Price"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 7989,
+              "to": 8505
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 7
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20251222_011630",
+      "to": "20251222_012804",
+      "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: spreadsheet content changed from 7 to 56 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 7,
+            "to": 56
+          },
+          "headers": {
+            "from": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ],
+            "to": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8505,
+              "to": 9099
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 7,
+                "to": 56
+              },
+              "headers": {
+                "from": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ],
+                "to": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20251222_012804",
+      "to": "20251222_012847",
+      "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ],
+            "to": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9099,
+              "to": 14754
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ],
+                "to": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 20,
+      "from": "20251222_012847",
+      "to": "20251222_012936",
+      "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ],
+            "to": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 14754,
+              "to": 14830
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ],
+                "to": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 21,
+      "from": "20251222_012936",
+      "to": "20251222_012941",
+      "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ],
+            "to": [
+              "Date",
+              "Daily Box Office",
+              "Total Tickets",
+              "Online Tickets",
+              "Operating Cinemas",
+              "Total Sessions",
+              "Average Ticket Price"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 14830,
+              "to": 14831
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ],
+                "to": [
+                  "Date",
+                  "Daily Box Office",
+                  "Total Tickets",
+                  "Online Tickets",
+                  "Operating Cinemas",
+                  "Total Sessions",
+                  "Average Ticket Price"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_03",
+    "snapshot_count": 22,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20251222_010422",
+        "to": "20251222_010434",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20251222_010434",
+        "to": "20251222_010454",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20251222_010454",
+        "to": "20251222_010607",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20251222_010607",
+        "to": "20251222_010611",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20251222_010611",
+        "to": "20251222_010641",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20251222_010641",
+        "to": "20251222_010915",
+        "human_summary": "New directories appeared: Movie Box Office Data/Records, Movie Box Office Data/Records/Daily Box Office 50 Million -.",
+        "likely_stage": "create or organize folders",
+        "confidence": 0.82,
+        "evidence": {
+          "dirs_added": [
+            "Movie Box Office Data/Records",
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-11.png"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-11.png"
+          ],
+          "files_changed": [],
+          "dirs_added": [
+            "Movie Box Office Data/Records",
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -"
+          ],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20251222_010915",
+        "to": "20251222_010947",
+        "human_summary": "New directories appeared: Movie Box Office Data/Records/Daily Box Office 50 Million +.",
+        "likely_stage": "create or organize folders",
+        "confidence": 0.82,
+        "evidence": {
+          "dirs_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-12.png"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-12.png"
+          ],
+          "files_changed": [],
+          "dirs_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +"
+          ],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20251222_010947",
+        "to": "20251222_011027",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-13.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-13.jpg"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-13.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-13.jpg"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20251222_011027",
+        "to": "20251222_011044",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-14.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-14.jpg"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-14.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-14.jpg"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20251222_011044",
+        "to": "20251222_011102",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-15.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-15.jpg"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-15.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-15.jpg"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20251222_011102",
+        "to": "20251222_011120",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-16.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-16.jpg"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-16.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-16.jpg"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20251222_011120",
+        "to": "20251222_011132",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-17.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-17.jpg"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-17.jpg"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/2025-12-17.jpg"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20251222_011132",
+        "to": "20251222_011206",
+        "human_summary": "New files appeared: Movie Box Office Data/New Microsoft Excel Worksheet.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20251222_011206",
+        "to": "20251222_011256",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Movie Box Office Data/Seven-Day Box Office Summary.xlsx"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Movie Box Office Data/Seven-Day Box Office Summary.xlsx"
+          ],
+          "files_removed": [
+            "Movie Box Office Data/New Microsoft Excel Worksheet.xlsx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20251222_011256",
+        "to": "20251222_011318",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20251222_011318",
+        "to": "20251222_011408",
+        "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: worksheet names changed.",
+        "likely_stage": "rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet1"
+              ],
+              "to": [
+                "Box Office Date Summary"
+              ]
+            },
+            "headers": {
+              "from": [],
+              "to": []
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 6186,
+                "to": 7989
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Box Office Date Summary"
+                  ]
+                },
+                "headers": {
+                  "from": [],
+                  "to": []
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20251222_011408",
+        "to": "20251222_011630",
+        "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: spreadsheet content changed from 0 to 7 non-empty cells; new visible headers or values include: Date, Daily Box Office, Total Tickets, Online Tickets, Operating Cinemas, Total Sessions.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 0,
+              "to": 7
+            },
+            "headers": {
+              "from": [],
+              "to": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ]
+            }
+          },
+          "headers_added": [
+            "Date",
+            "Daily Box Office",
+            "Total Tickets",
+            "Online Tickets",
+            "Operating Cinemas",
+            "Total Sessions",
+            "Average Ticket Price"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 7989,
+                "to": 8505
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 0,
+                  "to": 7
+                },
+                "headers": {
+                  "from": [],
+                  "to": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20251222_011630",
+        "to": "20251222_012804",
+        "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: spreadsheet content changed from 7 to 56 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 7,
+              "to": 56
+            },
+            "headers": {
+              "from": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ],
+              "to": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8505,
+                "to": 9099
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 7,
+                  "to": 56
+                },
+                "headers": {
+                  "from": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ],
+                  "to": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 19,
+        "from": "20251222_012804",
+        "to": "20251222_012847",
+        "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ],
+              "to": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9099,
+                "to": 14754
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ],
+                  "to": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 20,
+        "from": "20251222_012847",
+        "to": "20251222_012936",
+        "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ],
+              "to": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 14754,
+                "to": 14830
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ],
+                  "to": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 21,
+        "from": "20251222_012936",
+        "to": "20251222_012941",
+        "human_summary": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ],
+              "to": [
+                "Date",
+                "Daily Box Office",
+                "Total Tickets",
+                "Online Tickets",
+                "Operating Cinemas",
+                "Total Sessions",
+                "Average Ticket Price"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 14830,
+                "to": 14831
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ],
+                  "to": [
+                    "Date",
+                    "Daily Box Office",
+                    "Total Tickets",
+                    "Online Tickets",
+                    "Operating Cinemas",
+                    "Total Sessions",
+                    "Average Ticket Price"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Open the \"Movie Box Office Data\" folder and create a new folder named \"Records\"."
+    },
+    {
+      "index": 2,
+      "instruction": "Create two new folders named: \"Daily Box Office 50 Million +\" and \"Daily Box Office 50 Million -\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Return to the \"Movie Box Office Data\" folder and open each of the seven movie box office .jpg files to view the \"Daily Box Office\" data in each image.For images with daily box office ≥ 50 million, right-click the image and select \"Cut\", then navigate to the \"Records\\Daily Box Office ≥ 50 Million\" folder, right-click and select \"Paste\".For images with daily box office < 50 million, right-click the image and select \"Cut\", then navigate to the \"Records\\Daily Box Office < 50 Million\" folder, right-click and select \"Paste\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Right-click in the \"Movie Box Office Data\" folder, select \"New\", then choose \"Microsoft Excel Worksheet\", and name the file \"Seven-Day Box Office Summary.xlsx\"."
+    },
+    {
+      "index": 5,
+      "instruction": "Double-click to open \"Seven-Day Box Office Summary.xlsx\", and rename Sheet1 to \"Box Office Data Summary\"."
+    },
+    {
+      "index": 6,
+      "instruction": "Select cells A1 to G1 and enter the following headers in order: \"Date\", \"Daily Box Office\", \"Total Tickets\", \"Online Tickets\", \"Operating Cinemas\", \"Total Sessions\", \"Average Ticket Price\"."
+    },
+    {
+      "index": 9,
+      "instruction": "Select the range A1:G8 (including headers and data for seven days), click the \"Insert\" tab in the Excel top menu bar, choose \"Column Chart\" in the \"Charts\" section, and select \"Clustered Column Chart\"."
+    },
+    {
+      "index": 10,
+      "instruction": "Double-click the chart title and change it to \"Seven-Day Box Office Data Comparison\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Click \"File\" and save the final spreadsheet."
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 6,
+    "kept_count": 6,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 22
+  }
+}

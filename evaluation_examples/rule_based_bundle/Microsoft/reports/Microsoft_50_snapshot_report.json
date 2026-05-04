@@ -1,0 +1,509 @@
+{
+  "source_name": "Microsoft_50",
+  "snapshot_count": 11,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260109_174950",
+      "to": "20260109_175007",
+      "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10660,
+              "to": 10735
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_175007",
+      "to": "20260109_175100",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 55 to 63 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 55,
+            "to": 63
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10735,
+              "to": 11174
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 55,
+                "to": 63
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_175100",
+      "to": "20260109_175127",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 63 to 71 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 63,
+            "to": 71
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11174,
+              "to": 11260
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 63,
+                "to": 71
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_175127",
+      "to": "20260109_175200",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 71 to 79 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 71,
+            "to": 79
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11260,
+              "to": 11365
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 71,
+                "to": 79
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_175200",
+      "to": "20260109_175206",
+      "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11365,
+              "to": 11364
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_175206",
+      "to": "20260109_175257",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 79 to 82 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 79,
+            "to": 82
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11364,
+              "to": 11416
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 79,
+                "to": 82
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_175257",
+      "to": "20260109_175426",
+      "human_summary": "Employee_Payroll.xlsx changed: spreadsheet content changed from 82 to 85 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 82,
+            "to": 85
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11416,
+              "to": 11479
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 82,
+                "to": 85
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_175426",
+      "to": "20260109_175517",
+      "human_summary": "Employee_Payroll.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11479,
+              "to": 11603
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260109_175517",
+      "to": "20260109_175621",
+      "human_summary": "Employee_Payroll.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Employee_Payroll.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Employee Compensation Summary 2026"
+            ],
+            "to": [
+              "Employee Compensation Summary 2026"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Employee_Payroll.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11603,
+              "to": 16914
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Employee Compensation Summary 2026"
+                ],
+                "to": [
+                  "Employee Compensation Summary 2026"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260109_175621",
+      "to": "20260109_175642",
+      "human_summary": "New files appeared: Corporate_Payroll_2026.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Corporate_Payroll_2026.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Corporate_Payroll_2026.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ]
+}

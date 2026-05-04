@@ -1,0 +1,1469 @@
+{
+  "source_name": "Microsoft_42",
+  "source_file": "Microsoft_42.txt",
+  "source_id": "39b0299269d8",
+  "source_question": "The \"Grade Statistics Table.xlsx\" file needs to be processed: Add content to the table as needed, merge and center cells A1:J1, sort the students in descending order based on the total score (if the total scores are the same, sort by the math score in descending order), and enter the ascending ranking in column J. All operations must be completed within 10 minutes.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you add the necessary content to the Grade Statistics Table?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you merge and center the cells A1:J1 in the Grade Statistics Table?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you sort the students in descending order based on the total score, and if the total scores are the same, sort by the math score in descending order?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you enter the ascending ranking in column J of the Grade Statistics Table?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "add_initial_content",
+      "instruction": "Could you add the necessary content to the Grade Statistics Table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open the Excel file, enter 'Student Score Statistics Table' in A1, and fill in the IDs and names of 12 students along with their scores and total scores.",
+      "planned_input_snapshot": "20260109_145941",
+      "planned_gold_snapshot": "20260109_150345",
+      "snapshot_evidence": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 0 to 119 non-empty cells; new visible headers or values include: Grade Statistics Table, 50273, HSL, 74, 61, 83, 81, 92, 64, 455.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "merge_and_center_cells",
+      "instruction": "Could you merge and center the cells A1:J1 in the Grade Statistics Table?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 6,
+      "trajectory_evidence": "Select the range A1:J1 and apply the 'Merge and Center' formatting.",
+      "planned_input_snapshot": "20260109_150345",
+      "planned_gold_snapshot": "20260109_150415",
+      "snapshot_evidence": "Material/Grade Statistics Table.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "sort_students_by_total_score",
+      "instruction": "Could you sort the students in descending order based on the total score, and if the total scores are the same, sort by the math score in descending order?",
+      "task_kind": "excel_sort_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 7,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Select the data range, open the 'Sort' dialog box, set the primary key to 'Total Score' (descending), and the secondary key to 'Mathematics' (descending). Apply the sorting rules.",
+      "planned_input_snapshot": "20260109_150415",
+      "planned_gold_snapshot": "20260109_150805",
+      "snapshot_evidence": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 119 to 131 non-empty cells; new visible headers or values include: 9.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "enter_ranking_in_column_j",
+      "instruction": "Could you enter the ascending ranking in column J of the Grade Statistics Table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Enter '1' in cell J2, use the fill handle to auto-fill the sequence in column J.",
+      "planned_input_snapshot": "20260109_150805",
+      "planned_gold_snapshot": "20260109_150805",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable snapshot change, but the task is clear and should be benchmarkable. Review the final state for correctness.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "add_initial_content",
+      "instruction": "Could you add the necessary content to the Grade Statistics Table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open the Excel file, enter 'Student Score Statistics Table' in A1, and fill in the IDs and names of 12 students along with their scores and total scores.",
+      "planned_input_snapshot": "20260109_145941",
+      "planned_gold_snapshot": "20260109_150345",
+      "snapshot_evidence": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 0 to 119 non-empty cells; new visible headers or values include: Grade Statistics Table, 50273, HSL, 74, 61, 83, 81, 92, 64, 455.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260109_145941",
+      "gold_snapshot": "20260109_150345",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Material/Grade Statistics Table.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 74 to 119.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_145941",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 5,
+          "search_start_index": 1,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_145941",
+          "planned_gold_snapshot": "20260109_150345"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "c8f8af98-a247-74a9-d0da-57bd21e77443",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/c8f8af98-a247-74a9-d0da-57bd21e77443.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "merge_and_center_cells_and_sort_students_by_total_score_and_enter_ranking_in_column_j",
+      "instruction": "Could you merge and center the cells A1:J1 in the Grade Statistics Table, and then sort the students in descending order based on the total score, and if the total scores are the same, sort by the math score in descending order, and then enter the ascending ranking in column J of the Grade Statistics Table?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 18,
+      "trajectory_evidence": "Select the range A1:J1 and apply the 'Merge and Center' formatting. | Select the data range, open the 'Sort' dialog box, set the primary key to 'Total Score' (descending), and the secondary key to 'Mathematics' (descending). Apply the sorting rules. | Enter '1' in cell J2, use the fill handle to auto-fill the sequence in column J.",
+      "planned_input_snapshot": "20260109_150345",
+      "planned_gold_snapshot": "20260109_150415",
+      "snapshot_evidence": "Material/Grade Statistics Table.xlsx changed: Office document content changed. | Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 119 to 131 non-empty cells; new visible headers or values include: 9. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260109_150345",
+      "gold_snapshot": "20260109_150805",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Material/Grade Statistics Table.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 119 to 131.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260109_150345",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 6,
+          "search_start_index": 5,
+          "search_end_index": 5,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260109_150345",
+          "planned_gold_snapshot": "20260109_150415"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 4,
+          "stage_name": "enter_ranking_in_column_j",
+          "reason": "Could not find workbook content growth."
+        }
+      },
+      "merged_stage_names": [
+        "merge_and_center_cells",
+        "sort_students_by_total_score",
+        "enter_ranking_in_column_j"
+      ],
+      "merged_stage_indices": [
+        2,
+        3,
+        4
+      ],
+      "generated_examples": [
+        {
+          "example_id": "ac61e2fc-8802-8a80-5090-6a9d0316df87",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/ac61e2fc-8802-8a80-5090-6a9d0316df87.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20260109_145941",
+    "20260109_150053",
+    "20260109_150149",
+    "20260109_150218",
+    "20260109_150345",
+    "20260109_150415",
+    "20260109_150727",
+    "20260109_150805",
+    "20260109_150813"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_145941",
+      "to": "20260109_150053",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 0 to 29 non-empty cells; new visible headers or values include: Grade Statistics Table.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 0,
+            "to": 29
+          },
+          "headers": {
+            "from": [],
+            "to": [
+              "Grade Statistics Table"
+            ]
+          }
+        },
+        "headers_added": [
+          "Grade Statistics Table"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8085,
+              "to": 9384
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 0,
+                "to": 29
+              },
+              "headers": {
+                "from": [],
+                "to": [
+                  "Grade Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_150053",
+      "to": "20260109_150149",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 29 to 65 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 29,
+            "to": 65
+          },
+          "headers": {
+            "from": [
+              "Grade Statistics Table"
+            ],
+            "to": [
+              "Grade Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9384,
+              "to": 9657
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 29,
+                "to": 65
+              },
+              "headers": {
+                "from": [
+                  "Grade Statistics Table"
+                ],
+                "to": [
+                  "Grade Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_150149",
+      "to": "20260109_150218",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 65 to 74 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 65,
+            "to": 74
+          },
+          "headers": {
+            "from": [
+              "Grade Statistics Table"
+            ],
+            "to": [
+              "Grade Statistics Table"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9657,
+              "to": 9715
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 65,
+                "to": 74
+              },
+              "headers": {
+                "from": [
+                  "Grade Statistics Table"
+                ],
+                "to": [
+                  "Grade Statistics Table"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_150218",
+      "to": "20260109_150345",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 74 to 119 non-empty cells; new visible headers or values include: 50273, HSL, 74, 61, 83, 81.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 74,
+            "to": 119
+          },
+          "headers": {
+            "from": [
+              "Grade Statistics Table"
+            ],
+            "to": [
+              "Grade Statistics Table",
+              "50273",
+              "HSL",
+              "74",
+              "61",
+              "83",
+              "81",
+              "92",
+              "64",
+              "455"
+            ]
+          }
+        },
+        "headers_added": [
+          "50273",
+          "HSL",
+          "74",
+          "61",
+          "83",
+          "81",
+          "92",
+          "64",
+          "455"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9715,
+              "to": 10061
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 74,
+                "to": 119
+              },
+              "headers": {
+                "from": [
+                  "Grade Statistics Table"
+                ],
+                "to": [
+                  "Grade Statistics Table",
+                  "50273",
+                  "HSL",
+                  "74",
+                  "61",
+                  "83",
+                  "81",
+                  "92",
+                  "64",
+                  "455"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_150345",
+      "to": "20260109_150415",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Grade Statistics Table",
+              "50273",
+              "HSL",
+              "74",
+              "61",
+              "83",
+              "81",
+              "92",
+              "64",
+              "455"
+            ],
+            "to": [
+              "Grade Statistics Table",
+              "50273",
+              "HSL",
+              "74",
+              "61",
+              "83",
+              "81",
+              "92",
+              "64",
+              "455"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10061,
+              "to": 10142
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Grade Statistics Table",
+                  "50273",
+                  "HSL",
+                  "74",
+                  "61",
+                  "83",
+                  "81",
+                  "92",
+                  "64",
+                  "455"
+                ],
+                "to": [
+                  "Grade Statistics Table",
+                  "50273",
+                  "HSL",
+                  "74",
+                  "61",
+                  "83",
+                  "81",
+                  "92",
+                  "64",
+                  "455"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_150415",
+      "to": "20260109_150727",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: new visible headers or values include: 80408, YJQ, 72, 53, 75, 87.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Grade Statistics Table",
+              "50273",
+              "HSL",
+              "74",
+              "61",
+              "83",
+              "81",
+              "92",
+              "64",
+              "455"
+            ],
+            "to": [
+              "Grade Statistics Table",
+              "80408",
+              "YJQ",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88",
+              "456"
+            ]
+          }
+        },
+        "headers_added": [
+          "80408",
+          "YJQ",
+          "72",
+          "53",
+          "75",
+          "87",
+          "88",
+          "456"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10142,
+              "to": 10292
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Grade Statistics Table",
+                  "50273",
+                  "HSL",
+                  "74",
+                  "61",
+                  "83",
+                  "81",
+                  "92",
+                  "64",
+                  "455"
+                ],
+                "to": [
+                  "Grade Statistics Table",
+                  "80408",
+                  "YJQ",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88",
+                  "456"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_150727",
+      "to": "20260109_150805",
+      "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 119 to 131 non-empty cells; new visible headers or values include: 9.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Grade Statistics Table.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 119,
+            "to": 131
+          },
+          "headers": {
+            "from": [
+              "Grade Statistics Table",
+              "80408",
+              "YJQ",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88",
+              "456"
+            ],
+            "to": [
+              "Grade Statistics Table",
+              "80408",
+              "YJQ",
+              "72",
+              "53",
+              "81",
+              "75",
+              "87",
+              "88",
+              "456",
+              "9"
+            ]
+          }
+        },
+        "headers_added": [
+          "9"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Grade Statistics Table.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10292,
+              "to": 10282
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 119,
+                "to": 131
+              },
+              "headers": {
+                "from": [
+                  "Grade Statistics Table",
+                  "80408",
+                  "YJQ",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88",
+                  "456"
+                ],
+                "to": [
+                  "Grade Statistics Table",
+                  "80408",
+                  "YJQ",
+                  "72",
+                  "53",
+                  "81",
+                  "75",
+                  "87",
+                  "88",
+                  "456",
+                  "9"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_150805",
+      "to": "20260109_150813",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_42",
+    "snapshot_count": 9,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_145941",
+        "to": "20260109_150053",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 0 to 29 non-empty cells; new visible headers or values include: Grade Statistics Table.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 0,
+              "to": 29
+            },
+            "headers": {
+              "from": [],
+              "to": [
+                "Grade Statistics Table"
+              ]
+            }
+          },
+          "headers_added": [
+            "Grade Statistics Table"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8085,
+                "to": 9384
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 0,
+                  "to": 29
+                },
+                "headers": {
+                  "from": [],
+                  "to": [
+                    "Grade Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_150053",
+        "to": "20260109_150149",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 29 to 65 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 29,
+              "to": 65
+            },
+            "headers": {
+              "from": [
+                "Grade Statistics Table"
+              ],
+              "to": [
+                "Grade Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9384,
+                "to": 9657
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 29,
+                  "to": 65
+                },
+                "headers": {
+                  "from": [
+                    "Grade Statistics Table"
+                  ],
+                  "to": [
+                    "Grade Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_150149",
+        "to": "20260109_150218",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 65 to 74 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 65,
+              "to": 74
+            },
+            "headers": {
+              "from": [
+                "Grade Statistics Table"
+              ],
+              "to": [
+                "Grade Statistics Table"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9657,
+                "to": 9715
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 65,
+                  "to": 74
+                },
+                "headers": {
+                  "from": [
+                    "Grade Statistics Table"
+                  ],
+                  "to": [
+                    "Grade Statistics Table"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_150218",
+        "to": "20260109_150345",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 74 to 119 non-empty cells; new visible headers or values include: 50273, HSL, 74, 61, 83, 81.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 74,
+              "to": 119
+            },
+            "headers": {
+              "from": [
+                "Grade Statistics Table"
+              ],
+              "to": [
+                "Grade Statistics Table",
+                "50273",
+                "HSL",
+                "74",
+                "61",
+                "83",
+                "81",
+                "92",
+                "64",
+                "455"
+              ]
+            }
+          },
+          "headers_added": [
+            "50273",
+            "HSL",
+            "74",
+            "61",
+            "83",
+            "81",
+            "92",
+            "64",
+            "455"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9715,
+                "to": 10061
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 74,
+                  "to": 119
+                },
+                "headers": {
+                  "from": [
+                    "Grade Statistics Table"
+                  ],
+                  "to": [
+                    "Grade Statistics Table",
+                    "50273",
+                    "HSL",
+                    "74",
+                    "61",
+                    "83",
+                    "81",
+                    "92",
+                    "64",
+                    "455"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_150345",
+        "to": "20260109_150415",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Grade Statistics Table",
+                "50273",
+                "HSL",
+                "74",
+                "61",
+                "83",
+                "81",
+                "92",
+                "64",
+                "455"
+              ],
+              "to": [
+                "Grade Statistics Table",
+                "50273",
+                "HSL",
+                "74",
+                "61",
+                "83",
+                "81",
+                "92",
+                "64",
+                "455"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10061,
+                "to": 10142
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Grade Statistics Table",
+                    "50273",
+                    "HSL",
+                    "74",
+                    "61",
+                    "83",
+                    "81",
+                    "92",
+                    "64",
+                    "455"
+                  ],
+                  "to": [
+                    "Grade Statistics Table",
+                    "50273",
+                    "HSL",
+                    "74",
+                    "61",
+                    "83",
+                    "81",
+                    "92",
+                    "64",
+                    "455"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260109_150415",
+        "to": "20260109_150727",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: new visible headers or values include: 80408, YJQ, 72, 53, 75, 87.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Grade Statistics Table",
+                "50273",
+                "HSL",
+                "74",
+                "61",
+                "83",
+                "81",
+                "92",
+                "64",
+                "455"
+              ],
+              "to": [
+                "Grade Statistics Table",
+                "80408",
+                "YJQ",
+                "72",
+                "53",
+                "81",
+                "75",
+                "87",
+                "88",
+                "456"
+              ]
+            }
+          },
+          "headers_added": [
+            "80408",
+            "YJQ",
+            "72",
+            "53",
+            "75",
+            "87",
+            "88",
+            "456"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10142,
+                "to": 10292
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Grade Statistics Table",
+                    "50273",
+                    "HSL",
+                    "74",
+                    "61",
+                    "83",
+                    "81",
+                    "92",
+                    "64",
+                    "455"
+                  ],
+                  "to": [
+                    "Grade Statistics Table",
+                    "80408",
+                    "YJQ",
+                    "72",
+                    "53",
+                    "81",
+                    "75",
+                    "87",
+                    "88",
+                    "456"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260109_150727",
+        "to": "20260109_150805",
+        "human_summary": "Material/Grade Statistics Table.xlsx changed: spreadsheet content changed from 119 to 131 non-empty cells; new visible headers or values include: 9.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Grade Statistics Table.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 119,
+              "to": 131
+            },
+            "headers": {
+              "from": [
+                "Grade Statistics Table",
+                "80408",
+                "YJQ",
+                "72",
+                "53",
+                "81",
+                "75",
+                "87",
+                "88",
+                "456"
+              ],
+              "to": [
+                "Grade Statistics Table",
+                "80408",
+                "YJQ",
+                "72",
+                "53",
+                "81",
+                "75",
+                "87",
+                "88",
+                "456",
+                "9"
+              ]
+            }
+          },
+          "headers_added": [
+            "9"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Grade Statistics Table.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10292,
+                "to": 10282
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 119,
+                  "to": 131
+                },
+                "headers": {
+                  "from": [
+                    "Grade Statistics Table",
+                    "80408",
+                    "YJQ",
+                    "72",
+                    "53",
+                    "81",
+                    "75",
+                    "87",
+                    "88",
+                    "456"
+                  ],
+                  "to": [
+                    "Grade Statistics Table",
+                    "80408",
+                    "YJQ",
+                    "72",
+                    "53",
+                    "81",
+                    "75",
+                    "87",
+                    "88",
+                    "456",
+                    "9"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260109_150805",
+        "to": "20260109_150813",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open the Excel file named \"Grade Statistics Table.xlsx\" in the \"Materials\" folder on the desktop."
+    },
+    {
+      "index": 3,
+      "instruction": "Click on A1, enter \"Student Score Statistics Table\"."
+    },
+    {
+      "index": 5,
+      "instruction": "A3:I14: Fill in the IDs and names of 12 students. The names of each subject, scores, and total scores."
+    },
+    {
+      "index": 6,
+      "instruction": "Click on cell A1 (the top-left cell of the title range), hold down the left mouse button, and then drag the cursor horizontally to cell J1 (the top-right cell of the range) to select the entire A1:J1 range.In the top menu bar, click the \"Home\" tab (the default is the active tab). In the \"Alignment\" group (located in the middle of the \"Home\" tab), find and click the \"Merge and Center\" button (the icon contains two overlapping cells and centered text)."
+    },
+    {
+      "index": 7,
+      "instruction": "Select the data range to be sorted: Click on cell A2 (the title row of the student data: \"Serial Number\"), hold down the left mouse button, and drag the cursor to the last row of the student data (for example, if no new students have been added, it will be I13, if new students have been added, it will be I14/I15) to select the range A2:I[Last Row] (excluding the merged title row A1:J1 and the empty column J)."
+    },
+    {
+      "index": 8,
+      "instruction": "In the top menu bar, click on the \"Data\" tab."
+    },
+    {
+      "index": 9,
+      "instruction": "In the \"Sort and Filter\" group (the left part of the data tab), click on the \"Sort\" button."
+    },
+    {
+      "index": 10,
+      "instruction": "This will open the \"Sort\" dialog box->In the \"Sort By\" section"
+    },
+    {
+      "index": 11,
+      "instruction": "Click on the drop-down menu next to \"Main Key\" and select \"Total Score\" (the column title of the total score). Keep \"Based On\" set to the default \"Value\"."
+    },
+    {
+      "index": 12,
+      "instruction": "Click on the drop-down menu next to \"Order\" and select \"Smallest to Largest\"."
+    },
+    {
+      "index": 13,
+      "instruction": "Click on the \"Add Condition\" button to add a secondary sorting condition."
+    },
+    {
+      "index": 14,
+      "instruction": "Click on the drop-down menu next to \"Secondary Key\" and select \"Mathematics\" (the column title of the mathematics score).->Keep \"Sort By\" set to the default \"Value\".Click on the drop-down menu next to \"Sort Order\" and select \"Smallest to Largest\"."
+    },
+    {
+      "index": 15,
+      "instruction": "Make sure the \"My Data Has a Title\" checkbox at the top right of the dialog box is selected (this will ignore the sorting of the title row). Click the \"OK\" button at the bottom right of the \"Sort\" dialog box to apply the sorting rules."
+    },
+    {
+      "index": 16,
+      "instruction": "Click on the first cell J2 (the first cell corresponding to the student with the highest ranking after sorting). Enter \"1\" (the first ranking) and press \"Enter\" to move to cell J3."
+    },
+    {
+      "index": 17,
+      "instruction": "Click on cell J2 again to reselect it. Move the cursor to the lower right corner of cell J2 until it turns into a black cross (this is the \"Fill Handle\")."
+    },
+    {
+      "index": 18,
+      "instruction": "old down the left button, then drag the fill handle downward to the last row of the student data in column J. \tRelease the left button; Excel will automatically fill the cell.Then click on the \"Auto Fill\" option at the lower right corner of the last row of the data, select \"Fill Sequence\""
+    },
+    {
+      "index": 19,
+      "instruction": "Press Ctrl+S to save"
+    },
+    {
+      "index": 20,
+      "instruction": "Close the Excel spreadsheet"
+    },
+    {
+      "index": 21,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 2,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 9
+  }
+}

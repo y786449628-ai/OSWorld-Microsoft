@@ -1,0 +1,482 @@
+{
+  "source_name": "Microsoft_12",
+  "source_file": "Microsoft_12.txt",
+  "source_id": "1af630ce3692",
+  "source_question": "Purchase department purchase a batch of laptop, and the supplier only provide the model and volume, without serial number, to well management the laptop, we need design a input table, and input serial number into a template.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create an input table in Excel for managing the laptops?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you add columns for model and volume in the input table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a column for serial number in the input table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you input the provided model and volume data into the table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you input the serial numbers into the table as they become available?",
+      "mapped_stage_indices": [
+        3
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_input_template",
+      "instruction": "Could you create an input table in Excel for managing the laptops?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open Excel, create a new blank workbook, and save it as 'Input template.xlsx'.",
+      "planned_input_snapshot": "20260105_201258",
+      "planned_gold_snapshot": "20260105_201355",
+      "snapshot_evidence": "New files appeared: Material/Input template.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear observable transition from no file to the creation of 'Input template.xlsx'.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "copy_data_to_template",
+      "instruction": "Could you add columns for model and volume in the input table? Could you add a column for serial number in the input table? Could you input the provided model and volume data into the table?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Copy data from 'Detail' file to 'Input template', add and fill columns for model, volume, and serial number.",
+      "planned_input_snapshot": "20260105_201355",
+      "planned_gold_snapshot": "20260105_202019",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from 'Input template.xlsx' to 'final result.xlsx' with added and filled data.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "finalize_and_save_template",
+      "instruction": "Could you input the serial numbers into the table as they become available?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 21,
+      "trajectory_evidence": "Finalize the template by adding and filling the 'Serial Number' column, and save the final result.",
+      "planned_input_snapshot": "20260105_202019",
+      "planned_gold_snapshot": "20260105_202021",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in the last snapshot transition, but the stage is necessary to complete the workflow. LLM assistance may be needed to verify the content.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_input_template",
+      "instruction": "Could you create an input table in Excel for managing the laptops?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open Excel, create a new blank workbook, and save it as 'Input template.xlsx'.",
+      "planned_input_snapshot": "20260105_201258",
+      "planned_gold_snapshot": "20260105_201355",
+      "snapshot_evidence": "New files appeared: Material/Input template.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear observable transition from no file to the creation of 'Input template.xlsx'.",
+      "input_snapshot": "20260105_201258",
+      "gold_snapshot": "20260105_201355",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Material/Input template.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 5,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260105_201258",
+          "planned_gold_snapshot": "20260105_201355"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "0cf3cfc4-3ec9-8a14-ddd1-e8a50a057bf7",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0cf3cfc4-3ec9-8a14-ddd1-e8a50a057bf7.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "copy_data_to_template_and_finalize_and_save_template",
+      "instruction": "Could you add columns for model and volume in the input table? Could you add a column for serial number in the input table? Could you input the provided model and volume data into the table, and then input the serial numbers into the table as they become available?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 21,
+      "trajectory_evidence": "Copy data from 'Detail' file to 'Input template', add and fill columns for model, volume, and serial number. | Finalize the template by adding and filling the 'Serial Number' column, and save the final result.",
+      "planned_input_snapshot": "20260105_201355",
+      "planned_gold_snapshot": "20260105_202021",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from 'Input template.xlsx' to 'final result.xlsx' with added and filled data.",
+      "input_snapshot": "20260105_201355",
+      "gold_snapshot": "20260105_202021",
+      "linked_preview_tasks": [],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 3,
+          "stage_name": "finalize_and_save_template",
+          "reason": "Could not find workbook content growth."
+        }
+      },
+      "merged_stage_names": [
+        "copy_data_to_template",
+        "finalize_and_save_template"
+      ],
+      "merged_stage_indices": [
+        2,
+        3
+      ],
+      "generated_examples": [
+        {
+          "example_id": "43a42f92-5067-2648-c72e-53d8ece8f6df",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/43a42f92-5067-2648-c72e-53d8ece8f6df.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you add columns for model and volume in the input table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you add a column for serial number in the input table?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you input the provided model and volume data into the table?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260105_201258",
+    "20260105_201355",
+    "20260105_202019",
+    "20260105_202021"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260105_201258",
+      "to": "20260105_201355",
+      "human_summary": "New files appeared: Material/Input template.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Material/Input template.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Material/Input template.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260105_201355",
+      "to": "20260105_202019",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260105_202019",
+      "to": "20260105_202021",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_12",
+    "snapshot_count": 4,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260105_201258",
+        "to": "20260105_201355",
+        "human_summary": "New files appeared: Material/Input template.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Material/Input template.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Material/Input template.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260105_201355",
+        "to": "20260105_202019",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260105_202019",
+        "to": "20260105_202021",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click Menu---File---New---Blank workbook"
+    },
+    {
+      "index": 5,
+      "instruction": "Click Menu---File, find and click save as button, then click browse, click desktop, double click material, change the file name as \"Input template\", then click save button."
+    },
+    {
+      "index": 6,
+      "instruction": "Select detail file, then click Ctrl+A, then click Ctrl+C, click input template file, click A1 cell, then click Ctrl+V. Copy the data to input template."
+    },
+    {
+      "index": 7,
+      "instruction": "Click C2 cell, input \"=B2-1\", then select C2 cell, find and click C2 cell drag icon on the bottom of right, double click icon, and fill the content of whole field."
+    },
+    {
+      "index": 8,
+      "instruction": "Click D2 cell, input \"1\", click C3 cell, input \"=sum(C$2:C2)+1\"."
+    },
+    {
+      "index": 9,
+      "instruction": "Find and click D2 cell drag icon on the bottom of right, double click icon, and fill the content of whole field."
+    },
+    {
+      "index": 10,
+      "instruction": "Click the last cell of D column with content, then click down, then input \"1\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Click the cell again, click Menu---Home, find and click the arrow next to Fill, will pop up a frame, then click Series button, will pop up a frame of Series."
+    },
+    {
+      "index": 12,
+      "instruction": "Click Columns of Series in, Step value=1, Stop value equal content of above cell minus 1, then click OK, close the frame."
+    },
+    {
+      "index": 13,
+      "instruction": "Select D2 cell, then click Menu---Data, find and click sort smallest to largest"
+    },
+    {
+      "index": 14,
+      "instruction": "Select last line, then click Ctrl+X, then right click line 1, click Insert Cut Cells"
+    },
+    {
+      "index": 15,
+      "instruction": "Select Column B to D, right click the mouse, then click Delete."
+    },
+    {
+      "index": 16,
+      "instruction": "Click B1 Cell, then input \"Serial Number\""
+    },
+    {
+      "index": 17,
+      "instruction": "Select Column A, click Ctrl+G, will pop up a frame of Go to."
+    },
+    {
+      "index": 18,
+      "instruction": "Click Special button, then select Blanks, then click Ok button."
+    },
+    {
+      "index": 19,
+      "instruction": "Input \"=A2\", then click Ctrl+Enter"
+    },
+    {
+      "index": 20,
+      "instruction": "Click A35, then click Ctrl+C, select A36 to A37, click Ctrl+V"
+    },
+    {
+      "index": 21,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 22,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 3,
+    "kept_count": 2,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 4
+  }
+}

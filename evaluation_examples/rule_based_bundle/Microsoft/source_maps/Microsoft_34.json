@@ -1,0 +1,1900 @@
+{
+  "source_name": "Microsoft_34",
+  "source_file": "Microsoft_34.txt",
+  "source_id": "1b819f7ae0e7",
+  "source_question": "Create a project performance report using Microsoft Excel 365, and Microsoft Word 365. Begin by building a detailed project tracking dataset in Excel with calculations and conditional formatting. Then, draft a structured written report in Word that references Excel data and includes a linked table.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a detailed project tracking dataset in Excel 365 with calculations and conditional formatting?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you prepare a structured written report in Word 365 that references the Excel data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you include a linked table from the Excel dataset in the Word report?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_or_open_excel_workbook",
+      "instruction": "Could you open the Excel file named material/Project_Tracking.xlsx?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Microsoft Excel 365. Select 'Open','This PC','Document','Desktop','material' in sequence, click Open, then select the xlsx file to open.",
+      "planned_input_snapshot": "20260111_004925",
+      "planned_gold_snapshot": "20260111_004958",
+      "snapshot_evidence": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 26 to 27 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_data_and_calculate_formula",
+      "instruction": "Could you enter data and calculate the variance (USD) in the Excel workbook?",
+      "task_kind": "excel_enter_data|excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Click cell F2, type =D2-E2, and press Enter. Drag the fill handle from F2 down to F5 to copy the formula.",
+      "planned_input_snapshot": "20260111_004958",
+      "planned_gold_snapshot": "20260111_005018",
+      "snapshot_evidence": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 27 to 30 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "format_cells_and_rename_sheet",
+      "instruction": "Could you apply conditional formatting to column F and rename the sheet to 'Variance Summary'?",
+      "task_kind": "excel_format_cells|excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Select column F, click on 'Home','Conditional Formatting','Color Scales' in sequence, then choose a green-yellow-red scale. Click 'Insert' and 'PivotTable', choose From Table/Range, select New Worksheet, and click OK. Rename the PivotTable sheet to 'Variance Summary'.",
+      "planned_input_snapshot": "20260111_005018",
+      "planned_gold_snapshot": "20260111_005307",
+      "snapshot_evidence": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 30 to 40 non-empty cells; worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_excel_workbook",
+      "instruction": "Could you save the Excel workbook as Project_Tracking.xlsx on the Desktop?",
+      "task_kind": "create_or_save_file",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Save the file by clicking 'File' and 'Save As', name it Project_Tracking.xlsx, and save it to Desktop.",
+      "planned_input_snapshot": "20260111_005307",
+      "planned_gold_snapshot": "20260111_005333",
+      "snapshot_evidence": "New files appeared: Project_Tracking.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "open_word_document",
+      "instruction": "Could you open the Word document named material/Project_Report.docx?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Open Microsoft Word 365. Select 'Open','This PC','Document','Desktop','material' in sequence, click Open, then select the docx file named Project_Report to open.",
+      "planned_input_snapshot": "20260111_005333",
+      "planned_gold_snapshot": "20260111_005402",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "edit_text_and_apply_styles",
+      "instruction": "Could you edit the text and apply styles in the Word document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 16,
+      "trajectory_evidence": "Click Layout, select Margins, then choose Normal. Select the 'Project Performance Report – Q2 Review', click 'Home','Styles' in sequence and apply the Title style. Select the 'Project Overview', apply the Heading 1 style. Select the 'Financial Summary', apply the Heading 1 style.",
+      "planned_input_snapshot": "20260111_005402",
+      "planned_gold_snapshot": "20260111_005553",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "insert_linked_table_from_excel",
+      "instruction": "Could you insert a linked table from the Excel dataset into the Word document and format it?",
+      "task_kind": "cross_app_transfer_visible_artifact|word_insert_table_or_image",
+      "apps": [
+        "word",
+        "excel"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 17,
+      "trajectory_end": 19,
+      "trajectory_evidence": "Place the mouse below 'Financial Summary', Click 'Insert','Object','Text from File' in sequence. Select the inserted table, click 'Table Design','Borders','All Borders' in sequence. Click 'References' and 'Insert Caption', set Label to Table, type 'Project Cost and Variance Summary' and set the position below the selected item, then click OK.",
+      "planned_input_snapshot": "20260111_005553",
+      "planned_gold_snapshot": "20260111_005939",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 8,
+      "stage_name": "save_word_document",
+      "instruction": "Could you save the Word document as Project_Report.docx on the Desktop?",
+      "task_kind": "create_or_save_file",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        7
+      ],
+      "trajectory_start": 20,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Click 'File' and 'Save As', name the document Project_Report.docx, and save it to Desktop.",
+      "planned_input_snapshot": "20260111_005939",
+      "planned_gold_snapshot": "20260111_010002",
+      "snapshot_evidence": "New files appeared: Project_Report.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_or_open_excel_workbook",
+      "instruction": "Could you open the Excel file named material/Project_Tracking.xlsx?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Microsoft Excel 365. Select 'Open','This PC','Document','Desktop','material' in sequence, click Open, then select the xlsx file to open.",
+      "planned_input_snapshot": "20260111_004925",
+      "planned_gold_snapshot": "20260111_004958",
+      "snapshot_evidence": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 26 to 27 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_004925",
+      "gold_snapshot": "20260111_004958",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Project_Tracking.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "0fb6c50c-ed8d-7a1d-9dad-3f5d3dcc6890",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0fb6c50c-ed8d-7a1d-9dad-3f5d3dcc6890.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "enter_data_and_calculate_formula",
+      "instruction": "Could you enter data and calculate the variance (USD) in the Excel workbook?",
+      "task_kind": "excel_enter_data|excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Click cell F2, type =D2-E2, and press Enter. Drag the fill handle from F2 down to F5 to copy the formula.",
+      "planned_input_snapshot": "20260111_004958",
+      "planned_gold_snapshot": "20260111_005018",
+      "snapshot_evidence": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 27 to 30 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_004958",
+      "gold_snapshot": "20260111_005018",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Project_Tracking.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 5,
+          "search_start_index": 2,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_004958",
+          "planned_gold_snapshot": "20260111_005018"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "735110a3-4d13-d3c4-12ce-14b6890742e4",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/735110a3-4d13-d3c4-12ce-14b6890742e4.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "format_cells_and_rename_sheet",
+      "instruction": "Could you apply conditional formatting to column F and rename the sheet to 'Variance Summary'?",
+      "task_kind": "excel_format_cells|excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Select column F, click on 'Home','Conditional Formatting','Color Scales' in sequence, then choose a green-yellow-red scale. Click 'Insert' and 'PivotTable', choose From Table/Range, select New Worksheet, and click OK. Rename the PivotTable sheet to 'Variance Summary'.",
+      "planned_input_snapshot": "20260111_005018",
+      "planned_gold_snapshot": "20260111_005307",
+      "snapshot_evidence": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 30 to 40 non-empty cells; worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_005018",
+      "gold_snapshot": "20260111_005307",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Project_Tracking.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260111_005307",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 9,
+          "search_start_index": 3,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_005018",
+          "planned_gold_snapshot": "20260111_005307"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "45ffb236-eca0-9f9f-ce51-4a3711254e72",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/45ffb236-eca0-9f9f-ce51-4a3711254e72.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_excel_workbook_and_open_word_document",
+      "instruction": "Could you save the Excel workbook as Project_Tracking.xlsx on the Desktop, and then open the Word document named material/Project_Report.docx?",
+      "task_kind": "create_or_save_file",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Save the file by clicking 'File' and 'Save As', name it Project_Tracking.xlsx, and save it to Desktop. | Open Microsoft Word 365. Select 'Open','This PC','Document','Desktop','material' in sequence, click Open, then select the docx file named Project_Report to open.",
+      "planned_input_snapshot": "20260111_005307",
+      "planned_gold_snapshot": "20260111_005402",
+      "snapshot_evidence": "New files appeared: Project_Tracking.xlsx. | One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_005307",
+      "gold_snapshot": "20260111_005402",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Tracking.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "open_word_document",
+          "reason": "Could not find target file content change."
+        }
+      },
+      "merged_stage_names": [
+        "save_excel_workbook",
+        "open_word_document"
+      ],
+      "merged_stage_indices": [
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "63fd525e-75a7-df47-beb2-3a2999231b3c",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/63fd525e-75a7-df47-beb2-3a2999231b3c.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "edit_text_and_apply_styles",
+      "instruction": "Could you edit the text and apply styles in the Word document?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 16,
+      "trajectory_evidence": "Click Layout, select Margins, then choose Normal. Select the 'Project Performance Report – Q2 Review', click 'Home','Styles' in sequence and apply the Title style. Select the 'Project Overview', apply the Heading 1 style. Select the 'Financial Summary', apply the Heading 1 style.",
+      "planned_input_snapshot": "20260111_005402",
+      "planned_gold_snapshot": "20260111_005553",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_005402",
+      "gold_snapshot": "20260111_005553",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Project_Report.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 13,
+          "trajectory_end": 16,
+          "search_start_index": 8,
+          "search_end_index": 8,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_005402",
+          "planned_gold_snapshot": "20260111_005553"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "683b6d05-364b-9b44-36a4-58f30ba8df85",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/683b6d05-364b-9b44-36a4-58f30ba8df85.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "insert_linked_table_from_excel",
+      "instruction": "Could you insert a linked table from the Excel dataset into the Word document and format it?",
+      "task_kind": "cross_app_transfer_visible_artifact|word_insert_table_or_image",
+      "apps": [
+        "word",
+        "excel"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 17,
+      "trajectory_end": 19,
+      "trajectory_evidence": "Place the mouse below 'Financial Summary', Click 'Insert','Object','Text from File' in sequence. Select the inserted table, click 'Table Design','Borders','All Borders' in sequence. Click 'References' and 'Insert Caption', set Label to Table, type 'Project Cost and Variance Summary' and set the position below the selected item, then click OK.",
+      "planned_input_snapshot": "20260111_005553",
+      "planned_gold_snapshot": "20260111_005939",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_005553",
+      "gold_snapshot": "20260111_005939",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Project_Report.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260111_005939",
+        "trajectory_window": {
+          "trajectory_start": 17,
+          "trajectory_end": 19,
+          "search_start_index": 9,
+          "search_end_index": 12,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260111_005553",
+          "planned_gold_snapshot": "20260111_005939"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6cfb8d47-86d4-c334-ee40-6ec677ace77a",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/6cfb8d47-86d4-c334-ee40-6ec677ace77a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 8,
+      "stage_name": "save_word_document",
+      "instruction": "Could you save the Word document as Project_Report.docx on the Desktop?",
+      "task_kind": "create_or_save_file",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        7
+      ],
+      "trajectory_start": 20,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Click 'File' and 'Save As', name the document Project_Report.docx, and save it to Desktop.",
+      "planned_input_snapshot": "20260111_005939",
+      "planned_gold_snapshot": "20260111_010002",
+      "snapshot_evidence": "New files appeared: Project_Report.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Clear input and gold snapshots with observable changes.",
+      "input_snapshot": "20260111_005939",
+      "gold_snapshot": "20260111_010002",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Project_Report.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file content change. Planned snapshots show an observable artifact change; using generic compare_docx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "83ae783e-bd98-5433-55d4-521750772a74",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/83ae783e-bd98-5433-55d4-521750772a74.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a detailed project tracking dataset in Excel 365 with calculations and conditional formatting?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you prepare a structured written report in Word 365 that references the Excel data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you include a linked table from the Excel dataset in the Word report?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260111_004925",
+    "20260111_004958",
+    "20260111_005018",
+    "20260111_005051",
+    "20260111_005307",
+    "20260111_005333",
+    "20260111_005335",
+    "20260111_005402",
+    "20260111_005553",
+    "20260111_005606",
+    "20260111_005626",
+    "20260111_005752",
+    "20260111_005939",
+    "20260111_010002",
+    "20260111_010004"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260111_004925",
+      "to": "20260111_004958",
+      "human_summary": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 26 to 27 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Project_Tracking.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 26,
+            "to": 27
+          },
+          "headers": {
+            "from": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ],
+            "to": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracking.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10045,
+              "to": 10347
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 26,
+                "to": 27
+              },
+              "headers": {
+                "from": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ],
+                "to": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260111_004958",
+      "to": "20260111_005018",
+      "human_summary": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 27 to 30 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Project_Tracking.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 27,
+            "to": 30
+          },
+          "headers": {
+            "from": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ],
+            "to": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracking.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10347,
+              "to": 10408
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 27,
+                "to": 30
+              },
+              "headers": {
+                "from": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ],
+                "to": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260111_005018",
+      "to": "20260111_005051",
+      "human_summary": "material/Project_Tracking.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Project_Tracking.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ],
+            "to": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracking.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10408,
+              "to": 10415
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ],
+                "to": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260111_005051",
+      "to": "20260111_005307",
+      "human_summary": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 30 to 40 non-empty cells; worksheet names changed.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Project_Tracking.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Variance Summary",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "nonempty_cells": {
+            "from": 30,
+            "to": 40
+          },
+          "headers": {
+            "from": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ],
+            "to": [
+              "Project Name",
+              "Planned Hours",
+              "Actual Hours",
+              "Budget (USD)",
+              "Budget (USD)",
+              "Variance (USD)"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracking.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10415,
+              "to": 15004
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Variance Summary",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "nonempty_cells": {
+                "from": 30,
+                "to": 40
+              },
+              "headers": {
+                "from": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ],
+                "to": [
+                  "Project Name",
+                  "Planned Hours",
+                  "Actual Hours",
+                  "Budget (USD)",
+                  "Budget (USD)",
+                  "Variance (USD)"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260111_005307",
+      "to": "20260111_005333",
+      "human_summary": "New files appeared: Project_Tracking.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project_Tracking.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Tracking.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260111_005333",
+      "to": "20260111_005335",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260111_005335",
+      "to": "20260111_005402",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260111_005402",
+      "to": "20260111_005553",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "size": {
+              "from": 15187,
+              "to": 15228
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15187,
+              "to": 15228
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260111_005553",
+      "to": "20260111_005606",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "size": {
+              "from": 15228,
+              "to": 15246
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15228,
+              "to": 15246
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260111_005606",
+      "to": "20260111_005626",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "size": {
+              "from": 15246,
+              "to": 15254
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15246,
+              "to": 15254
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260111_005626",
+      "to": "20260111_005752",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "size": {
+              "from": 15254,
+              "to": 16157
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 15254,
+              "to": 16157
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260111_005752",
+      "to": "20260111_005939",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "size": {
+              "from": 16157,
+              "to": 16276
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Report.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 16157,
+              "to": 16276
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260111_005939",
+      "to": "20260111_010002",
+      "human_summary": "New files appeared: Project_Report.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project_Report.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Report.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260111_010002",
+      "to": "20260111_010004",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_34",
+    "snapshot_count": 15,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260111_004925",
+        "to": "20260111_004958",
+        "human_summary": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 26 to 27 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "material/Project_Tracking.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 26,
+              "to": 27
+            },
+            "headers": {
+              "from": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ],
+              "to": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Tracking.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10045,
+                "to": 10347
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 26,
+                  "to": 27
+                },
+                "headers": {
+                  "from": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ],
+                  "to": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260111_004958",
+        "to": "20260111_005018",
+        "human_summary": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 27 to 30 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "material/Project_Tracking.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 27,
+              "to": 30
+            },
+            "headers": {
+              "from": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ],
+              "to": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Tracking.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10347,
+                "to": 10408
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 27,
+                  "to": 30
+                },
+                "headers": {
+                  "from": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ],
+                  "to": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260111_005018",
+        "to": "20260111_005051",
+        "human_summary": "material/Project_Tracking.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Project_Tracking.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ],
+              "to": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Tracking.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10408,
+                "to": 10415
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ],
+                  "to": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260111_005051",
+        "to": "20260111_005307",
+        "human_summary": "material/Project_Tracking.xlsx changed: spreadsheet content changed from 30 to 40 non-empty cells; worksheet names changed.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "material/Project_Tracking.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet1"
+              ],
+              "to": [
+                "Variance Summary",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 1,
+              "to": 2
+            },
+            "nonempty_cells": {
+              "from": 30,
+              "to": 40
+            },
+            "headers": {
+              "from": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ],
+              "to": [
+                "Project Name",
+                "Planned Hours",
+                "Actual Hours",
+                "Budget (USD)",
+                "Budget (USD)",
+                "Variance (USD)"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Tracking.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10415,
+                "to": 15004
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Variance Summary",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 1,
+                  "to": 2
+                },
+                "nonempty_cells": {
+                  "from": 30,
+                  "to": 40
+                },
+                "headers": {
+                  "from": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ],
+                  "to": [
+                    "Project Name",
+                    "Planned Hours",
+                    "Actual Hours",
+                    "Budget (USD)",
+                    "Budget (USD)",
+                    "Variance (USD)"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260111_005307",
+        "to": "20260111_005333",
+        "human_summary": "New files appeared: Project_Tracking.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Project_Tracking.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project_Tracking.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260111_005333",
+        "to": "20260111_005335",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260111_005335",
+        "to": "20260111_005402",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260111_005402",
+        "to": "20260111_005553",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "size": {
+                "from": 15187,
+                "to": 15228
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15187,
+                "to": 15228
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260111_005553",
+        "to": "20260111_005606",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "size": {
+                "from": 15228,
+                "to": 15246
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15228,
+                "to": 15246
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260111_005606",
+        "to": "20260111_005626",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "size": {
+                "from": 15246,
+                "to": 15254
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15246,
+                "to": 15254
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260111_005626",
+        "to": "20260111_005752",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "size": {
+                "from": 15254,
+                "to": 16157
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 15254,
+                "to": 16157
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260111_005752",
+        "to": "20260111_005939",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "size": {
+                "from": 16157,
+                "to": 16276
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Project_Report.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 16157,
+                "to": 16276
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260111_005939",
+        "to": "20260111_010002",
+        "human_summary": "New files appeared: Project_Report.docx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Project_Report.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Project_Report.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260111_010002",
+        "to": "20260111_010004",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open Microsoft Excel 365."
+    },
+    {
+      "index": 3,
+      "instruction": "Select 'Open','This PC','Document','Desktop','material' in sequence, click Open, then select the xlsx file to open."
+    },
+    {
+      "index": 4,
+      "instruction": "Click cell F2, type =D2-E2, and press Enter."
+    },
+    {
+      "index": 5,
+      "instruction": "Drag the fill handle from F2 down to F5 to copy the formula."
+    },
+    {
+      "index": 6,
+      "instruction": "Select column F, click on 'Home','Conditional Formatting','Color Scales' in sequence, then choose a green-yellow-red scale."
+    },
+    {
+      "index": 7,
+      "instruction": "Click 'Insert' and 'PivotTable', choose From Table/Range, select New Worksheet, and click OK."
+    },
+    {
+      "index": 8,
+      "instruction": "In the PivotTable Fields pane, drag Project Name to Rows and Variance (USD) to Values."
+    },
+    {
+      "index": 9,
+      "instruction": "Rename the PivotTable sheet to 'Variance Summary'."
+    },
+    {
+      "index": 10,
+      "instruction": "Save the file by clicking 'File' and 'Save As', name it Project_Tracking.xlsx, and save it to Desktop."
+    },
+    {
+      "index": 11,
+      "instruction": "Open Microsoft Word 365."
+    },
+    {
+      "index": 12,
+      "instruction": "Select 'Open','This PC','Document','Desktop','material' in sequence, click Open, then select the docx file named Project_Report to open."
+    },
+    {
+      "index": 13,
+      "instruction": "Click Layout, select Margins, then choose Normal."
+    },
+    {
+      "index": 14,
+      "instruction": "Select the 'Project Performance Report – Q2 Review', click 'Home','Styles' in sequence and apply the Title style."
+    },
+    {
+      "index": 15,
+      "instruction": "Select the 'Project Overview', apply the Heading 1 style."
+    },
+    {
+      "index": 16,
+      "instruction": "Select the 'Financial Summary', apply the Heading 1 style."
+    },
+    {
+      "index": 17,
+      "instruction": "Place the mouse below 'Financial Summary', Click 'Insert','Object','Text from File' in sequence."
+    },
+    {
+      "index": 18,
+      "instruction": "Select the inserted table, click 'Table Design','Borders','All Borders' in sequence."
+    },
+    {
+      "index": 19,
+      "instruction": "Click 'References' and 'Insert Caption', set Label to Table, type 'Project Cost and Variance Summary' and set the position below the selected item, then click OK."
+    },
+    {
+      "index": 20,
+      "instruction": "Click 'File' and 'Save As', name the document Project_Report.docx, and save it to Desktop."
+    },
+    {
+      "index": 21,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 8,
+    "kept_count": 7,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 15
+  }
+}

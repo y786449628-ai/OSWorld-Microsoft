@@ -1,0 +1,81 @@
+{
+  "id": "c6cf960f-dfb7-63ae-fd0c-d9086731cc68",
+  "snapshot": "ppt",
+  "instruction": "Could you include speaker notes on one slide?",
+  "source": "Microsoft_39 true stage 6",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_160915/Desktop/Material/R-C.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\R-C.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_160915/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\78644\\Desktop\\My_Study_Abroad_Experience.pptx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_161005/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\78644\\Documents\\My_Study_Abroad_Experience_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\My_Study_Abroad_Experience.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/c6cf960f-dfb7-63ae-fd0c-d9086731cc68",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\My_Study_Abroad_Experience.pptx",
+      "dest": "My_Study_Abroad_Experience.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\My_Study_Abroad_Experience_gold.pptx",
+      "dest": "My_Study_Abroad_Experience_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "My_Study_Abroad_Experience.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "6addadf7-69fa-dccb-34ce-49e5317f7145",
+  "snapshot": "ppt",
+  "instruction": "Could you open Microsoft PowerPoint 365 and create a new presentation for the customer satisfaction analysis, and then link the relevant Excel data to the PowerPoint slides, and then create visual summaries, such as charts and graphs, in the PowerPoint presentation using the linked data, and then save the final PowerPoint presentation with the linked data and visual summaries?",
+  "source": "Microsoft_08 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_152203/Desktop/Customer_Satisfaction_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_08/logs/MonitoringSnapshots/20260104_153033/Desktop/Customer_Satisfaction_Presentaion.pptx",
+            "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6addadf7-69fa-dccb-34ce-49e5317f7145",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Customer_Satisfaction_Presentaion.pptx",
+      "dest": "Customer_Satisfaction_Presentaion.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Customer_Satisfaction_Presentaion_gold.pptx",
+      "dest": "Customer_Satisfaction_Presentaion_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Customer_Satisfaction_Presentaion.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

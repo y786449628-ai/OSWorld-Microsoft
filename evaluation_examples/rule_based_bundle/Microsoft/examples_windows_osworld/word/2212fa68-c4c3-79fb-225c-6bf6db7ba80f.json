@@ -1,0 +1,77 @@
+{
+  "id": "2212fa68-c4c3-79fb-225c-6bf6db7ba80f",
+  "snapshot": "word",
+  "instruction": "Could you replace all instances of 'TBD' with 'To Be Confirmed' in bold red text?",
+  "source": "Microsoft_48 true stage 3",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154341/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154424/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Documents\\Conference_Agenda_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2212fa68-c4c3-79fb-225c-6bf6db7ba80f",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx",
+      "dest": "Conference_Agenda.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Conference_Agenda_gold.docx",
+      "dest": "Conference_Agenda_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Conference_Agenda.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "923d1831-75f5-e92e-ad48-81d96f95a21c",
+  "snapshot": "word",
+  "instruction": "Could you open the 'Conference_Agenda.docx' file in Word and format the title to Arial Black, size 16, and center it?",
+  "source": "Microsoft_48 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_153925/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154026/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Documents\\Conference_Agenda_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/923d1831-75f5-e92e-ad48-81d96f95a21c",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx",
+      "dest": "Conference_Agenda.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Conference_Agenda_gold.docx",
+      "dest": "Conference_Agenda_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Conference_Agenda.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

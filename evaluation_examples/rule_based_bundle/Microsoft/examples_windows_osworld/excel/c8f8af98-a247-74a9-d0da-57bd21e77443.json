@@ -1,0 +1,83 @@
+{
+  "id": "c8f8af98-a247-74a9-d0da-57bd21e77443",
+  "snapshot": "excel",
+  "instruction": "Could you add the necessary content to the Grade Statistics Table?",
+  "source": "Microsoft_42 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_42/logs/MonitoringSnapshots/20260109_145941/Desktop/Material/Grade Statistics Table.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Grade Statistics Table.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_42/logs/MonitoringSnapshots/20260109_150345/Desktop/Material/Grade Statistics Table.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Grade Statistics Table_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Grade Statistics Table.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/c8f8af98-a247-74a9-d0da-57bd21e77443",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Material\\Grade Statistics Table.xlsx",
+      "dest": "Grade Statistics Table.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Grade Statistics Table_gold.xlsx",
+      "dest": "Grade Statistics Table_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Grade Statistics Table.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "395f800b-f2f6-d487-792c-abfb08e3a8d0",
+  "snapshot": "word",
+  "instruction": "Could you save the Word document as a PDF?",
+  "source": "Microsoft_01 true stage 7",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222531/Desktop/Book1.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Book1.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222531/Desktop/Doc1.docx",
+            "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_01/logs/MonitoringSnapshots/20251209_222625/Desktop/Doc1.pdf",
+            "path": "C:\\Users\\User\\Documents\\Doc1_gold.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Doc1.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/395f800b-f2f6-d487-792c-abfb08e3a8d0",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Doc1.pdf",
+      "dest": "Doc1.pdf"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Doc1_gold.pdf",
+      "dest": "Doc1_gold.pdf"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Doc1.pdf",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

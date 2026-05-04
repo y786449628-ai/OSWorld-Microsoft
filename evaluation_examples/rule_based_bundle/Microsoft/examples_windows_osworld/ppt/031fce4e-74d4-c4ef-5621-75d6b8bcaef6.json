@@ -1,0 +1,85 @@
+{
+  "id": "031fce4e-74d4-c4ef-5621-75d6b8bcaef6",
+  "snapshot": "ppt",
+  "instruction": "Could you synchronize the visual transitions between slides in the presentation?",
+  "source": "Microsoft_49 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164548/Desktop/Material/Background.png",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Background.png"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164548/Desktop/Material/Culture.txt",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Culture.txt"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164548/Desktop/Powerpoint1.pptx",
+            "path": "C:\\Users\\User\\Desktop\\Powerpoint1.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_49/logs/MonitoringSnapshots/20260109_164612/Desktop/Shanghai_Intro.pptx",
+            "path": "C:\\Users\\User\\Documents\\Shanghai_Intro_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Powerpoint1.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/031fce4e-74d4-c4ef-5621-75d6b8bcaef6",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Shanghai_Intro.pptx",
+      "dest": "Shanghai_Intro.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Shanghai_Intro_gold.pptx",
+      "dest": "Shanghai_Intro_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Shanghai_Intro.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

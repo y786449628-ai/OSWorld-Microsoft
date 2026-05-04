@@ -1,0 +1,1506 @@
+{
+  "source_name": "Microsoft_01",
+  "source_file": "Microsoft_01.txt",
+  "source_id": "bda46f7e2346",
+  "source_question": "Please create a professional document that integrates data analysis and visualization using both Word and Excel. First, create a new worksheet in Excel and enter the product names (A/B/C), the first-quarter and second-quarter sales figures, and calculate the year-over-year growth rate. Use conditional formatting to add data bars to the growth-rate column, then generate a clustered column chart based on the data and copy it as an image,paste the Excel chart into the Word, finally save the Word document as a PDF.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new worksheet in Excel and enter the product names, first-quarter and second-quarter sales figures, and calculate the year-over-year growth rate?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you apply conditional formatting to add data bars to the growth-rate column in Excel?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you generate a clustered column chart based on the data in Excel?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you copy the clustered column chart as an image from Excel?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you create a new Word document for the professional report?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you paste the Excel chart image into the Word document?",
+      "mapped_stage_indices": [
+        6
+      ]
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you save the Word document as a PDF?",
+      "mapped_stage_indices": [
+        7
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_and_fill_excel_worksheet",
+      "instruction": "Could you create a new worksheet in Excel and enter the product names, first-quarter and second-quarter sales figures, and calculate the year-over-year growth rate?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 22,
+      "trajectory_evidence": "Enter data into cells A1 to D4, including product names, sales figures, and growth rate formula.",
+      "planned_input_snapshot": "20251209_221844",
+      "planned_gold_snapshot": "20251209_222104",
+      "snapshot_evidence": "Book1.xlsx changed: spreadsheet content changed from 4 to 16 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to add data bars to the growth-rate column in Excel?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 25,
+      "trajectory_evidence": "Apply conditional formatting to the growth-rate column (D2 to D4).",
+      "planned_input_snapshot": "20251209_222104",
+      "planned_gold_snapshot": "20251209_222149",
+      "snapshot_evidence": "Book1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "generate_clustered_column_chart",
+      "instruction": "Could you generate a clustered column chart based on the data in Excel?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 42,
+      "trajectory_evidence": "Create a clustered column chart based on the data in A1 to C4 and move it to a new sheet named 'Chart1'.",
+      "planned_input_snapshot": "20251209_222149",
+      "planned_gold_snapshot": "20251209_222307",
+      "snapshot_evidence": "Book1.xlsx changed: worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "copy_chart_as_image",
+      "instruction": "Could you copy the clustered column chart as an image from Excel?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "clipboard",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 53,
+      "trajectory_end": 53,
+      "trajectory_evidence": "Copy the clustered column chart as an image.",
+      "planned_input_snapshot": "20251209_222307",
+      "planned_gold_snapshot": "20251209_222307",
+      "snapshot_evidence": "No observable snapshot change, but clipboard content is expected to be different.",
+      "benchmarkability": "needs_review",
+      "reason": "Clipboard-only operation, needs LLM assistance for evaluation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_word_document",
+      "instruction": "Could you create a new Word document for the professional report?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 45,
+      "trajectory_end": 45,
+      "trajectory_evidence": "Create a new blank Word document.",
+      "planned_input_snapshot": "20251209_222307",
+      "planned_gold_snapshot": "20251209_222351",
+      "snapshot_evidence": "New files appeared: Doc1.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the filesystem.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "paste_chart_into_word",
+      "instruction": "Could you paste the Excel chart image into the Word document?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4,
+        5
+      ],
+      "trajectory_start": 53,
+      "trajectory_end": 53,
+      "trajectory_evidence": "Paste the copied chart image into the Word document.",
+      "planned_input_snapshot": "20251209_222351",
+      "planned_gold_snapshot": "20251209_222526",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Word document.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_word_as_pdf",
+      "instruction": "Could you save the Word document as a PDF?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 55,
+      "trajectory_end": 55,
+      "trajectory_evidence": "Save the Word document as a PDF.",
+      "planned_input_snapshot": "20251209_222526",
+      "planned_gold_snapshot": "20251209_222625",
+      "snapshot_evidence": "New files appeared: Doc1.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the filesystem.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_and_fill_excel_worksheet",
+      "instruction": "Could you create a new worksheet in Excel and enter the product names, first-quarter and second-quarter sales figures, and calculate the year-over-year growth rate?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 1,
+      "trajectory_end": 22,
+      "trajectory_evidence": "Enter data into cells A1 to D4, including product names, sales figures, and growth rate formula.",
+      "planned_input_snapshot": "20251209_221844",
+      "planned_gold_snapshot": "20251209_222104",
+      "snapshot_evidence": "Book1.xlsx changed: spreadsheet content changed from 4 to 16 non-empty cells.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": "20251209_221844",
+      "gold_snapshot": "20251209_222104",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Book1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 4 to 13.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20251209_222104",
+        "trajectory_window": {
+          "trajectory_start": 1,
+          "trajectory_end": 22,
+          "search_start_index": 1,
+          "search_end_index": 2,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251209_221844",
+          "planned_gold_snapshot": "20251209_222104"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "984208c2-d49e-3769-0277-2bc645f48b64",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/984208c2-d49e-3769-0277-2bc645f48b64.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to add data bars to the growth-rate column in Excel?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 25,
+      "trajectory_end": 25,
+      "trajectory_evidence": "Apply conditional formatting to the growth-rate column (D2 to D4).",
+      "planned_input_snapshot": "20251209_222104",
+      "planned_gold_snapshot": "20251209_222149",
+      "snapshot_evidence": "Book1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": "20251209_222104",
+      "gold_snapshot": "20251209_222149",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Book1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "0fe4a6ae-3e16-2d3f-b60f-c8725c36482e",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/0fe4a6ae-3e16-2d3f-b60f-c8725c36482e.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "generate_clustered_column_chart_and_copy_chart_as_image",
+      "instruction": "Could you generate a clustered column chart based on the data in Excel, and then copy the clustered column chart as an image from Excel?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 42,
+      "trajectory_end": 53,
+      "trajectory_evidence": "Create a clustered column chart based on the data in A1 to C4 and move it to a new sheet named 'Chart1'. | Copy the clustered column chart as an image.",
+      "planned_input_snapshot": "20251209_222149",
+      "planned_gold_snapshot": "20251209_222307",
+      "snapshot_evidence": "Book1.xlsx changed: worksheet names changed. | No observable snapshot change, but clipboard content is expected to be different.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Excel file.",
+      "input_snapshot": "20251209_222149",
+      "gold_snapshot": "20251209_222307",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "Book1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook chart growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 4,
+          "stage_name": "copy_chart_as_image",
+          "reason": "No directory localization rule is available for this filesystem stage."
+        }
+      },
+      "merged_stage_names": [
+        "generate_clustered_column_chart",
+        "copy_chart_as_image"
+      ],
+      "merged_stage_indices": [
+        3,
+        4
+      ],
+      "generated_examples": [
+        {
+          "example_id": "c6a07859-7152-171f-68df-eeb78467c6d6",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/c6a07859-7152-171f-68df-eeb78467c6d6.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_word_document",
+      "instruction": "Could you create a new Word document for the professional report?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 45,
+      "trajectory_end": 45,
+      "trajectory_evidence": "Create a new blank Word document.",
+      "planned_input_snapshot": "20251209_222307",
+      "planned_gold_snapshot": "20251209_222351",
+      "snapshot_evidence": "New files appeared: Doc1.docx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the filesystem.",
+      "input_snapshot": "20251209_222307",
+      "gold_snapshot": "20251209_222526",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "Doc1.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251209_222307",
+        "trajectory_window": {
+          "trajectory_start": 45,
+          "trajectory_end": 45,
+          "search_start_index": 5,
+          "search_end_index": 5,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251209_222307",
+          "planned_gold_snapshot": "20251209_222351"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "30578ef6-9348-516f-4d1f-c485b8372b2a",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/30578ef6-9348-516f-4d1f-c485b8372b2a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "paste_chart_into_word",
+      "instruction": "Could you paste the Excel chart image into the Word document?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4,
+        5
+      ],
+      "trajectory_start": 53,
+      "trajectory_end": 53,
+      "trajectory_evidence": "Paste the copied chart image into the Word document.",
+      "planned_input_snapshot": "20251209_222351",
+      "planned_gold_snapshot": "20251209_222526",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the Word document.",
+      "input_snapshot": "20251209_222526",
+      "gold_snapshot": "20251209_222531",
+      "linked_preview_tasks": [
+        6
+      ],
+      "target_relative_path": "Doc1.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251209_222351",
+        "chain_input_snapshot": "20251209_222526",
+        "chain_input_replaced": "20251209_222351",
+        "trajectory_window": {
+          "trajectory_start": 53,
+          "trajectory_end": 53,
+          "search_start_index": 7,
+          "search_end_index": 6,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251209_222351",
+          "planned_gold_snapshot": "20251209_222526"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "8ccf9c93-4988-42f7-5f8b-b2a19f1200bf",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/8ccf9c93-4988-42f7-5f8b-b2a19f1200bf.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_word_as_pdf",
+      "instruction": "Could you save the Word document as a PDF?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 55,
+      "trajectory_end": 55,
+      "trajectory_evidence": "Save the Word document as a PDF.",
+      "planned_input_snapshot": "20251209_222526",
+      "planned_gold_snapshot": "20251209_222625",
+      "snapshot_evidence": "New files appeared: Doc1.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear changes in the filesystem.",
+      "input_snapshot": "20251209_222531",
+      "gold_snapshot": "20251209_222625",
+      "linked_preview_tasks": [
+        7
+      ],
+      "target_relative_path": "Doc1.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251209_222526",
+        "chain_input_snapshot": "20251209_222531",
+        "chain_input_replaced": "20251209_222526",
+        "trajectory_window": {
+          "trajectory_start": 55,
+          "trajectory_end": 55,
+          "search_start_index": 8,
+          "search_end_index": 9,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251209_222526",
+          "planned_gold_snapshot": "20251209_222625"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "395f800b-f2f6-d487-792c-abfb08e3a8d0",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/395f800b-f2f6-d487-792c-abfb08e3a8d0.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [],
+  "snapshot_sequence": [
+    "20251209_221844",
+    "20251209_222014",
+    "20251209_222104",
+    "20251209_222149",
+    "20251209_222307",
+    "20251209_222351",
+    "20251209_222526",
+    "20251209_222531",
+    "20251209_222601",
+    "20251209_222625"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20251209_221844",
+      "to": "20251209_222014",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 4 to 13 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 4,
+            "to": 13
+          },
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 8887,
+              "to": 9052
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 4,
+                "to": 13
+              },
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251209_222014",
+      "to": "20251209_222104",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 13 to 16 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 13,
+            "to": 16
+          },
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9052,
+              "to": 9484
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 13,
+                "to": 16
+              },
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251209_222104",
+      "to": "20251209_222149",
+      "human_summary": "Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9484,
+              "to": 9947
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251209_222149",
+      "to": "20251209_222307",
+      "human_summary": "Book1.xlsx changed: worksheet names changed.",
+      "likely_stage": "rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Chart1",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "headers": {
+            "from": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ],
+            "to": [
+              "Product name",
+              "Q1 sales",
+              "Q2 sales",
+              "Year-over-Tear Growth Rate"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9947,
+              "to": 15757
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Chart1",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "headers": {
+                "from": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ],
+                "to": [
+                  "Product name",
+                  "Q1 sales",
+                  "Q2 sales",
+                  "Year-over-Tear Growth Rate"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251209_222307",
+      "to": "20251209_222351",
+      "human_summary": "New files appeared: Doc1.docx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Doc1.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Doc1.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251209_222351",
+      "to": "20251209_222526",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13343,
+              "to": 13455
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13343,
+              "to": 13455
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251209_222526",
+      "to": "20251209_222531",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13455,
+              "to": 13485
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13455,
+              "to": 13485
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20251209_222531",
+      "to": "20251209_222601",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "size": {
+              "from": 13485,
+              "to": 33791
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Doc1.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13485,
+              "to": 33791
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20251209_222601",
+      "to": "20251209_222625",
+      "human_summary": "New files appeared: Doc1.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Doc1.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Doc1.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_01",
+    "snapshot_count": 10,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20251209_221844",
+        "to": "20251209_222014",
+        "human_summary": "Book1.xlsx changed: spreadsheet content changed from 4 to 13 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 4,
+              "to": 13
+            },
+            "headers": {
+              "from": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ],
+              "to": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 8887,
+                "to": 9052
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 4,
+                  "to": 13
+                },
+                "headers": {
+                  "from": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ],
+                  "to": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20251209_222014",
+        "to": "20251209_222104",
+        "human_summary": "Book1.xlsx changed: spreadsheet content changed from 13 to 16 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 13,
+              "to": 16
+            },
+            "headers": {
+              "from": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ],
+              "to": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9052,
+                "to": 9484
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 13,
+                  "to": 16
+                },
+                "headers": {
+                  "from": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ],
+                  "to": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20251209_222104",
+        "to": "20251209_222149",
+        "human_summary": "Book1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ],
+              "to": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9484,
+                "to": 9947
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ],
+                  "to": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20251209_222149",
+        "to": "20251209_222307",
+        "human_summary": "Book1.xlsx changed: worksheet names changed.",
+        "likely_stage": "rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet1"
+              ],
+              "to": [
+                "Chart1",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 1,
+              "to": 2
+            },
+            "headers": {
+              "from": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ],
+              "to": [
+                "Product name",
+                "Q1 sales",
+                "Q2 sales",
+                "Year-over-Tear Growth Rate"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 9947,
+                "to": 15757
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Chart1",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 1,
+                  "to": 2
+                },
+                "headers": {
+                  "from": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ],
+                  "to": [
+                    "Product name",
+                    "Q1 sales",
+                    "Q2 sales",
+                    "Year-over-Tear Growth Rate"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20251209_222307",
+        "to": "20251209_222351",
+        "human_summary": "New files appeared: Doc1.docx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Doc1.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Doc1.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20251209_222351",
+        "to": "20251209_222526",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Doc1.docx",
+              "size": {
+                "from": 13343,
+                "to": 13455
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Doc1.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13343,
+                "to": 13455
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20251209_222526",
+        "to": "20251209_222531",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Doc1.docx",
+              "size": {
+                "from": 13455,
+                "to": 13485
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Doc1.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13455,
+                "to": 13485
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20251209_222531",
+        "to": "20251209_222601",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Doc1.docx",
+              "size": {
+                "from": 13485,
+                "to": 33791
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Doc1.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13485,
+                "to": 33791
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20251209_222601",
+        "to": "20251209_222625",
+        "human_summary": "New files appeared: Doc1.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Doc1.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Doc1.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "Open Excel and create a new workbook."
+    },
+    {
+      "index": 2,
+      "instruction": "In Sheet1, starting from cell A1, enter the following data: enter \"Product Name\" in A1, \"Q1 Sales\" in B1, \"Q2 Sales\" in C1, and \"Year-over-Year Growth Rate\" in D1."
+    },
+    {
+      "index": 19,
+      "instruction": "From cells A2 to A4, enter \"Product A,\" \"Product B,\" and \"Product C\" respectively. In cells B2 to C4, fill in the corresponding simulated sales data."
+    },
+    {
+      "index": 22,
+      "instruction": "In cell D2, enter the formula =(C2-B2)/B2, press Enter, then set the format of cell D2 to \"Percentage\" and keep one decimal place. After that, drag the fill handle down to cell D4."
+    },
+    {
+      "index": 25,
+      "instruction": "Select the cell range D2 to D4, click \"Home\" tab ->\"Conditional Formatting\", choose \"Data Bars\", and then select any gradient fill style."
+    },
+    {
+      "index": 42,
+      "instruction": "Select the cell range A1 to C4, click the \"Insert\" tab, and in the \"Charts\" group choose \"Column Chart\" to insert a \"Clustered Column Chart.\" Right-click the chart, select \"Move Chart\", and place it in a new worksheet named \"Chart1.\""
+    },
+    {
+      "index": 45,
+      "instruction": "Open Word and create a new blank document."
+    },
+    {
+      "index": 46,
+      "instruction": "At the beginning of the document, type the title \"2023 First Half-Year Sales Report,\" and apply the size 26, bold, dark blue, and center alignment."
+    },
+    {
+      "index": 53,
+      "instruction": "Switch to Excel, select the column chart you created, and press Ctrl+C to copy it. Return to Word, click the drop-down arrow under \"Paste\" in the \"Home\" tab, and choose either \"Link & Keep Source Formatting\" or \"Picture\" to embed the chart."
+    },
+    {
+      "index": 55,
+      "instruction": "Click \"File\", choose \"Save As\", and select \"PDF (*.pdf)\" as the save type to export the final report.\""
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 6,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 10
+  }
+}

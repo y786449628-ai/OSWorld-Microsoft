@@ -1,0 +1,111 @@
+{
+  "id": "700fd59f-e3e6-22a9-bbe4-18e48690c507",
+  "snapshot": "excel",
+  "instruction": "Could you compile the box office data from these images into the corresponding worksheet of the 'Seven-Day Box Office Summary.xlsx' file, including columns for 'Daily Box Office,' 'Total Tickets Sold,' 'Online Tickets Sold,' 'Operating Cinemas,' 'Total Screenings,' and 'Average Ticket Price.'?",
+  "source": "Microsoft_03 true stage 5",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-12.png",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million +\\2025-12-12.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-13.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million +\\2025-12-13.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million +/2025-12-14.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million +\\2025-12-14.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-11.png",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million -\\2025-12-11.png"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-15.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million -\\2025-12-15.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-16.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million -\\2025-12-16.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Records/Daily Box Office 50 Million -/2025-12-17.jpg",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Records\\Daily Box Office 50 Million -\\2025-12-17.jpg"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011256/Desktop/Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Seven-Day Box Office Summary.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_03/logs/MonitoringSnapshots/20251222_011630/Desktop/Movie Box Office Data/Seven-Day Box Office Summary.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\Seven-Day Box Office Summary_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Seven-Day Box Office Summary.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/700fd59f-e3e6-22a9-bbe4-18e48690c507",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Movie Box Office Data\\Seven-Day Box Office Summary.xlsx",
+      "dest": "Seven-Day Box Office Summary.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Seven-Day Box Office Summary_gold.xlsx",
+      "dest": "Seven-Day Box Office Summary_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Seven-Day Box Office Summary.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

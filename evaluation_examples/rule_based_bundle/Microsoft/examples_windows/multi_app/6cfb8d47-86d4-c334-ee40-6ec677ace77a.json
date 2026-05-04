@@ -1,0 +1,86 @@
+{
+  "id": "6cfb8d47-86d4-c334-ee40-6ec677ace77a",
+  "snapshot": "excel",
+  "instruction": "Could you insert a linked table from the Excel dataset into the Word document and format it?",
+  "source": "Microsoft_34 true stage 7",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005553/Desktop/material/Financial.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Financial.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005553/Desktop/material/Project_Report.docx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Project_Report.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005553/Desktop/material/Project_Tracking.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\material\\Project_Tracking.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_34/logs/MonitoringSnapshots/20260111_005939/Desktop/material/Project_Report.docx",
+            "path": "C:\\Users\\78644\\Documents\\Project_Report_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\material\\Project_Report.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6cfb8d47-86d4-c334-ee40-6ec677ace77a",
+  "related_apps": [
+    "word",
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\material\\Project_Report.docx",
+      "dest": "Project_Report.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Project_Report_gold.docx",
+      "dest": "Project_Report_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Project_Report.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

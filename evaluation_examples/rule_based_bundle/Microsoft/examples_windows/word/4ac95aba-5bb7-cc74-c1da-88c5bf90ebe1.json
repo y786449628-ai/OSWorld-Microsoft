@@ -1,0 +1,77 @@
+{
+  "id": "4ac95aba-5bb7-cc74-c1da-88c5bf90ebe1",
+  "snapshot": "word",
+  "instruction": "Could you insert a hyperlink for 'Official Website' and adjust the page layout to landscape with 1-inch margins?",
+  "source": "Microsoft_48 true stage 6",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154700/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\78644\\Desktop\\Conference_Agenda.docx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154809/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\78644\\Documents\\Conference_Agenda_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Conference_Agenda.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/4ac95aba-5bb7-cc74-c1da-88c5bf90ebe1",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Conference_Agenda.docx",
+      "dest": "Conference_Agenda.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\Conference_Agenda_gold.docx",
+      "dest": "Conference_Agenda_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Conference_Agenda.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

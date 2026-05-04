@@ -1,0 +1,2752 @@
+{
+  "source_name": "Microsoft_70",
+  "source_file": "Microsoft_70.txt",
+  "source_id": "1eb18c464df8",
+  "source_question": "Create a cross-application business analysis deliverable using Microsoft Excel 365, and Microsoft PowerPoint 365. Start by building a detailed sales performance and forecasting model in Excel with formulas, charts, and formatting. Then, use the Excel data to create a presentation in PowerPoint with linked charts.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a detailed sales performance and forecasting model in Excel with formulas, charts, and formatting?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you prepare a new PowerPoint presentation for the business analysis deliverable?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you link the Excel charts to the PowerPoint presentation?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you finalize the PowerPoint presentation with the linked Excel data?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "format_excel_headers",
+      "instruction": "Could you format the headers in the Excel file to be bold, centered, and with a light gray background?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open Microsoft Excel 365, open Sales_Raw_Data.xlsx, format headers.",
+      "planned_input_snapshot": "20260114_190504",
+      "planned_gold_snapshot": "20260114_190522",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to column H to highlight values greater than 2000 in green?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Apply conditional formatting to column H.",
+      "planned_input_snapshot": "20260114_190522",
+      "planned_gold_snapshot": "20260114_190607",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_clustered_column_chart",
+      "instruction": "Could you create a clustered column chart for columns F and G, and add data labels outside the end of the bars?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Create a clustered column chart and add data labels.",
+      "planned_input_snapshot": "20260114_190607",
+      "planned_gold_snapshot": "20260114_190737",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_forecast_sheet",
+      "instruction": "Could you create a forecast sheet with a line chart, set the forecast end to 12/31/2026, and confidence interval to 95%?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Create a forecast sheet with a line chart.",
+      "planned_input_snapshot": "20260114_190737",
+      "planned_gold_snapshot": "20260114_190811",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "rename_worksheet_and_finalize_excel",
+      "instruction": "Could you rename the new worksheet to 'Revenue Forecast' and save the Excel file as Sales_Analysis_Model.xlsx on the Desktop?",
+      "task_kind": "excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Rename the worksheet and save the file.",
+      "planned_input_snapshot": "20260114_190921",
+      "planned_gold_snapshot": "20260114_191005",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "prepare_powerpoint_presentation",
+      "instruction": "Could you prepare a new PowerPoint presentation for the business analysis deliverable by opening an existing template and saving it as Sales_Performance_Presentation.pptx?",
+      "task_kind": "ppt_create_or_edit_slide",
+      "apps": [
+        "ppt"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Open Microsoft PowerPoint 365, open Sales_Performance_Presentation.pptx.",
+      "planned_input_snapshot": "20260114_191048",
+      "planned_gold_snapshot": "20260114_191118",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change; needs review for benchmarkability.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "link_excel_charts_to_powerpoint",
+      "instruction": "Could you link the Excel charts to the PowerPoint presentation and finalize the slides with the linked Excel data?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "ppt",
+        "excel"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        5,
+        6
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Link Excel charts to PowerPoint, format text, apply theme, and save the presentation.",
+      "planned_input_snapshot": "20260114_191118",
+      "planned_gold_snapshot": "20260114_191319",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes, though subtle.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "format_excel_headers",
+      "instruction": "Could you format the headers in the Excel file to be bold, centered, and with a light gray background?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 5,
+      "trajectory_evidence": "Open Microsoft Excel 365, open Sales_Raw_Data.xlsx, format headers.",
+      "planned_input_snapshot": "20260114_190504",
+      "planned_gold_snapshot": "20260114_190522",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20260114_190504",
+      "gold_snapshot": "20260114_190522",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Sales_Raw_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "10555ec3-9c25-1f24-2598-40cce1123284",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/10555ec3-9c25-1f24-2598-40cce1123284.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to column H to highlight values greater than 2000 in green?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 7,
+      "trajectory_evidence": "Apply conditional formatting to column H.",
+      "planned_input_snapshot": "20260114_190522",
+      "planned_gold_snapshot": "20260114_190607",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20260114_190522",
+      "gold_snapshot": "20260114_190607",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Sales_Raw_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "4cb3d727-6167-4291-b676-c5d525506443",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/4cb3d727-6167-4291-b676-c5d525506443.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_clustered_column_chart",
+      "instruction": "Could you create a clustered column chart for columns F and G, and add data labels outside the end of the bars?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 8,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Create a clustered column chart and add data labels.",
+      "planned_input_snapshot": "20260114_190607",
+      "planned_gold_snapshot": "20260114_190737",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20260114_190607",
+      "gold_snapshot": "20260114_190737",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Sales_Raw_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.84,
+        "reason": "Workbook drawing/chart count increased from 0 to 1.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_190607",
+        "trajectory_window": {
+          "trajectory_start": 8,
+          "trajectory_end": 9,
+          "search_start_index": 3,
+          "search_end_index": 4,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_190607",
+          "planned_gold_snapshot": "20260114_190737"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "4aa7a728-34c8-5ccb-896b-75864626b63d",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/4aa7a728-34c8-5ccb-896b-75864626b63d.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_forecast_sheet",
+      "instruction": "Could you create a forecast sheet with a line chart, set the forecast end to 12/31/2026, and confidence interval to 95%?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Create a forecast sheet with a line chart.",
+      "planned_input_snapshot": "20260114_190737",
+      "planned_gold_snapshot": "20260114_190811",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20260114_190737",
+      "gold_snapshot": "20260114_190811",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Sales_Raw_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "55baae18-7ac3-1f25-af14-e96137b2ceb2",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/55baae18-7ac3-1f25-af14-e96137b2ceb2.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "rename_worksheet_and_finalize_excel_and_prepare_powerpoint_presentation",
+      "instruction": "Could you rename the new worksheet to 'Revenue Forecast' and save the Excel file as Sales_Analysis_Model.xlsx on the Desktop, and then prepare a new PowerPoint presentation for the business analysis deliverable by opening an existing template and saving it as Sales_Performance_Presentation.pptx?",
+      "task_kind": "excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 12,
+      "trajectory_end": 15,
+      "trajectory_evidence": "Rename the worksheet and save the file. | Open Microsoft PowerPoint 365, open Sales_Performance_Presentation.pptx.",
+      "planned_input_snapshot": "20260114_190921",
+      "planned_gold_snapshot": "20260114_191118",
+      "snapshot_evidence": "material/Sales_Raw_Data.xlsx changed: worksheet names changed. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20260114_190811",
+      "gold_snapshot": "20260114_191118",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Sales_Raw_Data.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find a workbook sheet rename transition. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "chain_input_snapshot": "20260114_190811",
+        "chain_input_replaced": "20260114_190921",
+        "merged_with_following_stage": {
+          "stage_index": 6,
+          "stage_name": "prepare_powerpoint_presentation",
+          "reason": "Could not find target file content change."
+        }
+      },
+      "merged_stage_names": [
+        "rename_worksheet_and_finalize_excel",
+        "prepare_powerpoint_presentation"
+      ],
+      "merged_stage_indices": [
+        5,
+        6
+      ],
+      "generated_examples": [
+        {
+          "example_id": "e5e7e988-0110-80b2-5642-f94f9ee30fff",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/e5e7e988-0110-80b2-5642-f94f9ee30fff.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "link_excel_charts_to_powerpoint",
+      "instruction": "Could you link the Excel charts to the PowerPoint presentation and finalize the slides with the linked Excel data?",
+      "task_kind": "cross_app_transfer_visible_artifact",
+      "apps": [
+        "ppt",
+        "excel"
+      ],
+      "expected_artifact": "pptx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5,
+        6
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Link Excel charts to PowerPoint, format text, apply theme, and save the presentation.",
+      "planned_input_snapshot": "20260114_191118",
+      "planned_gold_snapshot": "20260114_191319",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes, though subtle.",
+      "input_snapshot": "20260114_191118",
+      "gold_snapshot": "20260114_191319",
+      "linked_preview_tasks": [],
+      "target_relative_path": "material/Sales_Performance_Presentation.pptx",
+      "evaluator_candidate": "compare_pptx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_gold_snapshot": "20260114_191319",
+        "trajectory_window": {
+          "trajectory_start": 16,
+          "trajectory_end": 20,
+          "search_start_index": 11,
+          "search_end_index": 13,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_191118",
+          "planned_gold_snapshot": "20260114_191319"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "830c7713-0963-f8c5-8890-49177468bb84",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/830c7713-0963-f8c5-8890-49177468bb84.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a detailed sales performance and forecasting model in Excel with formulas, charts, and formatting?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you prepare a new PowerPoint presentation for the business analysis deliverable?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you link the Excel charts to the PowerPoint presentation?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you finalize the PowerPoint presentation with the linked Excel data?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260114_190504",
+    "20260114_190522",
+    "20260114_190607",
+    "20260114_190702",
+    "20260114_190737",
+    "20260114_190811",
+    "20260114_190921",
+    "20260114_191005",
+    "20260114_191048",
+    "20260114_191050",
+    "20260114_191118",
+    "20260114_191214",
+    "20260114_191255",
+    "20260114_191319",
+    "20260114_191342",
+    "20260114_191344"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260114_190504",
+      "to": "20260114_190522",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10999,
+              "to": 11029
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_190522",
+      "to": "20260114_190607",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11029,
+              "to": 11090
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_190607",
+      "to": "20260114_190702",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11090,
+              "to": 11226
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_190702",
+      "to": "20260114_190737",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11226,
+              "to": 16420
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_190737",
+      "to": "20260114_190811",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ],
+            "to": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16420,
+              "to": 16636
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ],
+                "to": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_190811",
+      "to": "20260114_190921",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: spreadsheet content changed from 104 to 120 non-empty cells; worksheet names changed; chart/drawing count changed from 1 to 2; new visible headers or values include: Forecast(Revenue Difference), Lower Confidence Bound(Revenue Difference), Upper Confidence Bound(Revenue Difference).",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet + create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Sheet2",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "nonempty_cells": {
+            "from": 104,
+            "to": 120
+          },
+          "chart_count": {
+            "from": 1,
+            "to": 2
+          },
+          "headers": {
+            "from": [
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488",
+              "1888"
+            ],
+            "to": [
+              "Month",
+              "Revenue Difference",
+              "Forecast(Revenue Difference)",
+              "Lower Confidence Bound(Revenue Difference)",
+              "Upper Confidence Bound(Revenue Difference)",
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488"
+            ]
+          }
+        },
+        "headers_added": [
+          "Forecast(Revenue Difference)",
+          "Lower Confidence Bound(Revenue Difference)",
+          "Upper Confidence Bound(Revenue Difference)"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 16636,
+              "to": 24023
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Sheet2",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "nonempty_cells": {
+                "from": 104,
+                "to": 120
+              },
+              "chart_count": {
+                "from": 1,
+                "to": 2
+              },
+              "headers": {
+                "from": [
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488",
+                  "1888"
+                ],
+                "to": [
+                  "Month",
+                  "Revenue Difference",
+                  "Forecast(Revenue Difference)",
+                  "Lower Confidence Bound(Revenue Difference)",
+                  "Upper Confidence Bound(Revenue Difference)",
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260114_190921",
+      "to": "20260114_191005",
+      "human_summary": "material/Sales_Raw_Data.xlsx changed: worksheet names changed.",
+      "likely_stage": "rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Sales_Raw_Data.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet2",
+              "Sheet1"
+            ],
+            "to": [
+              "Revenue Forecast",
+              "Sheet1"
+            ]
+          },
+          "headers": {
+            "from": [
+              "Month",
+              "Revenue Difference",
+              "Forecast(Revenue Difference)",
+              "Lower Confidence Bound(Revenue Difference)",
+              "Upper Confidence Bound(Revenue Difference)",
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488"
+            ],
+            "to": [
+              "Month",
+              "Revenue Difference",
+              "Forecast(Revenue Difference)",
+              "Lower Confidence Bound(Revenue Difference)",
+              "Upper Confidence Bound(Revenue Difference)",
+              "Region",
+              "Product",
+              "Sales Rep",
+              "Month",
+              "Units Sold",
+              "Actual Revenue (USD)",
+              "Forecasted Revenue",
+              "Revenue Difference",
+              "North",
+              "Alpha",
+              "Michael Chen",
+              "45689",
+              "118",
+              "23600",
+              "25488"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Raw_Data.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 24023,
+              "to": 24061
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet2",
+                  "Sheet1"
+                ],
+                "to": [
+                  "Revenue Forecast",
+                  "Sheet1"
+                ]
+              },
+              "headers": {
+                "from": [
+                  "Month",
+                  "Revenue Difference",
+                  "Forecast(Revenue Difference)",
+                  "Lower Confidence Bound(Revenue Difference)",
+                  "Upper Confidence Bound(Revenue Difference)",
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488"
+                ],
+                "to": [
+                  "Month",
+                  "Revenue Difference",
+                  "Forecast(Revenue Difference)",
+                  "Lower Confidence Bound(Revenue Difference)",
+                  "Upper Confidence Bound(Revenue Difference)",
+                  "Region",
+                  "Product",
+                  "Sales Rep",
+                  "Month",
+                  "Units Sold",
+                  "Actual Revenue (USD)",
+                  "Forecasted Revenue",
+                  "Revenue Difference",
+                  "North",
+                  "Alpha",
+                  "Michael Chen",
+                  "45689",
+                  "118",
+                  "23600",
+                  "25488"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260114_191005",
+      "to": "20260114_191048",
+      "human_summary": "New files appeared: Sales_Analysis_Model.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Sales_Analysis_Model.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sales_Analysis_Model.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260114_191048",
+      "to": "20260114_191050",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260114_191050",
+      "to": "20260114_191118",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260114_191118",
+      "to": "20260114_191214",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "size": {
+              "from": 38176,
+              "to": 41632
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 38176,
+              "to": 41632
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260114_191214",
+      "to": "20260114_191255",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "size": {
+              "from": 41632,
+              "to": 41649
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 41632,
+              "to": 41649
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260114_191255",
+      "to": "20260114_191319",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "size": {
+              "from": 41649,
+              "to": 464263
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Sales_Performance_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 41649,
+              "to": 464263
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260114_191319",
+      "to": "20260114_191342",
+      "human_summary": "New files appeared: Sales_Performance_Presentation.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Sales_Performance_Presentation.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Sales_Performance_Presentation.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260114_191342",
+      "to": "20260114_191344",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_70",
+    "snapshot_count": 16,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260114_190504",
+        "to": "20260114_190522",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ],
+              "to": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10999,
+                "to": 11029
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ],
+                  "to": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260114_190522",
+        "to": "20260114_190607",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ],
+              "to": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11029,
+                "to": 11090
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ],
+                  "to": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260114_190607",
+        "to": "20260114_190702",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ],
+              "to": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11090,
+                "to": 11226
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ],
+                  "to": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260114_190702",
+        "to": "20260114_190737",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ],
+              "to": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11226,
+                "to": 16420
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ],
+                  "to": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260114_190737",
+        "to": "20260114_190811",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ],
+              "to": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 16420,
+                "to": 16636
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ],
+                  "to": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260114_190811",
+        "to": "20260114_190921",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: spreadsheet content changed from 104 to 120 non-empty cells; worksheet names changed; chart/drawing count changed from 1 to 2; new visible headers or values include: Forecast(Revenue Difference), Lower Confidence Bound(Revenue Difference), Upper Confidence Bound(Revenue Difference).",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet + create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet1"
+              ],
+              "to": [
+                "Sheet2",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 1,
+              "to": 2
+            },
+            "nonempty_cells": {
+              "from": 104,
+              "to": 120
+            },
+            "chart_count": {
+              "from": 1,
+              "to": 2
+            },
+            "headers": {
+              "from": [
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488",
+                "1888"
+              ],
+              "to": [
+                "Month",
+                "Revenue Difference",
+                "Forecast(Revenue Difference)",
+                "Lower Confidence Bound(Revenue Difference)",
+                "Upper Confidence Bound(Revenue Difference)",
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488"
+              ]
+            }
+          },
+          "headers_added": [
+            "Forecast(Revenue Difference)",
+            "Lower Confidence Bound(Revenue Difference)",
+            "Upper Confidence Bound(Revenue Difference)"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 16636,
+                "to": 24023
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Sheet2",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 1,
+                  "to": 2
+                },
+                "nonempty_cells": {
+                  "from": 104,
+                  "to": 120
+                },
+                "chart_count": {
+                  "from": 1,
+                  "to": 2
+                },
+                "headers": {
+                  "from": [
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488",
+                    "1888"
+                  ],
+                  "to": [
+                    "Month",
+                    "Revenue Difference",
+                    "Forecast(Revenue Difference)",
+                    "Lower Confidence Bound(Revenue Difference)",
+                    "Upper Confidence Bound(Revenue Difference)",
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260114_190921",
+        "to": "20260114_191005",
+        "human_summary": "material/Sales_Raw_Data.xlsx changed: worksheet names changed.",
+        "likely_stage": "rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "material/Sales_Raw_Data.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet2",
+                "Sheet1"
+              ],
+              "to": [
+                "Revenue Forecast",
+                "Sheet1"
+              ]
+            },
+            "headers": {
+              "from": [
+                "Month",
+                "Revenue Difference",
+                "Forecast(Revenue Difference)",
+                "Lower Confidence Bound(Revenue Difference)",
+                "Upper Confidence Bound(Revenue Difference)",
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488"
+              ],
+              "to": [
+                "Month",
+                "Revenue Difference",
+                "Forecast(Revenue Difference)",
+                "Lower Confidence Bound(Revenue Difference)",
+                "Upper Confidence Bound(Revenue Difference)",
+                "Region",
+                "Product",
+                "Sales Rep",
+                "Month",
+                "Units Sold",
+                "Actual Revenue (USD)",
+                "Forecasted Revenue",
+                "Revenue Difference",
+                "North",
+                "Alpha",
+                "Michael Chen",
+                "45689",
+                "118",
+                "23600",
+                "25488"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Raw_Data.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 24023,
+                "to": 24061
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet2",
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Revenue Forecast",
+                    "Sheet1"
+                  ]
+                },
+                "headers": {
+                  "from": [
+                    "Month",
+                    "Revenue Difference",
+                    "Forecast(Revenue Difference)",
+                    "Lower Confidence Bound(Revenue Difference)",
+                    "Upper Confidence Bound(Revenue Difference)",
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488"
+                  ],
+                  "to": [
+                    "Month",
+                    "Revenue Difference",
+                    "Forecast(Revenue Difference)",
+                    "Lower Confidence Bound(Revenue Difference)",
+                    "Upper Confidence Bound(Revenue Difference)",
+                    "Region",
+                    "Product",
+                    "Sales Rep",
+                    "Month",
+                    "Units Sold",
+                    "Actual Revenue (USD)",
+                    "Forecasted Revenue",
+                    "Revenue Difference",
+                    "North",
+                    "Alpha",
+                    "Michael Chen",
+                    "45689",
+                    "118",
+                    "23600",
+                    "25488"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260114_191005",
+        "to": "20260114_191048",
+        "human_summary": "New files appeared: Sales_Analysis_Model.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Sales_Analysis_Model.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Sales_Analysis_Model.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260114_191048",
+        "to": "20260114_191050",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260114_191050",
+        "to": "20260114_191118",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260114_191118",
+        "to": "20260114_191214",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Sales_Performance_Presentation.pptx",
+              "size": {
+                "from": 38176,
+                "to": 41632
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Performance_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 38176,
+                "to": 41632
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260114_191214",
+        "to": "20260114_191255",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Sales_Performance_Presentation.pptx",
+              "size": {
+                "from": 41632,
+                "to": 41649
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Performance_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 41632,
+                "to": 41649
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260114_191255",
+        "to": "20260114_191319",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "material/Sales_Performance_Presentation.pptx",
+              "size": {
+                "from": 41649,
+                "to": 464263
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "material/Sales_Performance_Presentation.pptx",
+              "suffix": "pptx",
+              "size": {
+                "from": 41649,
+                "to": 464263
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260114_191319",
+        "to": "20260114_191342",
+        "human_summary": "New files appeared: Sales_Performance_Presentation.pptx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Sales_Performance_Presentation.pptx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Sales_Performance_Presentation.pptx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260114_191342",
+        "to": "20260114_191344",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Open Microsoft Excel 365."
+    },
+    {
+      "index": 3,
+      "instruction": "Select 'File','Open','This PC','Desktop','material' in sequence, click Open, then select the file named Sales_Raw_Data.xlsx."
+    },
+    {
+      "index": 4,
+      "instruction": "Click cell A1, select 'Home','Bold' in sequence to emphasize the header row."
+    },
+    {
+      "index": 5,
+      "instruction": "Select cells A1:H1, click 'Home','Fill Color', and choose Light Gray, then apply 'Center' alignment."
+    },
+    {
+      "index": 6,
+      "instruction": "Select column H, click 'Home','Conditional Formatting','New Rule' in sequence."
+    },
+    {
+      "index": 7,
+      "instruction": "Choose Format only cells that contain, set Cell Value greater than 2000, click Format, select Fill Color Green, and click OK."
+    },
+    {
+      "index": 8,
+      "instruction": "Select column F and column G by holding Ctrl, then click 'Insert','Insert Column or Bar Chart','Clustered Column' in sequence."
+    },
+    {
+      "index": 9,
+      "instruction": "Select the chart, click 'Chart Design','Add Chart Element','Data Labels','Outside End' in sequence."
+    },
+    {
+      "index": 10,
+      "instruction": "Click anywhere in the worksheet, then select 'Data','Forecast Sheet' in sequence."
+    },
+    {
+      "index": 11,
+      "instruction": "Set Forecast End to 12/31/2026, Confidence Interval to 95%, choose Line Chart, and click Create."
+    },
+    {
+      "index": 12,
+      "instruction": "Rename the new worksheet to Revenue Forecast."
+    },
+    {
+      "index": 13,
+      "instruction": "Click 'File','Save As', name the file Sales_Analysis_Model.xlsx, and save it to Desktop."
+    },
+    {
+      "index": 14,
+      "instruction": "Open Microsoft PowerPoint 365."
+    },
+    {
+      "index": 15,
+      "instruction": "Select 'File','Open','This PC','Desktop','material' in sequence, click Open, then select the file named Sales_Performance_Presentation.pptx."
+    },
+    {
+      "index": 16,
+      "instruction": "Select the second slide, click inside the content placeholder, then select 'Insert','Object','Create from File' in sequence."
+    },
+    {
+      "index": 17,
+      "instruction": "Browse to Desktop, select Sales_Analysis_Model.xlsx, check Link, and click OK."
+    },
+    {
+      "index": 18,
+      "instruction": "Click the third slide, select the text, click 'Home','Font Size', set it to 18, and apply Italic formatting."
+    },
+    {
+      "index": 19,
+      "instruction": "Select all slides, click 'Design','Themes','Retrospect' in sequence."
+    },
+    {
+      "index": 20,
+      "instruction": "Click 'File','Save As', name the file Sales_Performance_Presentation.pptx, and save it to Desktop."
+    },
+    {
+      "index": 21,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 6,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 16
+  }
+}

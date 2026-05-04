@@ -1,0 +1,83 @@
+{
+  "id": "2d2800bf-1f96-252c-feee-4aadecc86cd0",
+  "snapshot": "excel",
+  "instruction": "Could you create a table named 'Beverage Retail Situation' in Excel and set the title format?",
+  "source": "Microsoft_43 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_43/logs/MonitoringSnapshots/20260109_093446/Desktop/Material/Retail Statistics table.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Material\\Retail Statistics table.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_43/logs/MonitoringSnapshots/20260109_093541/Desktop/Material/Retail Statistics table.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Retail Statistics table_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Material\\Retail Statistics table.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/2d2800bf-1f96-252c-feee-4aadecc86cd0",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Material\\Retail Statistics table.xlsx",
+      "dest": "Retail Statistics table.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Retail Statistics table_gold.xlsx",
+      "dest": "Retail Statistics table_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Retail Statistics table.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1276 @@
+{
+  "source_name": "Microsoft_26",
+  "source_file": "Microsoft_26.txt",
+  "source_id": "0b510a8ddfc9",
+  "source_question": "System export a detail for fruit sales, which only including Fruit and detail column, combine custoemer and revenue into one column. Now Manager want to view the sales contribution for each fruit, want to view from chart view.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you export the fruit sales data, including only the Fruit and detail columns, and combine the customer and revenue into one column?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart to show the sales contribution for each fruit based on the exported data?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_workbook",
+      "instruction": "Could you open the Material/Detail.xlsx file and prepare it for data manipulation?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Excel, create a new workbook, and then open the Material/Detail.xlsx file.",
+      "planned_input_snapshot": "20260109_113403",
+      "planned_gold_snapshot": "20260109_113658",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 14 to 99 non-empty cells; worksheet names changed; new visible headers or values include: Attribute, Value.1, Value.2, Grape, William: 400; Tom: 250, Detail - Copy.2.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "transform_data_for_sales_contribution",
+      "instruction": "Could you transform the data in the Material/Detail.xlsx file to include only the Fruit and detail columns, and combine the customer and revenue into one column?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Select and manipulate data, including duplicating, splitting, and unpivoting columns, and renaming them.",
+      "planned_input_snapshot": "20260109_113658",
+      "planned_gold_snapshot": "20260109_113855",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 99 to 81 non-empty cells; new visible headers or values include: Customer, Sales Revenue, Row Labels, Sum of Sales Revenue.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_pivot_table_for_sales_contribution",
+      "instruction": "Could you create a pivot table to show the sales contribution for each fruit based on the transformed data?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Create a pivot table, add fields, and sort the data.",
+      "planned_input_snapshot": "20260109_113855",
+      "planned_gold_snapshot": "20260109_114320",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 81 to 2650 non-empty cells; new visible headers or values include: Banana, Apple, Orange, Coconut, Pear, 3.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_sales_contribution_chart",
+      "instruction": "Could you create a chart to show the sales contribution for each fruit based on the pivot table?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 22,
+      "trajectory_end": 35,
+      "trajectory_evidence": "Prepare data for the chart, create the chart, and format it.",
+      "planned_input_snapshot": "20260109_114320",
+      "planned_gold_snapshot": "20260109_114653",
+      "snapshot_evidence": "New files appeared: final result.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "save_final_result",
+      "instruction": "Could you save the final result as 'final result.xlsx'?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 37,
+      "trajectory_end": 37,
+      "trajectory_evidence": "Save the final result as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260109_114653",
+      "planned_gold_snapshot": "20260109_114655",
+      "snapshot_evidence": "No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "needs_review",
+      "reason": "No observable state change in the snapshot transition.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_prepare_workbook",
+      "instruction": "Could you open the Material/Detail.xlsx file and prepare it for data manipulation?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open Excel, create a new workbook, and then open the Material/Detail.xlsx file.",
+      "planned_input_snapshot": "20260109_113403",
+      "planned_gold_snapshot": "20260109_113658",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 14 to 99 non-empty cells; worksheet names changed; new visible headers or values include: Attribute, Value.1, Value.2, Grape, William: 400; Tom: 250, Detail - Copy.2.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": "20260109_113403",
+      "gold_snapshot": "20260109_113658",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Material/Detail.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "e3d2b13f-31b5-8345-8290-6fabcbd3d3f6",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/e3d2b13f-31b5-8345-8290-6fabcbd3d3f6.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "transform_data_for_sales_contribution",
+      "instruction": "Could you transform the data in the Material/Detail.xlsx file to include only the Fruit and detail columns, and combine the customer and revenue into one column?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Select and manipulate data, including duplicating, splitting, and unpivoting columns, and renaming them.",
+      "planned_input_snapshot": "20260109_113658",
+      "planned_gold_snapshot": "20260109_113855",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 99 to 81 non-empty cells; new visible headers or values include: Customer, Sales Revenue, Row Labels, Sum of Sales Revenue.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": "20260109_113658",
+      "gold_snapshot": "20260109_113855",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Material/Detail.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "9cdca17a-899e-5bb1-c71d-809255ce23b2",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/9cdca17a-899e-5bb1-c71d-809255ce23b2.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "create_pivot_table_for_sales_contribution",
+      "instruction": "Could you create a pivot table to show the sales contribution for each fruit based on the transformed data?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 16,
+      "trajectory_end": 20,
+      "trajectory_evidence": "Create a pivot table, add fields, and sort the data.",
+      "planned_input_snapshot": "20260109_113855",
+      "planned_gold_snapshot": "20260109_114320",
+      "snapshot_evidence": "Material/Detail.xlsx changed: spreadsheet content changed from 81 to 2650 non-empty cells; new visible headers or values include: Banana, Apple, Orange, Coconut, Pear, 3.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": "20260109_113855",
+      "gold_snapshot": "20260109_114320",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Material/Detail.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook chart growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "9f4a59b4-5c5e-bc76-0dab-f89518b2d2c4",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/9f4a59b4-5c5e-bc76-0dab-f89518b2d2c4.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "create_sales_contribution_chart_and_save_final_result",
+      "instruction": "Could you create a chart to show the sales contribution for each fruit based on the pivot table, and then save the final result as 'final result.xlsx'?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 22,
+      "trajectory_end": 37,
+      "trajectory_evidence": "Prepare data for the chart, create the chart, and format it. | Save the final result as 'final result.xlsx'.",
+      "planned_input_snapshot": "20260109_114320",
+      "planned_gold_snapshot": "20260109_114655",
+      "snapshot_evidence": "New files appeared: final result.xlsx. | No observable file or directory change was detected between these snapshots.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with clear state changes.",
+      "input_snapshot": "20260109_114320",
+      "gold_snapshot": "20260109_114655",
+      "linked_preview_tasks": [],
+      "target_relative_path": "final result.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook chart growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1,
+        "merged_with_following_stage": {
+          "stage_index": 5,
+          "stage_name": "save_final_result",
+          "reason": "Could not find target file appearance."
+        }
+      },
+      "merged_stage_names": [
+        "create_sales_contribution_chart",
+        "save_final_result"
+      ],
+      "merged_stage_indices": [
+        4,
+        5
+      ],
+      "generated_examples": [
+        {
+          "example_id": "32ae5de5-cfc5-9268-daf1-e6f684179377",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/32ae5de5-cfc5-9268-daf1-e6f684179377.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you export the fruit sales data, including only the Fruit and detail columns, and combine the customer and revenue into one column?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a chart to show the sales contribution for each fruit based on the exported data?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260109_113403",
+    "20260109_113658",
+    "20260109_113855",
+    "20260109_114320",
+    "20260109_114653",
+    "20260109_114655"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260109_113403",
+      "to": "20260109_113658",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 14 to 99 non-empty cells; worksheet names changed; new visible headers or values include: Attribute, Value.1, Value.2, Grape, William: 400; Tom: 250, Detail - Copy.2.",
+      "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Table1 (2)",
+              "Sheet1"
+            ]
+          },
+          "worksheet_count": {
+            "from": 1,
+            "to": 2
+          },
+          "nonempty_cells": {
+            "from": 14,
+            "to": 99
+          },
+          "headers": {
+            "from": [
+              "Product",
+              "Detail"
+            ],
+            "to": [
+              "Product",
+              "Detail",
+              "Attribute",
+              "Value.1",
+              "Value.2",
+              "Grape",
+              "William: 400; Tom: 250",
+              "Detail - Copy.2",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ]
+          }
+        },
+        "headers_added": [
+          "Attribute",
+          "Value.1",
+          "Value.2",
+          "Grape",
+          "William: 400; Tom: 250",
+          "Detail - Copy.2",
+          " Tom",
+          "250"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17310,
+              "to": 21666
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Table1 (2)",
+                  "Sheet1"
+                ]
+              },
+              "worksheet_count": {
+                "from": 1,
+                "to": 2
+              },
+              "nonempty_cells": {
+                "from": 14,
+                "to": 99
+              },
+              "headers": {
+                "from": [
+                  "Product",
+                  "Detail"
+                ],
+                "to": [
+                  "Product",
+                  "Detail",
+                  "Attribute",
+                  "Value.1",
+                  "Value.2",
+                  "Grape",
+                  "William: 400; Tom: 250",
+                  "Detail - Copy.2",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_113658",
+      "to": "20260109_113855",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 99 to 81 non-empty cells; new visible headers or values include: Customer, Sales Revenue, Row Labels, Sum of Sales Revenue.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 99,
+            "to": 81
+          },
+          "headers": {
+            "from": [
+              "Product",
+              "Detail",
+              "Attribute",
+              "Value.1",
+              "Value.2",
+              "Grape",
+              "William: 400; Tom: 250",
+              "Detail - Copy.2",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ],
+            "to": [
+              "Product",
+              "Customer",
+              "Sales Revenue",
+              "Row Labels",
+              "Sum of Sales Revenue",
+              "Grape",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ]
+          }
+        },
+        "headers_added": [
+          "Customer",
+          "Sales Revenue",
+          "Row Labels",
+          "Sum of Sales Revenue"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 21666,
+              "to": 25099
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 99,
+                "to": 81
+              },
+              "headers": {
+                "from": [
+                  "Product",
+                  "Detail",
+                  "Attribute",
+                  "Value.1",
+                  "Value.2",
+                  "Grape",
+                  "William: 400; Tom: 250",
+                  "Detail - Copy.2",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ],
+                "to": [
+                  "Product",
+                  "Customer",
+                  "Sales Revenue",
+                  "Row Labels",
+                  "Sum of Sales Revenue",
+                  "Grape",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_113855",
+      "to": "20260109_114320",
+      "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 81 to 2650 non-empty cells; new visible headers or values include: Banana, Apple, Orange, Coconut, Pear, 3.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Material/Detail.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 81,
+            "to": 2650
+          },
+          "headers": {
+            "from": [
+              "Product",
+              "Customer",
+              "Sales Revenue",
+              "Row Labels",
+              "Sum of Sales Revenue",
+              "Grape",
+              " Tom",
+              "250",
+              "Product",
+              "Detail"
+            ],
+            "to": [
+              "Product",
+              "Customer",
+              "Sales Revenue",
+              "Row Labels",
+              "Sum of Sales Revenue",
+              "Product",
+              "Banana",
+              "Apple",
+              "Orange",
+              "Grape",
+              "Coconut",
+              "Pear",
+              "Grape",
+              " Tom",
+              "250",
+              "3",
+              "100",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        "headers_added": [
+          "Banana",
+          "Apple",
+          "Orange",
+          "Coconut",
+          "Pear",
+          "3",
+          "100",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Material/Detail.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 25099,
+              "to": 42003
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 81,
+                "to": 2650
+              },
+              "headers": {
+                "from": [
+                  "Product",
+                  "Customer",
+                  "Sales Revenue",
+                  "Row Labels",
+                  "Sum of Sales Revenue",
+                  "Grape",
+                  " Tom",
+                  "250",
+                  "Product",
+                  "Detail"
+                ],
+                "to": [
+                  "Product",
+                  "Customer",
+                  "Sales Revenue",
+                  "Row Labels",
+                  "Sum of Sales Revenue",
+                  "Product",
+                  "Banana",
+                  "Apple",
+                  "Orange",
+                  "Grape",
+                  "Coconut",
+                  "Pear",
+                  "Grape",
+                  " Tom",
+                  "250",
+                  "3",
+                  "100",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_114320",
+      "to": "20260109_114653",
+      "human_summary": "New files appeared: final result.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "final result.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "final result.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_114653",
+      "to": "20260109_114655",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_26",
+    "snapshot_count": 6,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260109_113403",
+        "to": "20260109_113658",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 14 to 99 non-empty cells; worksheet names changed; new visible headers or values include: Attribute, Value.1, Value.2, Grape, William: 400; Tom: 250, Detail - Copy.2.",
+        "likely_stage": "enter or edit spreadsheet data + rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet1"
+              ],
+              "to": [
+                "Table1 (2)",
+                "Sheet1"
+              ]
+            },
+            "worksheet_count": {
+              "from": 1,
+              "to": 2
+            },
+            "nonempty_cells": {
+              "from": 14,
+              "to": 99
+            },
+            "headers": {
+              "from": [
+                "Product",
+                "Detail"
+              ],
+              "to": [
+                "Product",
+                "Detail",
+                "Attribute",
+                "Value.1",
+                "Value.2",
+                "Grape",
+                "William: 400; Tom: 250",
+                "Detail - Copy.2",
+                " Tom",
+                "250",
+                "Product",
+                "Detail"
+              ]
+            }
+          },
+          "headers_added": [
+            "Attribute",
+            "Value.1",
+            "Value.2",
+            "Grape",
+            "William: 400; Tom: 250",
+            "Detail - Copy.2",
+            " Tom",
+            "250"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17310,
+                "to": 21666
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Table1 (2)",
+                    "Sheet1"
+                  ]
+                },
+                "worksheet_count": {
+                  "from": 1,
+                  "to": 2
+                },
+                "nonempty_cells": {
+                  "from": 14,
+                  "to": 99
+                },
+                "headers": {
+                  "from": [
+                    "Product",
+                    "Detail"
+                  ],
+                  "to": [
+                    "Product",
+                    "Detail",
+                    "Attribute",
+                    "Value.1",
+                    "Value.2",
+                    "Grape",
+                    "William: 400; Tom: 250",
+                    "Detail - Copy.2",
+                    " Tom",
+                    "250",
+                    "Product",
+                    "Detail"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260109_113658",
+        "to": "20260109_113855",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 99 to 81 non-empty cells; new visible headers or values include: Customer, Sales Revenue, Row Labels, Sum of Sales Revenue.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 99,
+              "to": 81
+            },
+            "headers": {
+              "from": [
+                "Product",
+                "Detail",
+                "Attribute",
+                "Value.1",
+                "Value.2",
+                "Grape",
+                "William: 400; Tom: 250",
+                "Detail - Copy.2",
+                " Tom",
+                "250",
+                "Product",
+                "Detail"
+              ],
+              "to": [
+                "Product",
+                "Customer",
+                "Sales Revenue",
+                "Row Labels",
+                "Sum of Sales Revenue",
+                "Grape",
+                " Tom",
+                "250",
+                "Product",
+                "Detail"
+              ]
+            }
+          },
+          "headers_added": [
+            "Customer",
+            "Sales Revenue",
+            "Row Labels",
+            "Sum of Sales Revenue"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 21666,
+                "to": 25099
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 99,
+                  "to": 81
+                },
+                "headers": {
+                  "from": [
+                    "Product",
+                    "Detail",
+                    "Attribute",
+                    "Value.1",
+                    "Value.2",
+                    "Grape",
+                    "William: 400; Tom: 250",
+                    "Detail - Copy.2",
+                    " Tom",
+                    "250",
+                    "Product",
+                    "Detail"
+                  ],
+                  "to": [
+                    "Product",
+                    "Customer",
+                    "Sales Revenue",
+                    "Row Labels",
+                    "Sum of Sales Revenue",
+                    "Grape",
+                    " Tom",
+                    "250",
+                    "Product",
+                    "Detail"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260109_113855",
+        "to": "20260109_114320",
+        "human_summary": "Material/Detail.xlsx changed: spreadsheet content changed from 81 to 2650 non-empty cells; new visible headers or values include: Banana, Apple, Orange, Coconut, Pear, 3.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Material/Detail.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 81,
+              "to": 2650
+            },
+            "headers": {
+              "from": [
+                "Product",
+                "Customer",
+                "Sales Revenue",
+                "Row Labels",
+                "Sum of Sales Revenue",
+                "Grape",
+                " Tom",
+                "250",
+                "Product",
+                "Detail"
+              ],
+              "to": [
+                "Product",
+                "Customer",
+                "Sales Revenue",
+                "Row Labels",
+                "Sum of Sales Revenue",
+                "Product",
+                "Banana",
+                "Apple",
+                "Orange",
+                "Grape",
+                "Coconut",
+                "Pear",
+                "Grape",
+                " Tom",
+                "250",
+                "3",
+                "100",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          },
+          "headers_added": [
+            "Banana",
+            "Apple",
+            "Orange",
+            "Coconut",
+            "Pear",
+            "3",
+            "100",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Material/Detail.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 25099,
+                "to": 42003
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 81,
+                  "to": 2650
+                },
+                "headers": {
+                  "from": [
+                    "Product",
+                    "Customer",
+                    "Sales Revenue",
+                    "Row Labels",
+                    "Sum of Sales Revenue",
+                    "Grape",
+                    " Tom",
+                    "250",
+                    "Product",
+                    "Detail"
+                  ],
+                  "to": [
+                    "Product",
+                    "Customer",
+                    "Sales Revenue",
+                    "Row Labels",
+                    "Sum of Sales Revenue",
+                    "Product",
+                    "Banana",
+                    "Apple",
+                    "Orange",
+                    "Grape",
+                    "Coconut",
+                    "Pear",
+                    "Grape",
+                    " Tom",
+                    "250",
+                    "3",
+                    "100",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260109_114320",
+        "to": "20260109_114653",
+        "human_summary": "New files appeared: final result.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "final result.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "final result.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260109_114653",
+        "to": "20260109_114655",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Click Excel software shortcut from Windows Start Menu, then click New---Blank workbook"
+    },
+    {
+      "index": 3,
+      "instruction": "Select Menu---File---Open---Browse, then click Desktop, double Click Material, find Detail file and choose it, then click open."
+    },
+    {
+      "index": 4,
+      "instruction": "Select A1 cell to B7 cell, then click Menu---Data, find and click From Table/Range."
+    },
+    {
+      "index": 5,
+      "instruction": "Select Detail Column, then right click detail, select Duplicate Column, will copy a column of Detail."
+    },
+    {
+      "index": 6,
+      "instruction": "Select Detail-Copy column, then click Menu---Home, find and click Split Column, will pop up a frame"
+    },
+    {
+      "index": 7,
+      "instruction": "Select By Delimiter, will pop up Split Column by Delimiter, then select Custom of Select or enter delimiter, then input \";\", then click OK."
+    },
+    {
+      "index": 8,
+      "instruction": "Select Detal-Copy.1 to Detail-Copy.4 column, then click Menu---Transform, find and click unpivot columns."
+    },
+    {
+      "index": 9,
+      "instruction": "Select Value column, then click Menu---Home, then find and click Split Column, will pop up a frame."
+    },
+    {
+      "index": 10,
+      "instruction": "Select By Delimiter, will pop up Split Column by Delimiter, then select Custom of Select or enter delimiter, then input \":\", then click OK."
+    },
+    {
+      "index": 11,
+      "instruction": "Select Value.2 column, then right click, then select Change Type, select Decimal Number."
+    },
+    {
+      "index": 12,
+      "instruction": "Select Menu---Home, then click Close & Load"
+    },
+    {
+      "index": 13,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 14,
+      "instruction": "Click Column B ad Column C, then right click, select delete."
+    },
+    {
+      "index": 15,
+      "instruction": "Click Value.1, modify as \"Customer\", click value.2, modify as \"Sales Revenue\""
+    },
+    {
+      "index": 16,
+      "instruction": "Select A1 cell to C17 cell, then click Menu---Insert, find and click Pivot Table"
+    },
+    {
+      "index": 17,
+      "instruction": "Select Existing Worksheet, then select E1 cell. Click OK button."
+    },
+    {
+      "index": 18,
+      "instruction": "Draw Product to the rows, Sales Revenue to the Values."
+    },
+    {
+      "index": 19,
+      "instruction": "Select F2 cell, right click and select Show Value as, select % of Column total."
+    },
+    {
+      "index": 20,
+      "instruction": "Select F2 cell, click sort from largest to smallest"
+    },
+    {
+      "index": 21,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 22,
+      "instruction": "Select E2 cell to F2 cell, then click Ctrl+C, then right click I1 Cell, then select Transpose."
+    },
+    {
+      "index": 23,
+      "instruction": "Select H1, input \"Product\", Select H2 cell input \"Contribution%\", select H3 cell, input \"Contributor2\""
+    },
+    {
+      "index": 24,
+      "instruction": "Select I3 cell, input \"=I2*360\", Click I3 cell, click Ctrl+C, then select J3 to N3 cell, click Ctrl+V"
+    },
+    {
+      "index": 25,
+      "instruction": "Select H4 cell input \"List2\", select I4 cell, input \"100\", Select J4 cell, input \"90\", select I4, J4 cell, draw to N4 cell."
+    },
+    {
+      "index": 26,
+      "instruction": "Select H5 cell and  H6 cell, input from \"List3\" and \"List 4\", I5 cell input \"0\", I6 cell input \"=I3\", J5 cell input \"=I6\", J6 cell input \"=J3+J5\""
+    },
+    {
+      "index": 27,
+      "instruction": "Select J5 and J6, click Ctrl+C, then select K5 cell to N6 cell, click Ctrl+V"
+    },
+    {
+      "index": 28,
+      "instruction": "Select H1 cell to N1 cell, then click Ctrl+C, click H8 cell, click Ctrl+V"
+    },
+    {
+      "index": 29,
+      "instruction": "Select H9 cell, input \"1\", select I9 cell, input \"=IF(AND($H9>I$5,$H9<I$6),I$4,0)\""
+    },
+    {
+      "index": 30,
+      "instruction": "Select H9 cell, click Menu---Home, Find and click Fill, select Series, select Columns, stop value as 360, then click OK"
+    },
+    {
+      "index": 31,
+      "instruction": "Select I9 cell, Click Ctrl+C, select J9 cell to N9 cell, click Ctrl+V, Select I9 cell to N9 cell, double click draw icon."
+    },
+    {
+      "index": 32,
+      "instruction": "Click Menu---file, find and click Save"
+    },
+    {
+      "index": 33,
+      "instruction": "Select H9 cell to N368 cell, click Menu---Insert, click Recommended Charts, then select Filled Radar, adjust chart position."
+    },
+    {
+      "index": 34,
+      "instruction": "Modify Chart name as \"Sales Contribution%\""
+    },
+    {
+      "index": 35,
+      "instruction": "Click data label, then delete, click Gridlines, then delete"
+    },
+    {
+      "index": 36,
+      "instruction": "Insert Menu---Shape, then insert the percentage value"
+    },
+    {
+      "index": 37,
+      "instruction": "Click Menu---File, then find and click Save as button, then click browse, click desktop, change the file name as \"final result\", then click save button."
+    },
+    {
+      "index": 38,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 6
+  }
+}

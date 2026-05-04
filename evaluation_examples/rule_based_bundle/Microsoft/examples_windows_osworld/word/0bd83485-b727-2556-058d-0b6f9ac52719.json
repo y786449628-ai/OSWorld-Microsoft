@@ -1,0 +1,77 @@
+{
+  "id": "0bd83485-b727-2556-058d-0b6f9ac52719",
+  "snapshot": "word",
+  "instruction": "Could you add page borders and a watermark to the document?",
+  "source": "Microsoft_53 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_53/logs/MonitoringSnapshots/20260110_175512/Desktop/Service_Agreement_Draft.docx",
+            "path": "C:\\Users\\User\\Desktop\\Service_Agreement_Draft.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_53/logs/MonitoringSnapshots/20260110_175758/Desktop/Service_Agreement_Draft.docx",
+            "path": "C:\\Users\\User\\Documents\\Service_Agreement_Draft_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Service_Agreement_Draft.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/0bd83485-b727-2556-058d-0b6f9ac52719",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Service_Agreement_Draft.docx",
+      "dest": "Service_Agreement_Draft.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Service_Agreement_Draft_gold.docx",
+      "dest": "Service_Agreement_Draft_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Service_Agreement_Draft.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

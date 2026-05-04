@@ -1,0 +1,756 @@
+{
+  "source_name": "Microsoft_33",
+  "snapshot_count": 20,
+  "transitions": [
+    {
+      "transition_index": 1,
+      "from": "20260109_225241",
+      "to": "20260109_225348",
+      "human_summary": "material/Project_Tracker.xlsx changed: spreadsheet content changed from 37 to 43 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Project_Tracker.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 37,
+            "to": 43
+          },
+          "headers": {
+            "from": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ],
+            "to": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracker.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9345,
+              "to": 9769
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 37,
+                "to": 43
+              },
+              "headers": {
+                "from": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ],
+                "to": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260109_225348",
+      "to": "20260109_225642",
+      "human_summary": "material/Project_Tracker.xlsx changed: spreadsheet content changed from 43 to 49 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "material/Project_Tracker.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 43,
+            "to": 49
+          },
+          "headers": {
+            "from": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ],
+            "to": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracker.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9769,
+              "to": 9923
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 43,
+                "to": 49
+              },
+              "headers": {
+                "from": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ],
+                "to": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260109_225642",
+      "to": "20260109_225910",
+      "human_summary": "material/Project_Tracker.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "material/Project_Tracker.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ],
+            "to": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracker.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 9923,
+              "to": 15615
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ],
+                "to": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260109_225910",
+      "to": "20260109_225958",
+      "human_summary": "material/Project_Tracker.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "material/Project_Tracker.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ],
+            "to": [
+              "Task ID",
+              "Task Name",
+              "Start Date",
+              "End Date",
+              "Completion %",
+              "Status",
+              "Remaining Days"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Tracker.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 15615,
+              "to": 16632
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ],
+                "to": [
+                  "Task ID",
+                  "Task Name",
+                  "Start Date",
+                  "End Date",
+                  "Completion %",
+                  "Status",
+                  "Remaining Days"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260109_225958",
+      "to": "20260109_230032",
+      "human_summary": "New files appeared: Project_Tracker.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project_Tracker.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Tracker.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260109_230032",
+      "to": "20260109_230034",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260109_230034",
+      "to": "20260109_230104",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260109_230104",
+      "to": "20260109_230203",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 43280,
+              "to": 41461
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 43280,
+              "to": 41461
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260109_230203",
+      "to": "20260109_230230",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 41461,
+              "to": 41152
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 41461,
+              "to": 41152
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260109_230230",
+      "to": "20260109_230307",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 41152,
+              "to": 41241
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 41152,
+              "to": 41241
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260109_230307",
+      "to": "20260109_230421",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 41241,
+              "to": 45400
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 41241,
+              "to": 45400
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260109_230421",
+      "to": "20260109_230443",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 45400,
+              "to": 45484
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 45400,
+              "to": 45484
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260109_230443",
+      "to": "20260109_230553",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 45484,
+              "to": 49385
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 45484,
+              "to": 49385
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260109_230553",
+      "to": "20260109_230634",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 49385,
+              "to": 49390
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 49385,
+              "to": 49390
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260109_230634",
+      "to": "20260109_230642",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260109_230642",
+      "to": "20260109_230713",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 49390,
+              "to": 49406
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 49390,
+              "to": 49406
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260109_230713",
+      "to": "20260109_230747",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "size": {
+              "from": 49406,
+              "to": 189029
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "material/Project_Status_Presentation.pptx",
+            "suffix": "pptx",
+            "size": {
+              "from": 49406,
+              "to": 189029
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260109_230747",
+      "to": "20260109_230822",
+      "human_summary": "New files appeared: Project_Status_Presentation.pptx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Project_Status_Presentation.pptx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Project_Status_Presentation.pptx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260109_230822",
+      "to": "20260109_230824",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ]
+}

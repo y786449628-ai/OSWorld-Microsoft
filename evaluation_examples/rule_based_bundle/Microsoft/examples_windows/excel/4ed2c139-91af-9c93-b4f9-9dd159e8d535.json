@@ -1,0 +1,83 @@
+{
+  "id": "4ed2c139-91af-9c93-b4f9-9dd159e8d535",
+  "snapshot": "excel",
+  "instruction": "Could you create a new worksheet in Excel and enter the students' names along with their midterm and final Chinese test scores?",
+  "source": "Microsoft_02 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180213/Desktop/Material/data.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\data.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_02/logs/MonitoringSnapshots/20251210_180322/Desktop/Material/data.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\data_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/4ed2c139-91af-9c93-b4f9-9dd159e8d535",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\Material\\data.xlsx",
+      "dest": "data.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\data_gold.xlsx",
+      "dest": "data_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "data.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

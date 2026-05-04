@@ -1,0 +1,2521 @@
+{
+  "source_name": "Microsoft_06",
+  "source_file": "Microsoft_06.txt",
+  "source_id": "df943140a7eb",
+  "source_question": "As a Human Resources Data Analyst, you are required to perform a comprehensive audit and statistical analysis of the enterprise wage structure. You must format the master salary table, calculate total and average compensation using SUM, AVERAGE, and AVERAGEIF functions, and determine employee distribution across specific salary and title brackets using COUNTIFS. After applying conditional formatting to highlight top performers and below-average earners, you will generate a 3D Clustered Column chart to visualize the results. Finally, you must perform a multi-level sort and advanced filter on the book sales data to identify top-performing scientific categories before saving the final workbook.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you format the master salary table in Excel?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you calculate the total and average compensation using SUM, AVERAGE, and AVERAGEIF functions in Excel?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you determine the employee distribution across specific salary and title brackets using COUNTIFS in Excel?",
+      "mapped_stage_indices": [
+        3
+      ]
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply conditional formatting to highlight top performers and below-average earners in Excel?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you generate a 3D Clustered Column chart to visualize the results in Excel?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you perform a multi-level sort and advanced filter on the book sales data to identify top-performing scientific categories in Excel?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you save the final workbook in Excel?",
+      "mapped_stage_indices": [
+        7
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "format_master_salary_table",
+      "instruction": "Could you format the master salary table in Excel?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 5,
+      "trajectory_end": 5,
+      "trajectory_evidence": "In the given Sheet1, select the range A1:F1, apply Merge & Center, and ensure the title is perfectly aligned.",
+      "planned_input_snapshot": "20251230_131032",
+      "planned_gold_snapshot": "20251230_131141",
+      "snapshot_evidence": "sheet1.xlsx changed: spreadsheet content changed from 134 to 156 non-empty cells; new visible headers or values include: 9400, 9900.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "calculate_total_and_average_compensation",
+      "instruction": "Could you calculate the total and average compensation using SUM, AVERAGE, and AVERAGEIF functions in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Use the SUM function to add Basic Salary and Position Salary. Calculate the average of the Total Salary column using the AVERAGE function. Use the AVERAGEIF function to calculate the average salary for employees with specific degrees.",
+      "planned_input_snapshot": "20251230_131141",
+      "planned_gold_snapshot": "20251230_131553",
+      "snapshot_evidence": "sheet1.xlsx changed: spreadsheet content changed from 157 to 163 non-empty cells; new visible headers or values include: 8.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "determine_employee_distribution",
+      "instruction": "Could you determine the employee distribution across specific salary and title brackets using COUNTIFS in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Use the COUNTIFS function to count employees who meet both the specific Total Salary range and the Title requirements defined in Table 2.",
+      "planned_input_snapshot": "20251230_131553",
+      "planned_gold_snapshot": "20251230_131929",
+      "snapshot_evidence": "sheet1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        3
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to highlight top performers and below-average earners in Excel?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Apply a rule to format the top 15% of values with 'Light Green Fill with Dark Green Text'. Apply a second rule to format values Below Average with 'Light Red Fill with Dark Red Text'.",
+      "planned_input_snapshot": "20251230_131929",
+      "planned_gold_snapshot": "20251230_132037",
+      "snapshot_evidence": "sheet1.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        4
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "generate_3d_clustered_column_chart",
+      "instruction": "Could you generate a 3D Clustered Column chart to visualize the results in Excel?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Insert a 3D Clustered Column Chart. Set the chart title, apply Chart Style 7, move the Legend to the top, and set the Back Wall to a 'Dashed Grid' pattern fill. Position the chart within the range J13:N27.",
+      "planned_input_snapshot": "20251230_132037",
+      "planned_gold_snapshot": "20251230_132441",
+      "snapshot_evidence": "sheet1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        5
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "rename_sheet",
+      "instruction": "Could you rename the final workbook sheet in Excel?",
+      "task_kind": "excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Rename Sheet1 to 'Employee Salary Statistics Table'.",
+      "planned_input_snapshot": "20251230_132441",
+      "planned_gold_snapshot": "20251230_132501",
+      "snapshot_evidence": "sheet1.xlsx changed: worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_final_workbook",
+      "instruction": "Could you save the final workbook in Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the final workbook as EXCEL.XLSX.",
+      "planned_input_snapshot": "20251230_132501",
+      "planned_gold_snapshot": "20251230_132520",
+      "snapshot_evidence": "sheet1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "format_master_salary_table",
+      "instruction": "Could you format the master salary table in Excel?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 5,
+      "trajectory_end": 5,
+      "trajectory_evidence": "In the given Sheet1, select the range A1:F1, apply Merge & Center, and ensure the title is perfectly aligned.",
+      "planned_input_snapshot": "20251230_131032",
+      "planned_gold_snapshot": "20251230_131141",
+      "snapshot_evidence": "sheet1.xlsx changed: spreadsheet content changed from 134 to 156 non-empty cells; new visible headers or values include: 9400, 9900.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_131032",
+      "gold_snapshot": "20251230_131141",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 134 to 156.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 5,
+          "trajectory_end": 5,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251230_131032",
+          "planned_gold_snapshot": "20251230_131141"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "6d8d4e42-5d48-98ca-953c-1283e89abaa9",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/6d8d4e42-5d48-98ca-953c-1283e89abaa9.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "calculate_total_and_average_compensation",
+      "instruction": "Could you calculate the total and average compensation using SUM, AVERAGE, and AVERAGEIF functions in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 6,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Use the SUM function to add Basic Salary and Position Salary. Calculate the average of the Total Salary column using the AVERAGE function. Use the AVERAGEIF function to calculate the average salary for employees with specific degrees.",
+      "planned_input_snapshot": "20251230_131141",
+      "planned_gold_snapshot": "20251230_131553",
+      "snapshot_evidence": "sheet1.xlsx changed: spreadsheet content changed from 157 to 163 non-empty cells; new visible headers or values include: 8.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_131141",
+      "gold_snapshot": "20251230_131553",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.76,
+        "reason": "Workbook non-empty cells increased from 157 to 163.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20251230_131141",
+        "trajectory_window": {
+          "trajectory_start": 6,
+          "trajectory_end": 8,
+          "search_start_index": 2,
+          "search_end_index": 3,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251230_131141",
+          "planned_gold_snapshot": "20251230_131553"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "9b0e954e-2062-30fd-5059-d321cd7028a4",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/9b0e954e-2062-30fd-5059-d321cd7028a4.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "determine_employee_distribution",
+      "instruction": "Could you determine the employee distribution across specific salary and title brackets using COUNTIFS in Excel?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Use the COUNTIFS function to count employees who meet both the specific Total Salary range and the Title requirements defined in Table 2.",
+      "planned_input_snapshot": "20251230_131553",
+      "planned_gold_snapshot": "20251230_131929",
+      "snapshot_evidence": "sheet1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_131553",
+      "gold_snapshot": "20251230_131929",
+      "linked_preview_tasks": [
+        3
+      ],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "b00e588e-6e62-fcc3-10f4-5dfcdd9ee7d4",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/b00e588e-6e62-fcc3-10f4-5dfcdd9ee7d4.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "apply_conditional_formatting",
+      "instruction": "Could you apply conditional formatting to highlight top performers and below-average earners in Excel?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 10,
+      "trajectory_evidence": "Apply a rule to format the top 15% of values with 'Light Green Fill with Dark Green Text'. Apply a second rule to format values Below Average with 'Light Red Fill with Dark Red Text'.",
+      "planned_input_snapshot": "20251230_131929",
+      "planned_gold_snapshot": "20251230_132037",
+      "snapshot_evidence": "sheet1.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_131929",
+      "gold_snapshot": "20251230_132037",
+      "linked_preview_tasks": [
+        4
+      ],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook content growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "b82ddb57-decd-abb8-ffee-11ad25670e5a",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/b82ddb57-decd-abb8-ffee-11ad25670e5a.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "generate_3d_clustered_column_chart",
+      "instruction": "Could you generate a 3D Clustered Column chart to visualize the results in Excel?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 11,
+      "trajectory_end": 12,
+      "trajectory_evidence": "Insert a 3D Clustered Column Chart. Set the chart title, apply Chart Style 7, move the Legend to the top, and set the Back Wall to a 'Dashed Grid' pattern fill. Position the chart within the range J13:N27.",
+      "planned_input_snapshot": "20251230_132037",
+      "planned_gold_snapshot": "20251230_132441",
+      "snapshot_evidence": "sheet1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_132037",
+      "gold_snapshot": "20251230_132441",
+      "linked_preview_tasks": [
+        5
+      ],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find workbook chart growth. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "a5c53a41-e531-c3e8-0503-6b41665fa19f",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/a5c53a41-e531-c3e8-0503-6b41665fa19f.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "rename_sheet",
+      "instruction": "Could you rename the final workbook sheet in Excel?",
+      "task_kind": "excel_rename_sheet",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        5
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 13,
+      "trajectory_evidence": "Rename Sheet1 to 'Employee Salary Statistics Table'.",
+      "planned_input_snapshot": "20251230_132441",
+      "planned_gold_snapshot": "20251230_132501",
+      "snapshot_evidence": "sheet1.xlsx changed: worksheet names changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_132441",
+      "gold_snapshot": "20251230_132501",
+      "linked_preview_tasks": [],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.78,
+        "reason": "Workbook sheet names changed between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 13,
+          "trajectory_end": 13,
+          "search_start_index": 7,
+          "search_end_index": 7,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20251230_132441",
+          "planned_gold_snapshot": "20251230_132501"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "2ec9d917-01e3-c0bb-9240-fc0785e89154",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/2ec9d917-01e3-c0bb-9240-fc0785e89154.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "save_final_workbook",
+      "instruction": "Could you save the final workbook in Excel?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        6
+      ],
+      "trajectory_start": 14,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the final workbook as EXCEL.XLSX.",
+      "planned_input_snapshot": "20251230_132501",
+      "planned_gold_snapshot": "20251230_132520",
+      "snapshot_evidence": "sheet1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable input and gold snapshots with distinct changes.",
+      "input_snapshot": "20251230_132501",
+      "gold_snapshot": "20251230_132520",
+      "linked_preview_tasks": [
+        7
+      ],
+      "target_relative_path": "sheet1.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.62,
+        "reason": "Could not find target file appearance. Planned snapshots show an observable artifact change; using generic compare_xlsx_files evaluator.",
+        "changed_file_count": 1
+      },
+      "generated_examples": [
+        {
+          "example_id": "60ba3197-93b0-160b-b9cc-cc79611e2a91",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/60ba3197-93b0-160b-b9cc-cc79611e2a91.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 6,
+      "instruction": "Could you perform a multi-level sort and advanced filter on the book sales data to identify top-performing scientific categories in Excel?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20251230_131032",
+    "20251230_131141",
+    "20251230_131210",
+    "20251230_131553",
+    "20251230_131929",
+    "20251230_132037",
+    "20251230_132441",
+    "20251230_132501",
+    "20251230_132520"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20251230_131032",
+      "to": "20251230_131141",
+      "human_summary": "sheet1.xlsx changed: spreadsheet content changed from 134 to 156 non-empty cells; new visible headers or values include: 9400, 9900.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 134,
+            "to": 156
+          },
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              ">=12000",
+              "Engineer",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        },
+        "headers_added": [
+          "9400",
+          "9900"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 10758,
+              "to": 11291
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 134,
+                "to": 156
+              },
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  ">=12000",
+                  "Engineer",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20251230_131141",
+      "to": "20251230_131210",
+      "human_summary": "sheet1.xlsx changed: spreadsheet content changed from 156 to 157 non-empty cells.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 156,
+            "to": 157
+          },
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11291,
+              "to": 11323
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 156,
+                "to": 157
+              },
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20251230_131210",
+      "to": "20251230_131553",
+      "human_summary": "sheet1.xlsx changed: spreadsheet content changed from 157 to 163 non-empty cells; new visible headers or values include: 8.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 157,
+            "to": 163
+          },
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        },
+        "headers_added": [
+          "8"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11323,
+              "to": 11495
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 157,
+                "to": 163
+              },
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20251230_131553",
+      "to": "20251230_131929",
+      "human_summary": "sheet1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11495,
+              "to": 12383
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20251230_131929",
+      "to": "20251230_132037",
+      "human_summary": "sheet1.xlsx changed: chart/drawing count changed from 0 to 1.",
+      "likely_stage": "create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12383,
+              "to": 17481
+            },
+            "office_delta": {
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20251230_132037",
+      "to": "20251230_132441",
+      "human_summary": "sheet1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17481,
+              "to": 17931
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20251230_132441",
+      "to": "20251230_132501",
+      "human_summary": "sheet1.xlsx changed: worksheet names changed.",
+      "likely_stage": "rename worksheet",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "sheet_names": {
+            "from": [
+              "Sheet1"
+            ],
+            "to": [
+              "Employee Salary Statistics Tabl"
+            ]
+          },
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17931,
+              "to": 17972
+            },
+            "office_delta": {
+              "sheet_names": {
+                "from": [
+                  "Sheet1"
+                ],
+                "to": [
+                  "Employee Salary Statistics Tabl"
+                ]
+              },
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20251230_132501",
+      "to": "20251230_132520",
+      "human_summary": "sheet1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "sheet1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ],
+            "to": [
+              "Enterprise Wage Statistics Table",
+              "TABLE 1",
+              "HR009",
+              "Assistant Engineer",
+              "Bachelor",
+              "4600",
+              "4800",
+              "9400",
+              ">=12000",
+              "Engineer",
+              "8",
+              "HR019",
+              "Assistant Engineer",
+              "Bachelor",
+              "4800",
+              "5100",
+              "9900"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "sheet1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17972,
+              "to": 17973
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ],
+                "to": [
+                  "Enterprise Wage Statistics Table",
+                  "TABLE 1",
+                  "HR009",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4600",
+                  "4800",
+                  "9400",
+                  ">=12000",
+                  "Engineer",
+                  "8",
+                  "HR019",
+                  "Assistant Engineer",
+                  "Bachelor",
+                  "4800",
+                  "5100",
+                  "9900"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_06",
+    "snapshot_count": 9,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20251230_131032",
+        "to": "20251230_131141",
+        "human_summary": "sheet1.xlsx changed: spreadsheet content changed from 134 to 156 non-empty cells; new visible headers or values include: 9400, 9900.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 134,
+              "to": 156
+            },
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                ">=12000",
+                "Engineer",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          },
+          "headers_added": [
+            "9400",
+            "9900"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 10758,
+                "to": 11291
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 134,
+                  "to": 156
+                },
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    ">=12000",
+                    "Engineer",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20251230_131141",
+        "to": "20251230_131210",
+        "human_summary": "sheet1.xlsx changed: spreadsheet content changed from 156 to 157 non-empty cells.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 156,
+              "to": 157
+            },
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11291,
+                "to": 11323
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 156,
+                  "to": 157
+                },
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20251230_131210",
+        "to": "20251230_131553",
+        "human_summary": "sheet1.xlsx changed: spreadsheet content changed from 157 to 163 non-empty cells; new visible headers or values include: 8.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 157,
+              "to": 163
+            },
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          },
+          "headers_added": [
+            "8"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11323,
+                "to": 11495
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 157,
+                  "to": 163
+                },
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20251230_131553",
+        "to": "20251230_131929",
+        "human_summary": "sheet1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11495,
+                "to": 12383
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20251230_131929",
+        "to": "20251230_132037",
+        "human_summary": "sheet1.xlsx changed: chart/drawing count changed from 0 to 1.",
+        "likely_stage": "create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 12383,
+                "to": 17481
+              },
+              "office_delta": {
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20251230_132037",
+        "to": "20251230_132441",
+        "human_summary": "sheet1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17481,
+                "to": 17931
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20251230_132441",
+        "to": "20251230_132501",
+        "human_summary": "sheet1.xlsx changed: worksheet names changed.",
+        "likely_stage": "rename worksheet",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "sheet_names": {
+              "from": [
+                "Sheet1"
+              ],
+              "to": [
+                "Employee Salary Statistics Tabl"
+              ]
+            },
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17931,
+                "to": 17972
+              },
+              "office_delta": {
+                "sheet_names": {
+                  "from": [
+                    "Sheet1"
+                  ],
+                  "to": [
+                    "Employee Salary Statistics Tabl"
+                  ]
+                },
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20251230_132501",
+        "to": "20251230_132520",
+        "human_summary": "sheet1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "sheet1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ],
+              "to": [
+                "Enterprise Wage Statistics Table",
+                "TABLE 1",
+                "HR009",
+                "Assistant Engineer",
+                "Bachelor",
+                "4600",
+                "4800",
+                "9400",
+                ">=12000",
+                "Engineer",
+                "8",
+                "HR019",
+                "Assistant Engineer",
+                "Bachelor",
+                "4800",
+                "5100",
+                "9900"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "sheet1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17972,
+                "to": 17973
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ],
+                  "to": [
+                    "Enterprise Wage Statistics Table",
+                    "TABLE 1",
+                    "HR009",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4600",
+                    "4800",
+                    "9400",
+                    ">=12000",
+                    "Engineer",
+                    "8",
+                    "HR019",
+                    "Assistant Engineer",
+                    "Bachelor",
+                    "4800",
+                    "5100",
+                    "9900"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 5,
+      "instruction": "In the given Sheet1, select the range A1:F1, apply Merge & Center, and ensure the title is perfectly aligned."
+    },
+    {
+      "index": 6,
+      "instruction": "In the Total Salary column (F3:F22), use the SUM function to add Basic Salary and Position Salary. Format the results as Number with 0 decimal places."
+    },
+    {
+      "index": 7,
+      "instruction": "Select cell F25 and calculate the average of the Total Salary column using the AVERAGE function, formatting the result to 1 decimal place."
+    },
+    {
+      "index": 8,
+      "instruction": "In cells L3:L5, use the AVERAGEIF function to calculate the average salary for employees with \"Bachelor\", \"Master\", and \"PhD\" degrees respectively. Format these as Number with 1 decimal place."
+    },
+    {
+      "index": 9,
+      "instruction": "In cells M10:M12, use the COUNTIFS function to count employees who meet both the specific Total Salary range and the Title requirements defined in Table 2."
+    },
+    {
+      "index": 10,
+      "instruction": "Select the range F3:F24. Apply a rule to format the top 15% of values with \"Light Green Fill with Dark Green Text\". Apply a second rule to format values Below Average with \"Light Red Fill with Dark Red Text\"."
+    },
+    {
+      "index": 11,
+      "instruction": "Select the data ranges for Total Salary (I9:I12), Title (L10:L12), and Count (M10:M12). Insert a 3D Clustered Column Chart."
+    },
+    {
+      "index": 12,
+      "instruction": "Set the chart title to \"Employee Salary Statistics\" and place it above the chart. Apply Chart Style 7, move the Legend to the top, and set the Back Wall to a \"Dashed Grid\" pattern fill. Position the chart within the range J13:N27."
+    },
+    {
+      "index": 13,
+      "instruction": "Rename Sheet1 to \"Employee Salary Statistics Table\"."
+    },
+    {
+      "index": 14,
+      "instruction": "Save the final workbook as EXCEL.XLSX."
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 7,
+    "kept_count": 7,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 9
+  }
+}

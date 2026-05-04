@@ -1,0 +1,81 @@
+{
+  "id": "c74789e5-0f1e-fd10-1c3f-8e3629a9904e",
+  "snapshot": "ppt",
+  "instruction": "Could you set a uniform transition effect and sound effect for all slides and add an animation to the title text?",
+  "source": "Microsoft_39 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_160335/Desktop/Material/R-C.jpg",
+            "path": "C:\\Users\\User\\Desktop\\Material\\R-C.jpg"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_160335/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_39/logs/MonitoringSnapshots/20260110_160915/Desktop/My_Study_Abroad_Experience.pptx",
+            "path": "C:\\Users\\User\\Documents\\My_Study_Abroad_Experience_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/c74789e5-0f1e-fd10-1c3f-8e3629a9904e",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\My_Study_Abroad_Experience.pptx",
+      "dest": "My_Study_Abroad_Experience.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\My_Study_Abroad_Experience_gold.pptx",
+      "dest": "My_Study_Abroad_Experience_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "My_Study_Abroad_Experience.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

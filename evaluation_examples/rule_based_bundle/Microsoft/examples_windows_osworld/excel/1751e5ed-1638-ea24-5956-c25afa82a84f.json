@@ -1,0 +1,91 @@
+{
+  "id": "1751e5ed-1638-ea24-5956-c25afa82a84f",
+  "snapshot": "excel",
+  "instruction": "Could you create a detailed sales dataset in Excel 365, including formulas, charts, and conditional formatting?",
+  "source": "Microsoft_56 true stage 1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_56/logs/MonitoringSnapshots/20260112_195700/Desktop/material/Sales_Executive_Summary.docx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Sales_Executive_Summary.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_56/logs/MonitoringSnapshots/20260112_195700/Desktop/material/Sales_Performance_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Sales_Performance_Analysis.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_56/logs/MonitoringSnapshots/20260112_195700/Desktop/material/Sales_Performance_Presentation.pptx",
+            "path": "C:\\Users\\User\\Desktop\\material\\Sales_Performance_Presentation.pptx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_56/logs/MonitoringSnapshots/20260112_200134/Desktop/material/Sales_Performance_Analysis.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Sales_Performance_Analysis_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\material\\Sales_Performance_Analysis.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/1751e5ed-1638-ea24-5956-c25afa82a84f",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\material\\Sales_Performance_Analysis.xlsx",
+      "dest": "Sales_Performance_Analysis.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Sales_Performance_Analysis_gold.xlsx",
+      "dest": "Sales_Performance_Analysis_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Sales_Performance_Analysis.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

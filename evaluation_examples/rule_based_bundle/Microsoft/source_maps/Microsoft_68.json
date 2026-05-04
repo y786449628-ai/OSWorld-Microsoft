@@ -1,0 +1,1365 @@
+{
+  "source_name": "Microsoft_68",
+  "source_file": "Microsoft_68.txt",
+  "source_id": "efe00181c7e9",
+  "source_question": "Create a new folder named \"Templates\" directly on your cloud computer desktop. Within this folder, create a new Word document named \"Template.docx\". In this document, set up a structured quarterly report template containing the following sections: Report Title, Reporting Period, Key Indicators, Recommendations, and Approval. Apply appropriate built-in \"Heading\" styles to each section label. Insert a table to list key indicators, with columns including \"Indicator Name\", \"Target Value\", and \"Actual Value\". Create a bulleted list under the \"Recommendations\" section. Add a \"Confidential\" watermark to the document, insert a header containing your organization's name, and a footer with a report date placeholder and page number. Finally, save this template and export a PDF copy to the same folder.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you create a new folder named 'Templates' directly on your cloud computer desktop?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you create a new Word document named 'Template.docx' within the 'Templates' folder?",
+      "mapped_stage_indices": [
+        2
+      ]
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you set up a structured quarterly report template in the document, including sections for Report Title, Reporting Period, Key Indicators, Recommendations, and Approval?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply appropriate built-in 'Heading' styles to each section label in the document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a table to list key indicators with columns for 'Indicator Name', 'Target Value', and 'Actual Value'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a bulleted list under the 'Recommendations' section in the document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a 'Confidential' watermark to the document, insert a header with your organization's name, and a footer with a report date placeholder and page number?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the template and export a PDF copy to the same 'Templates' folder?",
+      "mapped_stage_indices": [
+        4
+      ]
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_templates_folder",
+      "instruction": "Could you create a new folder named 'Templates' directly on your cloud computer desktop?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click on the blank area of the cloud computer desktop, select \"New\", then choose \"Folder\". Name the new folder \"Templates\".",
+      "planned_input_snapshot": "20260114_155739_2",
+      "planned_gold_snapshot": "20260114_155800",
+      "snapshot_evidence": "New directories appeared: Templates.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from no folder to the creation of the 'Templates' folder.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_template_docx",
+      "instruction": "Could you create a new Word document named 'Template.docx' within the 'Templates' folder?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click to open the 'Templates' folder. Inside the folder, right-click, select 'New', and then select 'Microsoft Word Document'. Name this new document 'Template.docx'.",
+      "planned_input_snapshot": "20260114_155800",
+      "planned_gold_snapshot": "20260114_155815",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from the creation of a new Word document to renaming it as 'Template.docx'.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        2
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "setup_report_structure_and_formatting",
+      "instruction": "Could you set up a structured quarterly report template in the document, including sections for Report Title, Reporting Period, Key Indicators, Recommendations, and Approval? Apply appropriate built-in 'Heading' styles to each section label. Insert a table to list key indicators, with columns including 'Indicator Name', 'Target Value', and 'Actual Value'. Create a bulleted list under the 'Recommendations' section. Add a 'Confidential' watermark to the document, insert a header containing your organization's name, and a footer with a report date placeholder and page number.?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "llm_assisted",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Multiple steps to set up the document structure, apply styles, insert a table, create a bulleted list, add a watermark, and insert a header and footer.",
+      "planned_input_snapshot": "20260114_155815",
+      "planned_gold_snapshot": "20260114_160450",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from an empty document to a fully formatted and structured document.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the template and export a PDF copy to the same 'Templates' folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the Word document and export it as a PDF.",
+      "planned_input_snapshot": "20260114_160450",
+      "planned_gold_snapshot": "20260114_160512",
+      "snapshot_evidence": "New files appeared: Templates/Template.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from the final Word document to the creation of a PDF file.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        8
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "create_templates_folder",
+      "instruction": "Could you create a new folder named 'Templates' directly on your cloud computer desktop?",
+      "task_kind": "filesystem_create_folder",
+      "apps": [
+        "os"
+      ],
+      "expected_artifact": "directory_state",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 2,
+      "trajectory_evidence": "Right-click on the blank area of the cloud computer desktop, select \"New\", then choose \"Folder\". Name the new folder \"Templates\".",
+      "planned_input_snapshot": "20260114_155739_2",
+      "planned_gold_snapshot": "20260114_155800",
+      "snapshot_evidence": "New directories appeared: Templates.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from no folder to the creation of the 'Templates' folder.",
+      "input_snapshot": "20260114_155726",
+      "gold_snapshot": "20260114_155800",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "Templates",
+      "evaluator_candidate": "compare_directory_tree",
+      "localization": {
+        "status": "localized_fixed",
+        "confidence": 0.95,
+        "reason": "Corrected to a directory-state evaluator using the observed snapshot transition for 'Templates'.",
+        "changed_file_count": 1,
+        "chain_input_snapshot": "20260114_155726",
+        "chain_input_replaced": "20260114_155739_2"
+      },
+      "generated_examples": [
+        {
+          "example_id": "c34997f8-1794-6edd-a672-e8b11837ec8c",
+          "domain": "multi_app",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/multi_app/c34997f8-1794-6edd-a672-e8b11837ec8c.json"
+        }
+      ],
+      "directory_expectation": {
+        "root_relative_path": "",
+        "dirs": [
+          "Templates"
+        ],
+        "files": [],
+        "allow_extra": true
+      },
+      "result_relative_path": ""
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "create_template_docx",
+      "instruction": "Could you create a new Word document named 'Template.docx' within the 'Templates' folder?",
+      "task_kind": "word_create_document",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 3,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Double-click to open the 'Templates' folder. Inside the folder, right-click, select 'New', and then select 'Microsoft Word Document'. Name this new document 'Template.docx'.",
+      "planned_input_snapshot": "20260114_155800",
+      "planned_gold_snapshot": "20260114_155815",
+      "snapshot_evidence": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from the creation of a new Word document to renaming it as 'Template.docx'.",
+      "input_snapshot": "20260114_155800",
+      "gold_snapshot": "20260114_160013",
+      "linked_preview_tasks": [
+        2
+      ],
+      "target_relative_path": "Templates/Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_155800",
+        "trajectory_window": {
+          "trajectory_start": 3,
+          "trajectory_end": 3,
+          "search_start_index": 6,
+          "search_end_index": 6,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_155800",
+          "planned_gold_snapshot": "20260114_155815"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "737c0d26-1a46-682f-923c-2ba947634c18",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/737c0d26-1a46-682f-923c-2ba947634c18.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "setup_report_structure_and_formatting",
+      "instruction": "Could you set up a structured quarterly report template in the document, including sections for Report Title, Reporting Period, Key Indicators, Recommendations, and Approval? Apply appropriate built-in 'Heading' styles to each section label. Insert a table to list key indicators, with columns including 'Indicator Name', 'Target Value', and 'Actual Value'. Create a bulleted list under the 'Recommendations' section. Add a 'Confidential' watermark to the document, insert a header containing your organization's name, and a footer with a report date placeholder and page number.?",
+      "task_kind": "word_edit_text_or_title",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "docx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Multiple steps to set up the document structure, apply styles, insert a table, create a bulleted list, add a watermark, and insert a header and footer.",
+      "planned_input_snapshot": "20260114_155815",
+      "planned_gold_snapshot": "20260114_160450",
+      "snapshot_evidence": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from an empty document to a fully formatted and structured document.",
+      "input_snapshot": "20260114_160013",
+      "gold_snapshot": "20260114_160450",
+      "linked_preview_tasks": [],
+      "target_relative_path": "Templates/Template.docx",
+      "evaluator_candidate": "compare_docx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.7,
+        "reason": "Target file changed between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_155815",
+        "expanded_to_planned_gold_snapshot": "20260114_160450",
+        "chain_input_snapshot": "20260114_160013",
+        "chain_input_replaced": "20260114_155815",
+        "trajectory_window": {
+          "trajectory_start": 4,
+          "trajectory_end": 11,
+          "search_start_index": 10,
+          "search_end_index": 14,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_155815",
+          "planned_gold_snapshot": "20260114_160450"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "b8e17a6c-d387-8b97-c872-f0336172bb3d",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/b8e17a6c-d387-8b97-c872-f0336172bb3d.json"
+        }
+      ]
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "save_and_export_pdf",
+      "instruction": "Could you save the template and export a PDF copy to the same 'Templates' folder?",
+      "task_kind": "export_pdf",
+      "apps": [
+        "word"
+      ],
+      "expected_artifact": "pdf",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 13,
+      "trajectory_end": 14,
+      "trajectory_evidence": "Save the Word document and export it as a PDF.",
+      "planned_input_snapshot": "20260114_160450",
+      "planned_gold_snapshot": "20260114_160512",
+      "snapshot_evidence": "New files appeared: Templates/Template.pdf.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from the final Word document to the creation of a PDF file.",
+      "input_snapshot": "20260114_160450",
+      "gold_snapshot": "20260114_160512",
+      "linked_preview_tasks": [
+        8
+      ],
+      "target_relative_path": "Templates/Template.pdf",
+      "evaluator_candidate": "compare_pdfs",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "trajectory_window": {
+          "trajectory_start": 13,
+          "trajectory_end": 14,
+          "search_start_index": 15,
+          "search_end_index": 15,
+          "used_unbounded_fallback": false,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_160450",
+          "planned_gold_snapshot": "20260114_160512"
+        }
+      },
+      "generated_examples": [
+        {
+          "example_id": "936b15c1-0f4b-dc1c-e564-8b97cc471c59",
+          "domain": "word",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/word/936b15c1-0f4b-dc1c-e564-8b97cc471c59.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 3,
+      "instruction": "Could you set up a structured quarterly report template in the document, including sections for Report Title, Reporting Period, Key Indicators, Recommendations, and Approval?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you apply appropriate built-in 'Heading' styles to each section label in the document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you insert a table to list key indicators with columns for 'Indicator Name', 'Target Value', and 'Actual Value'?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you create a bulleted list under the 'Recommendations' section in the document?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you add a 'Confidential' watermark to the document, insert a header with your organization's name, and a footer with a report date placeholder and page number?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260114_155726",
+    "20260114_155726_1",
+    "20260114_155739",
+    "20260114_155739_1",
+    "20260114_155739_2",
+    "20260114_155800",
+    "20260114_155815",
+    "20260114_155815_1",
+    "20260114_155824",
+    "20260114_160013",
+    "20260114_160013_1",
+    "20260114_160243",
+    "20260114_160243_1",
+    "20260114_160243_2",
+    "20260114_160450",
+    "20260114_160512",
+    "20260114_160512_1",
+    "20260114_164419",
+    "20260114_164422",
+    "20260114_164424"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260114_155726",
+      "to": "20260114_155726_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_155726_1",
+      "to": "20260114_155739",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_155739",
+      "to": "20260114_155739_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_155739_1",
+      "to": "20260114_155739_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_155739_2",
+      "to": "20260114_155800",
+      "human_summary": "New directories appeared: Templates.",
+      "likely_stage": "create or organize folders",
+      "confidence": 0.82,
+      "evidence": {
+        "dirs_added": [
+          "Templates"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Templates/New Microsoft Word Document.docx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [
+          "Templates"
+        ],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 6,
+      "from": "20260114_155800",
+      "to": "20260114_155815",
+      "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+      "likely_stage": "save, rename, or move files",
+      "confidence": 0.72,
+      "evidence": {
+        "files_added": [
+          "Templates/Template.docx"
+        ],
+        "files_removed": [
+          "Templates/New Microsoft Word Document.docx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Templates/Template.docx"
+        ],
+        "files_removed": [
+          "Templates/New Microsoft Word Document.docx"
+        ],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 2
+      }
+    },
+    {
+      "transition_index": 7,
+      "from": "20260114_155815",
+      "to": "20260114_155815_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 8,
+      "from": "20260114_155815_1",
+      "to": "20260114_155824",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 9,
+      "from": "20260114_155824",
+      "to": "20260114_160013",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Templates/Template.docx",
+            "size": {
+              "from": 0,
+              "to": 13509
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Templates/Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 0,
+              "to": 13509
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 10,
+      "from": "20260114_160013",
+      "to": "20260114_160013_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 11,
+      "from": "20260114_160013_1",
+      "to": "20260114_160243",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Templates/Template.docx",
+            "size": {
+              "from": 13509,
+              "to": 22937
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Templates/Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 13509,
+              "to": 22937
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 12,
+      "from": "20260114_160243",
+      "to": "20260114_160243_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 13,
+      "from": "20260114_160243_1",
+      "to": "20260114_160243_2",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 14,
+      "from": "20260114_160243_2",
+      "to": "20260114_160450",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "Templates/Template.docx",
+            "size": {
+              "from": 22937,
+              "to": 20307
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Templates/Template.docx",
+            "suffix": "docx",
+            "size": {
+              "from": 22937,
+              "to": 20307
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 15,
+      "from": "20260114_160450",
+      "to": "20260114_160512",
+      "human_summary": "New files appeared: Templates/Template.pdf.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "Templates/Template.pdf"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "Templates/Template.pdf"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 16,
+      "from": "20260114_160512",
+      "to": "20260114_160512_1",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    },
+    {
+      "transition_index": 17,
+      "from": "20260114_160512_1",
+      "to": "20260114_164419",
+      "human_summary": "New files appeared: output-1768380257484.zip.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "output-1768380257484.zip"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "output-1768380257484.zip"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 18,
+      "from": "20260114_164419",
+      "to": "20260114_164422",
+      "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+      "likely_stage": "formatting, metadata, save, or subtle document edit",
+      "confidence": 0.45,
+      "evidence": {
+        "files_changed": [
+          {
+            "path": "output-1768380257484.zip",
+            "size": {
+              "from": 5550844,
+              "to": 6451964
+            }
+          }
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "output-1768380257484.zip",
+            "suffix": "zip",
+            "size": {
+              "from": 5550844,
+              "to": 6451964
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 19,
+      "from": "20260114_164422",
+      "to": "20260114_164424",
+      "human_summary": "No observable file or directory change was detected between these snapshots.",
+      "likely_stage": "no observable benchmark state change",
+      "confidence": 0.2,
+      "evidence": {},
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 0
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_68",
+    "snapshot_count": 20,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260114_155726",
+        "to": "20260114_155726_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260114_155726_1",
+        "to": "20260114_155739",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260114_155739",
+        "to": "20260114_155739_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260114_155739_1",
+        "to": "20260114_155739_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260114_155739_2",
+        "to": "20260114_155800",
+        "human_summary": "New directories appeared: Templates.",
+        "likely_stage": "create or organize folders",
+        "confidence": 0.82,
+        "evidence": {
+          "dirs_added": [
+            "Templates"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Templates/New Microsoft Word Document.docx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [
+            "Templates"
+          ],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 6,
+        "from": "20260114_155800",
+        "to": "20260114_155815",
+        "human_summary": "Files appeared and disappeared, suggesting a save-as, rename, or move operation.",
+        "likely_stage": "save, rename, or move files",
+        "confidence": 0.72,
+        "evidence": {
+          "files_added": [
+            "Templates/Template.docx"
+          ],
+          "files_removed": [
+            "Templates/New Microsoft Word Document.docx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Templates/Template.docx"
+          ],
+          "files_removed": [
+            "Templates/New Microsoft Word Document.docx"
+          ],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 2
+        }
+      },
+      {
+        "transition_index": 7,
+        "from": "20260114_155815",
+        "to": "20260114_155815_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 8,
+        "from": "20260114_155815_1",
+        "to": "20260114_155824",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 9,
+        "from": "20260114_155824",
+        "to": "20260114_160013",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Templates/Template.docx",
+              "size": {
+                "from": 0,
+                "to": 13509
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Templates/Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 0,
+                "to": 13509
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 10,
+        "from": "20260114_160013",
+        "to": "20260114_160013_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 11,
+        "from": "20260114_160013_1",
+        "to": "20260114_160243",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Templates/Template.docx",
+              "size": {
+                "from": 13509,
+                "to": 22937
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Templates/Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 13509,
+                "to": 22937
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 12,
+        "from": "20260114_160243",
+        "to": "20260114_160243_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 13,
+        "from": "20260114_160243_1",
+        "to": "20260114_160243_2",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 14,
+        "from": "20260114_160243_2",
+        "to": "20260114_160450",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "Templates/Template.docx",
+              "size": {
+                "from": 22937,
+                "to": 20307
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Templates/Template.docx",
+              "suffix": "docx",
+              "size": {
+                "from": 22937,
+                "to": 20307
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 15,
+        "from": "20260114_160450",
+        "to": "20260114_160512",
+        "human_summary": "New files appeared: Templates/Template.pdf.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "Templates/Template.pdf"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "Templates/Template.pdf"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 16,
+        "from": "20260114_160512",
+        "to": "20260114_160512_1",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      },
+      {
+        "transition_index": 17,
+        "from": "20260114_160512_1",
+        "to": "20260114_164419",
+        "human_summary": "New files appeared: output-1768380257484.zip.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "output-1768380257484.zip"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "output-1768380257484.zip"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 18,
+        "from": "20260114_164419",
+        "to": "20260114_164422",
+        "human_summary": "One or more files changed size, but no detailed Office feature delta was detected.",
+        "likely_stage": "formatting, metadata, save, or subtle document edit",
+        "confidence": 0.45,
+        "evidence": {
+          "files_changed": [
+            {
+              "path": "output-1768380257484.zip",
+              "size": {
+                "from": 5550844,
+                "to": 6451964
+              }
+            }
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "output-1768380257484.zip",
+              "suffix": "zip",
+              "size": {
+                "from": 5550844,
+                "to": 6451964
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 19,
+        "from": "20260114_164422",
+        "to": "20260114_164424",
+        "human_summary": "No observable file or directory change was detected between these snapshots.",
+        "likely_stage": "no observable benchmark state change",
+        "confidence": 0.2,
+        "evidence": {},
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 0
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Right-click on the blank area of the cloud computer desktop, select \"New\", then choose \"Folder\". Name the new folder \"Templates\"."
+    },
+    {
+      "index": 3,
+      "instruction": "Double-click to open the \"Templates\" folder. Inside the folder, right-click, select \"New\", and then select \"Microsoft Word Document\". Name this new document \"Template.docx\"."
+    },
+    {
+      "index": 4,
+      "instruction": "Double-click to open a new Word document. On the first line, enter \"REPORT TEMPLATE\". Select this text, go to the \"Home\" tab, and click the \"Title\" style in the style gallery."
+    },
+    {
+      "index": 5,
+      "instruction": "Press the Enter key twice to move the cursor down. Enter \"1. Report title\" and apply the \"Heading 2\" style from the \"Home\" tab."
+    },
+    {
+      "index": 6,
+      "instruction": "Press the Enter key, input \"2. Reporting period\" and apply the \"Heading 2\" style. Press the Enter key again and input the placeholder text \"[start] - [end]\". Press Ctrl+S to save the file first."
+    },
+    {
+      "index": 7,
+      "instruction": "Press the Enter key twice, type \"3. Key indicators:\" and apply the \"Heading 2\" style. Press the Enter key, then go to the \"Insert\" tab, click \"Table\", and insert a table with 3 columns and 5 rows. In the first row, enter \"Name\", \"Target value\", and \"Actual value\" as the column headings."
+    },
+    {
+      "index": 8,
+      "instruction": "Press the Enter key twice after the table. Type \"4. Suggestion：\" and apply the \"Heading 2\" style. Press the Enter key, go to the \"Home\" tab, and click the \"Bullets\" button to start a bulleted list. Enter at least three example suggestions."
+    },
+    {
+      "index": 9,
+      "instruction": "Press the Enter key twice to end the list. Enter \"5. Approval:\" and apply the \"Heading 2\" style. Press the Enter key and input the placeholder text \"By:___ Date:___\"."
+    },
+    {
+      "index": 10,
+      "instruction": "Go to the \"Design\" tab, click \"Watermark\", select the \"Confidential\" watermark from the gallery. Press ctrl+s to save the file first."
+    },
+    {
+      "index": 11,
+      "instruction": "Go to the \"Insert\" tab, click \"Header\", and select the \"Blank\" design. In the header area, enter the name of your organization (\"Global\"). Go to the \"Insert\" tab, click \"Footer\", and select the \"Blank\" design. Enter \"[Report date]\" on the left side of the footer. Then go to the \"Header & Footer Design\" tab > \"Page Number\" > \"Current Position\", and select \"Plain Number\" to insert it on the right side of the footer."
+    },
+    {
+      "index": 12,
+      "instruction": "Select all text (Ctrl+A), go to the \"Home\" tab, set the font to \"calibri\" and the font size to \"11\" to ensure consistency."
+    },
+    {
+      "index": 13,
+      "instruction": "Click \"File\", then select \"Save As\". Make sure you are in the \"Templates\" folder, and click \"Save\" to save the Word document."
+    },
+    {
+      "index": 14,
+      "instruction": "Click \"File\" again, select \"Export\", then choose \"Create PDF/XPS Document\". Click \"Create PDF/XPS\" and save the PDF file with the default name in the \"Templates\" folder."
+    },
+    {
+      "index": 15,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_ready",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 4,
+    "kept_count": 4,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 20
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "605c8f67-d9d4-c36d-d1be-eab478f4faec",
+  "snapshot": "excel",
+  "instruction": "Could you create a chart to visualize the department-wise salary distribution in the 'Employee_Payroll.xlsx', and then save the final 'Employee_Payroll.xlsx' as 'Corporate_Payroll_2026.xlsx'?",
+  "source": "Microsoft_50 true stage 5",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_50/logs/MonitoringSnapshots/20260109_175426/Desktop/Employee_Payroll.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Employee_Payroll.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_50/logs/MonitoringSnapshots/20260109_175642/Desktop/Employee_Payroll.xlsx",
+            "path": "C:\\Users\\User\\Documents\\Employee_Payroll_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Employee_Payroll.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/605c8f67-d9d4-c36d-d1be-eab478f4faec",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Employee_Payroll.xlsx",
+      "dest": "Employee_Payroll.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Employee_Payroll_gold.xlsx",
+      "dest": "Employee_Payroll_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Employee_Payroll.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

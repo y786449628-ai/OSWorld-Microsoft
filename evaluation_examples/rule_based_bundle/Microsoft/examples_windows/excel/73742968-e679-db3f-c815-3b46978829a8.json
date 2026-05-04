@@ -1,0 +1,83 @@
+{
+  "id": "73742968-e679-db3f-c815-3b46978829a8",
+  "snapshot": "excel",
+  "instruction": "Could you create a new Excel workbook to organize the staff support data for the 5-day event, and then enter the staff names and their corresponding support days into the Excel workbook? Could you split the names in the single field into separate rows for each staff member in the Excel workbook? Could you create a summary table in the Excel workbook to show the number of days each staff member is supporting the event? Could you create a chart in the Excel workbook to visualize the staff support by day?",
+  "source": "Microsoft_17 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_17/logs/MonitoringSnapshots/20260106_155253/Desktop/Material/Name List.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Name List.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_17/logs/MonitoringSnapshots/20260106_155927/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Name List.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/73742968-e679-db3f-c815-3b46978829a8",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

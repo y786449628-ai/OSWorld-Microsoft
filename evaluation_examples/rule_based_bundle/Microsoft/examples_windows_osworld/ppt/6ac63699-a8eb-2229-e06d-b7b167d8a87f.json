@@ -1,0 +1,77 @@
+{
+  "id": "6ac63699-a8eb-2229-e06d-b7b167d8a87f",
+  "snapshot": "ppt",
+  "instruction": "Could you open Microsoft PowerPoint 365 and create a new summary slide?",
+  "source": "Microsoft_07 true stage 3",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_07/logs/MonitoringSnapshots/20251230_185754/Desktop/Sales_Data.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\Sales_Data.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_07/logs/MonitoringSnapshots/20251230_185935/Desktop/Sales_Presentation.pptx",
+            "path": "C:\\Users\\User\\Documents\\Sales_Presentation_gold.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Sales_Data.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6ac63699-a8eb-2229-e06d-b7b167d8a87f",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "func": "compare_pptx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Sales_Presentation.pptx",
+      "dest": "Sales_Presentation.pptx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Sales_Presentation_gold.pptx",
+      "dest": "Sales_Presentation_gold.pptx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Sales_Presentation.pptx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

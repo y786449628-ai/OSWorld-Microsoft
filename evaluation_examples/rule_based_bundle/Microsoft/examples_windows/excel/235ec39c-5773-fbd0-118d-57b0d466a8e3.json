@@ -1,0 +1,95 @@
+{
+  "id": "235ec39c-5773-fbd0-118d-57b0d466a8e3",
+  "snapshot": "excel",
+  "instruction": "Could you open the three files containing Sales, Marketing, and Service team staff information, and then remove any blank lines from each of the files? Could you consolidate the data from the three files into a single Excel file, and then create a fuzzy search function in the consolidated Excel file to find records based on a keyword?",
+  "source": "Microsoft_57 true stage 1",
+  "config": [
+    {
+      "type": "upload_file",
+      "parameters": {
+        "files": [
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_57/logs/MonitoringSnapshots/20260112_192307/Desktop/Material/Detail1.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Detail1.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_57/logs/MonitoringSnapshots/20260112_192307/Desktop/Material/Marketing Team.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Marketing Team.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_57/logs/MonitoringSnapshots/20260112_192307/Desktop/Material/Sales Team.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Sales Team.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_57/logs/MonitoringSnapshots/20260112_192307/Desktop/Material/Service Team.xlsx",
+            "path": "C:\\Users\\78644\\Desktop\\Material\\Service Team.xlsx"
+          },
+          {
+            "local_path": "evaluation_examples/resources/windows_microsoft/Microsoft_57/logs/MonitoringSnapshots/20260112_192750/Desktop/final result.xlsx",
+            "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\78644\\Desktop\\Material\\Detail1.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/235ec39c-5773-fbd0-118d-57b0d466a8e3",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Desktop\\final result.xlsx",
+      "dest": "final result.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\78644\\Documents\\final result_gold.xlsx",
+      "dest": "final result_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "final result.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

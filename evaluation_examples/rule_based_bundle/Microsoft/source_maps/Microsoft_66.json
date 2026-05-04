@@ -1,0 +1,1064 @@
+{
+  "source_name": "Microsoft_66",
+  "source_file": "Microsoft_66.txt",
+  "source_id": "6a9969690aa7",
+  "source_question": "Open the file and set the table format, then standardize the product codes uniformly through cell formatting. At the same time, set a uniform storage date format, then handle blank data and fill in the blank data. Use table design to delete duplicate columns, add a column responsible for calculating the percentage of sales, use functions to calculate inventory value and summarize at the bottom of the table, then create a data bar chart, complete the format settings, and the task is completed after saving.",
+  "preview_model": "qwen-max",
+  "preview_atomic_tasks": [
+    {
+      "task_index": 1,
+      "instruction": "Could you open the file and set the table format?",
+      "mapped_stage_indices": [
+        1
+      ]
+    },
+    {
+      "task_index": 2,
+      "instruction": "Could you standardize the product codes uniformly through cell formatting?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you set a uniform storage date format for the data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you handle blank data and fill in the missing values?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you use table design to delete duplicate columns and add a column to calculate the percentage of sales?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 6,
+      "instruction": "Could you use functions to calculate the inventory value and summarize it at the bottom of the table?",
+      "mapped_stage_indices": [
+        4
+      ]
+    },
+    {
+      "task_index": 7,
+      "instruction": "Could you create a data bar chart and complete the format settings?",
+      "mapped_stage_indices": [
+        5
+      ]
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the file after completing all the changes?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "candidate_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_format_table",
+      "instruction": "Could you open the file and set the table format?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 3,
+      "trajectory_evidence": "Open the file, select all data, and format as a table.",
+      "planned_input_snapshot": "20260114_201706",
+      "planned_gold_snapshot": "20260114_201736",
+      "snapshot_evidence": "Book1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from initial state to formatted table.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        1
+      ]
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "standardize_product_codes_and_date_format",
+      "instruction": "Could you standardize the product codes uniformly through cell formatting? Could you set a uniform storage date format for the data?",
+      "task_kind": "excel_format_cells",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        1
+      ],
+      "trajectory_start": 4,
+      "trajectory_end": 4,
+      "trajectory_evidence": "Set the date format for the 'Sales Date' column.",
+      "planned_input_snapshot": "20260114_201736",
+      "planned_gold_snapshot": "20260114_201831",
+      "snapshot_evidence": "Book1.xlsx changed: spreadsheet content changed from 56 to 64 non-empty cells; new visible headers or values include: Proportion.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with new headers and data changes.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "handle_blank_data_and_add_sales_percentage_column",
+      "instruction": "Could you handle blank data and fill in the missing values? Could you use table design to delete duplicate columns and add a column to calculate the percentage of sales?",
+      "task_kind": "excel_enter_data",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        2
+      ],
+      "trajectory_start": 5,
+      "trajectory_end": 8,
+      "trajectory_evidence": "Handle blank data, remove duplicates, and add a 'Proportion' column.",
+      "planned_input_snapshot": "20260114_201831",
+      "planned_gold_snapshot": "20260114_201957",
+      "snapshot_evidence": "Book1.xlsx changed: spreadsheet content changed from 64 to 66 non-empty cells; chart/drawing count changed from 0 to 1.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with new data and chart creation.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": []
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "calculate_inventory_value_and_summarize",
+      "instruction": "Could you use functions to calculate the inventory value and summarize it at the bottom of the table?",
+      "task_kind": "excel_calculate_formula",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        3
+      ],
+      "trajectory_start": 9,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Add a total row to the table.",
+      "planned_input_snapshot": "20260114_201957",
+      "planned_gold_snapshot": "20260114_202204",
+      "snapshot_evidence": "Book1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with the addition of a total row.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        6
+      ]
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "create_data_bar_chart_and_complete_format_settings",
+      "instruction": "Could you create a data bar chart and complete the format settings?",
+      "task_kind": "excel_create_chart",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [
+        4
+      ],
+      "trajectory_start": 10,
+      "trajectory_end": 11,
+      "trajectory_evidence": "Create a data bar chart and adjust the font and alignment.",
+      "planned_input_snapshot": "20260114_202204",
+      "planned_gold_snapshot": "20260114_202228",
+      "snapshot_evidence": "New files appeared: new.xlsx.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition with the creation of a new file after saving.",
+      "input_snapshot": null,
+      "gold_snapshot": null,
+      "linked_preview_tasks": [
+        7
+      ]
+    }
+  ],
+  "kept_atomic_tasks": [
+    {
+      "stage_index": 1,
+      "stage_name": "open_and_format_table_and_create_data_bar_chart_and_complete_format_settings_and_standardize_product_codes_and_date_format_and_handle_blank_data_and_add_sales_percentage_column_and_calculate_inventory_value_and_summarize",
+      "instruction": "Could you open the file and set the table format, and then create a data bar chart and complete the format settings, and then standardize the product codes uniformly through cell formatting? Could you set a uniform storage date format for the data, and then handle blank data and fill in the missing values? Could you use table design to delete duplicate columns and add a column to calculate the percentage of sales, and then use functions to calculate the inventory value and summarize it at the bottom of the table?",
+      "task_kind": "excel_create_or_open_workbook",
+      "apps": [
+        "excel"
+      ],
+      "expected_artifact": "xlsx",
+      "evaluation_hint": "rule_based",
+      "depends_on": [],
+      "trajectory_start": 2,
+      "trajectory_end": 9,
+      "trajectory_evidence": "Open the file, select all data, and format as a table. | Create a data bar chart and adjust the font and alignment. | Set the date format for the 'Sales Date' column. | Handle blank data, remove duplicates, and add a 'Proportion' column. | Add a total row to the table.",
+      "planned_input_snapshot": "20260114_201706",
+      "planned_gold_snapshot": "20260114_201736",
+      "snapshot_evidence": "Book1.xlsx changed: Office document content changed. | New files appeared: new.xlsx. | Book1.xlsx changed: spreadsheet content changed from 56 to 64 non-empty cells; new visible headers or values include: Proportion. | Book1.xlsx changed: spreadsheet content changed from 64 to 66 non-empty cells; chart/drawing count changed from 0 to 1. | Book1.xlsx changed: Office document content changed.",
+      "benchmarkability": "benchmarkable",
+      "reason": "Observable transition from initial state to formatted table.",
+      "input_snapshot": "20260114_201706",
+      "gold_snapshot": "20260114_202228",
+      "linked_preview_tasks": [
+        1
+      ],
+      "target_relative_path": "new.xlsx",
+      "evaluator_candidate": "compare_xlsx_files",
+      "localization": {
+        "status": "localized",
+        "confidence": 0.82,
+        "reason": "Target file appeared between snapshots.",
+        "changed_file_count": 1,
+        "expanded_to_planned_input_snapshot": "20260114_201706",
+        "trajectory_window": {
+          "trajectory_start": 2,
+          "trajectory_end": 3,
+          "search_start_index": 1,
+          "search_end_index": 1,
+          "used_unbounded_fallback": true,
+          "prior_source": "planned_snapshot",
+          "planned_input_snapshot": "20260114_201706",
+          "planned_gold_snapshot": "20260114_201736"
+        },
+        "merged_with_following_stage": {
+          "stage_index": 4,
+          "stage_name": "calculate_inventory_value_and_summarize",
+          "reason": "Trailing stages had no standalone evaluator and were merged backward to preserve a complete workflow."
+        }
+      },
+      "merged_stage_names": [
+        "open_and_format_table",
+        "create_data_bar_chart_and_complete_format_settings",
+        "standardize_product_codes_and_date_format",
+        "handle_blank_data_and_add_sales_percentage_column",
+        "calculate_inventory_value_and_summarize"
+      ],
+      "merged_stage_indices": [
+        1,
+        5,
+        2,
+        3,
+        4
+      ],
+      "generated_examples": [
+        {
+          "example_id": "94e1f84d-7f8c-5cc7-a6a3-328150516f59",
+          "domain": "excel",
+          "example_json": "evaluation_examples/rule_based_bundle/Microsoft/examples_windows/excel/94e1f84d-7f8c-5cc7-a6a3-328150516f59.json"
+        }
+      ]
+    }
+  ],
+  "llm_assisted_atomic_tasks": [],
+  "unsupported_atomic_tasks": [],
+  "unmapped_preview_atomic_tasks": [
+    {
+      "task_index": 2,
+      "instruction": "Could you standardize the product codes uniformly through cell formatting?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 3,
+      "instruction": "Could you set a uniform storage date format for the data?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 4,
+      "instruction": "Could you handle blank data and fill in the missing values?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 5,
+      "instruction": "Could you use table design to delete duplicate columns and add a column to calculate the percentage of sales?",
+      "mapped_stage_indices": []
+    },
+    {
+      "task_index": 8,
+      "instruction": "Could you save the file after completing all the changes?",
+      "mapped_stage_indices": []
+    }
+  ],
+  "snapshot_sequence": [
+    "20260114_201706",
+    "20260114_201736",
+    "20260114_201831",
+    "20260114_201957",
+    "20260114_202204",
+    "20260114_202228"
+  ],
+  "snapshot_transition_summaries": [
+    {
+      "transition_index": 1,
+      "from": "20260114_201706",
+      "to": "20260114_201736",
+      "human_summary": "Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 11812,
+              "to": 12184
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 2,
+      "from": "20260114_201736",
+      "to": "20260114_201831",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 56 to 64 non-empty cells; new visible headers or values include: Proportion.",
+      "likely_stage": "enter or edit spreadsheet data",
+      "confidence": 0.86,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 56,
+            "to": 64
+          },
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ]
+          }
+        },
+        "headers_added": [
+          "Proportion"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12184,
+              "to": 12415
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 56,
+                "to": 64
+              },
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 3,
+      "from": "20260114_201831",
+      "to": "20260114_201957",
+      "human_summary": "Book1.xlsx changed: spreadsheet content changed from 64 to 66 non-empty cells; chart/drawing count changed from 0 to 1.",
+      "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+      "confidence": 0.9,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "nonempty_cells": {
+            "from": 64,
+            "to": 66
+          },
+          "chart_count": {
+            "from": 0,
+            "to": 1
+          },
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 12415,
+              "to": 17644
+            },
+            "office_delta": {
+              "nonempty_cells": {
+                "from": 64,
+                "to": 66
+              },
+              "chart_count": {
+                "from": 0,
+                "to": 1
+              },
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 4,
+      "from": "20260114_201957",
+      "to": "20260114_202204",
+      "human_summary": "Book1.xlsx changed: Office document content changed.",
+      "likely_stage": "edit Office document",
+      "confidence": 0.75,
+      "evidence": {
+        "file": "Book1.xlsx",
+        "office_delta": {
+          "headers": {
+            "from": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ],
+            "to": [
+              "Order Number",
+              "Product Name",
+              "Sales Date",
+              "Product Category",
+              "Unit Price",
+              "Sales Quantity",
+              "Sales Amount",
+              "Proportion"
+            ]
+          }
+        }
+      },
+      "raw_changes": {
+        "files_added": [],
+        "files_removed": [],
+        "files_changed": [
+          {
+            "path": "Book1.xlsx",
+            "suffix": "xlsx",
+            "size": {
+              "from": 17644,
+              "to": 17639
+            },
+            "office_delta": {
+              "headers": {
+                "from": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ],
+                "to": [
+                  "Order Number",
+                  "Product Name",
+                  "Sales Date",
+                  "Product Category",
+                  "Unit Price",
+                  "Sales Quantity",
+                  "Sales Amount",
+                  "Proportion"
+                ]
+              }
+            }
+          }
+        ],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    },
+    {
+      "transition_index": 5,
+      "from": "20260114_202204",
+      "to": "20260114_202228",
+      "human_summary": "New files appeared: new.xlsx.",
+      "likely_stage": "create or save file",
+      "confidence": 0.78,
+      "evidence": {
+        "files_added": [
+          "new.xlsx"
+        ]
+      },
+      "raw_changes": {
+        "files_added": [
+          "new.xlsx"
+        ],
+        "files_removed": [],
+        "files_changed": [],
+        "dirs_added": [],
+        "dirs_removed": [],
+        "changed_file_count": 1
+      }
+    }
+  ],
+  "snapshot_transition_report": {
+    "source_name": "Microsoft_66",
+    "snapshot_count": 6,
+    "transitions": [
+      {
+        "transition_index": 1,
+        "from": "20260114_201706",
+        "to": "20260114_201736",
+        "human_summary": "Book1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount"
+              ],
+              "to": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 11812,
+                "to": 12184
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount"
+                  ],
+                  "to": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 2,
+        "from": "20260114_201736",
+        "to": "20260114_201831",
+        "human_summary": "Book1.xlsx changed: spreadsheet content changed from 56 to 64 non-empty cells; new visible headers or values include: Proportion.",
+        "likely_stage": "enter or edit spreadsheet data",
+        "confidence": 0.86,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 56,
+              "to": 64
+            },
+            "headers": {
+              "from": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount"
+              ],
+              "to": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount",
+                "Proportion"
+              ]
+            }
+          },
+          "headers_added": [
+            "Proportion"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 12184,
+                "to": 12415
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 56,
+                  "to": 64
+                },
+                "headers": {
+                  "from": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount"
+                  ],
+                  "to": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount",
+                    "Proportion"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 3,
+        "from": "20260114_201831",
+        "to": "20260114_201957",
+        "human_summary": "Book1.xlsx changed: spreadsheet content changed from 64 to 66 non-empty cells; chart/drawing count changed from 0 to 1.",
+        "likely_stage": "enter or edit spreadsheet data + create or modify chart",
+        "confidence": 0.9,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "nonempty_cells": {
+              "from": 64,
+              "to": 66
+            },
+            "chart_count": {
+              "from": 0,
+              "to": 1
+            },
+            "headers": {
+              "from": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount",
+                "Proportion"
+              ],
+              "to": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount",
+                "Proportion"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 12415,
+                "to": 17644
+              },
+              "office_delta": {
+                "nonempty_cells": {
+                  "from": 64,
+                  "to": 66
+                },
+                "chart_count": {
+                  "from": 0,
+                  "to": 1
+                },
+                "headers": {
+                  "from": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount",
+                    "Proportion"
+                  ],
+                  "to": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount",
+                    "Proportion"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 4,
+        "from": "20260114_201957",
+        "to": "20260114_202204",
+        "human_summary": "Book1.xlsx changed: Office document content changed.",
+        "likely_stage": "edit Office document",
+        "confidence": 0.75,
+        "evidence": {
+          "file": "Book1.xlsx",
+          "office_delta": {
+            "headers": {
+              "from": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount",
+                "Proportion"
+              ],
+              "to": [
+                "Order Number",
+                "Product Name",
+                "Sales Date",
+                "Product Category",
+                "Unit Price",
+                "Sales Quantity",
+                "Sales Amount",
+                "Proportion"
+              ]
+            }
+          }
+        },
+        "raw_changes": {
+          "files_added": [],
+          "files_removed": [],
+          "files_changed": [
+            {
+              "path": "Book1.xlsx",
+              "suffix": "xlsx",
+              "size": {
+                "from": 17644,
+                "to": 17639
+              },
+              "office_delta": {
+                "headers": {
+                  "from": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount",
+                    "Proportion"
+                  ],
+                  "to": [
+                    "Order Number",
+                    "Product Name",
+                    "Sales Date",
+                    "Product Category",
+                    "Unit Price",
+                    "Sales Quantity",
+                    "Sales Amount",
+                    "Proportion"
+                  ]
+                }
+              }
+            }
+          ],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      },
+      {
+        "transition_index": 5,
+        "from": "20260114_202204",
+        "to": "20260114_202228",
+        "human_summary": "New files appeared: new.xlsx.",
+        "likely_stage": "create or save file",
+        "confidence": 0.78,
+        "evidence": {
+          "files_added": [
+            "new.xlsx"
+          ]
+        },
+        "raw_changes": {
+          "files_added": [
+            "new.xlsx"
+          ],
+          "files_removed": [],
+          "files_changed": [],
+          "dirs_added": [],
+          "dirs_removed": [],
+          "changed_file_count": 1
+        }
+      }
+    ]
+  },
+  "trajectory_hints": [
+    {
+      "index": 1,
+      "instruction": "待删除"
+    },
+    {
+      "index": 2,
+      "instruction": "Double-click to open the file book1.xlsx on the cloud computer desktop, find the \"Sales Details\" worksheet containing sales data, click any cell in the data area, and select all the data."
+    },
+    {
+      "index": 3,
+      "instruction": "Switch to the \"Home\" tab, click the \"Format as Table\" button in the \"Styles\" group, and select the \"Blue, Light 5\" style from the drop-down list; in the pop-up \"Format as Table\" dialog box, check the \"Table has headers\" option, click \"OK\" to complete the uniform setting of the table format."
+    },
+    {
+      "index": 4,
+      "instruction": "Select the \"Sales Date\" column, switch to the \"Data\" tab, and click the \"Text to Columns\" button in the \"Data Tools\" group. In the pop-up \"Text to Columns Wizard - Step 1 of 3\" dialog box, directly click \"Next\"; when entering \"Step 2 of 3\", keep the default settings and continue to click \"Next\"; after entering \"Step 3 of 3\", under the \"Column data format\" item, select \"Date\", and choose the \"Month/Day/Year\" format from the drop-down menu on the right, then click \"Finish\". All sales dates will be unified into the standard Excel date format."
+    },
+    {
+      "index": 5,
+      "instruction": "Click on any cell in the table, switch to the 「Table Design」 tab, and click the 「Remove Duplicates」 button in the 「Tools」 group. In the pop-up dialog box, check the 「Order Number」 column (the unique identifier column), ensure that other irrelevant columns are not checked, and click 「OK」; view the deduplication results in the subsequent pop-up prompt box, and click 「OK」 to complete data deduplication. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 6,
+      "instruction": "Select the \"Product Category\" column, press the shortcut key Ctrl+G to open the \"Go To\" dialog box, and click the \"Go To Special\" button; in the pop-up window, select \"Blanks\" and click \"OK\", at this time all blank cells in this column will be selected. Directly enter the unified missing value \"Daily Necessities\" corresponding to this column, and after entering, press the shortcut key Ctrl+Enter to fill all the selected blank cells at once. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 7,
+      "instruction": "The \"Sales Volume\" column is not calculated using a formula. Click on the first data cell in this column, enter the formula =E2*F2, and press the Enter key to get the calculation result. Move the mouse pointer to the bottom-right corner of cell G2; when the pointer turns into a black cross (fill handle), hold down the left mouse button and drag downwards to apply the formula to the entire column, completing the batch calculation of sales volume. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 8,
+      "instruction": "In the header cell of the blank column on the far right of the table, enter \"Proportion\". Click on cell H2, input the formula =g2/SUM(g:g), and press the Enter key to get the result. Then double-click the fill handle of the cell to apply the formula to the entire column. Select all data in column H, switch to the \"Home\" tab, click the \"Percentage Style\" button in the \"Number\" group to convert the decimal format to percentage format. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 9,
+      "instruction": "Click on any cell in the table, switch to the 「Table Design」 tab, check the 「Total Row」 option in the 「Table Style Options」 group, and a total row will be automatically added at the bottom of the table."
+    },
+    {
+      "index": 10,
+      "instruction": "Select the \"Unit Sales Price\" column and \"Sales Amount\" column in the table, switch to the 「Insert」 tab, click the 「Recommended Charts」 button in the 「Charts」 group, and select 「Column Chart」. After inserting the chart, click to select it, drag it to the blank area of the worksheet, and adjust it to an appropriate size. Press the shortcut key Ctrl+S to save the current table."
+    },
+    {
+      "index": 11,
+      "instruction": "Select the entire table area (including the total row), switch to the 「Home」 tab, and in the 「Font」 group, set the font to 「Corbel」 and the font size to 10; click the 「Center Align」 and 「Vertical Center」 buttons in the 「Alignment」 group to ensure all data is displayed in the center. Select the header row, click the 「Bold」 button in the 「Font」 group to set the header to bold style for better recognition."
+    },
+    {
+      "index": 12,
+      "instruction": "Press the shortcut key Ctrl+S to save the current table; click the \"File\" tab, select \"Save As\", choose the save location (such as the desktop) in the pop-up dialog box, set the file format to \"Excel Workbook (.xlsx)\", enter the new file name new.xlsx, and click \"Save\" to complete the export."
+    },
+    {
+      "index": 13,
+      "instruction": "待删除"
+    }
+  ],
+  "skipped_stages": [],
+  "stage_plan_source": "snapshot_aware_llm_planning",
+  "stage_plan_status": "localized_partial",
+  "llm_error": null,
+  "localization_summary": {
+    "candidate_count": 5,
+    "kept_count": 1,
+    "llm_assisted_count": 0,
+    "unsupported_count": 0,
+    "snapshots_analyzed": 6
+  }
+}

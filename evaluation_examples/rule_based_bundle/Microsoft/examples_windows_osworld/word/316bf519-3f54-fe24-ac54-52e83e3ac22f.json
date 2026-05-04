@@ -1,0 +1,77 @@
+{
+  "id": "316bf519-3f54-fe24-ac54-52e83e3ac22f",
+  "snapshot": "word",
+  "instruction": "Could you format the paragraph starting with 'Overview:' to have first line indent by 0.5 inches and line spacing of 1.5 lines?",
+  "source": "Microsoft_48 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154026/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_48/logs/MonitoringSnapshots/20260109_154341/Desktop/Conference_Agenda.docx",
+            "path": "C:\\Users\\User\\Documents\\Conference_Agenda_gold.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/316bf519-3f54-fe24-ac54-52e83e3ac22f",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\Conference_Agenda.docx",
+      "dest": "Conference_Agenda.docx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\Conference_Agenda_gold.docx",
+      "dest": "Conference_Agenda_gold.docx"
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Conference_Agenda.docx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "9f602a74-4631-926c-9374-c117ef6816a3",
+  "snapshot": "excel",
+  "instruction": "Could you set a unified storage date format for the table?",
+  "source": "Microsoft_64 true stage 2",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_64/logs/MonitoringSnapshots/20260114_174126/Desktop/excel.xlsx",
+            "path": "C:\\Users\\User\\Desktop\\excel.xlsx"
+          },
+          {
+            "url": "https://huggingface.co/datasets/Yang1741/572h6_veridesktop/resolve/main/microsoft/Microsoft_64/logs/MonitoringSnapshots/20260114_174326/Desktop/excel.xlsx",
+            "path": "C:\\Users\\User\\Documents\\excel_gold.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\excel.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/9f602a74-4631-926c-9374-c117ef6816a3",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "func": "compare_xlsx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\excel.xlsx",
+      "dest": "excel.xlsx"
+    },
+    "expected": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Documents\\excel_gold.xlsx",
+      "dest": "excel_gold.xlsx"
+    },
+    "options": {
+      "ignore_case": true,
+      "check_sheet_order": true,
+      "check_formats": true,
+      "min_nontrivial_actions": 1
+    },
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "excel.xlsx",
+          "strict": false
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui, time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5)"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ]
+  }
+}
