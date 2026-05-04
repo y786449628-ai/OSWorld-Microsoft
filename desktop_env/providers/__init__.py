@@ -35,6 +35,10 @@ def create_vm_manager_and_provider(provider_name: str, region: str, use_proxy: b
         from desktop_env.providers.aliyun.manager import AliyunVMManager
         from desktop_env.providers.aliyun.provider import AliyunProvider
         return AliyunVMManager(), AliyunProvider()
+    elif provider_name in ["local", "wuying_local"]:
+        from desktop_env.providers.local.manager import LocalVMManager
+        from desktop_env.providers.local.provider import LocalProvider
+        return LocalVMManager(), LocalProvider(region)
     elif provider_name == "volcengine":
         from desktop_env.providers.volcengine.manager import VolcengineVMManager
         from desktop_env.providers.volcengine.provider import VolcengineProvider

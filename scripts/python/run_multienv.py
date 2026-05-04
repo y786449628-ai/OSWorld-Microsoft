@@ -103,6 +103,7 @@ log_level = getattr(logging, args.log_level.upper())
 logger.setLevel(log_level)
 
 datetime_str: str = datetime.datetime.now().strftime("%Y%m%d@%H%M%S")
+os.makedirs("logs", exist_ok=True)
 
 file_handler = logging.FileHandler(
     os.path.join("logs", "normal-{:}.log".format(datetime_str)), encoding="utf-8"
@@ -131,6 +132,11 @@ logger.addHandler(stdout_handler)
 #  }}} Logger Configs #
 
 logger = logging.getLogger("desktopenv.experiment")
+
+
+def load_json_file(path: str):
+    with open(path, "r", encoding="utf-8-sig") as f:
+        return json.load(f)
 
 
 def distribute_tasks(test_all_meta: dict) -> List[tuple]:
@@ -209,8 +215,7 @@ def run_env_tasks(task_queue: Queue, args: argparse.Namespace, shared_scores: li
                 config_file = os.path.join(
                     args.test_config_base_dir, f"examples/{domain}/{example_id}.json"
                 )
-                with open(config_file, "r", encoding="utf-8") as f:
-                    example = json.load(f)
+                example = load_json_file(config_file)
                 logger.info(f"[{current_process().name}][Domain]: {domain}")
                 logger.info(f"[{current_process().name}][Example ID]: {example_id}")
                 logger.info(f"[{current_process().name}][Instruction]: {example['instruction']}")

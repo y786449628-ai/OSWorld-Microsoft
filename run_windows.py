@@ -3,6 +3,7 @@ Utils and basic architecture credit to https://github.com/web-arena-x/webarena/b
 """
 
 import argparse
+import copy
 import datetime
 import json
 import logging
@@ -22,6 +23,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 datetime_str: str = datetime.datetime.now().strftime("%Y%m%d@%H%M%S")
+os.makedirs("logs", exist_ok=True)
 
 file_handler = logging.FileHandler(
     os.path.join("logs", "normal-{:}.log".format(datetime_str)), encoding="utf-8"
@@ -59,6 +61,24 @@ logger.addHandler(sdebug_handler)
 logger = logging.getLogger("desktopenv.experiment")
 
 
+def load_json_file(path: str):
+    with open(path, "r", encoding="utf-8-sig") as f:
+        return json.load(f)
+
+
+def rewrite_paths(obj, rules):
+    if isinstance(obj, str):
+        value = obj
+        for path_from, path_to in rules:
+            value = value.replace(path_from, path_to)
+        return value
+    if isinstance(obj, list):
+        return [rewrite_paths(item, rules) for item in obj]
+    if isinstance(obj, dict):
+        return {key: rewrite_paths(value, rules) for key, value in obj.items()}
+    return obj
+
+
 def config() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run end-to-end evaluation on the benchmark"
@@ -91,6 +111,26 @@ def config() -> argparse.Namespace:
     parser.add_argument("--max_trajectory_length", type=int, default=3)
     parser.add_argument(
         "--test_config_base_dir", type=str, default="evaluation_examples"
+    )
+    parser.add_argument(
+        "--examples_windows_dir", type=str, default="examples_windows",
+        help="Subdirectory under test_config_base_dir that contains Windows example JSON files"
+    )
+    parser.add_argument(
+        "--path_redirect_from", type=str, default=None,
+        help="Optional source path prefix in task JSON to rewrite before execution"
+    )
+    parser.add_argument(
+        "--path_redirect_to", type=str, default=None,
+        help="Optional target path prefix in task JSON to rewrite before execution"
+    )
+    parser.add_argument(
+        "--path_redirect_rule",
+        action="append",
+        nargs=2,
+        metavar=("FROM", "TO"),
+        default=[],
+        help="Repeatable path rewrite rule applied in order",
     )
 
     # lm config
@@ -163,10 +203,13 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
     for domain in tqdm(test_all_meta, desc="Domain"):
         for example_id in tqdm(test_all_meta[domain], desc="Example", leave=False):
             config_file = os.path.join(
-                args.test_config_base_dir, f"examples_windows/{domain}/{example_id}.json"
+                args.test_config_base_dir, f"{args.examples_windows_dir}/{domain}/{example_id}.json"
             )
-            with open(config_file, "r", encoding="utf-8") as f:
-                example = json.load(f)
+            example = load_json_file(config_file)
+            rules = list(args.path_redirect_rule)
+            if args.path_redirect_from and args.path_redirect_to:
+                rules.append((args.path_redirect_from, args.path_redirect_to))
+            example = rewrite_paths(copy.deepcopy(example), rules)
 
             logger.info(f"[Domain]: {domain}")
             logger.info(f"[Example ID]: {example_id}")
@@ -310,8 +353,7 @@ if __name__ == "__main__":
     with open(path_to_args, "w", encoding="utf-8") as f:
         json.dump(vars(args), f, indent=4)
 
-    with open(args.test_all_meta_path, "r", encoding="utf-8") as f:
-        test_all_meta = json.load(f)
+    test_all_meta = load_json_file(args.test_all_meta_path)
 
     if args.domain != "all":
         test_all_meta = {args.domain: test_all_meta[args.domain]}
