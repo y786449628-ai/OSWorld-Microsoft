@@ -37,6 +37,12 @@ def parse_args() -> argparse.Namespace:
         default=0,
         help="0-based offset in the flattened task list.",
     )
+    parser.add_argument(
+        "--user-home",
+        type=str,
+        default=None,
+        help="Windows user home directory used to rewrite task paths. Defaults to USERPROFILE.",
+    )
     return parser.parse_args()
 
 
@@ -71,6 +77,19 @@ def substitute_placeholders(command: Iterable[str], mapping: Dict[str, str]) -> 
             current = current.replace("{" + key + "}", value)
         result.append(current)
     return result
+
+
+def substitute_object(obj: Any, mapping: Dict[str, str]) -> Any:
+    if isinstance(obj, str):
+        value = obj
+        for key, replacement in mapping.items():
+            value = value.replace("{" + key + "}", replacement)
+        return value
+    if isinstance(obj, list):
+        return [substitute_object(item, mapping) for item in obj]
+    if isinstance(obj, dict):
+        return {key: substitute_object(value, mapping) for key, value in obj.items()}
+    return obj
 
 
 def run_command(command: List[str], cwd: Path, label: str) -> subprocess.CompletedProcess[str]:
@@ -260,7 +279,18 @@ def main() -> int:
     args = parse_args()
     repo_root = Path(__file__).resolve().parents[2]
     config_path = (repo_root / args.config).resolve() if not os.path.isabs(args.config) else Path(args.config)
-    config = load_json(config_path)
+    raw_config = load_json(config_path)
+    user_home = args.user_home or os.environ.get("USERPROFILE")
+    if not user_home:
+        raise RuntimeError("Unable to determine user home directory. Pass --user-home explicitly.")
+    user_home_path = Path(user_home).resolve()
+    config_placeholder_map = {
+        "repo_root": str(repo_root),
+        "user_home": str(user_home_path),
+        "user_desktop": str(user_home_path / "Desktop"),
+        "user_documents": str(user_home_path / "Documents"),
+    }
+    config = substitute_object(raw_config, config_placeholder_map)
 
     server_url = config["server_url"].rstrip("/")
     tasks_meta_path = (repo_root / config["tasks_meta_path"]).resolve()
@@ -317,6 +347,9 @@ def main() -> int:
             "server_url": server_url,
             "repo_root": str(repo_root),
             "python_executable": sys.executable,
+            "user_home": str(user_home_path),
+            "user_desktop": str(user_home_path / "Desktop"),
+            "user_documents": str(user_home_path / "Documents"),
         }
 
         task_record: Dict[str, Any] = {
